@@ -1,13 +1,13 @@
 import { JEC_Ingredient, JEC_Recipe, JEC_RootObject } from '../types/jec'
-import { additionals } from '../additionalsStore'
-import { addRecipe, BH, IIngredient } from '../primal_recipes'
 import { cleanupNbt } from '../utils'
+import PrimalStoreHelper from '../additionalsStore'
+import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
 
 /**
  * Organize raw Just Enough Calculation json input
  * @param jecGroupsRaw_text raw json file content
  */
-export function parseJECgroups(jecGroupsRaw_text: string): void {
+export function append_JECgroups(storeHelper: PrimalRecipesHelper, jecGroupsRaw_text: string): void {
   const jec_groups = convertToNormalJson(jecGroupsRaw_text)
 
   // Try to remove placeholders that created only to extend ingredient count
@@ -42,7 +42,7 @@ export function parseJECgroups(jecGroupsRaw_text: string): void {
           })
         } else {
           // Replace oredict to itemstacks if needed
-          mutateOreToItemstack(raw)
+          mutateOreToItemstack(storeHelper, raw)
         }
       }
     }
@@ -52,7 +52,7 @@ export function parseJECgroups(jecGroupsRaw_text: string): void {
     } else {
       jec_recipe.input.forEach((obj_input) => {
         // Replace oredict to itemstacks if needed
-        mutateOreToItemstack(obj_input)
+        mutateOreToItemstack(storeHelper, obj_input)
       })
     }
   })
@@ -65,7 +65,7 @@ export function parseJECgroups(jecGroupsRaw_text: string): void {
   // -------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------
 
-  applyToAdditionals(jec_groups)
+  applyToAdditionals(storeHelper, jec_groups)
 }
 
 /**
@@ -83,9 +83,9 @@ function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
 }
 
 // Replace oredict to itemstacks if needed
-function mutateOreToItemstack(raw: JEC_Ingredient) {
+function mutateOreToItemstack(storeHelper: PrimalStoreHelper, raw: JEC_Ingredient) {
   if (raw.type === 'oreDict' && raw.content.name) {
-    const oreAlias = additionals[raw.content.name]
+    const oreAlias = storeHelper.get(raw.content.name)
     if (!oreAlias) {
       console.log('Cant find OreDict name for:', raw.content.name)
     } else {
@@ -120,9 +120,10 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
   return true
 }
 
-function applyToAdditionals(jec_groups: JEC_RootObject) {
+function applyToAdditionals(storeHelper: PrimalRecipesHelper, jec_groups: JEC_RootObject) {
+  const fromJECMap = (raw: JEC_Ingredient) => fromJEC(storeHelper, raw)
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
-    addRecipe(output.map(fromJEC), input.map(fromJEC), catalyst.map(fromJEC))
+    storeHelper.addRecipe(output.map(fromJECMap), input.map(fromJECMap), catalyst.map(fromJECMap))
   })
 }
 
@@ -130,7 +131,7 @@ function amount_jec(raw: JEC_Ingredient) {
   return ((raw.content.amount ?? 1.0) * (raw.content.percent ?? 100.0)) / 100.0
 }
 
-function fromJEC(raw: JEC_Ingredient): IIngredient {
+function fromJEC(storeHelper: PrimalStoreHelper, raw: JEC_Ingredient): IIngredient {
   type Triple = [string, string, number?]
   const [source, entry, meta] = (
     {
@@ -141,7 +142,7 @@ function fromJEC(raw: JEC_Ingredient): IIngredient {
     } as Record<string, () => Triple>
   )[raw.type]()
 
-  const ingr_prim = BH(`${source}:${entry}` + (raw.content.fMeta ? '' : ':' + (meta ?? 0)))
+  const ingr_prim = new IIngredient(storeHelper, `${source}:${entry}` + (raw.content.fMeta ? '' : ':' + (meta ?? 0)))
   const ingr_secd = raw.content.fNbt ? ingr_prim : ingr_prim.withTag(cleanupNbt(raw.content.nbt))
 
   return ingr_secd.amount(amount_jec(raw))

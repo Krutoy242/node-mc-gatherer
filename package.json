@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Gather recipes from different Minecraft sources",
   "main": "build/main/index.js",
-  "typings": "build/main/index.d.ts",
-  "module": "build/module/index.js",
+  "bin": "build/main/cli.js",
   "repository": "https://github.com/Krutoy242/node-mc-gatherer",
   "license": "MIT",
   "keywords": [
@@ -15,9 +14,7 @@
     "crafttree"
   ],
   "scripts": {
-    "build": "run-p build:*",
-    "build:main": "tsc -p tsconfig.json",
-    "build:module": "tsc -p tsconfig.module.json",
+    "build": "tsc -p tsconfig.json",
     "show-unused-exports": "npx ts-prune"
   },
   "engines": {

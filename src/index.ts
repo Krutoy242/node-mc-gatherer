@@ -7,85 +7,50 @@ Lunch with NodeJS
 =                Variables                    =
 =============================================*/
 import fs from 'fs'
-import path from 'path'
 
-import { exportAdditionals } from './additionalsStore'
-import { parseJECgroups } from './from/jec'
-import { parse_JER } from './from/jer'
-import { parseSpritesheet } from './from/spritesheet'
-import { parseCrafttweakerLog_raw } from './from/crafttweaker_raw_log'
-import { applyOreDictionary } from './from/crafttweaker_log'
-
-import yargs from 'yargs'
-const argv = yargs(process.argv.slice(2))
-  .options({
-    mc: {
-      alias: 'm',
-      type: 'string',
-      describe: 'Path to minecraft folder',
-      demandOption: true,
-      // "D:/mc_client/Instances/Enigmatica2Expert - Extended/"
-    },
-    sprite: {
-      alias: 's',
-      type: 'string',
-      describe: 'Input sprite path',
-      demandOption: true,
-      // "D:\MEGA_LD-LocksTO\CODING\Minecraft\CraftTreeVisualizer\src\assets\raw\spritesheet.json"
-    },
-    output: {
-      alias: 'o',
-      type: 'string',
-      describe: 'Output resulting json path',
-      default: 'default_additionals.json',
-    },
-  })
-  .version(false)
-  .help('h')
-  .wrap(null)
-  .parseSync()
+import { append_JECgroups } from './from/jec'
+import { append_JER } from './from/jer'
+import { append_viewBoxes } from './from/spritesheet'
+import { append_DisplayNames } from './from/crafttweaker_raw_log'
+import { append_oreDicts } from './from/crafttweaker_log'
+import { IndexedRawAdditionalsStore } from './types/raw'
+import PrimalRecipesHelper from './primal_recipes'
 
 /*=============================================
 =                   Helpers                   =
 =============================================*/
 function loadText(filename: string): string {
-  return fs.readFileSync(path.resolve(__dirname, filename), 'utf8')
+  return fs.readFileSync(filename, 'utf8')
 }
 
 function loadJson(filename: string) {
   return JSON.parse(loadText(filename))
 }
 
-function saveText(txt: string, filename: string) {
-  fs.writeFileSync(path.resolve(__dirname, filename), txt)
+/*=============================================
+=
+=============================================*/
+interface Options {
+  /** Minecraft path */
+  mc: string
+
+  /** Sprite loading path */
+  sprite: string
 }
 
-function saveObjAsJson(obj: any, filename: string) {
-  saveText(JSON.stringify(obj, null, 2), filename)
+export default function mcGather(options: Options): IndexedRawAdditionalsStore {
+  const storeHelper = new PrimalRecipesHelper()
+
+  // Init Crafting Table as first item
+  storeHelper.BH('minecraft:crafting_table')
+
+  append_viewBoxes(storeHelper, loadJson(options.sprite))
+  append_oreDicts(storeHelper, loadText(options.mc + '/crafttweaker.log'))
+  append_DisplayNames(storeHelper, loadText(options.mc + '/crafttweaker_raw.log'))
+  append_JER(storeHelper, loadJson(options.mc + 'config/jeresources/world-gen.json'))
+  append_JECgroups(storeHelper, loadText(options.mc + '/config/JustEnoughCalculation/data/groups.json'))
+
+  /*=====  Output parsed data ======*/
+  // Remove technical data
+  return storeHelper.exportAdditionals()
 }
-
-/*=============================================
-=            Spritesheet
-=============================================*/
-parseSpritesheet(loadJson(argv.sprite))
-
-/*=============================================
-=            crafttweaker.log
-=============================================*/
-const crafttweakerLogTxt = loadText(argv.mc + '/crafttweaker.log')
-applyOreDictionary(crafttweakerLogTxt)
-parseCrafttweakerLog_raw(loadText(argv.mc + '/crafttweaker_raw.log'))
-
-/*=============================================
-=            world-gen.json
-=============================================*/
-parse_JER(loadJson(argv.mc + 'config/jeresources/world-gen.json'))
-
-/*=============================================
-=      Prepare JEC groups.json
-=============================================*/
-parseJECgroups(loadText(argv.mc + '/config/JustEnoughCalculation/data/groups.json'))
-
-/*=====  Save parsed data ======*/
-// Remove technical data
-saveObjAsJson(exportAdditionals(), argv.output)

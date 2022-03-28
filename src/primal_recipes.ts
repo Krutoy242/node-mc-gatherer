@@ -1,7 +1,7 @@
 import _ from 'lodash'
-import { setField } from './additionalsStore'
 import { IndexedRawAdditionals, RawCollection } from './types/raw'
 import { cleanupNbt, objToString } from './utils'
+import PrimalStoreHelper from './additionalsStore'
 
 /*=============================================
 =           Recipes
@@ -9,11 +9,14 @@ import { cleanupNbt, objToString } from './utils'
 const clearableTags = [
   /\{"RSControl":\d+,"Facing":\d+,"Energy":\d+,"SideCache":\[\d+,\d+,\d+,\d+,\d+,\d+\],"Level":0\}/,
 ]
+
 function clearableTag(tag: any) {
   return clearableTags.some((rgx) => rgx.test(JSON.stringify(tag)))
 }
+
 export class IIngredient {
-  public name: string
+  private storeHelper: PrimalStoreHelper
+  private name: string
   public count = 1
   public _weight = 1.0
   public tag?: any
@@ -21,13 +24,14 @@ export class IIngredient {
   public strId?: string
   public additionals!: IndexedRawAdditionals
 
-  constructor(str: string) {
-    this.name = str
+  constructor(storeHelper: PrimalStoreHelper, name: string) {
+    this.storeHelper = storeHelper
+    this.name = name
     this.update()
   }
 
   private copy(): IIngredient {
-    const n = new IIngredient(this.name)
+    const n = new IIngredient(this.storeHelper, this.name)
     n.count = this.count
     n.tag = this.tag
     return n
@@ -76,13 +80,14 @@ export class IIngredient {
     }
 
     this.strId = this.asString()
-    this.additionals = setField(this.strId)
+    this.additionals = this.storeHelper.setField(this.strId)
   }
 
   or() {
     return this
   }
 }
+
 type AnyIngredients = IIngredient | string | undefined | AnyIngredients[]
 class IngredientList {
   main: IIngredient
@@ -91,9 +96,9 @@ class IngredientList {
   futile: boolean
   count: number
 
-  constructor(arg: AnyIngredients) {
+  constructor(storeHelper: PrimalStoreHelper, arg: AnyIngredients) {
     this.list = _.flattenDeep([arg])
-      .map((g) => (_.isString(g) ? BH(g) : g))
+      .map((g) => (_.isString(g) ? new IIngredient(storeHelper, g) : g))
       .filter((i): i is IIngredient => i != null && !i.futile)
 
     this.futile = !this.list.length
@@ -114,29 +119,7 @@ class IngredientList {
   }
 }
 
-export function BH(str: string) {
-  return new IIngredient(str)
-}
-
-// Init Crafting Table as first item
-BH('minecraft:crafting_table')
-
 type RecipeParams = [outputs: AnyIngredients, inputs?: AnyIngredients, catalysts?: AnyIngredients]
-
-export function addRecipe(...params: RecipeParams) {
-  const [outputs, inputs, catalysts] = params.map((o) => new IngredientList(o))
-
-  if (outputs.futile) return
-  if (inputs.futile && (!catalysts || catalysts.futile)) return
-
-  const ads = outputs.main.additionals
-  ads.recipes = ads.recipes || []
-  ads.recipes.push({
-    out: outputs.count > 1 ? outputs.keys : outputs.main.quantity() !== 1 ? outputs.main.quantity() : undefined,
-    ins: inputs.toObj(),
-    ctl: catalysts?.toObj(),
-  })
-}
 
 function serializeNameMeta(ctName: string) {
   const match = ctName.split(':')
@@ -157,4 +140,29 @@ function serializeNbt(nbt?: string | object) {
     .replace(/ as \w+/g, '')
     .replace(/, /g, ',')
     .replace(/: */g, ':')
+}
+
+export default class PrimalRecipesHelper extends PrimalStoreHelper {
+  constructor() {
+    super()
+  }
+
+  BH(str: string) {
+    return new IIngredient(this, str)
+  }
+
+  addRecipe(...params: RecipeParams) {
+    const [outputs, inputs, catalysts] = params.map((o) => new IngredientList(this, o))
+
+    if (outputs.futile) return
+    if (inputs.futile && (!catalysts || catalysts.futile)) return
+
+    const ads = outputs.main.additionals
+    ads.recipes = ads.recipes || []
+    ads.recipes.push({
+      out: outputs.count > 1 ? outputs.keys : outputs.main.quantity() !== 1 ? outputs.main.quantity() : undefined,
+      ins: inputs.toObj(),
+      ctl: catalysts?.toObj(),
+    })
+  }
 }
