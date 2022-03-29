@@ -14,9 +14,6 @@ interface RawItemData {
 
   /** Used when this object represents Oredict */
   item?: string
-
-  /** Used when this object represents Oredict */
-  meta?: number
 }
 
 interface RawAdditionals extends RawItemData {

@@ -122,12 +122,13 @@ function mutateOreToItemstack(storeHelper: PrimalStoreHelper, raw: JEC_Ingredien
     if (!oreAlias) {
       console.log('Cant find OreDict name for:', raw.content.name)
     } else {
+      const splitted = oreAlias.item?.split(':')
       raw.type = 'itemStack'
       raw.content = {
         ...raw.content,
         name: undefined,
-        item: oreAlias.item,
-        meta: oreAlias.meta,
+        item: splitted?.slice(0, 2).join(':'),
+        meta: splitted?.pop() as any | 0,
       }
     }
   }

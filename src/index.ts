@@ -48,14 +48,14 @@ export default function mcGather(options: Options): RawAdditionalsStore {
   console.log('*️⃣ append_oreDicts')
   append_oreDicts(storeHelper, loadText(join(options.mc, '/crafttweaker.log')))
 
-  console.log('*️⃣ append_DisplayNames')
-  append_DisplayNames(storeHelper, loadText(join(options.mc, '/crafttweaker_raw.log')))
+  console.log('*️⃣ append_JECgroups')
+  append_JECgroups(storeHelper, loadText(join(options.mc, '/config/JustEnoughCalculation/data/groups.json')))
 
   console.log('*️⃣ append_JER')
   append_JER(storeHelper, loadJson(join(options.mc, 'config/jeresources/world-gen.json')))
 
-  console.log('*️⃣ append_JECgroups')
-  append_JECgroups(storeHelper, loadText(join(options.mc, '/config/JustEnoughCalculation/data/groups.json')))
+  console.log('*️⃣ append_DisplayNames')
+  append_DisplayNames(storeHelper, loadText(join(options.mc, '/crafttweaker_raw.log')))
 
   console.log('*️⃣ append_viewBoxes')
   append_viewBoxes(storeHelper, loadJson('data/spritesheet.json'))
