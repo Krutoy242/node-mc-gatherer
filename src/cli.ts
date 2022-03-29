@@ -1,29 +1,31 @@
 #! /usr/bin/env node
 
 import fs from 'fs'
+import { join } from 'path'
 
 import yargs from 'yargs'
 
+import make_sprite from './make_sprite'
+
 import mcGather from '.'
+
 const argv = yargs(process.argv.slice(2))
   .options({
     mc: {
       alias: 'm',
       type: 'string',
       describe: 'Path to minecraft folder',
-      demandOption: true,
-    },
-    sprite: {
-      alias: 's',
-      type: 'string',
-      describe: 'Input sprite path',
-      demandOption: true,
     },
     output: {
       alias: 'o',
       type: 'string',
-      describe: 'Output resulting json path',
-      default: 'default_additionals.json',
+      describe: 'Output dir path',
+      default: '.',
+    },
+    icons: {
+      alias: 'i',
+      type: 'string',
+      describe: 'If specified, generate spritesheet .png and .json',
     },
   })
   .version(false)
@@ -39,4 +41,8 @@ function saveObjAsJson(obj: any, filename: string) {
   saveText(JSON.stringify(obj, null, 2), filename)
 }
 
-saveObjAsJson(mcGather(argv), argv.output)
+if (argv.icons) make_sprite(argv.icons, argv.output)
+else {
+  if (!argv.mc) throw new Error('Arguments must include --mc')
+  saveObjAsJson(mcGather(argv as any), join(argv.output, 'data.json'))
+}

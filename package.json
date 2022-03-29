@@ -15,8 +15,10 @@
     "crafttree"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "show-unused-exports": "npx ts-prune"
+    "build": "tsc",
+    "show-unused-exports": "npx ts-prune",
+    "update-sprite": "ts-node src/cli.ts --icons=\"D:/CODING/mc-icons/x32\" --output=\"data/\"",
+    "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\""
   },
   "engines": {
     "node": ">=10"
