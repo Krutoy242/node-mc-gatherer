@@ -9,13 +9,13 @@ Lunch with NodeJS
 import fs from 'fs'
 import { join } from 'path'
 
+import { append_oreDicts } from './from/crafttweaker_log'
+import { append_DisplayNames } from './from/crafttweaker_raw_log'
 import { append_JECgroups } from './from/jec'
 import { append_JER } from './from/jer'
 import { append_viewBoxes } from './from/spritesheet'
-import { append_DisplayNames } from './from/crafttweaker_raw_log'
-import { append_oreDicts } from './from/crafttweaker_log'
-import { RawAdditionalsStore } from './types'
 import PrimalRecipesHelper from './primal_recipes'
+import { RawAdditionalsStore } from './types'
 
 export * from './types'
 
@@ -35,10 +35,10 @@ function loadJson(filename: string) {
 =============================================*/
 interface Options {
   /** Minecraft path */
-  mc: string
+  readonly mc: string
 
   /** Sprite loading path */
-  sprite: string
+  readonly sprite: string
 }
 
 export default function mcGather(options: Options): RawAdditionalsStore {
