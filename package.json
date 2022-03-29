@@ -22,7 +22,9 @@
     "node": ">=10"
   },
   "dependencies": {
+    "canvas": "^2.9.1",
     "lodash": "^4.17.21",
+    "mc-iexporter-iterator": "^1.0.0",
     "yargs": "^17.4.0"
   },
   "devDependencies": {
@@ -81,10 +83,8 @@
       "plugin:eslint-comments/recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:import/typescript",
-      "plugin:functional/lite",
       "plugin:you-dont-need-lodash-underscore/compatible",
-      "prettier",
-      "prettier/@typescript-eslint"
+      "prettier"
     ],
     "globals": {
       "BigInt": true,

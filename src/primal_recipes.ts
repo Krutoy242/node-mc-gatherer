@@ -1,7 +1,8 @@
 import _ from 'lodash'
+
+import PrimalStoreHelper from './additionalsStore'
 import { IndexedRawAdditionals, RawCollection } from './types'
 import { cleanupNbt, objToString } from './utils'
-import PrimalStoreHelper from './additionalsStore'
 
 /*=============================================
 =           Recipes
@@ -10,7 +11,7 @@ const clearableTags = [
   /\{"RSControl":\d+,"Facing":\d+,"Energy":\d+,"SideCache":\[\d+,\d+,\d+,\d+,\d+,\d+\],"Level":0\}/,
 ]
 
-function clearableTag(tag: any) {
+function clearableTag(tag: unknown) {
   return clearableTags.some((rgx) => rgx.test(JSON.stringify(tag)))
 }
 
@@ -19,7 +20,7 @@ export class IIngredient {
   private name: string
   public count = 1
   public _weight = 1.0
-  public tag?: any
+  public tag?: unknown
   public futile?: boolean
   public strId?: string
   public additionals!: IndexedRawAdditionals
@@ -72,7 +73,7 @@ export class IIngredient {
     // as inputs or outputs
     if (
       this.tag &&
-      this.tag.ncRadiationResistance /*  ||
+      (this.tag as any).ncRadiationResistance /*  ||
         /^conarm:(helmet|chestplate|leggins|boots)$/.test(this.name) */
     ) {
       this.futile = true
@@ -98,8 +99,8 @@ class IngredientList {
 
   constructor(storeHelper: PrimalStoreHelper, arg: AnyIngredients) {
     this.list = _.flattenDeep([arg])
-      .map((g) => (_.isString(g) ? new IIngredient(storeHelper, g) : g))
-      .filter((i): i is IIngredient => i != null && !i.futile)
+      .map((g) => (g && typeof g === 'string' ? new IIngredient(storeHelper, g) : g))
+      .filter((i): i is IIngredient => i != null && !(i as IIngredient).futile)
 
     this.futile = !this.list.length
 

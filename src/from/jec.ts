@@ -1,7 +1,7 @@
-import { JEC_Types } from '../types'
-import { cleanupNbt } from '../utils'
 import PrimalStoreHelper from '../additionalsStore'
 import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
+import { JEC_Types } from '../types'
+import { cleanupNbt } from '../utils'
 
 interface JEC_RootObject {
   Default: JEC_Recipe[]

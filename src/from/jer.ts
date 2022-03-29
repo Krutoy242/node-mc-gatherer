@@ -1,4 +1,5 @@
 import _ from 'lodash'
+
 import PrimalStoreHelper from '../additionalsStore'
 import PrimalRecipesHelper from '../primal_recipes'
 import { IndexedRawAdditionals } from '../types'
@@ -80,20 +81,19 @@ function difficulty_from_level(x: number) {
   const r = (2 ** (b - x / (MID / b)) + x ** 2 / c ** 2) / (MID * 2) - 0.025
   return 1 - Math.min(Math.max(0, r), 1)
 }
-const maxHeightDiff = _(new Array(H))
-  .map((_, i) => difficulty_from_level(i))
-  .sum()
+const maxHeightDiff = _.sum(new Array(H).map((_, i) => difficulty_from_level(i)))
 
 const probFactor = 4
 
 function getJERProbability(rawStrData: string) {
   return (
-    _(rawStrData)
-      .split(';')
-      .map((s) => s.split(',').map(parseFloat))
-      .filter((o) => !isNaN(o[0]))
-      .map(([lvl, prob]) => difficulty_from_level(lvl) * prob ** probFactor /* **(1/2) */)
-      .sum() / maxHeightDiff
+    _.sum(
+      rawStrData
+        .split(';')
+        .map((s) => s.split(',').map(parseFloat))
+        .filter((o) => !isNaN(o[0]))
+        .map(([lvl, prob]) => difficulty_from_level(lvl) * prob ** probFactor /* **(1/2) */)
+    ) / maxHeightDiff
   )
 }
 
@@ -164,7 +164,7 @@ function handleJerEntry(storeHelper: PrimalStoreHelper, jer_entry: JER_Entry) {
 function handleDrops(storeHelper: PrimalStoreHelper, block: IndexedRawAdditionals, drop: DropsEntry) {
   const ads = storeHelper.setField(drop.itemStack)
 
-  const fortunes = _(drop.fortunes).values().mean()
+  const fortunes = _.mean(Object.values(drop.fortunes))
   const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
   const out_amount = max(1, round(fortunes))
 
