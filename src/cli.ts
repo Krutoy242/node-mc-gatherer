@@ -11,14 +11,12 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Path to minecraft folder',
       demandOption: true,
-      // "D:/mc_client/Instances/Enigmatica2Expert - Extended/"
     },
     sprite: {
       alias: 's',
       type: 'string',
       describe: 'Input sprite path',
       demandOption: true,
-      // "D:\MEGA_LD-LocksTO\CODING\Minecraft\CraftTreeVisualizer\src\assets\raw\spritesheet.json"
     },
     output: {
       alias: 'o',

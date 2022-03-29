@@ -1,7 +1,40 @@
-import { JEC_Ingredient, JEC_Recipe, JEC_RootObject } from '../types/jec'
+import { JEC_Types } from '../types'
 import { cleanupNbt } from '../utils'
 import PrimalStoreHelper from '../additionalsStore'
 import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
+
+interface JEC_RootObject {
+  Default: JEC_Recipe[]
+}
+
+interface JEC_Recipe {
+  output: JEC_Ingredient[]
+  input: JEC_Ingredient[]
+  catalyst: JEC_Ingredient[]
+}
+
+interface JEC_Ingredient {
+  type: JEC_Types
+  content: JEC_Content
+}
+
+interface JEC_Content {
+  amount: number
+  item?: string
+  meta?: number
+  fluid?: string
+  name?: string
+  percent?: number
+  fMeta?: number
+  fCap?: number
+  fNbt?: number
+  cap?: Nbt
+  nbt?: Nbt
+}
+
+interface Nbt {
+  [key: string]: any
+}
 
 /**
  * Organize raw Just Enough Calculation json input

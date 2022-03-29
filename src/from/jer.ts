@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import PrimalStoreHelper from '../additionalsStore'
 import PrimalRecipesHelper from '../primal_recipes'
-import { IndexedRawAdditionals } from '../types/raw'
+import { IndexedRawAdditionals } from '../types'
 const { max, round } = Math
 
 interface JER_Entry {

@@ -2,7 +2,7 @@
 =           Additionals Store
 =============================================*/
 
-import { IndexedRawAdditionals, IndexedRawAdditionalsStore } from './types/raw'
+import { IndexedRawAdditionals, IndexedRawAdditionalsStore, RawAdditionalsStore } from './types'
 
 type AdditID = string | number
 type ValueOf<T> = T[keyof T]
@@ -33,7 +33,7 @@ export default class PrimalStoreHelper {
     return picked
   }
 
-  exportAdditionals() {
+  exportAdditionals(): RawAdditionalsStore {
     for (const key in this.store) {
       delete (this.store[key] as any).index
     }

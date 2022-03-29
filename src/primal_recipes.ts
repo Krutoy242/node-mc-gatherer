@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { IndexedRawAdditionals, RawCollection } from './types/raw'
+import { IndexedRawAdditionals, RawCollection } from './types'
 import { cleanupNbt, objToString } from './utils'
 import PrimalStoreHelper from './additionalsStore'
 
