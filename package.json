@@ -25,12 +25,14 @@
   },
   "dependencies": {
     "canvas": "^2.9.1",
+    "glob": "^7.2.0",
     "lodash": "^4.17.21",
     "mc-iexporter-iterator": "^1.0.0",
     "yargs": "^17.4.0"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@types/glob": "^7.2.0",
     "@types/lodash": "^4.14.180",
     "@types/yargs": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
@@ -58,7 +60,7 @@
     "semi": false,
     "trailingComma": "es5",
     "singleQuote": true,
-    "printWidth": 120,
+    "printWidth": 80,
     "htmlWhitespaceSensitivity": "ignore"
   },
   "eslintConfig": {

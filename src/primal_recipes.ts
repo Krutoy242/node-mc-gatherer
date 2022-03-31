@@ -152,11 +152,11 @@ export default class PrimalRecipesHelper extends PrimalStoreHelper {
     return new IIngredient(this, str)
   }
 
-  addRecipe(...params: RecipeParams) {
+  addRecipe(...params: RecipeParams): boolean {
     const [outputs, inputs, catalysts] = params.map((o) => new IngredientList(this, o))
 
-    if (outputs.futile) return
-    if (inputs.futile && (!catalysts || catalysts.futile)) return
+    if (outputs.futile) return false
+    if (inputs.futile && (!catalysts || catalysts.futile)) return false
 
     const ads = outputs.main.additionals
     ads.recipes = ads.recipes || []
@@ -165,5 +165,7 @@ export default class PrimalRecipesHelper extends PrimalStoreHelper {
       ins: inputs.toObj(),
       ctl: catalysts?.toObj(),
     })
+
+    return true
   }
 }

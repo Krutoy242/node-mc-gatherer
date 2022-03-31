@@ -44,5 +44,7 @@ function saveObjAsJson(obj: any, filename: string) {
 if (argv.icons) make_sprite(argv.icons, argv.output)
 else {
   if (!argv.mc) throw new Error('Arguments must include --mc')
-  saveObjAsJson(mcGather(argv as any), join(argv.output, 'data.json'))
+  ;(async () => {
+    saveObjAsJson(await mcGather(argv as any), join(argv.output, 'data.json'))
+  })()
 }
