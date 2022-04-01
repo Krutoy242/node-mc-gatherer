@@ -17,9 +17,6 @@ interface RawAdditionals {
   viewBox?: string
   display?: string
   recipes?: RawRecipe[]
-
-  /** Used when this object represents Oredict */
-  item?: string
 }
 
 export type RawAdditionalsStore = {

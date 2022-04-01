@@ -1,4 +1,5 @@
 import PrimalStoreHelper from '../additionalsStore'
+import { OredictMap } from '../oredict'
 import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
 import { JEC_Types } from '../types'
 import { cleanupNbt } from '../utils'
@@ -42,6 +43,7 @@ interface Nbt {
  */
 export function append_JECgroups(
   storeHelper: PrimalRecipesHelper,
+  dict: OredictMap,
   jecGroupsRaw_text: string
 ): void {
   const jec_groups = convertToNormalJson(jecGroupsRaw_text)
@@ -86,7 +88,7 @@ export function append_JECgroups(
           })
         } else {
           // Replace oredict to itemstacks if needed
-          mutateOreToItemstack(storeHelper, raw)
+          mutateOreToItemstack(dict, raw)
         }
       }
     }
@@ -96,7 +98,7 @@ export function append_JECgroups(
     } else {
       jec_recipe.input.forEach((obj_input) => {
         // Replace oredict to itemstacks if needed
-        mutateOreToItemstack(storeHelper, obj_input)
+        mutateOreToItemstack(dict, obj_input)
       })
     }
   })
@@ -127,22 +129,19 @@ function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
 }
 
 // Replace oredict to itemstacks if needed
-function mutateOreToItemstack(
-  storeHelper: PrimalStoreHelper,
-  raw: JEC_Ingredient
-) {
+function mutateOreToItemstack(dict: OredictMap, raw: JEC_Ingredient) {
   if (raw.type === 'oreDict' && raw.content.name) {
-    const oreAlias = storeHelper.get('ore:' + raw.content.name)
+    const oreAlias = dict[raw.content.name]
     if (!oreAlias) {
       console.log('Cant find OreDict name for:', raw.content.name)
     } else {
-      const splitted = oreAlias.item?.split(':')
+      const splitted = oreAlias.split(':')
       raw.type = 'itemStack'
       raw.content = {
         ...raw.content,
         name: undefined,
-        item: splitted?.slice(0, 2).join(':'),
-        meta: splitted?.pop() as any | 0,
+        item: splitted.slice(0, 2).join(':'),
+        meta: splitted.pop() as any | 0,
       }
     }
   }
