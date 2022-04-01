@@ -28,8 +28,15 @@ export function objToString(obj: any, ndeep = 1): string {
       '{['[+isArray] +
       Object.keys(obj)
         .map(function (key) {
-          const quoted = /^[a-zA-Z_$][a-zA-Z_$0-9]*$/.test(key) ? key : `"${key}"`
-          return '\n\t' + indent + (isArray ? '' : quoted + ': ') + objToString(obj[key], ndeep + 1)
+          const quoted = /^[a-zA-Z_$][a-zA-Z_$0-9]*$/.test(key)
+            ? key
+            : `"${key}"`
+          return (
+            '\n\t' +
+            indent +
+            (isArray ? '' : quoted + ': ') +
+            objToString(obj[key], ndeep + 1)
+          )
         })
         .join(',') +
       '\n' +

@@ -28,7 +28,15 @@ const adapters: {
   minecraft_crafting: (cat) => ({
     ...cat,
     catalysts: ['minecraft:crafting_table:0'],
+    recipes: cat.recipes.filter(
+      (rec) =>
+        !rec.input.items.some((item) =>
+          item.stacks.some((stack) => stack.name == 'ic2:jetpack_electric:0')
+        )
+    ),
   }),
+
+  // '.*': (cat) => cat,
 }
 
 export default adapters

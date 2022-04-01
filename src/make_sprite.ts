@@ -7,7 +7,10 @@ import iconIterator from 'mc-iexporter-iterator'
 /**
  * Create sprite and append view boxes on this sprite in data
  */
-export default async function make_sprite(iconsDirPath: string, spriteOutputPath: string) {
+export default async function make_sprite(
+  iconsDirPath: string,
+  spriteOutputPath: string
+) {
   const RES = 2 ** 13
   const canvas = createCanvas(RES, RES)
   const ctx = canvas.getContext('2d')
@@ -41,7 +44,10 @@ export default async function make_sprite(iconsDirPath: string, spriteOutputPath
   process.stdout.write('\n')
 
   // Write the image to file
-  fs.writeFileSync(join(spriteOutputPath, 'spritesheet.png'), canvas.toBuffer('image/png'))
+  fs.writeFileSync(
+    join(spriteOutputPath, 'spritesheet.png'),
+    canvas.toBuffer('image/png')
+  )
   fs.writeFileSync(
     join(spriteOutputPath, 'spritesheet.json'),
     '{\n' +

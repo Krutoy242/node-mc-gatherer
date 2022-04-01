@@ -1,4 +1,9 @@
-export type JEC_Types = 'itemStack' | 'fluidStack' | 'oreDict' | 'placeholder' | 'empty'
+export type JEC_Types =
+  | 'itemStack'
+  | 'fluidStack'
+  | 'oreDict'
+  | 'placeholder'
+  | 'empty'
 
 export type RawCollection = { [key: string]: number }
 
@@ -8,16 +13,13 @@ interface RawRecipe {
   ctl?: RawCollection
 }
 
-interface RawItemData {
+interface RawAdditionals {
   viewBox?: string
   display?: string
+  recipes?: RawRecipe[]
 
   /** Used when this object represents Oredict */
   item?: string
-}
-
-interface RawAdditionals extends RawItemData {
-  recipes?: RawRecipe[]
 }
 
 export type RawAdditionalsStore = {

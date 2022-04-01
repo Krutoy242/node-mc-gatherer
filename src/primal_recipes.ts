@@ -99,7 +99,9 @@ class IngredientList {
 
   constructor(storeHelper: PrimalStoreHelper, arg: AnyIngredients) {
     this.list = _.flattenDeep([arg])
-      .map((g) => (g && typeof g === 'string' ? new IIngredient(storeHelper, g) : g))
+      .map((g) =>
+        g && typeof g === 'string' ? new IIngredient(storeHelper, g) : g
+      )
       .filter((i): i is IIngredient => i != null && !(i as IIngredient).futile)
 
     this.futile = !this.list.length
@@ -120,7 +122,11 @@ class IngredientList {
   }
 }
 
-type RecipeParams = [outputs: AnyIngredients, inputs?: AnyIngredients, catalysts?: AnyIngredients]
+type RecipeParams = [
+  outputs: AnyIngredients,
+  inputs?: AnyIngredients,
+  catalysts?: AnyIngredients
+]
 
 function serializeNameMeta(ctName: string) {
   const match = ctName.split(':')
@@ -153,7 +159,9 @@ export default class PrimalRecipesHelper extends PrimalStoreHelper {
   }
 
   addRecipe(...params: RecipeParams): boolean {
-    const [outputs, inputs, catalysts] = params.map((o) => new IngredientList(this, o))
+    const [outputs, inputs, catalysts] = params.map(
+      (o) => new IngredientList(this, o)
+    )
 
     if (outputs.futile) return false
     if (inputs.futile && (!catalysts || catalysts.futile)) return false
@@ -161,7 +169,12 @@ export default class PrimalRecipesHelper extends PrimalStoreHelper {
     const ads = outputs.main.additionals
     ads.recipes = ads.recipes || []
     ads.recipes.push({
-      out: outputs.count > 1 ? outputs.keys : outputs.main.quantity() !== 1 ? outputs.main.quantity() : undefined,
+      out:
+        outputs.count > 1
+          ? outputs.keys
+          : outputs.main.quantity() !== 1
+          ? outputs.main.quantity()
+          : undefined,
       ins: inputs.toObj(),
       ctl: catalysts?.toObj(),
     })

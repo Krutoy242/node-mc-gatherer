@@ -65,7 +65,10 @@ function dimToID(name: string) {
 
 let ph_exploration: IndexedRawAdditionals
 let ph_pick: IndexedRawAdditionals
-const dimensionPHs: Record<keyof typeof worldDifficulty, IndexedRawAdditionals> = {}
+const dimensionPHs: Record<
+  keyof typeof worldDifficulty,
+  IndexedRawAdditionals
+> = {}
 function dimJERFieldToID(key: string) {
   const matches = key.match(/(.+) \((-?\d+)\)/)
   const name = matches ? matches[1] : key
@@ -82,7 +85,9 @@ function difficulty_from_level(x: number) {
   const r = (2 ** (b - x / (MID / b)) + x ** 2 / c ** 2) / (MID * 2) - 0.025
   return 1 - Math.min(Math.max(0, r), 1)
 }
-const maxHeightDiff = _.sum(new Array(H).map((_, i) => difficulty_from_level(i)))
+const maxHeightDiff = _.sum(
+  new Array(H).map((_, i) => difficulty_from_level(i))
+)
 
 const probFactor = 4
 
@@ -93,7 +98,10 @@ function getJERProbability(rawStrData: string) {
         .split(';')
         .map((s) => s.split(',').map(parseFloat))
         .filter((o) => !isNaN(o[0]))
-        .map(([lvl, prob]) => difficulty_from_level(lvl) * prob ** probFactor /* **(1/2) */)
+        .map(
+          ([lvl, prob]) =>
+            difficulty_from_level(lvl) * prob ** probFactor /* **(1/2) */
+        )
     ) / maxHeightDiff
   )
 }
@@ -104,7 +112,11 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
 
   Object.entries(worldDifficulty).forEach(([key]) => {
     const parsed = dimJERFieldToID(key)
-    dimensionPHs[key] = storeHelper.setField(parsed.id, 'display', parsed.display)
+    dimensionPHs[key] = storeHelper.setField(
+      parsed.id,
+      'display',
+      parsed.display
+    )
   })
 
   for (const jer_entry of jer) {
@@ -112,15 +124,38 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
   }
 
   // Create dimension entering recipes
-  storeHelper.addRecipe(dimToID('Nether'), 'minecraft:flint_and_steel', storeHelper.BH('minecraft:obsidian').amount(8))
-  storeHelper.addRecipe(dimToID('The End'), storeHelper.BH('minecraft:ender_eye').amount(12))
+  storeHelper.addRecipe(
+    dimToID('Nether'),
+    'minecraft:flint_and_steel',
+    storeHelper.BH('minecraft:obsidian').amount(8)
+  )
+  storeHelper.addRecipe(
+    dimToID('The End'),
+    storeHelper.BH('minecraft:ender_eye').amount(12)
+  )
   storeHelper.addRecipe(dimToID('Twilight Forest'), 'minecraft:diamond')
-  storeHelper.addRecipe(dimToID('Deep Dark'), 'placeholder:Exploration', 'extrautils2:teleporter:1')
+  storeHelper.addRecipe(
+    dimToID('Deep Dark'),
+    'placeholder:Exploration',
+    'extrautils2:teleporter:1'
+  )
   storeHelper.addRecipe(dimToID('Ratlantis'), 'rats:chunky_cheese_token')
   ;(
     [
       ['advancedrocketry:rocketbuilder', ['Luna']],
-      ['advancedrocketry:stationbuilder', ['Mercury', 'Venus', 'Mars', 'Io', 'Europa', 'Titan', 'Uranus', 'Neptune']],
+      [
+        'advancedrocketry:stationbuilder',
+        [
+          'Mercury',
+          'Venus',
+          'Mars',
+          'Io',
+          'Europa',
+          'Titan',
+          'Uranus',
+          'Neptune',
+        ],
+      ],
       [
         'advancedrocketry:warpmonitor',
         [
@@ -139,7 +174,13 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
       ['thaumicaugmentation:gauntlet:1', ['Emptiness']],
     ] as any
   ).forEach(([catl, arr]: [string, string[]]) =>
-    arr.forEach((dim) => storeHelper.addRecipe(dimToID(dim), storeHelper.BH('fluid:rocketfuel').amount(10000), catl))
+    arr.forEach((dim) =>
+      storeHelper.addRecipe(
+        dimToID(dim),
+        storeHelper.BH('fluid:rocketfuel').amount(10000),
+        catl
+      )
+    )
   )
 }
 
@@ -147,22 +188,34 @@ function handleJerEntry(storeHelper: PrimalStoreHelper, jer_entry: JER_Entry) {
   const ads = storeHelper.setField(jer_entry.block)
 
   // 0 .. 1
-  const probability = getJERProbability(jer_entry.distrib) ** (1 / (0.05 * probFactor * EXPLORATION_MAX_COST))
+  const probability =
+    getJERProbability(jer_entry.distrib) **
+    (1 / (0.05 * probFactor * EXPLORATION_MAX_COST))
 
   const worldMultiplier = (worldDifficulty as any)[jer_entry.dim] ?? 1.0
-  const exploreComplexity = Math.max(1, worldMultiplier * (1 - probability) * EXPLORATION_MAX_COST)
+  const exploreComplexity = Math.max(
+    1,
+    worldMultiplier * (1 - probability) * EXPLORATION_MAX_COST
+  )
 
-  const dimAddit = dimensionPHs[jer_entry.dim] ?? storeHelper.setField(dimJERFieldToID(jer_entry.dim).id)
+  const dimAddit =
+    dimensionPHs[jer_entry.dim] ??
+    storeHelper.setField(dimJERFieldToID(jer_entry.dim).id)
 
   ;(ads.recipes ??= []).push({
     ins: { [ph_exploration.index]: exploreComplexity | 0 },
     ctl: { [dimAddit.index]: 1 },
   })
 
-  if (jer_entry.dropsList) jer_entry.dropsList.forEach((drop) => handleDrops(storeHelper, ads, drop))
+  if (jer_entry.dropsList)
+    jer_entry.dropsList.forEach((drop) => handleDrops(storeHelper, ads, drop))
 }
 
-function handleDrops(storeHelper: PrimalStoreHelper, block: IndexedRawAdditionals, drop: DropsEntry) {
+function handleDrops(
+  storeHelper: PrimalStoreHelper,
+  block: IndexedRawAdditionals,
+  drop: DropsEntry
+) {
   const ads = storeHelper.setField(drop.itemStack)
 
   const fortunes = _.mean(Object.values(drop.fortunes))

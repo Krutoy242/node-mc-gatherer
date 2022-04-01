@@ -40,18 +40,29 @@ interface Nbt {
  * Organize raw Just Enough Calculation json input
  * @param jecGroupsRaw_text raw json file content
  */
-export function append_JECgroups(storeHelper: PrimalRecipesHelper, jecGroupsRaw_text: string): void {
+export function append_JECgroups(
+  storeHelper: PrimalRecipesHelper,
+  jecGroupsRaw_text: string
+): void {
   const jec_groups = convertToNormalJson(jecGroupsRaw_text)
 
   // Try to remove placeholders that created only to extend ingredient count
   const remIndexes = new Set<number>()
   jec_groups.Default.forEach((jec_recipe, recipe_index) => {
     jec_recipe.input = jec_recipe.input.filter((raw) => prepareEntry(raw, true))
-    jec_recipe.catalyst = jec_recipe.catalyst.filter((raw) => prepareEntry(raw, true))
+    jec_recipe.catalyst = jec_recipe.catalyst.filter((raw) =>
+      prepareEntry(raw, true)
+    )
 
     let wasRemoved = false
-    function replaceInList(craft: JEC_Recipe, listName: keyof JEC_Recipe, phRaw: JEC_Ingredient) {
-      const pos = craft[listName].map((e) => e.content?.name).indexOf(phRaw.content.name)
+    function replaceInList(
+      craft: JEC_Recipe,
+      listName: keyof JEC_Recipe,
+      phRaw: JEC_Ingredient
+    ) {
+      const pos = craft[listName]
+        .map((e) => e.content?.name)
+        .indexOf(phRaw.content.name)
 
       if (pos != -1 && craft[listName][pos].type === 'placeholder') {
         craft[listName].splice(pos, 1)
@@ -116,9 +127,12 @@ function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
 }
 
 // Replace oredict to itemstacks if needed
-function mutateOreToItemstack(storeHelper: PrimalStoreHelper, raw: JEC_Ingredient) {
+function mutateOreToItemstack(
+  storeHelper: PrimalStoreHelper,
+  raw: JEC_Ingredient
+) {
   if (raw.type === 'oreDict' && raw.content.name) {
-    const oreAlias = storeHelper.get(raw.content.name)
+    const oreAlias = storeHelper.get('ore:' + raw.content.name)
     if (!oreAlias) {
       console.log('Cant find OreDict name for:', raw.content.name)
     } else {
@@ -154,10 +168,17 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
   return true
 }
 
-function applyToAdditionals(storeHelper: PrimalRecipesHelper, jec_groups: JEC_RootObject) {
+function applyToAdditionals(
+  storeHelper: PrimalRecipesHelper,
+  jec_groups: JEC_RootObject
+) {
   const fromJECMap = (raw: JEC_Ingredient) => fromJEC(storeHelper, raw)
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
-    storeHelper.addRecipe(output.map(fromJECMap), input.map(fromJECMap), catalyst.map(fromJECMap))
+    storeHelper.addRecipe(
+      output.map(fromJECMap),
+      input.map(fromJECMap),
+      catalyst.map(fromJECMap)
+    )
   })
 }
 
@@ -165,19 +186,30 @@ function amount_jec(raw: JEC_Ingredient) {
   return ((raw.content.amount ?? 1.0) * (raw.content.percent ?? 100.0)) / 100.0
 }
 
-function fromJEC(storeHelper: PrimalStoreHelper, raw: JEC_Ingredient): IIngredient {
+function fromJEC(
+  storeHelper: PrimalStoreHelper,
+  raw: JEC_Ingredient
+): IIngredient {
   type Triple = [string, string, number?]
   const [source, entry, meta] = (
     {
-      itemStack: (): Triple => [...(raw.content?.item?.split(':') as [string, string]), raw.content.meta ?? 0],
+      itemStack: (): Triple => [
+        ...(raw.content?.item?.split(':') as [string, string]),
+        raw.content.meta ?? 0,
+      ],
       fluidStack: (): Triple => ['fluid', raw.content.fluid as string],
       oreDict: (): Triple => ['ore', raw.content.name as string],
       placeholder: (): Triple => ['placeholder', raw.content.name as string],
     } as Record<string, () => Triple>
   )[raw.type]()
 
-  const ingr_prim = new IIngredient(storeHelper, `${source}:${entry}` + (raw.content.fMeta ? '' : ':' + (meta ?? 0)))
-  const ingr_secd = raw.content.fNbt ? ingr_prim : ingr_prim.withTag(cleanupNbt(raw.content.nbt))
+  const ingr_prim = new IIngredient(
+    storeHelper,
+    `${source}:${entry}` + (raw.content.fMeta ? '' : ':' + (meta ?? 0))
+  )
+  const ingr_secd = raw.content.fNbt
+    ? ingr_prim
+    : ingr_prim.withTag(cleanupNbt(raw.content.nbt))
 
   return ingr_secd.amount(amount_jec(raw))
 }

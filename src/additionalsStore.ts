@@ -2,7 +2,11 @@
 =           Additionals Store
 =============================================*/
 
-import { IndexedRawAdditionals, IndexedRawAdditionalsStore, RawAdditionalsStore } from './types'
+import {
+  IndexedRawAdditionals,
+  IndexedRawAdditionalsStore,
+  RawAdditionalsStore,
+} from './types'
 
 type AdditID = string | number
 type ValueOf<T> = T[keyof T]
@@ -11,14 +15,22 @@ export default class PrimalStoreHelper {
   private store: IndexedRawAdditionalsStore = {}
   private additionalsLength = 0
 
-  constructor() {}
+  constructor() {
+    //
+  }
 
   get(definition: string) {
     return this.store[definition]
   }
 
-  setField(id: AdditID, field?: keyof IndexedRawAdditionals, value?: ValueOf<IndexedRawAdditionals>) {
-    const found = isNaN(Number(id)) ? this.store[id] : Object.values(this.store)[id as number]
+  setField(
+    id: AdditID,
+    field?: keyof IndexedRawAdditionals,
+    value?: ValueOf<IndexedRawAdditionals>
+  ): IndexedRawAdditionals {
+    const found = isNaN(Number(id))
+      ? this.store[id]
+      : Object.values(this.store)[id as number]
 
     let picked = found
     if (!picked) {

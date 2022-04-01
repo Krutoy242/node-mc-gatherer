@@ -11,9 +11,9 @@ import { join } from 'path'
 
 import { append_oreDicts } from './from/crafttweaker_log'
 import { append_DisplayNames } from './from/crafttweaker_raw_log'
-// import { append_JECgroups } from './from/jec'
-import append_JEIExporter from './from/jeiexporter'
-// import { append_JER } from './from/jer'
+import { append_JECgroups } from './from/jec'
+// import append_JEIExporter from './from/jeiexporter'
+import { append_JER } from './from/jer'
 import { append_viewBoxes } from './from/spritesheet'
 import PrimalRecipesHelper from './primal_recipes'
 import { RawAdditionalsStore } from './types'
@@ -51,14 +51,20 @@ export default async function mcGather(
   console.log('*️⃣ append_oreDicts')
   append_oreDicts(storeHelper, loadText(join(options.mc, '/crafttweaker.log')))
 
-  // console.log('*️⃣ append_JECgroups')
-  // append_JECgroups(storeHelper, loadText(join(options.mc, '/config/JustEnoughCalculation/data/groups.json')))
+  console.log('*️⃣ append_JECgroups')
+  append_JECgroups(
+    storeHelper,
+    loadText(join(options.mc, '/config/JustEnoughCalculation/data/groups.json'))
+  )
 
-  // console.log('*️⃣ append_JER')
-  // append_JER(storeHelper, loadJson(join(options.mc, 'config/jeresources/world-gen.json')))
+  console.log('*️⃣ append_JER')
+  append_JER(
+    storeHelper,
+    loadJson(join(options.mc, 'config/jeresources/world-gen.json'))
+  )
 
-  console.log('*️⃣ append_JEIExporter')
-  await append_JEIExporter(storeHelper, options.mc)
+  // console.log('*️⃣ append_JEIExporter')
+  // await append_JEIExporter(storeHelper, options.mc)
 
   console.log('*️⃣ append_DisplayNames')
   append_DisplayNames(
