@@ -55,14 +55,13 @@ export default async function append_JEIExporter(
 
 async function handleJEIE(recHelper: PrimalRecipesHelper, filePath: string) {
   const fileName = parse(filePath).name
-  const adapter = Object.entries(adapters).find(([rgx]) =>
+  const adapterList = Object.entries(adapters).filter(([rgx]) =>
     fileName.match(rgx)
-  )?.[1]
-  if (!adapter) return
-
-  const category: JEIExporterCategory = adapter(
-    JSON.parse(readFileSync(filePath, 'utf8'))
   )
+
+  let category: JEIExporterCategory = JSON.parse(readFileSync(filePath, 'utf8'))
+  adapterList.forEach(([, adapter]) => (category = adapter(category)))
+  if (!category.recipes.length) return
 
   // console.log(`  ~ ${category.title}`)
   const catals = category.catalysts.map((ctl) => recHelper.BH(getStack(ctl)))

@@ -11,7 +11,7 @@ import { join } from 'path'
 
 import { append_DisplayNames } from './from/crafttweaker_raw_log'
 import { append_JECgroups } from './from/jec'
-// import append_JEIExporter from './from/jeiexporter'
+import append_JEIExporter from './from/jeiexporter'
 import { append_JER } from './from/jer'
 import { append_viewBoxes } from './from/spritesheet'
 import { genOreDictionary } from './oredict'
@@ -43,7 +43,9 @@ export default async function mcGather(
   options: Options
 ): Promise<RawAdditionalsStore> {
   console.log('*️⃣ Initializing')
-  const tooltipMap = loadJson(join(options.mc, 'config/jeiexporter/exports/tooltipMap.json'))
+  const tooltipMap = loadJson(
+    join(options.mc, 'config/jeiexporter/exports/tooltipMap.json')
+  )
   const storeHelper = new PrimalRecipesHelper(tooltipMap)
 
   // Init Crafting Table as first item
@@ -65,8 +67,8 @@ export default async function mcGather(
     loadJson(join(options.mc, 'config/jeresources/world-gen.json'))
   )
 
-  // console.log('*️⃣ append_JEIExporter')
-  // await append_JEIExporter(storeHelper, options.mc)
+  console.log('*️⃣ append_JEIExporter')
+  await append_JEIExporter(storeHelper, options.mc)
 
   console.log('*️⃣ append_DisplayNames')
   append_DisplayNames(

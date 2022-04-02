@@ -34,6 +34,7 @@ export default class PrimalStoreHelper {
     if (!picked) {
       picked = {
         index: this.additionalsLength++,
+        used: 0,
       }
       this.store[id] = picked
     }
@@ -46,9 +47,18 @@ export default class PrimalStoreHelper {
   exportAdditionals(): RawAdditionalsStore {
     this.assignVisuals()
 
+    // Delete indexes
     for (const key in this.store) {
       delete (this.store[key] as any).index
     }
+
+    // Delete unused items
+    for (const key in this.store) {
+      // if (this.store[key].used <= 0) delete this.store[key]
+      // else delete (this.store[key] as any).used
+      delete (this.store[key] as any).used
+    }
+
     return this.store
   }
 
@@ -65,27 +75,18 @@ export default class PrimalStoreHelper {
 
       if (!source) throw new Error('Error on parsing ID: ' + key)
 
-      if (tag) {
-        const { viewBox, display } =
-          this.store[`${source}:${entry}:${meta}`] ?? {}
-        ad.viewBox ??= viewBox
-        ad.display ??= display
-      }
-      if (ad.viewBox && ad.display) continue
+      const attempts = [
+        `${source}:${entry}:${meta}`,
+        `${source}:${entry}:0`,
+        `${source}:${entry}`,
+      ]
 
-      if (meta) {
-        const { viewBox, display } = this.store[`${source}:${entry}:0`] ?? {}
+      attempts.forEach((id) => {
+        if (ad.viewBox && ad.display) return
+        const { viewBox, display } = this.store[id] ?? {}
         ad.viewBox ??= viewBox
         ad.display ??= display
-      }
-      if (ad.viewBox && ad.display) continue
-
-      if (meta) {
-        const { viewBox, display } = this.store[`${source}:${entry}`] ?? {}
-        ad.viewBox ??= viewBox
-        ad.display ??= display
-      }
-      if (ad.viewBox && ad.display) continue
+      })
 
       ad.display ??=
         this.tooltipMap[key] ??
@@ -106,7 +107,7 @@ export default class PrimalStoreHelper {
       if (!ad.viewBox) {
         ad.viewBox ??= this.store['openblocks:dev_null:0']?.viewBox
         if (hasRecipe)
-          console.log(' cant find viewBox for', key.substring(0, 100))
+          console.log(` cant find 🖼️  for [${key.substring(0, 100)}]  `)
       }
     }
   }

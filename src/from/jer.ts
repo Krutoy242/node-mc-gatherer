@@ -1,8 +1,6 @@
 import _ from 'lodash'
 
-import PrimalStoreHelper from '../additionalsStore'
-import PrimalRecipesHelper from '../primal_recipes'
-import { IndexedRawAdditionals } from '../types'
+import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
 
 const { max, round } = Math
 
@@ -63,12 +61,9 @@ function dimToID(name: string) {
   return 'placeholder:Dim ' + name + ':0'
 }
 
-let ph_exploration: IndexedRawAdditionals
-let ph_pick: IndexedRawAdditionals
-const dimensionPHs: Record<
-  keyof typeof worldDifficulty,
-  IndexedRawAdditionals
-> = {}
+let ii_exploration: IIngredient
+let ii_pick: IIngredient
+const dimensionPHs: Record<keyof typeof worldDifficulty, IIngredient> = {}
 function dimJERFieldToID(key: string) {
   const matches = key.match(/(.+) \((-?\d+)\)/)
   const name = matches ? matches[1] : key
@@ -107,16 +102,13 @@ function getJERProbability(rawStrData: string) {
 }
 
 export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
-  ph_exploration = storeHelper.setField('placeholder:Exploration:0')
-  ph_pick = storeHelper.setField('minecraft:stone_pickaxe:0')
+  ii_exploration = storeHelper.BH('placeholder:Exploration:0')
+  ii_pick = storeHelper.BH('minecraft:stone_pickaxe:0')
 
   Object.entries(worldDifficulty).forEach(([key]) => {
     const parsed = dimJERFieldToID(key)
-    dimensionPHs[key] = storeHelper.setField(
-      parsed.id,
-      'display',
-      parsed.display
-    )
+    dimensionPHs[key] = storeHelper.BH(parsed.id)
+    dimensionPHs[key].additionals.display = parsed.display
   })
 
   for (const jer_entry of jer) {
@@ -172,8 +164,8 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
         ],
       ],
       ['thaumicaugmentation:gauntlet:1', ['Emptiness']],
-    ] as any
-  ).forEach(([catl, arr]: [string, string[]]) =>
+    ] as [string, string[]][]
+  ).forEach(([catl, arr]) =>
     arr.forEach((dim) =>
       storeHelper.addRecipe(
         dimToID(dim),
@@ -184,15 +176,19 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
   )
 }
 
-function handleJerEntry(storeHelper: PrimalStoreHelper, jer_entry: JER_Entry) {
-  const ads = storeHelper.setField(normJERId(jer_entry.block))
+function handleJerEntry(
+  storeHelper: PrimalRecipesHelper,
+  jer_entry: JER_Entry
+) {
+  const outID = normJERId(jer_entry.block)
+  const outBH = storeHelper.BH(outID)
 
   // 0 .. 1
   const probability =
     getJERProbability(jer_entry.distrib) **
     (1 / (0.05 * probFactor * EXPLORATION_MAX_COST))
 
-  const worldMultiplier = (worldDifficulty as any)[jer_entry.dim] ?? 1.0
+  const worldMultiplier = worldDifficulty[jer_entry.dim] ?? 1.0
   const exploreComplexity = Math.max(
     1,
     worldMultiplier * (1 - probability) * EXPLORATION_MAX_COST
@@ -200,35 +196,37 @@ function handleJerEntry(storeHelper: PrimalStoreHelper, jer_entry: JER_Entry) {
 
   const dimAddit =
     dimensionPHs[jer_entry.dim] ??
-    storeHelper.setField(dimJERFieldToID(jer_entry.dim).id)
+    storeHelper.BH(dimJERFieldToID(jer_entry.dim).id)
 
-  ;(ads.recipes ??= []).push({
-    ins: { [ph_exploration.index]: exploreComplexity | 0 },
-    ctl: { [dimAddit.index]: 1 },
-  })
+  storeHelper.addRecipe(
+    outBH,
+    ii_exploration.amount(exploreComplexity),
+    dimAddit
+  )
 
   if (jer_entry.dropsList)
-    jer_entry.dropsList.forEach((drop) => handleDrops(storeHelper, ads, drop))
+    jer_entry.dropsList.forEach((drop) => handleDrops(storeHelper, outBH, drop))
 }
 
 function handleDrops(
-  storeHelper: PrimalStoreHelper,
-  block: IndexedRawAdditionals,
+  storeHelper: PrimalRecipesHelper,
+  block: IIngredient,
   drop: DropsEntry
 ) {
-  const ads = storeHelper.setField(normJERId(drop.itemStack))
+  const id = normJERId(drop.itemStack)
+  const ads = storeHelper.setField(id)
 
   const fortunes = _.mean(Object.values(drop.fortunes))
   const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
   const out_amount = max(1, round(fortunes))
 
   // Skip adding if block drop itself
-  if (ads.index === block.index && out_amount === inp_amount) return
-  ;(ads.recipes ??= []).push({
-    out: out_amount > 1 ? out_amount : undefined,
-    ins: { [block.index]: inp_amount },
-    ctl: { [ph_pick.index]: 1 },
-  })
+  if (ads.index === block.additionals.index && out_amount === inp_amount) return
+  storeHelper.addRecipe(
+    storeHelper.BH(id).amount(out_amount),
+    block.amount(inp_amount),
+    ii_pick
+  )
 }
 
 function normJERId(itemStack: string): string {

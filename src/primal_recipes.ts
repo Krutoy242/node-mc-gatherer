@@ -109,7 +109,7 @@ class IngredientList {
     this.keys = this.list.reduce((acc, i) => {
       const index = i.additionals.index
       acc[index] = (acc[index] || 0) + i.quantity()
-      if (!acc[index]) throw new Error()
+      if (!acc[index]) throw new Error('No such index: ' + index)
       return acc
     }, {} as RawCollection)
 
@@ -167,7 +167,7 @@ export default class PrimalRecipesHelper extends PrimalStoreHelper {
     if (inputs.futile && (!catalysts || catalysts.futile)) return false
 
     const ads = outputs.main.additionals
-    ads.recipes = ads.recipes || []
+    ads.recipes ||= []
     ads.recipes.push({
       out:
         outputs.count > 1
@@ -178,6 +178,7 @@ export default class PrimalRecipesHelper extends PrimalStoreHelper {
       ins: inputs.toObj(),
       ctl: catalysts?.toObj(),
     })
+    ;[...inputs.list, ...outputs.list].forEach((inp) => inp.additionals.used++)
 
     return true
   }

@@ -17,6 +17,7 @@ interface RawAdditionals {
   viewBox?: string
   display?: string
   recipes?: RawRecipe[]
+  used: number
 }
 
 export type RawAdditionalsStore = {
