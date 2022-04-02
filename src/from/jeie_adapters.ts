@@ -25,6 +25,26 @@ const adapters: {
   //   }
   // },
 
+  // Clear recipes for this entries
+  ['EIOTank' +
+  '|minecraft_anvil' +
+  '|thermalexpansion_transposer_fill' +
+  '|thermalexpansion_transposer_extract' +
+  '|GENDUSTRY_SAMPLER' +
+  '|minecraft_brewing' +
+  '|chisel_chiseling' +
+  '|jei_information' +
+  '|THAUMCRAFT_ASPECT_FROM_ITEMSTACK' +
+  '|jeresources_worldgen' +
+  '|petrified_burn_time' +
+  '|xu2_machine_extrautils2_generator_culinary' +
+  '']: (cat) => ((cat.recipes = []), cat),
+
+  // Take only first item as catalyst blacklist
+  '((?!(extendedcrafting_ender_crafting)).)*': (cat) => (
+    cat.catalysts.slice(0, 1), cat
+  ),
+
   minecraft_crafting: (cat) => ({
     ...cat,
     catalysts: ['minecraft:crafting_table:0'],
