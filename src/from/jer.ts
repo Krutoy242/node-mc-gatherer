@@ -185,7 +185,7 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
 }
 
 function handleJerEntry(storeHelper: PrimalStoreHelper, jer_entry: JER_Entry) {
-  const ads = storeHelper.setField(jer_entry.block)
+  const ads = storeHelper.setField(normJERId(jer_entry.block))
 
   // 0 .. 1
   const probability =
@@ -216,7 +216,7 @@ function handleDrops(
   block: IndexedRawAdditionals,
   drop: DropsEntry
 ) {
-  const ads = storeHelper.setField(drop.itemStack)
+  const ads = storeHelper.setField(normJERId(drop.itemStack))
 
   const fortunes = _.mean(Object.values(drop.fortunes))
   const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
@@ -229,4 +229,8 @@ function handleDrops(
     ins: { [block.index]: inp_amount },
     ctl: { [ph_pick.index]: 1 },
   })
+}
+
+function normJERId(itemStack: string): string {
+  return itemStack.replace(/^([^:]+:[^:]+:\d+):(\{.*\})$/, '$1$2')
 }
