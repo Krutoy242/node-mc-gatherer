@@ -150,8 +150,8 @@ function serializeNbt(nbt?: string | object) {
 }
 
 export default class PrimalRecipesHelper extends PrimalStoreHelper {
-  constructor() {
-    super()
+  constructor(tooltipMap: any) {
+    super(tooltipMap)
   }
 
   BH(str: string) {

@@ -43,7 +43,8 @@ export default async function mcGather(
   options: Options
 ): Promise<RawAdditionalsStore> {
   console.log('*️⃣ Initializing')
-  const storeHelper = new PrimalRecipesHelper()
+  const tooltipMap = loadJson(join(options.mc, 'config/jeiexporter/exports/tooltipMap.json'))
+  const storeHelper = new PrimalRecipesHelper(tooltipMap)
 
   // Init Crafting Table as first item
   storeHelper.BH('minecraft:crafting_table')
