@@ -9,16 +9,15 @@ Lunch with NodeJS
 import fs from 'fs'
 import { join } from 'path'
 
-import { append_DisplayNames } from './from/crafttweaker_raw_log'
-import { append_JECgroups } from './from/jec'
+import exportData, { ExportData } from './Export'
+import { NameMap } from './from/JEIExporterTypes'
+import append_JECgroups from './from/jec'
 import append_JEIExporter from './from/jeiexporter'
-import { append_JER } from './from/jer'
-import { genOreDictionary } from './from/oredict'
-import { append_viewBoxes } from './from/spritesheet'
-import PrimalRecipesHelper from './lib/PrimalRecipesHelper'
-import { RawAdditionalsStore } from './lib/types'
-
-export * from './lib/types'
+import append_JER from './from/jer'
+import genOreDictionary from './from/oredict'
+import append_viewBoxes from './from/spritesheet'
+import DefinitionStore from './lib/DefinitionStore'
+import RecipeStore from './lib/RecipeStore'
 
 /*=============================================
 =                   Helpers                   =
@@ -27,8 +26,26 @@ function loadText(filename: string): string {
   return fs.readFileSync(filename, 'utf8')
 }
 
-function loadJson(filename: string) {
-  return JSON.parse(loadText(filename))
+/*=============================================
+=
+=============================================*/
+
+function runTask<T>(opts: {
+  description: string
+  textSource?: string
+  action: (text: string) => T
+  fileError?: string
+}): T {
+  console.log('*️⃣  ' + opts.description)
+  let text = ''
+  if (opts.textSource)
+    try {
+      text = loadText(opts.textSource)
+    } catch (err: unknown) {
+      console.error(`🛑  Error at task: ${opts.fileError}`)
+      throw new Error('Unable to complete task')
+    }
+  return opts.action(text)
 }
 
 /*=============================================
@@ -39,48 +56,55 @@ interface Options {
   readonly mc: string
 }
 
-export default async function mcGather(
-  options: Options
-): Promise<RawAdditionalsStore> {
+export default async function mcGather(options: Options): Promise<ExportData> {
   console.log('*️⃣ Initializing')
-  const tooltipMap = loadJson(
-    join(options.mc, 'config/jeiexporter/exports/tooltipMap.json')
-  )
-  const storeHelper = new PrimalRecipesHelper(tooltipMap)
+  const definitionStore = new DefinitionStore()
+  const recipesStore = new RecipeStore(definitionStore)
 
   // Init Crafting Table as first item
-  storeHelper.BH('minecraft:crafting_table')
+  definitionStore.get('minecraft:crafting_table:0')
 
-  console.log('*️⃣ append_oreDicts')
-  const dict = genOreDictionary(loadText(join(options.mc, '/crafttweaker.log')))
+  const dict = runTask({
+    description: 'append_oreDicts',
+    textSource: join(options.mc, '/crafttweaker.log'),
+    action: genOreDictionary,
+  })
 
-  console.log('*️⃣ append_JECgroups')
-  append_JECgroups(
-    storeHelper,
-    dict,
-    loadText(join(options.mc, '/config/JustEnoughCalculation/data/groups.json'))
-  )
+  runTask({
+    description: 'append_JECgroups',
+    textSource: join(
+      options.mc,
+      '/config/JustEnoughCalculation/data/groups.json'
+    ),
+    action: (text) => append_JECgroups(recipesStore, dict, text),
+  })
 
-  console.log('*️⃣ append_JER')
-  append_JER(
-    storeHelper,
-    loadJson(join(options.mc, 'config/jeresources/world-gen.json'))
-  )
+  runTask({
+    description: 'append_JER',
+    textSource: join(options.mc, 'config/jeresources/world-gen.json'),
+    action: (text) => append_JER(recipesStore, JSON.parse(text)),
+  })
 
-  console.log('*️⃣ append_JEIExporter')
-  await append_JEIExporter(storeHelper, options.mc)
+  await runTask({
+    description: 'append_JEIExporter',
+    action: () => append_JEIExporter(recipesStore, options.mc),
+  })
 
-  console.log('*️⃣ append_DisplayNames')
-  append_DisplayNames(
-    storeHelper,
-    loadText(join(options.mc, '/crafttweaker_raw.log'))
-  )
-
-  console.log('*️⃣ append_viewBoxes')
-  append_viewBoxes(storeHelper, loadJson('data/spritesheet.json'))
+  runTask({
+    description: 'append_viewBoxes',
+    textSource: 'data/spritesheet.json',
+    action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
+  })
 
   /*=====  Output parsed data ======*/
   // Remove technical data
-  console.log('👍 Saving ...')
-  return storeHelper.exportAdditionals()
+  const tooltipMap = runTask({
+    description: 'Opening Tooltip map',
+    textSource: join(options.mc, 'exports/nameMap.json'),
+    action: (text) => JSON.parse(text) as NameMap,
+    fileError:
+      'tooltipMap.json cant be opened. This file should be created by JEIExporter',
+  })
+
+  return exportData(recipesStore, tooltipMap)
 }

@@ -1,10 +1,18 @@
-import { IIngredient } from '../lib/IIngredient'
-import PrimalRecipesHelper from '../lib/PrimalRecipesHelper'
-import PrimalStoreHelper from '../lib/PrimalStoreHelper'
-import { JEC_Types } from '../lib/types'
+import fs from 'fs'
+
+import DefinitionStore from '../lib/DefinitionStore'
+import RecipeStore from '../lib/RecipeStore'
+import Stack from '../lib/Stack'
 import { cleanupNbt } from '../lib/utils'
 
 import { OredictMap } from './oredict'
+
+export type JEC_Types =
+  | 'itemStack'
+  | 'fluidStack'
+  | 'oreDict'
+  | 'placeholder'
+  | 'empty'
 
 interface JEC_RootObject {
   Default: JEC_Recipe[]
@@ -31,20 +39,20 @@ interface JEC_Content {
   fMeta?: number
   fCap?: number
   fNbt?: number
+  nbt?: string
   cap?: Nbt
-  nbt?: Nbt
 }
 
 interface Nbt {
-  [key: string]: any
+  [key: string]: never
 }
 
 /**
  * Organize raw Just Enough Calculation json input
  * @param jecGroupsRaw_text raw json file content
  */
-export function append_JECgroups(
-  storeHelper: PrimalRecipesHelper,
+export default function append_JECgroups(
+  storeHelper: RecipeStore,
   dict: OredictMap,
   jecGroupsRaw_text: string
 ): void {
@@ -116,6 +124,28 @@ export function append_JECgroups(
   applyToAdditionals(storeHelper, jec_groups)
 }
 
+function shortandNbt(str: string) {
+  let parenth = 0
+  let i = 0
+  while (i < str.length) {
+    if (str[i] === '{') parenth++
+    if (str[i] === '}') parenth--
+    i++
+    if (parenth <= 0) break
+  }
+  return (
+    '"' +
+    str
+      .substring(0, i)
+      // .replace(/([[, ]-?\d+(?:\.\d+)?)[ILBbsfd](?=\W)/gi, '$1')
+      .replace(/[\s\n]*"([^"]+)"[\s\n]*:[\s\n]*/gi, '$1:')
+      .replace(/"/g, '\\"')
+      .replace(/[\s\n]*\n+[\s\n]*/g, '') +
+    '"' +
+    str.substring(i)
+  )
+}
+
 /**
  * Since JEC default formal content sNBT values like `1b`
  * We need to remove type letters (like 2L or 0b)
@@ -123,11 +153,25 @@ export function append_JECgroups(
  * @returns normalized ready-to-parse json object
  */
 function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
-  return JSON.parse(
-    jecGroupsRaw_text
-      .replace(/\[\w;/g, '[') // Remove list types
-      .replace(/([[, ]-?\d+(?:\.\d+)?)[ILBbsfd](?=\W)/gi, '$1')
-  )
+  const fixedText = jecGroupsRaw_text
+    .replace(/\[\w;/g, '[') // Remove list types
+    .replace(
+      // Turn nbt to sNbt
+      /(^ {12}"content": \{\n(?:.+\n){1,5} {16}"nbt": )(\{[\s\S\n]+?\n {16}\})/gm,
+      (_m, prefix, nbtStr) => {
+        return `${prefix}${shortandNbt(nbtStr)}`
+      }
+    )
+    .replace(
+      // Turn nbt to sNbt
+      /(^ {16}"content": \{\n(?:.+\n){1,5} {20}"nbt": )(\{[\s\S\n]+?\n {20}\})/gm,
+      (_m, prefix, nbtStr) => {
+        return `${prefix}${shortandNbt(nbtStr)}`
+      }
+    )
+    .replace(/("[^"]+":\s*-?\d+(?:\.\d+)?)[ILBbsfd]\b/gi, '$1')
+  fs.writeFileSync('~test.json', fixedText)
+  return JSON.parse(fixedText)
 }
 
 // Replace oredict to itemstacks if needed
@@ -143,7 +187,7 @@ function mutateOreToItemstack(dict: OredictMap, raw: JEC_Ingredient) {
         ...raw.content,
         name: undefined,
         item: splitted.slice(0, 2).join(':'),
-        meta: splitted.pop() as any | 0,
+        meta: Number(splitted.pop()) | 0,
       }
     }
   }
@@ -162,7 +206,8 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
       raw.type = 'fluidStack'
       raw.content = {
         amount: 1000,
-        fluid: nbt?.FluidName || '<<Undefined Fluid>>',
+        fluid:
+          nbt?.match(/FluidName:\\"([^"]+)\\"/)?.[1] || '<<Undefined Fluid>>',
       }
     }
   }
@@ -170,10 +215,11 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
 }
 
 function applyToAdditionals(
-  storeHelper: PrimalRecipesHelper,
+  storeHelper: RecipeStore,
   jec_groups: JEC_RootObject
 ) {
-  const fromJECMap = (raw: JEC_Ingredient) => fromJEC(storeHelper, raw)
+  const fromJECMap = (raw: JEC_Ingredient) =>
+    fromJEC(storeHelper.definitionStore, raw)
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
     storeHelper.addRecipe(
       output.map(fromJECMap),
@@ -187,10 +233,7 @@ function amount_jec(raw: JEC_Ingredient) {
   return ((raw.content.amount ?? 1.0) * (raw.content.percent ?? 100.0)) / 100.0
 }
 
-function fromJEC(
-  storeHelper: PrimalStoreHelper,
-  raw: JEC_Ingredient
-): IIngredient {
+function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
   type Triple = [string, string, number?]
   const [source, entry, meta] = (
     {
@@ -204,13 +247,18 @@ function fromJEC(
     } as Record<string, () => Triple>
   )[raw.type]()
 
-  const ingr_prim = new IIngredient(
-    storeHelper,
-    `${source}:${entry}` + (raw.content.fMeta ? '' : ':' + (meta ?? 0))
-  )
-  const ingr_secd = raw.content.fNbt
-    ? ingr_prim
-    : ingr_prim.withTag(cleanupNbt(raw.content.nbt))
+  const sNbt = raw.content.fNbt
+    ? ''
+    : typeof raw.content.nbt !== 'string'
+    ? ''
+    : raw.content.nbt
 
-  return ingr_secd.amount(amount_jec(raw))
+  return new Stack(
+    storeHelper.get(
+      `${source}:${entry}:` +
+        (raw.content.fMeta ? 0 : meta ?? 0) +
+        (sNbt ? ':' + sNbt : '')
+    ),
+    amount_jec(raw)
+  )
 }

@@ -3,41 +3,15 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
-import PrimalRecipesHelper from '../lib/PrimalRecipesHelper'
+import RecipeStore from '../lib/RecipeStore'
 
+import { Ingredient, JEIExporterCategory, Slot } from './JEIExporterTypes'
 import adapters from './jeie_adapters'
-
-export interface JEIExporterCategory {
-  title: string
-  width: number
-  height: number
-  texture: string
-  catalysts: string[]
-  recipes: Recipe[]
-}
-
-interface Recipe {
-  input: Input
-  output: Input
-}
-
-interface Input {
-  items: Item[]
-}
-
-interface Item {
-  amount: number
-  stacks: Stack[]
-}
-
-interface Stack {
-  name: string
-}
 
 const relPath = 'config/jeiexporter/exports/recipes/'
 
 export default async function append_JEIExporter(
-  recHelper: PrimalRecipesHelper,
+  recHelper: RecipeStore,
   mcDir: string
 ) {
   const lookupPath = join(mcDir, relPath, '*.json')
@@ -53,7 +27,7 @@ export default async function append_JEIExporter(
   return Promise.all(sorted.map((fileName) => handleJEIE(recHelper, fileName)))
 }
 
-async function handleJEIE(recHelper: PrimalRecipesHelper, filePath: string) {
+async function handleJEIE(recHelper: RecipeStore, filePath: string) {
   const fileName = parse(filePath).name
   const adapterList = Object.entries(adapters).filter(([rgx]) =>
     fileName.match(rgx)
@@ -76,26 +50,25 @@ async function handleJEIE(recHelper: PrimalRecipesHelper, filePath: string) {
   })
 
   if (recipesLength === category.recipes.length)
-    console.log(`   ⭕ NO Recipes not added in [${category.title}] ${fileName}`)
+    console.log(`   ⭕ NO Recipes not added in ${fileName}`)
   else if (recipesLength > 0)
-    console.log(
-      `    ⚠️ ${recipesLength} Recipes not added in [${category.title}] ${fileName}`
-    )
+    console.log(`    ⚠️ ${recipesLength} Recipes not added in ${fileName}`)
 }
 
-function convertItems(recHelper: PrimalRecipesHelper, items: Item[]) {
+function convertItems(recHelper: RecipeStore, items: Slot[]) {
   const list = items
     .filter((it) => it.amount > 0 && it.stacks.some((st) => st.name))
-    .map((item) => recHelper.BH(getFromStacks(item.stacks)).amount(item.amount))
+    .map((item) => recHelper.BH(getFromStacks(item.stacks), item.amount))
 
   return list
 }
 
-function getFromStacks(stacks: Stack[]): string {
-  return getStack(stacks[0].name)
+function getFromStacks(stacks: Ingredient[]): string {
+  return getStack(stacks[0])
 }
 
-function getStack(name: string): string {
-  const splitted = name.split(':')
-  return splitted.length < 4 ? name : splitted.slice(0, 3).join(':')
+function getStack(ingr: Ingredient): string {
+  const id = ingr.name
+  const splitted = id.split(':')
+  return splitted.length < 4 ? id : splitted.slice(0, 3).join(':')
 }

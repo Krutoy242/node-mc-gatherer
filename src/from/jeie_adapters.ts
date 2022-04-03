@@ -1,4 +1,4 @@
-import { JEIExporterCategory } from './jeiexporter'
+import { JEIExporterCategory } from './JEIExporterTypes'
 
 const adapters: {
   [key: string]: (cat: JEIExporterCategory) => JEIExporterCategory
@@ -47,7 +47,6 @@ const adapters: {
 
   minecraft_crafting: (cat) => ({
     ...cat,
-    catalysts: ['minecraft:crafting_table:0'],
     recipes: cat.recipes.filter(
       (rec) =>
         !rec.input.items.some((item) =>

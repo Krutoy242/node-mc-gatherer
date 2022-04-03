@@ -1,17 +1,17 @@
-import PrimalStoreHelper from '../lib/PrimalStoreHelper'
+import DefinitionStore from '../lib/DefinitionStore'
 
 /**
  * Write viewboxes into additionals from spritesheet.json
  * @param spritesheetRaw Parsed JSON obj
  */
-export function append_viewBoxes(
-  storeHelper: PrimalStoreHelper,
+export default function append_viewBoxes(
+  storeHelper: DefinitionStore,
   spritesheetRaw: { [itemID: string]: string[][] }
 ) {
   Object.entries(spritesheetRaw).forEach(([def, list]) => {
     list.forEach(([viewBox, sNbt]) => {
-      storeHelper.setField(def, 'viewBox', viewBox)
-      if (sNbt) storeHelper.setField(def + sNbt, 'viewBox', viewBox)
+      storeHelper.get(def).viewBox ??= viewBox
+      if (sNbt) storeHelper.get(`${def}:${sNbt}`).viewBox ??= viewBox
     })
   })
 }

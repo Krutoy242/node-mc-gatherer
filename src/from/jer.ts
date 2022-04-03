@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
-import { IIngredient } from '../lib/IIngredient'
-import PrimalRecipesHelper from '../lib/PrimalRecipesHelper'
+import RecipeStore from '../lib/RecipeStore'
+import Stack from '../lib/Stack'
 
 const { max, round } = Math
 
@@ -62,9 +62,9 @@ function dimToID(name: string) {
   return 'placeholder:Dim ' + name + ':0'
 }
 
-let ii_exploration: IIngredient
-let ii_pick: IIngredient
-const dimensionPHs: Record<keyof typeof worldDifficulty, IIngredient> = {}
+let ii_exploration: Stack
+let ii_pick: Stack
+const dimensionPHs: Record<keyof typeof worldDifficulty, Stack> = {}
 function dimJERFieldToID(key: string) {
   const matches = key.match(/(.+) \((-?\d+)\)/)
   const name = matches ? matches[1] : key
@@ -102,14 +102,14 @@ function getJERProbability(rawStrData: string) {
   )
 }
 
-export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
+export default function append_JER(storeHelper: RecipeStore, jer: JER_Entry[]) {
   ii_exploration = storeHelper.BH('placeholder:Exploration:0')
   ii_pick = storeHelper.BH('minecraft:stone_pickaxe:0')
 
   Object.entries(worldDifficulty).forEach(([key]) => {
     const parsed = dimJERFieldToID(key)
     dimensionPHs[key] = storeHelper.BH(parsed.id)
-    dimensionPHs[key].additionals.display = parsed.display
+    dimensionPHs[key].definition.display = parsed.display
   })
 
   for (const jer_entry of jer) {
@@ -120,11 +120,11 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
   storeHelper.addRecipe(
     dimToID('Nether'),
     'minecraft:flint_and_steel',
-    storeHelper.BH('minecraft:obsidian').amount(8)
+    storeHelper.BH('minecraft:obsidian', 8)
   )
   storeHelper.addRecipe(
     dimToID('The End'),
-    storeHelper.BH('minecraft:ender_eye').amount(12)
+    storeHelper.BH('minecraft:ender_eye', 12)
   )
   storeHelper.addRecipe(dimToID('Twilight Forest'), 'minecraft:diamond')
   storeHelper.addRecipe(
@@ -170,17 +170,14 @@ export function append_JER(storeHelper: PrimalRecipesHelper, jer: JER_Entry[]) {
     arr.forEach((dim) =>
       storeHelper.addRecipe(
         dimToID(dim),
-        storeHelper.BH('fluid:rocketfuel').amount(10000),
+        storeHelper.BH('fluid:rocketfuel', 10000),
         catl
       )
     )
   )
 }
 
-function handleJerEntry(
-  storeHelper: PrimalRecipesHelper,
-  jer_entry: JER_Entry
-) {
+function handleJerEntry(storeHelper: RecipeStore, jer_entry: JER_Entry) {
   const outID = normJERId(jer_entry.block)
   const outBH = storeHelper.BH(outID)
 
@@ -201,7 +198,7 @@ function handleJerEntry(
 
   storeHelper.addRecipe(
     outBH,
-    ii_exploration.amount(exploreComplexity),
+    ii_exploration.withAmount(exploreComplexity),
     dimAddit
   )
 
@@ -209,27 +206,24 @@ function handleJerEntry(
     jer_entry.dropsList.forEach((drop) => handleDrops(storeHelper, outBH, drop))
 }
 
-function handleDrops(
-  storeHelper: PrimalRecipesHelper,
-  block: IIngredient,
-  drop: DropsEntry
-) {
+function handleDrops(storeHelper: RecipeStore, block: Stack, drop: DropsEntry) {
   const id = normJERId(drop.itemStack)
-  const ads = storeHelper.setField(id)
+  const ads = storeHelper.definitionStore.get(id)
 
   const fortunes = _.mean(Object.values(drop.fortunes))
   const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
   const out_amount = max(1, round(fortunes))
 
   // Skip adding if block drop itself
-  if (ads.index === block.additionals.index && out_amount === inp_amount) return
+  if (ads === block.definition && out_amount === inp_amount) return
   storeHelper.addRecipe(
-    storeHelper.BH(id).amount(out_amount),
-    block.amount(inp_amount),
+    storeHelper.BH(id, out_amount),
+    block.withAmount(inp_amount),
     ii_pick
   )
 }
 
 function normJERId(itemStack: string): string {
-  return itemStack.replace(/^([^:]+:[^:]+:\d+):(\{.*\})$/, '$1$2')
+  return itemStack
+  // return itemStack.replace(/^([^:]+:[^:]+:\d+):(\{.*\})$/, '$1$2')
 }

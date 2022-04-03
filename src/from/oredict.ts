@@ -1,6 +1,6 @@
 export type OredictMap = { [oreName: string]: string }
 
-export function genOreDictionary(crafttweakerLogTxt: string) {
+export default function genOreDictionary(crafttweakerLogTxt: string) {
   const dict: OredictMap = {}
 
   const oreEntriesRgx =
