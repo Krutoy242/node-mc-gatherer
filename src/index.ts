@@ -84,10 +84,18 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     textSource: join(options.mc, 'config/jeresources/world-gen.json'),
     action: (text) => append_JER(recipesStore, JSON.parse(text)),
   })
+  
+  const tooltipMap = runTask({
+    description: 'Opening Tooltip map',
+    textSource: join(options.mc, 'exports/nameMap.json'),
+    action: (text) => JSON.parse(text) as NameMap,
+    fileError:
+      'tooltipMap.json cant be opened. This file should be created by JEIExporter',
+  })
 
   await runTask({
     description: 'append_JEIExporter',
-    action: () => append_JEIExporter(recipesStore, options.mc),
+    action: () => append_JEIExporter(tooltipMap, recipesStore, options.mc),
   })
 
   runTask({
@@ -98,13 +106,6 @@ export default async function mcGather(options: Options): Promise<ExportData> {
 
   /*=====  Output parsed data ======*/
   // Remove technical data
-  const tooltipMap = runTask({
-    description: 'Opening Tooltip map',
-    textSource: join(options.mc, 'exports/nameMap.json'),
-    action: (text) => JSON.parse(text) as NameMap,
-    fileError:
-      'tooltipMap.json cant be opened. This file should be created by JEIExporter',
-  })
 
   return exportData(recipesStore, tooltipMap)
 }

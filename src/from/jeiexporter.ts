@@ -4,13 +4,23 @@ import { join, parse } from 'path'
 import glob from 'glob'
 
 import RecipeStore from '../lib/RecipeStore'
+import { CountableFunction, createFileLogger } from '../log/logger'
 
-import { Ingredient, JEIExporterCategory, Slot } from './JEIExporterTypes'
+import {
+  Ingredient,
+  ITypes,
+  JEIExporterCategory,
+  NameMap,
+  Slot,
+} from './JEIExporterTypes'
 import adapters from './jeie_adapters'
 
-const relPath = 'config/jeiexporter/exports/recipes/'
+const adapterEntries = [...adapters.entries()]
+
+const relPath = 'exports/recipes'
 
 export default async function append_JEIExporter(
+  tooltipMap: NameMap,
   recHelper: RecipeStore,
   mcDir: string
 ) {
@@ -24,51 +34,87 @@ export default async function append_JEIExporter(
     .sort(([a], [b]) => b - a)
     .map(([, v]) => v)
 
-  return Promise.all(sorted.map((fileName) => handleJEIE(recHelper, fileName)))
+  const log = createFileLogger('noRecipesCategory.log')
+
+  const all = Promise.all(
+    sorted.map((fileName) => handleJEIE(tooltipMap, recHelper, fileName, log))
+  )
+  all.then(() => console.log('Recipes problems :>> ', log.count))
+  return all
 }
 
-async function handleJEIE(recHelper: RecipeStore, filePath: string) {
+async function handleJEIE(
+  tooltipMap: NameMap,
+  recHelper: RecipeStore,
+  filePath: string,
+  log: CountableFunction
+) {
   const fileName = parse(filePath).name
-  const adapterList = Object.entries(adapters).filter(([rgx]) =>
-    fileName.match(rgx)
-  )
+  const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
 
   let category: JEIExporterCategory = JSON.parse(readFileSync(filePath, 'utf8'))
   adapterList.forEach(([, adapter]) => (category = adapter(category)))
   if (!category.recipes.length) return
 
   // console.log(`  ~ ${category.title}`)
-  const catals = category.catalysts.map((ctl) => recHelper.BH(getStack(ctl)))
+  const catals = category.catalysts.map((ctl) =>
+    recHelper.BH(getStack(tooltipMap, ctl))
+  )
 
   let recipesLength = category.recipes.length
   category.recipes.forEach((recipe) => {
     recHelper.addRecipe(
-      convertItems(recHelper, recipe.output.items),
-      convertItems(recHelper, recipe.input.items),
+      convertItems(tooltipMap, recHelper, recipe.output.items),
+      convertItems(tooltipMap, recHelper, recipe.input.items),
       catals
     ) && recipesLength--
   })
 
   if (recipesLength === category.recipes.length)
-    console.log(`   ⭕ NO Recipes not added in ${fileName}`)
+    log(`⭕ NO Recipes not added in ${fileName}\n`)
   else if (recipesLength > 0)
-    console.log(`    ⚠️ ${recipesLength} Recipes not added in ${fileName}`)
+    log(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
 }
 
-function convertItems(recHelper: RecipeStore, items: Slot[]) {
+function convertItems(
+  tooltipMap: NameMap,
+  recHelper: RecipeStore,
+  items: Slot[]
+) {
   const list = items
     .filter((it) => it.amount > 0 && it.stacks.some((st) => st.name))
-    .map((item) => recHelper.BH(getFromStacks(item.stacks), item.amount))
+    .map((item) =>
+      recHelper.BH(getFromStacks(tooltipMap, item.stacks), item.amount)
+    )
 
   return list
 }
 
-function getFromStacks(stacks: Ingredient[]): string {
-  return getStack(stacks[0])
+function getFromStacks(tooltipMap: NameMap, stacks: Ingredient[]): string {
+  return getStack(tooltipMap, stacks[0])
 }
 
-function getStack(ingr: Ingredient): string {
+const typeMap: Record<ITypes, string> = {
+  fluid: 'fluid',
+  item: '',
+  oredict: 'ore',
+  'requious.compat.jei.ingredient.Energy': 'fe',
+  'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'fe',
+  'thaumcraft.api.aspects.AspectList': 'aspect',
+}
+
+function getStack(tooltipMap: NameMap, ingr: Ingredient): string {
   const id = ingr.name
+  const prefix = typeMap[ingr.type]
   const splitted = id.split(':')
-  return splitted.length < 4 ? id : splitted.slice(0, 3).join(':')
+  let sNbt = ''
+  if (splitted.length > 3) {
+    // Have hashed NBT
+    sNbt = tooltipMap[ingr.type][ingr.name]?.tag ?? ''
+  }
+  return (
+    (prefix ? prefix + ':' : '') +
+    (splitted.length < 4 ? id : splitted.slice(0, 3).join(':')) +
+    (sNbt ? ':' + sNbt : '')
+  )
 }

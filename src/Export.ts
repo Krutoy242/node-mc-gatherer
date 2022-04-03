@@ -1,6 +1,8 @@
+import customRender from './adapters/visual'
 import { NameMap } from './from/JEIExporterTypes'
 import { DefinitionStoreMap, ExportDefinition } from './lib/DefinitionStore'
 import RecipeStore from './lib/RecipeStore'
+import { CountableFunction, createFileLogger } from './log/logger'
 // import { StackDef } from './lib/Stack'
 
 export type ExportEntry = {
@@ -21,11 +23,23 @@ export type ExportData = {
   }[]
 }
 
+type Loggers = {
+  [key: string]: CountableFunction
+}
+
 export default function exportData(
   recipesStore: RecipeStore,
-  tooltipMap: NameMap
+  nameMap: NameMap
 ): ExportData {
-  assignVisuals(recipesStore.definitionStore.store, tooltipMap)
+  const log = {
+    noViewBox: createFileLogger('noViewBox.log'),
+    noDisplay: createFileLogger('noDisplay.log'),
+  }
+
+  assignVisuals(recipesStore.definitionStore.store, nameMap, log)
+
+  console.log('noViewBox :>> ', log.noViewBox.count)
+  console.log('noDisplay :>> ', log.noDisplay.count)
 
   return {
     store: recipesStore.definitionStore.export(),
@@ -33,7 +47,11 @@ export default function exportData(
   }
 }
 
-function assignVisuals(store: DefinitionStoreMap, tooltipMap: NameMap) {
+function assignVisuals(
+  store: DefinitionStoreMap,
+  nameMap: NameMap,
+  log: Loggers
+) {
   for (const key in store) {
     const ad = store[key]
     const hasRecipe = !!ad.recipes
@@ -59,16 +77,17 @@ function assignVisuals(store: DefinitionStoreMap, tooltipMap: NameMap) {
       ad.display ??= display
     })
 
-    let map = tooltipMap[ad.iType]
+    let map = nameMap[ad.iType]
     ad.display ??= (
       map[key] ??
-      map[`${source}:${entry}:${meta}`] ??
+      map[`${source}:${entry}:${meta ?? 0}`] ??
       map[`${source}:${entry}:0`] ??
-      map[`${source}:${entry}`]
+      map[`${source}:${entry}`] ??
+      map[`${source}:${entry}:${meta ?? 0}:${unsignedHash(tag ?? '')}`]
     )?.en_us
 
     // for Fluids
-    map = (tooltipMap as any)[source]
+    map = (nameMap as any)[source]
     if (map) ad.display ??= map[entry]?.en_us
 
     const [viewBox, display] = customRender(store, source, entry, meta, tag)
@@ -78,51 +97,34 @@ function assignVisuals(store: DefinitionStoreMap, tooltipMap: NameMap) {
 
     if (!ad.display) {
       ad.display ??= `[${key}]`
-      if (hasRecipe)
-        console.log(' cant find Display for', key.substring(0, 100))
+      if (hasRecipe) log.noDisplay(key + '\n')
     }
 
     if (!ad.viewBox) {
       ad.viewBox ??= store['openblocks:dev_null:0']?.viewBox
-      if (hasRecipe)
-        console.log(` cant find 🖼️  for [${key.substring(0, 100)}]  `)
+      if (hasRecipe) log.noViewBox(key + '\n')
     }
   }
 }
 
-function customRender(
-  store: DefinitionStoreMap,
-  source: string,
-  entry: string,
-  _meta: string,
-  _tag: string
-) {
-  if (source === 'aspect') {
-    const a =
-      store[
-        `thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"${entry.toLowerCase()}"}]}`
-      ]
-    return [a.viewBox, 'Aspect: ' + entry]
+;(String.prototype as any).hashCode = function () {
+  let hash = 0,
+    i,
+    chr
+  if (this.length === 0) return hash
+  for (i = 0; i < this.length; i++) {
+    chr = this.charCodeAt(i)
+    hash = (hash << 5) - hash + chr
+    hash |= 0 // Convert to 32bit integer
+  }
+  return hash
+}
+
+function unsignedHash(str: string) {
+  let number = (str as any).hashCode()
+  if (number < 0) {
+    number = 0xffffffff + number + 1
   }
 
-  if (source === 'placeholder') {
-    if (entry === 'RF') {
-      return [store['thermalfoundation:meter:0'].viewBox, '{' + entry + '}']
-    }
-    if (entry === 'Exploration') {
-      return [store['botania:tinyplanet:0'].viewBox, '{' + entry + '}']
-    }
-    const a =
-      store[
-        'openblocks:tank:0:{tank:{FluidName:"betterquesting.placeholder",Amount:16000}}'
-      ]
-    return [a.viewBox, '{' + entry + '}']
-  }
-
-  if (source === 'thaumcraft' && entry === 'infernal_furnace') {
-    const a = store['minecraft:nether_brick:0']
-    return [a.viewBox]
-  }
-
-  return []
+  return number.toString(16)
 }

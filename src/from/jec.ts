@@ -1,5 +1,3 @@
-import fs from 'fs'
-
 import DefinitionStore from '../lib/DefinitionStore'
 import RecipeStore from '../lib/RecipeStore'
 import Stack from '../lib/Stack'
@@ -170,7 +168,6 @@ function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
       }
     )
     .replace(/("[^"]+":\s*-?\d+(?:\.\d+)?)[ILBbsfd]\b/gi, '$1')
-  fs.writeFileSync('~test.json', fixedText)
   return JSON.parse(fixedText)
 }
 
