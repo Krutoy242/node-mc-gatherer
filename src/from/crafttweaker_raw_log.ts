@@ -1,10 +1,18 @@
-import PrimalStoreHelper from '../additionalsStore'
+import PrimalStoreHelper from '../lib/PrimalStoreHelper'
 
 type CrlogRawType = {
-  [mod: string]: [display: string, definition: string, snbt: string, burntime: number][]
+  [mod: string]: [
+    display: string,
+    definition: string,
+    snbt: string,
+    burntime: number
+  ][]
 }
 
-export function append_DisplayNames(storeHelper: PrimalStoreHelper, crLog: string) {
+export function append_DisplayNames(
+  storeHelper: PrimalStoreHelper,
+  crLog: string
+) {
   let modMap: CrlogRawType = {}
   try {
     modMap = JSON.parse(crLog).all_items
@@ -29,7 +37,11 @@ export function append_DisplayNames(storeHelper: PrimalStoreHelper, crLog: strin
     })
 }
 
-function addFluid(storeHelper: PrimalStoreHelper, display: string, snbt: string) {
+function addFluid(
+  storeHelper: PrimalStoreHelper,
+  display: string,
+  snbt: string
+) {
   // If its openblocks:tank, we can also get fluid name
   // Just lazy to deal with fluid logs
   const fluidName = snbt.match(/FluidName:"(.+)"/)?.[1]

@@ -1,8 +1,10 @@
-import PrimalStoreHelper from '../additionalsStore'
-import { OredictMap } from '../oredict'
-import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
-import { JEC_Types } from '../types'
-import { cleanupNbt } from '../utils'
+import { IIngredient } from '../lib/IIngredient'
+import PrimalRecipesHelper from '../lib/PrimalRecipesHelper'
+import PrimalStoreHelper from '../lib/PrimalStoreHelper'
+import { JEC_Types } from '../lib/types'
+import { cleanupNbt } from '../lib/utils'
+
+import { OredictMap } from './oredict'
 
 interface JEC_RootObject {
   Default: JEC_Recipe[]

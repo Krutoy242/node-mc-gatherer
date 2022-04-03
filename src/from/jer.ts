@@ -1,6 +1,7 @@
 import _ from 'lodash'
 
-import PrimalRecipesHelper, { IIngredient } from '../primal_recipes'
+import { IIngredient } from '../lib/IIngredient'
+import PrimalRecipesHelper from '../lib/PrimalRecipesHelper'
 
 const { max, round } = Math
 

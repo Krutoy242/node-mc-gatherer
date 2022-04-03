@@ -13,12 +13,12 @@ import { append_DisplayNames } from './from/crafttweaker_raw_log'
 import { append_JECgroups } from './from/jec'
 import append_JEIExporter from './from/jeiexporter'
 import { append_JER } from './from/jer'
+import { genOreDictionary } from './from/oredict'
 import { append_viewBoxes } from './from/spritesheet'
-import { genOreDictionary } from './oredict'
-import PrimalRecipesHelper from './primal_recipes'
-import { RawAdditionalsStore } from './types'
+import PrimalRecipesHelper from './lib/PrimalRecipesHelper'
+import { RawAdditionalsStore } from './lib/types'
 
-export * from './types'
+export * from './lib/types'
 
 /*=============================================
 =                   Helpers                   =

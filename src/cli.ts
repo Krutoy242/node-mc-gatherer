@@ -5,7 +5,7 @@ import { join } from 'path'
 
 import yargs from 'yargs'
 
-import make_sprite from './make_sprite'
+import make_sprite from './tools/make_sprite'
 
 import mcGather from '.'
 

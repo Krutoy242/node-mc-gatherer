@@ -3,7 +3,7 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
-import PrimalRecipesHelper from '../primal_recipes'
+import PrimalRecipesHelper from '../lib/PrimalRecipesHelper'
 
 import adapters from './jeie_adapters'
 

@@ -1,4 +1,4 @@
-import PrimalStoreHelper from '../additionalsStore'
+import PrimalStoreHelper from '../lib/PrimalStoreHelper'
 
 /**
  * Write viewboxes into additionals from spritesheet.json
