@@ -9,6 +9,8 @@ Lunch with NodeJS
 import fs from 'fs'
 import { join } from 'path'
 
+import glob from 'glob'
+
 import exportData, { ExportData } from './Export'
 import { NameMap } from './from/JEIExporterTypes'
 import append_JECgroups from './from/jec'
@@ -30,13 +32,17 @@ function loadText(filename: string): string {
 =
 ============================================= */
 
+function logTask(desc: string) {
+  console.log('*️⃣  ' + desc)
+}
+
 function runTask<T>(opts: {
   description: string
   textSource?: string
   action: (text: string) => T
   fileError?: string
 }): T {
-  console.log('*️⃣  ' + opts.description)
+  logTask(opts.description)
   let text = ''
   if (opts.textSource)
     try {
@@ -54,6 +60,9 @@ function runTask<T>(opts: {
 interface Options {
   /** Minecraft path */
   readonly mc: string
+
+  readonly jeie: boolean
+  readonly jec: boolean
 }
 
 export default async function mcGather(options: Options): Promise<ExportData> {
@@ -70,14 +79,29 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     action: genOreDictionary,
   })
 
-  runTask({
-    description: 'append_JECgroups',
-    textSource: join(
-      options.mc,
-      '/config/JustEnoughCalculation/data/groups.json'
-    ),
-    action: (text) => append_JECgroups(recipesStore, dict, text),
-  })
+  if (options['jec'])
+    runTask({
+      description: 'append_JECgroups',
+      textSource: join(
+        options.mc,
+        '/config/JustEnoughCalculation/data/groups.json'
+      ),
+      action: (text) => append_JECgroups(recipesStore, dict, text),
+    })
+
+  logTask('Add custom recipes')
+  ;(
+    await Promise.all(
+      glob
+        .sync('src/adapters/recipes/**/*.ts')
+        .map((filePath) => import('./' + filePath.substring(4)))
+    )
+  ).map((modl) =>
+    modl.default(
+      (s: string) => recipesStore.forCategory(s),
+      (s: string, n?: number) => recipesStore.BH(s, n)
+    )
+  )
 
   runTask({
     description: 'append_JER',
@@ -93,10 +117,11 @@ export default async function mcGather(options: Options): Promise<ExportData> {
       'tooltipMap.json cant be opened. This file should be created by JEIExporter',
   })
 
-  await runTask({
-    description: 'append_JEIExporter',
-    action: () => append_JEIExporter(tooltipMap, recipesStore, options.mc),
-  })
+  if (options['jeie'])
+    await runTask({
+      description: 'append_JEIExporter',
+      action: () => append_JEIExporter(tooltipMap, recipesStore, options.mc),
+    })
 
   runTask({
     description: 'append_viewBoxes',

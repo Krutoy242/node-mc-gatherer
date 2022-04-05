@@ -4,13 +4,15 @@
 
 import { ITypes } from '../from/JEIExporterTypes'
 
+import Calculable from './Calculable'
+
 export interface ExportDefinition {
   viewBox?: string
   display?: string
   recipes?: number[]
 }
 
-export interface Definition {
+export interface Definition extends Calculable {
   /**
    * Full ID source:entry:meta(:{nbt})?
    */
@@ -19,6 +21,11 @@ export interface Definition {
   viewBox?: string
   display?: string
   recipes?: Set<number>
+
+  /**
+   * Recipes that depends on this item
+   */
+  dependencies?: Set<number>
 }
 
 export interface DefinitionStoreMap {
@@ -29,7 +36,14 @@ export default class DefinitionStore {
   store: DefinitionStoreMap = {}
 
   get(id: string, iType: ITypes = 'item') {
-    return (this.store[id] ??= { id, iType })
+    return (this.store[id] ??= {
+      id,
+      iType,
+      complexity: 0.0,
+      cost: 1000000.0,
+      processing: 0.0,
+      purity: 0.0,
+    })
   }
 
   export() {

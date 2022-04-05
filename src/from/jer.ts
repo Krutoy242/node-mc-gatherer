@@ -59,11 +59,11 @@ const worldDifficulty: Record<DimensionDisplay, number> = {
 const EXPLORATION_MAX_COST = 10000
 
 function dimToID(name: string) {
-  return 'placeholder:Dim ' + name + ':0'
+  return 'placeholder:dim_' + name.toLowerCase()
 }
 
 let ii_exploration: Stack
-let ii_pick: Stack
+// let ii_pick: Stack
 const dimensionPHs: Record<keyof typeof worldDifficulty, Stack> = {}
 function dimJERFieldToID(key: string) {
   const matches = key.match(/(.+) \((-?\d+)\)/)
@@ -103,8 +103,8 @@ function getJERProbability(rawStrData: string) {
 }
 
 export default function append_JER(storeHelper: RecipeStore, jer: JER_Entry[]) {
-  ii_exploration = storeHelper.BH('placeholder:Exploration:0')
-  ii_pick = storeHelper.BH('minecraft:stone_pickaxe:0')
+  ii_exploration = storeHelper.BH('placeholder:exploration')
+  // ii_pick = storeHelper.BH('minecraft:stone_pickaxe:0')
 
   Object.entries(worldDifficulty).forEach(([key]) => {
     const parsed = dimJERFieldToID(key)
@@ -115,70 +115,6 @@ export default function append_JER(storeHelper: RecipeStore, jer: JER_Entry[]) {
   for (const jer_entry of jer) {
     handleJerEntry(storeHelper, jer_entry)
   }
-
-  // Create dimension entering recipes
-  storeHelper.addRecipe(
-    'JER',
-    dimToID('Nether'),
-    'minecraft:flint_and_steel',
-    storeHelper.BH('minecraft:obsidian', 8)
-  )
-  storeHelper.addRecipe(
-    'JER',
-    dimToID('The End'),
-    storeHelper.BH('minecraft:ender_eye', 12)
-  )
-  storeHelper.addRecipe('JER', dimToID('Twilight Forest'), 'minecraft:diamond')
-  storeHelper.addRecipe(
-    'JER',
-    dimToID('Deep Dark'),
-    'placeholder:Exploration',
-    'extrautils2:teleporter:1'
-  )
-  storeHelper.addRecipe('JER', dimToID('Ratlantis'), 'rats:chunky_cheese_token')
-  ;(
-    [
-      ['advancedrocketry:rocketbuilder', ['Luna']],
-      [
-        'advancedrocketry:stationbuilder',
-        [
-          'Mercury',
-          'Venus',
-          'Mars',
-          'Io',
-          'Europa',
-          'Titan',
-          'Uranus',
-          'Neptune',
-        ],
-      ],
-      [
-        'advancedrocketry:warpmonitor',
-        [
-          'Proxima B',
-          'Terra Nova',
-          'Novus',
-          'Stella',
-          'KELT-2ab',
-          'KELT-3',
-          'KELT-4ab',
-          'KELT-6a',
-          'Kepler 0118',
-          'Kepler 0119',
-        ],
-      ],
-      ['thaumicaugmentation:gauntlet:1', ['Emptiness']],
-    ] as [string, string[]][]
-  ).forEach(([catl, arr]) =>
-    arr.forEach((dim) =>
-      storeHelper.addRecipe(
-        'JER',
-        dimToID(dim),
-        storeHelper.BH('fluid:rocketfuel', 10000),
-        catl
-      )
-    )
-  )
 }
 
 function handleJerEntry(storeHelper: RecipeStore, jer_entry: JER_Entry) {
@@ -215,7 +151,7 @@ function handleDrops(storeHelper: RecipeStore, block: Stack, drop: DropsEntry) {
   const id = normJERId(drop.itemStack)
   const ads = storeHelper.definitionStore.get(id)
 
-  const fortunes = _.mean(Object.values(drop.fortunes))
+  const fortunes = _.mean(Object.values(drop.fortunes)) || 1.0
   const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
   const out_amount = max(1, round(fortunes))
 
@@ -224,8 +160,8 @@ function handleDrops(storeHelper: RecipeStore, block: Stack, drop: DropsEntry) {
   storeHelper.addRecipe(
     'JER',
     storeHelper.BH(id, out_amount),
-    block.withAmount(inp_amount),
-    ii_pick
+    block.withAmount(inp_amount)
+    // ii_pick
   )
 }
 

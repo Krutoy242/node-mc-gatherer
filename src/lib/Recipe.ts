@@ -1,10 +1,16 @@
+import Calculable from './Calculable'
 import Stack from './Stack'
 
-export default class Recipe {
+export default class Recipe implements Calculable {
+  complexity = 0.0
+  cost = 0.0
+  processing = 0.0
+  purity = 0.0
+
   constructor(
-    private outputs: Stack[],
-    private inputs?: Stack[],
-    private catalysts?: Stack[]
+    public outputs: Stack[],
+    public inputs?: Stack[],
+    public catalysts?: Stack[]
   ) {}
 
   export() {

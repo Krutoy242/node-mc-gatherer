@@ -18,7 +18,8 @@
     "build": "tsc",
     "show-unused-exports": "npx ts-prune",
     "update-sprite": "ts-node src/cli.ts --icons=\"D:/CODING/mc-icons/x32\" --output=\"data/\"",
-    "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\" --output=\"D:/MEGA_LD-LocksTO/CODING/Minecraft/CraftTreeVisualizer/src/assets\""
+    "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\" --output=\"D:/MEGA_LD-LocksTO/CODING/Minecraft/CraftTreeVisualizer/src/assets\"",
+    "run:only-jer": "ts-node src/cli.ts --no-jeie --no-jec --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\" --output=\"D:/MEGA_LD-LocksTO/CODING/Minecraft/CraftTreeVisualizer/src/assets\""
   },
   "engines": {
     "node": ">=10"

@@ -27,6 +27,16 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'If specified, generate spritesheet .png and .json',
     },
+    jeie: {
+      type: 'boolean',
+      describe: 'Do load JEIExporter files',
+      default: true,
+    },
+    jec: {
+      type: 'boolean',
+      describe: 'Do load Just Enough Calculation files',
+      default: true,
+    },
   })
   .version(false)
   .help('h')

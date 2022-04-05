@@ -47,6 +47,7 @@ export default function exportData(
 
   console.log('noViewBox :>> ', log.noViewBox.count)
   console.log('noDisplay :>> ', log.noDisplay.count)
+  recipesStore.calculate()
 
   return {
     store: recipesStore.definitionStore.export(),

@@ -1,5 +1,6 @@
 import { createFileLogger } from '../log/logger'
 
+import Calculator from './Calculator'
 import DefinitionStore from './DefinitionStore'
 import Recipe from './Recipe'
 import Stack from './Stack'
@@ -16,7 +17,7 @@ type RecipeParams = [
 ]
 
 export default class RecipeStore {
-  private recipeStore: Recipe[] = []
+  private store: Recipe[] = []
 
   constructor(public definitionStore: DefinitionStore) {}
 
@@ -25,7 +26,7 @@ export default class RecipeStore {
   }
 
   export() {
-    return this.recipeStore.map((r) => r.export())
+    return this.store.map((r) => r.export())
   }
 
   forCategory(categoryName: string) {
@@ -44,10 +45,20 @@ export default class RecipeStore {
     }
 
     const recipe = new Recipe(outputs, inputs, catalysts)
-    const index = this.recipeStore.push(recipe)
-    outputs.forEach((out) => (out.definition.recipes ??= new Set()).add(index))
+    const index = this.store.push(recipe) - 1
+    outputs.forEach((out) => {
+      ;(out.definition.recipes ??= new Set()).add(index)
+    })
+    const requirments = [...(inputs ?? []), ...(catalysts ?? [])]
+    requirments.forEach((stack) =>
+      (stack.definition.dependencies ??= new Set()).add(index)
+    )
 
     return true
+  }
+
+  calculate() {
+    return new Calculator(this.definitionStore, this.store).compute()
   }
 
   private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
