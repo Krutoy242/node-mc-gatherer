@@ -37,7 +37,7 @@ export type ITypes =
 
 export type NameMap = Record<ITypes, Visible>
 export type Visible = Record<string, NameData>
-export type NameData = {
+export interface NameData {
   en_us: string
   en_us_tooltip?: string
   tag?: string

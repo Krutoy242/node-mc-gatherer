@@ -1,6 +1,6 @@
-/*=============================================
+/* =============================================
 =           Additionals Store
-=============================================*/
+============================================= */
 
 import { ITypes } from '../from/JEIExporterTypes'
 
@@ -21,7 +21,7 @@ export interface Definition {
   recipes?: Set<number>
 }
 
-export type DefinitionStoreMap = {
+export interface DefinitionStoreMap {
   [id: string]: Definition
 }
 

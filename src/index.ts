@@ -3,9 +3,9 @@ Helper script to prepare several files for fast acces
 Lunch with NodeJS
 */
 
-/*=============================================
+/* =============================================
 =                Variables                    =
-=============================================*/
+============================================= */
 import fs from 'fs'
 import { join } from 'path'
 
@@ -19,16 +19,16 @@ import append_viewBoxes from './from/spritesheet'
 import DefinitionStore from './lib/DefinitionStore'
 import RecipeStore from './lib/RecipeStore'
 
-/*=============================================
+/* =============================================
 =                   Helpers                   =
-=============================================*/
+============================================= */
 function loadText(filename: string): string {
   return fs.readFileSync(filename, 'utf8')
 }
 
-/*=============================================
+/* =============================================
 =
-=============================================*/
+============================================= */
 
 function runTask<T>(opts: {
   description: string
@@ -48,9 +48,9 @@ function runTask<T>(opts: {
   return opts.action(text)
 }
 
-/*=============================================
+/* =============================================
 =
-=============================================*/
+============================================= */
 interface Options {
   /** Minecraft path */
   readonly mc: string
@@ -84,7 +84,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     textSource: join(options.mc, 'config/jeresources/world-gen.json'),
     action: (text) => append_JER(recipesStore, JSON.parse(text)),
   })
-  
+
   const tooltipMap = runTask({
     description: 'Opening Tooltip map',
     textSource: join(options.mc, 'exports/nameMap.json'),
@@ -104,7 +104,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
   })
 
-  /*=====  Output parsed data ======*/
+  /* =====  Output parsed data ====== */
   // Remove technical data
 
   return exportData(recipesStore, tooltipMap)

@@ -1,4 +1,4 @@
-export type OredictMap = { [oreName: string]: string }
+export interface OredictMap { [oreName: string]: string }
 
 export default function genOreDictionary(crafttweakerLogTxt: string) {
   const dict: OredictMap = {}

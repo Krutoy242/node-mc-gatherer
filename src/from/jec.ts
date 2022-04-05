@@ -74,7 +74,7 @@ export default function append_JECgroups(
         .map((e) => e.content?.name)
         .indexOf(phRaw.content.name)
 
-      if (pos != -1 && craft[listName][pos].type === 'placeholder') {
+      if (pos !== -1 && craft[listName][pos].type === 'placeholder') {
         craft[listName].splice(pos, 1)
         craft[listName] = craft[listName].concat(jec_recipe.input)
         wasRemoved = true
@@ -232,17 +232,16 @@ function amount_jec(raw: JEC_Ingredient) {
 
 function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
   type Triple = [string, string, number?]
-  const [source, entry, meta] = (
-    {
-      itemStack: (): Triple => [
-        ...(raw.content?.item?.split(':') as [string, string]),
-        raw.content.meta ?? 0,
-      ],
-      fluidStack: (): Triple => ['fluid', raw.content.fluid as string],
-      oreDict: (): Triple => ['ore', raw.content.name as string],
-      placeholder: (): Triple => ['placeholder', raw.content.name as string],
-    } as Record<string, () => Triple>
-  )[raw.type]()
+  const switcher: Record<string, () => Triple> = {
+    itemStack: (): Triple => [
+      ...(raw.content?.item?.split(':') as [string, string]),
+      raw.content.meta ?? 0,
+    ],
+    fluidStack: (): Triple => ['fluid', raw.content.fluid as string],
+    oreDict: (): Triple => ['ore', raw.content.name as string],
+    placeholder: (): Triple => ['placeholder', raw.content.name as string],
+  }
+  const [source, entry, meta] = switcher[raw.type]()
 
   const sNbt = raw.content.fNbt
     ? ''

@@ -8,14 +8,14 @@ export type StackDef = Definition & {
  * Stack is item that have amount
  */
 export default class Stack {
-  constructor(public definition: Definition, public amount = 1) {}
+  public constructor(public definition: Definition, public amount = 1) {}
 
-  withAmount(newAmount: number) {
+  public withAmount(newAmount: number) {
     if (isNaN(newAmount) || this.amount === newAmount) return this
     return new Stack(this.definition, newAmount)
   }
 
-  export() {
+  public export() {
     return `${this.amount}x ${this.definition.id}`
   }
 }

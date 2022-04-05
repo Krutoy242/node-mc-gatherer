@@ -1,4 +1,4 @@
-import { JEIExporterCategory } from './JEIExporterTypes'
+import { JEIExporterCategory } from '../from/JEIExporterTypes'
 
 const adapters: Map<RegExp, (cat: JEIExporterCategory) => JEIExporterCategory> =
   new Map()
@@ -17,8 +17,7 @@ adapters.set(
       '|THAUMCRAFT_ASPECT_FROM_ITEMSTACK' +
       '|jeresources__worldgen' +
       '|petrified__burn__time' +
-      '|xu2__machine__extrautils2__generator__culinary' +
-      ''
+      '|xu2__machine__extrautils2__generator__culinary'
   ),
   (cat) => ((cat.recipes = []), cat)
 )
@@ -29,14 +28,14 @@ adapters.set(
   (cat) => ((cat.catalysts = cat.catalysts.slice(0, 1)), cat)
 )
 
-adapters.set(/minecraft__crafting/, (cat) => ({
-  ...cat,
-  recipes: cat.recipes.filter(
+adapters.set(/minecraft__crafting/, (cat) => {
+  cat.recipes = cat.recipes.filter(
     (rec) =>
       !rec.input.items.some((item) =>
-        item.stacks.some((stack) => stack.name == 'ic2:jetpack_electric:0')
+        item.stacks.some((stack) => stack.name === 'ic2:jetpack_electric:0')
       )
-  ),
-}))
+  )
+  return cat
+})
 
 export default adapters

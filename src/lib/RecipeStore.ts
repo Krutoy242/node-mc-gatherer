@@ -2,9 +2,9 @@ import DefinitionStore from './DefinitionStore'
 import Recipe from './Recipe'
 import Stack from './Stack'
 
-/*=============================================
+/* =============================================
 =           Recipes
-=============================================*/
+============================================= */
 
 type AnyIngredient = Stack | string
 type AnyIngredients = AnyIngredient | AnyIngredient[] | undefined
@@ -28,21 +28,6 @@ export default class RecipeStore {
     return this.recipeStore.map((r) => r.export())
   }
 
-  private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
-    return typeof anyIngrs === 'string'
-      ? new Stack(this.definitionStore.get(anyIngrs))
-      : anyIngrs
-  }
-
-  private anyRecipeParamToList(anyIngrs: AnyIngredients): Stack[] {
-    if (!anyIngrs) return []
-    if (typeof anyIngrs === 'string')
-      return [new Stack(this.definitionStore.get(anyIngrs))]
-    if (Array.isArray(anyIngrs))
-      return anyIngrs.map((p) => this.anyRecipeParam(p))
-    return [anyIngrs]
-  }
-
   addRecipe(...params: RecipeParams): boolean {
     const [outputs, inputs, catalysts] = params.map((p) =>
       this.anyRecipeParamToList(p)
@@ -56,5 +41,20 @@ export default class RecipeStore {
     outputs.forEach((out) => (out.definition.recipes ??= new Set()).add(index))
 
     return true
+  }
+
+  private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
+    return typeof anyIngrs === 'string'
+      ? new Stack(this.definitionStore.get(anyIngrs))
+      : anyIngrs
+  }
+
+  private anyRecipeParamToList(anyIngrs: AnyIngredients): Stack[] {
+    if (!anyIngrs) return []
+    if (typeof anyIngrs === 'string')
+      return [new Stack(this.definitionStore.get(anyIngrs))]
+    if (Array.isArray(anyIngrs))
+      return anyIngrs.map((p) => this.anyRecipeParam(p))
+    return [anyIngrs]
   }
 }

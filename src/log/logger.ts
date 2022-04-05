@@ -10,9 +10,9 @@ export function createFileLogger(logFileName: string): CountableFunction {
   mkdirSync('logs/', { recursive: true })
   const filePath = join('logs/', logFileName)
   writeFileSync(filePath, '')
-  const fnc = <CountableFunction>function (...args: unknown[]) {
+  const fnc = function (...args: unknown[]) {
     appendFileSync(filePath, args.map((v) => String(v)).join(' '))
     fnc.count = (fnc.count ?? 0) + 1
-  }
+  } as CountableFunction
   return fnc
 }

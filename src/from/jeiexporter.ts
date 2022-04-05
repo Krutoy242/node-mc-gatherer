@@ -3,6 +3,7 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
+import adapters from '../adapters/jeie'
 import RecipeStore from '../lib/RecipeStore'
 import { CountableFunction, createFileLogger } from '../log/logger'
 
@@ -13,7 +14,6 @@ import {
   NameMap,
   Slot,
 } from './JEIExporterTypes'
-import adapters from './jeie_adapters'
 
 const adapterEntries = [...adapters.entries()]
 

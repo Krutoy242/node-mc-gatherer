@@ -35,9 +35,10 @@
     "@types/glob": "^7.2.0",
     "@types/lodash": "^4.14.180",
     "@types/yargs": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
     "eslint": "^8.12.0",
+    "eslint-config-alloy": "^4.5.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-functional": "^4.2.0",
@@ -61,14 +62,21 @@
     "trailingComma": "es5",
     "singleQuote": true,
     "printWidth": 80,
-    "htmlWhitespaceSensitivity": "ignore"
+    "htmlWhitespaceSensitivity": "ignore",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "rangeStart": 0,
+    "proseWrap": "preserve",
+    "embeddedLanguageFormatting": "auto"
   },
   "eslintConfig": {
     "root": true,
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaVersion": 2020,
-      "project": ["tsconfig.json"] ,
+      "project": [
+        "tsconfig.json"
+      ],
       "sourceType": "module"
     },
     "env": {
@@ -85,12 +93,8 @@
       "functional"
     ],
     "extends": [
-      "eslint:recommended",
-      "plugin:eslint-comments/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/typescript",
-      "plugin:you-dont-need-lodash-underscore/compatible",
-      "prettier"
+      "alloy",
+      "alloy/typescript"
     ],
     "globals": {
       "BigInt": true,
@@ -98,7 +102,20 @@
       "WebAssembly": true
     },
     "rules": {
+      "max-nested-callbacks":"off",
+      "no-sequences":"off",
+      "@typescript-eslint/explicit-member-accessibility":0,
+      "@typescript-eslint/no-parameter-properties":0,
+      "max-params": "off",
+      "no-return-assign":"off",
+      "no-unused-expressions":"error",
+      "no-else-return": 2,
+      "no-template-curly-in-string": 2,
+      "require-atomic-updates": 2,
+      "no-duplicate-imports": 2,
+      "no-promise-executor-return": 2,
       "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": 0,
       "eslint-comments/disable-enable-pair": [
         "error",
         {
