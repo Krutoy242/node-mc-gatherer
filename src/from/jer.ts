@@ -118,21 +118,24 @@ export default function append_JER(storeHelper: RecipeStore, jer: JER_Entry[]) {
 
   // Create dimension entering recipes
   storeHelper.addRecipe(
+    'JER',
     dimToID('Nether'),
     'minecraft:flint_and_steel',
     storeHelper.BH('minecraft:obsidian', 8)
   )
   storeHelper.addRecipe(
+    'JER',
     dimToID('The End'),
     storeHelper.BH('minecraft:ender_eye', 12)
   )
-  storeHelper.addRecipe(dimToID('Twilight Forest'), 'minecraft:diamond')
+  storeHelper.addRecipe('JER', dimToID('Twilight Forest'), 'minecraft:diamond')
   storeHelper.addRecipe(
+    'JER',
     dimToID('Deep Dark'),
     'placeholder:Exploration',
     'extrautils2:teleporter:1'
   )
-  storeHelper.addRecipe(dimToID('Ratlantis'), 'rats:chunky_cheese_token')
+  storeHelper.addRecipe('JER', dimToID('Ratlantis'), 'rats:chunky_cheese_token')
   ;(
     [
       ['advancedrocketry:rocketbuilder', ['Luna']],
@@ -169,6 +172,7 @@ export default function append_JER(storeHelper: RecipeStore, jer: JER_Entry[]) {
   ).forEach(([catl, arr]) =>
     arr.forEach((dim) =>
       storeHelper.addRecipe(
+        'JER',
         dimToID(dim),
         storeHelper.BH('fluid:rocketfuel', 10000),
         catl
@@ -197,6 +201,7 @@ function handleJerEntry(storeHelper: RecipeStore, jer_entry: JER_Entry) {
     storeHelper.BH(dimJERFieldToID(jer_entry.dim).id)
 
   storeHelper.addRecipe(
+    'JER',
     outBH,
     ii_exploration.withAmount(exploreComplexity),
     dimAddit
@@ -217,6 +222,7 @@ function handleDrops(storeHelper: RecipeStore, block: Stack, drop: DropsEntry) {
   // Skip adding if block drop itself
   if (ads === block.definition && out_amount === inp_amount) return
   storeHelper.addRecipe(
+    'JER',
     storeHelper.BH(id, out_amount),
     block.withAmount(inp_amount),
     ii_pick

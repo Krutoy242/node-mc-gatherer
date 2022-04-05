@@ -17,7 +17,8 @@ adapters.set(
       '|THAUMCRAFT_ASPECT_FROM_ITEMSTACK' +
       '|jeresources__worldgen' +
       '|petrified__burn__time' +
-      '|xu2__machine__extrautils2__generator__culinary'
+      '|xu2__machine__extrautils2__generator__culinary' +
+      '|jeresources__mob'
   ),
   (cat) => ((cat.recipes = []), cat)
 )

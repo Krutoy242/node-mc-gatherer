@@ -62,8 +62,9 @@ async function handleJEIE(
   )
 
   let recipesLength = category.recipes.length
+  const addRecipe = recHelper.forCategory(fileName)
   category.recipes.forEach((recipe) => {
-    recHelper.addRecipe(
+    addRecipe(
       convertItems(tooltipMap, recHelper, recipe.output.items),
       convertItems(tooltipMap, recHelper, recipe.input.items),
       catals

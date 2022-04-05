@@ -15,7 +15,11 @@ export default class Stack {
     return new Stack(this.definition, newAmount)
   }
 
-  public export() {
+  toString() {
     return `${this.amount}x ${this.definition.id}`
+  }
+
+  public export() {
+    return this.toString()
   }
 }

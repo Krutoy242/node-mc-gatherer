@@ -1,10 +1,10 @@
+import { createFileLogger } from '../log/logger'
+
 import DefinitionStore from './DefinitionStore'
 import Recipe from './Recipe'
 import Stack from './Stack'
 
-/* =============================================
-=           Recipes
-============================================= */
+const noReqLog = createFileLogger('noRequirmentRecipe.log')
 
 type AnyIngredient = Stack | string
 type AnyIngredients = AnyIngredient | AnyIngredient[] | undefined
@@ -28,13 +28,20 @@ export default class RecipeStore {
     return this.recipeStore.map((r) => r.export())
   }
 
-  addRecipe(...params: RecipeParams): boolean {
+  forCategory(categoryName: string) {
+    return (...params: RecipeParams) => this.addRecipe(categoryName, ...params)
+  }
+
+  addRecipe(categoryName: string, ...params: RecipeParams): boolean {
     const [outputs, inputs, catalysts] = params.map((p) =>
       this.anyRecipeParamToList(p)
     )
 
     if (!outputs.length) return false
-    if (!inputs.length && !catalysts?.length) return false
+    if (!inputs.length && !catalysts?.length) {
+      noReqLog(categoryName, ...outputs.map((o) => o.toString()), '\n')
+      return false
+    }
 
     const recipe = new Recipe(outputs, inputs, catalysts)
     const index = this.recipeStore.push(recipe)

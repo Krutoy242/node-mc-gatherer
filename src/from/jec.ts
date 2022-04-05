@@ -217,8 +217,9 @@ function applyToAdditionals(
 ) {
   const fromJECMap = (raw: JEC_Ingredient) =>
     fromJEC(storeHelper.definitionStore, raw)
+  const addRecipe = storeHelper.forCategory('JEC')
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
-    storeHelper.addRecipe(
+    addRecipe(
       output.map(fromJECMap),
       input.map(fromJECMap),
       catalyst.map(fromJECMap)
