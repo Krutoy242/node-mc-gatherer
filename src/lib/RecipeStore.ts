@@ -44,7 +44,7 @@ export default class RecipeStore {
       return false
     }
 
-    const recipe = new Recipe(outputs, inputs, catalysts)
+    const recipe = new Recipe(categoryName, outputs, inputs, catalysts)
     const index = this.store.push(recipe) - 1
     outputs.forEach((out) => {
       ;(out.definition.recipes ??= new Set()).add(index)

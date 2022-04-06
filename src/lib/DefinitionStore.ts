@@ -39,7 +39,7 @@ export default class DefinitionStore {
     return (this.store[id] ??= {
       id,
       iType,
-      complexity: 0.0,
+      complexity: 1000000.0,
       cost: 1000000.0,
       processing: 0.0,
       purity: 0.0,

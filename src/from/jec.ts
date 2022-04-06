@@ -1,7 +1,6 @@
 import DefinitionStore from '../lib/DefinitionStore'
 import RecipeStore from '../lib/RecipeStore'
 import Stack from '../lib/Stack'
-import { cleanupNbt } from '../lib/utils'
 
 import { OredictMap } from './oredict'
 
@@ -192,8 +191,6 @@ function mutateOreToItemstack(dict: OredictMap, raw: JEC_Ingredient) {
 
 function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
   if (raw.type === 'empty') return false
-
-  cleanupNbt(raw.content.nbt)
 
   if (isMutate) {
     const nbt = raw.content?.nbt

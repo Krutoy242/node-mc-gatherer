@@ -2,12 +2,14 @@ import Calculable from './Calculable'
 import Stack from './Stack'
 
 export default class Recipe implements Calculable {
-  complexity = 0.0
-  cost = 0.0
+  complexity = 1000000.0
+  cost = 1000000.0
   processing = 0.0
   purity = 0.0
 
   constructor(
+    /** Recipe source (category name) */
+    private source: string,
     public outputs: Stack[],
     public inputs?: Stack[],
     public catalysts?: Stack[]
@@ -15,9 +17,14 @@ export default class Recipe implements Calculable {
 
   export() {
     return {
+      source: this.source,
       outputs: this.outputs.map((o) => o.export()),
-      inputs: this.inputs?.map((o) => o.export()),
-      catalysts: this.catalysts?.map((o) => o.export()),
+      inputs: this.inputs?.length
+        ? this.inputs?.map((o) => o.export())
+        : undefined,
+      catalysts: this.catalysts?.length
+        ? this.catalysts.map((o) => o.export())
+        : undefined,
     }
   }
 }

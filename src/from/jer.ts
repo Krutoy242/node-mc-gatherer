@@ -5,8 +5,6 @@ import RecipeStore from '../lib/RecipeStore'
 import Stack from '../lib/Stack'
 import { createFileLogger } from '../log/logger'
 
-const { max, round } = Math
-
 interface JER_Entry {
   block: string
   distrib: string
@@ -74,7 +72,7 @@ export default function append_JER(
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
-    const outBH = recipesStore.BH(jer_entry.block)
+    const block = recipesStore.BH(jer_entry.block)
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const tool = generateTool(jer_entry.block)
@@ -82,13 +80,18 @@ export default function append_JER(
 
     recipesStore.addRecipe(
       'JER',
-      outBH,
+      block,
       ii_exploration.withAmount(exploreAmount),
       catalysts
     )
 
-    jer_entry.dropsList?.forEach((drop) => addDrops(outBH, drop))
-    ;(exploreAmounts[jer_entry.dim] ??= {})[outBH.definition.id] = exploreAmount
+    // Block drops
+    const drops = jer_entry.dropsList
+      ?.map((drop) => getDrops(block, drop))
+      .filter((s): s is Stack => !!s)
+
+    if (drops?.length) recipesStore.addRecipe('JER', drops, block, tool)
+    ;(exploreAmounts[jer_entry.dim] ??= {})[block.definition.id] = exploreAmount
   }
 
   function generateTool(blockId: string): string | undefined {
@@ -109,22 +112,13 @@ ${Object.entries(o)
     )
   )
 
-  function addDrops(block: Stack, drop: DropsEntry) {
-    const definition = recipesStore.definitionStore.get(drop.itemStack)
-
-    const fortunes = _.mean(Object.values(drop.fortunes)) || 1.0
-    const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
-    const out_amount = max(1, round(fortunes))
+  function getDrops(block: Stack, drop: DropsEntry): Stack | undefined {
+    const outAmount = _.mean(Object.values(drop.fortunes)) || 1
 
     // Skip adding if block drop itself
-    if (definition === block.definition && out_amount === inp_amount) return
+    if (drop.itemStack === block.definition.id && outAmount === 1) return
 
-    recipesStore.addRecipe(
-      'JER',
-      recipesStore.BH(definition.id, out_amount),
-      block.withAmount(inp_amount)
-      // ii_pick
-    )
+    return recipesStore.BH(drop.itemStack, outAmount)
   }
 }
 

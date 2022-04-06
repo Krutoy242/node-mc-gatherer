@@ -79,7 +79,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     action: (t) => t,
   })
 
-  const dict = runTask({
+  const oreDict = runTask({
     description: 'append_oreDicts',
     action: () => genOreDictionary(crafttweaker_log),
   })
@@ -91,7 +91,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
         options.mc,
         '/config/JustEnoughCalculation/data/groups.json'
       ),
-      action: (text) => append_JECgroups(recipesStore, dict, text),
+      action: (text) => append_JECgroups(recipesStore, oreDict, text),
     })
 
   logTask('Add custom recipes')
@@ -126,7 +126,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   if (options['jeie'])
     await runTask({
       description: 'append_JEIExporter',
-      action: () => append_JEIExporter(tooltipMap, recipesStore, options.mc),
+      action: () => append_JEIExporter(tooltipMap, oreDict, recipesStore, options.mc),
     })
 
   runTask({

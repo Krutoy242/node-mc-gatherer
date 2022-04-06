@@ -59,14 +59,20 @@ export default class Calculator {
     }
 
     const computedArr = Object.values(this.definitionStore.store)
-      .filter((def) => def.complexity !== 0)
+      .filter((def) => def.purity > 0)
       .sort((a, b) => a.complexity - b.complexity)
       .map(
         (d) => `${getPurity(d.purity)}${d.complexity} "${d.display}" ${d.id}`
       )
 
-    function getPurity(purity: number): string {
-      return `▕${'█▇▆▅▄▃▂▁'[-Math.log2(purity) | 0] ?? ' '}▏`
+    function getPurity(n: number): string {
+      return `▕${
+        n === 0
+          ? ' '
+          : n === 1
+          ? '█'
+          : '▇▆▅▄▃▂▁'[Math.min(6, -Math.log10(n) | 0)]
+      }▏`
     }
 
     console.log('Succesfully computed:', computedArr.length)
@@ -78,13 +84,16 @@ export default class Calculator {
    * @returns `true` if new value calculated, `false` if not changed or unable to
    */
   private calcRecipe(rec: Recipe): boolean {
+    // const purity =
+    //   (this.getStacksMean(rec.inputs, 'purity') +
+    //     this.getStacksMean(rec.catalysts, 'purity')) /
+    //   ((rec.inputs?.length ? 1 : 0) + (rec.catalysts?.length ? 1 : 0))
     const purity =
-      (this.getStacksMean(rec.inputs, 'purity') +
-        this.getStacksMean(rec.catalysts, 'purity')) /
-      ((rec.inputs?.length ? 1 : 0) + (rec.catalysts?.length ? 1 : 0))
+      (rec.inputs?.reduce((a, b) => a * b.definition.purity, 1.0) ?? 1.0) *
+      (rec.catalysts?.reduce((a, b) => a * b.definition.purity, 1.0) ?? 1.0)
     if (rec.purity > purity) return false
 
-    const cost = this.getStacksSumm(rec.inputs, 'complexity') + 1.0
+    const cost = this.getStacksSumm(rec.inputs, 'cost') + 1.0
     const processing = this.getStacksSumm(rec.catalysts, 'complexity') + 1.0
     const complexity = cost + processing
     if (rec.complexity === complexity) return false
