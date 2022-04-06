@@ -73,10 +73,15 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   // Init Crafting Table as first item
   definitionStore.get('minecraft:crafting_table:0')
 
+  const crafttweaker_log = runTask({
+    description: 'Open Crafttweaker',
+    textSource: join(options.mc, '/crafttweaker.log'),
+    action: (t) => t,
+  })
+
   const dict = runTask({
     description: 'append_oreDicts',
-    textSource: join(options.mc, '/crafttweaker.log'),
-    action: genOreDictionary,
+    action: () => genOreDictionary(crafttweaker_log),
   })
 
   if (options['jec'])
@@ -106,7 +111,8 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   runTask({
     description: 'append_JER',
     textSource: join(options.mc, 'config/jeresources/world-gen.json'),
-    action: (text) => append_JER(recipesStore, JSON.parse(text)),
+    action: (text) =>
+      append_JER(recipesStore, JSON.parse(text), crafttweaker_log),
   })
 
   const tooltipMap = runTask({

@@ -61,7 +61,13 @@ export default class Calculator {
     const computedArr = Object.values(this.definitionStore.store)
       .filter((def) => def.complexity !== 0)
       .sort((a, b) => a.complexity - b.complexity)
-      .map((def) => `${def.complexity} "${def.display}" ${def.id}`)
+      .map(
+        (d) => `${getPurity(d.purity)}${d.complexity} "${d.display}" ${d.id}`
+      )
+
+    function getPurity(purity: number): string {
+      return `▕${'█▇▆▅▄▃▂▁'[-Math.log2(purity) | 0] ?? ' '}▏`
+    }
 
     console.log('Succesfully computed:', computedArr.length)
     logComputed(computedArr.join('\n'))

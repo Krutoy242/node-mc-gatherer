@@ -1,7 +1,9 @@
 import _ from 'lodash'
 
+import getTool from '../adapters/mining_levels'
 import RecipeStore from '../lib/RecipeStore'
 import Stack from '../lib/Stack'
+import { createFileLogger } from '../log/logger'
 
 const { max, round } = Math
 
@@ -25,54 +27,8 @@ interface Fortunes {
   '3'?: number
 }
 
-// type DimensionDisplay = `${string & ''} (${number})`
-type DimensionDisplay = string
-const worldDifficulty: Record<DimensionDisplay, number> = {
-  'Overworld (0)': 1.0,
-  'Nether (-1)': 1.0,
-  'The End (1)': 1.0,
-  'Twilight Forest (7)': 1.0,
-  'Ratlantis (-8)': 1.0,
-  'Deep Dark (-11325)': 1.0,
-  'Luna (100)': 1.0,
-  'Mercury (101)': 1.0,
-  'Venus (102)': 1.0,
-  'Mars (103)': 1.0,
-  'Io (105)': 1.0,
-  'Europa (106)': 1.0,
-  'Titan (108)': 1.0,
-  'Uranus (109)': 1.0,
-  'Neptune (110)': 1.0,
-  'Proxima B (111)': 1.0,
-  'Terra Nova (112)': 1.0,
-  'Novus (113)': 1.0,
-  'Stella (114)': 1.0,
-  'KELT-2ab (118)': 1.0,
-  'KELT-3 (119)': 1.0,
-  'KELT-4ab (120)': 1.0,
-  'KELT-6a (121)': 1.0,
-  'Kepler 0118 (122)': 1.0,
-  'Kepler 0119 (123)': 1.0,
-  'Emptiness (14676)': 1.0,
-}
-
-const EXPLORATION_MAX_COST = 10000
-
-function dimToID(name: string) {
-  return 'placeholder:dim_' + name.toLowerCase()
-}
-
-let ii_exploration: Stack
-// let ii_pick: Stack
-const dimensionPHs: Record<keyof typeof worldDifficulty, Stack> = {}
-function dimJERFieldToID(key: string) {
-  const matches = key.match(/(.+) \((-?\d+)\)/)
-  const name = matches ? matches[1] : key
-  return { id: dimToID(name), display: name }
-}
-
 // Get maximim difficulty when mining
-const H = 255
+const maxHeight = 255
 const MID = 70
 function difficulty_from_level(x: number) {
   // return 1
@@ -81,91 +37,133 @@ function difficulty_from_level(x: number) {
   const r = (2 ** (b - x / (MID / b)) + x ** 2 / c ** 2) / (MID * 2) - 0.025
   return 1 - Math.min(Math.max(0, r), 1)
 }
-const maxHeightDiff = _.sum(
-  new Array(H).map((_, i) => difficulty_from_level(i))
-)
+const maxHeightDiff = new Array(maxHeight)
+  .fill(0)
+  .map((_a, i) => difficulty_from_level(i))
+  .reduce((a, b) => a + b)
 
-const probFactor = 4
+const probFactor = 0.25
 
-function getJERProbability(rawStrData: string) {
-  return (
-    _.sum(
-      rawStrData
-        .split(';')
-        .map((s) => s.split(',').map(parseFloat))
-        .filter((o) => !isNaN(o[0]))
-        .map(
-          ([lvl, prob]) =>
-            difficulty_from_level(lvl) * prob ** probFactor /* **(1/2) */
-        )
-    ) / maxHeightDiff
-  )
+function getDifficulty(lvl: number, prob: number): number {
+  return (difficulty_from_level(lvl) * prob ** probFactor) / maxHeightDiff
 }
 
-export default function append_JER(storeHelper: RecipeStore, jer: JER_Entry[]) {
-  ii_exploration = storeHelper.BH('placeholder:exploration')
-  // ii_pick = storeHelper.BH('minecraft:stone_pickaxe:0')
+function getJERProbability(rawStrData: string) {
+  const probs = rawStrData
+    .split(';')
+    .map((s) => s.split(',').map(parseFloat))
+    .filter((o) => !isNaN(o[0]))
+    .map(([lvl, prob]) => getDifficulty(lvl, prob))
+  return 1 / _.sum(probs)
+}
 
-  Object.entries(worldDifficulty).forEach(([key]) => {
-    const parsed = dimJERFieldToID(key)
-    dimensionPHs[key] = storeHelper.BH(parsed.id)
-    dimensionPHs[key].definition.display = parsed.display
-  })
+function jerDimToPlaceholder(jerDimText: string): string {
+  return 'placeholder:' + jerDimText.toLowerCase().replace(/:/g, '_')
+}
 
+export default function append_JER(
+  recipesStore: RecipeStore,
+  jer: JER_Entry[],
+  crafttweakerLogTxt: string
+) {
+  const log = createFileLogger('jer_exploration.log')
+  const blockMinings = generateBlockMinings(crafttweakerLogTxt)
+
+  let ii_exploration = recipesStore.BH('placeholder:exploration')
+  // let ii_pick = recipesStore.BH('minecraft:stone_pickaxe:0')
+
+  const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
-    handleJerEntry(storeHelper, jer_entry)
+    const outBH = recipesStore.BH(jer_entry.block)
+    const exploreAmount = getJERProbability(jer_entry.distrib)
+    const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
+    const tool = generateTool(jer_entry.block)
+    if (tool) catalysts.push(tool)
+
+    recipesStore.addRecipe(
+      'JER',
+      outBH,
+      ii_exploration.withAmount(exploreAmount),
+      catalysts
+    )
+
+    jer_entry.dropsList?.forEach((drop) => addDrops(outBH, drop))
+    ;(exploreAmounts[jer_entry.dim] ??= {})[outBH.definition.id] = exploreAmount
+  }
+
+  function generateTool(blockId: string): string | undefined {
+    const bMining = blockMinings[blockId]
+    if (!bMining) return
+    return getTool(bMining.toolClass, bMining.level)
+  }
+
+  log(
+    Object.entries(exploreAmounts).map(
+      ([dim, o]) => `
+"${dim}": {
+${Object.entries(o)
+  .sort(([, a], [, b]) => a - b)
+  .map(([id, n]) => `  ${n} ${id}`)
+  .join('\n')}
+  }`
+    )
+  )
+
+  function addDrops(block: Stack, drop: DropsEntry) {
+    const definition = recipesStore.definitionStore.get(drop.itemStack)
+
+    const fortunes = _.mean(Object.values(drop.fortunes)) || 1.0
+    const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
+    const out_amount = max(1, round(fortunes))
+
+    // Skip adding if block drop itself
+    if (definition === block.definition && out_amount === inp_amount) return
+
+    recipesStore.addRecipe(
+      'JER',
+      recipesStore.BH(definition.id, out_amount),
+      block.withAmount(inp_amount)
+      // ii_pick
+    )
   }
 }
 
-function handleJerEntry(storeHelper: RecipeStore, jer_entry: JER_Entry) {
-  const outID = normJERId(jer_entry.block)
-  const outBH = storeHelper.BH(outID)
-
-  // 0 .. 1
-  const probability =
-    getJERProbability(jer_entry.distrib) **
-    (1 / (0.05 * probFactor * EXPLORATION_MAX_COST))
-
-  const worldMultiplier = worldDifficulty[jer_entry.dim] ?? 1.0
-  const exploreComplexity = Math.max(
-    1,
-    worldMultiplier * (1 - probability) * EXPLORATION_MAX_COST
-  )
-
-  const dimAddit =
-    dimensionPHs[jer_entry.dim] ??
-    storeHelper.BH(dimJERFieldToID(jer_entry.dim).id)
-
-  storeHelper.addRecipe(
-    'JER',
-    outBH,
-    ii_exploration.withAmount(exploreComplexity),
-    dimAddit
-  )
-
-  if (jer_entry.dropsList)
-    jer_entry.dropsList.forEach((drop) => handleDrops(storeHelper, outBH, drop))
+export interface BlockMinings {
+  [id: string]: {
+    hardness: number
+    toolClass: string
+    level: number
+  }
 }
 
-function handleDrops(storeHelper: RecipeStore, block: Stack, drop: DropsEntry) {
-  const id = normJERId(drop.itemStack)
-  const ads = storeHelper.definitionStore.get(id)
+function getTextFromTo(text: string, from: string, to: string): string {
+  const startIndex = text.indexOf(from)
+  if (startIndex === -1) return ''
 
-  const fortunes = _.mean(Object.values(drop.fortunes)) || 1.0
-  const inp_amount = max(1, round(fortunes < 1 ? 1 / fortunes : 1))
-  const out_amount = max(1, round(fortunes))
+  const sub = text.substring(startIndex + from.length)
+  const endIndex = sub.indexOf(to)
 
-  // Skip adding if block drop itself
-  if (ads === block.definition && out_amount === inp_amount) return
-  storeHelper.addRecipe(
-    'JER',
-    storeHelper.BH(id, out_amount),
-    block.withAmount(inp_amount)
-    // ii_pick
-  )
+  return endIndex === -1 ? sub : sub.substring(0, endIndex)
 }
 
-function normJERId(itemStack: string): string {
-  return itemStack
-  // return itemStack.replace(/^([^:]+:[^:]+:\d+):(\{.*\})$/, '$1$2')
+function generateBlockMinings(crafttweakerLogTxt: string): BlockMinings {
+  const txtBlock = getTextFromTo(
+    crafttweakerLogTxt,
+    '#          Harvest tool and level                #',
+    '##################################################'
+  )
+  if (!txtBlock) throw new Error('Cant read harvest data from crafttweaker.log')
+
+  const result: BlockMinings = {}
+  for (const { groups } of txtBlock.matchAll(
+    /^\[SERVER_STARTED\]\[SERVER\]\[INFO\] <(?<id>[^>]+)> = (?<hardness>[^:]+):(?<toolClass>[^:]+):(?<level>.+)$/gm
+  )) {
+    if (!groups) continue
+    result[groups.id] = {
+      hardness: Number(groups.hardness),
+      toolClass: groups.toolClass,
+      level: Number(groups.level),
+    }
+  }
+  return result
 }

@@ -19,7 +19,7 @@ export default function addRecipes(
   addRecipe(dimToID('Twilight Forest'), 'minecraft:diamond:0')
   addRecipe(
     dimToID('Deep Dark'),
-    'placeholder:Exploration:0',
+    'placeholder:exploration',
     'extrautils2:teleporter:1'
   )
   addRecipe(dimToID('Ratlantis'), 'rats:chunky_cheese_token:0')
