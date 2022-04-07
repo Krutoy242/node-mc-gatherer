@@ -67,12 +67,14 @@ export default function append_JER(
   const log = createFileLogger('jer_exploration.log')
   const blockMinings = generateBlockMinings(crafttweakerLogTxt)
 
-  let ii_exploration = recipesStore.BH('placeholder:exploration')
+  let ii_exploration = recipesStore.definitionStore
+    .getBased('placeholder', 'exploration')
+    .stack()
   // let ii_pick = recipesStore.BH('minecraft:stone_pickaxe:0')
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
-    const block = recipesStore.BH(jer_entry.block)
+    const block = recipesStore.definitionStore.getItem(jer_entry.block).stack()
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const tool = generateTool(jer_entry.block)
@@ -118,7 +120,7 @@ ${Object.entries(o)
     // Skip adding if block drop itself
     if (drop.itemStack === block.definition.id && outAmount === 1) return
 
-    return recipesStore.BH(drop.itemStack, outAmount)
+    return recipesStore.definitionStore.getItem(drop.itemStack).stack(outAmount)
   }
 }
 

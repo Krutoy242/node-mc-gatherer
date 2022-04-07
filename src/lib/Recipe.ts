@@ -2,8 +2,8 @@ import Calculable from './Calculable'
 import Stack from './Stack'
 
 export default class Recipe implements Calculable {
-  complexity = 1000000.0
-  cost = 1000000.0
+  complexity = 0.0
+  cost = 0.0
   processing = 0.0
   purity = 0.0
 
@@ -31,13 +31,18 @@ export default class Recipe implements Calculable {
   toString() {
     return (
       `  [${this.source}]` +
-      (!this.inputs?.length
-        ? ''
-        : '\n  ⮮ ' + this.inputs?.map((o) => o.toString())) +
-      (!this.catalysts?.length
-        ? ''
-        : '\n  ▒ ' + this.catalysts?.map((o) => o.toString())) +
-      `\n  ⮩ ${this.outputs.map((o) => o.toString())}`
+      this.listToString('\n  ⮮ ', 'inputs') +
+      this.listToString('\n  ☐ ', 'catalysts') +
+      this.listToString('\n  ⮩ ', 'outputs')
     )
+  }
+
+  listToString(
+    prefix: string,
+    listName: 'outputs' | 'inputs' | 'catalysts'
+  ): string {
+    return !this[listName]?.length
+      ? ''
+      : prefix + (this[listName]?.map((o) => o.toString()).join(', ') ?? '')
   }
 }

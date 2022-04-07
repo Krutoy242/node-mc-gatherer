@@ -26,7 +26,7 @@ export default class Calculator {
     // Assign predefined values
     Object.entries(predefined).forEach(([id, val]) =>
       this.calcDefinition(
-        this.definitionStore.get(`placeholder:${id}`),
+        this.definitionStore.getBased('placeholder', id),
         {
           purity: 1.0,
           cost: val,
@@ -139,7 +139,7 @@ export default class Calculator {
   }
 
   private logTreeTo(id: string): string {
-    const def = this.definitionStore.get(id)
+    const def = this.definitionStore.getUnsafe(id)
     return this.defToString(def).join('\n')
   }
 

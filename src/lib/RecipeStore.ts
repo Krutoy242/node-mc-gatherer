@@ -25,10 +25,6 @@ export default class RecipeStore {
     return this.store.length
   }
 
-  BH(str: string, amount?: number) {
-    return new Stack(this.definitionStore.get(str), amount)
-  }
-
   export() {
     return this.store.map((r) => r.export())
   }
@@ -67,14 +63,14 @@ export default class RecipeStore {
 
   private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
     return typeof anyIngrs === 'string'
-      ? new Stack(this.definitionStore.get(anyIngrs))
+      ? this.definitionStore.getAuto(anyIngrs).stack()
       : anyIngrs
   }
 
   private anyRecipeParamToList(anyIngrs: AnyIngredients): Stack[] {
     if (!anyIngrs) return []
     if (typeof anyIngrs === 'string')
-      return [new Stack(this.definitionStore.get(anyIngrs))]
+      return [this.definitionStore.getAuto(anyIngrs).stack()]
     if (Array.isArray(anyIngrs))
       return anyIngrs.map((p) => this.anyRecipeParam(p))
     return [anyIngrs]

@@ -231,15 +231,18 @@ function amount_jec(raw: JEC_Ingredient) {
 }
 
 function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
-  type Triple = [string, string, number?]
-  const switcher: Record<string, () => Triple> = {
-    itemStack: (): Triple => [
+  type Typle = [string, string, number?]
+  const switcher: Record<string, () => Typle> = {
+    itemStack: (): Typle => [
       ...(raw.content?.item?.split(':') as [string, string]),
       raw.content.meta ?? 0,
     ],
-    fluidStack: (): Triple => ['fluid', raw.content.fluid as string],
-    oreDict: (): Triple => ['ore', raw.content.name as string],
-    placeholder: (): Triple => ['placeholder', raw.content.name as string],
+    fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
+    oreDict: (): Typle => ['ore', raw.content.name as string],
+    placeholder: (): Typle => [
+      'placeholder',
+      raw.content.name?.toLowerCase() as string,
+    ],
   }
   const [source, entry, meta] = switcher[raw.type]()
 
@@ -250,11 +253,7 @@ function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
     : raw.content.nbt
 
   return new Stack(
-    storeHelper.get(
-      `${source}:${entry}:` +
-        (raw.content.fMeta ? 0 : meta ?? 0) +
-        (sNbt ? ':' + sNbt : '')
-    ),
+    storeHelper.getBased(source, entry, raw.content.fMeta ? 0 : meta, sNbt),
     amount_jec(raw)
   )
 }

@@ -2,7 +2,7 @@
 =           Additionals Store
 ============================================= */
 
-import { ITypes } from '../from/JEIExporterTypes'
+import { ITypes, iTypesMap } from '../from/JEIExporterTypes'
 
 import Definition from './Definition'
 
@@ -16,11 +16,50 @@ export interface DefinitionStoreMap {
   [id: string]: Definition
 }
 
+function sourceToType(source: string): ITypes {
+  return (iTypesMap as any)[source] ?? 'item'
+}
+
 export default class DefinitionStore {
   store: DefinitionStoreMap = {}
 
-  get(id: string, iType: ITypes = 'item'): Definition {
+  getUnsafe(id: string): Definition {
+    const result = this.store[id]
+    if (!result) throw new Error('Cannot get ' + id)
+    return result
+  }
+
+  getById(id: string, iType: ITypes): Definition {
     return (this.store[id] ??= new Definition(id, iType))
+  }
+
+  getItem(id: string): Definition {
+    return this.getById(id, 'item')
+  }
+
+  getAuto(id: string): Definition {
+    const splitted: Parameters<this['getBased']> = id.split(':') as any
+    if (splitted.length <= 1) throw new Error('Cannot autoget by id: ' + id)
+    return this.getBased(
+      splitted[0],
+      splitted[1],
+      splitted[2],
+      splitted.slice(3).join(':')
+    )
+  }
+
+  getBased(
+    source: string,
+    entry: string,
+    _meta?: number | string,
+    sNbt?: string
+  ): Definition {
+    // eslint-disable-next-line eqeqeq
+    const meta = _meta == 32767 || _meta == '*' ? 0 : _meta
+    const id = `${source}:${entry}${meta !== undefined ? ':' + meta : ''}${
+      sNbt ? ':' + sNbt : ''
+    }`
+    return this.getById(id, sourceToType(source))
   }
 
   export() {

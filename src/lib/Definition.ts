@@ -1,10 +1,11 @@
 import { ITypes } from '../from/JEIExporterTypes'
 
 import Calculable from './Calculable'
+import Stack from './Stack'
 
 export default class Definition implements Calculable {
-  complexity = 1000000.0
-  cost = 1000000.0
+  complexity = 0.0
+  cost = 0.0
   processing = 0.0
   purity = 0.0
 
@@ -27,6 +28,10 @@ export default class Definition implements Calculable {
     return `${getPurity(this.purity)}${this.complexity} "${this.display}" ${
       this.id
     }`
+  }
+
+  stack(amount = 1): Stack {
+    return new Stack(this, amount)
   }
 }
 

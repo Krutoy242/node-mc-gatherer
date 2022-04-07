@@ -75,7 +75,7 @@ function assignVisuals(
   if (!tag) attempts.unshift(key)
   else attempts.push(`${source}:${entry}:${meta ?? 0}:${unsignedHash(tag)}`)
   let map = nameMap[def.iType]
-  attempts.forEach((id) => (def.display ??= map[id]?.en_us))
+  if (map) attempts.forEach((id) => (def.display ??= map[id]?.en_us))
 
   // for Fluids
   map = (nameMap as any)[source]

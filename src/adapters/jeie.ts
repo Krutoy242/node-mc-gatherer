@@ -1,5 +1,6 @@
 import {
   Ingredient,
+  Item,
   JEIECustomRecipe,
   JEIERecipe,
   JEIExporterCategory,
@@ -7,8 +8,13 @@ import {
 } from '../from/JEIExporterTypes'
 const { max, min } = Math
 
-const adapters: Map<RegExp, (cat: JEIExporterCategory) => JEIECustomRecipe[]> =
-  new Map()
+const adapters: Map<
+  RegExp,
+  (
+    cat: JEIExporterCategory,
+    getFullStack: (ingr: Item) => string
+  ) => JEIECustomRecipe[]
+> = new Map()
 
 function getItem(id: string, amount = 1): Ingredient {
   return { amount, stacks: [{ type: 'item', name: id }] }
@@ -156,6 +162,24 @@ adapters.set(/tinkersjei__tool_stats/, (cat) => {
       })
     })
   return newRecipes
+})
+
+// Everything
+adapters.set(/.*/, (cat, getFullID) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items.forEach((slot) => {
+      slot.stacks.forEach((stack) => {
+        if (!stack.name.startsWith('forge:bucketfilled:0:')) return
+        const m = getFullID(stack).match(
+          /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000\}$/
+        )
+        if (!m) return
+        stack.type = 'fluid'
+        stack.name = m[1]
+      })
+    })
+  })
+  return cat.recipes
 })
 
 export default adapters

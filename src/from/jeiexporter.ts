@@ -11,6 +11,7 @@ import { CountableFunction, createFileLogger } from '../log/logger'
 import {
   Ingredient,
   Item,
+  iTypeAddPrefix,
   ITypes,
   JEIECustomRecipe,
   JEIExporterCategory,
@@ -29,15 +30,6 @@ const adapterEntries = [...adapters.entries()]
 
 const relPath = 'exports/recipes'
 
-const typeMap: Record<ITypes, string> = {
-  fluid: 'fluid',
-  item: '',
-  oredict: 'ore',
-  'requious.compat.jei.ingredient.Energy': 'fe',
-  'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'fe',
-  'thaumcraft.api.aspects.AspectList': 'aspect',
-}
-
 export default async function append_JEIExporter(
   tooltipMap: NameMap,
   oreDict: OredictMap,
@@ -46,7 +38,8 @@ export default async function append_JEIExporter(
 ) {
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
-  const makeStack = (i: Item, n?: number) => recHelper.BH(getStack(i), n)
+  const makeStack = (i: Item, n?: number) =>
+    recHelper.definitionStore.getAuto(getFullStack(i)).stack(n)
 
   console.log(`~~ Found ${jsonList.length} .json JEIExporter files`)
 
@@ -68,7 +61,11 @@ export default async function append_JEIExporter(
       readFileSync(filePath, 'utf8')
     )
     adapterList.forEach(
-      ([, adapter]) => (category = { ...category, recipes: adapter(category) })
+      ([, adapter]) =>
+        (category = {
+          ...category,
+          recipes: adapter(category, getFullStack),
+        })
     )
     if (!category.recipes.length) return
 
@@ -94,36 +91,44 @@ export default async function append_JEIExporter(
   function convertItems(items: Ingredient[]) {
     const list = items
       .filter((it) => it.amount > 0 && it.stacks.some((st) => st.name))
-      .map((item) => recHelper.BH(getFromStacks(item.stacks), item.amount))
+      .map((item) =>
+        recHelper.definitionStore
+          .getAuto(getFromStacks(item.stacks))
+          .stack(item.amount)
+      )
 
     return list
   }
 
   function getFromStacks(stacks: Item[]): string {
-    return getStack(stacks[0])
+    return getFullStack(stacks[0])
   }
 
-  function getStack(ingr: Item): string {
+  function getFullStack(ingr: Item): string {
     if (ingr.type === 'oredict') {
       const oreItem = oreDict[ingr.name]
       if (!oreItem) throw new Error('No item found for ore: ' + ingr.name)
       return oreItem
     }
 
-    const id = ingr.name
-    const splitted = id.split(':')
+    const splitted = ingr.name.split(':')
     let sNbt = ''
+    let base: string
     if (splitted.length > 3) {
-      // Have hashed NBT
-      sNbt = tooltipMap[ingr.type][ingr.name]?.tag ?? ''
+      base = splitted.slice(0, 3).join(':')
+      if (splitted[3] !== 'f62') {
+        // f62 is hash of "{}" - empty nbt. Just clean it
+        sNbt = tooltipMap[ingr.type][ingr.name]?.tag ?? ''
+      }
+    } else base = ingr.name
+
+    let prefix = iTypeAddPrefix[ingr.type]
+    if (prefix === undefined) {
+      console.log('⚠️  Unregistered JEIExporter type:', ingr.type)
+      prefix = 'item'
     }
 
-    const prefix = typeMap[ingr.type]
-    return (
-      (prefix ? prefix + ':' : '') +
-      (splitted.length < 4 ? id : splitted.slice(0, 3).join(':')) +
-      (sNbt ? ':' + sNbt : '')
-    )
+    return (prefix ? prefix + ':' : '') + base + (sNbt ? ':' + sNbt : '')
   }
 
   return all

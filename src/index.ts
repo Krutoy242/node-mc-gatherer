@@ -49,7 +49,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   const runTask = createRunTask(definitionStore, recipesStore)
 
   // Init Crafting Table as first item
-  definitionStore.get('minecraft:crafting_table:0')
+  definitionStore.getItem('minecraft:crafting_table:0')
 
   const crafttweaker_log: string = runTask({
     textSource: fromMC('/crafttweaker.log'),
@@ -108,7 +108,10 @@ export default async function mcGather(options: Options): Promise<ExportData> {
 
       const splitted = g.id.split(':')
       const iType: ITypes = splitted[0] === 'fluid' ? 'fluid' : 'item'
-      return new Stack(definitionStore.get(g.id, iType), g.amount ? amount : 1)
+      return new Stack(
+        definitionStore.getById(g.id, iType),
+        g.amount ? amount : 1
+      )
     })
   }
 

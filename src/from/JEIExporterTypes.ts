@@ -34,13 +34,38 @@ export interface Item {
   name: string
 }
 
-export type ITypes =
-  | 'item'
-  | 'oredict'
-  | 'fluid'
-  | 'requious.compat.jei.ingredient.Energy'
-  | 'crazypants.enderio.base.integration.jei.energy.EnergyIngredient'
-  | 'thaumcraft.api.aspects.AspectList'
+export const iTypesMap = {
+  _GenericMultiblockIngredient:
+    'mctmods.immersivetechnology.common.util.compat.jei.GenericMultiblockIngredient',
+  _hybridFluid:
+    'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid',
+  aspect: 'thaumcraft.api.aspects.AspectList',
+  energy: 'crazypants.enderio.base.integration.jei.energy.EnergyIngredient',
+  fluid: 'fluid',
+  gas: 'mekanism.api.gas.GasStack',
+  item: 'item',
+  liquid: 'fluid',
+  ore: 'oredict',
+  placeholder: 'placeholder',
+  rf: 'requious.compat.jei.ingredient.Energy',
+} as const
+
+export const iTypeAddPrefix: Record<ITypes, string> = {
+  'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'fe',
+  'mekanism.api.gas.GasStack': 'gas',
+  'requious.compat.jei.ingredient.Energy': 'fe',
+  'thaumcraft.api.aspects.AspectList': 'aspect',
+  'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid':
+    'fluid',
+  'mctmods.immersivetechnology.common.util.compat.jei.GenericMultiblockIngredient':
+    'multiblock',
+  fluid: 'fluid',
+  item: '',
+  oredict: 'ore',
+  placeholder: 'placeholder',
+}
+
+export type ITypes = typeof iTypesMap[keyof typeof iTypesMap]
 
 export type NameMap = Record<ITypes, Visible>
 export type Visible = Record<string, NameData>
