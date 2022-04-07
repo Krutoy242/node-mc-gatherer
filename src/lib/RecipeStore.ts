@@ -21,6 +21,10 @@ export default class RecipeStore {
 
   constructor(public definitionStore: DefinitionStore) {}
 
+  size() {
+    return this.store.length
+  }
+
   BH(str: string, amount?: number) {
     return new Stack(this.definitionStore.get(str), amount)
   }

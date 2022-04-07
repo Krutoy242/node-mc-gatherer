@@ -9,6 +9,7 @@ Lunch with NodeJS
 import fs from 'fs'
 import { join } from 'path'
 
+import chalk from 'chalk'
 import glob from 'glob'
 
 import exportData, { ExportData } from './Export'
@@ -31,32 +32,6 @@ function loadText(filename: string): string {
 /* =============================================
 =
 ============================================= */
-
-function logTask(desc: string) {
-  console.log('*️⃣  ' + desc)
-}
-
-function runTask<T>(opts: {
-  description: string
-  textSource?: string
-  action: (text: string) => T
-  fileError?: string
-}): T {
-  logTask(opts.description)
-  let text = ''
-  if (opts.textSource)
-    try {
-      text = loadText(opts.textSource)
-    } catch (err: unknown) {
-      console.error(`🛑  Error at task: ${opts.fileError}`)
-      throw new Error('Unable to complete task')
-    }
-  return opts.action(text)
-}
-
-/* =============================================
-=
-============================================= */
 interface Options {
   /** Minecraft path */
   readonly mc: string
@@ -66,67 +41,81 @@ interface Options {
 }
 
 export default async function mcGather(options: Options): Promise<ExportData> {
-  console.log('*️⃣ Initializing')
+  console.log(' ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
   const definitionStore = new DefinitionStore()
   const recipesStore = new RecipeStore(definitionStore)
+  const fromMC = (filePath: string) => join(options.mc, filePath)
+  const runTask = createRunTask(definitionStore, recipesStore)
 
   // Init Crafting Table as first item
   definitionStore.get('minecraft:crafting_table:0')
 
-  const crafttweaker_log = runTask({
-    description: 'Open Crafttweaker',
-    textSource: join(options.mc, '/crafttweaker.log'),
-    action: (t) => t,
+  const crafttweaker_log: string = runTask({
+    textSource: fromMC('/crafttweaker.log'),
+    fileError: 'Unable to open crafttweaker.log file',
   })
 
   const oreDict = runTask({
-    description: 'append_oreDicts',
+    description: 'Creating OreDict',
     action: () => genOreDictionary(crafttweaker_log),
+    moreInfo: (info) =>
+      `OreDict size: ${chalk.green(Object.keys(info.result).length)}`,
   })
 
   if (options['jec'])
     runTask({
-      description: 'append_JECgroups',
-      textSource: join(
-        options.mc,
-        '/config/JustEnoughCalculation/data/groups.json'
-      ),
+      description: 'Addding JEC recipes',
+      textSource: fromMC('/config/JustEnoughCalculation/data/groups.json'),
       action: (text) => append_JECgroups(recipesStore, oreDict, text),
+      moreInfo: (info) => `Added recipes: ${chalk.green(info.result)}`,
     })
 
-  logTask('Add custom recipes')
-  ;(
-    await Promise.all(
-      glob
-        .sync('src/adapters/recipes/**/*.ts')
-        .map((filePath) => import('./' + filePath.substring(4)))
-    )
-  ).map((modl) =>
-    modl.default(
-      (s: string) => recipesStore.forCategory(s),
-      (s: string, n?: number) => recipesStore.BH(s, n)
-    )
+  const adapters = await Promise.all(
+    glob
+      .sync('src/adapters/recipes/**/*.ts')
+      .map((filePath) => import('./' + filePath.substring(4)))
   )
-
   runTask({
-    description: 'append_JER',
-    textSource: join(options.mc, 'config/jeresources/world-gen.json'),
-    action: (text) =>
-      append_JER(recipesStore, JSON.parse(text), crafttweaker_log),
+    description: 'Add custom recipes',
+    action: () =>
+      adapters.map((modModule) =>
+        modModule.default(
+          (s: string) => recipesStore.forCategory(s),
+          (s: string, n?: number) => recipesStore.BH(s, n)
+        )
+      ),
+    moreInfo: (info) => `Added recipes: ${chalk.green(info.addedRecs)}`,
   })
 
-  const tooltipMap = runTask({
-    description: 'Opening Tooltip map',
-    textSource: join(options.mc, 'exports/nameMap.json'),
+  runTask({
+    description: 'Append JER recipes',
+    textSource: fromMC('config/jeresources/world-gen.json'),
+    action: (text) =>
+      append_JER(recipesStore, JSON.parse(text), crafttweaker_log),
+    moreInfo: (info) => `Added: ${chalk.green(info.addedRecs)}`,
+  })
+
+  const tooltipMap: NameMap = runTask({
+    description: 'Loading Tooltip map',
+    textSource: fromMC('exports/nameMap.json'),
     action: (text) => JSON.parse(text) as NameMap,
+    moreInfo: (i) =>
+      `Loaded: ${chalk.green(
+        Object.values(i.result as NameMap).reduce(
+          (a, b) => a + Object.keys(b).length,
+          0
+        )
+      )}`,
     fileError:
-      'tooltipMap.json cant be opened. This file should be created by JEIExporter',
+      'tooltipMap.json cant be opened. ' +
+      'This file should be created by JEIExporter',
   })
 
   if (options['jeie'])
     await runTask({
-      description: 'append_JEIExporter',
-      action: () => append_JEIExporter(tooltipMap, oreDict, recipesStore, options.mc),
+      description: 'Loading JEIExporter\n',
+      action: () =>
+        append_JEIExporter(tooltipMap, oreDict, recipesStore, options.mc),
     })
 
   runTask({
@@ -135,8 +124,59 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
   })
 
-  /* =====  Output parsed data ====== */
-  // Remove technical data
-
   return exportData(recipesStore, tooltipMap)
+}
+
+/* =============================================
+=
+============================================= */
+
+function logTask(text: string) {
+  process.stdout.write('*️⃣  ' + text.padEnd(22))
+}
+function logMore(text: string) {
+  process.stdout.write(chalk.gray(text))
+}
+
+function createRunTask(
+  definitionStore: DefinitionStore,
+  recipesStore: RecipeStore
+) {
+  return function runTask<T>(opts: {
+    description?: string
+    moreInfo?: (info: {
+      addedDefs: number
+      addedRecs: number
+      result: T
+    }) => string
+    textSource?: string
+    action?: (text: string) => T
+    fileError?: string
+  }): T {
+    if (opts.description) logTask(opts.description)
+    let text = ''
+    if (opts.textSource)
+      try {
+        text = loadText(opts.textSource)
+      } catch (err: unknown) {
+        console.error(`🛑  Error at task: ${opts.fileError}`)
+        throw new Error('Unable to complete task')
+      }
+
+    const oldDefs = Object.keys(definitionStore.store).length
+    const oldRecs = recipesStore.size()
+    const result = (opts.action ?? ((t: any) => t as T))(text)
+
+    if (opts.moreInfo) {
+      const info = {
+        addedDefs: Object.keys(definitionStore.store).length - oldDefs,
+        addedRecs: recipesStore.size() - oldRecs,
+        result,
+      }
+      logMore(opts.moreInfo(info))
+    }
+
+    if (opts.description) process.stdout.write('\n')
+    return result
+  }
 }

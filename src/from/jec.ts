@@ -52,7 +52,7 @@ export default function append_JECgroups(
   storeHelper: RecipeStore,
   dict: OredictMap,
   jecGroupsRaw_text: string
-): void {
+): number {
   const jec_groups = convertToNormalJson(jecGroupsRaw_text)
 
   // Try to remove placeholders that created only to extend ingredient count
@@ -119,6 +119,8 @@ export default function append_JECgroups(
   // -------------------------------------------------------------------------------
 
   applyToAdditionals(storeHelper, jec_groups)
+
+  return jec_groups.Default.length
 }
 
 function shortandNbt(str: string) {
