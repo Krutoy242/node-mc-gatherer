@@ -4,11 +4,13 @@ import predefined from '../adapters/predefined'
 import { createFileLogger } from '../log/logger'
 
 import Calculable from './Calculable'
-import DefinitionStore, { Definition } from './DefinitionStore'
+import Definition from './Definition'
+import DefinitionStore from './DefinitionStore'
 import Recipe from './Recipe'
 import Stack from './Stack'
 
 const logComputed = createFileLogger('computed.log')
+const logTree = createFileLogger('tree.log')
 
 export default class Calculator {
   constructor(
@@ -58,25 +60,14 @@ export default class Calculator {
       dirtyRecipes = newDirty
     }
 
-    const computedArr = Object.values(this.definitionStore.store)
-      .filter((def) => def.purity > 0)
-      .sort((a, b) => a.complexity - b.complexity)
-      .map(
-        (d) => `${getPurity(d.purity)}${d.complexity} "${d.display}" ${d.id}`
-      )
+    console.log(
+      'Succesfully computed:',
+      Object.values(this.definitionStore.store).filter((def) => def.purity > 0)
+        .length
+    )
+    logComputed(this.definitionStore.toString())
 
-    function getPurity(n: number): string {
-      return `▕${
-        n === 0
-          ? ' '
-          : n === 1
-          ? '█'
-          : '▇▆▅▄▃▂▁'[Math.min(6, -Math.log10(n) | 0)]
-      }▏`
-    }
-
-    console.log('Succesfully computed:', computedArr.length)
-    logComputed(computedArr.join('\n'))
+    logTree(this.logTreeTo('thermalexpansion:frame:0'))
   }
 
   /**
@@ -145,5 +136,43 @@ export default class Calculator {
     def.complexity = cal.complexity
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
     return true
+  }
+
+  private logTreeTo(id: string): string {
+    const def = this.definitionStore.get(id)
+    return this.defToString(def).join('\n')
+  }
+
+  private defToString(
+    def: Definition,
+    antiloop = new Set<string>(),
+    tabLevel = 0
+  ): string[] {
+    if (antiloop.has(def.id)) return []
+    antiloop.add(def.id)
+    const lines: string[] = []
+    const tab = '  '.repeat(tabLevel)
+    lines.push(tab + def.toString())
+
+    if (def.recipes) {
+      const recs = [...def.recipes]
+        .map((rIndex) => this.recipeStore[rIndex])
+        .sort((a, b) => b.purity - a.purity || a.complexity - b.complexity)
+      lines.push(
+        ...recs[0]
+          .toString()
+          .split('\n')
+          .map((s) => tab + s)
+      )
+      ;[...(recs[0].catalysts ?? []), ...(recs[0].inputs ?? [])]?.forEach((o) =>
+        lines.push(
+          ...this.defToString(o.definition, antiloop, tabLevel + 1).map(
+            (s) => tab + s
+          )
+        )
+      )
+    }
+
+    return lines
   }
 }

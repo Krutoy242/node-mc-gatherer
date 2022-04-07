@@ -13,7 +13,7 @@ import chalk from 'chalk'
 import glob from 'glob'
 
 import exportData, { ExportData } from './Export'
-import { NameMap } from './from/JEIExporterTypes'
+import { ITypes, NameMap } from './from/JEIExporterTypes'
 import append_JECgroups from './from/jec'
 import append_JEIExporter from './from/jeiexporter'
 import append_JER from './from/jer'
@@ -21,6 +21,7 @@ import genOreDictionary from './from/oredict'
 import append_viewBoxes from './from/spritesheet'
 import DefinitionStore from './lib/DefinitionStore'
 import RecipeStore from './lib/RecipeStore'
+import Stack from './lib/Stack'
 
 /* =============================================
 =                   Helpers                   =
@@ -80,12 +81,36 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     action: () =>
       adapters.map((modModule) =>
         modModule.default(
-          (s: string) => recipesStore.forCategory(s),
-          (s: string, n?: number) => recipesStore.BH(s, n)
+          (
+            recipe_source: string,
+            outputs: string | string[],
+            inputs?: string | string[],
+            catalysts?: string | string[]
+          ) =>
+            recipesStore.addRecipe(
+              recipe_source,
+              shortToStack(outputs),
+              shortToStack(inputs),
+              shortToStack(catalysts)
+            )
         )
       ),
     moreInfo: (info) => `Added recipes: ${chalk.green(info.addedRecs)}`,
   })
+  function shortToStack(short?: string[] | string): Stack[] | undefined {
+    if (!short) return
+    return [short].flat().map((s) => {
+      const g = s.match(/^((?<amount>.+)x )?(?<id>.+)$/)?.groups
+      if (!g) throw new Error('Cant parse shortand for: ' + s)
+      const amount = Number(g.amount)
+      if (amount && (isNaN(amount) || amount === 0))
+        throw new Error('Wrong amount for shortand: ' + s)
+
+      const splitted = g.id.split(':')
+      const iType: ITypes = splitted[0] === 'fluid' ? 'fluid' : 'item'
+      return new Stack(definitionStore.get(g.id, iType), g.amount ? amount : 1)
+    })
+  }
 
   runTask({
     description: 'Append JER recipes',

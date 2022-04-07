@@ -1,28 +1,34 @@
-import RecipeStore from '../../lib/RecipeStore'
-
 function dimToID(name: string) {
   return 'placeholder:dim_' + name.toLowerCase()
 }
 
 export default function addRecipes(
-  getAddRecipe: RecipeStore['forCategory'],
-  stack: RecipeStore['BH']
+  addRecipe: (
+    recipe_source: string,
+    outputs: string | string[],
+    inputs?: string | string[],
+    catalysts?: string | string[]
+  ) => void
 ) {
-  const addRecipe = getAddRecipe('dimensions')
+  const addDimRecipe = (
+    outputs: string | string[],
+    inputs?: string | string[],
+    catalysts?: string | string[]
+  ) => addRecipe('custom_dimensions', outputs, inputs, catalysts)
 
-  addRecipe(
+  addDimRecipe(
     dimToID('Nether'),
     'minecraft:flint_and_steel:0',
-    stack('minecraft:obsidian:0', 8)
+    '8x minecraft:obsidian:0'
   )
-  addRecipe(dimToID('The End'), stack('minecraft:ender_eye:0', 12))
-  addRecipe(dimToID('Twilight Forest'), 'minecraft:diamond:0')
-  addRecipe(
+  addDimRecipe(dimToID('The End'), '12x minecraft:ender_eye:0')
+  addDimRecipe(dimToID('Twilight Forest'), 'minecraft:diamond:0')
+  addDimRecipe(
     dimToID('Deep Dark'),
     'placeholder:exploration',
     'extrautils2:teleporter:1'
   )
-  addRecipe(dimToID('Ratlantis'), 'rats:chunky_cheese_token:0')
+  addDimRecipe(dimToID('Ratlantis'), 'rats:chunky_cheese_token:0')
   ;(
     [
       ['advancedrocketry:rocketbuilder:0', ['Luna']],
@@ -58,7 +64,9 @@ export default function addRecipes(
     ] as [string, string[]][]
   ).forEach(([catl, arr]) =>
     arr.forEach((dim) =>
-      addRecipe(dimToID(dim), stack('fluid:rocketfuel', 10000), catl)
+      addDimRecipe(dimToID(dim), '10000x fluid:rocketfuel', catl)
     )
   )
+
+  addRecipe('custom_worldgen', '1000x fluid:water', 'placeholder:exploration')
 }

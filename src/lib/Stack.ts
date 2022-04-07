@@ -1,4 +1,4 @@
-import { Definition } from './DefinitionStore'
+import Definition from './Definition'
 
 export type StackDef = Definition & {
   amount: number

@@ -27,4 +27,17 @@ export default class Recipe implements Calculable {
         : undefined,
     }
   }
+
+  toString() {
+    return (
+      `  [${this.source}]` +
+      (!this.inputs?.length
+        ? ''
+        : '\n  ⮮ ' + this.inputs?.map((o) => o.toString())) +
+      (!this.catalysts?.length
+        ? ''
+        : '\n  ▒ ' + this.catalysts?.map((o) => o.toString())) +
+      `\n  ⮩ ${this.outputs.map((o) => o.toString())}`
+    )
+  }
 }
