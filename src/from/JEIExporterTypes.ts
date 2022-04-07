@@ -2,27 +2,34 @@ export interface JEIExporterCategory {
   width: number
   height: number
   texture: string
-  catalysts: Ingredient[]
-  recipes: Recipe[]
+  catalysts: Item[]
+  recipes: JEIERecipe[]
 }
 
-export interface Recipe {
+export interface JEIERecipe {
   input: List
   output: List
+}
+
+export interface JEIECustomRecipe extends JEIERecipe {
+  catalyst?: Ingredient[]
 }
 
 export interface List {
   items: Slot[]
 }
 
-export interface Slot {
-  amount: number
+export interface Slot extends Ingredient {
   x: number
   y: number
-  stacks: Ingredient[]
 }
 
 export interface Ingredient {
+  amount: number
+  stacks: Item[]
+}
+
+export interface Item {
   type: ITypes
   name: string
 }
