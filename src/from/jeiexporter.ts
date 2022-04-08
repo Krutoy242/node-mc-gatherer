@@ -48,12 +48,13 @@ export default async function append_JEIExporter(
     .sort(([a], [b]) => b - a)
     .map(([, v]) => v)
 
-  const log = createFileLogger('noRecipesCategory.log')
+  const noRecipes = createFileLogger('noRecipesCategory.log')
+  // const noOutput = createFileLogger('noRecipeOutput.log')
 
-  const all = Promise.all(sorted.map((fileName) => handleJEIE(fileName, log)))
-  all.then(() => console.log('Recipes problems :>> ', log.count))
+  const all = Promise.all(sorted.map((fileName) => handleJEIE(fileName)))
+  all.then(() => console.log('Recipes problems :>> ', noRecipes.count))
 
-  async function handleJEIE(filePath: string, log: CountableFunction) {
+  async function handleJEIE(filePath: string) {
     const fileName = parse(filePath).name
     const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
 
@@ -75,17 +76,20 @@ export default async function append_JEIExporter(
     let recipesLength = customRecipes.length
     const addRecipe = recHelper.forCategory(fileName)
     customRecipes.forEach((rec) => {
-      addRecipe(
-        convertItems(rec.output.items),
-        convertItems(rec.input.items),
-        rec.catalyst ? convertItems(rec.catalyst) : defaultCatalysts
-      ) && recipesLength--
+      const outputs = convertItems(rec.output.items)
+      outputs.length &&
+        addRecipe(
+          outputs,
+          convertItems(rec.input.items),
+          rec.catalyst ? convertItems(rec.catalyst) : defaultCatalysts
+        ) &&
+        recipesLength--
     })
 
     if (recipesLength === customRecipes.length)
-      log(`⭕ Recipes not added in ${fileName}\n`)
+      noRecipes(`⭕ Recipes not added in ${fileName}\n`)
     else if (recipesLength > 0)
-      log(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
+      noRecipes(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
   }
 
   function convertItems(items: Ingredient[]) {
