@@ -1,17 +1,17 @@
 import {
   Ingredient,
   Item,
+  JEIECategory,
   JEIECustomRecipe,
   JEIERecipe,
-  JEIExporterCategory,
   Slot,
-} from '../from/JEIExporterTypes'
+} from '../from/jeie/JEIECategory'
 const { max, min } = Math
 
 const adapters: Map<
   RegExp,
   (
-    cat: JEIExporterCategory,
+    cat: JEIECategory,
     getFullStack: (ingr: Item) => string
   ) => JEIECustomRecipe[]
 > = new Map()

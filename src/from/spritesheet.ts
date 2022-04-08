@@ -1,4 +1,4 @@
-import DefinitionStore from '../lib/DefinitionStore'
+import DefinitionStore from '../lib/items/DefinitionStore'
 
 /**
  * Write viewboxes into additionals from spritesheet.json

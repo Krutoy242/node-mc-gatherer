@@ -1,5 +1,5 @@
-import Calculable from './Calculable'
-import Stack from './Stack'
+import Calculable from '../calc/Calculable'
+import Stack from '../items/Stack'
 
 export default class Recipe implements Calculable {
   complexity = 0.0

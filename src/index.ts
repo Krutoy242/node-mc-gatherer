@@ -13,15 +13,16 @@ import chalk from 'chalk'
 import glob from 'glob'
 
 import exportData, { ExportData } from './Export'
-import { ITypes, NameMap } from './from/JEIExporterTypes'
 import append_JECgroups from './from/jec'
-import append_JEIExporter from './from/jeiexporter'
+import { IType } from './from/jeie/IType'
+import append_JEIExporter from './from/jeie/JEIExporter'
+import { NameMap } from './from/jeie/NameMap'
 import append_JER from './from/jer'
 import genOreDictionary from './from/oredict'
 import append_viewBoxes from './from/spritesheet'
-import DefinitionStore from './lib/DefinitionStore'
-import RecipeStore from './lib/RecipeStore'
-import Stack from './lib/Stack'
+import DefinitionStore from './lib/items/DefinitionStore'
+import Stack from './lib/items/Stack'
+import RecipeStore from './lib/recipes/RecipeStore'
 
 /* =============================================
 =                   Helpers                   =
@@ -107,7 +108,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
         throw new Error('Wrong amount for shortand: ' + s)
 
       const splitted = g.id.split(':')
-      const iType: ITypes = splitted[0] === 'fluid' ? 'fluid' : 'item'
+      const iType: IType = splitted[0] === 'fluid' ? 'fluid' : 'item'
       return new Stack(
         definitionStore.getById(g.id, iType),
         g.amount ? amount : 1

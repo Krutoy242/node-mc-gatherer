@@ -2,7 +2,7 @@
 =           Additionals Store
 ============================================= */
 
-import { ITypes, iTypesMap } from '../from/JEIExporterTypes'
+import { IType, iTypesMap } from '../../from/jeie/IType'
 
 import Definition from './Definition'
 
@@ -16,7 +16,7 @@ export interface DefinitionStoreMap {
   [id: string]: Definition
 }
 
-function sourceToType(source: string): ITypes {
+function sourceToType(source: string): IType {
   return (iTypesMap as any)[source] ?? 'item'
 }
 
@@ -29,7 +29,7 @@ export default class DefinitionStore {
     return result
   }
 
-  getById(id: string, iType: ITypes): Definition {
+  getById(id: string, iType: IType): Definition {
     return (this.store[id] ??= new Definition(id, iType))
   }
 

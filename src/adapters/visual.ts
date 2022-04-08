@@ -1,4 +1,4 @@
-import { DefinitionStoreMap } from '../lib/DefinitionStore'
+import { DefinitionStoreMap } from '../lib/items/DefinitionStore'
 
 export default function customRender(
   store: DefinitionStoreMap,

@@ -1,13 +1,13 @@
 import _ from 'lodash'
 
-import predefined from '../adapters/predefined'
-import { createFileLogger } from '../log/logger'
+import predefined from '../../adapters/predefined'
+import { createFileLogger } from '../../log/logger'
+import Definition from '../items/Definition'
+import DefinitionStore from '../items/DefinitionStore'
+import Stack from '../items/Stack'
+import Recipe from '../recipes/Recipe'
 
 import Calculable from './Calculable'
-import Definition from './Definition'
-import DefinitionStore from './DefinitionStore'
-import Recipe from './Recipe'
-import Stack from './Stack'
 
 const logComputed = createFileLogger('computed.log')
 const logTree = createFileLogger('tree.log')

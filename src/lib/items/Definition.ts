@@ -1,6 +1,6 @@
-import { ITypes } from '../from/JEIExporterTypes'
+import { IType } from '../../from/jeie/IType'
+import Calculable from '../calc/Calculable'
 
-import Calculable from './Calculable'
 import Stack from './Stack'
 
 export default class Definition implements Calculable {
@@ -21,7 +21,7 @@ export default class Definition implements Calculable {
   constructor(
     /** Full ID source:entry:meta(:{nbt})? */
     public readonly id: string,
-    public readonly iType: ITypes
+    public readonly iType: IType
   ) {}
 
   toString() {

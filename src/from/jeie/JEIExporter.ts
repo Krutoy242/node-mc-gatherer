@@ -3,26 +3,26 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
-import adapters from '../adapters/jeie'
-import RecipeStore from '../lib/RecipeStore'
-import Stack from '../lib/Stack'
-import { CountableFunction, createFileLogger } from '../log/logger'
+import adapters from '../../adapters/jeie'
+import Stack from '../../lib/items/Stack'
+import RecipeStore from '../../lib/recipes/RecipeStore'
+import { CountableFunction, createFileLogger } from '../../log/logger'
+import { OredictMap } from '../oredict'
 
+import { IType, iTypePrefix } from './IType'
 import {
   Ingredient,
   Item,
-  iTypeAddPrefix,
-  ITypes,
+  JEIECategory,
   JEIECustomRecipe,
-  JEIExporterCategory,
-  NameMap,
   Slot,
-} from './JEIExporterTypes'
-import { OredictMap } from './oredict'
+} from './JEIECategory'
+import getFullId from './JEIEItem'
+import { NameMap } from './NameMap'
 
 export interface RecipeInfo {
   categoryId: string
-  category: JEIExporterCategory
+  category: JEIECategory
   makeStack: (id: string, amount: number) => Stack
 }
 
@@ -36,10 +36,11 @@ export default async function append_JEIExporter(
   recHelper: RecipeStore,
   mcDir: string
 ) {
+  const fullId = (ingr: Item) => getFullId(ingr, tooltipMap, oreDict)
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
   const makeStack = (i: Item, n?: number) =>
-    recHelper.definitionStore.getAuto(getFullStack(i)).stack(n)
+    recHelper.definitionStore.getAuto(fullId(i)).stack(n)
 
   console.log(`~~ Found ${jsonList.length} .json JEIExporter files`)
 
@@ -58,14 +59,12 @@ export default async function append_JEIExporter(
     const fileName = parse(filePath).name
     const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
 
-    let category: JEIExporterCategory = JSON.parse(
-      readFileSync(filePath, 'utf8')
-    )
+    let category: JEIECategory = JSON.parse(readFileSync(filePath, 'utf8'))
     adapterList.forEach(
       ([, adapter]) =>
         (category = {
           ...category,
-          recipes: adapter(category, getFullStack),
+          recipes: adapter(category, fullId),
         })
     )
     if (!category.recipes.length) return
@@ -92,7 +91,7 @@ export default async function append_JEIExporter(
       noRecipes(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
   }
 
-  function convertItems(items: Ingredient[]) {
+  function convertItems(items: Ingredient[]): Stack[] {
     const list = items
       .filter((it) => it.amount > 0 && it.stacks.some((st) => st.name))
       .map((item) =>
@@ -105,34 +104,7 @@ export default async function append_JEIExporter(
   }
 
   function getFromStacks(stacks: Item[]): string {
-    return getFullStack(stacks[0])
-  }
-
-  function getFullStack(ingr: Item): string {
-    if (ingr.type === 'oredict') {
-      const oreItem = oreDict[ingr.name]
-      if (!oreItem) throw new Error('No item found for ore: ' + ingr.name)
-      return oreItem
-    }
-
-    const splitted = ingr.name.split(':')
-    let sNbt = ''
-    let base: string
-    if (splitted.length > 3) {
-      base = splitted.slice(0, 3).join(':')
-      if (splitted[3] !== 'f62') {
-        // f62 is hash of "{}" - empty nbt. Just clean it
-        sNbt = tooltipMap[ingr.type][ingr.name]?.tag ?? ''
-      }
-    } else base = ingr.name
-
-    let prefix = iTypeAddPrefix[ingr.type]
-    if (prefix === undefined) {
-      console.log('⚠️  Unregistered JEIExporter type:', ingr.type)
-      prefix = 'item'
-    }
-
-    return (prefix ? prefix + ':' : '') + base + (sNbt ? ':' + sNbt : '')
+    return fullId(stacks[0])
   }
 
   return all

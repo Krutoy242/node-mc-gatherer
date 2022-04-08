@@ -1,6 +1,6 @@
-import DefinitionStore from '../lib/DefinitionStore'
-import RecipeStore from '../lib/RecipeStore'
-import Stack from '../lib/Stack'
+import DefinitionStore from '../lib/items/DefinitionStore'
+import Stack from '../lib/items/Stack'
+import RecipeStore from '../lib/recipes/RecipeStore'
 
 import { OredictMap } from './oredict'
 

@@ -1,8 +1,8 @@
 import _ from 'lodash'
 
 import getTool from '../adapters/mining_levels'
-import RecipeStore from '../lib/RecipeStore'
-import Stack from '../lib/Stack'
+import Stack from '../lib/items/Stack'
+import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
 interface JER_Entry {

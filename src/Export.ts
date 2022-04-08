@@ -1,8 +1,11 @@
 import customRender from './adapters/visual'
-import { NameMap } from './from/JEIExporterTypes'
-import Definition from './lib/Definition'
-import { DefinitionStoreMap, ExportDefinition } from './lib/DefinitionStore'
-import RecipeStore from './lib/RecipeStore'
+import { NameMap } from './from/jeie/NameMap'
+import Definition from './lib/items/Definition'
+import {
+  DefinitionStoreMap,
+  ExportDefinition,
+} from './lib/items/DefinitionStore'
+import RecipeStore from './lib/recipes/RecipeStore'
 import { CountableFunction, createFileLogger } from './log/logger'
 // import { StackDef } from './lib/Stack'
 
