@@ -5,6 +5,7 @@
 import { IType, iTypesMap } from '../../from/jeie/IType'
 
 import Definition from './Definition'
+import hardReplaceMap from './HardReplace'
 
 export interface ExportDefinition {
   viewBox?: string
@@ -23,13 +24,15 @@ function sourceToType(source: string): IType {
 export default class DefinitionStore {
   store: DefinitionStoreMap = {}
 
-  getUnsafe(id: string): Definition {
+  getUnsafe(_id: string): Definition {
+    const id = hardReplaceMap[_id] ?? _id
     const result = this.store[id]
     if (!result) throw new Error('Cannot get ' + id)
     return result
   }
 
-  getById(id: string, iType: IType): Definition {
+  getById(_id: string, iType: IType): Definition {
+    const id = hardReplaceMap[_id] ?? _id
     return (this.store[id] ??= new Definition(id, iType))
   }
 
