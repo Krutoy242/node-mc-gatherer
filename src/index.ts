@@ -16,7 +16,7 @@ import exportData, { ExportData } from './Export'
 import append_JECgroups from './from/jec'
 import { IType } from './from/jeie/IType'
 import append_JEIExporter from './from/jeie/JEIExporter'
-import { NameMap } from './from/jeie/NameMap'
+import getNameMap, { NameMap } from './from/jeie/NameMap'
 import append_JER from './from/jer'
 import genOreDictionary from './from/oredict'
 import append_viewBoxes from './from/spritesheet'
@@ -124,17 +124,11 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     moreInfo: (info) => `Added: ${chalk.green(info.addedRecs)}`,
   })
 
-  const tooltipMap: NameMap = runTask({
+  const nameMap: NameMap = runTask({
     description: 'Loading Tooltip map',
     textSource: fromMC('exports/nameMap.json'),
-    action: (text) => JSON.parse(text) as NameMap,
-    moreInfo: (i) =>
-      `Loaded: ${chalk.green(
-        Object.values(i.result as NameMap).reduce(
-          (a, b) => a + Object.keys(b).length,
-          0
-        )
-      )}`,
+    action: (text) => getNameMap(text),
+    moreInfo: (i) => `Loaded: ${chalk.green(i.result.info.total)}`,
     fileError:
       'tooltipMap.json cant be opened. ' +
       'This file should be created by JEIExporter',
@@ -144,7 +138,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     await runTask({
       description: 'Loading JEIExporter\n',
       action: () =>
-        append_JEIExporter(tooltipMap, oreDict, recipesStore, options.mc),
+        append_JEIExporter(nameMap, oreDict, recipesStore, options.mc),
     })
 
   runTask({
@@ -153,7 +147,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
   })
 
-  return exportData(recipesStore, tooltipMap)
+  return exportData(recipesStore, nameMap)
 }
 
 /* =============================================

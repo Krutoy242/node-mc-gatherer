@@ -31,13 +31,13 @@ export default class Recipe implements Calculable {
   toString() {
     return (
       `  [${this.source}]` +
-      this.listToString('\n  ⮮ ', 'inputs') +
-      this.listToString('\n  ☐ ', 'catalysts') +
-      this.listToString('\n  ⮩ ', 'outputs')
+      this.listToString('\n  ↱ ', 'outputs') +
+      this.listToString('\n  ░ ', 'catalysts') +
+      this.listToString('\n  ⮬ ', 'inputs')
     )
   }
 
-  listToString(
+  private listToString(
     prefix: string,
     listName: 'outputs' | 'inputs' | 'catalysts'
   ): string {

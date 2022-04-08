@@ -37,7 +37,7 @@ export function logTreeTo(def: Definition, recipeStore: Recipe[]): string {
     if (def.recipes) {
       const recs = [...def.recipes]
         .map((rIndex) => recipeStore[rIndex])
-        .sort((a, b) => b.purity - a.purity || a.complexity - b.complexity)
+        .sort(recipeSorter)
       lines.push(
         ...recs[0]
           .toString()
@@ -50,5 +50,20 @@ export function logTreeTo(def: Definition, recipeStore: Recipe[]): string {
     }
 
     return lines
+  }
+
+  function recipeSorter(a: Recipe, b: Recipe) {
+    return (
+      b.purity - a.purity ||
+      a.complexity - b.complexity ||
+      reqPuritySumm(b) - reqPuritySumm(a)
+    )
+  }
+
+  function reqPuritySumm(a: Recipe): number {
+    return (
+      (a.inputs?.reduce((c, d) => c + d.definition.purity, 0) ?? 0) +
+      (a.catalysts?.reduce((c, d) => c + d.definition.purity, 0) ?? 0)
+    )
   }
 }
