@@ -20,6 +20,16 @@ function getItem(id: string, amount = 1): Ingredient {
   return { amount, stacks: [{ type: 'item', name: id }] }
 }
 
+function bucketToFluid(stack: Item, getFullID: (ingr: Item) => string): void {
+  if (!stack.name.startsWith('forge:bucketfilled:0:')) return
+  const m = getFullID(stack).match(
+    /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000\}$/
+  )
+  if (!m) return
+  stack.type = 'fluid'
+  stack.name = m[1]
+}
+
 // Clear recipes for this entries
 adapters.set(
   new RegExp(
@@ -35,7 +45,6 @@ adapters.set(
       '|jeresources__worldgen' +
       '|petrified__burn__time' +
       '|xu2__machine__extrautils2__generator__culinary' +
-      '|jeresources__mob' +
       '|jeresources__villager'
   ),
   () => []
@@ -183,6 +192,30 @@ adapters.set(/machine_produce_category/, (cat, getFullID) => {
   })
 })
 
+adapters.set(/thermalexpansion__sawmill_tapper/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items = rec.input.items.filter(
+      (slot) =>
+        slot.stacks[0].type !== 'fluid' || (rec.output.items.push(slot), false)
+    )
+  })
+  return cat.recipes
+})
+
+adapters.set(/tubing/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items.shift()
+  })
+  return cat.recipes
+})
+
+adapters.set(/jeresources__mob/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items = [{ x: 0, y: 0, ...getItem('placeholder:fight', 10000) }]
+  })
+  return cat.recipes
+})
+
 // Everything
 adapters.set(/.*/, (cat, getFullID) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
@@ -194,15 +227,5 @@ adapters.set(/.*/, (cat, getFullID) => {
   })
   return cat.recipes
 })
-
-function bucketToFluid(stack: Item, getFullID: (ingr: Item) => string): void {
-  if (!stack.name.startsWith('forge:bucketfilled:0:')) return
-  const m = getFullID(stack).match(
-    /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000\}$/
-  )
-  if (!m) return
-  stack.type = 'fluid'
-  stack.name = m[1]
-}
 
 export default adapters

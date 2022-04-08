@@ -15,4 +15,8 @@ export default function addRecipes(
     'minecraft:bucket:0',
     'entity:cow'
   )
+  addRecipe('entity_interaction', '1000x fluid:milk', '2x placeholder:ticks', [
+    'minecraft:bucket:0',
+    'entity:cow',
+  ])
 }
