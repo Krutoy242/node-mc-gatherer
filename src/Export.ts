@@ -6,7 +6,7 @@ import {
   ExportDefinition,
 } from './lib/items/DefinitionStore'
 import RecipeStore from './lib/recipes/RecipeStore'
-import { CountableFunction, createFileLogger } from './log/logger'
+import { CountableFunction, createFileLogger, logTreeTo } from './log/logger'
 // import { StackDef } from './lib/Stack'
 
 export interface ExportEntry {
@@ -48,6 +48,12 @@ export default function exportData(
   console.log('noViewBox :>> ', log.noViewBox.count)
   console.log('noDisplay :>> ', log.noDisplay.count)
   recipesStore.calculate()
+  ;['thermalexpansion:frame:0'].forEach((id) => {
+    const fileName = id.replace(/[/\\?%*:|"<>]/g, '_')
+    createFileLogger(`tree/${fileName}.log`)(
+      logTreeTo(recipesStore.definitionStore.getUnsafe(id), recipesStore.store)
+    )
+  })
 
   return {
     store: recipesStore.definitionStore.export(),

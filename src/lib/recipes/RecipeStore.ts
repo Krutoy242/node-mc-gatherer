@@ -17,7 +17,7 @@ type RecipeParams = [
 ]
 
 export default class RecipeStore {
-  private store: Recipe[] = []
+  store: Recipe[] = []
 
   constructor(public definitionStore: DefinitionStore) {}
 

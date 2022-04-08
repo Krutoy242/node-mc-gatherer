@@ -1,6 +1,34 @@
 minecraft:farmland:0
 enderio:item_soul_vial:0
 simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyItem:{id:"mekanism:gastank",Count:1b,Damage:0s},display:{Lore:["Craft with 9 DIFFERENT gases"]},TrophyName:"Creative Gas Tank Frame"}
+dimension:overworld_0
+dimension:nether_-1
+dimension:the_end_1
+dimension:twilight_forest_7
+dimension:deep_dark_-11325
+dimension:spectre_-343800852
+dimension:ratlantis_-8
+dimension:rftools_dimension
+dimension:luna_100
+dimension:europa_106
+dimension:io_105
+dimension:mars_103
+dimension:mercury_101
+dimension:neptune_110
+dimension:titan_108
+dimension:uranus_109
+dimension:venus_102
+dimension:kelt-2ab_118
+dimension:kelt-3_119
+dimension:kelt-4ab_120
+dimension:kelt-6a_121
+dimension:kepler_0118_122
+dimension:kepler_0119_123
+dimension:novus_113
+dimension:proxima_b_111
+dimension:stella_114
+dimension:terra_nova_112
+dimension:emptiness_14676
 entity:cow
 randomthings:spectrecore:0
 rftoolsdim:block_blockdimensionalshard:0
@@ -527,7 +555,6 @@ mechanics:burst_seed_black_iron:0
 randomthings:spectrecharger:0
 randomthings:spectrecharger:1
 randomthings:spectrecharger:2
-rftdimtweak:dimension_enscriber:0
 rftdimtweak:dimension_builder:0
 rftdimtweak:dimension_editor:0
 immersiveengineering:stone_decoration:9
@@ -610,10 +637,6 @@ tconstruct:moms_spaghetti:0
 tconstruct:spaghetti:2
 contenttweaker:ore_phosphor:0
 exnihilocreatio:item_cooked_silkworm:0
-minecraft:brown_mushroom_block:0
-minecraft:red_mushroom_block:0
-thaumicwonders:panacea:0
-thaumicwonders:panacea:1
 gas:gas:oxygen
 gas:gas:ethene
 gas:gas:hydrogen
@@ -635,6 +658,7 @@ thaumadditions:vis_seeds/tenebrae:0
 thaumadditions:vis_seeds/metallum:0
 thaumadditions:vis_seeds/cognitio:0
 thaumadditions:vis_seeds/fluctus:0
+thaumicwonders:panacea:1
 thaumadditions:vis_seeds/vinculum:0
 thaumadditions:vis_seeds/humanus:0
 thaumadditions:vis_seeds/bestia:0
@@ -658,6 +682,7 @@ thaumadditions:vis_seeds/auram:0
 thaumadditions:vis_seeds/desiderium:0
 thaumadditions:vis_seeds/exitium:0
 thaumadditions:vis_seeds/visum:0
+thaumicwonders:panacea:0
 thaumadditions:vis_seeds/herba:0
 thaumadditions:vis_seeds/ventus:0
 thaumadditions:vis_seeds/instrumentum:0
@@ -696,7 +721,6 @@ jaopca:item_crystaltungsten:0
 botania:manaresource:20
 forestry:ash_block_1:0
 minecraft:mob_spawner:0
-ic2:energy_crystal:27
 avaritiaio:grindingballinfinity:0
 gas:gas:slurryTungsten
 gas:gas:sulfuricacid
@@ -722,6 +746,8 @@ gas:gas:osmium
 gas:gas:slurryThorium
 gas:gas:iron
 gas:gas:gold
+minecraft:red_mushroom_block:0
+minecraft:brown_mushroom_block:0
 netherendingores:block_nether_netherfish:0
 biomesoplenty:blue_fire:0
 betterquesting:placeholder:0:{display:{Name:"§e§lCondition",Lore:["§eCrafter must see the void"]}}
