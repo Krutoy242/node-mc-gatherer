@@ -5,6 +5,7 @@ import glob from 'glob'
 
 import adapters from '../../adapters/jeie'
 import Stack from '../../lib/items/Stack'
+import { prefferedModSort } from '../../lib/mods/mod_sort'
 import RecipeStore from '../../lib/recipes/RecipeStore'
 import { CountableFunction, createFileLogger } from '../../log/logger'
 import { OredictMap } from '../oredict'
@@ -104,7 +105,17 @@ export default async function append_JEIExporter(
   }
 
   function getFromStacks(stacks: Item[]): string {
-    return fullId(stacks[0])
+    return fullId(
+      stacks.length <= 1
+        ? stacks[0]
+        : stacks
+            .map((s) => [s.name.split(':')[0], s] as const)
+            .sort(
+              (a, b) =>
+                prefferedModSort(a[0], b[0]) ||
+                a[1].name.length - b[1].name.length
+            )[0][1]
+    )
   }
 
   return all
