@@ -55,8 +55,14 @@ function getJERProbability(rawStrData: string) {
   return 1 / _.sum(probs)
 }
 
+const registeredDims: Set<string> = new Set()
 function jerDimToPlaceholder(jerDimText: string): string {
-  return 'placeholder:' + jerDimText.toLowerCase().replace(/:/g, '_')
+  const dim = jerDimText
+    .toLowerCase()
+    .replace(/[: ]/g, '_')
+    .replace(/[()]/g, '')
+  registeredDims.add(dim)
+  return 'dimension:' + dim
 }
 
 export default function append_JER(
@@ -64,7 +70,9 @@ export default function append_JER(
   jer: JER_Entry[],
   crafttweakerLogTxt: string
 ) {
-  const log = createFileLogger('jer_exploration.log')
+  const logExploration = createFileLogger('jer_exploration.log')
+  const logDimensions = createFileLogger('jer_dimensions.log')
+
   const blockMinings = generateBlockMinings(crafttweakerLogTxt)
 
   let ii_exploration = recipesStore.definitionStore
@@ -102,7 +110,16 @@ export default function append_JER(
     return getTool(bMining.toolClass, bMining.level)
   }
 
-  log(
+  function getDrops(block: Stack, drop: DropsEntry): Stack | undefined {
+    const outAmount = _.mean(Object.values(drop.fortunes)) || 1
+
+    // Skip adding if block drop itself
+    if (drop.itemStack === block.definition.id && outAmount === 1) return
+
+    return recipesStore.definitionStore.getItem(drop.itemStack).stack(outAmount)
+  }
+
+  logExploration(
     Object.entries(exploreAmounts).map(
       ([dim, o]) => `
 "${dim}": {
@@ -114,14 +131,7 @@ ${Object.entries(o)
     )
   )
 
-  function getDrops(block: Stack, drop: DropsEntry): Stack | undefined {
-    const outAmount = _.mean(Object.values(drop.fortunes)) || 1
-
-    // Skip adding if block drop itself
-    if (drop.itemStack === block.definition.id && outAmount === 1) return
-
-    return recipesStore.definitionStore.getItem(drop.itemStack).stack(outAmount)
-  }
+  logDimensions([...registeredDims].sort().join('\n'))
 }
 
 export interface BlockMinings {
