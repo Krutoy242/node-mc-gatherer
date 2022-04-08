@@ -568,7 +568,7 @@ tconstruct:spaghetti:1
 fluid:electronics
 ic2:cf_pack:26:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}}
 ic2:jetpack:26:{Fluid:{FluidName:"ic2biogas",Amount:1000}}
-aeadditions:fluid.item:0:{Fluid:{FluidName:"water",Amount:1000}}
+aeadditions:fluid.item:0:{Fluid:{FluidName:"depleted_fuel_heu_233",Amount:1000}}
 aeadditions:fluid.item:0
 ic2:cf_pack:26
 ic2:jetpack:26
@@ -582,7 +582,7 @@ mysticalagriculture:chunk:22
 mysticalagriculture:chunk:23
 mysticalcreations:astral_starmetal_essence:0
 mysticalcreations:astral_starmetal_seeds:0
-enderio:item_broken_spawner:0:{entityId:"minecraft:elder_guardian"}
+enderio:item_broken_spawner:0:{entityId:"animania:cow_highland"}
 enderio:item_broken_spawner:0
 thaumcraft:primordial_pearl:7
 thaumcraft:primordial_pearl:6

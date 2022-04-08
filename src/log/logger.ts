@@ -45,11 +45,7 @@ export function logTreeTo(def: Definition, recipeStore: Recipe[]): string {
           .map((s) => tab + s)
       )
       ;[...(recs[0].catalysts ?? []), ...(recs[0].inputs ?? [])]?.forEach((o) =>
-        lines.push(
-          ...defToString(o.definition, antiloop, tabLevel + 1).map(
-            (s) => tab + s
-          )
-        )
+        lines.push(...defToString(o.definition, antiloop, tabLevel + 1))
       )
     }
 
