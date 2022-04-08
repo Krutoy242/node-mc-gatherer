@@ -164,22 +164,45 @@ adapters.set(/tinkersjei__tool_stats/, (cat) => {
   return newRecipes
 })
 
+adapters.set(/machine_produce_category/, (cat, getFullID) => {
+  return cat.recipes.map((rec) => {
+    const machine = rec.input.items[0]
+    rec.input.items = [
+      {
+        ...machine,
+        amount: 20000,
+        stacks: [{ type: 'placeholder', name: 'rf' }],
+      },
+    ]
+    rec.output.items.forEach((slot) => {
+      slot.stacks.forEach((stack) => {
+        bucketToFluid(stack, getFullID)
+      })
+    })
+    return Object.assign(rec, { catalyst: [machine] })
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, getFullID) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach((slot) => {
       slot.stacks.forEach((stack) => {
-        if (!stack.name.startsWith('forge:bucketfilled:0:')) return
-        const m = getFullID(stack).match(
-          /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000\}$/
-        )
-        if (!m) return
-        stack.type = 'fluid'
-        stack.name = m[1]
+        bucketToFluid(stack, getFullID)
       })
     })
   })
   return cat.recipes
 })
+
+function bucketToFluid(stack: Item, getFullID: (ingr: Item) => string): void {
+  if (!stack.name.startsWith('forge:bucketfilled:0:')) return
+  const m = getFullID(stack).match(
+    /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000\}$/
+  )
+  if (!m) return
+  stack.type = 'fluid'
+  stack.name = m[1]
+}
 
 export default adapters
