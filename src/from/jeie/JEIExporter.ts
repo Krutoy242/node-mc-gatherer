@@ -61,13 +61,7 @@ export default async function append_JEIExporter(
     const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
 
     let category: JEIECategory = JSON.parse(readFileSync(filePath, 'utf8'))
-    adapterList.forEach(
-      ([, adapter]) =>
-        (category = {
-          ...category,
-          recipes: adapter(category, fullId),
-        })
-    )
+    adapterList.forEach(([, adapter]) => adapter(category, fullId))
     if (!category.recipes.length) return
 
     const customRecipes: JEIECustomRecipe[] = category.recipes

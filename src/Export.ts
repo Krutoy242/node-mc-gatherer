@@ -48,7 +48,7 @@ export default function exportData(
   console.log('noViewBox :>> ', log.noViewBox.count)
   console.log('noDisplay :>> ', log.noDisplay.count)
   recipesStore.calculate()
-  ;['thermalexpansion:frame:0', 'thermalexpansion:frame:148'].forEach((id) => {
+  ;['storagedrawers:upgrade_creative:1'].forEach((id) => {
     const fileName = id.replace(/[/\\?%*:|"<>]/g, '_')
     createFileLogger(`tree/${fileName}.log`)(
       logTreeTo(recipesStore.definitionStore.getUnsafe(id), recipesStore.store)

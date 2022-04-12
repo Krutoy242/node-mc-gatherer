@@ -3,17 +3,13 @@ import {
   Item,
   JEIECategory,
   JEIECustomRecipe,
-  JEIERecipe,
   Slot,
 } from '../from/jeie/JEIECategory'
 const { max, min } = Math
 
 const adapters: Map<
   RegExp,
-  (
-    cat: JEIECategory,
-    getFullStack: (ingr: Item) => string
-  ) => JEIECustomRecipe[]
+  (cat: JEIECategory, getFullStack: (ingr: Item) => string) => void
 > = new Map()
 
 function getItem(id: string, amount = 1): Ingredient {
@@ -34,28 +30,31 @@ function bucketToFluid(stack: Item, getFullID: (ingr: Item) => string): void {
 adapters.set(
   new RegExp(
     'EIOTank' +
-      '|minecraft__anvil' +
-      '|thermalexpansion__transposer__fill' +
-      '|thermalexpansion__transposer__extract' +
       '|GENDUSTRY__SAMPLER' +
-      '|minecraft__brewing' +
-      '|chisel__chiseling' +
       '|jei__information' +
-      '|THAUMCRAFT_ASPECT_FROM_ITEMSTACK' +
+      '|jeresources__villager' +
       '|jeresources__worldgen' +
+      '|minecraft__anvil' +
+      '|minecraft__brewing' +
       '|petrified__burn__time' +
-      '|xu2__machine__extrautils2__generator__culinary' +
-      '|jeresources__villager'
+      '|THAUMCRAFT_ASPECT_FROM_ITEMSTACK' +
+      '|thermalexpansion__transposer__extract' +
+      '|thermalexpansion__transposer__fill' +
+      '|xu2__machine__extrautils2__generator__culinary'
   ),
-  () => []
+  (cat) => (cat.recipes = [])
 )
 
 // Take only first item as catalyst blacklist
-adapters.set(/^(?!.*(extendedcrafting__ender_crafting))/, (cat) => {
-  const catalyst: Ingredient[] = cat.catalysts
-    .slice(0, 1)
-    .map((item) => ({ stacks: [item], amount: 1 }))
-  return cat.recipes.map((rec) => Object.assign(rec, { catalyst }))
+adapters.set(
+  /^(?!.*(extendedcrafting__ender_crafting|iceandfire__fire_dragon_forge))/,
+  (cat) => {
+    cat.catalysts = cat.catalysts.slice(0, 1)
+  }
+)
+
+adapters.set(/iceandfire__fire_dragon_forge/, (cat) => {
+  cat.catalysts = [cat.catalysts[1]]
 })
 
 adapters.set(/minecraft__crafting/, (cat) => {
@@ -87,7 +86,7 @@ adapters.set(/minecraft__crafting/, (cat) => {
     })
   })
 
-  return newRecs
+  cat.recipes = newRecs
 })
 
 adapters.set(/tconstruct__casting_table/, (cat) => {
@@ -132,13 +131,13 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
     })
   })
 
-  return newRecipes
+  cat.recipes = newRecipes
 })
 
 adapters.set(/tconstruct__smeltery/, (cat) => {
   const catalyst = [getItem('tconstruct:smeltery_controller:0')]
 
-  return cat.recipes.map((rec) => {
+  cat.recipes = cat.recipes.map((rec) => {
     rec.output.items = [rec.output.items[0]]
     return Object.assign(rec, { catalyst })
   })
@@ -170,11 +169,11 @@ adapters.set(/tinkersjei__tool_stats/, (cat) => {
           )
       })
     })
-  return newRecipes
+  cat.recipes = newRecipes
 })
 
 adapters.set(/machine_produce_category/, (cat, getFullID) => {
-  return cat.recipes.map((rec) => {
+  cat.recipes = cat.recipes.map((rec) => {
     const machine = rec.input.items[0]
     rec.input.items = [
       {
@@ -199,21 +198,47 @@ adapters.set(/thermalexpansion__sawmill_tapper/, (cat) => {
         slot.stacks[0].type !== 'fluid' || (rec.output.items.push(slot), false)
     )
   })
-  return cat.recipes
 })
 
 adapters.set(/tubing/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items.shift()
   })
-  return cat.recipes
+})
+
+adapters.set(/inworldcrafting__exploding_blocks/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.output.items = [rec.input.items.pop() as Slot]
+  })
+})
+
+adapters.set(/chisel__chiseling/, (cat) => {
+  const catalyst = [getItem('chisel:chisel_iron:0')]
+
+  const newRecipes: JEIECustomRecipe[] = []
+  cat.recipes.forEach((rec) => {
+    const inp = rec.input.items[0]
+    rec.output.items.forEach((out) => {
+      newRecipes.push({
+        input: { items: [inp] },
+        output: { items: [out] },
+        catalyst,
+      })
+      newRecipes.push({
+        input: { items: [out] },
+        output: { items: [inp] },
+        catalyst,
+      })
+    })
+  })
+
+  cat.recipes = newRecipes
 })
 
 adapters.set(/jeresources__mob/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items = [{ x: 0, y: 0, ...getItem('placeholder:fight', 10000) }]
   })
-  return cat.recipes
 })
 
 // Everything
@@ -225,7 +250,6 @@ adapters.set(/.*/, (cat, getFullID) => {
       })
     })
   })
-  return cat.recipes
 })
 
 export default adapters

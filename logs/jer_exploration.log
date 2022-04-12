@@ -729,6 +729,7 @@
   172.14567805639683 minecraft:end_rod:0
   229.017288906907 endreborn:block_entropy_end_stone:0
   384.95229785350034 biomesoplenty:gem_ore:0
+  384.95229785350034 endreborn:dragon_essence:0
   394.1748792099309 forestry:beehives:4
   469.4814379349956 minecraft:ladder:0
   866.3767427020517 minecraft:bedrock:0
@@ -1286,6 +1287,7 @@
   15.702058392591214 minecraft:stone:5
   15.73786241043319 minecraft:stone:3
   15.818909006597316 minecraft:stone:1
+  16.597342775522172 actuallyadditions:block_misc:3
   17.108200541573822 minecraft:clay:0
   19.573695213263186 thaumcraft:crystal_aqua:0
   23.414937321629466 thaumcraft:crystal_ordo:0
@@ -1295,7 +1297,6 @@
   26.02906738919301 thermalfoundation:ore:1
   26.80586717355431 thaumcraft:crystal_ignis:0
   28.478148600173373 chisel:marble2:7
-  29.514712914141278 actuallyadditions:block_misc:3
   30.410817036557766 thermalfoundation:ore:4
   31.506680738994337 minecraft:gold_ore:0
   31.95893459545155 chisel:limestone2:7

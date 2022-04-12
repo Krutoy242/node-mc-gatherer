@@ -1,3 +1,5 @@
+// import { writeFileSync } from 'fs'
+
 import DefinitionStore from '../lib/items/DefinitionStore'
 import Stack from '../lib/items/Stack'
 import RecipeStore from '../lib/recipes/RecipeStore'
@@ -123,6 +125,13 @@ export default function append_JECgroups(
   return jec_groups.Default.length
 }
 
+function fixNBT(str: string): string {
+  return str
+    .split(/"nbt"[\s\n]*:[\s\n]*/)
+    .map((s, i) => (i === 0 ? s : shortandNbt(s)))
+    .join('"nbt": ')
+}
+
 function shortandNbt(str: string) {
   let parenth = 0
   let i = 0
@@ -136,7 +145,6 @@ function shortandNbt(str: string) {
     '"' +
     str
       .substring(0, i)
-      // .replace(/([[, ]-?\d+(?:\.\d+)?)[ILBbsfd](?=\W)/gi, '$1')
       .replace(/[\s\n]*"([^"]+)"[\s\n]*:[\s\n]*/gi, '$1:')
       .replace(/"/g, '\\"')
       .replace(/[\s\n]*\n+[\s\n]*/g, '') +
@@ -152,23 +160,11 @@ function shortandNbt(str: string) {
  * @returns normalized ready-to-parse json object
  */
 function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
-  const fixedText = jecGroupsRaw_text
+  const fixedText = fixNBT(jecGroupsRaw_text)
     .replace(/\[\w;/g, '[') // Remove list types
-    .replace(
-      // Turn nbt to sNbt
-      /(^ {12}"content": \{\n(?:.+\n){1,5} {16}"nbt": )(\{[\s\S\n]+?\n {16}\})/gm,
-      (_m, prefix, nbtStr) => {
-        return `${prefix}${shortandNbt(nbtStr)}`
-      }
-    )
-    .replace(
-      // Turn nbt to sNbt
-      /(^ {16}"content": \{\n(?:.+\n){1,5} {20}"nbt": )(\{[\s\S\n]+?\n {20}\})/gm,
-      (_m, prefix, nbtStr) => {
-        return `${prefix}${shortandNbt(nbtStr)}`
-      }
-    )
     .replace(/("[^"]+":\s*-?\d+(?:\.\d+)?)[ILBbsfd]\b/gi, '$1')
+
+  // writeFileSync('~jec.json', fixedText)
   return JSON.parse(fixedText)
 }
 

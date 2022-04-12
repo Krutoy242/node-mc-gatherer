@@ -1,9 +1,4 @@
-forestry:bee_princess_ge:0
-forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{UID1:"forestry.speciesForest",UID0:"forestry.speciesForest",Slot:0b},{UID1:"forestry.speedSlowest",UID0:"forestry.speedSlowest",Slot:1b},{UID1:"forestry.lifespanShorter",UID0:"forestry.lifespanShorter",Slot:2b},{UID1:"forestry.fertilityHigh",UID0:"forestry.fertilityHigh",Slot:3b},{UID1:"forestry.toleranceNone",UID0:"forestry.toleranceNone",Slot:4b},{UID1:"forestry.boolFalse",UID0:"forestry.boolFalse",Slot:5b},{UID1:"forestry.toleranceNone",UID0:"forestry.toleranceNone",Slot:6b},{UID1:"forestry.boolFalse",UID0:"forestry.boolFalse",Slot:7b},{UID1:"forestry.boolFalse",UID0:"forestry.boolFalse",Slot:8b},{UID1:"forestry.flowersVanilla",UID0:"forestry.flowersVanilla",Slot:9b},{UID1:"forestry.floweringSlower",UID0:"forestry.floweringSlower",Slot:10b},{UID1:"forestry.territoryAverage",UID0:"forestry.territoryAverage",Slot:11b},{UID1:"forestry.effectNone",UID0:"forestry.effectNone",Slot:12b}]}}
-ic2:re_battery:0
-ic2:advanced_re_battery:0
-ic2:energy_crystal:0
-ic2:nightvision_goggles:0
+ic2:misc_resource:0
 dimension:overworld_0
 dimension:nether_-1
 dimension:the_end_1
@@ -33,13 +28,17 @@ dimension:stella_114
 dimension:terra_nova_112
 dimension:emptiness_14676
 entity:cow
+multiblock:tile.immersivetech.metal_multiblock1.melting_crucible8
 rftoolsdim:block_blockdimensionalshard:0
 astralsorcery:blockportalnode:0
+ic2:re_battery:0
+ic2:energy_crystal:0
 ic2:lapotron_crystal:0
 ic2:te:68
 ic2:te:69
 ic2:te:70
 ic2:te:71
+ic2:advanced_re_battery:0
 ic2:advanced_batpack:0
 ic2:batpack:0
 ic2:energy_pack:0
@@ -48,6 +47,7 @@ ic2:advanced_charging_re_battery:0
 ic2:charging_energy_crystal:0
 ic2:charging_lapotron_crystal:0
 ic2:cropnalyzer:0
+ic2:nightvision_goggles:0
 ic2:scanner:0
 ic2:advanced_scanner:0
 ic2:wind_meter:0
@@ -100,8 +100,8 @@ bloodmagic:soul_gem:2
 bloodmagic:soul_gem:3
 fe:enderio:energy
 gas:gas:oxygen
-gas:gas:ethene
 gas:gas:hydrogen
+gas:gas:ethene
 gas:gas:hydrogenchloride
 gas:gas:water
 botania:manainkwell:150
