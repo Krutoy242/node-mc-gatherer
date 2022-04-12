@@ -36,4 +36,13 @@ export default function addRecipes(
     'fluid:milk_friesian',
     'animania:cheese_mold:0'
   )
+  ;[
+    'animania:blue_peacock_feather:0',
+    'animania:white_peacock_feather:0',
+    'animania:charcoal_peacock_feather:0',
+    'animania:opal_peacock_feather:0',
+    'animania:peach_peacock_feather:0',
+    'animania:purple_peacock_feather:0',
+    'animania:taupe_peacock_feather:0',
+  ].forEach((s) => addRecipe('custom_animania', s, '300x placeholder:ticks'))
 }

@@ -19,4 +19,17 @@ export default function addRecipes(
     ],
     'immersiveengineering:tool:0'
   )
+
+  addRecipe(
+    'custom:immersive',
+    'immersiveengineering:metal_multiblock:0',
+    [
+      'minecraft:piston:0',
+      '2x immersiveengineering:metal_decoration1:1',
+      '2x immersiveengineering:conveyor:0:{conveyorType:"immersiveengineering:conveyor"}',
+      'immersiveengineering:metal_decoration0:5',
+      'immersiveengineering:metal_decoration0:3',
+    ],
+    'immersiveengineering:tool:0'
+  )
 }

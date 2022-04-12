@@ -18,11 +18,15 @@ export default function getFullId(
   const splitted = ingr.name.split(':')
   let sNbt = ''
   let base: string
-  if (splitted.length > 3) {
+  if (splitted.length > 3 && splitted[3][0] !== '{') {
     base = splitted.slice(0, 3).join(':')
     if (splitted[3] !== 'f62') {
       // f62 is hash of "{}" - empty nbt. Just clean it
       sNbt = tooltipMap[ingr.type][ingr.name]?.tag ?? ''
+      // if (!sNbt)
+      //   throw new Error(
+      //     `NBT hash provided but cant be found in tooltip map: ${ingr.type} ${ingr.name} `
+      //   )
     }
   } else base = ingr.name
 

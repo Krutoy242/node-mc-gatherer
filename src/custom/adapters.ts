@@ -37,7 +37,6 @@ adapters.set(
       '|minecraft__anvil' +
       '|minecraft__brewing' +
       '|petrified__burn__time' +
-      '|THAUMCRAFT_ASPECT_FROM_ITEMSTACK' +
       '|thermalexpansion__transposer__extract' +
       '|thermalexpansion__transposer__fill' +
       '|xu2__machine__extrautils2__generator__culinary'
@@ -209,6 +208,64 @@ adapters.set(/tubing/, (cat) => {
 adapters.set(/inworldcrafting__exploding_blocks/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.output.items = [rec.input.items.pop() as Slot]
+  })
+})
+
+adapters.set(/^THAUMCRAFT_.+/, (cat, getFullStack) => {
+  cat.recipes.forEach((rec) => {
+    ;[...rec.input.items, ...rec.output.items].forEach((slot) =>
+      slot.stacks.forEach((stack) => {
+        if (stack.name.startsWith('thaumcraft:crystal_essence:0:'))
+          stack.name = getFullStack(stack).replace(
+            /thaumcraft:crystal_essence:0:\{Aspects:\[\{key:"([^"]+)",amount:(\d+)\}\]\}/,
+            'thaumcraft:crystal_essence:0:{Aspects:[{amount:$2,key:"$1"}]}'
+          )
+      })
+    )
+  })
+})
+
+adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
+  interface AmountAspect {
+    amount: number
+    aspect: string
+  }
+  const itemMap = new Map<string, AmountAspect[]>()
+  cat.recipes.forEach((rec) => {
+    rec.input.items.forEach((slot) => {
+      const itemId = slot.stacks[0].name
+      let arr = itemMap.get(itemId)
+      if (!arr) {
+        arr = []
+        itemMap.set(itemId, arr)
+      }
+      ;(arr as AmountAspect[]).push({
+        amount: slot.amount,
+        aspect: rec.output.items[0].stacks[0].name,
+      })
+    })
+  })
+  const catal = getItem('thaumcraft:crucible:0')
+  cat.recipes = [...itemMap].map(([id, aspectsArr]) => ({
+    input: { items: [{ x: 0, y: 0, ...getItem(id) }] },
+    output: {
+      items: aspectsArr.map((asp) => ({
+        x: 18,
+        y: 0,
+        amount: asp.amount,
+        stacks: [
+          { type: 'thaumcraft.api.aspects.AspectList', name: asp.aspect },
+        ],
+      })),
+    },
+    catalyst: [catal],
+  }))
+})
+
+adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items.concat(rec.output.items.slice(1))
+    rec.output.items = [rec.output.items[0]]
   })
 })
 

@@ -29,6 +29,7 @@ dimension:terra_nova_112
 dimension:emptiness_14676
 entity:cow
 multiblock:tile.immersivetech.metal_multiblock1.melting_crucible8
+immersiveengineering:metal_multiblock:0
 rftoolsdim:block_blockdimensionalshard:0
 astralsorcery:blockportalnode:0
 ic2:re_battery:0
@@ -94,17 +95,18 @@ thermalinnovation:quiver:2
 thermalinnovation:quiver:3
 thermalinnovation:quiver:4
 thermalinnovation:quiver:32000
+botania:manainkwell:150
 bloodmagic:soul_gem:0
 bloodmagic:soul_gem:1
 bloodmagic:soul_gem:2
 bloodmagic:soul_gem:3
 fe:enderio:energy
+forestry:chipsets:3
 gas:gas:oxygen
 gas:gas:hydrogen
 gas:gas:ethene
 gas:gas:hydrogenchloride
 gas:gas:water
-botania:manainkwell:150
 gas:gas:slurryTungsten
 gas:gas:sulfuricacid
 gas:gas:slurryTitanium
