@@ -3,8 +3,10 @@
 import fs from 'fs'
 import { join } from 'path'
 
+import { terminal as term } from 'terminal-kit'
 import yargs from 'yargs'
 
+import { ExportData } from './Export'
 import make_sprite from './tools/make_sprite'
 
 import mcGather from '.'
@@ -55,6 +57,30 @@ if (argv.icons) make_sprite(argv.icons, argv.output)
 else {
   if (!argv.mc) throw new Error('Arguments must include --mc')
   ;(async () => {
-    saveObjAsJson(await mcGather(argv as any), join(argv.output, 'data.json'))
+    const exportData = await mcGather(argv as any)
+    saveObjAsJson(exportData, join(argv.output, 'data.json'))
+    await prompt(exportData)
+    term.processExit(0)
   })()
+}
+
+async function prompt(exportData: ExportData) {
+  term.bgGray('Input item id you want to generate recipes for:')
+  term('\n')
+
+  const keys = Object.keys(exportData.store)
+
+  let id: string | undefined
+  do {
+    id = await term.inputField({
+      autoComplete: async (input: string) =>
+        keys.find((k) => k.startsWith(input)) ?? input,
+      autoCompleteHint: true,
+    }).promise
+    term('\n')
+    if (id) {
+      if (!exportData.logger(id)) term.red("This id doesn't exist")('\n')
+      else term.green('Succes!')('\n')
+    }
+  } while (id)
 }

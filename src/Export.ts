@@ -25,6 +25,7 @@ export interface ExportData {
     inputs?: string[]
     catalysts?: string[]
   }[]
+  logger: (id: string) => boolean
 }
 
 interface Loggers {
@@ -48,16 +49,26 @@ export default function exportData(
   console.log('noViewBox :>> ', log.noViewBox.count)
   console.log('noDisplay :>> ', log.noDisplay.count)
   recipesStore.calculate()
-  ;['storagedrawers:upgrade_creative:1'].forEach((id) => {
+
+  function logger(id: string): boolean {
+    let def: Definition
+    try {
+      def = recipesStore.definitionStore.getUnsafe(id)
+    } catch (e) {
+      return false
+    }
     const fileName = id.replace(/[/\\?%*:|"<>]/g, '_')
     createFileLogger(`tree/${fileName}.log`)(
       logTreeTo(recipesStore.definitionStore.getUnsafe(id), recipesStore.store)
     )
-  })
+    return true
+  }
+  logger('storagedrawers:upgrade_creative:1')
 
   return {
     store: recipesStore.definitionStore.export(),
     recipes: recipesStore.export(),
+    logger,
   }
 }
 
