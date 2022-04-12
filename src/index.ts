@@ -74,7 +74,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
 
   const adapters = await Promise.all(
     glob
-      .sync('src/adapters/recipes/**/*.ts')
+      .sync('src/custom/recipes/**/*.ts')
       .map((filePath) => import('./' + filePath.substring(4)))
   )
   runTask({

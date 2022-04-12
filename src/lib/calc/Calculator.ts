@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import predefined from '../../adapters/predefined'
+import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
 import Definition from '../items/Definition'
 import DefinitionStore from '../items/DefinitionStore'

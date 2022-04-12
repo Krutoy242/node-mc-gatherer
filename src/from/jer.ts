@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import getTool from '../adapters/mining_levels'
+import getTool from '../custom/mining_levels'
 import Stack from '../lib/items/Stack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'

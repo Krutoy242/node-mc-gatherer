@@ -1,4 +1,4 @@
-import customRender from './adapters/visual'
+import customRender from './custom/visual'
 import { NameMap } from './from/jeie/NameMap'
 import Definition from './lib/items/Definition'
 import {

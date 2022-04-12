@@ -3,7 +3,7 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
-import adapters from '../../adapters/jeie'
+import adapters from '../../custom/adapters'
 import Stack from '../../lib/items/Stack'
 import { prefferedModSort } from '../../lib/mods/mod_sort'
 import RecipeStore from '../../lib/recipes/RecipeStore'
