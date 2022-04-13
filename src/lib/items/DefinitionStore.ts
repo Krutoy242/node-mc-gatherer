@@ -13,36 +13,36 @@ export interface ExportDefinition {
   recipes?: number[]
 }
 
-export interface DefinitionStoreMap {
-  [id: string]: Definition
-}
-
-function sourceToType(source: string): IType {
-  return (iTypesMap as any)[source] ?? 'item'
-}
-
 export default class DefinitionStore {
-  store: DefinitionStoreMap = {}
+  size = 0
 
-  getUnsafe(_id: string): Definition {
-    const id = hardReplaceMap[_id] ?? _id
-    const result = this.store[id]
-    if (!result) throw new Error('Cannot get ' + id)
-    return result
+  private tree: {
+    [source: string]: {
+      [entry: string]: {
+        [meta: string]: {
+          [sNbt: string]: Definition
+        }
+      }
+    }
+  } = {};
+
+  *iterate(): IterableIterator<Definition> {
+    for (const o1 of Object.values(this.tree)) {
+      for (const o2 of Object.values(o1)) {
+        for (const o3 of Object.values(o2)) {
+          for (const def of Object.values(o3)) {
+            yield def
+          }
+        }
+      }
+    }
   }
 
-  getById(_id: string, iType: IType): Definition {
-    const id = hardReplaceMap[_id] ?? _id
-    return (this.store[id] ??= new Definition(id, iType))
-  }
+  getById(id: string): Definition {
+    const actualId = hardReplaceMap[id] ?? id
+    const splitted = actualId.split(':')
+    if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
 
-  getItem(id: string): Definition {
-    return this.getById(id, 'item')
-  }
-
-  getAuto(id: string): Definition {
-    const splitted: Parameters<this['getBased']> = id.split(':') as any
-    if (splitted.length <= 1) throw new Error('Cannot autoget by id: ' + id)
     return this.getBased(
       splitted[0],
       splitted[1],
@@ -54,31 +54,29 @@ export default class DefinitionStore {
   getBased(
     source: string,
     entry: string,
-    _meta?: number | string,
+    meta?: string,
     sNbt?: string
   ): Definition {
-    // eslint-disable-next-line eqeqeq
-    const meta = _meta == 32767 || _meta == '*' ? 0 : _meta
-    const id = `${source}:${entry}${meta !== undefined ? ':' + meta : ''}${
-      sNbt ? ':' + sNbt : ''
-    }`
-    return this.getById(id, sourceToType(source))
+    const actualMeta = Definition.actualMeta(meta)
+    return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
+      {})[sNbt ?? ''] ??=
+      (this.size++, new Definition(source, entry, actualMeta, sNbt)))
   }
 
   export() {
     const out: { [id: string]: ExportDefinition } = {}
-    for (const [key, o] of Object.entries(this.store)) {
-      out[key] = {
-        viewBox: o.viewBox,
-        display: o.display,
-        recipes: o.recipes && [...o.recipes],
+    for (const def of this.iterate()) {
+      out[def.id] = {
+        viewBox: def.viewBox,
+        display: def.display,
+        recipes: def.recipes && [...def.recipes],
       }
     }
     return out
   }
 
   toString() {
-    return Object.values(this.store)
+    return [...this.iterate()]
       .filter((def) => def.purity > 0)
       .sort((a, b) => a.complexity - b.complexity)
       .map((d) => d.toString())

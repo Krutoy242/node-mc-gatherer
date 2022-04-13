@@ -20,13 +20,9 @@ export default function getFullId(
   let base: string
   if (splitted.length > 3 && splitted[3][0] !== '{') {
     base = splitted.slice(0, 3).join(':')
+    // f62 is hash of "{}" - empty nbt. Just ignore it
     if (splitted[3] !== 'f62') {
-      // f62 is hash of "{}" - empty nbt. Just clean it
       sNbt = tooltipMap[ingr.name]?.tag ?? ''
-      // if (!sNbt)
-      //   throw new Error(
-      //     `NBT hash provided but cant be found in tooltip map: ${ingr.type} ${ingr.name} `
-      //   )
     }
   } else base = ingr.name
 

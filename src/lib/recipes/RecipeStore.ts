@@ -63,14 +63,14 @@ export default class RecipeStore {
 
   private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
     return typeof anyIngrs === 'string'
-      ? this.definitionStore.getAuto(anyIngrs).stack()
+      ? this.definitionStore.getById(anyIngrs).stack()
       : anyIngrs
   }
 
   private anyRecipeParamToList(anyIngrs: AnyIngredients): Stack[] {
     if (!anyIngrs) return []
     if (typeof anyIngrs === 'string')
-      return [this.definitionStore.getAuto(anyIngrs).stack()]
+      return [this.definitionStore.getById(anyIngrs).stack()]
     if (Array.isArray(anyIngrs))
       return anyIngrs.map((p) => this.anyRecipeParam(p))
     return [anyIngrs]

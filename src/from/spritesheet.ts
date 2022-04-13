@@ -10,8 +10,8 @@ export default function append_viewBoxes(
 ) {
   Object.entries(spritesheetRaw).forEach(([def, list]) => {
     list.forEach(([viewBox, sNbt]) => {
-      storeHelper.getAuto(def).viewBox ??= viewBox
-      if (sNbt) storeHelper.getAuto(`${def}:${sNbt}`).viewBox ??= viewBox
+      storeHelper.getById(def).viewBox ??= viewBox
+      if (sNbt) storeHelper.getById(`${def}:${sNbt}`).viewBox ??= viewBox
     })
   })
 }

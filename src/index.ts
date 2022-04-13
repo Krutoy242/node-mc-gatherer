@@ -50,7 +50,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   const runTask = createRunTask(definitionStore, recipesStore)
 
   // Init Crafting Table as first item
-  definitionStore.getItem('minecraft:crafting_table:0')
+  definitionStore.getById('minecraft:crafting_table:0')
 
   const crafttweaker_log: string = runTask({
     textSource: fromMC('/crafttweaker.log'),
@@ -107,12 +107,7 @@ export default async function mcGather(options: Options): Promise<ExportData> {
       if (amount && (isNaN(amount) || amount === 0))
         throw new Error('Wrong amount for shortand: ' + s)
 
-      const splitted = g.id.split(':')
-      const iType: IType = splitted[0] === 'fluid' ? 'fluid' : 'item'
-      return new Stack(
-        definitionStore.getById(g.id, iType),
-        g.amount ? amount : 1
-      )
+      return new Stack(definitionStore.getById(g.id), g.amount ? amount : 1)
     })
   }
 
@@ -186,13 +181,13 @@ function createRunTask(
         throw new Error('Unable to complete task')
       }
 
-    const oldDefs = Object.keys(definitionStore.store).length
+    const oldDefs = definitionStore.size
     const oldRecs = recipesStore.size()
     const result = (opts.action ?? ((t: any) => t as T))(text)
 
     if (opts.moreInfo) {
       const info = {
-        addedDefs: Object.keys(definitionStore.store).length - oldDefs,
+        addedDefs: definitionStore.size - oldDefs,
         addedRecs: recipesStore.size() - oldRecs,
         result,
       }

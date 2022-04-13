@@ -1,10 +1,7 @@
 import customRender from './custom/visual'
 import { NameMap } from './from/jeie/NameMap'
 import Definition from './lib/items/Definition'
-import {
-  DefinitionStoreMap,
-  ExportDefinition,
-} from './lib/items/DefinitionStore'
+import { ExportDefinition } from './lib/items/DefinitionStore'
 import RecipeStore from './lib/recipes/RecipeStore'
 import { CountableFunction, createFileLogger, logTreeTo } from './log/logger'
 // import { StackDef } from './lib/Stack'
@@ -41,92 +38,74 @@ export default function exportData(
     noDisplay: createFileLogger('noDisplay.log'),
   }
 
-  const store = recipesStore.definitionStore.store
-  Object.entries(store).forEach(([key, def]) =>
-    assignVisuals(key, def, store, nameMap, log)
-  )
+  const store = recipesStore.definitionStore
+
+  for (const def of store.iterate()) {
+    assignVisuals(def, nameMap, log)
+  }
 
   console.log('noViewBox :>> ', log.noViewBox.count)
   console.log('noDisplay :>> ', log.noDisplay.count)
   recipesStore.calculate()
 
   function logger(id: string): boolean {
-    let def: Definition
-    try {
-      def = recipesStore.definitionStore.getUnsafe(id)
-    } catch (e) {
-      return false
-    }
+    let def = store.getById(id)
+    if (!def.recipes?.size) return false
     const fileName = id.replace(/[/\\?%*:|"<>]/g, '_')
-    createFileLogger(`tree/${fileName}.log`)(
-      logTreeTo(recipesStore.definitionStore.getUnsafe(id), recipesStore.store)
-    )
+    createFileLogger(`tree/${fileName}.log`)(logTreeTo(def, recipesStore.store))
     return true
   }
   logger('storagedrawers:upgrade_creative:1')
 
   return {
-    store: recipesStore.definitionStore.export(),
+    store: store.export(),
     recipes: recipesStore.export(),
     logger,
   }
-}
 
-function assignVisuals(
-  key: string,
-  def: Definition,
-  store: DefinitionStoreMap,
-  nameMap: NameMap,
-  log: Loggers
-) {
-  if (def.viewBox && def.display) return
-  const hasRecipe = !!def.recipes
+  function assignVisuals(def: Definition, nameMap: NameMap, log: Loggers) {
+    if (def.viewBox && def.display) return
+    const hasRecipe = !!def.recipes
 
-  const { source, entry, meta, tag } = getGroups(key)
+    const { source, entry, meta, sNbt } = def
 
-  const attempts: string[] = []
+    const attempts: () => IterableIterator<{
+      display?: string
+      viewBox?: string
+    }> = function* () {
+      if (sNbt) yield store.getBased(source, entry, meta)
+      if (meta !== undefined && meta !== '0')
+        yield store.getBased(source, entry)
+      yield {
+        display:
+          nameMap[
+            sNbt
+              ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
+              : def.id
+          ]?.en_us,
+      }
+      yield customRender(source, entry, meta, sNbt, (id: string) =>
+        store.getById(id)
+      )
+    }
 
-  if (meta && meta !== '0') attempts.push(`${source}:${entry}:${meta}`)
-  else attempts.push(`${source}:${entry}:0`)
-  attempts.push(`${source}:${entry}`)
+    for (const defOther of attempts()) {
+      if (def.viewBox && def.display) return
+      if (defOther === def) continue
+      def.viewBox ??= defOther.viewBox
+      def.display ??= defOther.display
+    }
 
-  attempts.forEach((id) => assignVisual(def, id, store))
+    if (!def.display) {
+      def.display = `[${def.id}]`
+      if (hasRecipe) log.noDisplay(def.id + '\n')
+    }
 
-  if (!tag) attempts.unshift(key)
-  else attempts.push(`${source}:${entry}:${meta ?? 0}:${unsignedHash(tag)}`)
-  attempts.forEach((id) => (def.display ??= nameMap[id]?.en_us))
-
-  if (def.viewBox && def.display) return
-  const [viewBox, display] = customRender(store, source, entry, meta, tag)
-  def.viewBox ??= viewBox
-  def.display ??= display
-
-  if (!def.display) {
-    def.display ??= `[${key}]`
-    if (hasRecipe) log.noDisplay(key + '\n')
+    if (!def.viewBox) {
+      def.viewBox = store.getBased('openblocks', 'dev_null')?.viewBox
+      if (hasRecipe) log.noViewBox(def.id + '\n')
+    }
   }
-
-  if (!def.viewBox) {
-    def.viewBox ??= store['openblocks:dev_null:0']?.viewBox
-    if (hasRecipe) log.noViewBox(key + '\n')
-  }
-}
-
-function assignVisual(def: Definition, id: string, store: DefinitionStoreMap) {
-  if (def.viewBox && def.display) return
-  const { viewBox, display } = store[id] ?? {}
-  def.viewBox ??= viewBox
-  def.display ??= display
-}
-
-function getGroups(key: string) {
-  const groups =
-    key.match(
-      /^(?<source>[^:{]+)(?::(?<entry>[^:{]+))?(?::(?<meta>[^:{]+))?(:(?<tag>\{.*\}))?$/
-    )?.groups ?? {}
-
-  if (!groups.source) throw new Error(`Error on parsing ID: "${key}"`)
-  return groups
 }
 
 ;(String.prototype as any).hashCode = function () {

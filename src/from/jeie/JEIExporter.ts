@@ -41,7 +41,7 @@ export default async function append_JEIExporter(
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
   const makeStack = (i: Item, n?: number) =>
-    recHelper.definitionStore.getAuto(fullId(i)).stack(n)
+    recHelper.definitionStore.getById(fullId(i)).stack(n)
 
   console.log(`~~ Found ${jsonList.length} .json JEIExporter files`)
 
@@ -91,7 +91,7 @@ export default async function append_JEIExporter(
       .filter((it) => it.amount > 0 && it.stacks.some((st) => st.name))
       .map((item) =>
         recHelper.definitionStore
-          .getAuto(getFromStacks(item.stacks))
+          .getById(getFromStacks(item.stacks))
           .stack(item.amount)
       )
 

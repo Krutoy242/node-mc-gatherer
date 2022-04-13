@@ -82,7 +82,7 @@ export default function append_JER(
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
-    const block = recipesStore.definitionStore.getItem(jer_entry.block).stack()
+    const block = recipesStore.definitionStore.getById(jer_entry.block).stack()
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const tool = generateTool(jer_entry.block)
@@ -116,7 +116,7 @@ export default function append_JER(
     // Skip adding if block drop itself
     if (drop.itemStack === block.definition.id && outAmount === 1) return
 
-    return recipesStore.definitionStore.getItem(drop.itemStack).stack(outAmount)
+    return recipesStore.definitionStore.getById(drop.itemStack).stack(outAmount)
   }
 
   logExploration(

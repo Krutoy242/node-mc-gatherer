@@ -1,52 +1,53 @@
-import { DefinitionStoreMap } from '../lib/items/DefinitionStore'
+import Definition from '../lib/items/Definition'
+
+type VisFunc = () => {
+  viewBox?: string
+  display?: string
+}
+type Pointer =
+  | VisFunc
+  | {
+      [key: string]: VisFunc | Pointer
+    }
 
 export default function customRender(
-  store: DefinitionStoreMap,
   source: string,
   entry: string,
-  meta: string,
-  tag: string
-): [viewBox?: string, display?: string] {
-  const map = {
-    aspect: {
-      __: () => [
-        store[
-          `thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"${entry.toLowerCase()}"}]}`
-        ].viewBox,
-        'Aspect: ' + entry,
-      ],
-    },
-
+  meta: string | undefined,
+  sNbt: string | undefined,
+  get: (id: string) => Definition
+): {
+  viewBox?: string
+  display?: string
+} {
+  const root: Pointer = {
     placeholder: {
-      RF: {
-        __: () => [
-          store['thermalfoundation:meter:0'].viewBox,
-          '{' + entry + '}',
-        ],
+      rf: {
+        __: () => ({
+          viewBox: get('thermalfoundation:meter:0').viewBox,
+          display: `{${entry}}`,
+        }),
       },
-      Exploration: {
-        __: () => [store['botania:tinyplanet:0'].viewBox, '{' + entry + '}'],
+      exploration: {
+        __: () => ({
+          viewBox: get('botania:tinyplanet:0').viewBox,
+          display: `{${entry}}`,
+        }),
       },
-      __: () => [
-        store[
-          'openblocks:tank:0:{tank:{FluidName:"betterquesting.placeholder",Amount:16000}}'
-        ].viewBox,
-        '{' + entry + '}',
-      ],
     },
 
     thaumcraft: {
       infernal_furnace: {
-        __: () => [store['minecraft:nether_brick:0'].viewBox],
+        __: () => ({ viewBox: get('minecraft:nether_brick:0').viewBox }),
       },
     },
   }
 
-  const stairs = [source, entry, meta, tag]
+  const stairs = [source, entry, meta, sNbt]
   let k = 0
-  let pointer: any = map
+  let pointer: Pointer = root
   while (typeof pointer !== 'function') {
-    pointer = pointer[stairs[k]] ?? pointer.__ ?? (() => [])
+    pointer = pointer[stairs[k] ?? ''] ?? pointer.__ ?? (() => [])
     k++
   }
   return pointer()

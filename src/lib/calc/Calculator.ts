@@ -61,8 +61,7 @@ export default class Calculator {
 
     console.log(
       'Succesfully computed:',
-      Object.values(this.definitionStore.store).filter((def) => def.purity > 0)
-        .length
+      [...this.definitionStore.iterate()].filter((def) => def.purity > 0).length
     )
     logComputed(this.definitionStore.toString())
   }
