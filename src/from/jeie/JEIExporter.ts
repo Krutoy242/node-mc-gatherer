@@ -12,11 +12,11 @@ import { OredictMap } from '../oredict'
 
 import { IType, iTypePrefix } from './IType'
 import {
-  Ingredient,
-  Item,
   JEIECategory,
   JEIECustomRecipe,
-  Slot,
+  JEIEIngredient,
+  JEIEItem,
+  JEIESlot,
 } from './JEIECategory'
 import getFullId from './JEIEItem'
 import { NameMap } from './NameMap'
@@ -37,10 +37,10 @@ export default async function append_JEIExporter(
   recHelper: RecipeStore,
   mcDir: string
 ) {
-  const fullId = (ingr: Item) => getFullId(ingr, tooltipMap, oreDict)
+  const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap, oreDict)
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
-  const makeStack = (i: Item, n?: number) =>
+  const makeStack = (i: JEIEItem, n?: number) =>
     recHelper.definitionStore.getById(fullId(i)).stack(n)
 
   console.log(`~~ Found ${jsonList.length} .json JEIExporter files`)
@@ -86,7 +86,7 @@ export default async function append_JEIExporter(
       noRecipes(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
   }
 
-  function convertItems(items: Ingredient[]): Stack[] {
+  function convertItems(items: JEIEIngredient[]): Stack[] {
     const list = items
       .filter((it) => it.amount > 0 && it.stacks.some((st) => st.name))
       .map((item) =>
@@ -98,7 +98,7 @@ export default async function append_JEIExporter(
     return list
   }
 
-  function getFromStacks(stacks: Item[]): string {
+  function getFromStacks(stacks: JEIEItem[]): string {
     return fullId(
       stacks.length <= 1
         ? stacks[0]

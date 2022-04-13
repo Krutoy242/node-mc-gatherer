@@ -1,22 +1,25 @@
 import {
-  Ingredient,
-  Item,
   JEIECategory,
   JEIECustomRecipe,
-  Slot,
+  JEIEIngredient,
+  JEIEItem,
+  JEIESlot,
 } from '../from/jeie/JEIECategory'
 const { max, min } = Math
 
 const adapters: Map<
   RegExp,
-  (cat: JEIECategory, getFullStack: (ingr: Item) => string) => void
+  (cat: JEIECategory, getFullStack: (ingr: JEIEItem) => string) => void
 > = new Map()
 
-function getItem(id: string, amount = 1): Ingredient {
+function getItem(id: string, amount = 1): JEIEIngredient {
   return { amount, stacks: [{ type: 'item', name: id }] }
 }
 
-function bucketToFluid(stack: Item, getFullID: (ingr: Item) => string): void {
+function bucketToFluid(
+  stack: JEIEItem,
+  getFullID: (ingr: JEIEItem) => string
+): void {
   if (!stack.name.startsWith('forge:bucketfilled:0:')) return
   const m = getFullID(stack).match(
     /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000.*\}$/
@@ -161,7 +164,7 @@ adapters.set(/tinkersjei__tool_stats/, (cat) => {
         if (slot.x > 64)
           slot.stacks.forEach((ingr) =>
             newRecipes.push({
-              input: { items: [input as Slot] },
+              input: { items: [input as JEIESlot] },
               output: { items: [{ ...slot, stacks: [ingr] }] },
               catalyst,
             })
@@ -207,7 +210,7 @@ adapters.set(/tubing/, (cat) => {
 
 adapters.set(/inworldcrafting__exploding_blocks/, (cat) => {
   cat.recipes.forEach((rec) => {
-    rec.output.items = [rec.input.items.pop() as Slot]
+    rec.output.items = [rec.input.items.pop() as JEIESlot]
   })
 })
 

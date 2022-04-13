@@ -1,11 +1,11 @@
 import { OredictMap } from '../oredict'
 
 import { iTypePrefix } from './IType'
-import { Item } from './JEIECategory'
+import { JEIEItem } from './JEIECategory'
 import { NameMap } from './NameMap'
 
 export default function getFullId(
-  ingr: Item,
+  ingr: JEIEItem,
   tooltipMap: NameMap,
   oreDict: OredictMap
 ): string {
