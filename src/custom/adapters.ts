@@ -19,7 +19,7 @@ function getItem(id: string, amount = 1): Ingredient {
 function bucketToFluid(stack: Item, getFullID: (ingr: Item) => string): void {
   if (!stack.name.startsWith('forge:bucketfilled:0:')) return
   const m = getFullID(stack).match(
-    /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000\}$/
+    /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000.*\}$/
   )
   if (!m) return
   stack.type = 'fluid'

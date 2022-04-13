@@ -3,7 +3,7 @@
   ↱ 2x storagedrawers:upgrade_creative:1
   ░ 1x extendedcrafting:table_ultimate:0
   ⮬ 1x avaritia:block_resource:2, 1x industrialforegoing:black_hole_unit:0, 1x extendedcrafting:material:13, 1x extendedcrafting:material:13, 1x bigreactors:mineralanglesite:0, 1x extendedcrafting:material:13, 1x extendedcrafting:material:13, 1x industrialforegoing:black_hole_unit:0, 1x avaritia:block_resource:2, 1x industrialforegoing:black_hole_unit:0, 1x thermalexpansion:frame:148, 1x thermalexpansion:frame:148, 1x threng:material:14, 1x aeadditions:storage.component:3, 1x threng:material:14, 1x thermalexpansion:frame:148, 1x thermalexpansion:frame:148, 1x industrialforegoing:black_hole_unit:0, 1x extendedcrafting:material:13, 1x thermalexpansion:frame:148, 1x environmentaltech:aethium:0, 1x draconicevolution:chaotic_core:0, 1x bigreactors:mineralbenitoite:0, 1x draconicevolution:chaotic_core:0, 1x environmentaltech:aethium:0, 1x thermalexpansion:frame:148, 1x extendedcrafting:material:13, 1x extendedcrafting:material:13, 1x threng:material:14, 1x mysticalagradditions:stuff:69, 1x mekanism:machineblock2:11:{tier:4}, 1x avaritia:resource:6, 1x mekanism:gastank:0:{tier:4}, 1x mysticalagradditions:stuff:69, 1x threng:material:14, 1x extendedcrafting:material:13, 1x bigreactors:mineralanglesite:0, 1x aeadditions:storage.component:3, 1x bigreactors:mineralbenitoite:0, 1x draconicevolution:reactor_core:0, 1x twilightforest:lamp_of_cinders:0, 1x draconicevolution:reactor_core:0, 1x bigreactors:mineralbenitoite:0, 1x aeadditions:storage.component:3, 1x bigreactors:mineralanglesite:0, 1x extendedcrafting:material:13, 1x threng:material:14, 1x mysticalagradditions:stuff:69, 1x mekanism:energycube:0:{tier:4,mekData:{energyStored:1.7976931348623157E308d}}, 1x avaritia:resource:6, 1x environmentaltech:solar_cont_6:0, 1x mysticalagradditions:stuff:69, 1x threng:material:14, 1x extendedcrafting:material:13, 1x extendedcrafting:material:13, 1x thermalexpansion:frame:148, 1x environmentaltech:aethium:0, 1x draconicevolution:chaotic_core:0, 1x bigreactors:mineralbenitoite:0, 1x draconicevolution:chaotic_core:0, 1x environmentaltech:aethium:0, 1x thermalexpansion:frame:148, 1x extendedcrafting:material:13, 1x industrialforegoing:black_hole_unit:0, 1x thermalexpansion:frame:148, 1x thermalexpansion:frame:148, 1x threng:material:14, 1x aeadditions:storage.component:3, 1x threng:material:14, 1x thermalexpansion:frame:148, 1x thermalexpansion:frame:148, 1x industrialforegoing:black_hole_unit:0, 1x avaritia:block_resource:2, 1x industrialforegoing:black_hole_unit:0, 1x extendedcrafting:material:13, 1x extendedcrafting:material:13, 1x bigreactors:mineralanglesite:0, 1x extendedcrafting:material:13, 1x extendedcrafting:material:13, 1x industrialforegoing:black_hole_unit:0, 1x avaritia:block_resource:2
-  ▕█▏130387397.91303729 "Ultimate Crafting Table" extendedcrafting:table_ultimate:0
+  ▕█▏130399296.07719944 "Ultimate Crafting Table" extendedcrafting:table_ultimate:0
     [botania__elvenTrade]
     ↱ 1x botania_tweaks:ultimate_extended_crafty_crate:0, 1x extendedcrafting:table_ultimate:0
     ░ 1x botania:alfheimportal:0
@@ -851,12 +851,12 @@
           ↱ 6x botania:dreamwood1slab:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x botania:dreamwood:1, 1x botania:dreamwood:1, 1x botania:dreamwood:1
-  ▕█▏90887.94768332464 "Crystal Matrix" avaritia:block_resource:2
+  ▕█▏90905.94768332464 "Crystal Matrix" avaritia:block_resource:2
     [minecraft__crafting]
     ↱ 1x avaritia:block_resource:2
     ░ 1x minecraft:crafting_table:0
     ⮬ 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1, 1x avaritia:resource:1
-    ▕█▏10287.34842821284 "Crystal Matrix Ingot" avaritia:resource:1
+    ▕█▏10289.34842821284 "Crystal Matrix Ingot" avaritia:resource:1
       [tconstruct__casting_table]
       ↱ 1x avaritia:resource:1
       ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:0
@@ -866,12 +866,12 @@
         ↱ 1x tconstruct:cast_custom:0
         ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
         ⮬ 288x fluid:gold, 1x thermalfoundation:material:130
-      ▕█▏304.47882370756196 "Amorphous Crystal Matrix" fluid:crystal_matrix
+      ▕█▏304.4927125964508 "Amorphous Crystal Matrix" fluid:crystal_matrix
         [tconstruct__smeltery]
         ↱ 72x fluid:crystal_matrix
         ░ 1x tconstruct:smeltery_controller:0
         ⮬ 1x tconstruct:shard:0:{Material:"crystal_matrix"}
-        ▕█▏5520.708146482296 "Shard" tconstruct:shard:0:{Material:"crystal_matrix"}
+        ▕█▏5521.708146482296 "Shard" tconstruct:shard:0:{Material:"crystal_matrix"}
           [tconstruct__casting_table]
           ↱ 1x tconstruct:shard:0:{Material:"crystal_matrix"}
           ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
@@ -886,7 +886,7 @@
               ↱ 1x tconstruct:shard:0:{Material:"paper"}
               ░ 1x tconstruct:tooltables:3
               ⮬ 1x minecraft:paper:0
-  ▕█▏101704.69776899302 "Black Hole Unit" industrialforegoing:black_hole_unit:0
+  ▕█▏101713.48684536116 "Black Hole Unit" industrialforegoing:black_hole_unit:0
     [minecraft__crafting]
     ↱ 1x industrialforegoing:black_hole_unit:0
     ░ 1x minecraft:crafting_table:0
@@ -985,12 +985,12 @@
                 ↱ 1x forestry:beehives:3
                 ░ 1x dimension:overworld_0
                 ⮬ 1296.0519989189684x placeholder:exploration
-    ▕█▏379.15483057280227 "Empowered Void Crystal" actuallyadditions:item_crystal_empowered:3
+    ▕█▏387.9439069409382 "Empowered Void Crystal" actuallyadditions:item_crystal_empowered:3
       [minecraft__crafting]
       ↱ 9x actuallyadditions:item_crystal_empowered:3
       ░ 1x minecraft:crafting_table:0
       ⮬ 1x actuallyadditions:block_crystal_empowered:3
-      ▕█▏1716.2053045643145 "Empowered Void Crystal Block" actuallyadditions:block_crystal_empowered:3
+      ▕█▏1795.3069918775377 "Empowered Void Crystal Block" actuallyadditions:block_crystal_empowered:3
         [minecraft__crafting]
         ↱ 1x actuallyadditions:block_crystal_empowered:3
         ░ 1x minecraft:crafting_table:0
@@ -1758,7 +1758,7 @@
                                           ↱ 3x minecraft:glass_bottle:0
                                           ░ 1x minecraft:crafting_table:0
                                           ⮬ 1x minecraft:glass:0, 1x minecraft:glass:0, 1x minecraft:glass:0
-                        ▕█▏2738.7765260587835 "Niter" thermalfoundation:material:772
+                        ▕█▏2738.7765256237312 "Niter" thermalfoundation:material:772
                           [exnihilocreatio__sieve]
                           ↱ 1x jaopca:item_nuggetcertusquartz:0, 1x jaopca:item_nuggetchargedcertusquartz:0, 1x thaumicwonders:shimmerleaf_seed:0, 1x tconstruct:shard:0:{Material:"ma.prosperity"}, 1x exnihilocreatio:item_ore_tin:0, 1x exnihilocreatio:item_ore_aluminium:0, 1x thermalfoundation:material:772
                           ░ 1x exnihilocreatio:block_sieve:0
@@ -1768,7 +1768,7 @@
                             ↱ 1x exnihilocreatio:block_sieve:0
                             ░ 1x minecraft:crafting_table:0
                             ⮬ 1x minecraft:planks:0, 1x minecraft:planks:0, 1x minecraft:planks:0, 1x minecraft:wooden_slab:0, 1x minecraft:planks:0, 1x minecraft:stick:0, 1x minecraft:stick:0
-                          ▕█▏2627.0156948298727 "Iron Stiffened Mesh" exnihilocreatio:item_mesh:3
+                          ▕█▏2627.0156943948205 "Iron Stiffened Mesh" exnihilocreatio:item_mesh:3
                             [compactmachines3__MultiblockMiniaturization]
                             ↱ 3x exnihilocreatio:item_mesh:3
                             ░ 1x compactmachines3:fieldprojector:0
@@ -1798,12 +1798,12 @@
                                 ↱ 1x compactmachines3:psd:0
                                 ░ 1x minecraft:crafting_table:0
                                 ⮬ 1x minecraft:glass_pane:0, 1x minecraft:ender_pearl:0, 1x minecraft:book:0, 1x minecraft:ender_pearl:0, 1x minecraft:iron_ingot:0
-                            ▕█▏6170.431939323058 "Crystaltine Catalyst" extendedcrafting:material:12
+                            ▕█▏6170.431938017901 "Crystaltine Catalyst" extendedcrafting:material:12
                               [minecraft__crafting]
                               ↱ 1x extendedcrafting:material:12
                               ░ 1x minecraft:crafting_table:0
                               ⮬ 1x extendedcrafting:material:18, 1x extendedcrafting:material:18, 1x extendedcrafting:material:0, 1x extendedcrafting:material:18, 1x extendedcrafting:material:18
-                              ▕█▏1682.8493526086568 "Crystaltine Component" extendedcrafting:material:18
+                              ▕█▏1682.8493522823676 "Crystaltine Component" extendedcrafting:material:18
                                 [minecraft__crafting]
                                 ↱ 1x extendedcrafting:material:18
                                 ░ 1x minecraft:crafting_table:0
@@ -1823,7 +1823,7 @@
                                       ↱ 9x extendedcrafting:material:1
                                       ░ 1x minecraft:crafting_table:0
                                       ⮬ 1x extendedcrafting:material:0
-                                ▕█▏584.4296987630303 "Luminessence" extendedcrafting:material:7
+                                ▕█▏584.4296984367411 "Luminessence" extendedcrafting:material:7
                                   [rustic__evaporating]
                                   ↱ 1x extendedcrafting:material:7
                                   ░ 1x rustic:evaporating_basin:0
@@ -1917,12 +1917,12 @@
                                                       ↱ 1x aspect:Cognitio
                                                       ░ 1x thaumcraft:thaumonomicon:0
                                                       ⮬ 1x aspect:Ignis, 1x aspect:Spiritus
-                                  ▕█▏917259.763402699 "Liquid Sunshine" fluid:liquid_sunshine
+                                  ▕█▏917260.0485479116 "Liquid Sunshine" fluid:liquid_sunshine
                                     [zmaster587__AR__chemicalReactor]
                                     ↱ 2000x fluid:liquid_sunshine
                                     ░ 1x advancedrocketry:chemicalreactor:0
                                     ⮬ 16000x fluid:milk, 1x minecraft:poisonous_potato:0, 1x minecraft:redstone:0, 1x minecraft:blaze_powder:0, 1x minecraft:double_plant:0
-                                    ▕█▏917258.3923437451 "Chemical Reactor" advancedrocketry:chemicalreactor:0
+                                    ▕█▏917258.6774889576 "Chemical Reactor" advancedrocketry:chemicalreactor:0
                                       [minecraft__crafting]
                                       ↱ 1x advancedrocketry:chemicalreactor:0
                                       ░ 1x minecraft:crafting_table:0
@@ -2069,7 +2069,7 @@
                                                   ↱ 9x thermalfoundation:material:197
                                                   ░ 1x minecraft:crafting_table:0
                                                   ⮬ 1x thermalfoundation:material:133
-                                      ▕█▏862738.628139559 "Machine Structure" libvulpes:structuremachine:0
+                                      ▕█▏862738.9132847715 "Machine Structure" libvulpes:structuremachine:0
                                         [minecraft__crafting]
                                         ↱ 6x libvulpes:structuremachine:0
                                         ░ 1x minecraft:crafting_table:0
@@ -2393,22 +2393,22 @@
                                                 ↱ 9x nuclearcraft:uranium:10
                                                 ░ 1x minecraft:crafting_table:0
                                                 ⮬ 1x nuclearcraft:uranium:8
-                                        ▕█▏10300520.676715527 "Signalum Cell Frame (Full)" thermalexpansion:frame:147
+                                        ▕█▏10300524.09845808 "Signalum Cell Frame (Full)" thermalexpansion:frame:147
                                           [thermalexpansion__smelter]
                                           ↱ 1x thermalexpansion:frame:147
                                           ░ 1x thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                                           ⮬ 1x thermalexpansion:frame:131, 40x minecraft:redstone_block:0
-                                          ▕█▏5133547.20507929 "Induction Smelter (Basic)" thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                                          ▕█▏5133548.9159505665 "Induction Smelter (Basic)" thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                                             [minecraft__crafting]
                                             ↱ 1x thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                                             ░ 1x minecraft:crafting_table:0
                                             ⮬ 1x thermalfoundation:material:832, 1x ic2:te:54, 1x thermalfoundation:material:832, 1x tconstruct:large_plate:0:{Material:"heavy"}, 1x thermalexpansion:frame:0, 1x tconstruct:large_plate:0:{Material:"heavy"}, 1x thermalfoundation:material:289, 1x thermalfoundation:material:513, 1x thermalfoundation:material:289
-                                            ▕█▏5112817.962975875 "Rosin" thermalfoundation:material:832
+                                            ▕█▏5112819.673847151 "Rosin" thermalfoundation:material:832
                                               [thermalexpansion__refinery]
                                               ↱ 100x fluid:tree_oil, 1x thermalfoundation:material:832
                                               ░ 1x thermalexpansion:machine:7:{Facing:3b,SideCache:[B;1B,2B,3B,3B,3B,3B],RSControl:0b,Energy:0,Level:0b}
                                               ⮬ 200x fluid:resin
-                                              ▕█▏5102785.330794282 "Fractionating Still (Basic)" thermalexpansion:machine:7:{Facing:3b,SideCache:[B;1B,2B,3B,3B,3B,3B],RSControl:0b,Energy:0,Level:0b}
+                                              ▕█▏5102787.041665559 "Fractionating Still (Basic)" thermalexpansion:machine:7:{Facing:3b,SideCache:[B;1B,2B,3B,3B,3B,3B],RSControl:0b,Energy:0,Level:0b}
                                                 [minecraft__crafting]
                                                 ↱ 1x thermalexpansion:machine:7:{Facing:3b,SideCache:[B;1B,2B,3B,3B,3B,3B],RSControl:0b,Energy:0,Level:0b}
                                                 ░ 1x minecraft:crafting_table:0
@@ -2423,7 +2423,7 @@
                                                     ↱ 16x fluid:nickel
                                                     ░ 1x tconstruct:smeltery_controller:0
                                                     ⮬ 1x thermalfoundation:material:197
-                                                ▕█▏5102281.396019482 "Machine Frame" thermalexpansion:frame:0
+                                                ▕█▏5102283.1068907585 "Machine Frame" thermalexpansion:frame:0
                                                   [forestry__fabricator]
                                                   ↱ 2x thermalexpansion:frame:0
                                                   ░ 1x forestry:fabricator:0
@@ -2433,7 +2433,7 @@
                                                     ↱ 1x mekanism:basicblock:0
                                                     ░ 1x minecraft:crafting_table:0
                                                     ⮬ 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1, 1x mekanism:ingot:1
-                                                  ▕█▏20881.95608049223 "Basalt Sediment" advancedrocketry:basalt:0
+                                                  ▕█▏20885.377823045743 "Basalt Sediment" advancedrocketry:basalt:0
                                                     [requious__heat_exchanger]
                                                     ↱ 1x advancedrocketry:basalt:0, 1x ic2:heat_exchanger:0:{advDmg:2460,display:{Name:"§e40 Heat"}}
                                                     ░ 1x advgenerators:exchanger_controller:0
@@ -2563,7 +2563,7 @@
                                                               ↱ 1x excompressum:compressed_block:10
                                                               ░ 1x minecraft:crafting_table:0
                                                               ⮬ 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0, 1x minecraft:end_stone:0
-                                                    ▕█▏10862.42169992701 "Pahoehoe Lava" fluid:ic2pahoehoe_lava
+                                                    ▕█▏10865.843442480525 "Pahoehoe Lava" fluid:ic2pahoehoe_lava
                                                       [requious__liquid_heat_exchanger]
                                                       ↱ 1x fluid:ic2pahoehoe_lava
                                                       ░ 1x ic2:te:31
@@ -2598,7 +2598,7 @@
                                                           ↱ 1x ic2:crafting:7
                                                           ░ 1x minecraft:crafting_table:0
                                                           ⮬ 1x ic2:crafting:0, 1x thermalfoundation:material:320, 1x ic2:crafting:0, 1x ic2:crafting:0, 1x thermalfoundation:material:320, 1x ic2:crafting:0, 1x ic2:crafting:0, 1x thermalfoundation:material:320, 1x ic2:crafting:0
-                                                      ▕█▏323.5493415641043 "Lava" fluid:lava
+                                                      ▕█▏277.71912853424425 "Lava" fluid:lava
                                                         [integrateddynamicscompat__squeezer]
                                                         ↱ 160x fluid:lava
                                                         ░ 1x integrateddynamics:squeezer:0
@@ -2963,7 +2963,7 @@
                                                 ↱ 16x fluid:electrum
                                                 ░ 1x tconstruct:smeltery_controller:0
                                                 ⮬ 1x thermalfoundation:material:225
-                                          ▕█▏5166352.294189262 "Signalum Cell Frame (Empty)" thermalexpansion:frame:131
+                                          ▕█▏5166354.005060538 "Signalum Cell Frame (Empty)" thermalexpansion:frame:131
                                             [minecraft__crafting]
                                             ↱ 1x thermalexpansion:frame:131
                                             ░ 1x minecraft:crafting_table:0
@@ -3048,12 +3048,12 @@
                                                   ↱ 1x netherendingores:ore_nether_vanilla:6
                                                   ░ 1x dimension:nether_-1, 1x tconstruct:pick_head:0:{Material:"copper"}
                                                   ⮬ 38.92541350888575x placeholder:exploration
-                                            ▕█▏10255973.395862728 "Reinforced Cell Frame (Full)" thermalexpansion:frame:146
+                                            ▕█▏10255976.81760528 "Reinforced Cell Frame (Full)" thermalexpansion:frame:146
                                               [thermalexpansion__transposer_fill]
                                               ↱ 1x thermalexpansion:frame:146
                                               ░ 1x thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                                               ⮬ 576x fluid:lumium, 1x thermalexpansion:frame:130
-                                              ▕█▏5110736.775667179 "Fluid Transposer (Basic)" thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                                              ▕█▏5110738.486538456 "Fluid Transposer (Basic)" thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                                                 [minecraft__crafting]
                                                 ↱ 1x thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                                                 ░ 1x minecraft:crafting_table:0
@@ -3112,7 +3112,7 @@
                                                     ↱ 1x thermalfoundation:material:166
                                                     ░ 1x minecraft:crafting_table:0
                                                     ⮬ 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230, 1x thermalfoundation:material:230
-                                              ▕█▏5145043.491668245 "Reinforced Cell Frame (Empty)" thermalexpansion:frame:130
+                                              ▕█▏5145045.202539521 "Reinforced Cell Frame (Empty)" thermalexpansion:frame:130
                                                 [minecraft__crafting]
                                                 ↱ 1x thermalexpansion:frame:130
                                                 ░ 1x minecraft:crafting_table:0
@@ -3141,7 +3141,7 @@
                                                           ↱ 1x appliedenergistics2:material:8
                                                           ░ 1x appliedenergistics2:grindstone:0
                                                           ⮬ 1x appliedenergistics2:material:7
-                                                ▕█▏5107826.4764446225 "Hardened Cell Frame" thermalexpansion:frame:129
+                                                ▕█▏5107828.187315899 "Hardened Cell Frame" thermalexpansion:frame:129
                                                   [actuallyadditions__empowerer]
                                                   ↱ 1x thermalexpansion:frame:129
                                                   ░ 1x actuallyadditions:block_empowerer:0
@@ -3211,7 +3211,7 @@
                                                           ↱ 1x minecraft:quartz_block:0
                                                           ░ 1x minecraft:crafting_table:0
                                                           ⮬ 1x minecraft:stone_slab:7, 1x minecraft:stone_slab:7
-                                                  ▕█▏5104392.63029539 "Energy Cell Frame" thermalexpansion:frame:128
+                                                  ▕█▏5104394.341166667 "Energy Cell Frame" thermalexpansion:frame:128
                                                     [mekanism__metallurgicinfuser]
                                                     ↱ 1x thermalexpansion:frame:128
                                                     ░ 1x mekanism:machineblock:8
@@ -3310,12 +3310,12 @@
                                             ↱ 1x minecraft:reeds:0
                                             ░ 1x dimension:overworld_0
                                             ⮬ 410.6131571343551x placeholder:exploration
-                                      ▕█▏899372.8983381944 "Basic Circuit" advancedrocketry:ic:0
+                                      ▕█▏899373.1834834069 "Basic Circuit" advancedrocketry:ic:0
                                         [zmaster587__AR__sawMill]
                                         ↱ 4x advancedrocketry:ic:0
                                         ░ 1x advancedrocketry:cuttingmachine:0
                                         ⮬ 1x advancedrocketry:itemcircuitplate:0
-                                        ▕█▏899343.143430357 "Cutting Machine" advancedrocketry:cuttingmachine:0
+                                        ▕█▏899343.4285755695 "Cutting Machine" advancedrocketry:cuttingmachine:0
                                           [minecraft__crafting]
                                           ↱ 1x advancedrocketry:cuttingmachine:0
                                           ░ 1x minecraft:crafting_table:0
@@ -3325,12 +3325,12 @@
                                             ↱ 1x thermalfoundation:material:288
                                             ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:4
                                             ⮬ 576x fluid:steel
-                                        ▕█▏899444.978686148 "Basic Circuit Plate" advancedrocketry:itemcircuitplate:0
+                                        ▕█▏899445.2638313605 "Basic Circuit Plate" advancedrocketry:itemcircuitplate:0
                                           [zmaster587__AR__precisionAssembler]
                                           ↱ 1x advancedrocketry:itemcircuitplate:0
                                           ░ 1x advancedrocketry:precisionassemblingmachine:0
                                           ⮬ 1x forestry:thermionic_tubes:4, 1x advancedrocketry:misc:1, 1x advancedrocketry:wafer:0
-                                          ▕█▏899403.381283967 "Precision Assembler" advancedrocketry:precisionassemblingmachine:0
+                                          ▕█▏899403.6664291796 "Precision Assembler" advancedrocketry:precisionassemblingmachine:0
                                             [minecraft__crafting]
                                             ↱ 1x advancedrocketry:precisionassemblingmachine:0
                                             ░ 1x minecraft:crafting_table:0
@@ -3345,17 +3345,17 @@
                                               ↱ 1x minecraft:dropper:0
                                               ░ 1x minecraft:crafting_table:0
                                               ⮬ 1x minecraft:cobblestone:0, 1x minecraft:cobblestone:0, 1x minecraft:cobblestone:0, 1x minecraft:cobblestone:0, 1x minecraft:cobblestone:0, 1x minecraft:cobblestone:0, 1x minecraft:redstone:0, 1x minecraft:cobblestone:0
-                                          ▕█▏899369.2311183315 "Silicon Wafer" advancedrocketry:wafer:0
+                                          ▕█▏899369.5162635441 "Silicon Wafer" advancedrocketry:wafer:0
                                             [zmaster587__AR__sawMill]
                                             ↱ 4x advancedrocketry:wafer:0
                                             ░ 1x advancedrocketry:cuttingmachine:0
                                             ⮬ 1x libvulpes:productboule:3
-                                            ▕█▏899345.0297650486 "Silicon Boule" libvulpes:productboule:3
+                                            ▕█▏899345.3149102612 "Silicon Boule" libvulpes:productboule:3
                                               [zmaster587__AR__crystallizer]
                                               ↱ 1x libvulpes:productboule:3
                                               ░ 1x advancedrocketry:crystallizer:0
                                               ⮬ 1x advancedrocketry:misc:1
-                                              ▕█▏899244.6790131506 "Crystallizer" advancedrocketry:crystallizer:0
+                                              ▕█▏899244.9641583632 "Crystallizer" advancedrocketry:crystallizer:0
                                                 [minecraft__crafting]
                                                 ↱ 1x advancedrocketry:crystallizer:0
                                                 ░ 1x minecraft:crafting_table:0
@@ -3444,12 +3444,12 @@
                               ↱ 1x exnihilocreatio:block_diorite_crushed:0
                               ░ 1x exnihilocreatio:hammer_diamond:0
                               ⮬ 1x minecraft:stone:3
-                      ▕█▏5110044.521341589 "Bean" randomthings:beans:0
+                      ▕█▏5110046.232212866 "Bean" randomthings:beans:0
                         [thermalexpansion__insolator]
                         ↱ 1x randomthings:beans:0, 1x harvestcraft:beanseeditem:0
                         ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                         ⮬ 1200x fluid:water, 1x thermalfoundation:fertilizer:0, 1x harvestcraft:beanseeditem:0
-                        ▕█▏5110029.146945865 "Phytogenic Insolator (Basic)" thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                        ▕█▏5110030.857817141 "Phytogenic Insolator (Basic)" thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                           [minecraft__crafting]
                           ↱ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                           ░ 1x minecraft:crafting_table:0
@@ -3811,42 +3811,21 @@
                 ↱ 1x twilightforest:root:1
                 ░ 1x dimension:twilight_forest_7
                 ⮬ 21.854407509402108x placeholder:exploration
-        ▕ ▏0 "Fiery Ingot" twilightforest:fiery_ingot:0
+        ▕█▏5675.429787733988 "Fiery Ingot" twilightforest:fiery_ingot:0
           [tconstruct__casting_table]
           ↱ 1x twilightforest:fiery_ingot:0
           ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:0
           ⮬ 144x fluid:fierymetal
-          ▕ ▏0 "Molten Fiery" fluid:fierymetal
-            [tconstruct__alloy]
-            ↱ 144x fluid:fierymetal
-            ░ 1x tcomplement:alloy_tank:0
-            ⮬ 250x fluid:fiery_essence, 144x fluid:end_steel
-            ▕ ▏0 "Fiery Essence" fluid:fiery_essence
-              [forestry__squeezer]
-              ↱ 1000x fluid:fiery_essence, 1x thermalfoundation:material:129
-              ░ 1x forestry:squeezer:0
-              ⮬ 1x forestry:can:1:{Fluid:{FluidName:"fiery_essence",Amount:1000}}
-              ▕█▏5413.164631224152 "Squeezer" forestry:squeezer:0
-                [minecraft__crafting]
-                ↱ 1x forestry:squeezer:0
-                ░ 1x minecraft:crafting_table:0
-                ⮬ 1x immersiveengineering:treated_wood:0, 1x minecraft:glass:0, 1x immersiveengineering:treated_wood:0, 1x thermalfoundation:material:257, 1x forestry:sturdy_machine:0, 1x thermalfoundation:material:257, 1x immersiveengineering:treated_wood:0, 1x minecraft:glass:0, 1x immersiveengineering:treated_wood:0
-              ▕ ▏0 "Fiery Essence Can" forestry:can:1:{Fluid:{FluidName:"fiery_essence",Amount:1000}}
-            ▕█▏237.36673438324894 "Molten End Steel" fluid:end_steel
-              [tconstruct__smeltery]
-              ↱ 16x fluid:end_steel
-              ░ 1x tconstruct:smeltery_controller:0
-              ⮬ 1x enderio:item_alloy_nugget:8
-              ▕█▏258.0192793200499 "End Steel Nugget" enderio:item_alloy_nugget:8
-                [minecraft__crafting]
-                ↱ 9x enderio:item_alloy_nugget:8
-                ░ 1x minecraft:crafting_table:0
-                ⮬ 1x enderio:item_alloy_ingot:8
-                ▕█▏624.2075655117658 "End Steel Ingot" enderio:item_alloy_ingot:8
-                  [minecraft__crafting]
-                  ↱ 1x enderio:item_alloy_ingot:8
-                  ░ 1x minecraft:crafting_table:0
-                  ⮬ 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8
+          ▕█▏272.4516109264588 "Molten Fiery" fluid:fierymetal
+            [tconstruct__smeltery]
+            ↱ 72x fluid:fierymetal
+            ░ 1x tconstruct:smeltery_controller:0
+            ⮬ 1x tconstruct:shard:0:{Material:"fierymetal"}
+            ▕█▏3214.1377151317593 "Shard" tconstruct:shard:0:{Material:"fierymetal"}
+              [tconstruct__casting_table]
+              ↱ 1x tconstruct:shard:0:{Material:"fierymetal"}
+              ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
+              ⮬ 72x fluid:fierymetal, 1x tconstruct:clay_cast:0:{PartType:"tconstruct:shard"}
         ▕█▏625.0908072245957 "Evil Infused Iron Ingot" extrautils2:ingredients:17
           [tconstruct__casting_table]
           ↱ 1x extrautils2:ingredients:17
@@ -3907,7 +3886,7 @@
             ↱ 9x tconevo:metal:27
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x tconevo:metal:25
-        ▕█▏122.2092868575823 "Demon Ingot" extrautils2:ingredients:11
+        ▕█▏1106.7621219375499 "Demon Ingot" extrautils2:ingredients:11
           [jetif]
           ↱ 1x extrautils2:ingredients:11
           ⮬ 1000x fluid:lava, 1x minecraft:gold_ingot:0
@@ -3921,6 +3900,16 @@
             ↱ 9x draconicevolution:nugget:1
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x draconicevolution:draconic_ingot:0
+        ▕█▏624.2075655117658 "End Steel Ingot" enderio:item_alloy_ingot:8
+          [minecraft__crafting]
+          ↱ 1x enderio:item_alloy_ingot:8
+          ░ 1x minecraft:crafting_table:0
+          ⮬ 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8, 1x enderio:item_alloy_nugget:8
+          ▕█▏258.0192793200499 "End Steel Nugget" enderio:item_alloy_nugget:8
+            [minecraft__crafting]
+            ↱ 9x enderio:item_alloy_nugget:8
+            ░ 1x minecraft:crafting_table:0
+            ⮬ 1x enderio:item_alloy_ingot:8
         ▕█▏586.1420210702532 "Pigiron Ingot" tconstruct:ingots:4
           [minecraft__crafting]
           ↱ 1x tconstruct:ingots:4
@@ -4006,31 +3995,31 @@
             ↱ 9x jaopca:item_nuggetmagnesium:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x nuclearcraft:ingot:7
-        ▕ ▏0 "Ivory Psimetal Ingot" psi:material:4
+        ▕█▏454.0948853830213 "Ivory Psimetal Ingot" psi:material:4
           [minecraft__crafting]
           ↱ 1x psi:material:4
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x psi:material:6, 1x psi:material:6, 1x psi:material:6, 1x psi:material:6, 1x psi:material:1, 1x psi:material:6, 1x psi:material:6, 1x psi:material:6, 1x psi:material:6
-          ▕ ▏0 "Ivory Substance" psi:material:6
+          ▕█▏662.8838935725225 "Ivory Substance" psi:material:6
             [JEC]
             ↱ 1x psi:material:6
             ░ 1x psi:cad_assembly:2
             ⮬ 1x minecraft:quartz:0
-            ▕ ▏0 "Psimetal CAD Assembly" psi:cad_assembly:2
+            ▕█▏633.5841825374657 "Psimetal CAD Assembly" psi:cad_assembly:2
               [minecraft__crafting]
               ↱ 1x psi:cad_assembly:2
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x psi:material:1, 1x psi:material:1, 1x jaopca:item_dirtygemplatinum:0, 1x psi:material:1
-              ▕ ▏0 "Psimetal Ingot" psi:material:1
-                [tconstruct__casting_table]
+              ▕█▏226.9194193247889 "Psimetal Ingot" psi:material:1
+                [JEC]
                 ↱ 1x psi:material:1
-                ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:0
-                ⮬ 144x fluid:psimetal
-                ▕ ▏0 "Molten Psimetal" fluid:psimetal
-                  [tconstruct__smeltery]
-                  ↱ 144x fluid:psimetal
-                  ░ 1x tconstruct:smeltery_controller:0
-                  ⮬ 1x psi:material:1
+                ░ 1x psi:cad_assembly:0
+                ⮬ 1x minecraft:gold_ingot:0
+                ▕█▏236.10452100368659 "Iron CAD Assembly" psi:cad_assembly:0
+                  [minecraft__crafting]
+                  ↱ 1x psi:cad_assembly:0
+                  ░ 1x minecraft:crafting_table:0
+                  ⮬ 1x minecraft:iron_ingot:0, 1x minecraft:iron_ingot:0, 1x minecraft:sugar:0, 1x minecraft:iron_ingot:0
               ▕█▏804.8674259062518 "Dirty Platinum" jaopca:item_dirtygemplatinum:0
                 [minecraft__smelting]
                 ↱ 1x jaopca:item_dirtygemplatinum:0
@@ -4071,17 +4060,16 @@
                             ↱ 1x thermalfoundation:storage:6
                             ░ 1x minecraft:crafting_table:0
                             ⮬ 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134, 1x thermalfoundation:material:134
-        ▕ ▏0 "Ebony Psimetal Ingot" psi:material:3
+        ▕█▏330.82750150566267 "Ebony Psimetal Ingot" psi:material:3
           [minecraft__crafting]
           ↱ 1x psi:material:3
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x psi:material:5, 1x psi:material:5, 1x psi:material:5, 1x psi:material:5, 1x psi:material:1, 1x psi:material:5, 1x psi:material:5, 1x psi:material:5, 1x psi:material:5
-          ▕ ▏0 "Ebony Substance" psi:material:5
-            [psi__trick]
+          ▕█▏647.4754705878527 "Ebony Substance" psi:material:5
+            [JEC]
             ↱ 1x psi:material:5
-            ░ 1x psi:cad:0
-            ⮬ 1x minecraft:coal:0, 1x psi:cad_assembly:2
-            ▕ ▏0 "[psi:cad:0]" psi:cad:0
+            ░ 1x psi:cad_assembly:2
+            ⮬ 1x minecraft:coal:0
         ▕ ▏0 "§5Insanium Ingot" mysticalagradditions:insanium:2
           [minecraft__crafting]
           ↱ 1x mysticalagradditions:insanium:2
@@ -4158,21 +4146,21 @@
             ↱ 9x enderio:item_alloy_nugget:6
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x enderio:item_alloy_ingot:6
-        ▕ ▏0 "Void Metal Ingot" thaumcraft:ingot:1
-          [tconstruct__casting_table]
+        ▕█▏60006394.777541265 "Void Metal Ingot" thaumcraft:ingot:1
+          [minecraft__crafting]
           ↱ 1x thaumcraft:ingot:1
-          ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:0
-          ⮬ 144x fluid:void_metal
-          ▕ ▏0 "Molten Void Metal" fluid:void_metal
-            [tconstruct__smeltery]
-            ↱ 16x fluid:void_metal
-            ░ 1x tconstruct:smeltery_controller:0
-            ⮬ 1x thaumcraft:nugget:7
-            ▕ ▏0 "Void Metal Nugget" thaumcraft:nugget:7
-              [tconstruct__casting_table]
-              ↱ 1x thaumcraft:nugget:7
-              ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:1
-              ⮬ 16x fluid:void_metal
+          ░ 1x minecraft:crafting_table:0
+          ⮬ 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7, 1x thaumcraft:nugget:7
+          ▕█▏6667565.860387736 "Void Metal Nugget" thaumcraft:nugget:7
+            [tconstruct__casting_table]
+            ↱ 1x thaumcraft:nugget:7
+            ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:1
+            ⮬ 16x fluid:void_metal
+            ▕█▏416944.11374810373 "Molten Void Metal" fluid:void_metal
+              [tconstruct__smeltery]
+              ↱ 16x fluid:void_metal
+              ░ 1x tconstruct:smeltery_controller:0
+              ⮬ 1x thaumcraft:nugget:7
         ▕█▏419.71219712114396 "Draconium Ingot" draconicevolution:draconium_ingot:0
           [minecraft__crafting]
           ↱ 1x draconicevolution:draconium_ingot:0
@@ -4183,17 +4171,17 @@
             ↱ 9x draconicevolution:nugget:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x draconicevolution:draconium_ingot:0
-        ▕█▏103874013.05468424 "Melodic Alloy Ingot" enderio:item_alloy_endergy_ingot:2
+        ▕█▏103877434.79723777 "Melodic Alloy Ingot" enderio:item_alloy_endergy_ingot:2
           [minecraft__crafting]
           ↱ 1x enderio:item_alloy_endergy_ingot:2
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2, 1x enderio:item_alloy_endergy_nugget:2
-          ▕█▏11541745.668959182 "Melodic Alloy Nugget" enderio:item_alloy_endergy_nugget:2
+          ▕█▏11542125.862576239 "Melodic Alloy Nugget" enderio:item_alloy_endergy_nugget:2
             [tconstruct__casting_table]
             ↱ 1x enderio:item_alloy_endergy_nugget:2
             ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:1
             ⮬ 16x fluid:melodic_alloy
-            ▕█▏721580.3517838189 "Molten Melodic Alloy" fluid:melodic_alloy
+            ▕█▏721604.113884885 "Molten Melodic Alloy" fluid:melodic_alloy
               [tconstruct__smeltery]
               ↱ 16x fluid:melodic_alloy
               ░ 1x tconstruct:smeltery_controller:0
@@ -4208,7 +4196,7 @@
             ↱ 1x draconicevolution:fusion_crafting_core:0
             ░ 1x extendedcrafting:crafting_core:0
             ⮬ 1x extendedcrafting:crafting_core:0, 1x draconicevolution:draconic_core:0, 1x draconicevolution:wyvern_energy_core:0, 1x draconicevolution:wyvern_core:0, 1x actuallyadditions:item_misc:19, 1x minecraft:nether_star:0, 1x ic2:crafting:4, 1x plustic:mirionblock:0, 1x plustic:osmiridiumblock:0, 1x plustic:osgloglasblock:0, 1x actuallyadditions:block_empowerer:0, 1x nuclearcraft:fusion_core:0, 1x environmentaltech:aethium:0, 1x extendedcrafting:storage:3, 1x biomesoplenty:terrestrial_artifact:0, 1x thermalexpansion:frame:148
-            ▕█▏17830.751966029853 "Crafting Core" extendedcrafting:crafting_core:0
+            ▕█▏17830.751965050986 "Crafting Core" extendedcrafting:crafting_core:0
               [forestry__carpenter]
               ↱ 1x extendedcrafting:crafting_core:0
               ░ 1x forestry:carpenter:0
@@ -4243,7 +4231,7 @@
                   ↱ 1x extendedcrafting:storage:0
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0, 1x extendedcrafting:material:0
-            ▕█▏14136.054760907246 "Draconic Core" draconicevolution:draconic_core:0
+            ▕█▏14141.91414515267 "Draconic Core" draconicevolution:draconic_core:0
               [minecraft__crafting]
               ↱ 1x draconicevolution:draconic_core:0
               ░ 1x minecraft:crafting_table:0
@@ -4268,17 +4256,17 @@
                       ↱ 1x draconicevolution:draconium_dust:0
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0, 1x jaopca:item_dusttinydraconium:0
-              ▕█▏677.7553732292185 "Litherite Crystal" environmentaltech:litherite_crystal:0
+              ▕█▏680.6850653519305 "Litherite Crystal" environmentaltech:litherite_crystal:0
                 [minecraft__crafting]
                 ↱ 9x environmentaltech:litherite_crystal:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x environmentaltech:litherite:0
-                ▕█▏4402.73518847206 "Litherite" environmentaltech:litherite:0
+                ▕█▏4429.102417576468 "Litherite" environmentaltech:litherite:0
                   [minecraft__crafting]
                   ↱ 1x environmentaltech:litherite:0
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x environmentaltech:litherite_paver:0
-                  ▕█▏4401.73518847206 "Litherite Paver" environmentaltech:litherite_paver:0
+                  ▕█▏4428.102417576468 "Litherite Paver" environmentaltech:litherite_paver:0
                     [minecraft__crafting]
                     ↱ 8x environmentaltech:litherite_paver:0
                     ░ 1x minecraft:crafting_table:0
@@ -4327,12 +4315,12 @@
                   ↱ 2x draconicevolution:energy_crystal:3
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x draconicevolution:energy_crystal:0
-            ▕█▏5124904.716897957 "Wyvern Energy Core" draconicevolution:wyvern_energy_core:0
+            ▕█▏5124912.287153479 "Wyvern Energy Core" draconicevolution:wyvern_energy_core:0
               [thermalexpansion__transposer_fill]
               ↱ 1x draconicevolution:wyvern_energy_core:0
               ░ 1x thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
               ⮬ 10000x fluid:redstone, 1x draconicevolution:draconic_core:0
-            ▕█▏12103681.002120078 "Wyvern Core" draconicevolution:wyvern_core:0
+            ▕█▏12103698.580272814 "Wyvern Core" draconicevolution:wyvern_core:0
               [forestry__carpenter]
               ↱ 1x draconicevolution:wyvern_core:0
               ░ 1x forestry:carpenter:0
@@ -4620,12 +4608,16 @@
                         ░ 1x minecraft:crafting_table:0
                         ⮬ 1x thermalfoundation:material:16, 1x thermalfoundation:material:16, 1x extendedcrafting:storage:0, 1x thermalfoundation:material:16, 1x thermalfoundation:material:16
                   ▕ ▏0 "§bEnderman Data Model§r" deepmoblearning:data_model_enderman:0:{tier:1}
-                  ▕ ▏0 "Polymer Clay" deepmoblearning:polymer_clay:0
+                  ▕█▏230.75756477861458 "Polymer Clay" deepmoblearning:polymer_clay:0
                     [minecraft__crafting]
                     ↱ 16x deepmoblearning:polymer_clay:0
                     ░ 1x minecraft:crafting_table:0
-                    ⮬ 1x forge:bucketfilled:0:{FluidName:"concrete",Amount:1000,display:{Name:"Any container with Liquid Concrete * 1000 mB"}}, 1x ic2:dust:1, 1x ic2:dust:1, 1x ic2:dust:1, 1x thermalfoundation:material:1, 1x ic2:dust:9
-                    ▕ ▏0 "Any container with Liquid Concrete * 1000 mB" forge:bucketfilled:0:{FluidName:"concrete",Amount:1000,display:{Name:"Any container with Liquid Concrete * 1000 mB"}}
+                    ⮬ 1x fluid:concrete, 1x ic2:dust:1, 1x ic2:dust:1, 1x ic2:dust:1, 1x thermalfoundation:material:1, 1x ic2:dust:9
+                    ▕█▏4818.576598917541 "Liquid Concrete" fluid:concrete
+                      [nuclearcraft_dissolver]
+                      ↱ 250x fluid:concrete
+                      ░ 1x nuclearcraft:dissolver_idle:0
+                      ⮬ 250x fluid:water, 1x tconstruct:soil:0
                     ▕█▏494.1368606335322 "Lapis Lazuli Dust" ic2:dust:9
                       [astralsorcery__grindstone]
                       ↱ 1x ic2:dust:9
@@ -4671,12 +4663,12 @@
                           ↱ 1x minecraft:dirt:0
                           ░ 1x dimension:overworld_0
                           ⮬ 6.389654477686135x placeholder:exploration
-                    ▕█▏5166632.112197924 "Mending Moss" tconstruct:materials:19
+                    ▕█▏5166633.823069202 "Mending Moss" tconstruct:materials:19
                       [thermalexpansion__enchanter]
                       ↱ 2x tconstruct:materials:19
                       ░ 1x thermalexpansion:machine:13:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                       ⮬ 6560x fluid:experience, 1x tconstruct:materials:18, 1x tconstruct:materials:18
-                      ▕█▏5104078.132067228 "Arcane Ensorcellator (Basic)" thermalexpansion:machine:13:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                      ▕█▏5104079.842938504 "Arcane Ensorcellator (Basic)" thermalexpansion:machine:13:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                         [minecraft__crafting]
                         ↱ 1x thermalexpansion:machine:13:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                         ░ 1x minecraft:crafting_table:0
@@ -4855,12 +4847,12 @@
                 ↱ 1x minecraft:gravel:0, 1x minecraft:diamond:0, 1x minecraft:redstone:0, 1x minecraft:clay_ball:0, 1x minecraft:emerald:0, 1x minecraft:quartz:0, 1x minecraft:prismarine_shard:0, 1x minecraft:prismarine_crystals:0, 1x thaumcraft:amber:0
                 ░ 1x minecraft:iron_pickaxe:0
                 ⮬ 1x thaumcraft:stone_porous:0
-                ▕█▏365246474.5442953 "Porous Stone" thaumcraft:stone_porous:0
+                ▕█▏365246660.8257703 "Porous Stone" thaumcraft:stone_porous:0
                   [environmentaltech__voidminer__resource__t6]
                   ↱ 1x thaumcraft:stone_porous:0
                   ░ 1x environmentaltech:void_res_miner_cont_6:0
                   ⮬ 1x environmentaltech:laser_lens:0, 1x environmentaltech:laser_lens_colored:8
-                  ▕█▏365246175.7624123 "Void Resource Miner Controller Tier 6" environmentaltech:void_res_miner_cont_6:0
+                  ▕█▏365246362.0438873 "Void Resource Miner Controller Tier 6" environmentaltech:void_res_miner_cont_6:0
                     [minecraft__crafting]
                     ↱ 1x environmentaltech:void_res_miner_cont_6:0
                     ░ 1x minecraft:crafting_table:0
@@ -4875,7 +4867,7 @@
                         ↱ 1x environmentaltech:aethium_crystal:0
                         ░ 1x industrialforegoing:ore_sieve:0
                         ⮬ 100x fluid:if.ore_fluid_fermented, 1x environmentaltech:mica:0
-                    ▕█▏293223176.8328581 "Void Resource Miner Controller Tier 5" environmentaltech:void_res_miner_cont_5:0
+                    ▕█▏293223363.1143331 "Void Resource Miner Controller Tier 5" environmentaltech:void_res_miner_cont_5:0
                       [minecraft__crafting]
                       ↱ 1x environmentaltech:void_res_miner_cont_5:0
                       ░ 1x minecraft:crafting_table:0
@@ -4890,12 +4882,12 @@
                           ↱ 1x environmentaltech:ionite_crystal:0
                           ░ 1x industrialforegoing:ore_sieve:0
                           ⮬ 100x fluid:if.ore_fluid_fermented, 1x environmentaltech:mica:0
-                      ▕█▏221200177.9033039 "Void Resource Miner Controller Tier 4" environmentaltech:void_res_miner_cont_4:0
+                      ▕█▏221200364.1847789 "Void Resource Miner Controller Tier 4" environmentaltech:void_res_miner_cont_4:0
                         [minecraft__crafting]
                         ↱ 1x environmentaltech:void_res_miner_cont_4:0
                         ░ 1x minecraft:crafting_table:0
                         ⮬ 1x environmentaltech:pladium:0, 1x minecraft:obsidian:0, 1x environmentaltech:pladium:0, 1x environmentaltech:pladium:0, 1x environmentaltech:void_res_miner_cont_3:0, 1x environmentaltech:pladium:0, 1x environmentaltech:pladium:0, 1x environmentaltech:laser_lens:0, 1x environmentaltech:pladium:0
-                        ▕█▏149177178.97374967 "Void Resource Miner Controller Tier 3" environmentaltech:void_res_miner_cont_3:0
+                        ▕█▏149177365.25522467 "Void Resource Miner Controller Tier 3" environmentaltech:void_res_miner_cont_3:0
                           [minecraft__crafting]
                           ↱ 1x environmentaltech:void_res_miner_cont_3:0
                           ░ 1x minecraft:crafting_table:0
@@ -4910,7 +4902,7 @@
                               ↱ 1x environmentaltech:kyronite_crystal:0
                               ░ 1x industrialforegoing:ore_sieve:0
                               ⮬ 100x fluid:if.ore_fluid_fermented, 1x environmentaltech:mica:0
-                          ▕█▏77154180.0441954 "Void Resource Miner Controller Tier 2" environmentaltech:void_res_miner_cont_2:0
+                          ▕█▏77154366.3256704 "Void Resource Miner Controller Tier 2" environmentaltech:void_res_miner_cont_2:0
                             [minecraft__crafting]
                             ↱ 1x environmentaltech:void_res_miner_cont_2:0
                             ░ 1x minecraft:crafting_table:0
@@ -4925,12 +4917,12 @@
                                 ↱ 1x environmentaltech:erodium_crystal:0
                                 ░ 1x industrialforegoing:ore_sieve:0
                                 ⮬ 100x fluid:if.ore_fluid_fermented, 1x environmentaltech:mica:0
-                            ▕█▏5131181.114641182 "Void Resource Miner Controller Tier 1" environmentaltech:void_res_miner_cont_1:0
+                            ▕█▏5131367.39611619 "Void Resource Miner Controller Tier 1" environmentaltech:void_res_miner_cont_1:0
                               [minecraft__crafting]
                               ↱ 1x environmentaltech:void_res_miner_cont_1:0
                               ░ 1x minecraft:crafting_table:0
                               ⮬ 1x environmentaltech:litherite:0, 1x minecraft:obsidian:0, 1x environmentaltech:litherite:0, 1x environmentaltech:litherite:0, 1x environmentaltech:diode:0, 1x environmentaltech:litherite:0, 1x environmentaltech:interconnect:0, 1x environmentaltech:laser_lens:0, 1x environmentaltech:interconnect:0
-                              ▕█▏5105065.167431286 "Diode" environmentaltech:diode:0
+                              ▕█▏5105145.979989876 "Diode" environmentaltech:diode:0
                                 [minecraft__crafting]
                                 ↱ 1x environmentaltech:diode:0
                                 ░ 1x minecraft:crafting_table:0
@@ -5135,22 +5127,22 @@
               ↱ 1x extendedcrafting:storage:3
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24, 1x extendedcrafting:material:24
-            ▕█▏677.6442621181073 "Terrestrial Artifact" biomesoplenty:terrestrial_artifact:0
+            ▕█▏680.5739542408194 "Terrestrial Artifact" biomesoplenty:terrestrial_artifact:0
               [minecraft__crafting]
               ↱ 9x biomesoplenty:terrestrial_artifact:0
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x contenttweaker:terrestrial_artifact_block:0
-              ▕█▏4400.61018847206 "Terrestrial Artifact Block" contenttweaker:terrestrial_artifact_block:0
+              ▕█▏4426.977417576468 "Terrestrial Artifact Block" contenttweaker:terrestrial_artifact_block:0
                 [minecraft__crafting]
                 ↱ 1x contenttweaker:terrestrial_artifact_block:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0, 1x biomesoplenty:terrestrial_artifact:0
-            ▕█▏5248888.649843717 "Resonant Cell Frame (Full)" thermalexpansion:frame:148
+            ▕█▏5248899.14979092 "Resonant Cell Frame (Full)" thermalexpansion:frame:148
               [extendedcrafting__combination_crafting]
               ↱ 1x thermalexpansion:frame:148
               ░ 1x extendedcrafting:crafting_core:0
               ⮬ 1x thermalexpansion:frame:132, 1x gendustry:genetics_processor:0, 1x extrautils2:ingredients:5, 1x ic2:plate:16, 1x ic2:energy_crystal:0, 1x forestry:thermionic_tubes:12, 1x forestry:crafting_material:1, 1x mekanismgenerators:reactor:1, 1x environmentaltech:structure_frame_1:0, 1x rftools:infused_diamond:0, 1x mekanism:controlcircuit:3, 1x thermalfoundation:material:295, 1x environmentaltech:litherite_crystal:0, 1x nuclearcraft:part:6, 1x nuclearcraft:gem:1
-              ▕█▏5185079.5249662995 "Resonant Cell Frame (Empty)" thermalexpansion:frame:132
+              ▕█▏5185081.235838114 "Resonant Cell Frame (Empty)" thermalexpansion:frame:132
                 [forestry__fabricator]
                 ↱ 1x thermalexpansion:frame:132
                 ░ 1x forestry:fabricator:0
@@ -5185,7 +5177,7 @@
                       ↱ 1x actuallyadditions:block_crystal_empowered:2
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2, 1x actuallyadditions:item_crystal_empowered:2
-                ▕█▏5137262.49050868 "Hardened Enderium Glass" thermalfoundation:glass_alloy:7
+                ▕█▏5137264.201379957 "Hardened Enderium Glass" thermalfoundation:glass_alloy:7
                   [thermalexpansion__smelter]
                   ↱ 1x thermalfoundation:glass_alloy:7, 1x thermalfoundation:material:865
                   ░ 1x thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -5205,7 +5197,7 @@
                       ↱ 1x thermalfoundation:material:167
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231, 1x thermalfoundation:material:231
-                ▕█▏2670.1412539775956 "Mana Dust" thermalfoundation:material:1028
+                ▕█▏2670.141254156935 "Mana Dust" thermalfoundation:material:1028
                   [minecraft__crafting]
                   ↱ 2x thermalfoundation:material:1028
                   ░ 1x minecraft:crafting_table:0
@@ -5220,7 +5212,7 @@
                       ↱ 9x jaopca:item_nuggettanzanite:0
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x biomesoplenty:gem:4
-                  ▕█▏771.1115505529679 "Aerotheum Dust" thermalfoundation:material:1026
+                  ▕█▏771.1115509116464 "Aerotheum Dust" thermalfoundation:material:1026
                     [minecraft__crafting]
                     ↱ 1x thermalfoundation:material:1026
                     ░ 1x minecraft:crafting_table:0
@@ -5359,7 +5351,7 @@
                 ↱ 4x mekanismgenerators:reactor:1
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x mekanism:basicblock:8, 1x mekanism:basicblock:8, 1x mekanism:atomicalloy:0, 1x mekanism:basicblock:8, 1x mekanism:basicblock:8
-              ▕█▏5727.477275383769 "Structure Frame Tier 1" environmentaltech:structure_frame_1:0
+              ▕█▏5733.3366596291935 "Structure Frame Tier 1" environmentaltech:structure_frame_1:0
                 [minecraft__crafting]
                 ↱ 1x environmentaltech:structure_frame_1:0
                 ░ 1x minecraft:crafting_table:0
@@ -5503,6 +5495,11 @@
               ↱ 400x fluid:cryotheum_nak_hot, 1x enderio:item_material:14
               ░ 1x forestry:squeezer:0
               ⮬ 1x ic2:dust:36
+              ▕█▏5413.164631224152 "Squeezer" forestry:squeezer:0
+                [minecraft__crafting]
+                ↱ 1x forestry:squeezer:0
+                ░ 1x minecraft:crafting_table:0
+                ⮬ 1x immersiveengineering:treated_wood:0, 1x minecraft:glass:0, 1x immersiveengineering:treated_wood:0, 1x thermalfoundation:material:257, 1x forestry:sturdy_machine:0, 1x thermalfoundation:material:257, 1x immersiveengineering:treated_wood:0, 1x minecraft:glass:0, 1x immersiveengineering:treated_wood:0
               ▕ ▏0 "Gelided Fruit" ic2:dust:36
                 [requious__ic2_crops]
                 ↱ 1x ic2:dust:36, 1x minecraft:diamond:0
@@ -5600,22 +5597,22 @@
           ↱ 1x minecraft:tnt:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x minecraft:gunpowder:0, 1x minecraft:sand:0, 1x minecraft:gunpowder:0, 1x minecraft:sand:0, 1x minecraft:gunpowder:0, 1x minecraft:sand:0, 1x minecraft:gunpowder:0, 1x minecraft:sand:0, 1x minecraft:gunpowder:0
-        ▕█▏214024.4831000096 "Singularity" appliedenergistics2:material:47
+        ▕█▏214024.48309511523 "Singularity" appliedenergistics2:material:47
           [appliedenergistics2__condenser]
           ↱ 1x appliedenergistics2:material:47
           ░ 1x appliedenergistics2:condenser:0
           ⮬ 1x appliedenergistics2:material:38
-          ▕█▏103369.66046747372 "Matter Condenser" appliedenergistics2:condenser:0
+          ▕█▏103369.66046257937 "Matter Condenser" appliedenergistics2:condenser:0
             [extendedcrafting__compressor]
             ↱ 1x appliedenergistics2:condenser:0
             ░ 1x extendedcrafting:compressor:0
             ⮬ 1x minecraft:piston:0, 1x excompressum:double_compressed_diamond_hammer:0
-            ▕█▏100133.20083407755 "Quantum Compressor" extendedcrafting:compressor:0
+            ▕█▏100133.2008291832 "Quantum Compressor" extendedcrafting:compressor:0
               [extendedcrafting__table_crafting_5x5]
               ↱ 1x extendedcrafting:compressor:0
               ░ 1x extendedcrafting:table_advanced:0
               ⮬ 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x ic2:te:43, 1x excompressum:auto_compressor:0, 1x ic2:te:43, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x extendedcrafting:storage:0, 1x mekanism:tierinstaller:2, 1x extendedcrafting:storage:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x ic2:te:43, 1x excompressum:auto_compressor:0, 1x ic2:te:43, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0, 1x minecraft:piston:0
-              ▕█▏35843.12160829324 "Advanced Crafting Table" extendedcrafting:table_advanced:0
+              ▕█▏35843.1216033989 "Advanced Crafting Table" extendedcrafting:table_advanced:0
                 [extendedcrafting__table_crafting_3x3]
                 ↱ 1x extendedcrafting:table_advanced:0
                 ░ 1x extendedcrafting:table_basic:0
@@ -5640,32 +5637,32 @@
                       ↱ 1x minecraft:web:0
                       ░ 1x thaumcraft:crucible:0
                       ⮬ 1x minecraft:string:0
-                ▕█▏761.8205693738118 "Advanced Component" extendedcrafting:material:15
+                ▕█▏761.8205690475227 "Advanced Component" extendedcrafting:material:15
                   [minecraft__crafting]
                   ↱ 1x extendedcrafting:material:15
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x extendedcrafting:material:2, 1x extendedcrafting:material:7, 1x minecraft:gold_ingot:0, 1x minecraft:gold_ingot:0
-                ▕█▏2486.316806383679 "Advanced Catalyst" extendedcrafting:material:9
+                ▕█▏2486.316805078522 "Advanced Catalyst" extendedcrafting:material:9
                   [minecraft__crafting]
                   ↱ 1x extendedcrafting:material:9
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x extendedcrafting:material:15, 1x extendedcrafting:material:15, 1x extendedcrafting:material:0, 1x extendedcrafting:material:15, 1x extendedcrafting:material:15
-                ▕█▏789.8146555136457 "Ultimate Component" extendedcrafting:material:17
+                ▕█▏789.8146551873565 "Ultimate Component" extendedcrafting:material:17
                   [minecraft__crafting]
                   ↱ 1x extendedcrafting:material:17
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x extendedcrafting:material:2, 1x extendedcrafting:material:7, 1x minecraft:emerald:0, 1x minecraft:emerald:0
-                ▕█▏2511.8827694875577 "Elite Catalyst" extendedcrafting:material:10
+                ▕█▏2511.882768182401 "Elite Catalyst" extendedcrafting:material:10
                   [minecraft__crafting]
                   ↱ 1x extendedcrafting:material:10
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x extendedcrafting:material:16, 1x extendedcrafting:material:16, 1x extendedcrafting:material:0, 1x extendedcrafting:material:16, 1x extendedcrafting:material:16
-                  ▕█▏768.2120601497816 "Elite Component" extendedcrafting:material:16
+                  ▕█▏768.2120598234924 "Elite Component" extendedcrafting:material:16
                     [minecraft__crafting]
                     ↱ 1x extendedcrafting:material:16
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x extendedcrafting:material:2, 1x extendedcrafting:material:7, 1x minecraft:diamond:0, 1x minecraft:diamond:0
-                ▕█▏2598.293150943014 "Ultimate Catalyst" extendedcrafting:material:11
+                ▕█▏2598.2931496378574 "Ultimate Catalyst" extendedcrafting:material:11
                   [minecraft__crafting]
                   ↱ 1x extendedcrafting:material:11
                   ░ 1x minecraft:crafting_table:0
@@ -5730,12 +5727,12 @@
         ↱ 2x thermalfoundation:material:894, 2x thermalfoundation:material:894, 1x thermalfoundation:material:771, 1x minecraft:netherrack:0
         ░ 1x enderio:block_sag_mill:0
         ⮬ 1x thermalfoundation:ore_fluid:3, 1x fe:enderio:energy
-        ▕█▏5121198.837614543 "SAG Mill" enderio:block_sag_mill:0
+        ▕█▏5121200.548485647 "SAG Mill" enderio:block_sag_mill:0
           [minecraft__crafting]
           ↱ 1x enderio:block_sag_mill:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x minecraft:flint:0, 1x minecraft:flint:0, 1x minecraft:flint:0, 1x enderio:item_alloy_ingot:6, 1x enderio:item_material:1, 1x enderio:item_alloy_ingot:6, 1x enderio:item_material:73, 1x minecraft:piston:0, 1x enderio:item_material:73
-          ▕█▏5118929.402093348 "Industrial Machine Chassis" enderio:item_material:1
+          ▕█▏5118931.112964452 "Industrial Machine Chassis" enderio:item_material:1
             [minecraft__crafting]
             ↱ 1x enderio:item_material:1
             ░ 1x minecraft:crafting_table:0
@@ -5760,22 +5757,22 @@
                 ↱ 16x enderio:block_dark_iron_bars:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x enderio:item_alloy_ingot:6, 1x enderio:item_alloy_ingot:6, 1x enderio:item_alloy_ingot:6, 1x enderio:item_alloy_ingot:6, 1x enderio:item_alloy_ingot:6, 1x enderio:item_alloy_ingot:6
-            ▕█▏1981.1310446183554 "Industrial Dye Blend" enderio:item_material:51
+            ▕█▏1981.1310445748709 "Industrial Dye Blend" enderio:item_material:51
               [minecraft__crafting]
               ↱ 6x enderio:item_material:51
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x ic2:dust:9, 1x appliedenergistics2:material:3, 1x enderio:item_material:48, 1x appliedenergistics2:material:3, 1x enderio:item_material:50, 1x appliedenergistics2:material:3, 1x enderio:item_material:48, 1x appliedenergistics2:material:3, 1x ic2:dust:9
-              ▕█▏5111569.5064622825 "Organic Green Dye" enderio:item_material:48
+              ▕█▏5114018.314590625 "Organic Green Dye" enderio:item_material:48
                 [AlloySmelter]
                 ↱ 1x enderio:item_material:48
                 ░ 1x enderio:block_simple_alloy_smelter:0
                 ⮬ 6x enderio:item_material:46, 1x minecraft:egg:0, 1x fe:enderio:energy
-                ▕█▏5111219.427175371 "Simple Alloy Smelter" enderio:block_simple_alloy_smelter:0
+                ▕█▏5111221.138046647 "Simple Alloy Smelter" enderio:block_simple_alloy_smelter:0
                   [minecraft__crafting]
                   ↱ 1x enderio:block_simple_alloy_smelter:0
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x minecraft:iron_ingot:0, 1x minecraft:iron_ingot:0, 1x minecraft:iron_ingot:0, 1x minecraft:furnace:0, 1x enderio:item_material:0, 1x minecraft:furnace:0, 1x thermalfoundation:material:23, 1x minecraft:bucket:0, 1x thermalfoundation:material:23
-                  ▕█▏5110446.876494274 "Simple Machine Chassis" enderio:item_material:0
+                  ▕█▏5110448.58736555 "Simple Machine Chassis" enderio:item_material:0
                     [minecraft__crafting]
                     ↱ 1x enderio:item_material:0
                     ░ 1x minecraft:crafting_table:0
@@ -5800,12 +5797,12 @@
                       ↱ 1x enderio:item_material:11
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x minecraft:iron_nugget:0, 1x minecraft:iron_ingot:0, 1x minecraft:iron_nugget:0, 1x minecraft:iron_ingot:0, 1x enderio:item_material:20, 1x minecraft:iron_ingot:0, 1x minecraft:iron_nugget:0, 1x minecraft:iron_ingot:0, 1x minecraft:iron_nugget:0
-                ▕█▏5121279.36093117 "Clippings and Trimmings" enderio:item_material:46
+                ▕█▏5124292.211929352 "Clippings and Trimmings" enderio:item_material:46
                   [SagMill]
                   ↱ 1x enderio:item_material:46, 1x enderio:item_material:46, 1x enderio:item_material:47
                   ░ 1x enderio:block_sag_mill:0
                   ⮬ 1x minecraft:leaves:0, 1x fe:enderio:energy
-                  ▕█▏1633.6564583533009 "[fe:enderio:energy]" fe:enderio:energy
+                  ▕█▏5055.399011867622 "[fe:enderio:energy]" fe:enderio:energy
                     [LavaGenerator]
                     ↱ 1x fe:enderio:energy, 1x fe:enderio:energy
                     ░ 1x enderio:block_lava_generator:0
@@ -5815,7 +5812,7 @@
                       ↱ 1x enderio:block_lava_generator:0
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x enderio:item_material:72, 1x enderio:item_material:72, 1x enderio:item_material:72, 1x enderio:item_material:72, 1x mekanism:basicblock:8, 1x enderio:item_material:72, 1x enderio:item_material:72, 1x enderio:block_tank:0, 1x enderio:item_material:72
-                      ▕█▏5111430.324587573 "Nethercotta" enderio:item_material:72
+                      ▕█▏5113966.04023847 "Nethercotta" enderio:item_material:72
                         [AlloySmelter]
                         ↱ 1x enderio:item_material:72
                         ░ 1x enderio:block_simple_alloy_smelter:0
@@ -5859,7 +5856,7 @@
             ↱ 1x dimension:mercury_101
             ░ 1x advancedrocketry:stationbuilder:0
             ⮬ 10000x fluid:rocketfuel
-            ▕█▏6285775.016272509 "Space Station Assembler" advancedrocketry:stationbuilder:0
+            ▕█▏6285775.3014177205 "Space Station Assembler" advancedrocketry:stationbuilder:0
               [minecraft__crafting]
               ↱ 1x advancedrocketry:stationbuilder:0
               ░ 1x minecraft:crafting_table:0
@@ -5889,7 +5886,7 @@
                     ↱ 1x libvulpes:productnugget:7
                     ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:1
                     ⮬ 16x fluid:titanium
-              ▕█▏941374.2191332644 "Rocket Assembling Machine" advancedrocketry:rocketbuilder:0
+              ▕█▏941374.5042784768 "Rocket Assembling Machine" advancedrocketry:rocketbuilder:0
                 [minecraft__crafting]
                 ↱ 1x advancedrocketry:rocketbuilder:0
                 ░ 1x minecraft:crafting_table:0
@@ -5914,17 +5911,17 @@
                   ↱ 16x advancedrocketry:concrete:0
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x minecraft:sand:0, 1x minecraft:gravel:0, 1x minecraft:water_bucket:0
-              ▕█▏899375.2214658841 "Advanced Circuit" advancedrocketry:ic:2
+              ▕█▏899375.5066110967 "Advanced Circuit" advancedrocketry:ic:2
                 [zmaster587__AR__sawMill]
                 ↱ 4x advancedrocketry:ic:2
                 ░ 1x advancedrocketry:cuttingmachine:0
                 ⮬ 1x advancedrocketry:itemcircuitplate:1
-                ▕█▏899454.2711969068 "Advanced Circuit Plate" advancedrocketry:itemcircuitplate:1
+                ▕█▏899454.5563421194 "Advanced Circuit Plate" advancedrocketry:itemcircuitplate:1
                   [zmaster587__AR__precisionlaseretcher]
                   ↱ 2x advancedrocketry:itemcircuitplate:1
                   ░ 1x advancedrocketry:precisionlaseretcher:0
                   ⮬ 1x advancedrocketry:lens:0, 1x thermalfoundation:material:33, 1x minecraft:redstone_block:0, 4x advancedrocketry:wafer:0
-                  ▕█▏899329.9590547984 "Precision Laser Etcher" advancedrocketry:precisionlaseretcher:0
+                  ▕█▏899330.2442000109 "Precision Laser Etcher" advancedrocketry:precisionlaseretcher:0
                     [minecraft__crafting]
                     ↱ 1x advancedrocketry:precisionlaseretcher:0
                     ░ 1x minecraft:crafting_table:0
@@ -5943,12 +5940,12 @@
                 [immersivepetroleum__distillation]
                 ↱ 9x fluid:lubricant, 27x fluid:diesel, 39x fluid:gasoline, 1x immersivepetroleum:material:0:{chance:0.07f}
                 ⮬ 75x fluid:crude_oil
-                ▕█▏5103328.271016866 "Crude Oil" fluid:crude_oil
+                ▕█▏5103192.380668496 "Crude Oil" fluid:crude_oil
                   [thermalexpansion__crucible]
                   ↱ 1000x fluid:crude_oil
                   ░ 1x thermalexpansion:machine:6:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                   ⮬ 1x thermalfoundation:ore_fluid:1
-                  ▕█▏5103327.2305377 "Magma Crucible (Basic)" thermalexpansion:machine:6:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                  ▕█▏5103191.340189329 "Magma Crucible (Basic)" thermalexpansion:machine:6:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                     [minecraft__crafting]
                     ↱ 1x thermalexpansion:machine:6:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                     ░ 1x minecraft:crafting_table:0
@@ -6037,7 +6034,7 @@
                   ↱ 1x thermalexpansion:augment:368
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x thermalfoundation:material:292, 1x thermalfoundation:glass:0, 1x thermalfoundation:material:515, 1x thermalfoundation:glass:0, 1x minecraft:blaze_rod:0
-                  ▕█▏5133747.503519146 "Hardened Copper Glass" thermalfoundation:glass:0
+                  ▕█▏5133749.214390422 "Hardened Copper Glass" thermalfoundation:glass:0
                     [thermalexpansion__smelter]
                     ↱ 1x thermalfoundation:glass:0, 1x thermalfoundation:material:865
                     ░ 1x thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -6097,12 +6094,12 @@
             ↱ 1x dimension:mars_103
             ░ 1x advancedrocketry:stationbuilder:0
             ⮬ 10000x fluid:rocketfuel
-      ▕█▏5134044.731412081 "Enticing Crystal" enderio:item_material:17
+      ▕█▏5140889.927390386 "Enticing Crystal" enderio:item_material:17
         [SoulBinder]
         ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:17
         ░ 1x enderio:block_soul_binder:0
         ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:villager"}, 1x minecraft:emerald:0, 1x fe:enderio:energy
-        ▕█▏5133448.359131989 "Soul Binder" enderio:block_soul_binder:0
+        ▕█▏5136871.81255678 "Soul Binder" enderio:block_soul_binder:0
           [minecraft__crafting]
           ↱ 1x enderio:block_soul_binder:0
           ░ 1x minecraft:crafting_table:0
@@ -6117,12 +6114,12 @@
               ↱ 1x deepmoblearning:extraction_chamber:0
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x advancedrocketry:productsheet:1, 1x mekanism:glowpanel:11, 1x advancedrocketry:productsheet:1, 1x extrautils2:decorativesolid:7, 1x deepmoblearning:machine_casing:0, 1x extrautils2:decorativesolid:7
-              ▕█▏918499.0677873292 "Titanium Iridium Alloy Sheet" advancedrocketry:productsheet:1
+              ▕█▏918499.3529325417 "Titanium Iridium Alloy Sheet" advancedrocketry:productsheet:1
                 [zmaster587__AR__rollingMachine]
                 ↱ 4x advancedrocketry:productsheet:1
                 ░ 1x advancedrocketry:rollingmachine:0
                 ⮬ 100x fluid:lubricant, 1x advancedrocketry:metal0:1
-                ▕█▏917183.7719113246 "Rolling Machine" advancedrocketry:rollingmachine:0
+                ▕█▏917184.0570565371 "Rolling Machine" advancedrocketry:rollingmachine:0
                   [minecraft__crafting]
                   ↱ 1x advancedrocketry:rollingmachine:0
                   ░ 1x minecraft:crafting_table:0
@@ -6155,7 +6152,7 @@
             [jeresources__mob]
             ↱ 1x quark:diamond_heart:0, 18x minecraft:coal:0, 2x minecraft:gold_ingot:0, 4x minecraft:iron_ingot:0, 10x minecraft:redstone:0, 1x minecraft:skull:4, 1x minecraft:skull:2, 1x minecraft:emerald:0, 1x minecraft:ender_pearl:0, 4x minecraft:dye:4, 1x minecraft:diamond:0, 1x minecraft:golden_apple:0, 1x minecraft:iron_horse_armor:0, 1x minecraft:saddle:0, 1x minecraft:golden_horse_armor:0, 1x minecraft:diamond_horse_armor:0
             ⮬ 10000x placeholder:fight
-          ▕█▏10223362.627238592 "Soul Machine Chassis" enderio:item_material:53
+          ▕█▏10226787.791534659 "Soul Machine Chassis" enderio:item_material:53
             [AlloySmelter]
             ↱ 1x enderio:item_material:53
             ░ 1x enderio:block_simple_alloy_smelter:0
@@ -6170,12 +6167,12 @@
                 ↱ 1x enderio:item_material:74
                 ░ 1x appliedenergistics2:grindstone:0
                 ⮬ 1x enderio:item_alloy_ingot:7
-              ▕█▏5111569.5064622825 "Organic Brown Dye" enderio:item_material:49
+              ▕█▏5114018.314590625 "Organic Brown Dye" enderio:item_material:49
                 [AlloySmelter]
                 ↱ 1x enderio:item_material:49
                 ░ 1x enderio:block_simple_alloy_smelter:0
                 ⮬ 6x enderio:item_material:47, 1x minecraft:egg:0, 1x fe:enderio:energy
-                ▕█▏5121326.198478865 "Twigs and Prunings" enderio:item_material:47
+                ▕█▏5124292.211929352 "Twigs and Prunings" enderio:item_material:47
                   [SagMill]
                   ↱ 1x enderio:item_material:46, 1x enderio:item_material:46, 1x enderio:item_material:47
                   ░ 1x enderio:block_sag_mill:0
@@ -6229,7 +6226,7 @@
             ↱ 1x enderio:item_soul_vial:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x enderio:item_alloy_ingot:7, 1x enderio:block_fused_quartz:0, 1x enderio:block_fused_quartz:0, 1x enderio:block_fused_quartz:0
-      ▕█▏761884.0743895242 "Weather Crystal" enderio:item_material:18
+      ▕█▏765305.8169430385 "Weather Crystal" enderio:item_material:18
         [minecraft__crafting]
         ↱ 1x enderio:item_material:18
         ░ 1x minecraft:crafting_table:0
@@ -6254,7 +6251,7 @@
                 ↱ 16x fluid:vibrant_alloy
                 ░ 1x tconstruct:smeltery_controller:0
                 ⮬ 1x enderio:item_alloy_nugget:2
-        ▕█▏5386781.327362187 "Ender Crystal" enderio:item_material:16
+        ▕█▏5393626.5233404925 "Ender Crystal" enderio:item_material:16
           [SoulBinder]
           ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:16
           ░ 1x enderio:block_soul_binder:0
@@ -6289,7 +6286,7 @@
                   ↱ 1x aspect:Lux
                   ░ 1x thaumcraft:thaumonomicon:0
                   ⮬ 1x aspect:Aer, 1x aspect:Ignis
-      ▕█▏5386775.639352473 "Prescient Crystal" enderio:item_material:19
+      ▕█▏5393620.835330779 "Prescient Crystal" enderio:item_material:19
         [SoulBinder]
         ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:19
         ░ 1x enderio:block_soul_binder:0
@@ -6299,7 +6296,7 @@
           ↱ 1x enderio:item_soul_vial:1:{entityId:"minecraft:shulker"}
           ░ 1x thaumcraft:crucible:0
           ⮬ 1x aspect:Exanimis, 1x aspect:Machina, 1x enderio:item_soul_vial:0
-      ▕█▏5137286.2607722785 "Sentient Ender" enderio:item_material:44
+      ▕█▏5147553.199304098 "Sentient Ender" enderio:item_material:44
         [SoulBinder]
         ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:44
         ░ 1x enderio:block_soul_binder:0
@@ -6314,12 +6311,12 @@
             ↱ 1x aspect:Praecantatio
             ░ 1x thaumcraft:thaumonomicon:0
             ⮬ 1x aspect:Potentia, 1x aspect:Aer
-        ▕█▏5117953.237949372 "Ender Resonator" enderio:item_material:43
+        ▕█▏5124001.089773811 "Ender Resonator" enderio:item_material:43
           [SliceNSPlice]
           ↱ 1x minecraft:iron_axe:0, 1x minecraft:shears:0, 1x enderio:item_material:43
           ░ 1x enderio:block_slice_and_splice:0
           ⮬ 1x enderio:item_alloy_ingot:7, 1x enderio:block_enderman_skull:0, 1x enderio:item_alloy_ingot:7, 1x appliedenergistics2:material:5, 1x enderio:item_alloy_ingot:2, 1x appliedenergistics2:material:5, 1x fe:enderio:energy
-          ▕█▏5114661.699410585 "Slice'N'Splice" enderio:block_slice_and_splice:0
+          ▕█▏5117287.808681509 "Slice'N'Splice" enderio:block_slice_and_splice:0
             [minecraft__crafting]
             ↱ 1x enderio:block_slice_and_splice:0
             ░ 1x minecraft:crafting_table:0
@@ -6418,7 +6415,7 @@
                 ↱ 1x immersiveengineering:stone_decoration:3
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6, 1x immersiveengineering:material:6
-        ▕█▏19699.32504820538 "Charged Draconium Block" draconicevolution:draconium_block:1
+        ▕█▏19699.325047226514 "Charged Draconium Block" draconicevolution:draconium_block:1
           [extendedcrafting__combination_crafting]
           ↱ 2x draconicevolution:draconium_block:1
           ░ 1x extendedcrafting:crafting_core:0
@@ -6538,7 +6535,7 @@
                     ↱ 1x threng:machine:0
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x minecraft:hopper:0, 1x minecraft:hopper:0, 1x minecraft:hopper:0, 1x minecraft:redstone:0, 1x threng:material:4, 1x minecraft:redstone:0, 1x appliedenergistics2:material:22, 1x appliedenergistics2:condenser:0, 1x appliedenergistics2:material:22
-                  ▕█▏106413.73610377971 "Matter Ball" appliedenergistics2:material:6
+                  ▕█▏106413.73609888536 "Matter Ball" appliedenergistics2:material:6
                     [appliedenergistics2__condenser]
                     ↱ 1x appliedenergistics2:material:6
                     ░ 1x appliedenergistics2:condenser:0
@@ -6710,17 +6707,17 @@
             ↱ 1x bloodmagic:slate:2
             ░ 1x bloodmagic:altar:0
             ⮬ 1x bloodmagic:slate:1
-        ▕█▏1264.671698569273 "Drill Speed Augment II" actuallyadditions:item_drill_upgrade_speed_ii:0
+        ▕█▏1213.9780014759347 "Drill Speed Augment II" actuallyadditions:item_drill_upgrade_speed_ii:0
           [minecraft__crafting]
           ↱ 1x actuallyadditions:item_drill_upgrade_speed_ii:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x actuallyadditions:item_crystal:5, 1x minecraft:sugar:0, 1x actuallyadditions:item_crystal:5, 1x minecraft:sugar:0, 1x minecraft:cake:0, 1x minecraft:sugar:0, 1x actuallyadditions:item_crystal:5, 1x minecraft:sugar:0, 1x actuallyadditions:item_crystal:5
-          ▕█▏1224.7325011529404 "Cake" minecraft:cake:0
+          ▕█▏1174.0388040596015 "Cake" minecraft:cake:0
             [minecraft__crafting]
             ↱ 1x minecraft:cake:0, 1x minecraft:bucket:0, 1x minecraft:bucket:0, 1x minecraft:bucket:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x minecraft:milk_bucket:0, 1x minecraft:milk_bucket:0, 1x minecraft:milk_bucket:0, 1x minecraft:sugar:0, 1x enderio:item_material:70, 1x minecraft:sugar:0
-            ▕█▏5111697.186360561 "Cake Base" enderio:item_material:70
+            ▕█▏5114283.595708551 "Cake Base" enderio:item_material:70
               [AlloySmelter]
               ↱ 2x enderio:item_material:70
               ░ 1x enderio:block_simple_alloy_smelter:0
@@ -6894,12 +6891,12 @@
         ↱ 1x rats:gem_of_ratlantis:0
         ░ 1x randomthings:imbuingstation:0
         ⮬ 1x randomthings:ingredient:2, 1x rats:string_cheese:0, 1x rats:ratglove_petals:0, 1x minecraft:emerald:0
-        ▕█▏14808.149271467728 "Imbuing Station" randomthings:imbuingstation:0
+        ▕█▏14808.149270597625 "Imbuing Station" randomthings:imbuingstation:0
           [minecraft__crafting]
           ↱ 1x randomthings:imbuingstation:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x forestry:wood_pile:0, 1x minecraft:water_bucket:0, 1x forestry:wood_pile:0, 1x ic2:dust:3, 1x tconstruct:materials:18, 1x ic2:dust:3, 1x forestry:wood_pile:0, 1x rats:raw_plastic:0, 1x forestry:wood_pile:0
-          ▕█▏2728.449232890067 "Hydrated Coal Dust" ic2:dust:3
+          ▕█▏2728.4492324550147 "Hydrated Coal Dust" ic2:dust:3
             [exnihilocreatio__sieve]
             ↱ 1x ic2:dust:3, 1x actuallyadditions:item_dust:7, 1x exnihilocreatio:item_ore_lead:0, 1x jaopca:item_pieceosmium:0
             ░ 1x exnihilocreatio:block_sieve:0
@@ -7065,16 +7062,16 @@
             ↱ 64x rats:ratglove_flower:0, 64x rats:ratglove_flower:0, 64x rats:ratglove_flower:0
             ░ 1x modularcontroller:hydroponics_controller:0
             ⮬ 1x fluid:fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x rats:ratglove_flower:0
-            ▕ ▏0 "Hydroponics Controller" modularcontroller:hydroponics_controller:0
+            ▕█▏10267060.390975965 "Hydroponics Controller" modularcontroller:hydroponics_controller:0
               [minecraft__crafting]
               ↱ 1x modularcontroller:hydroponics_controller:0
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x actuallyadditions:block_greenhouse_glass:0, 1x appliedenergistics2:quartz_growth_accelerator:0, 1x actuallyadditions:block_greenhouse_glass:0, 1x modularmachinery:itemmodularium:0, 1x rftools:machine_frame:0, 1x modularmachinery:itemmodularium:0, 1x advancedrocketry:ic:3, 1x advancedrocketry:ic:4, 1x advancedrocketry:ic:3
-              ▕ ▏0 "Greenhouse Glass" actuallyadditions:block_greenhouse_glass:0
+              ▕█▏1308.1408139209761 "Greenhouse Glass" actuallyadditions:block_greenhouse_glass:0
                 [minecraft__crafting]
                 ↱ 3x actuallyadditions:block_greenhouse_glass:0
                 ░ 1x minecraft:crafting_table:0
-                ⮬ 1x actuallyadditions:item_fertilizer:0, 1x actuallyadditions:item_crystal_empowered:1, 1x actuallyadditions:item_fertilizer:0, 1x actuallyadditions:item_crystal_empowered:1, 1x modularmachinery:itemmodularium:0, 1x actuallyadditions:item_crystal_empowered:1, 1x actuallyadditions:item_fertilizer:0, 1x forge:bucketfilled:0:{FluidName:"crystal",Amount:1000,display:{Name:"Any container with Crystallized Obsidian * 1 mB"}}, 1x actuallyadditions:item_fertilizer:0
+                ⮬ 1x actuallyadditions:item_fertilizer:0, 1x actuallyadditions:item_crystal_empowered:1, 1x actuallyadditions:item_fertilizer:0, 1x actuallyadditions:item_crystal_empowered:1, 1x modularmachinery:itemmodularium:0, 1x actuallyadditions:item_crystal_empowered:1, 1x actuallyadditions:item_fertilizer:0, 1x fluid:crystal, 1x actuallyadditions:item_fertilizer:0
                 ▕█▏7979.176192092561 "Fertilizer" actuallyadditions:item_fertilizer:0
                   [actuallyadditions__compost]
                   ↱ 1x actuallyadditions:item_fertilizer:0
@@ -7090,7 +7087,6 @@
                       ↱ 1x immersiveengineering:mold:7
                       ░ 1x immersiveengineering:wooden_device0:2
                       ⮬ 1x immersiveengineering:blueprint:0:{blueprint:"molds"}, 1x thermalfoundation:material:352, 1x thermalfoundation:material:352, 1x thermalfoundation:material:352, 1x thermalfoundation:material:352, 1x thermalfoundation:material:352, 1x immersiveengineering:tool:1
-                ▕ ▏0 "Any container with Crystallized Obsidian * 1 mB" forge:bucketfilled:0:{FluidName:"crystal",Amount:1000,display:{Name:"Any container with Crystallized Obsidian * 1 mB"}}
               ▕█▏915.9905417245718 "Crystal Growth Accelerator" appliedenergistics2:quartz_growth_accelerator:0
                 [minecraft__crafting]
                 ↱ 1x appliedenergistics2:quartz_growth_accelerator:0
@@ -7142,12 +7138,12 @@
                     ↱ 1x industrialforegoing:sewage_composter_solidifier:0
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x industrialforegoing:plastic:0, 1x minecraft:furnace:0, 1x industrialforegoing:plastic:0, 1x minecraft:piston:0, 1x teslacorelib:machine_case:0, 1x minecraft:piston:0, 1x minecraft:brick:0, 1x minecraft:redstone:0, 1x minecraft:brick:0
-                ▕█▏5102894.585140378 "Fluxed Phyto-Gro" thermalfoundation:fertilizer:2
+                ▕█▏5102896.296011655 "Fluxed Phyto-Gro" thermalfoundation:fertilizer:2
                   [thermalexpansion__charger]
                   ↱ 1x thermalfoundation:fertilizer:2
                   ░ 1x thermalexpansion:machine:9:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                   ⮬ 1x thermalfoundation:fertilizer:1
-                  ▕█▏5102884.8076720545 "Energetic Infuser (Basic)" thermalexpansion:machine:9:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                  ▕█▏5102886.518543331 "Energetic Infuser (Basic)" thermalexpansion:machine:9:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                     [minecraft__crafting]
                     ↱ 1x thermalexpansion:machine:9:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
                     ░ 1x minecraft:crafting_table:0
@@ -7231,7 +7227,7 @@
             ↱ 1x dimension:kelt-6a_121
             ░ 1x advancedrocketry:warpmonitor:0
             ⮬ 10000x fluid:rocketfuel
-            ▕█▏920432.7471203578 "Warp Controller" advancedrocketry:warpmonitor:0
+            ▕█▏920433.0322655704 "Warp Controller" advancedrocketry:warpmonitor:0
               [minecraft__crafting]
               ↱ 1x advancedrocketry:warpmonitor:0
               ░ 1x minecraft:crafting_table:0
@@ -7241,7 +7237,7 @@
           ↱ 1x mysticalagriculture:master_infusion_crystal:0
           ░ 1x astralsorcery:blockaltar:2
           ⮬ 1x botania:rune:12, 1x botania:storage:3, 1x botania:rune:15, 1x botania:storage:2, 1x matc:supremiumcrystal:0, 1x botania:storage:0, 1x botania:rune:11, 1x botania:storage:1, 1x botania:rune:10, 1x botania:spark:0, 1x botania:spark:0, 1x botania:spark:0, 1x botania:spark:0, 1x astralsorcery:itemcraftingcomponent:4, 1x astralsorcery:itemcraftingcomponent:4, 1x botania:manaresource:1, 1x botania:manaresource:1, 1x botania:manaresource:1, 1x botania:manaresource:1, 1x astralsorcery:itemcraftingcomponent:4, 1x astralsorcery:itemcraftingcomponent:4
-          ▕ ▏0 "Rune of Sloth" botania:rune:12
+          ▕█▏98621.35875391243 "Rune of Sloth" botania:rune:12
             [botania__runicAltar]
             ↱ 1x botania:rune:12
             ░ 1x botania:runealtar:0
@@ -7251,7 +7247,7 @@
               ↱ 1x botania:runealtar:0
               ░ 1x astralsorcery:blockaltar:0
               ⮬ 1x astralsorcery:itemrockcrystalsimple:0, 1x botania:livingrock:0, 1x botania:manaresource:1, 1x botania:livingrock:0, 1x botania:livingrock:0, 1x botania:livingrock:0, 1x botania:livingrock:0
-            ▕ ▏0 "Rune of Autumn" botania:rune:6
+            ▕█▏36626.38598871932 "Rune of Autumn" botania:rune:6
               [botania__runicAltar]
               ↱ 1x botania:rune:6
               ░ 1x botania:runealtar:0
@@ -7298,12 +7294,12 @@
                 ↱ 1x minecraft:deadbush:0
                 ░ 1x dimension:overworld_0
                 ⮬ 174.13398534504694x placeholder:exploration
-              ▕ ▏0 "Metamorphic Forest Stone" botania:biomestonea:0
+              ▕█▏282.2352759186181 "Metamorphic Forest Stone" botania:biomestonea:0
                 [minecraft__crafting]
                 ↱ 1x botania:biomestonea:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x botania:biomestonea0slab:0, 1x botania:biomestonea0slab:0
-                ▕ ▏0 "Metamorphic Forest Stone Slab" botania:biomestonea0slab:0
+                ▕█▏247.10856528790734 "Metamorphic Forest Stone Slab" botania:biomestonea0slab:0
                   [minecraft__crafting]
                   ↱ 6x botania:biomestonea0slab:0
                   ░ 1x minecraft:crafting_table:0
@@ -7343,7 +7339,7 @@
                     ↱ 8x forestry:bog_earth:0
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x minecraft:dirt:0, 1x minecraft:sand:0, 1x minecraft:dirt:0, 1x minecraft:sand:0, 1x forestry:can:1:{Fluid:{FluidName:"water",Amount:1000}}, 1x minecraft:sand:0, 1x minecraft:dirt:0, 1x minecraft:sand:0, 1x minecraft:dirt:0
-                    ▕█▏5110745.269368819 "Water Can" forestry:can:1:{Fluid:{FluidName:"water",Amount:1000}}
+                    ▕█▏5110746.980240095 "Water Can" forestry:can:1:{Fluid:{FluidName:"water",Amount:1000}}
                       [thermalexpansion__transposer_fill]
                       ↱ 1x forestry:can:1:{Fluid:{FluidName:"water",Amount:1000}}
                       ░ 1x thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -7657,10 +7653,92 @@
               ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
               ⮬ 3600x fluid:water, 1x thermalfoundation:fertilizer:1, 1x mysticalagriculture:obsidian_seeds:0
               ▕ ▏0 "Obsidian Seeds" mysticalagriculture:obsidian_seeds:0
-                [thermalexpansion__insolator]
-                ↱ 2x mysticalagriculture:obsidian_essence:0, 1x mysticalagriculture:obsidian_seeds:0
-                ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
-                ⮬ 3600x fluid:water, 1x thermalfoundation:fertilizer:1, 1x mysticalagriculture:obsidian_seeds:0
+                [astralsorcery__altar__attunement]
+                ↱ 1x mysticalagriculture:obsidian_seeds:0
+                ░ 1x astralsorcery:blockaltar:1
+                ⮬ 1x mysticalagriculture:coal_essence:0, 1x mysticalagriculture:storage:2, 1x mysticalagriculture:coal_essence:0, 1x mysticalagriculture:storage:2, 1x mysticalagriculture:crafting:19, 1x mysticalagriculture:storage:2, 1x mysticalagriculture:coal_essence:0, 1x mysticalagriculture:storage:2, 1x mysticalagriculture:coal_essence:0, 1x ic2:plate:15, 1x ic2:plate:15, 1x botania:rune:6, 1x botania:rune:6
+                ▕ ▏0 "Coal Essence" mysticalagriculture:coal_essence:0
+                  [thermalexpansion__insolator]
+                  ↱ 3x mysticalagriculture:coal_essence:0, 1x mysticalagriculture:coal_seeds:0
+                  ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                  ⮬ 4800x fluid:water, 1x thermalfoundation:fertilizer:2, 1x mysticalagriculture:coal_seeds:0
+                  ▕ ▏0 "Coal Seeds" mysticalagriculture:coal_seeds:0
+                    [astralsorcery__altar__attunement]
+                    ↱ 1x mysticalagriculture:coal_seeds:0
+                    ░ 1x astralsorcery:blockaltar:1
+                    ⮬ 1x mysticalagriculture:ice_essence:0, 1x mysticalagriculture:storage:1, 1x mysticalagriculture:ice_essence:0, 1x mysticalagriculture:storage:1, 1x mysticalagriculture:crafting:18, 1x mysticalagriculture:storage:1, 1x mysticalagriculture:ice_essence:0, 1x mysticalagriculture:storage:1, 1x mysticalagriculture:ice_essence:0, 1x minecraft:coal_block:0, 1x minecraft:coal_block:0, 1x botania:rune:2, 1x botania:rune:2
+                    ▕ ▏0 "Ice Essence" mysticalagriculture:ice_essence:0
+                      [thermalexpansion__insolator]
+                      ↱ 3x mysticalagriculture:ice_essence:0, 1x mysticalagriculture:ice_seeds:0
+                      ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
+                      ⮬ 4800x fluid:water, 1x thermalfoundation:fertilizer:2, 1x mysticalagriculture:ice_seeds:0
+                      ▕ ▏0 "Ice Seeds" mysticalagriculture:ice_seeds:0
+                        [minecraft__crafting]
+                        ↱ 1x mysticalagriculture:ice_seeds:0
+                        ░ 1x minecraft:crafting_table:0
+                        ⮬ 1x minecraft:ice:0, 1x mysticalagriculture:crafting:0, 1x minecraft:ice:0, 1x mysticalagriculture:crafting:0, 1x mysticalagriculture:crafting:17, 1x mysticalagriculture:crafting:0, 1x minecraft:ice:0, 1x mysticalagriculture:crafting:0, 1x minecraft:ice:0
+                        ▕█▏493.3131279116686 "Ice" minecraft:ice:0
+                          [JER]
+                          ↱ 1x minecraft:ice:0
+                          ░ 1x dimension:twilight_forest_7, 1x tconstruct:pick_head:0:{Material:"flint"}
+                          ⮬ 17.83750037374197x placeholder:exploration
+                        ▕ ▏0 "Tier 1 Crafting Seed" mysticalagriculture:crafting:17
+                          [minecraft__crafting]
+                          ↱ 1x mysticalagriculture:crafting:17
+                          ░ 1x minecraft:crafting_table:0
+                          ⮬ 1x ic2:crop_res:5, 1x mysticalagriculture:crafting:0, 1x ic2:crop_res:5, 1x mysticalagriculture:crafting:0, 1x mysticalagriculture:crafting:16, 1x mysticalagriculture:crafting:0, 1x ic2:crop_res:5, 1x mysticalagriculture:crafting:0, 1x ic2:crop_res:5
+                          ▕ ▏0 "Weed" ic2:crop_res:5
+                            [requious__ic2_crops]
+                            ↱ 1x ic2:crop_res:5
+                            ░ 1x ic2:crop_stick:0
+                            ⮬ 1x openblocks:glyph:48:{display:{Name:"§bTier: 0",Lore:["§e§lAttributes: ","§eWeed Bad"]}}, 1x ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants and spreads grass"]}}
+                            ▕ ▏0 "§bTier: 0" openblocks:glyph:48:{display:{Name:"§bTier: 0",Lore:["§e§lAttributes: ","§eWeed Bad"]}}
+                            ▕ ▏0 "Invalid Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants and spreads grass"]}}
+                          ▕█▏3364.773654198719 "Base Crafting Seed" mysticalagriculture:crafting:16
+                            [minecraft__crafting]
+                            ↱ 1x mysticalagriculture:crafting:16
+                            ░ 1x minecraft:crafting_table:0
+                            ⮬ 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x minecraft:wheat_seeds:0, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5
+                    ▕ ▏0 "Tier 2 Crafting Seed" mysticalagriculture:crafting:18
+                      [minecraft__crafting]
+                      ↱ 1x mysticalagriculture:crafting:18
+                      ░ 1x minecraft:crafting_table:0
+                      ⮬ 1x biomesoplenty:coral:0, 1x mysticalagriculture:crafting:1, 1x biomesoplenty:coral:0, 1x mysticalagriculture:crafting:1, 1x mysticalagriculture:crafting:17, 1x mysticalagriculture:crafting:1, 1x biomesoplenty:coral:0, 1x mysticalagriculture:crafting:1, 1x biomesoplenty:coral:0
+                      ▕█▏158.49536646383672 "Pink Coral" biomesoplenty:coral:0
+                        [JER]
+                        ↱ 1x biomesoplenty:coral:0
+                        ░ 1x dimension:overworld_0
+                        ⮬ 153.49536646383672x placeholder:exploration
+                ▕ ▏0 "Tier 3 Crafting Seed" mysticalagriculture:crafting:19
+                  [minecraft__crafting]
+                  ↱ 1x mysticalagriculture:crafting:19
+                  ░ 1x minecraft:crafting_table:0
+                  ⮬ 1x endreborn:death_essence:0, 1x mysticalagriculture:crafting:2, 1x endreborn:death_essence:0, 1x mysticalagriculture:crafting:2, 1x mysticalagriculture:crafting:18, 1x mysticalagriculture:crafting:2, 1x endreborn:death_essence:0, 1x mysticalagriculture:crafting:2, 1x endreborn:death_essence:0
+                  ▕█▏680.9394361344004 "Xorcite Shard" endreborn:death_essence:0
+                    [JER]
+                    ↱ 1.56745x endreborn:death_essence:0
+                    ░ 1x tconstruct:pick_head:0:{Material:"lead"}
+                    ⮬ 1x endreborn:dragon_essence:0
+                    ▕█▏509.71342889755545 "Lead Pickaxe Head" tconstruct:pick_head:0:{Material:"lead"}
+                      [tconstruct__casting_table]
+                      ↱ 1x tconstruct:pick_head:0:{Material:"lead"}
+                      ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
+                      ⮬ 288x fluid:lead, 1x tconstruct:clay_cast:0:{PartType:"tconstruct:pick_head"}
+                    ▕█▏477.96927636725576 "Xorcite Cluster" endreborn:dragon_essence:0
+                      [JER]
+                      ↱ 1x endreborn:dragon_essence:0
+                      ░ 1x dimension:the_end_1, 1x tconstruct:pick_head:0:{Material:"lead"}
+                      ⮬ 384.95229785350034x placeholder:exploration
+                ▕█▏6535.374875833709 "Dense Obsidian Plate" ic2:plate:15
+                  [compressor]
+                  ↱ 1x ic2:plate:15
+                  ░ 1x ic2:te:43
+                  ⮬ 9x ic2:plate:6
+                  ▕█▏6004.608642080622 "Obsidian Plate" ic2:plate:6
+                    [compressor]
+                    ↱ 1x ic2:plate:6
+                    ░ 1x ic2:te:43
+                    ⮬ 1x thermalfoundation:material:770
             ▕ ▏0 "Tier 4 Crafting Seed" mysticalagriculture:crafting:20
               [minecraft__crafting]
               ↱ 1x mysticalagriculture:crafting:20
@@ -7671,53 +7749,6 @@
                 ↱ 1x bloodmagic:component:28
                 ░ 1x bloodmagic:alchemy_table:0
                 ⮬ 1x bloodmagic:blood_orb:0:{orb:"bloodmagic:apprentice"}, 1x minecraft:gunpowder:0, 1x minecraft:nether_wart:0, 1x minecraft:dye:4
-              ▕ ▏0 "Tier 3 Crafting Seed" mysticalagriculture:crafting:19
-                [minecraft__crafting]
-                ↱ 1x mysticalagriculture:crafting:19
-                ░ 1x minecraft:crafting_table:0
-                ⮬ 1x endreborn:death_essence:0, 1x mysticalagriculture:crafting:2, 1x endreborn:death_essence:0, 1x mysticalagriculture:crafting:2, 1x mysticalagriculture:crafting:18, 1x mysticalagriculture:crafting:2, 1x endreborn:death_essence:0, 1x mysticalagriculture:crafting:2, 1x endreborn:death_essence:0
-                ▕█▏680.9394361344004 "Xorcite Shard" endreborn:death_essence:0
-                  [JER]
-                  ↱ 1.56745x endreborn:death_essence:0
-                  ░ 1x tconstruct:pick_head:0:{Material:"lead"}
-                  ⮬ 1x endreborn:dragon_essence:0
-                  ▕█▏509.71342889755545 "Lead Pickaxe Head" tconstruct:pick_head:0:{Material:"lead"}
-                    [tconstruct__casting_table]
-                    ↱ 1x tconstruct:pick_head:0:{Material:"lead"}
-                    ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
-                    ⮬ 288x fluid:lead, 1x tconstruct:clay_cast:0:{PartType:"tconstruct:pick_head"}
-                  ▕█▏477.96927636725576 "Xorcite Cluster" endreborn:dragon_essence:0
-                    [JER]
-                    ↱ 1x endreborn:dragon_essence:0
-                    ░ 1x dimension:the_end_1, 1x tconstruct:pick_head:0:{Material:"lead"}
-                    ⮬ 384.95229785350034x placeholder:exploration
-                ▕ ▏0 "Tier 2 Crafting Seed" mysticalagriculture:crafting:18
-                  [minecraft__crafting]
-                  ↱ 1x mysticalagriculture:crafting:18
-                  ░ 1x minecraft:crafting_table:0
-                  ⮬ 1x biomesoplenty:coral:0, 1x mysticalagriculture:crafting:1, 1x biomesoplenty:coral:0, 1x mysticalagriculture:crafting:1, 1x mysticalagriculture:crafting:17, 1x mysticalagriculture:crafting:1, 1x biomesoplenty:coral:0, 1x mysticalagriculture:crafting:1, 1x biomesoplenty:coral:0
-                  ▕█▏158.49536646383672 "Pink Coral" biomesoplenty:coral:0
-                    [JER]
-                    ↱ 1x biomesoplenty:coral:0
-                    ░ 1x dimension:overworld_0
-                    ⮬ 153.49536646383672x placeholder:exploration
-                  ▕ ▏0 "Tier 1 Crafting Seed" mysticalagriculture:crafting:17
-                    [minecraft__crafting]
-                    ↱ 1x mysticalagriculture:crafting:17
-                    ░ 1x minecraft:crafting_table:0
-                    ⮬ 1x ic2:crop_res:5, 1x mysticalagriculture:crafting:0, 1x ic2:crop_res:5, 1x mysticalagriculture:crafting:0, 1x mysticalagriculture:crafting:16, 1x mysticalagriculture:crafting:0, 1x ic2:crop_res:5, 1x mysticalagriculture:crafting:0, 1x ic2:crop_res:5
-                    ▕ ▏0 "Weed" ic2:crop_res:5
-                      [requious__ic2_crops]
-                      ↱ 1x ic2:crop_res:5
-                      ░ 1x ic2:crop_stick:0
-                      ⮬ 1x openblocks:glyph:48:{display:{Name:"§bTier: 0",Lore:["§e§lAttributes: ","§eWeed Bad"]}}, 1x ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants and spreads grass"]}}
-                      ▕ ▏0 "§bTier: 0" openblocks:glyph:48:{display:{Name:"§bTier: 0",Lore:["§e§lAttributes: ","§eWeed Bad"]}}
-                      ▕ ▏0 "Invalid Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants and spreads grass"]}}
-                    ▕█▏3364.773654198719 "Base Crafting Seed" mysticalagriculture:crafting:16
-                      [minecraft__crafting]
-                      ↱ 1x mysticalagriculture:crafting:16
-                      ░ 1x minecraft:crafting_table:0
-                      ⮬ 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x minecraft:wheat_seeds:0, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5, 1x mysticalagriculture:crafting:5
             ▕█▏80151.97421525452 "Rune of Envy" botania:rune:14
               [botania__runicAltar]
               ↱ 1x botania:rune:14
@@ -7823,7 +7854,7 @@
       ↱ 1x industrialforegoing:black_hole_tank:0
       ░ 1x minecraft:crafting_table:0
       ⮬ 1x libvulpes:productsheet:6, 1x mekanism:plasticblock:8, 1x libvulpes:productsheet:6, 1x extrautils2:drum:3, 1x botania:blackholetalisman:0, 1x extrautils2:drum:3, 1x libvulpes:productsheet:6, 1x mekanism:plasticblock:8, 1x libvulpes:productsheet:6
-      ▕█▏917213.7594768803 "Steel Sheet" libvulpes:productsheet:6
+      ▕█▏917214.0446220929 "Steel Sheet" libvulpes:productsheet:6
         [zmaster587__AR__rollingMachine]
         ↱ 4x libvulpes:productsheet:6
         ░ 1x advancedrocketry:rollingmachine:0
@@ -7838,27 +7869,27 @@
         ↱ 4x mekanism:plasticblock:8
         ░ 1x minecraft:crafting_table:0
         ⮬ 1x mekanism:polyethene:2, 1x mekanism:polyethene:2, 1x mekanism:polyethene:2, 1x mekanism:polyethene:2, 1x minecraft:dye:8, 1x mekanism:polyethene:2, 1x mekanism:polyethene:2, 1x mekanism:polyethene:2, 1x mekanism:polyethene:2
-      ▕█▏170313.82826043613 "Demonically Gargantuan Drum" extrautils2:drum:3
+      ▕█▏296336.59115067206 "Demonically Gargantuan Drum" extrautils2:drum:3
         [minecraft__crafting]
         ↱ 1x extrautils2:drum:3
         ░ 1x minecraft:crafting_table:0
         ⮬ 1x extrautils2:klein:0, 1x fluid:high_pressure_steam, 1x extrautils2:klein:0, 1x extrautils2:drum:2, 1x extrautils2:drum:2, 1x extrautils2:drum:2, 1x extrautils2:decorativesolid:6, 1x fluid:high_pressure_steam, 1x extrautils2:decorativesolid:6
-        ▕█▏3295.7641488386435 "Klein Bottle" extrautils2:klein:0
+        ▕█▏19048.609510118127 "Klein Bottle" extrautils2:klein:0
           [minecraft__crafting]
           ↱ 1x extrautils2:klein:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x minecraft:web:0, 1x endreborn:death_essence:0, 1x minecraft:web:0, 1x extrautils2:decorativesolidwood:0, 1x tconstruct:large_plate:0:{Material:"xu_demonic_metal"}, 1x extrautils2:decorativesolidwood:0, 1x extrautils2:decorativesolidwood:0, 1x tconstruct:large_plate:0:{Material:"xu_demonic_metal"}, 1x extrautils2:decorativesolidwood:0
-          ▕█▏1454.5602656762444 "Demonic Large Plate" tconstruct:large_plate:0:{Material:"xu_demonic_metal"}
+          ▕█▏9330.982946315986 "Demonic Large Plate" tconstruct:large_plate:0:{Material:"xu_demonic_metal"}
             [tconstruct__casting_table]
             ↱ 1x tconstruct:large_plate:0:{Material:"xu_demonic_metal"}
             ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
             ⮬ 1152x fluid:xu_demonic_metal, 1x tconstruct:clay_cast:0:{PartType:"tconstruct:large_plate"}
-            ▕█▏235.35543205610935 "Molten Demon Metal" fluid:xu_demonic_metal
+            ▕█▏242.19260452194249 "Molten Demon Metal" fluid:xu_demonic_metal
               [tconstruct__smeltery]
               ↱ 72x fluid:xu_demonic_metal
               ░ 1x tconstruct:smeltery_controller:0
               ⮬ 1x tconstruct:shard:0:{Material:"xu_demonic_metal"}
-              ▕█▏543.8239475777104 "Shard" tconstruct:shard:0:{Material:"xu_demonic_metal"}
+              ▕█▏1036.1003651176943 "Shard" tconstruct:shard:0:{Material:"xu_demonic_metal"}
                 [tconstruct__casting_table]
                 ↱ 1x tconstruct:shard:0:{Material:"xu_demonic_metal"}
                 ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
@@ -7868,7 +7899,7 @@
           ↱ 1000x fluid:high_pressure_steam
           ░ 1x nuclearcraft:heat_exchanger_tube_copper:0
           ⮬ 200x fluid:water
-        ▕█▏14683.791455899125 "Reinforced Large Drum" extrautils2:drum:2
+        ▕█▏46189.4821784581 "Reinforced Large Drum" extrautils2:drum:2
           [minecraft__crafting]
           ↱ 1x extrautils2:drum:2
           ░ 1x minecraft:crafting_table:0
@@ -7893,16 +7924,6 @@
                   ↱ 16x engineersdecor:halfslab_sheetmetal_gold:0
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x immersiveengineering:sheetmetal_slab:10, 1x immersiveengineering:sheetmetal_slab:10, 1x immersiveengineering:sheetmetal_slab:10, 1x immersiveengineering:sheetmetal_slab:10
-            ▕█▏6535.374875833709 "Dense Obsidian Plate" ic2:plate:15
-              [compressor]
-              ↱ 1x ic2:plate:15
-              ░ 1x ic2:te:43
-              ⮬ 9x ic2:plate:6
-              ▕█▏6004.608642080622 "Obsidian Plate" ic2:plate:6
-                [compressor]
-                ↱ 1x ic2:plate:6
-                ░ 1x ic2:te:43
-                ⮬ 1x thermalfoundation:material:770
             ▕█▏299.08678319590854 "Gold Item Casing" ic2:casing:2
               [minecraft__crafting]
               ↱ 2x ic2:casing:2
@@ -7998,7 +8019,7 @@
             ↱ 1x enderio:item_alloy_endergy_nugget:3
             ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1, 1x tconstruct:cast_custom:1
             ⮬ 16x fluid:stellar_alloy
-      ▕█▏207973974.63894674 "Melodic Capacitor" enderio:item_capacitor_melodic:0
+      ▕█▏207980818.1240538 "Melodic Capacitor" enderio:item_capacitor_melodic:0
         [minecraft__crafting]
         ↱ 1x enderio:item_capacitor_melodic:0
         ░ 1x minecraft:crafting_table:0
@@ -8146,7 +8167,7 @@
             ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
             ⮬ 1152x fluid:enderium, 1x tconstruct:clay_cast:0:{PartType:"tconstruct:large_plate"}
       ▕ ▏0 "Universal Fluid Cell" ic2:fluid_cell:0:{Fluid:{FluidName:"tritium",Amount:1000}}
-      ▕█▏865595.2284590391 "Gas Charge Pad" advancedrocketry:oxygencharger:0
+      ▕█▏865595.5136042517 "Gas Charge Pad" advancedrocketry:oxygencharger:0
         [minecraft__crafting]
         ↱ 1x advancedrocketry:oxygencharger:0
         ░ 1x minecraft:crafting_table:0
@@ -8189,7 +8210,7 @@
       ↱ 1x avaritia:resource:5
       ░ 1x extendedcrafting:table_elite:0
       ⮬ 1x avaritia:ultimate_stew:0, 1x avaritia:endest_pearl:0, 1x bigreactors:mineralbenitoite:0, 1x rats:idol_of_ratlantis:0, 1x bigreactors:mineralanglesite:0, 1x darkutils:shulker_pearl:0, 1x avaritia:cosmic_meatballs:0, 1x quark:soul_bead:0, 1x tconevo:material:1, 1x nuclearcraft:part:3, 1x bloodmagic:demon_crystal:0, 1x minecraft:dragon_egg:0, 1x scalinghealth:heartcontainer:0, 1x rustic:fluid_bottle:0:{Fluid:{FluidName:"wine",Amount:1000,Tag:{Quality:1.0f}}}, 1x darkutils:wither_block:0, 1x environmentaltech:aethium:0, 1x avaritia:block_resource:0, 1x jaopca:item_dustalchemerald:0, 1x extrautils2:simpledecorative:2, 1x thermalfoundation:storage_resource:1, 1x enderio:block_infinity:2, 1x tconstruct:firewood:1, 1x bigreactors:blockludicrite:0, 1x biomesoplenty:gem_block:0, 1x randomthings:spectreilluminator:0, 1x twilightforest:block_storage:4, 1x mysticalagriculture:ingot_storage:5, 1x jaopca:block_blockdilithium:0, 1x avaritia:block_resource:2, 1x thermalfoundation:storage_alloy:7, 1x deepmoblearning:infused_ingot_block:0, 1x contenttweaker:terrestrial_artifact_block:0, 1x extrautils2:decorativesolid:6, 1x appliedenergistics2:fluix_block:0, 1x draconicevolution:draconium_block:1, 1x iceandfire:myrmex_desert_resin_block:0, 1x advancedrocketry:hotturf:0, 1x forestry:bee_combs_0:0, 1x tconevo:metal_block:5, 1x extendedcrafting:storage:7, 1x jaopca:block_blockastralstarmetal:0, 1x plustic:osgloglasblock:0, 1x plustic:mirionblock:0
-      ▕█▏30879407.702657137 "Elite Crafting Table" extendedcrafting:table_elite:0
+      ▕█▏30885417.099109285 "Elite Crafting Table" extendedcrafting:table_elite:0
         [botania__elvenTrade]
         ↱ 1x botania_tweaks:elite_extended_crafty_crate:0, 1x extendedcrafting:table_elite:0
         ░ 1x botania:alfheimportal:0
@@ -8758,7 +8779,7 @@
             [jeresources__mob]
             ↱ 1x minecraft:rotten_flesh:0, 1x minecraft:carrot:0, 1x minecraft:iron_ingot:0, 1x minecraft:potato:0, 1x thaumcraft:brain:0
             ⮬ 10000x placeholder:fight
-          ▕█▏5103166.257723381 "Charged Creeper Chunk" rats:charged_creeper_chunk:0
+          ▕█▏5103167.968594657 "Charged Creeper Chunk" rats:charged_creeper_chunk:0
             [thermalexpansion__charger]
             ↱ 1x rats:charged_creeper_chunk:0
             ░ 1x thermalexpansion:machine:9:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -8793,7 +8814,7 @@
                     ↱ 1x harvestcraft:grapejuiceitem:0
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x harvestcraft:juiceritem:0, 1x rustic:grapes:0, 1x rustic:grapes:0
-                    ▕█▏5110033.262439529 "Grapes" rustic:grapes:0
+                    ▕█▏5110034.973310806 "Grapes" rustic:grapes:0
                       [thermalexpansion__insolator]
                       ↱ 2x rustic:grapes:0, 1x rustic:grape_stem:0
                       ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -8803,7 +8824,7 @@
                         ↱ 1x rustic:grape_stem:0
                         ░ 1x minecraft:crafting_table:0
                         ⮬ 1x rustic:grapes:0
-                ▕█▏5110037.166110812 "Chili Pepper" rustic:chili_pepper:0
+                ▕█▏5110038.876982088 "Chili Pepper" rustic:chili_pepper:0
                   [thermalexpansion__insolator]
                   ↱ 2x rustic:chili_pepper:0, 1x rustic:chili_pepper_seeds:0
                   ░ 1x thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -8939,7 +8960,7 @@
           ↱ 1x rats:ratlantean_flame:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x randomthings:ingredient:2, 1x randomthings:ingredient:2, 1x rats:raw_rat:0, 1x randomthings:ingredient:2, 1x forestry:crafting_material:1
-      ▕█▏2736.113624858222 "Shulker Pearl" darkutils:shulker_pearl:0
+      ▕█▏2736.1136244231698 "Shulker Pearl" darkutils:shulker_pearl:0
         [exnihilocreatio__sieve]
         ↱ 1x minecraft:chorus_fruit:0, 1x nuclearcraft:compound:8, 1x appliedenergistics2:material:46, 1x darkutils:shulker_pearl:0, 1x jaopca:item_pieceuranium:0, 1x jaopca:item_piecetitanium:0, 1x biomesoplenty:crystal_shard:0, 1x tconstruct:shard:0:{Material:"wolframium"}
         ░ 1x exnihilocreatio:block_sieve:0
@@ -9089,15 +9110,15 @@
                       ↱ 1x forestry:beehives:5
                       ░ 1x dimension:overworld_0
                       ⮬ 516.2770294495252x placeholder:exploration
-                ▕█▏368.794042109448 "Blackout Powder" randomthings:ingredient:13
+                ▕█▏447.8957406888293 "Blackout Powder" randomthings:ingredient:13
                   [minecraft__crafting]
                   ↱ 1x randomthings:ingredient:13
                   ░ 1x minecraft:crafting_table:0
                   ⮬ 1x fluxnetworks:flux:0, 1x actuallyadditions:item_misc:22, 1x ic2:misc_resource:0
-                  ▕█▏110.85873876859874 "Flux" fluxnetworks:flux:0
-                    [jetif]
-                    ↱ 1x fluxnetworks:flux:0
-                    ⮬ 1000x fluid:lava, 1x minecraft:redstone:0
+                  ▕█▏605.2605136449984 "Flux" fluxnetworks:flux:0
+                    [flux]
+                    ↱ 1x minecraft:redstone:0, 1x fluxnetworks:flux:0
+                    ░ 1x fluxnetworks:flux:0
                   ▕█▏430.710493188829 "Bio Coal" actuallyadditions:item_misc:22
                     [minecraft__smelting]
                     ↱ 1x actuallyadditions:item_misc:22
@@ -9223,7 +9244,7 @@
           ↱ 1x jaopca:item_chunkemerald:0
           ░ 1x bloodmagic:alchemy_table:0
           ⮬ 1x bloodmagic:blood_orb:0:{orb:"bloodmagic:archmage"}, 1x jaopca:item_rockychunkemerald:0, 1x bloodmagic:component:8, 1x bloodmagic:cutting_fluid:0, 1x jaopca:item_rockychunkemerald:0, 1x rats:rat_nugget_ore:13:{OreItem:{id:"minecraft:emerald_ore",Count:1b,Damage:0s},IngotItem:{id:"minecraft:emerald",Count:1b,Damage:0s}}, 1x rats:rat_nugget_ore:13:{OreItem:{id:"minecraft:emerald_ore",Count:1b,Damage:0s},IngotItem:{id:"minecraft:emerald",Count:1b,Damage:0s}}
-          ▕ ▏0 "Emerald Rocky Chunk" jaopca:item_rockychunkemerald:0
+          ▕█▏123930.50024448597 "Emerald Rocky Chunk" jaopca:item_rockychunkemerald:0
             [botaniatweaks__agglomeration]
             ↱ 1x jaopca:item_rockychunkemerald:0, 1x botania:terraplate:0, 1x twilightforest:aurora_block:0, 1x minecraft:diamond_block:0, 1x minecraft:diamond_block:0, 1x minecraft:diamond_block:0, 1x minecraft:diamond_block:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0, 1x botania:terraplate:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0, 1x twilightforest:aurora_block:0
             ░ 1x botania:terraplate:0
@@ -9278,12 +9299,12 @@
                         ↱ 1x tconstruct:pick_head:0:{Material:"certus_quartz"}
                         ░ 1x tconstruct:tooltables:3
                         ⮬ 1x appliedenergistics2:material:0
-            ▕ ▏0 "Metamorphic Swamp Stone" botania:biomestonea:4
+            ▕█▏282.2352759186181 "Metamorphic Swamp Stone" botania:biomestonea:4
               [minecraft__crafting]
               ↱ 1x botania:biomestonea:4
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x botania:biomestonea4slab:0, 1x botania:biomestonea4slab:0
-              ▕ ▏0 "Metamorphic Swamp Stone Slab" botania:biomestonea4slab:0
+              ▕█▏247.10856528790734 "Metamorphic Swamp Stone Slab" botania:biomestonea4slab:0
                 [minecraft__crafting]
                 ↱ 6x botania:biomestonea4slab:0
                 ░ 1x minecraft:crafting_table:0
@@ -9333,7 +9354,7 @@
                 ↱ 9x jaopca:item_dusttinycoal:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x thermalfoundation:material:768
-            ▕█▏5110759.889840922 "Uncraftable Potion" minecraft:potion:0:{Potion:"minecraft:water"}
+            ▕█▏5110761.600712199 "Uncraftable Potion" minecraft:potion:0:{Potion:"minecraft:water"}
               [thermalexpansion__transposer_fill]
               ↱ 1x minecraft:potion:0:{Potion:"minecraft:water"}
               ░ 1x thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}
@@ -9354,17 +9375,17 @@
           ↱ 1x enderio:block_infinity:1
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0, 1x enderio:block_infinity:0
-      ▕█▏6460.40847111142 "Firewood" tconstruct:firewood:1
+      ▕█▏6439.514240927715 "Firewood" tconstruct:firewood:1
         [minecraft__crafting]
         ↱ 1x tconstruct:firewood:1
         ░ 1x minecraft:crafting_table:0
         ⮬ 1x tconstruct:firewood:0, 1x forestry:bituminous_peat:0, 1x tconstruct:firewood:0, 1x forestry:bituminous_peat:0, 1x fluid:ic2pahoehoe_lava, 1x forestry:bituminous_peat:0, 1x tconstruct:firewood:0, 1x forestry:bituminous_peat:0, 1x tconstruct:firewood:0
-        ▕█▏227.8633514691514 "Lavawood" tconstruct:firewood:0
+        ▕█▏221.7843582848465 "Lavawood" tconstruct:firewood:0
           [minecraft__crafting]
           ↱ 1x tconstruct:firewood:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x tconstruct:firewood_slab:0, 1x tconstruct:firewood_slab:0
-          ▕█▏219.922603063174 "Lavawood Slab" tconstruct:firewood_slab:0
+          ▕█▏216.88310647102153 "Lavawood Slab" tconstruct:firewood_slab:0
             [minecraft__crafting]
             ↱ 6x tconstruct:firewood_slab:0
             ░ 1x minecraft:crafting_table:0
@@ -9463,117 +9484,117 @@
         ↱ 1x jaopca:block_blockastralstarmetal:0
         ░ 1x minecraft:crafting_table:0
         ⮬ 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1, 1x astralsorcery:itemcraftingcomponent:1
-    ▕█▏130548184.99671113 "The Ultimate Singularity" extendedcrafting:singularity_ultimate:0
+    ▕█▏130560083.16083935 "The Ultimate Singularity" extendedcrafting:singularity_ultimate:0
       [extendedcrafting__table_crafting_9x9]
       ↱ 1x extendedcrafting:singularity_ultimate:0
       ░ 1x extendedcrafting:table_ultimate:0
       ⮬ 1x extendedcrafting:singularity:5, 1x extendedcrafting:singularity:16, 1x extendedcrafting:singularity:19, 1x extendedcrafting:singularity:22, 1x extendedcrafting:singularity:23, 1x extendedcrafting:singularity:24, 1x extendedcrafting:singularity:26, 1x extendedcrafting:singularity:27, 1x extendedcrafting:singularity:28, 1x extendedcrafting:singularity:29, 1x extendedcrafting:singularity:32, 1x extendedcrafting:singularity:34, 1x extendedcrafting:singularity:48, 1x extendedcrafting:singularity:49, 1x extendedcrafting:singularity:50, 1x extendedcrafting:singularity:64, 1x extendedcrafting:singularity:65, 1x extendedcrafting:singularity:66, 1x extendedcrafting:singularity_custom:100, 1x extendedcrafting:singularity_custom:101, 1x extendedcrafting:singularity_custom:102, 1x extendedcrafting:singularity_custom:103, 1x extendedcrafting:singularity_custom:104, 1x extendedcrafting:singularity_custom:105, 1x extendedcrafting:singularity_custom:106, 1x extendedcrafting:singularity_custom:107
-      ▕█▏106107.03292785544 "Gold Singularity" extendedcrafting:singularity:5
+      ▕█▏106107.03292165595 "Gold Singularity" extendedcrafting:singularity:5
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:5
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x minecraft:gold_ingot:0, 1x extendedcrafting:material:12
-      ▕█▏106132.88933749271 "Aluminum Singularity" extendedcrafting:singularity:16
+      ▕█▏106132.8893312932 "Aluminum Singularity" extendedcrafting:singularity:16
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:16
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:132, 1x extendedcrafting:material:12
-      ▕█▏106102.7919843664 "Bronze Singularity" extendedcrafting:singularity:19
+      ▕█▏106102.79197816689 "Bronze Singularity" extendedcrafting:singularity:19
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:19
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:163, 1x extendedcrafting:material:12
-      ▕█▏106095.20647429896 "Silver Singularity" extendedcrafting:singularity:22
+      ▕█▏106095.20646809947 "Silver Singularity" extendedcrafting:singularity:22
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:22
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:130, 1x extendedcrafting:material:12
-      ▕█▏106121.05237388382 "Lead Singularity" extendedcrafting:singularity:23
+      ▕█▏106121.05236768433 "Lead Singularity" extendedcrafting:singularity:23
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:23
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:131, 1x extendedcrafting:material:12
-      ▕█▏106101.3849756964 "Steel Singularity" extendedcrafting:singularity:24
+      ▕█▏106101.3849694969 "Steel Singularity" extendedcrafting:singularity:24
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:24
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:160, 1x extendedcrafting:material:12
-      ▕█▏106107.67101082334 "Constantan Singularity" extendedcrafting:singularity:26
+      ▕█▏106107.67100462383 "Constantan Singularity" extendedcrafting:singularity:26
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:26
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:164, 1x extendedcrafting:material:12
-      ▕█▏106126.77222599328 "Electrum Singularity" extendedcrafting:singularity:27
+      ▕█▏106126.77221979377 "Electrum Singularity" extendedcrafting:singularity:27
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:27
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:161, 1x extendedcrafting:material:12
-      ▕█▏106110.45539148698 "Invar Singularity" extendedcrafting:singularity:28
+      ▕█▏106110.45538528747 "Invar Singularity" extendedcrafting:singularity:28
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:28
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:162, 1x extendedcrafting:material:12
-      ▕█▏106095.70647429896 "Mithril Singularity" extendedcrafting:singularity:29
+      ▕█▏106095.70646809947 "Mithril Singularity" extendedcrafting:singularity:29
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:29
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:136, 1x extendedcrafting:material:12
-      ▕█▏106121.46334146133 "Uranium Singularity" extendedcrafting:singularity:32
+      ▕█▏106121.46333526184 "Uranium Singularity" extendedcrafting:singularity:32
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:32
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x immersiveengineering:metal:5, 1x extendedcrafting:material:12
-      ▕█▏106095.70647429896 "Platinum Singularity" extendedcrafting:singularity:34
+      ▕█▏106095.70646809947 "Platinum Singularity" extendedcrafting:singularity:34
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:34
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:134, 1x extendedcrafting:material:12
-      ▕█▏106104.14605896416 "Signalum Singularity" extendedcrafting:singularity:48
+      ▕█▏106104.14605276466 "Signalum Singularity" extendedcrafting:singularity:48
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:48
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:165, 1x extendedcrafting:material:12
-      ▕█▏106195.02573645563 "Lumium Singularity" extendedcrafting:singularity:49
+      ▕█▏106195.02573025612 "Lumium Singularity" extendedcrafting:singularity:49
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:49
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:166, 1x extendedcrafting:material:12
-      ▕█▏109694.9510088006 "Enderium Singularity" extendedcrafting:singularity:50
+      ▕█▏109694.9510026011 "Enderium Singularity" extendedcrafting:singularity:50
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:50
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x thermalfoundation:material:167, 1x extendedcrafting:material:12
-      ▕█▏106100.2989852144 "Ardite Singularity" extendedcrafting:singularity:64
+      ▕█▏106100.2989790149 "Ardite Singularity" extendedcrafting:singularity:64
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:64
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x tconstruct:ingots:1, 1x extendedcrafting:material:12
-      ▕█▏106121.14114843721 "Cobalt Singularity" extendedcrafting:singularity:65
+      ▕█▏106121.1411422377 "Cobalt Singularity" extendedcrafting:singularity:65
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:65
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x tconstruct:ingots:0, 1x extendedcrafting:material:12
-      ▕█▏106201.17810379708 "Manyullyn Singularity" extendedcrafting:singularity:66
+      ▕█▏106201.17809759759 "Manyullyn Singularity" extendedcrafting:singularity:66
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity:66
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x tconstruct:ingots:2, 1x extendedcrafting:material:12
-      ▕█▏106202.18309621698 "Quartz Singularity" extendedcrafting:singularity_custom:100
+      ▕█▏106202.18309001747 "Quartz Singularity" extendedcrafting:singularity_custom:100
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:100
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x minecraft:quartz_block:0, 1x extendedcrafting:material:12
-      ▕█▏107414.15042473847 "Experience Singularity" extendedcrafting:singularity_custom:101
+      ▕█▏107414.15041853896 "Experience Singularity" extendedcrafting:singularity_custom:101
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:101
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x minecraft:experience_bottle:0, 1x extendedcrafting:material:12
-      ▕█▏106131.87676852274 "Black Quartz Singularity" extendedcrafting:singularity_custom:102
+      ▕█▏106131.87676232324 "Black Quartz Singularity" extendedcrafting:singularity_custom:102
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:102
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x actuallyadditions:item_misc:5, 1x extendedcrafting:material:12
-      ▕█▏106141.75360982658 "Hard Carbon Alloy Singularity" extendedcrafting:singularity_custom:103
+      ▕█▏106141.75360362708 "Hard Carbon Alloy Singularity" extendedcrafting:singularity_custom:103
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:103
         ░ 1x extendedcrafting:compressor:0
@@ -9593,22 +9614,22 @@
               ↱ 1x tconstruct:shard:0:{Material:"hard_carbon"}
               ░ 1x tconstruct:casting:0, 1x tconstruct:casting:1
               ⮬ 72x fluid:hard_carbon, 1x tconstruct:clay_cast:0:{PartType:"tconstruct:shard"}
-      ▕█▏106244.66121420002 "Magnesium Diboride Alloy Singularity" extendedcrafting:singularity_custom:104
+      ▕█▏106244.66120800051 "Magnesium Diboride Alloy Singularity" extendedcrafting:singularity_custom:104
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:104
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x nuclearcraft:alloy:3, 1x extendedcrafting:material:12
-      ▕█▏106132.87091304109 "Thorium Singularity" extendedcrafting:singularity_custom:105
+      ▕█▏106132.87090684158 "Thorium Singularity" extendedcrafting:singularity_custom:105
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:105
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x nuclearcraft:ingot:3, 1x extendedcrafting:material:12
-      ▕█▏106132.83548106583 "Fluxed Electrum Singularity" extendedcrafting:singularity_custom:106
+      ▕█▏106132.83547486633 "Fluxed Electrum Singularity" extendedcrafting:singularity_custom:106
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:106
         ░ 1x extendedcrafting:compressor:0
         ⮬ 1x redstonearsenal:material:32, 1x extendedcrafting:material:12
-      ▕█▏106139.0998186228 "Fluix Singularity" extendedcrafting:singularity_custom:107
+      ▕█▏106139.0998124233 "Fluix Singularity" extendedcrafting:singularity_custom:107
         [extendedcrafting__compressor]
         ↱ 1x extendedcrafting:singularity_custom:107
         ░ 1x extendedcrafting:compressor:0
@@ -9833,7 +9854,7 @@
       ↱ 1x mekanismgenerators:reactor:0
       ░ 1x extendedcrafting:table_advanced:0
       ⮬ 1x nuclearcraft:part:3, 1x advancedrocketry:blocklens:0, 1x advancedrocketry:blocklens:0, 1x advancedrocketry:blocklens:0, 1x nuclearcraft:part:3, 1x mekanismgenerators:reactor:2, 1x ic2:iridium_reflector:0, 1x mekanism:gastank:0:{tier:3}, 1x ic2:iridium_reflector:0, 1x mekanismgenerators:reactor:2, 1x nuclearcraft:electromagnet_supercooler_idle:0, 1x advancedrocketry:intake:0, 1x nuclearcraft:fusion_core:0, 1x advancedrocketry:intake:0, 1x nuclearcraft:electromagnet_supercooler_idle:0, 1x mekanismgenerators:reactor:2, 1x ic2:iridium_reflector:0, 1x mekanism:gastank:0:{tier:3}, 1x ic2:iridium_reflector:0, 1x mekanismgenerators:reactor:2, 1x nuclearcraft:part:3, 1x nuclearcraft:lithium_ion_battery_elite:0:{capacity:2048000000,maxTransfer:102400000,energy:0}, 1x nuclearcraft:lithium_ion_battery_elite:0:{capacity:2048000000,maxTransfer:102400000,energy:0}, 1x nuclearcraft:lithium_ion_battery_elite:0:{capacity:2048000000,maxTransfer:102400000,energy:0}, 1x nuclearcraft:part:3
-      ▕█▏899570.9413378732 "Lens" advancedrocketry:blocklens:0
+      ▕█▏899571.2264830858 "Lens" advancedrocketry:blocklens:0
         [zmaster587__AR__precisionAssembler]
         ↱ 1x advancedrocketry:blocklens:0
         ░ 1x advancedrocketry:precisionassemblingmachine:0
@@ -9908,12 +9929,7 @@
                 ↱ 2x nuclearcraft:cooler:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x nuclearcraft:alloy:1, 1x thermalfoundation:material:160, 1x nuclearcraft:alloy:1, 1x thermalfoundation:material:160, 1x thermalfoundation:material:160, 1x nuclearcraft:alloy:1, 1x thermalfoundation:material:160, 1x nuclearcraft:alloy:1
-          ▕█▏493.3131279116686 "Ice" minecraft:ice:0
-            [JER]
-            ↱ 1x minecraft:ice:0
-            ░ 1x dimension:twilight_forest_7, 1x tconstruct:pick_head:0:{Material:"flint"}
-            ⮬ 17.83750037374197x placeholder:exploration
-      ▕█▏870580.4240459541 "Gas Intake" advancedrocketry:intake:0
+      ▕█▏870580.7091911667 "Gas Intake" advancedrocketry:intake:0
         [minecraft__crafting]
         ↱ 1x advancedrocketry:intake:0
         ░ 1x minecraft:crafting_table:0
@@ -9973,17 +9989,17 @@
           ↱ 2x environmentaltech:solar_cell_pladium:0
           ░ 1x minecraft:crafting_table:0
           ⮬ 1x environmentaltech:pladium_crystal:0, 1x environmentaltech:pladium_crystal:0, 1x environmentaltech:pladium_crystal:0, 1x environmentaltech:kyronite_crystal:0, 1x enderio:item_alloy_endergy_nugget:3, 1x environmentaltech:kyronite_crystal:0, 1x environmentaltech:solar_cell_kyronite:0, 1x environmentaltech:solar_cell_kyronite:0, 1x environmentaltech:solar_cell_kyronite:0
-          ▕█▏8630842.61504079 "Kyronite Solar Cell" environmentaltech:solar_cell_kyronite:0
+          ▕█▏11631106.010940274 "Kyronite Solar Cell" environmentaltech:solar_cell_kyronite:0
             [minecraft__crafting]
             ↱ 2x environmentaltech:solar_cell_kyronite:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x environmentaltech:kyronite_crystal:0, 1x environmentaltech:kyronite_crystal:0, 1x environmentaltech:kyronite_crystal:0, 1x environmentaltech:erodium_crystal:0, 1x extendedcrafting:material:25, 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:solar_cell_erodium:0, 1x environmentaltech:solar_cell_erodium:0, 1x environmentaltech:solar_cell_erodium:0
-            ▕█▏3531022.418127367 "Erodium Solar Cell" environmentaltech:solar_cell_erodium:0
+            ▕█▏5531198.385764061 "Erodium Solar Cell" environmentaltech:solar_cell_erodium:0
               [minecraft__crafting]
               ↱ 2x environmentaltech:solar_cell_erodium:0
               ░ 1x minecraft:crafting_table:0
               ⮬ 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:litherite_crystal:0, 1x tconevo:metal:42, 1x environmentaltech:litherite_crystal:0, 1x environmentaltech:solar_cell_litherite:0, 1x environmentaltech:solar_cell_litherite:0, 1x environmentaltech:solar_cell_litherite:0
-              ▕█▏6784.488682889117 "Litherite Solar Cell" environmentaltech:solar_cell_litherite:0
+              ▕█▏6787.418375011829 "Litherite Solar Cell" environmentaltech:solar_cell_litherite:0
                 [minecraft__crafting]
                 ↱ 2x environmentaltech:solar_cell_litherite:0
                 ░ 1x minecraft:crafting_table:0
@@ -10033,7 +10049,7 @@
                 ↱ 1x enderio:item_material:38
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x ic2:dust:9, 1x ic2:dust:9, 1x ic2:dust:9, 1x endreborn:food_ender_flesh:0, 1x appliedenergistics2:material:5, 1x endreborn:food_ender_flesh:0, 1x ic2:dust:9, 1x ic2:dust:9, 1x ic2:dust:9
-        ▕█▏22841774.61627104 "Solar Array Controller Tier 3" environmentaltech:solar_cont_3:0
+        ▕█▏27842227.73937894 "Solar Array Controller Tier 3" environmentaltech:solar_cont_3:0
           [minecraft__crafting]
           ↱ 1x environmentaltech:solar_cont_3:0
           ░ 1x minecraft:crafting_table:0
@@ -10043,12 +10059,12 @@
             ↱ 6x actuallyadditions:block_quartz_slab:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x actuallyadditions:block_misc:2, 1x actuallyadditions:block_misc:2, 1x actuallyadditions:block_misc:2
-          ▕█▏8875604.779231125 "Solar Array Controller Tier 2" environmentaltech:solar_cont_2:0
+          ▕█▏10875795.395328434 "Solar Array Controller Tier 2" environmentaltech:solar_cont_2:0
             [minecraft__crafting]
             ↱ 1x environmentaltech:solar_cont_2:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x actuallyadditions:block_quartz_slab:0, 1x actuallyadditions:block_quartz_slab:0, 1x actuallyadditions:block_quartz_slab:0, 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:solar_cell_erodium:0, 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:erodium_crystal:0, 1x environmentaltech:solar_cont_1:0, 1x environmentaltech:erodium_crystal:0
-            ▕█▏9256.027993521788 "Solar Array Controller Tier 1" environmentaltech:solar_cont_1:0
+            ▕█▏9270.676454135348 "Solar Array Controller Tier 1" environmentaltech:solar_cont_1:0
               [minecraft__crafting]
               ↱ 1x environmentaltech:solar_cont_1:0
               ░ 1x minecraft:crafting_table:0
@@ -10068,7 +10084,7 @@
                     ↱ 9x actuallyadditions:item_crystal_shard:1
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x actuallyadditions:item_crystal:1
-    ▕█▏838330823.1663254 "Ultimate Induction Cell" mekanism:basicblock2:3:{tier:3}
+    ▕█▏838358197.106754 "Ultimate Induction Cell" mekanism:basicblock2:3:{tier:3}
       [minecraft__crafting]
       ↱ 1x mekanism:basicblock2:3:{tier:3}
       ░ 1x minecraft:crafting_table:0
@@ -10123,7 +10139,7 @@
         ↱ 1x draconicevolution:draconic_energy_core:0
         ░ 1x forestry:carpenter:0
         ⮬ 2000x fluid:ic2hot_coolant, 1x draconicevolution:draconic_ingot:0, 1x draconicevolution:wyvern_energy_core:0, 1x draconicevolution:draconic_ingot:0, 1x draconicevolution:wyvern_energy_core:0, 1x draconicevolution:wyvern_core:0, 1x draconicevolution:wyvern_energy_core:0, 1x draconicevolution:draconic_ingot:0, 1x draconicevolution:wyvern_energy_core:0, 1x draconicevolution:draconic_ingot:0
-      ▕█▏12153227.198355293 "Wyvern Flux Capacitor" draconicevolution:draconium_capacitor:0
+      ▕█▏12153268.214045012 "Wyvern Flux Capacitor" draconicevolution:draconium_capacitor:0
         [minecraft__crafting]
         ↱ 1x draconicevolution:draconium_capacitor:0
         ░ 1x minecraft:crafting_table:0
@@ -10218,7 +10234,7 @@
             ↱ 9x jaopca:item_nuggettopaz:0
             ░ 1x minecraft:crafting_table:0
             ⮬ 1x biomesoplenty:gem:3
-      ▕█▏255382.51159149464 "Grains of the End" enderio:item_material:37
+      ▕█▏258804.25414500898 "Grains of the End" enderio:item_material:37
         [nuclearcraft_manufactory]
         ↱ 1x enderio:item_material:37
         ░ 1x nuclearcraft:manufactory_idle:0

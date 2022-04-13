@@ -19,4 +19,10 @@ export default function addRecipes(
     'minecraft:bucket:0',
     'entity:cow',
   ])
+
+  addRecipe(
+    'custom_entity',
+    'draconicevolution:mob_soul:0:{EntityName:"excompressum:angry_chicken"}',
+    '2000x placeholder:ticks'
+  )
 }
