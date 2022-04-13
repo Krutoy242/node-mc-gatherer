@@ -1340,9 +1340,9 @@
         ⮬ 1x mekanism:polyethene:0, 1x mekanism:polyethene:0, 1x mekanism:polyethene:0, 1x mekanism:polyethene:0, 1x mekanism:polyethene:0, 1x mekanism:polyethene:0, 1x mekanism:polyethene:0, 1x mekanism:polyethene:0
         ▕█▏22883.90502257589 "HDPE Pellet" mekanism:polyethene:0
           [mekanism__pressurizedreactionchamber]
-          ↱ 5x gas:gas:oxygen, 1x mekanism:polyethene:0
+          ↱ 5x gas:oxygen, 1x mekanism:polyethene:0
           ░ 1x mekanism:machineblock2:10
-          ⮬ 50x fluid:liquidethene, 10x gas:gas:oxygen, 1x mekanism:substrate:0
+          ⮬ 50x fluid:liquidethene, 10x gas:oxygen, 1x mekanism:substrate:0
           ▕█▏22786.538023677465 "Pressurized Reaction Chamber" mekanism:machineblock2:10
             [minecraft__crafting]
             ↱ 1x mekanism:machineblock2:10
@@ -1401,7 +1401,7 @@
             [mekanism__rotary_condensentrator_condensentrating]
             ↱ 1x fluid:liquidethene
             ░ 1x mekanism:machineblock2:0
-            ⮬ 1x gas:gas:ethene
+            ⮬ 1x gas:ethene
             ▕█▏11397.176108426027 "Rotary Condensentrator" mekanism:machineblock2:0
               [minecraft__crafting]
               ↱ 1x mekanism:machineblock2:0
@@ -1417,14 +1417,14 @@
                 ↱ 1x mekanism:machineblock2:11:{tier:0}
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x mekanism:enrichedalloy:0, 1x mekanism:enrichedalloy:0, 1x minecraft:iron_ingot:0, 1x mekanism:enrichedalloy:0, 1x minecraft:iron_ingot:0, 1x mekanism:enrichedalloy:0
-            ▕█▏11400.709019406138 "[gas:gas:ethene]" gas:gas:ethene
+            ▕█▏11400.709019406138 "Ethylene" gas:ethene
               [mekanism__rotary_condensentrator_decondensentrating]
-              ↱ 1x gas:gas:ethene
+              ↱ 1x gas:ethene
               ░ 1x mekanism:machineblock2:0
               ⮬ 1x fluid:liquidethene
-          ▕█▏607.02110517287 "[gas:gas:oxygen]" gas:gas:oxygen
+          ▕█▏607.02110517287 "Oxygen" gas:oxygen
             [mekanism__electrolyticseparator]
-            ↱ 2x gas:gas:hydrogen, 1x gas:gas:oxygen
+            ↱ 2x gas:hydrogen, 1x gas:oxygen
             ░ 1x mekanism:machineblock2:4
             ⮬ 10x fluid:water
             ▕█▏605.00110517287 "Electrolytic Separator" mekanism:machineblock2:4
@@ -1508,12 +1508,12 @@
               ⮬ 1x placeholder:exploration
           ▕█▏22796.06165093145 "Substrate" mekanism:substrate:0
             [mekanism__pressurizedreactionchamber]
-            ↱ 100x gas:gas:ethene, 1x mekanism:substrate:0
+            ↱ 100x gas:ethene, 1x mekanism:substrate:0
             ░ 1x mekanism:machineblock2:10
-            ⮬ 10x fluid:water, 100x gas:gas:hydrogen, 2x mekanism:biofuel:0
-            ▕█▏606.51110517287 "[gas:gas:hydrogen]" gas:gas:hydrogen
+            ⮬ 10x fluid:water, 100x gas:hydrogen, 2x mekanism:biofuel:0
+            ▕█▏606.51110517287 "Hydrogen" gas:hydrogen
               [mekanism__electrolyticseparator]
-              ↱ 2x gas:gas:hydrogen, 1x gas:gas:oxygen
+              ↱ 2x gas:hydrogen, 1x gas:oxygen
               ░ 1x mekanism:machineblock2:4
               ⮬ 10x fluid:water
             ▕█▏12035.466535899337 "Bio Fuel" mekanism:biofuel:0
@@ -1540,7 +1540,7 @@
                       ↱ 1x minecraft:cauldron:0
                       ░ 1x minecraft:crafting_table:0
                       ⮬ 1x thermalfoundation:material:32, 1x thermalfoundation:material:32, 1x thermalfoundation:material:32, 1x thermalfoundation:material:32, 1x thermalfoundation:material:32, 1x thermalfoundation:material:32, 1x thermalfoundation:material:32
-                  ▕█▏679.9436343502424 "Aspect: Ignis" aspect:Ignis
+                  ▕█▏679.9436343502424 "Ignis" aspect:Ignis
                     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK]
                     ↱ 1x aspect:Motus, 1x aspect:Exitium, 1x aspect:Ignis, 1x aspect:Perditio, 1x aspect:Potentia, 1x aspect:Alienis
                     ░ 1x thaumcraft:crucible:0
@@ -1635,7 +1635,7 @@
                                 ↱ 1x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"victus"}]}
                                 ░ 1x thaumcraft:crucible:0
                                 ⮬ 1x aspect:Victus, 1x thaumcraft:nugget:9
-                                ▕█▏116.2496365706698 "Aspect: Victus" aspect:Victus
+                                ▕█▏116.2496365706698 "Victus" aspect:Victus
                                   [THAUMCRAFT_ASPECT_COMPOUND]
                                   ↱ 1x aspect:Victus
                                   ░ 1x thaumcraft:thaumonomicon:0
@@ -1644,7 +1644,7 @@
                                     [JEC]
                                     ↱ 1x thaumcraft:thaumonomicon:0
                                     ⮬ 1x thaumcraft:salis_mundus:0, 1x minecraft:bookshelf:0
-                                  ▕█▏679.6459302286557 "Aspect: Terra" aspect:Terra
+                                  ▕█▏679.6459302286557 "Terra" aspect:Terra
                                     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK]
                                     ↱ 10x aspect:Metallum, 5x aspect:Terra, 5x aspect:Desiderium
                                     ░ 1x thaumcraft:crucible:0
@@ -1679,7 +1679,7 @@
                                           ↱ 1x thermalfoundation:storage:2
                                           ░ 1x minecraft:crafting_table:0
                                           ⮬ 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130, 1x thermalfoundation:material:130
-                                  ▕█▏680.6074389704469 "Aspect: Aqua" aspect:Aqua
+                                  ▕█▏680.6074389704469 "Aqua" aspect:Aqua
                                     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK]
                                     ↱ 3x aspect:Herba, 1x aspect:Desiderium, 1x aspect:Aer, 1x aspect:Potentia, 2x aspect:Aqua
                                     ░ 1x thaumcraft:crucible:0
@@ -1863,42 +1863,42 @@
                                           ↱ 2x minecraft:dye:0
                                           ░ 1x thaumcraft:crucible:0
                                           ⮬ 1x aspect:Sensus, 1x aspect:Aqua, 1x aspect:Bestia, 1x minecraft:dye:0
-                                          ▕█▏123.43030240525266 "Aspect: Sensus" aspect:Sensus
+                                          ▕█▏123.43030240525266 "Sensus" aspect:Sensus
                                             [THAUMCRAFT_ASPECT_COMPOUND]
                                             ↱ 1x aspect:Sensus
                                             ░ 1x thaumcraft:thaumonomicon:0
                                             ⮬ 1x aspect:Aer, 1x aspect:Spiritus
-                                            ▕█▏682.3805691358278 "Aspect: Aer" aspect:Aer
+                                            ▕█▏682.3805691358278 "Aer" aspect:Aer
                                               [THAUMCRAFT_ASPECT_FROM_ITEMSTACK]
                                               ↱ 3x aspect:Herba, 1x aspect:Desiderium, 1x aspect:Aer, 1x aspect:Potentia, 2x aspect:Aqua
                                               ░ 1x thaumcraft:crucible:0
                                               ⮬ 1x minecraft:sugar:0
-                                            ▕█▏119.51786898626538 "Aspect: Spiritus" aspect:Spiritus
+                                            ▕█▏119.51786898626538 "Spiritus" aspect:Spiritus
                                               [THAUMCRAFT_ASPECT_COMPOUND]
                                               ↱ 1x aspect:Spiritus
                                               ░ 1x thaumcraft:thaumonomicon:0
                                               ⮬ 1x aspect:Victus, 1x aspect:Mortuus
-                                              ▕█▏116.20077122084403 "Aspect: Mortuus" aspect:Mortuus
+                                              ▕█▏116.20077122084403 "Mortuus" aspect:Mortuus
                                                 [THAUMCRAFT_ASPECT_COMPOUND]
                                                 ↱ 1x aspect:Mortuus
                                                 ░ 1x thaumcraft:thaumonomicon:0
                                                 ⮬ 1x aspect:Aqua, 1x aspect:Perditio
-                                                ▕█▏679.5970648788299 "Aspect: Perditio" aspect:Perditio
+                                                ▕█▏679.5970648788299 "Perditio" aspect:Perditio
                                                   [THAUMCRAFT_ASPECT_FROM_ITEMSTACK]
                                                   ↱ 4x aspect:Alkimia, 49x aspect:Metallum, 10x aspect:Mortuus, 7x aspect:Perditio
                                                   ░ 1x thaumcraft:crucible:0
                                                   ⮬ 1x fluid:animania_honey
-                                          ▕█▏121.23437696835552 "Aspect: Bestia" aspect:Bestia
+                                          ▕█▏121.23437696835552 "Bestia" aspect:Bestia
                                             [THAUMCRAFT_ASPECT_COMPOUND]
                                             ↱ 1x aspect:Bestia
                                             ░ 1x thaumcraft:thaumonomicon:0
                                             ⮬ 1x aspect:Motus, 1x aspect:Victus
-                                            ▕█▏117.91727920293417 "Aspect: Motus" aspect:Motus
+                                            ▕█▏117.91727920293417 "Motus" aspect:Motus
                                               [THAUMCRAFT_ASPECT_COMPOUND]
                                               ↱ 1x aspect:Motus
                                               ░ 1x thaumcraft:thaumonomicon:0
                                               ⮬ 1x aspect:Aer, 1x aspect:Ordo
-                                              ▕█▏679.540442695539 "Aspect: Ordo" aspect:Ordo
+                                              ▕█▏679.540442695539 "Ordo" aspect:Ordo
                                                 [THAUMCRAFT_ASPECT_FROM_ITEMSTACK]
                                                 ↱ 49x aspect:Metallum, 5x aspect:Vacuos, 15x aspect:Cognitio, 15x aspect:Ordo
                                                 ░ 1x thaumcraft:crucible:0
@@ -1912,7 +1912,7 @@
                                                     ↱ 1x thaumcraft:bath_salts:0
                                                     ░ 1x thaumcraft:crucible:0
                                                     ⮬ 1x aspect:Cognitio, 1x aspect:Aer, 1x aspect:Ordo, 1x aspect:Victus, 1x thaumcraft:salis_mundus:0
-                                                    ▕█▏120.9933676196672 "Aspect: Cognitio" aspect:Cognitio
+                                                    ▕█▏120.9933676196672 "Cognitio" aspect:Cognitio
                                                       [THAUMCRAFT_ASPECT_COMPOUND]
                                                       ↱ 1x aspect:Cognitio
                                                       ░ 1x thaumcraft:thaumonomicon:0
@@ -4040,7 +4040,7 @@
                       ↱ 1x jaopca:item_clusterplatinum:0
                       ░ 1x thaumcraft:crucible:0
                       ⮬ 1x aspect:Metallum, 1x aspect:Ordo, 1x thermalfoundation:ore:6
-                      ▕█▏115.18264029576198 "Aspect: Metallum" aspect:Metallum
+                      ▕█▏115.18264029576198 "Metallum" aspect:Metallum
                         [THAUMCRAFT_ASPECT_COMPOUND]
                         ↱ 1x aspect:Metallum
                         ░ 1x thaumcraft:thaumonomicon:0
@@ -5726,7 +5726,7 @@
         [SagMill]
         ↱ 2x thermalfoundation:material:894, 2x thermalfoundation:material:894, 1x thermalfoundation:material:771, 1x minecraft:netherrack:0
         ░ 1x enderio:block_sag_mill:0
-        ⮬ 1x thermalfoundation:ore_fluid:3, 1x fe:enderio:energy
+        ⮬ 1x thermalfoundation:ore_fluid:3, 1x rf:enderio:energy
         ▕█▏5121200.548485647 "SAG Mill" enderio:block_sag_mill:0
           [minecraft__crafting]
           ↱ 1x enderio:block_sag_mill:0
@@ -5766,7 +5766,7 @@
                 [AlloySmelter]
                 ↱ 1x enderio:item_material:48
                 ░ 1x enderio:block_simple_alloy_smelter:0
-                ⮬ 6x enderio:item_material:46, 1x minecraft:egg:0, 1x fe:enderio:energy
+                ⮬ 6x enderio:item_material:46, 1x minecraft:egg:0, 1x rf:enderio:energy
                 ▕█▏5111221.138046647 "Simple Alloy Smelter" enderio:block_simple_alloy_smelter:0
                   [minecraft__crafting]
                   ↱ 1x enderio:block_simple_alloy_smelter:0
@@ -5801,10 +5801,10 @@
                   [SagMill]
                   ↱ 1x enderio:item_material:46, 1x enderio:item_material:46, 1x enderio:item_material:47
                   ░ 1x enderio:block_sag_mill:0
-                  ⮬ 1x minecraft:leaves:0, 1x fe:enderio:energy
-                  ▕█▏5055.399011867622 "[fe:enderio:energy]" fe:enderio:energy
+                  ⮬ 1x minecraft:leaves:0, 1x rf:enderio:energy
+                  ▕█▏5055.399011867622 "80,000 µI" rf:enderio:energy
                     [LavaGenerator]
-                    ↱ 1x fe:enderio:energy, 1x fe:enderio:energy
+                    ↱ 1x rf:enderio:energy, 1x rf:enderio:energy
                     ░ 1x enderio:block_lava_generator:0
                     ⮬ 1000x fluid:lava
                     ▕█▏1524.995847274422 "Lava Heat Exchanger" enderio:block_lava_generator:0
@@ -5816,7 +5816,7 @@
                         [AlloySmelter]
                         ↱ 1x enderio:item_material:72
                         ░ 1x enderio:block_simple_alloy_smelter:0
-                        ⮬ 1x minecraft:netherbrick:0, 4x minecraft:nether_wart:0, 6x minecraft:clay_ball:0, 1x fe:enderio:energy
+                        ⮬ 1x minecraft:netherbrick:0, 4x minecraft:nether_wart:0, 6x minecraft:clay_ball:0, 1x rf:enderio:energy
                         ▕█▏5.4364878689133995 "Nether Wart" minecraft:nether_wart:0
                           [jeresources__plant]
                           ↱ 1x minecraft:nether_wart:0
@@ -6068,7 +6068,7 @@
         [SagMill]
         ↱ 2x thermalfoundation:material:893, 2x thermalfoundation:material:893, 1x thermalfoundation:material:866, 1x minecraft:stone:0
         ░ 1x enderio:block_sag_mill:0
-        ⮬ 1x thermalfoundation:ore_fluid:2, 1x fe:enderio:energy
+        ⮬ 1x thermalfoundation:ore_fluid:2, 1x rf:enderio:energy
         ▕ ▏0 "Destabilized Redstone Ore" thermalfoundation:ore_fluid:2
           [JER]
           ↱ 1x thermalfoundation:ore_fluid:2
@@ -6083,7 +6083,7 @@
         [SagMill]
         ↱ 2x thermalfoundation:material:895, 2x thermalfoundation:material:895, 1x minecraft:end_stone:0
         ░ 1x enderio:block_sag_mill:0
-        ⮬ 1x thermalfoundation:ore_fluid:4, 1x fe:enderio:energy
+        ⮬ 1x thermalfoundation:ore_fluid:4, 1x rf:enderio:energy
         ▕ ▏0 "Resonant End Stone" thermalfoundation:ore_fluid:4
           [JER]
           ↱ 1x thermalfoundation:ore_fluid:4
@@ -6098,7 +6098,7 @@
         [SoulBinder]
         ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:17
         ░ 1x enderio:block_soul_binder:0
-        ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:villager"}, 1x minecraft:emerald:0, 1x fe:enderio:energy
+        ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:villager"}, 1x minecraft:emerald:0, 1x rf:enderio:energy
         ▕█▏5136871.81255678 "Soul Binder" enderio:block_soul_binder:0
           [minecraft__crafting]
           ↱ 1x enderio:block_soul_binder:0
@@ -6156,7 +6156,7 @@
             [AlloySmelter]
             ↱ 1x enderio:item_material:53
             ░ 1x enderio:block_simple_alloy_smelter:0
-            ⮬ 1x enderio:item_material:0, 1x enderio:item_material:52, 1x fe:enderio:energy
+            ⮬ 1x enderio:item_material:0, 1x enderio:item_material:52, 1x rf:enderio:energy
             ▕█▏2010.9600005157185 "Soul Attuned Dye Blend" enderio:item_material:52
               [minecraft__crafting]
               ↱ 6x enderio:item_material:52
@@ -6171,12 +6171,12 @@
                 [AlloySmelter]
                 ↱ 1x enderio:item_material:49
                 ░ 1x enderio:block_simple_alloy_smelter:0
-                ⮬ 6x enderio:item_material:47, 1x minecraft:egg:0, 1x fe:enderio:energy
+                ⮬ 6x enderio:item_material:47, 1x minecraft:egg:0, 1x rf:enderio:energy
                 ▕█▏5124292.211929352 "Twigs and Prunings" enderio:item_material:47
                   [SagMill]
                   ↱ 1x enderio:item_material:46, 1x enderio:item_material:46, 1x enderio:item_material:47
                   ░ 1x enderio:block_sag_mill:0
-                  ⮬ 1x minecraft:leaves:0, 1x fe:enderio:energy
+                  ⮬ 1x minecraft:leaves:0, 1x rf:enderio:energy
           ▕█▏10002 "Zombie Head" minecraft:skull:2
             [jeresources__mob]
             ↱ 1x quark:diamond_heart:0, 18x minecraft:coal:0, 2x minecraft:gold_ingot:0, 4x minecraft:iron_ingot:0, 10x minecraft:redstone:0, 1x minecraft:skull:4, 1x minecraft:skull:2, 1x minecraft:emerald:0, 1x minecraft:ender_pearl:0, 4x minecraft:dye:4, 1x minecraft:diamond:0, 1x minecraft:golden_apple:0, 1x minecraft:iron_horse_armor:0, 1x minecraft:saddle:0, 1x minecraft:golden_horse_armor:0, 1x minecraft:diamond_horse_armor:0
@@ -6191,32 +6191,32 @@
           ↱ 1x enderio:item_soul_vial:1:{entityId:"minecraft:villager"}
           ░ 1x thaumcraft:crucible:0
           ⮬ 1x aspect:Humanus, 1x aspect:Rattus, 1x aspect:Imperium, 1x enderio:item_soul_vial:0
-          ▕█▏122.83496675168674 "Aspect: Humanus" aspect:Humanus
+          ▕█▏122.83496675168674 "Humanus" aspect:Humanus
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Humanus
             ░ 1x thaumcraft:thaumonomicon:0
             ⮬ 1x aspect:Spiritus, 1x aspect:Victus
-          ▕█▏122.36330613034485 "Aspect: Rattus" aspect:Rattus
+          ▕█▏122.36330613034485 "Rattus" aspect:Rattus
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Rattus
             ░ 1x thaumcraft:thaumonomicon:0
             ⮬ 1x aspect:Perditio, 1x aspect:Bestia
-          ▕█▏130.77601511996673 "Aspect: Imperium" aspect:Imperium
+          ▕█▏130.77601511996673 "Imperium" aspect:Imperium
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Imperium
             ░ 1x thaumcraft:thaumonomicon:0
             ⮬ 1x aspect:Cognitio, 1x aspect:Machina
-            ▕█▏122.71518630554797 "Aspect: Machina" aspect:Machina
+            ▕█▏122.71518630554797 "Machina" aspect:Machina
               [THAUMCRAFT_ASPECT_COMPOUND]
               ↱ 1x aspect:Machina
               ░ 1x thaumcraft:thaumonomicon:0
               ⮬ 1x aspect:Motus, 1x aspect:Instrumentum
-              ▕█▏117.73044590786225 "Aspect: Instrumentum" aspect:Instrumentum
+              ▕█▏117.73044590786225 "Instrumentum" aspect:Instrumentum
                 [THAUMCRAFT_ASPECT_COMPOUND]
                 ↱ 1x aspect:Instrumentum
                 ░ 1x thaumcraft:thaumonomicon:0
                 ⮬ 1x aspect:Metallum, 1x aspect:Potentia
-                ▕█▏115.4803444173487 "Aspect: Potentia" aspect:Potentia
+                ▕█▏115.4803444173487 "Potentia" aspect:Potentia
                   [THAUMCRAFT_ASPECT_COMPOUND]
                   ↱ 1x aspect:Potentia
                   ░ 1x thaumcraft:thaumonomicon:0
@@ -6255,33 +6255,33 @@
           [SoulBinder]
           ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:16
           ░ 1x enderio:block_soul_binder:0
-          ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:enderman"}, 1x enderio:item_material:15, 1x fe:enderio:energy
+          ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:enderman"}, 1x enderio:item_material:15, 1x rf:enderio:energy
           ▕█▏1126.181044322995 "Soul Vial" enderio:item_soul_vial:1:{entityId:"minecraft:enderman"}
             [THAUMCRAFT_CRUCIBLE]
             ↱ 1x enderio:item_soul_vial:1:{entityId:"minecraft:enderman"}
             ░ 1x thaumcraft:crucible:0
             ⮬ 1x aspect:Exanimis, 1x aspect:Alienis, 1x enderio:item_soul_vial:0
-            ▕█▏121.18551161852976 "Aspect: Exanimis" aspect:Exanimis
+            ▕█▏121.18551161852976 "Exanimis" aspect:Exanimis
               [THAUMCRAFT_ASPECT_COMPOUND]
               ↱ 1x aspect:Exanimis
               ░ 1x thaumcraft:thaumonomicon:0
               ⮬ 1x aspect:Motus, 1x aspect:Mortuus
-            ▕█▏128.40319601959072 "Aspect: Alienis" aspect:Alienis
+            ▕█▏128.40319601959072 "Alienis" aspect:Alienis
               [THAUMCRAFT_ASPECT_COMPOUND]
               ↱ 1x aspect:Alienis
               ░ 1x thaumcraft:thaumonomicon:0
               ⮬ 1x aspect:Vacuos, 1x aspect:Tenebrae
-              ▕█▏117.97390138622504 "Aspect: Vacuos" aspect:Vacuos
+              ▕█▏117.97390138622504 "Vacuos" aspect:Vacuos
                 [THAUMCRAFT_ASPECT_COMPOUND]
                 ↱ 1x aspect:Vacuos
                 ░ 1x thaumcraft:thaumonomicon:0
                 ⮬ 1x aspect:Aer, 1x aspect:Perditio
-              ▕█▏123.36183343861411 "Aspect: Tenebrae" aspect:Tenebrae
+              ▕█▏123.36183343861411 "Tenebrae" aspect:Tenebrae
                 [THAUMCRAFT_ASPECT_COMPOUND]
                 ↱ 1x aspect:Tenebrae
                 ░ 1x thaumcraft:thaumonomicon:0
                 ⮬ 1x aspect:Vacuos, 1x aspect:Lux
-                ▕█▏118.32047085763752 "Aspect: Lux" aspect:Lux
+                ▕█▏118.32047085763752 "Lux" aspect:Lux
                   [THAUMCRAFT_ASPECT_COMPOUND]
                   ↱ 1x aspect:Lux
                   ░ 1x thaumcraft:thaumonomicon:0
@@ -6290,7 +6290,7 @@
         [SoulBinder]
         ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:19
         ░ 1x enderio:block_soul_binder:0
-        ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:shulker"}, 1x enderio:item_material:15, 1x fe:enderio:energy
+        ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:shulker"}, 1x enderio:item_material:15, 1x rf:enderio:energy
         ▕█▏1120.4930346089523 "Soul Vial" enderio:item_soul_vial:1:{entityId:"minecraft:shulker"}
           [THAUMCRAFT_CRUCIBLE]
           ↱ 1x enderio:item_soul_vial:1:{entityId:"minecraft:shulker"}
@@ -6300,13 +6300,13 @@
         [SoulBinder]
         ↱ 1x enderio:item_soul_vial:0, 1x enderio:item_material:44
         ░ 1x enderio:block_soul_binder:0
-        ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:witch"}, 1x enderio:item_material:43, 1x fe:enderio:energy
+        ⮬ 1x enderio:item_soul_vial:1:{entityId:"minecraft:witch"}, 1x enderio:item_material:43, 1x rf:enderio:energy
         ▕█▏1117.1706261397403 "Soul Vial" enderio:item_soul_vial:1:{entityId:"minecraft:witch"}
           [THAUMCRAFT_CRUCIBLE]
           ↱ 1x enderio:item_soul_vial:1:{entityId:"minecraft:witch"}
           ░ 1x thaumcraft:crucible:0
           ⮬ 1x aspect:Exanimis, 1x aspect:Praecantatio, 1x enderio:item_soul_vial:0
-          ▕█▏119.39277783633598 "Aspect: Praecantatio" aspect:Praecantatio
+          ▕█▏119.39277783633598 "Praecantatio" aspect:Praecantatio
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Praecantatio
             ░ 1x thaumcraft:thaumonomicon:0
@@ -6315,7 +6315,7 @@
           [SliceNSPlice]
           ↱ 1x minecraft:iron_axe:0, 1x minecraft:shears:0, 1x enderio:item_material:43
           ░ 1x enderio:block_slice_and_splice:0
-          ⮬ 1x enderio:item_alloy_ingot:7, 1x enderio:block_enderman_skull:0, 1x enderio:item_alloy_ingot:7, 1x appliedenergistics2:material:5, 1x enderio:item_alloy_ingot:2, 1x appliedenergistics2:material:5, 1x fe:enderio:energy
+          ⮬ 1x enderio:item_alloy_ingot:7, 1x enderio:block_enderman_skull:0, 1x enderio:item_alloy_ingot:7, 1x appliedenergistics2:material:5, 1x enderio:item_alloy_ingot:2, 1x appliedenergistics2:material:5, 1x rf:enderio:energy
           ▕█▏5117287.808681509 "Slice'N'Splice" enderio:block_slice_and_splice:0
             [minecraft__crafting]
             ↱ 1x enderio:block_slice_and_splice:0
@@ -6721,7 +6721,7 @@
               [AlloySmelter]
               ↱ 2x enderio:item_material:70
               ░ 1x enderio:block_simple_alloy_smelter:0
-              ⮬ 3x appliedenergistics2:material:4, 1x minecraft:egg:0, 1x fe:enderio:energy
+              ⮬ 3x appliedenergistics2:material:4, 1x minecraft:egg:0, 1x rf:enderio:energy
               ▕█▏2299.740940020884 "Flour" appliedenergistics2:material:4
                 [nuclearcraft_manufactory]
                 ↱ 1x appliedenergistics2:material:4
@@ -6876,7 +6876,7 @@
           ↱ 2x minecraft:ghast_tear:0
           ░ 1x thaumcraft:crucible:0
           ⮬ 1x aspect:Spiritus, 1x aspect:Alkimia, 1x aspect:Exanimis, 1x minecraft:ghast_tear:0
-          ▕█▏121.53208108994225 "Aspect: Alkimia" aspect:Alkimia
+          ▕█▏121.53208108994225 "Alkimia" aspect:Alkimia
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Alkimia
             ░ 1x thaumcraft:thaumonomicon:0
@@ -7061,7 +7061,7 @@
             [modularmachinery__recipes__hydroponics]
             ↱ 64x rats:ratglove_flower:0, 64x rats:ratglove_flower:0, 64x rats:ratglove_flower:0
             ░ 1x modularcontroller:hydroponics_controller:0
-            ⮬ 1x fluid:fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x rats:ratglove_flower:0
+            ⮬ 1x fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x rats:ratglove_flower:0
             ▕█▏10267060.390975965 "Hydroponics Controller" modularcontroller:hydroponics_controller:0
               [minecraft__crafting]
               ↱ 1x modularcontroller:hydroponics_controller:0
@@ -7102,7 +7102,6 @@
                     ↱ 3x appliedenergistics2:part:140
                     ░ 1x minecraft:crafting_table:0
                     ⮬ 1x minecraft:glass:0, 1x minecraft:glass:0, 1x minecraft:glass:0, 1x appliedenergistics2:material:2, 1x appliedenergistics2:material:2, 1x appliedenergistics2:material:2, 1x minecraft:glass:0, 1x minecraft:glass:0, 1x minecraft:glass:0
-            ▕ ▏0 "[fluid:fluid:water]" fluid:fluid:water
             ▕ ▏0 "§dMystical Fertilizer" mysticalagriculture:mystical_fertilizer:0
               [minecraft__crafting]
               ↱ 3x mysticalagriculture:mystical_fertilizer:0
@@ -7112,7 +7111,7 @@
                 [modularmachinery__recipes__hydroponics]
                 ↱ 64x mysticalagriculture:crafting:0, 64x mysticalagriculture:crafting:0, 64x mysticalagriculture:crafting:0, 5x mysticalagriculture:tier3_inferium_seeds:0
                 ░ 1x modularcontroller:hydroponics_controller:0
-                ⮬ 1x fluid:fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x mysticalagriculture:tier3_inferium_seeds:0
+                ⮬ 1x fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x mysticalagriculture:tier3_inferium_seeds:0
                 ▕█▏222.66932579855734 "Fertilizer" forestry:fertilizer_compound:0
                   [minecraft__crafting]
                   ↱ 8x forestry:fertilizer_compound:0
@@ -7177,7 +7176,7 @@
                   [modularmachinery__recipes__hydroponics]
                   ↱ 64x mysticalagriculture:crafting:0, 64x mysticalagriculture:crafting:0, 64x mysticalagriculture:crafting:0, 5x mysticalagriculture:tier3_inferium_seeds:0
                   ░ 1x modularcontroller:hydroponics_controller:0
-                  ⮬ 1x fluid:fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x mysticalagriculture:tier3_inferium_seeds:0
+                  ⮬ 1x fluid:water, 3x minecraft:dye:15, 3x mysticalagriculture:mystical_fertilizer:0, 3x actuallyadditions:item_fertilizer:0, 3x forestry:fertilizer_compound:0, 3x industrialforegoing:fertilizer:0, 3x thermalfoundation:fertilizer:2, 5x mysticalagriculture:tier3_inferium_seeds:0
       ▕ ▏0 "Carminite" twilightforest:carminite:0
         [minecraft__crafting]
         ↱ 1x twilightforest:carminite:0
@@ -8685,17 +8684,17 @@
                 ↱ 6x thaumcraft:slab_arcane_brick:0
                 ░ 1x minecraft:crafting_table:0
                 ⮬ 1x thaumcraft:stone_arcane_brick:0, 1x thaumcraft:stone_arcane_brick:0, 1x thaumcraft:stone_arcane_brick:0
-          ▕█▏128.520530336055 "Aspect: Visum" aspect:Visum
+          ▕█▏128.520530336055 "Visum" aspect:Visum
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Visum
             ░ 1x thaumcraft:thaumonomicon:0
             ⮬ 1x aspect:Sensus, 1x aspect:Vitreus
-            ▕█▏118.0227667360508 "Aspect: Vitreus" aspect:Vitreus
+            ▕█▏118.0227667360508 "Vitreus" aspect:Vitreus
               [THAUMCRAFT_ASPECT_COMPOUND]
               ↱ 1x aspect:Vitreus
               ░ 1x thaumcraft:thaumonomicon:0
               ⮬ 1x aspect:Terra, 1x aspect:Aer
-          ▕█▏124.55923156724198 "Aspect: Desiderium" aspect:Desiderium
+          ▕█▏124.55923156724198 "Desiderium" aspect:Desiderium
             [THAUMCRAFT_ASPECT_COMPOUND]
             ↱ 1x aspect:Desiderium
             ░ 1x thaumcraft:thaumonomicon:0
@@ -9149,7 +9148,7 @@
         ↱ 1x jaopca:item_dustalchemerald:0
         ░ 1x thaumcraft:infusion_matrix:0
         ⮬ 1x aspect:Ignis, 1x aspect:Potentia, 1x aspect:Volatus, 1x thaumcraft:nugget:10, 1x jaopca:item_chunkemerald:0, 1x jaopca:item_chunkemerald:0, 1x thaumcraft:quicksilver:0, 1x jaopca:item_chunkemerald:0, 1x jaopca:item_chunkemerald:0, 1x thaumcraft:quicksilver:0
-        ▕█▏121.82971262192144 "Aspect: Volatus" aspect:Volatus
+        ▕█▏121.82971262192144 "Volatus" aspect:Volatus
           [THAUMCRAFT_ASPECT_COMPOUND]
           ↱ 1x aspect:Volatus
           ░ 1x thaumcraft:thaumonomicon:0

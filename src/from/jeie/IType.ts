@@ -20,13 +20,12 @@ export const iTypePrefix = {
   item: '',
   fluid: 'fluid',
   'thaumcraft.api.aspects.AspectList': 'aspect',
-  'requious.compat.jei.ingredient.Energy': 'fe',
-  'mekanism.api.gas.GasStack': 'gas',
+  'requious.compat.jei.ingredient.Energy': 'rf',
+  'mekanism.api.gas.GasStack': '',
   'mctmods.immersivetechnology.common.util.compat.jei.GenericMultiblockIngredient':
     'multiblock',
-  'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid':
-    'fluid',
-  'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'fe',
+  'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid': '',
+  'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'rf',
 } as const
 
 export type IType = keyof typeof iTypePrefix

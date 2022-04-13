@@ -94,12 +94,7 @@ function assignVisuals(
 
   if (!tag) attempts.unshift(key)
   else attempts.push(`${source}:${entry}:${meta ?? 0}:${unsignedHash(tag)}`)
-  let map = nameMap[def.iType]
-  if (map) attempts.forEach((id) => (def.display ??= map[id]?.en_us))
-
-  // for Fluids
-  map = (nameMap as any)[source]
-  if (map) def.display ??= map[entry]?.en_us
+  attempts.forEach((id) => (def.display ??= nameMap[id]?.en_us))
 
   if (def.viewBox && def.display) return
   const [viewBox, display] = customRender(store, source, entry, meta, tag)
