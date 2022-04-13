@@ -76,4 +76,11 @@ export default function addRecipes(
   )
 
   addRecipe('custom_worldgen', '1000x fluid:water', 'placeholder:exploration')
+
+  // Recipes in dimensions
+  addDimRecipe(
+    'minecraft:dragon_breath:0',
+    'minecraft:glass_bottle:0',
+    'dimension:the_end_1'
+  )
 }
