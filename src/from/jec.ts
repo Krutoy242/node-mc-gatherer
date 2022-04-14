@@ -228,10 +228,11 @@ function amount_jec(raw: JEC_Ingredient) {
 
 function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
   type Typle = [string, string, string?]
+
   const switcher: Record<string, () => Typle> = {
     itemStack: (): Typle => [
       ...(raw.content?.item?.split(':') as [string, string]),
-      String(raw.content.meta ?? 0),
+      raw.content.fMeta ? '32767' : String(raw.content.meta ?? 0),
     ],
     fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
     oreDict: (): Typle => ['ore', raw.content.name as string],
@@ -240,8 +241,8 @@ function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
       raw.content.name?.toLowerCase() as string,
     ],
   }
-  const [source, entry, meta] = switcher[raw.type]()
 
+  const [source, entry, meta] = switcher[raw.type]()
   const sNbt = raw.content.fNbt
     ? ''
     : typeof raw.content.nbt !== 'string'

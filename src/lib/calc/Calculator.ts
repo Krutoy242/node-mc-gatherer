@@ -40,21 +40,21 @@ export default class Calculator {
       const newDirty = new Set<number>()
       dirtyRecipes.forEach((r) => {
         const rec = this.recipeStore[r]
-        if (this.calcRecipe(rec)) {
-          rec.outputs.forEach((out) => {
-            const def_cost = rec.cost / out.amount
-            this.calcDefinition(
-              out.definition,
-              {
-                purity: rec.purity,
-                cost: def_cost,
-                processing: rec.processing,
-                complexity: def_cost + rec.processing,
-              },
-              newDirty
-            )
-          })
-        }
+        if (!this.calcRecipe(rec)) return
+
+        rec.outputs.forEach((out) => {
+          const def_cost = rec.cost / (out.amount ?? 1)
+          const calc = {
+            purity: rec.purity,
+            cost: def_cost,
+            processing: rec.processing,
+            complexity: def_cost + rec.processing,
+          }
+
+          out.ingredient.items.forEach((def) =>
+            this.calcDefinition(def, calc, newDirty)
+          )
+        })
       })
       dirtyRecipes = newDirty
     }
@@ -71,17 +71,11 @@ export default class Calculator {
    * @returns `true` if new value calculated, `false` if not changed or unable to
    */
   private calcRecipe(rec: Recipe): boolean {
-    // const purity =
-    //   (this.getStacksMean(rec.inputs, 'purity') +
-    //     this.getStacksMean(rec.catalysts, 'purity')) /
-    //   ((rec.inputs?.length ? 1 : 0) + (rec.catalysts?.length ? 1 : 0))
-    const purity =
-      (rec.inputs?.reduce((a, b) => a * b.definition.purity, 1.0) ?? 1.0) *
-      (rec.catalysts?.reduce((a, b) => a * b.definition.purity, 1.0) ?? 1.0)
+    const purity = this.recipePurity(rec)
     if (rec.purity > purity) return false
 
-    const cost = this.getStacksSumm(rec.inputs, 'cost') + 1.0
-    const processing = this.getStacksSumm(rec.catalysts, 'complexity') + 1.0
+    const cost = this.getStacksSumm('cost', rec.inputs) + 1.0
+    const processing = this.getStacksSumm('complexity', rec.catalysts) + 1.0
     const complexity = cost + processing
     if (rec.complexity === complexity) return false
     if (rec.purity === purity && rec.complexity < complexity) return false
@@ -94,27 +88,21 @@ export default class Calculator {
     return true
   }
 
-  private getStacksMean(
-    arr: Stack[] | undefined,
-    field: keyof Calculable
-  ): number {
-    if (!arr || !arr.length) return 0.0
-    let count = 0.0
-    let total = 0.0
-    arr.forEach((stack) => {
-      count += stack.amount
-      total += stack.definition[field]
-    })
-    return total / count
+  private recipePurity(rec: Recipe): number {
+    return rec.requirments.reduce(
+      (a, b) => a * Math.max(...b.ingredient.items.map((o) => o.purity)),
+      1.0
+    )
   }
 
-  private getStacksSumm(
-    arr: Stack[] | undefined,
-    field: keyof Calculable
-  ): number {
+  private getStacksSumm(field: keyof Calculable, arr?: Stack[]): number {
     if (!arr) return 0.0
     return arr
-      .map((s) => s.amount * s.definition[field])
+      .map(
+        (stack) =>
+          (stack.amount ?? 1) *
+          Math.min(...stack.ingredient.items.map((o) => o[field]))
+      )
       .reduce((a, b) => a + b, 0)
   }
 
@@ -122,15 +110,14 @@ export default class Calculator {
     def: Definition,
     cal: Calculable,
     dirtyRecipes: Set<number>
-  ): boolean {
-    if (def.purity > cal.purity) return false
-    if (def.purity === cal.purity && def.complexity <= cal.complexity)
-      return false
+  ) {
+    if (def.purity > cal.purity) return
+    if (def.purity === cal.purity && def.complexity <= cal.complexity) return
     def.purity = cal.purity
     def.cost = cal.cost
     def.processing = cal.processing
     def.complexity = cal.complexity
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
-    return true
+    return
   }
 }

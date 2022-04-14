@@ -2,8 +2,6 @@
 =           Additionals Store
 ============================================= */
 
-import { IType, iTypesMap } from '../../from/jeie/IType'
-
 import Definition from './Definition'
 import hardReplaceMap from './HardReplace'
 
@@ -15,6 +13,13 @@ export interface ExportDefinition {
 
 export default class DefinitionStore {
   size = 0
+  getById: (id: string) => Definition
+  getBased: (
+    source: string,
+    entry: string,
+    meta?: string,
+    sNbt?: string
+  ) => Definition
 
   private tree: {
     [source: string]: {
@@ -24,7 +29,29 @@ export default class DefinitionStore {
         }
       }
     }
-  } = {};
+  } = {}
+
+  constructor() {
+    this.getBased = (source, entry, meta, sNbt) => {
+      const actualMeta = Definition.actualMeta(meta)
+      return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
+        {})[sNbt ?? ''] ??=
+        (this.size++, new Definition(source, entry, actualMeta, sNbt)))
+    }
+
+    this.getById = (id) => {
+      const actualId = hardReplaceMap[id] ?? id
+      const splitted = actualId.split(':')
+      if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
+
+      return this.getBased(
+        splitted[0],
+        splitted[1],
+        splitted[2],
+        splitted.slice(3).join(':')
+      )
+    }
+  }
 
   *iterate(): IterableIterator<Definition> {
     for (const o1 of Object.values(this.tree)) {
@@ -36,31 +63,6 @@ export default class DefinitionStore {
         }
       }
     }
-  }
-
-  getById(id: string): Definition {
-    const actualId = hardReplaceMap[id] ?? id
-    const splitted = actualId.split(':')
-    if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
-
-    return this.getBased(
-      splitted[0],
-      splitted[1],
-      splitted[2],
-      splitted.slice(3).join(':')
-    )
-  }
-
-  getBased(
-    source: string,
-    entry: string,
-    meta?: string,
-    sNbt?: string
-  ): Definition {
-    const actualMeta = Definition.actualMeta(meta)
-    return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
-      {})[sNbt ?? ''] ??=
-      (this.size++, new Definition(source, entry, actualMeta, sNbt)))
   }
 
   export() {

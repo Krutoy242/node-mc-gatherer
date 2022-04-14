@@ -1,7 +1,11 @@
 import { appendFileSync, mkdirSync, writeFileSync } from 'fs'
 import { join, parse } from 'path'
 
+import _ from 'lodash'
+
+import Calculable from '../lib/calc/Calculable'
 import Definition from '../lib/items/Definition'
+import Stack from '../lib/items/Stack'
 import Recipe from '../lib/recipes/Recipe'
 
 export interface CountableFunction {
@@ -14,56 +18,70 @@ export function createFileLogger(logFileName: string): CountableFunction {
   const filePath = join('logs/', logFileName)
   writeFileSync(filePath, '')
   const fnc = function (...args: unknown[]) {
-    appendFileSync(filePath, args.map((v) => String(v)).join(' '))
+    appendFileSync(
+      filePath,
+      args.map((v) => String(v)).join(' ') /* (e) => {
+      throw e
+    } */
+    )
     fnc.count = (fnc.count ?? 0) + 1
   } as CountableFunction
   return fnc
 }
 
-export function logTreeTo(def: Definition, recipeStore: Recipe[]): string {
-  return defToString(def).join('\n')
+export function logTreeTo(
+  def: Definition,
+  recipeStore: Recipe[],
+  write: (str: string) => void
+) {
+  const writeLn = (s: string) => write(s + '\n')
+  defToString(def)
 
   function defToString(
     def: Definition,
     antiloop = new Set<string>(),
     tabLevel = 0
-  ): string[] {
-    if (antiloop.has(def.id)) return []
+  ) {
+    if (antiloop.has(def.id)) return
     antiloop.add(def.id)
-    const lines: string[] = []
+
     const tab = '  '.repeat(tabLevel)
-    lines.push(tab + def.toString())
+    writeLn(tab + def.toString())
 
     if (def.recipes) {
-      const recs = [...def.recipes]
+      const mainRecipe = [...def.recipes]
         .map((rIndex) => recipeStore[rIndex])
-        .sort(recipeSorter)
-      lines.push(
-        ...recs[0]
-          .toString()
-          .split('\n')
-          .map((s) => tab + s)
-      )
-      ;[...(recs[0].catalysts ?? []), ...(recs[0].inputs ?? [])]?.forEach((o) =>
-        lines.push(...defToString(o.definition, antiloop, tabLevel + 1))
-      )
-    }
+        .sort(recipeSorter)[0]
 
-    return lines
+      mainRecipe
+        .toString()
+        .split('\n')
+        .forEach((line) => writeLn(tab + line))
+
+      mainRecipe.requirments.forEach((stack) => {
+        const cheapest = stack.ingredient.items.sort(getCheapest)[0]
+        defToString(cheapest, antiloop, tabLevel + 1)
+      })
+    }
   }
 
   function recipeSorter(a: Recipe, b: Recipe) {
-    return (
-      b.purity - a.purity ||
-      a.complexity - b.complexity ||
-      reqPuritySumm(b) - reqPuritySumm(a)
-    )
+    return getCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a)
+  }
+
+  function getCheapest(a: Calculable, b: Calculable) {
+    return b.purity - a.purity || a.complexity - b.complexity
   }
 
   function reqPuritySumm(a: Recipe): number {
-    return (
-      (a.inputs?.reduce((c, d) => c + d.definition.purity, 0) ?? 0) +
-      (a.catalysts?.reduce((c, d) => c + d.definition.purity, 0) ?? 0)
-    )
+    return summ(a.inputs) + summ(a.catalysts)
   }
+}
+
+function summ(arr?: Stack[]): number {
+  if (!arr) return 0
+  return arr.reduce(
+    (c, d) => c + Math.max(...d.ingredient.items.map((o) => o.purity)),
+    0
+  )
 }

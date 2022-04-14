@@ -1,31 +1,52 @@
 import Definition from './Definition'
-
-export type StackDef = Definition & {
-  amount: number
-}
+import Ingredient from './Ingredient'
 
 /**
  * Stack is item that have amount
  */
 export default class Stack {
-  public constructor(
-    public definition: Definition,
-    public readonly amount = 1
-  ) {
-    if (amount === 0) {
-      throw new Error(
-        'Stack Amount could not be zero. Stack: ' + this.definition.id
-      )
-    }
+  static fromString(str: string, getFromId: (id: string) => Definition): Stack {
+    if (str === undefined || str === '')
+      throw new Error('Stack cannot be empty')
+
+    const g = str.match(/^((?<amount>[^ ]+)x )?(?<id>.+)$/)?.groups
+    if (!g) throw new Error(`Cant parse stack for: ${str}`)
+
+    const amount = g.amount === undefined ? 1 : Number(g.amount)
+    if (amount !== undefined && isNaN(amount))
+      throw new Error(`Wrong amount for Stack string: ${str}`)
+
+    return new Stack(
+      Ingredient.fromString(g.id, getFromId),
+      g.amount ? amount : 1
+    )
   }
 
-  public withAmount(newAmount: number) {
-    if (isNaN(newAmount) || this.amount === newAmount) return this
-    return new Stack(this.definition, newAmount)
+  ingredient: Ingredient
+
+  constructor(
+    ingredient: Ingredient | Definition,
+
+    /** Amount could be undefined - means "any amount" */
+    public readonly amount?: number
+  ) {
+    if (amount !== undefined && isNaN(amount))
+      throw new Error('Stack amount cannot be NaN')
+
+    this.ingredient =
+      ingredient instanceof Definition
+        ? new Ingredient([ingredient])
+        : ingredient
+  }
+
+  public withAmount(newAmount?: number) {
+    if (this.amount === newAmount) return this
+    return new Stack(this.ingredient, newAmount)
   }
 
   toString() {
-    return `${this.amount}x ${this.definition.id}`
+    const amount = this.amount === undefined ? '?' : this.amount
+    return `${amount}x ${this.ingredient.toString()}`
   }
 
   public export() {

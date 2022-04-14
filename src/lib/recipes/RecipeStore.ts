@@ -46,12 +46,17 @@ export default class RecipeStore {
 
     const recipe = new Recipe(categoryName, outputs, inputs, catalysts)
     const index = this.store.push(recipe) - 1
-    outputs.forEach((out) => {
-      ;(out.definition.recipes ??= new Set()).add(index)
+
+    outputs.forEach((stack) => {
+      stack.ingredient.items.forEach((def) =>
+        (def.recipes ??= new Set()).add(index)
+      )
     })
-    const requirments = [...(inputs ?? []), ...(catalysts ?? [])]
-    requirments.forEach((stack) =>
-      (stack.definition.dependencies ??= new Set()).add(index)
+
+    recipe.requirments.forEach((stack) =>
+      stack.ingredient.items.forEach((def) =>
+        (def.dependencies ??= new Set()).add(index)
+      )
     )
 
     return true
@@ -63,16 +68,14 @@ export default class RecipeStore {
 
   private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
     return typeof anyIngrs === 'string'
-      ? this.definitionStore.getById(anyIngrs).stack()
+      ? Stack.fromString(anyIngrs, (s) => this.definitionStore.getById(s))
       : anyIngrs
   }
 
   private anyRecipeParamToList(anyIngrs: AnyIngredients): Stack[] {
     if (!anyIngrs) return []
-    if (typeof anyIngrs === 'string')
-      return [this.definitionStore.getById(anyIngrs).stack()]
     if (Array.isArray(anyIngrs))
       return anyIngrs.map((p) => this.anyRecipeParam(p))
-    return [anyIngrs]
+    return [this.anyRecipeParam(anyIngrs)]
   }
 }

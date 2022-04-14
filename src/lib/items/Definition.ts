@@ -1,6 +1,6 @@
 import Calculable from '../calc/Calculable'
 
-import Stack from './Stack'
+import Ingredient from './Ingredient'
 
 export default class Definition implements Calculable {
   static actualMeta(meta?: string): string | undefined {
@@ -44,11 +44,6 @@ export default class Definition implements Calculable {
    */
   dependencies?: Set<number>
 
-  // constructor(
-  //   /** Full ID source:entry:meta(:{nbt})? */
-  //   public readonly id: string
-  // ) {}
-
   constructor(
     public readonly source: string,
     public readonly entry: string,
@@ -64,8 +59,8 @@ export default class Definition implements Calculable {
     }`
   }
 
-  stack(amount = 1): Stack {
-    return new Stack(this, amount)
+  toIngredient() {
+    return new Ingredient([this])
   }
 }
 

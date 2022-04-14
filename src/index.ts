@@ -14,7 +14,6 @@ import glob from 'glob'
 
 import exportData, { ExportData } from './Export'
 import append_JECgroups from './from/jec'
-import { IType } from './from/jeie/IType'
 import append_JEIExporter from './from/jeie/JEIExporter'
 import getNameMap, { NameMap } from './from/jeie/NameMap'
 import append_JER from './from/jer'
@@ -100,15 +99,9 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   })
   function shortToStack(short?: string[] | string): Stack[] | undefined {
     if (!short) return
-    return [short].flat().map((s) => {
-      const g = s.match(/^((?<amount>.+)x )?(?<id>.+)$/)?.groups
-      if (!g) throw new Error('Cant parse shortand for: ' + s)
-      const amount = Number(g.amount)
-      if (amount && (isNaN(amount) || amount === 0))
-        throw new Error('Wrong amount for shortand: ' + s)
-
-      return new Stack(definitionStore.getById(g.id), g.amount ? amount : 1)
-    })
+    return [short]
+      .flat()
+      .map((str) => Stack.fromString(str, (s) => definitionStore.getById(s)))
   }
 
   runTask({

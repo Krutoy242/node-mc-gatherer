@@ -1,6 +1,7 @@
 import _ from 'lodash'
 
 import getTool from '../custom/mining_levels'
+import Definition from '../lib/items/Definition'
 import Stack from '../lib/items/Stack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
@@ -72,17 +73,15 @@ export default function append_JER(
 ) {
   const logExploration = createFileLogger('jer_exploration.log')
   const logDimensions = createFileLogger('jer_dimensions.log')
-
   const blockMinings = generateBlockMinings(crafttweakerLogTxt)
+  const getById = recipesStore.definitionStore.getById
 
-  let ii_exploration = recipesStore.definitionStore
-    .getBased('placeholder', 'exploration')
-    .stack()
-  // let ii_pick = recipesStore.BH('minecraft:stone_pickaxe:0')
+  let ii_exploration = Stack.fromString('placeholder:exploration', getById)
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
-    const block = recipesStore.definitionStore.getById(jer_entry.block).stack()
+    const blockDef = getById(jer_entry.block)
+    const block = new Stack(blockDef)
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const tool = generateTool(jer_entry.block)
@@ -97,11 +96,11 @@ export default function append_JER(
 
     // Block drops
     const drops = jer_entry.dropsList
-      ?.map((drop) => getDrops(block, drop))
+      ?.map((drop) => getDrops(blockDef, drop))
       .filter((s): s is Stack => !!s)
 
     if (drops?.length) recipesStore.addRecipe('JER', drops, block, tool)
-    ;(exploreAmounts[jer_entry.dim] ??= {})[block.definition.id] = exploreAmount
+    ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 
   function generateTool(blockId: string): string | undefined {
@@ -110,13 +109,13 @@ export default function append_JER(
     return getTool(bMining.toolClass, bMining.level)
   }
 
-  function getDrops(block: Stack, drop: DropsEntry): Stack | undefined {
+  function getDrops(blockDef: Definition, drop: DropsEntry): Stack | undefined {
     const outAmount = _.mean(Object.values(drop.fortunes)) || 1
 
     // Skip adding if block drop itself
-    if (drop.itemStack === block.definition.id && outAmount === 1) return
+    if (drop.itemStack === blockDef.id && outAmount === 1) return
 
-    return recipesStore.definitionStore.getById(drop.itemStack).stack(outAmount)
+    return new Stack(getById(drop.itemStack), outAmount)
   }
 
   logExploration(

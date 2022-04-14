@@ -7,13 +7,17 @@ export default class Recipe implements Calculable {
   processing = 0.0
   purity = 0.0
 
+  readonly requirments: Stack[]
+
   constructor(
     /** Recipe source (category name) */
     private source: string,
     public outputs: Stack[],
     public inputs?: Stack[],
     public catalysts?: Stack[]
-  ) {}
+  ) {
+    this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
+  }
 
   export() {
     return {

@@ -52,7 +52,8 @@ export default function exportData(
     let def = store.getById(id)
     if (!def.recipes?.size) return false
     const fileName = id.replace(/[/\\?%*:|"<>]/g, '_')
-    createFileLogger(`tree/${fileName}.log`)(logTreeTo(def, recipesStore.store))
+    const write = createFileLogger(`tree/${fileName}.log`)
+    logTreeTo(def, recipesStore.store, write)
     return true
   }
   logger('storagedrawers:upgrade_creative:1')
