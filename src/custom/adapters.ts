@@ -208,10 +208,22 @@ adapters.set(/tubing/, (cat) => {
   })
 })
 
+adapters.set(/^recycler$/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items[0].stacks = getItem('minecraft:stone:0').stacks
+  })
+})
+
 adapters.set(/inworldcrafting__exploding_blocks/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.output.items = [rec.input.items.pop() as JEIESlot]
   })
+})
+
+adapters.set(/thermalexpansion__transposer_(extract|fill)/, (cat) => {
+  cat.recipes = cat.recipes.filter(
+    (rec) => !rec.output.items.some((slot) => slot.stacks.length > 10)
+  )
 })
 
 adapters.set(/^THAUMCRAFT_.+/, (cat, getFullStack) => {

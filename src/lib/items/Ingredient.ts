@@ -11,15 +11,13 @@ export default class Ingredient {
     return new Ingredient(items)
   }
 
-  items: Definition[]
-
-  // constructor(serialized: string)
-  constructor(items: Definition[]) {
+  constructor(public readonly items: Definition[]) {
     if (items.length === 0)
       throw new Error('Ingredient must content at least 1 Definition')
 
-    this.items = items
-    // this.items = items===undefined ? [] : typeof items === 'string' ?  :
+    if (items.length > 2000) {
+      throw new Error('Ingredient list probably too large')
+    }
   }
 
   stack(amount?: number): Stack {

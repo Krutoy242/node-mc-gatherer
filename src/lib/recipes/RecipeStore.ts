@@ -45,19 +45,7 @@ export default class RecipeStore {
     }
 
     const recipe = new Recipe(categoryName, outputs, inputs, catalysts)
-    const index = this.store.push(recipe) - 1
-
-    outputs.forEach((stack) => {
-      stack.ingredient.items.forEach((def) =>
-        (def.recipes ??= new Set()).add(index)
-      )
-    })
-
-    recipe.requirments.forEach((stack) =>
-      stack.ingredient.items.forEach((def) =>
-        (def.dependencies ??= new Set()).add(index)
-      )
-    )
+    recipe.index = this.store.push(recipe) - 1
 
     return true
   }

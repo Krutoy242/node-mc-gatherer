@@ -4,8 +4,6 @@ import DefinitionStore from '../lib/items/DefinitionStore'
 import Stack from '../lib/items/Stack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 
-import { OredictMap } from './oredict'
-
 export type JEC_Types =
   | 'itemStack'
   | 'fluidStack'
@@ -52,7 +50,6 @@ interface Nbt {
  */
 export default function append_JECgroups(
   storeHelper: RecipeStore,
-  dict: OredictMap,
   jecGroupsRaw_text: string
 ): number {
   const jec_groups = convertToNormalJson(jecGroupsRaw_text)
@@ -95,20 +92,12 @@ export default function append_JECgroups(
             replaceInList(craft, 'input', raw)
             // replaceInList(craft, 'catalyst', raw);
           })
-        } else {
-          // Replace oredict to itemstacks if needed
-          mutateOreToItemstack(dict, raw)
         }
       }
     }
 
     if (wasRemoved) {
       remIndexes.add(recipe_index)
-    } else {
-      jec_recipe.input.forEach((obj_input) => {
-        // Replace oredict to itemstacks if needed
-        mutateOreToItemstack(dict, obj_input)
-      })
     }
   })
 
@@ -166,25 +155,6 @@ function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
 
   // writeFileSync('~jec.json', fixedText)
   return JSON.parse(fixedText)
-}
-
-// Replace oredict to itemstacks if needed
-function mutateOreToItemstack(dict: OredictMap, raw: JEC_Ingredient) {
-  if (raw.type === 'oreDict' && raw.content.name) {
-    const oreAlias = dict[raw.content.name]
-    if (!oreAlias) {
-      console.log('Cant find OreDict name for:', raw.content.name)
-    } else {
-      const splitted = oreAlias.split(':')
-      raw.type = 'itemStack'
-      raw.content = {
-        ...raw.content,
-        name: undefined,
-        item: splitted.slice(0, 2).join(':'),
-        meta: Number(splitted.pop()) | 0,
-      }
-    }
-  }
 }
 
 function prepareEntry(raw: JEC_Ingredient, isMutate = false) {

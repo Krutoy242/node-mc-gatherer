@@ -7,6 +7,8 @@ export default class Recipe implements Calculable {
   processing = 0.0
   purity = 0.0
 
+  index?: number
+
   readonly requirments: Stack[]
 
   constructor(

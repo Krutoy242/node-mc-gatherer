@@ -31,11 +31,10 @@ const relPath = 'exports/recipes'
 
 export default async function append_JEIExporter(
   tooltipMap: NameMap,
-  oreDict: OredictMap,
   recHelper: RecipeStore,
   mcDir: string
 ) {
-  const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap, oreDict)
+  const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
   const getById = recHelper.definitionStore.getById

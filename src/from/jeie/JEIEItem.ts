@@ -1,20 +1,8 @@
-import { OredictMap } from '../oredict'
-
 import { iTypePrefix } from './IType'
 import { JEIEItem } from './JEIECategory'
 import { NameMap } from './NameMap'
 
-export default function getFullId(
-  ingr: JEIEItem,
-  tooltipMap: NameMap,
-  oreDict: OredictMap
-): string {
-  if (ingr.type === 'oredict') {
-    const oreItem = oreDict[ingr.name]
-    if (!oreItem) throw new Error('No item found for ore: ' + ingr.name)
-    return oreItem
-  }
-
+export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
   const splitted = ingr.name.split(':')
   let sNbt = ''
   let base: string

@@ -7,6 +7,7 @@ import Calculable from '../lib/calc/Calculable'
 import Definition from '../lib/items/Definition'
 import Stack from '../lib/items/Stack'
 import Recipe from '../lib/recipes/Recipe'
+import RecipeStore from '../lib/recipes/RecipeStore'
 
 export interface CountableFunction {
   (...args: unknown[]): void
@@ -31,7 +32,7 @@ export function createFileLogger(logFileName: string): CountableFunction {
 
 export function logTreeTo(
   def: Definition,
-  recipeStore: Recipe[],
+  recipeStore: RecipeStore,
   write: (str: string) => void
 ) {
   const writeLn = (s: string) => write(s + '\n')
@@ -50,7 +51,7 @@ export function logTreeTo(
 
     if (def.recipes) {
       const mainRecipe = [...def.recipes]
-        .map((rIndex) => recipeStore[rIndex])
+        .map((rIndex) => recipeStore.store[rIndex])
         .sort(recipeSorter)[0]
 
       mainRecipe
@@ -59,7 +60,9 @@ export function logTreeTo(
         .forEach((line) => writeLn(tab + line))
 
       mainRecipe.requirments.forEach((stack) => {
-        const cheapest = stack.ingredient.items.sort(getCheapest)[0]
+        const cheapest = [
+          ...recipeStore.definitionStore.matchedBy(stack.ingredient),
+        ].sort(getCheapest)[0]
         defToString(cheapest, antiloop, tabLevel + 1)
       })
     }
@@ -74,14 +77,20 @@ export function logTreeTo(
   }
 
   function reqPuritySumm(a: Recipe): number {
-    return summ(a.inputs) + summ(a.catalysts)
+    return puritySumm(a.inputs) + puritySumm(a.catalysts)
   }
-}
 
-function summ(arr?: Stack[]): number {
-  if (!arr) return 0
-  return arr.reduce(
-    (c, d) => c + Math.max(...d.ingredient.items.map((o) => o.purity)),
-    0
-  )
+  function puritySumm(arr?: Stack[]): number {
+    if (!arr) return 0
+    return arr.reduce(
+      (c, d) =>
+        c +
+        Math.max(
+          ...[...recipeStore.definitionStore.matchedBy(d.ingredient)].map(
+            (o) => o.purity
+          )
+        ),
+      0
+    )
+  }
 }

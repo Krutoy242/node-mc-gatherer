@@ -56,18 +56,11 @@ export default async function mcGather(options: Options): Promise<ExportData> {
     fileError: 'Unable to open crafttweaker.log file',
   })
 
-  const oreDict = runTask({
-    description: 'Creating OreDict',
-    action: () => genOreDictionary(crafttweaker_log),
-    moreInfo: (info) =>
-      `OreDict size: ${chalk.green(Object.keys(info.result).length)}`,
-  })
-
   if (options['jec'])
     runTask({
       description: 'Addding JEC recipes',
       textSource: fromMC('/config/JustEnoughCalculation/data/groups.json'),
-      action: (text) => append_JECgroups(recipesStore, oreDict, text),
+      action: (text) => append_JECgroups(recipesStore, text),
       moreInfo: (info) => `Added recipes: ${chalk.green(info.result)}`,
     })
 
@@ -125,17 +118,34 @@ export default async function mcGather(options: Options): Promise<ExportData> {
   if (options['jeie'])
     await runTask({
       description: 'Loading JEIExporter\n',
-      action: () =>
-        append_JEIExporter(nameMap, oreDict, recipesStore, options.mc),
+      action: () => append_JEIExporter(nameMap, recipesStore, options.mc),
     })
 
   runTask({
-    description: 'append_viewBoxes',
+    description: 'Load Spritesheet',
     textSource: 'data/spritesheet.json',
     action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
   })
 
-  return exportData(recipesStore, nameMap)
+  const oreDict = runTask({
+    description: 'Creating OreDict',
+    action: () => genOreDictionary(crafttweaker_log),
+    moreInfo: (info) =>
+      `OreDict size: ${chalk.green(Object.keys(info.result).length)}`,
+  })
+  definitionStore.addOreDict(oreDict)
+
+  runTask({
+    description: 'Assign visuals',
+    action: () => definitionStore.assignVisuals(nameMap),
+  })
+
+  runTask({
+    description: 'Calculate each item',
+    action: () => recipesStore.calculate(),
+  })
+
+  return exportData(recipesStore)
 }
 
 /* =============================================
