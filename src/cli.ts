@@ -76,7 +76,7 @@ async function prompt(exportData: ExportData) {
   do {
     id = await term.inputField({
       autoComplete: async (input: string) =>
-        keys.find((k) => k.startsWith(input)) ?? input,
+        !input ? '' : keys.find((k) => k.startsWith(input)) ?? input,
       autoCompleteHint: true,
     }).promise
     term('\n')

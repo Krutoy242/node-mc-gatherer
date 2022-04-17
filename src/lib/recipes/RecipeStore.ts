@@ -51,7 +51,7 @@ export default class RecipeStore {
 
   private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
     return typeof anyIngrs === 'string'
-      ? Stack.fromString(anyIngrs, (s) => this.definitionStore.getById(s))
+      ? Stack.fromString(anyIngrs, this.definitionStore.getById)
       : anyIngrs
   }
 

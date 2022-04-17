@@ -1,11 +1,6 @@
-export default function addRecipes(
-  addRecipe: (
-    recipe_source: string,
-    outputs: string | string[],
-    inputs?: string | string[],
-    catalysts?: string | string[]
-  ) => void
-) {
+import { AddRecipeFn } from '../../customs'
+
+export default function addRecipes(addRecipe: AddRecipeFn) {
   ;(
     [
       ['zombie', 200],
@@ -19,7 +14,6 @@ export default function addRecipes(
   ).forEach(([entity, cost]) => {
     ;[0, 1, 2, 3, 4].forEach((tier) => {
       addRecipe(
-        'custom_dml',
         `deepmoblearning:trial_key:0:{attuned:1b,mobKey:"${entity}",tier:${tier}}`,
         [
           'deepmoblearning:trial_key:0',

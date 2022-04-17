@@ -1,37 +1,27 @@
-export default function addRecipes(
-  addRecipe: (
-    recipe_source: string,
-    outputs: string | string[],
-    inputs?: string | string[],
-    catalysts?: string | string[]
-  ) => void
-) {
-  const addDimRecipe = (
-    outputs: string | string[],
-    inputs?: string | string[],
-    catalysts?: string | string[]
-  ) => addRecipe('custom_dimensions', outputs, inputs, catalysts)
-  addDimRecipe('dimension:overworld_0', 'placeholder:exploration')
+import { AddRecipeFn } from '../customs'
 
-  addDimRecipe(
+export default function addRecipes(addRecipe: AddRecipeFn) {
+  addRecipe('dimension:overworld_0', 'placeholder:exploration')
+
+  addRecipe(
     'dimension:nether_-1',
     'minecraft:flint_and_steel:0',
     '8x minecraft:obsidian:0'
   )
-  addDimRecipe('dimension:the_end_1', '12x minecraft:ender_eye:0')
-  addDimRecipe('dimension:twilight_forest_7', 'minecraft:diamond:0')
-  addDimRecipe(
+  addRecipe('dimension:the_end_1', '12x minecraft:ender_eye:0')
+  addRecipe('dimension:twilight_forest_7', 'minecraft:diamond:0')
+  addRecipe(
     'dimension:deep_dark_-11325',
     'placeholder:exploration',
     'extrautils2:teleporter:1'
   )
-  addDimRecipe(
+  addRecipe(
     'dimension:spectre_-343800852',
     '10x placeholder:exploration',
     'randomthings:spectrekey'
   )
-  addDimRecipe('dimension:ratlantis_-8', 'rats:chunky_cheese_token:0')
-  addDimRecipe('dimension:rftools_dimension', '1000x placeholder:exploration', [
+  addRecipe('dimension:ratlantis_-8', 'rats:chunky_cheese_token:0')
+  addRecipe('dimension:rftools_dimension', '1000x placeholder:exploration', [
     'rftdimtweak:dimension_enscriber',
     'rftoolsdim:dimension_builder',
     'rftoolsdim:dimension_editor',
@@ -71,14 +61,14 @@ export default function addRecipes(
     ] as [string, string[]][]
   ).forEach(([catl, arr]) =>
     arr.forEach((dim) =>
-      addDimRecipe('dimension:' + dim, '10000x fluid:rocketfuel', catl)
+      addRecipe('dimension:' + dim, '10000x fluid:rocketfuel', catl)
     )
   )
 
-  addRecipe('custom_worldgen', '1000x fluid:water', 'placeholder:exploration')
+  addRecipe('1000x fluid:water', 'placeholder:exploration')
 
   // Recipes in dimensions
-  addDimRecipe(
+  addRecipe(
     'minecraft:dragon_breath:0',
     'minecraft:glass_bottle:0',
     'dimension:the_end_1'

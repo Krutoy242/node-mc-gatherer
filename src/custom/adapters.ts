@@ -37,7 +37,6 @@ adapters.set(
       '|jei__information' +
       '|jeresources__villager' +
       '|jeresources__worldgen' +
-      '|minecraft__anvil' +
       '|minecraft__brewing' +
       '|petrified__burn__time' +
       '|thermalexpansion__transposer__extract' +
@@ -49,13 +48,13 @@ adapters.set(
 
 // Take only first item as catalyst blacklist
 adapters.set(
-  /^(?!.*(extendedcrafting__ender_crafting|iceandfire__fire_dragon_forge))/,
+  /^(?!.*(extendedcrafting__ender_crafting|iceandfire__(fire|ice)_dragon_forge))/,
   (cat) => {
     cat.catalysts = cat.catalysts.slice(0, 1)
   }
 )
 
-adapters.set(/iceandfire__fire_dragon_forge/, (cat) => {
+adapters.set(/iceandfire__(fire|ice)_dragon_forge/, (cat) => {
   cat.catalysts = [cat.catalysts[1]]
 })
 
@@ -282,6 +281,25 @@ adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
     rec.input.items.concat(rec.output.items.slice(1))
     rec.output.items = [rec.output.items[0]]
   })
+})
+
+adapters.set(/inworldcrafting__itemtransform/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.output.items = [rec.input.items.pop() as JEIESlot]
+  })
+})
+
+adapters.set(/minecraft__anvil/, (cat) => {
+  cat.recipes = cat.recipes.filter(
+    (rec) =>
+      !rec.input.items.some((slot) => slot.stacks.length > 1) &&
+      !rec.output.items.some((slot) => slot.stacks.length > 1) &&
+      !rec.input.items.some((slot) =>
+        slot.stacks.some((stack) =>
+          stack.name.startsWith('minecraft:enchanted_book:0:')
+        )
+      )
+  )
 })
 
 adapters.set(/chisel__chiseling/, (cat) => {

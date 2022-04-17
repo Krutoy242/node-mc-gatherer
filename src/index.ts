@@ -17,6 +17,7 @@ import getNameMap, { NameMap } from './from/jeie/NameMap'
 import append_JER from './from/jer'
 import genOreDictionary from './from/oredict'
 import append_viewBoxes from './from/spritesheet'
+import append_tellme from './from/tellme'
 import Calculator from './lib/calc/Calculator'
 import DefinitionStore from './lib/items/DefinitionStore'
 import RecipeStore from './lib/recipes/RecipeStore'
@@ -61,6 +62,12 @@ export default async function mcGather(
   await runTask({
     description: 'Add custom recipes',
     action: () => applyCustoms(recipesStore),
+    moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
+  })
+
+  await runTask({
+    description: 'Add Tellme recipes',
+    action: () => append_tellme(recipesStore, options.mc),
     moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
   })
 
