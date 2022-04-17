@@ -143,8 +143,7 @@ export default class DefinitionStore {
       assignVisual(def)
     }
 
-    console.log('noViewBox :>> ', log.noViewBox.count)
-    console.log('noDisplay :>> ', log.noDisplay.count)
+    return { noViewBox: log.noViewBox.count, noDisplay: log.noDisplay.count }
 
     function assignVisual(def: Definition) {
       if (def.viewBox && def.display) return

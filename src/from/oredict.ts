@@ -1,5 +1,6 @@
-import { prefferedModSort } from '../lib/mods/mod_sort'
 import { createFileLogger } from '../log/logger'
+
+import { prefferedModSort } from './mod_sort'
 
 export interface OredictMap {
   [oreName: string]: string[]

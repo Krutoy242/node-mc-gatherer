@@ -4,10 +4,10 @@ import Stack from './Stack'
 export default class Ingredient {
   static fromString(
     str: string,
-    getFrimId: (id: string) => Definition
+    getById: (id: string) => Definition
   ): Ingredient {
     if (str === '') throw new Error('Ingredient cannot be empty')
-    const items = str.split('|').map((s) => getFrimId(s))
+    const items = str.split('|').map((s) => getById(s))
     return new Ingredient(items)
   }
 

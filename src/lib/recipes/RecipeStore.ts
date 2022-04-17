@@ -1,5 +1,4 @@
 import { createFileLogger } from '../../log/logger'
-import Calculator from '../calc/Calculator'
 import DefinitionStore from '../items/DefinitionStore'
 import Stack from '../items/Stack'
 
@@ -48,10 +47,6 @@ export default class RecipeStore {
     recipe.index = this.store.push(recipe) - 1
 
     return true
-  }
-
-  calculate() {
-    return new Calculator(this.definitionStore, this.store).compute()
   }
 
   private anyRecipeParam(anyIngrs: AnyIngredient): Stack {

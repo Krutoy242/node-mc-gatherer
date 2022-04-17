@@ -34,7 +34,9 @@ export default class Recipe implements Calculable {
     }
   }
 
-  toString() {
+  toString(options?: { short?: boolean }) {
+    if (options?.short)
+      return ` [${this.source}] ${this.listToString('', 'outputs')}`
     return (
       `  [${this.source}]` +
       this.listToString('\n  ↱ ', 'outputs') +

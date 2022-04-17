@@ -6,7 +6,8 @@ import { join } from 'path'
 import { terminal as term } from 'terminal-kit'
 import yargs from 'yargs'
 
-import { ExportData } from './Export'
+import { ExportData } from './tools/Export'
+import CLIHelper from './tools/cli-tools'
 import make_sprite from './tools/make_sprite'
 
 import mcGather from '.'
@@ -57,7 +58,8 @@ if (argv.icons) make_sprite(argv.icons, argv.output)
 else {
   if (!argv.mc) throw new Error('Arguments must include --mc')
   ;(async () => {
-    const exportData = await mcGather(argv as any)
+    const cli = new CLIHelper()
+    const exportData = await mcGather(argv as any, cli)
     saveObjAsJson(exportData, join(argv.output, 'data.json'))
     await prompt(exportData)
     term.processExit(0)

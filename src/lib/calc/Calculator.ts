@@ -2,6 +2,7 @@ import _ from 'lodash'
 
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
+import CLIHelper from '../../tools/cli-tools'
 import Definition from '../items/Definition'
 import DefinitionStore from '../items/DefinitionStore'
 import Stack from '../items/Stack'
@@ -9,7 +10,11 @@ import Recipe from '../recipes/Recipe'
 
 import Calculable from './Calculable'
 
-const logComputed = createFileLogger('computed.log')
+// eslint-disable-next-line no-promise-executor-return
+const sleep = () => new Promise((r) => setTimeout(r, 1))
+
+const naturalSort = (a: string, b: string) =>
+  a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
 
 export default class Calculator {
   constructor(
@@ -17,8 +22,8 @@ export default class Calculator {
     private recipeStore: Recipe[]
   ) {}
 
-  compute() {
-    console.log('🧮  Linking items... ')
+  async compute(cli: CLIHelper) {
+    cli.startProgress('Linking items', this.recipeStore.length)
 
     // Create links between items
     this.recipeStore.forEach((rec, index) => {
@@ -33,9 +38,12 @@ export default class Calculator {
           ;(def.recipes ??= new Set()).add(index)
         }
       })
-    })
 
-    console.log('🧮  Define predefined... ')
+      if (index % 100 === 0 || index === this.recipeStore.length - 1)
+        cli.bar?.update(index + 1)
+    })
+    cli.bar?.update(this.recipeStore.length, { task: 'done' })
+
     let dirtyRecipes = new Set<number>()
 
     // Assign predefined values
@@ -52,12 +60,25 @@ export default class Calculator {
       )
     )
 
-    console.log('🧮  Calculating... ')
+    const cliBars = {
+      Recipes: this.recipeStore.length,
+      Items: this.definitionStore.size,
+    }
+    cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
+    await sleep()
+
+    const recalculated = new Array<number>(this.recipeStore.length).fill(0)
+    let totalCalculated = 0
+
     while (dirtyRecipes.size) {
       const newDirty = new Set<number>()
       dirtyRecipes.forEach((r) => {
         const rec = this.recipeStore[r]
+        const oldPurity = rec.purity
         if (!this.calcRecipe(rec)) return
+
+        recalculated[r]++
+        if (oldPurity <= 0) totalCalculated++
 
         rec.outputs.forEach((out) => {
           const def_cost = rec.cost / (out.amount ?? 1)
@@ -69,18 +90,40 @@ export default class Calculator {
           }
 
           for (const def of this.definitionStore.matchedBy(out.ingredient)) {
-            this.calcDefinition(def, calc, newDirty)
+            if (this.calcDefinition(def, calc, newDirty))
+              cli.bars?.[1].increment()
           }
         })
       })
       dirtyRecipes = newDirty
-    }
 
-    console.log(
-      'Succesfully computed:',
-      [...this.definitionStore.iterate()].filter((def) => def.purity > 0).length
+      cli.bars?.[0].update(totalCalculated, {
+        task: 'Recalculated: ' + cli.num(dirtyRecipes.size),
+      })
+
+      await sleep()
+    }
+    cli.multBarStop?.()
+    await sleep()
+
+    cli.write('Writing computed in file...')
+    createFileLogger('computed.log')(this.definitionStore.toString())
+    createFileLogger('recalc.log')(
+      recalculated
+        .map((r, i) => [i, r])
+        .filter(([, r]) => r > 1)
+        .sort(([, a], [, b]) => b - a)
+        .map(
+          ([i, r]) =>
+            `${r}`.padEnd(6) + this.recipeStore[i].toString({ short: true })
+        )
+        .join('\n')
     )
-    logComputed(this.definitionStore.toString())
+
+    const totalWithPurity = [...this.definitionStore.iterate()].filter(
+      (def) => def.purity > 0
+    ).length
+    return totalWithPurity
   }
 
   /**
@@ -132,18 +175,27 @@ export default class Calculator {
     return val
   }
 
+  /**
+   *
+   * @param def
+   * @param cal
+   * @param dirtyRecipes
+   * @returns `true` if recipe was calculated for the first time
+   */
   private calcDefinition(
     def: Definition,
     cal: Calculable,
     dirtyRecipes: Set<number>
-  ) {
-    if (def.purity > cal.purity) return
-    if (def.purity === cal.purity && def.complexity <= cal.complexity) return
+  ): boolean {
+    if (def.purity > cal.purity) return false
+    if (def.purity === cal.purity && def.complexity <= cal.complexity)
+      return false
+    const isFirtCalc = def.purity === 0
     def.purity = cal.purity
     def.cost = cal.cost
     def.processing = cal.processing
     def.complexity = cal.complexity
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
-    return
+    return isFirtCalc
   }
 }
