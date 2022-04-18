@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 /* =============================================
 =           Additionals Store
 ============================================= */
@@ -106,30 +107,6 @@ export default class DefinitionStore {
       .join('\n')
   }
 
-  *matchedBy(ingr: Ingredient): IterableIterator<Definition> {
-    if (!this.oreDict)
-      throw new Error('OreDict must be intitialized before iteration')
-
-    for (const def of ingr.items) {
-      if (def.source === 'ore') {
-        const oreList = this.oreDict[def.entry]
-        if (!oreList) {
-          throw new Error(`This ore is empty: ${def.entry}`)
-        }
-
-        for (const oreDef of oreList) {
-          for (const d of this.matchedByNonOre(oreDef)) {
-            yield d
-          }
-        }
-      } else {
-        for (const d of this.matchedByNonOre(def)) {
-          yield d
-        }
-      }
-    }
-  }
-
   assignVisuals(nameMap: NameMap) {
     const log = {
       noViewBox: createFileLogger('noViewBox.log'),
@@ -188,21 +165,48 @@ export default class DefinitionStore {
     }
   }
 
+  *matchedBy(ingr: Ingredient): IterableIterator<Definition> {
+    if (!this.oreDict)
+      throw new Error('OreDict must be intitialized before iteration')
+
+    for (const def of ingr.items) {
+      if (def.source === 'ore') {
+        const oreList = this.oreDict[def.entry]
+        if (!oreList) {
+          throw new Error(`This ore is empty: ${def.entry}`)
+        }
+
+        for (const oreDef of oreList) {
+          for (const d of this.matchedByNonOre(oreDef)) {
+            yield d
+          }
+        }
+      } else {
+        for (const d of this.matchedByNonOre(def)) {
+          yield d
+        }
+      }
+    }
+  }
+
   private *matchedByNonOre(def: Definition): IterableIterator<Definition> {
     if (def.meta === '32767' || def.meta === '*') {
-      for (const metas of Object.values(this.tree[def.source][def.entry])) {
-        for (const d of Object.values(metas)) {
-          if (d.meta !== '32767' && d.meta !== '*') yield d
+      const se = this.tree[def.source][def.entry]
+      for (const meta in se) {
+        if (meta === '32767' || meta === '*') continue
+        const sem = se[meta]
+        for (const sNbt in sem) {
+          yield sem[sNbt]
         }
       }
     } else {
-      const sem = this.tree[def.source][def.entry][def.meta ?? '']
+      const metaMap = this.tree[def.source][def.entry][def.meta ?? '']
       if (!def.sNbt) {
-        for (const d of Object.values(sem)) {
-          yield d
+        for (const sNbt in metaMap) {
+          yield metaMap[sNbt]
         }
       } else {
-        if (sem['*']) yield sem['*']
+        if (metaMap['*']) yield metaMap['*']
         yield def
       }
     }
