@@ -21,6 +21,7 @@ export default class Calculator {
 
   async compute(cli: CLIHelper) {
     cli.startProgress('Linking items', this.recipeStore.length)
+    this.definitionStore.lock()
 
     // Create links between items
     this.recipeStore.forEach((rec, index) => {
@@ -41,9 +42,8 @@ export default class Calculator {
     })
     cli.bar?.update(this.recipeStore.length, { task: 'done' })
 
-    let dirtyRecipes = new Set<number>()
-
     // Assign predefined values
+    let dirtyRecipes = new Set<number>()
     Object.entries(predefined).forEach(([id, val]) =>
       this.calcDefinition(
         this.definitionStore.getBased('placeholder', id),

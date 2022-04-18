@@ -19,7 +19,9 @@ export interface ExportDefinition {
 }
 
 export default class DefinitionStore {
+  locked = false
   size = 0
+
   getById: (id: string) => Definition
   getBased: (
     source: string,
@@ -28,6 +30,7 @@ export default class DefinitionStore {
     sNbt?: string
   ) => Definition
 
+  private ingrCache = new Map<Ingredient, Definition[]>()
   private oreDict?: { [oreName: string]: Definition[] }
 
   private tree: {
@@ -43,6 +46,13 @@ export default class DefinitionStore {
   constructor() {
     this.getBased = (source, entry, meta, sNbt) => {
       const actualMeta = Definition.actualMeta(meta)
+      if (this.locked) {
+        const found = this.tree[source][entry][actualMeta ?? ''][sNbt ?? '']
+        if (!found) {
+          throw new Error('Trying to create new item in Locked mode')
+        }
+        return found
+      }
       return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
         {})[sNbt ?? ''] ??=
         (this.size++, new Definition(source, entry, actualMeta, sNbt)))
@@ -64,6 +74,10 @@ export default class DefinitionStore {
         splitted.slice(3).join(':')
       )
     }
+  }
+
+  lock() {
+    this.locked = true
   }
 
   addOreDict(oreDict: OredictMap) {
@@ -166,6 +180,15 @@ export default class DefinitionStore {
   }
 
   *matchedBy(ingr: Ingredient): IterableIterator<Definition> {
+    const found = this.ingrCache.get(ingr)
+    if (found) {
+      for (const d of found) {
+        yield d
+      }
+      return
+    }
+    const arr: Definition[] = []
+
     if (!this.oreDict)
       throw new Error('OreDict must be intitialized before iteration')
 
@@ -178,15 +201,18 @@ export default class DefinitionStore {
 
         for (const oreDef of oreList) {
           for (const d of this.matchedByNonOre(oreDef)) {
+            arr.push(d)
             yield d
           }
         }
       } else {
         for (const d of this.matchedByNonOre(def)) {
+          arr.push(d)
           yield d
         }
       }
     }
+    this.ingrCache.set(ingr, arr)
   }
 
   private *matchedByNonOre(def: Definition): IterableIterator<Definition> {
