@@ -13,9 +13,6 @@ import Calculable from './Calculable'
 // eslint-disable-next-line no-promise-executor-return
 const sleep = () => new Promise((r) => setTimeout(r, 1))
 
-const naturalSort = (a: string, b: string) =>
-  a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
-
 export default class Calculator {
   constructor(
     private definitionStore: DefinitionStore,
@@ -120,9 +117,18 @@ export default class Calculator {
         .join('\n')
     )
 
-    const totalWithPurity = [...this.definitionStore.iterate()].filter(
-      (def) => def.purity > 0
-    ).length
+    const allDefs = [...this.definitionStore.iterate()]
+    const totalWithPurity = allDefs.filter((def) => def.purity > 0).length
+
+    createFileLogger('needRecipes.log')(
+      allDefs
+        .filter((d) => d.purity <= 0 && d.dependencies?.size)
+        .map((d) => [d.dependencies!.size, d.toString()] as const)
+        .sort(([a], [b]) => b - a)
+        .map(([n, s]) => `${n} ${s}`)
+        .join('\n')
+    )
+
     return totalWithPurity
   }
 

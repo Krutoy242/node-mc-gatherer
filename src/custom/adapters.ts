@@ -16,17 +16,34 @@ function getItem(id: string, amount = 1): JEIEIngredient {
   return { amount, stacks: [{ type: 'item', name: id }] }
 }
 
-function bucketToFluid(
+function getBucketFluid(
   stack: JEIEItem,
   getFullID: (ingr: JEIEItem) => string
-): void {
+): string | undefined {
+  if (stack.name.startsWith('minecraft:')) {
+    if (stack.name.startsWith('minecraft:water_bucket:0')) return 'water'
+    if (stack.name.startsWith('minecraft:lava_bucket:0')) return 'lava'
+    if (stack.name.startsWith('minecraft:milk:0')) return 'milk'
+  }
+
   if (!stack.name.startsWith('forge:bucketfilled:0:')) return
-  const m = getFullID(stack).match(
+  return getFullID(stack).match(
     /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000.*\}$/
-  )
-  if (!m) return
-  stack.type = 'fluid'
-  stack.name = m[1]
+  )?.[1]
+}
+
+function bucketToFluid(
+  ingr: JEIEIngredient,
+  getFullID: (ingr: JEIEItem) => string
+): void {
+  ingr.stacks.forEach((stack) => {
+    if (!stack.name.startsWith('forge:bucketfilled:0:')) return
+    const f = getBucketFluid(stack, getFullID)
+    if (!f) return
+    stack.type = 'fluid'
+    stack.name = f
+    ingr.amount = 1000
+  })
 }
 
 // Clear recipes for this entries
@@ -174,6 +191,7 @@ adapters.set(/tinkersjei__tool_stats/, (cat) => {
 })
 
 adapters.set(/machine_produce_category/, (cat, getFullID) => {
+  const convertBucket = (slot: JEIESlot) => bucketToFluid(slot, getFullID)
   cat.recipes = cat.recipes.map((rec) => {
     const machine = rec.input.items[0]
     rec.input.items = [
@@ -183,11 +201,7 @@ adapters.set(/machine_produce_category/, (cat, getFullID) => {
         stacks: [{ type: 'placeholder', name: 'rf' }],
       },
     ]
-    rec.output.items.forEach((slot) => {
-      slot.stacks.forEach((stack) => {
-        bucketToFluid(stack, getFullID)
-      })
-    })
+    rec.output.items.forEach(convertBucket)
     return Object.assign(rec, { catalyst: [machine] })
   })
 })
@@ -244,10 +258,23 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
     amount: number
     aspect: string
   }
+  const inputBlacklist = [
+    'minecraft:spawn_egg:0',
+    'conarm:boots:0',
+    'conarm:helmet:0',
+    'conarm:leggings:0',
+    'conarm:chestplate:0',
+    'conarm:chestplate:0',
+    'tcomplement:sledge_hammer:0',
+    'minecraft:potion:0',
+    'mekanism:gastank:0',
+  ]
   const itemMap = new Map<string, AmountAspect[]>()
   cat.recipes.forEach((rec) => {
     rec.input.items.forEach((slot) => {
       const itemId = slot.stacks[0].name
+      if (inputBlacklist.includes(itemId)) return
+
       let arr = itemMap.get(itemId)
       if (!arr) {
         arr = []
@@ -277,6 +304,7 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
 })
 
 adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
+  cat.catalysts = [getItem('thaumcraft:arcane_workbench:0').stacks[0]]
   cat.recipes.forEach((rec) => {
     rec.input.items.concat(rec.output.items.slice(1))
     rec.output.items = [rec.output.items[0]]
@@ -285,9 +313,37 @@ adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
 
 adapters.set(/inworldcrafting__itemtransform/, (cat) => {
   cat.recipes.forEach((rec) => {
-    rec.output.items = [rec.input.items.pop() as JEIESlot]
+    rec.output.items = rec.input.items.splice(
+      rec.input.items.findIndex((it) => it.x >= 158),
+      1
+    )
   })
 })
+
+adapters.set(
+  /exnihilocreatio__fluid_(transform|block_transform)/,
+  (cat, getFullID) => {
+    const convertBucket = (ingr: JEIEIngredient) =>
+      bucketToFluid(ingr, getFullID)
+    const barrel = getItem('exnihilocreatio:block_barrel0:0')
+    cat.recipes.forEach((rec: JEIECustomRecipe) => {
+      rec.input.items = rec.input.items.filter(
+        (it) =>
+          !it.stacks.some((stack) =>
+            stack.name.startsWith('exnihilocreatio:block_barrel')
+          )
+      )
+      const input = rec.input.items.filter((it) => it.x < 74)
+      const catals = rec.input.items.filter((it) => it.x === 74)
+      rec.input.items = input
+      rec.catalyst = [barrel, ...catals]
+
+      rec.input.items.forEach(convertBucket)
+      rec.catalyst.forEach(convertBucket)
+      rec.output.items.forEach(convertBucket)
+    })
+  }
+)
 
 adapters.set(/minecraft__anvil/, (cat) => {
   cat.recipes = cat.recipes.filter(
@@ -331,14 +387,52 @@ adapters.set(/jeresources__mob/, (cat) => {
   })
 })
 
+adapters.set(/bdew__jeibees__mutation__rootBees/, (cat, getFullID) => {
+  const queensInOut = cat.recipes.filter((rec) =>
+    rec.output.items.some((slot) =>
+      slot.stacks.some((st) => st.name.startsWith('forestry:bee_queen_ge:0:'))
+    )
+  )
+  queensInOut.forEach((rec) => {
+    const fullId = getFullID(rec.output.items[0].stacks[0])
+    const queenGenes = fullId.substring(24).replace(/,\s*Mate:.+/, '}')
+    const getBee = (n: number, id: string) => ({
+      ...getItem(id + queenGenes, n),
+      x: 0,
+      y: 0,
+    })
+    cat.recipes.push({
+      input: rec.output,
+      output: {
+        items: [
+          getBee(1, 'forestry:bee_princess_ge:0:'),
+          getBee(2, 'forestry:bee_drone_ge:0:'),
+        ],
+      },
+    })
+  })
+
+  cat.recipes.forEach((rec) => {
+    // Add analyzed / not analyzed bee alternative
+    const anyAnalyzed = (it: JEIESlot) => {
+      it.stacks = [
+        it.stacks[0],
+        {
+          type: 'item',
+          name: it.stacks[0].name.replace(/IsAnalyzed:1b/, 'IsAnalyzed:0b'),
+        },
+      ]
+    }
+    rec.input.items.forEach(anyAnalyzed)
+    rec.output.items.forEach(anyAnalyzed)
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, getFullID) => {
+  const convertBucket = (ingr: JEIESlot) => bucketToFluid(ingr, getFullID)
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    rec.input.items.forEach((slot) => {
-      slot.stacks.forEach((stack) => {
-        bucketToFluid(stack, getFullID)
-      })
-    })
+    rec.input.items.forEach(convertBucket)
   })
 })
 

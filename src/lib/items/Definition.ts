@@ -7,8 +7,8 @@ export default class Definition implements Calculable {
     return meta === undefined
       ? undefined
       : // eslint-disable-next-line eqeqeq
-      meta == '32767' || meta == '*'
-      ? '0'
+      meta == '32767'
+      ? '*'
       : meta
   }
 
@@ -18,10 +18,10 @@ export default class Definition implements Calculable {
     meta?: string,
     sNbt?: string
   ): string {
-    const actualMeta = Definition.actualMeta(meta)
-    return `${source}:${entry}${
-      actualMeta !== undefined ? ':' + actualMeta : ''
-    }${sNbt ? ':' + sNbt : ''}`
+    const m = Definition.actualMeta(meta)
+    return `${source}:${entry}${m !== undefined ? ':' + m : ''}${
+      sNbt ? ':' + sNbt : ''
+    }`
   }
 
   readonly id: string

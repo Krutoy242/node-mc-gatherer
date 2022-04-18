@@ -1,3 +1,4 @@
+import { naturalSort } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
 
 import { prefferedModSort } from './mod_sort'
@@ -27,13 +28,13 @@ export default function genOreDictionary(crafttweakerLogTxt: string) {
       throw new Error('OreDict parsing error for block: ' + groups.block)
 
     dict[groups.oreName] = items.map(
-      ({ source, entry, meta }) =>
-        `${source}:${entry}:${meta === '*' ? 32767 : meta ?? 0}`
+      ({ source, entry, meta }) => `${source}:${entry}:${meta ?? 0}`
     )
   }
 
   log(
     Object.entries(dict)
+      .sort(([a], [b]) => naturalSort(a, b))
       .map(([oreName, item]) => `${oreName} = ${item.join(' ')}`)
       .join('\n')
   )

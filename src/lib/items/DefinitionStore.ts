@@ -189,20 +189,20 @@ export default class DefinitionStore {
   }
 
   private *matchedByNonOre(def: Definition): IterableIterator<Definition> {
-    if (def.meta === '32767') {
+    if (def.meta === '32767' || def.meta === '*') {
       for (const metas of Object.values(this.tree[def.source][def.entry])) {
         for (const d of Object.values(metas)) {
-          if (def !== d) yield d
+          if (d.meta !== '32767' && d.meta !== '*') yield d
         }
       }
     } else {
+      const sem = this.tree[def.source][def.entry][def.meta ?? '']
       if (!def.sNbt) {
-        for (const d of Object.values(
-          this.tree[def.source][def.entry][def.meta ?? '']
-        )) {
+        for (const d of Object.values(sem)) {
           yield d
         }
       } else {
+        if (sem['*']) yield sem['*']
         yield def
       }
     }

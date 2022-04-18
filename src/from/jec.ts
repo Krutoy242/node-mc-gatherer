@@ -165,11 +165,16 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
 
     // Replace bucket with liquid to actual liquid
     if (raw.content?.item === 'forge:bucketfilled') {
+      const fluidName = nbt?.match(/FluidName:\s*\\?"([^"]+)\\?"/)?.[1]
+      if (!fluidName) {
+        console.log('raw :>> ', raw)
+        throw new Error('Cant parse fluid name')
+      }
+
       raw.type = 'fluidStack'
       raw.content = {
         amount: 1000,
-        fluid:
-          nbt?.match(/FluidName:\\"([^"]+)\\"/)?.[1] || '<<Undefined Fluid>>',
+        fluid: fluidName,
       }
     }
   }
@@ -202,7 +207,7 @@ function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
   const switcher: Record<string, () => Typle> = {
     itemStack: (): Typle => [
       ...(raw.content?.item?.split(':') as [string, string]),
-      raw.content.fMeta ? '32767' : String(raw.content.meta ?? 0),
+      raw.content.fMeta ? '*' : String(raw.content.meta ?? 0),
     ],
     fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
     oreDict: (): Typle => ['ore', raw.content.name as string],
@@ -214,7 +219,7 @@ function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
 
   const [source, entry, meta] = switcher[raw.type]()
   const sNbt = raw.content.fNbt
-    ? ''
+    ? '*'
     : typeof raw.content.nbt !== 'string'
     ? ''
     : raw.content.nbt

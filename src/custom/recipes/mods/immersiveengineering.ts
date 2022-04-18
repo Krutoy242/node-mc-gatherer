@@ -12,4 +12,14 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     ],
     'immersiveengineering:tool:0'
   )
+
+  addRecipe(
+    'immersiveengineering:metal_multiblock:*',
+    [
+      '4x immersiveengineering:metal_decoration0:3',
+      '4x immersiveengineering:metal_decoration0:4',
+      '4x immersiveengineering:metal_decoration0:5',
+    ],
+    'immersiveengineering:tool:0'
+  )
 }
