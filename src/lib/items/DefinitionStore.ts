@@ -30,6 +30,13 @@ export default class DefinitionStore {
     sNbt?: string
   ) => Definition
 
+  lookBased: (
+    source: string,
+    entry: string,
+    meta?: string,
+    sNbt?: string
+  ) => Definition | undefined
+
   private ingrCache = new Map<Ingredient, Definition[]>()
   private oreDict?: { [oreName: string]: Definition[] }
 
@@ -44,10 +51,16 @@ export default class DefinitionStore {
   } = {}
 
   constructor() {
+    this.lookBased = (source, entry, meta, sNbt) => {
+      return this.tree[source]?.[entry]?.[Definition.actualMeta(meta) ?? '']?.[
+        sNbt ?? ''
+      ]
+    }
+
     this.getBased = (source, entry, meta, sNbt) => {
       const actualMeta = Definition.actualMeta(meta)
       if (this.locked) {
-        const found = this.tree[source][entry][actualMeta ?? ''][sNbt ?? '']
+        const found = this.lookBased(source, entry, meta, sNbt)
         if (!found) {
           throw new Error('Trying to create new item in Locked mode')
         }
@@ -140,13 +153,16 @@ export default class DefinitionStore {
       if (def.viewBox && def.display) return
 
       const { source, entry, meta, sNbt } = def
-      const attempts: () => IterableIterator<{
-        display?: string
-        viewBox?: string
-      }> = function* () {
-        if (sNbt) yield self.getBased(source, entry, meta)
+      const attempts: () => IterableIterator<
+        | {
+            display?: string
+            viewBox?: string
+          }
+        | undefined
+      > = function* () {
+        if (sNbt) yield self.lookBased(source, entry, meta)
         if (meta !== undefined && meta !== '0')
-          yield self.getBased(source, entry)
+          yield self.lookBased(source, entry)
         yield {
           display:
             nameMap[
@@ -162,7 +178,7 @@ export default class DefinitionStore {
 
       for (const defOther of attempts()) {
         if (def.viewBox && def.display) return
-        if (defOther === def) continue
+        if (!defOther || defOther === def) continue
         def.viewBox ??= defOther.viewBox
         def.display ??= defOther.display
       }

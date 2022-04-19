@@ -268,12 +268,13 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
     'tcomplement:sledge_hammer:0',
     'minecraft:potion:0',
     'mekanism:gastank:0',
+    'astralsorcery:itemtunedrockcrystal:0',
   ]
   const itemMap = new Map<string, AmountAspect[]>()
   cat.recipes.forEach((rec) => {
     rec.input.items.forEach((slot) => {
       const itemId = slot.stacks[0].name
-      if (inputBlacklist.includes(itemId)) return
+      if (inputBlacklist.some((id) => itemId.startsWith(id))) return
 
       let arr = itemMap.get(itemId)
       if (!arr) {
@@ -316,6 +317,14 @@ adapters.set(/inworldcrafting__itemtransform/, (cat) => {
     rec.output.items = rec.input.items.splice(
       rec.input.items.findIndex((it) => it.x >= 158),
       1
+    )
+  })
+})
+
+adapters.set(/mekanism__osmiumcompressor/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items = rec.input.items.filter(
+      (it) => !it.stacks.some((s) => s.type === 'mekanism.api.gas.GasStack')
     )
   })
 })
