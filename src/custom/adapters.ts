@@ -312,6 +312,10 @@ adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
   })
 })
 
+adapters.set(/exnihilocreatio__hammer/, (cat) => {
+  cat.catalysts = [getItem('tcomplement:sledge_hammer:0').stacks[0]]
+})
+
 adapters.set(/inworldcrafting__itemtransform/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.output.items = rec.input.items.splice(

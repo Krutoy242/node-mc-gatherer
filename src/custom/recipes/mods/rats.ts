@@ -2,10 +2,11 @@ export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
   addRecipe(
-    'bloodmagic:blood_shard:0',
-    '130x placeholder:fight',
-    'bloodmagic:bound_sword:0'
+    'rats:tiny_coin:0',
+    '40x placeholder:ticks',
+    'rats:rat_upgrade_aristocrat:0'
   )
+  addRecipe('rats:rat_nugget:0', '730x placeholder:ticks', 'rats:raw_rat')
   ;(
     [
       ['rats:archeologist_hat', 10000],
