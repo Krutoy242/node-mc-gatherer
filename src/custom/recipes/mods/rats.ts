@@ -6,7 +6,7 @@ export default function addRecipes(
     '40x placeholder:ticks',
     'rats:rat_upgrade_aristocrat:0'
   )
-  addRecipe('rats:rat_nugget:0', '730x placeholder:ticks', 'rats:raw_rat')
+  addRecipe('rats:rat_nugget:0', '730x placeholder:ticks', 'rats:raw_rat:0')
   ;(
     [
       ['rats:archeologist_hat', 10000],

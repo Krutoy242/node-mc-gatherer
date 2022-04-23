@@ -12,8 +12,12 @@ const adapters: Map<
   (cat: JEIECategory, getFullStack: (ingr: JEIEItem) => string) => void
 > = new Map()
 
-function getItem(id: string, amount = 1): JEIEIngredient {
+function getIngr(id: string, amount = 1): JEIEIngredient {
   return { amount, stacks: [{ type: 'item', name: id }] }
+}
+
+function getSlot(id: string, amount = 1): JEIESlot {
+  return { ...getIngr(id, amount), x: 0, y: 0 }
 }
 
 function getBucketFluid(
@@ -83,7 +87,7 @@ adapters.set(/minecraft__crafting/, (cat) => {
       )
   )
 
-  const crTable = getItem('minecraft:crafting_table:0')
+  const crTable = getIngr('minecraft:crafting_table:0')
   newRecs = newRecs.map((rec) => {
     const x = rec.input.items.map((slot) => slot.x)
     const y = rec.input.items.map((slot) => slot.y)
@@ -98,7 +102,7 @@ adapters.set(/minecraft__crafting/, (cat) => {
         rec.output.items.push({
           x: 0,
           y: 0,
-          ...getItem('minecraft:bucket:0'),
+          ...getIngr('minecraft:bucket:0'),
         })
       }
     })
@@ -109,8 +113,8 @@ adapters.set(/minecraft__crafting/, (cat) => {
 
 adapters.set(/tconstruct__casting_table/, (cat) => {
   const catalyst = [
-    getItem('tconstruct:casting:0'),
-    getItem('tconstruct:casting:1'),
+    getIngr('tconstruct:casting:0'),
+    getIngr('tconstruct:casting:1'),
   ]
 
   const newRecipes: JEIECustomRecipe[] = []
@@ -131,7 +135,7 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
         rec.input.items.splice(1, 1)
         newRecipes.push({
           ...rec,
-          catalyst: [...catalyst, getItem(castOnTable.name)],
+          catalyst: [...catalyst, getIngr(castOnTable.name)],
         })
       } else {
         newRecipes.push({ ...rec, catalyst })
@@ -153,7 +157,7 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
 })
 
 adapters.set(/tconstruct__smeltery/, (cat) => {
-  const catalyst = [getItem('tconstruct:smeltery_controller:0')]
+  const catalyst = [getIngr('tconstruct:smeltery_controller:0')]
 
   cat.recipes = cat.recipes.map((rec) => {
     rec.output.items = [rec.output.items[0]]
@@ -162,7 +166,7 @@ adapters.set(/tconstruct__smeltery/, (cat) => {
 })
 
 adapters.set(/tinkersjei__tool_stats/, (cat) => {
-  const catalyst = [getItem('tconstruct:tooltables:3')]
+  const catalyst = [getIngr('tconstruct:tooltables:3')]
 
   const newRecipes: JEIECustomRecipe[] = []
   cat.recipes
@@ -223,13 +227,7 @@ adapters.set(/tubing/, (cat) => {
 
 adapters.set(/^recycler$/, (cat) => {
   cat.recipes.forEach((rec) => {
-    rec.input.items[0].stacks = getItem('minecraft:stone:0').stacks
-  })
-})
-
-adapters.set(/inworldcrafting__exploding_blocks/, (cat) => {
-  cat.recipes.forEach((rec) => {
-    rec.output.items = [rec.input.items.pop() as JEIESlot]
+    rec.input.items[0].stacks = getIngr('minecraft:stone:0').stacks
   })
 })
 
@@ -287,9 +285,9 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
       })
     })
   })
-  const catal = getItem('thaumcraft:crucible:0')
+  const catal = getIngr('thaumcraft:crucible:0')
   cat.recipes = [...itemMap].map(([id, aspectsArr]) => ({
-    input: { items: [{ x: 0, y: 0, ...getItem(id) }] },
+    input: { items: [{ x: 0, y: 0, ...getIngr(id) }] },
     output: {
       items: aspectsArr.map((asp) => ({
         x: 18,
@@ -305,7 +303,7 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
 })
 
 adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
-  cat.catalysts = [getItem('thaumcraft:arcane_workbench:0').stacks[0]]
+  cat.catalysts = [getIngr('thaumcraft:arcane_workbench:0').stacks[0]]
   cat.recipes.forEach((rec) => {
     rec.input.items.concat(rec.output.items.slice(1))
     rec.output.items = [rec.output.items[0]]
@@ -313,17 +311,47 @@ adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
 })
 
 adapters.set(/exnihilocreatio__hammer/, (cat) => {
-  cat.catalysts = [getItem('tcomplement:sledge_hammer:0').stacks[0]]
+  cat.catalysts = getIngr('tcomplement:sledge_hammer:0').stacks
 })
 
-adapters.set(/inworldcrafting__itemtransform/, (cat) => {
-  cat.recipes.forEach((rec) => {
-    rec.output.items = rec.input.items.splice(
-      rec.input.items.findIndex((it) => it.x >= 158),
-      1
-    )
-  })
+adapters.set(/jeresources__dungeon/, (cat) => {
+  const catal: JEIEIngredient = {
+    stacks: [{ type: 'placeholder', name: 'placeholder:exploration' }],
+    amount: 500000,
+  }
+  cat.recipes.forEach((rec: JEIECustomRecipe) => (rec.catalyst = [catal]))
 })
+
+adapters.set(/exnihilocreatio__compost/, (cat) => {
+  cat.recipes.forEach((rec) => (rec.output.items = [getSlot('minecraft:dirt')]))
+})
+
+adapters.set(
+  /mia__orechid_vacuam|botania__orechid_ignem|botania__orechid/,
+  (cat) => {
+    let inputSlot: JEIESlot | undefined
+    const outputs = cat.recipes.map((rec) => {
+      const sorted = rec.input.items.sort((a, b) => a.x - b.x)
+      inputSlot ??= sorted[0]
+      return sorted.pop() as JEIESlot
+    })
+    ;(inputSlot as JEIESlot).amount = outputs.reduce((a, b) => a + b.amount, 0)
+    cat.recipes = [
+      { input: { items: [inputSlot as JEIESlot] }, output: { items: outputs } },
+    ]
+  }
+)
+
+adapters.set(
+  /inworldcrafting__burn_item|inworldcrafting__exploding_blocks|inworldcrafting__itemtransform/,
+  (cat) => {
+    cat.recipes.forEach((rec) => {
+      const sorted = rec.input.items.sort((a, b) => a.x - b.x)
+      rec.output.items = [sorted.pop() as JEIESlot]
+      rec.input.items = sorted
+    })
+  }
+)
 
 adapters.set(/mekanism__osmiumcompressor/, (cat) => {
   cat.recipes.forEach((rec) => {
@@ -338,7 +366,7 @@ adapters.set(
   (cat, getFullID) => {
     const convertBucket = (ingr: JEIEIngredient) =>
       bucketToFluid(ingr, getFullID)
-    const barrel = getItem('exnihilocreatio:block_barrel0:0')
+    const barrel = getIngr('exnihilocreatio:block_barrel0:0')
     cat.recipes.forEach((rec: JEIECustomRecipe) => {
       rec.input.items = rec.input.items.filter(
         (it) =>
@@ -372,7 +400,7 @@ adapters.set(/minecraft__anvil/, (cat) => {
 })
 
 adapters.set(/chisel__chiseling/, (cat) => {
-  const catalyst = [getItem('chisel:chisel_iron:0')]
+  const catalyst = [getIngr('chisel:chisel_iron:0')]
 
   const newRecipes: JEIECustomRecipe[] = []
   cat.recipes.forEach((rec) => {
@@ -396,7 +424,7 @@ adapters.set(/chisel__chiseling/, (cat) => {
 
 adapters.set(/jeresources__mob/, (cat) => {
   cat.recipes.forEach((rec) => {
-    rec.input.items = [{ x: 0, y: 0, ...getItem('placeholder:fight', 10000) }]
+    rec.input.items = [{ x: 0, y: 0, ...getIngr('placeholder:fight', 10000) }]
   })
 })
 
@@ -410,7 +438,7 @@ adapters.set(/bdew__jeibees__mutation__rootBees/, (cat, getFullID) => {
     const fullId = getFullID(rec.output.items[0].stacks[0])
     const queenGenes = fullId.substring(24).replace(/,\s*Mate:.+/, '}')
     const getBee = (n: number, id: string) => ({
-      ...getItem(id + queenGenes, n),
+      ...getIngr(id + queenGenes, n),
       x: 0,
       y: 0,
     })
