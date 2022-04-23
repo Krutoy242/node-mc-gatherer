@@ -20,42 +20,10 @@ export default class Calculator {
   ) {}
 
   async compute(cli: CLIHelper) {
-    cli.startProgress('Linking items', this.recipeStore.length)
-    this.definitionStore.lock()
+    this.createLinks(cli)
 
-    // Create links between items
-    this.recipeStore.forEach((rec, index) => {
-      rec.requirments.forEach(({ ingredient }) => {
-        for (const def of this.definitionStore.matchedBy(ingredient)) {
-          ;(def.dependencies ??= new Set()).add(index)
-        }
-      })
-
-      rec.outputs.forEach(({ ingredient }) => {
-        for (const def of this.definitionStore.matchedBy(ingredient)) {
-          ;(def.recipes ??= new Set()).add(index)
-        }
-      })
-
-      if (index % 100 === 0 || index === this.recipeStore.length - 1)
-        cli.bar?.update(index + 1)
-    })
-    cli.bar?.update(this.recipeStore.length, { task: 'done' })
-
-    // Assign predefined values
     let dirtyRecipes = new Set<number>()
-    Object.entries(predefined).forEach(([id, val]) =>
-      this.calcDefinition(
-        this.definitionStore.getBased('placeholder', id),
-        {
-          purity: 1.0,
-          cost: val,
-          processing: 0.0,
-          complexity: val,
-        },
-        dirtyRecipes
-      )
-    )
+    this.assignPredefined(dirtyRecipes)
 
     const cliBars = {
       Recipes: this.recipeStore.length,
@@ -104,32 +72,48 @@ export default class Calculator {
     await sleep()
 
     cli.write('Writing computed in file...')
-    createFileLogger('computed.log')(this.definitionStore.toString())
-    createFileLogger('recalc.log')(
-      recalculated
-        .map((r, i) => [i, r])
-        .filter(([, r]) => r > 1)
-        .sort(([, a], [, b]) => b - a)
-        .map(
-          ([i, r]) =>
-            `${r}`.padEnd(6) + this.recipeStore[i].toString({ short: true })
-        )
-        .join('\n')
-    )
-
     const allDefs = [...this.definitionStore.iterate()]
+    this.logInfo(recalculated, allDefs)
     const totalWithPurity = allDefs.filter((def) => def.purity > 0).length
 
-    createFileLogger('needRecipes.log')(
-      allDefs
-        .filter((d) => d.purity <= 0 && d.dependencies?.size)
-        .map((d) => [d.dependencies!.size, d.toString()] as const)
-        .sort(([a], [b]) => b - a)
-        .map(([n, s]) => `${n} ${s}`)
-        .join('\n')
-    )
-
     return totalWithPurity
+  }
+
+  private createLinks(cli: CLIHelper) {
+    cli.startProgress('Linking items', this.recipeStore.length)
+    this.definitionStore.lock()
+    this.recipeStore.forEach((rec, index) => {
+      rec.requirments.forEach(({ ingredient }) => {
+        for (const def of this.definitionStore.matchedBy(ingredient)) {
+          ;(def.dependencies ??= new Set()).add(index)
+        }
+      })
+
+      rec.outputs.forEach(({ ingredient }) => {
+        for (const def of this.definitionStore.matchedBy(ingredient)) {
+          ;(def.recipes ??= new Set()).add(index)
+        }
+      })
+
+      if (index % 100 === 0 || index === this.recipeStore.length - 1)
+        cli.bar?.update(index + 1)
+    })
+    cli.bar?.update(this.recipeStore.length, { task: 'done' })
+  }
+
+  private assignPredefined(dirtyRecipes: Set<number>) {
+    Object.entries(predefined).forEach(([id, val]) =>
+      this.calcDefinition(
+        this.definitionStore.getBased('placeholder', id),
+        {
+          purity: 1.0,
+          cost: val,
+          processing: 0.0,
+          complexity: val,
+        },
+        dirtyRecipes
+      )
+    )
   }
 
   /**
@@ -155,10 +139,13 @@ export default class Calculator {
   }
 
   private recipePurity(rec: Recipe): number {
-    return rec.requirments.reduce(
-      (a, b) => a * this.getMinMax(b, 'purity', 'max'),
-      1.0
-    )
+    let p = 1.0
+    for (const stack of rec.requirments) {
+      const sPurity = this.getMinMax(stack, 'purity', 'max')
+      if (sPurity === 0) return 0
+      p *= sPurity
+    }
+    return p
   }
 
   private getStacksSumm(field: keyof Calculable, arr?: Stack[]): number {
@@ -168,7 +155,11 @@ export default class Calculator {
       .reduce((a, b) => a + b, 0)
   }
 
-  private getMinMax(ingr: Stack, field: keyof Calculable, math: 'min' | 'max') {
+  private getMinMax(
+    ingr: Stack,
+    field: keyof Calculable,
+    math: 'min' | 'max'
+  ): number {
     let val = math === 'max' ? -Infinity : Infinity
     for (const def of this.definitionStore.matchedBy(ingr.ingredient)) {
       if (math === 'min') {
@@ -182,10 +173,6 @@ export default class Calculator {
   }
 
   /**
-   *
-   * @param def
-   * @param cal
-   * @param dirtyRecipes
    * @returns `true` if recipe was calculated for the first time
    */
   private calcDefinition(
@@ -203,5 +190,29 @@ export default class Calculator {
     def.complexity = cal.complexity
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
     return isFirtCalc
+  }
+
+  private logInfo(recalculated: number[], allDefs: Definition[]) {
+    createFileLogger('computed.log')(this.definitionStore.toString())
+    createFileLogger('recalc.log')(
+      recalculated
+        .map((r, i) => [i, r])
+        .filter(([, r]) => r > 1)
+        .sort(([, a], [, b]) => b - a)
+        .map(
+          ([i, r]) =>
+            `${r}`.padEnd(6) + this.recipeStore[i].toString({ short: true })
+        )
+        .join('\n')
+    )
+
+    createFileLogger('needRecipes.log')(
+      allDefs
+        .filter((d) => d.purity <= 0 && d.dependencies?.size)
+        .map((d) => [d.dependencies!.size, d.toString()] as const)
+        .sort(([a], [b]) => b - a)
+        .map(([n, s]) => `${n} ${s}`)
+        .join('\n')
+    )
   }
 }
