@@ -1,4 +1,5 @@
 import Calculable from '../calc/Calculable'
+import Inventory from '../items/Inventory'
 import Stack from '../items/Stack'
 
 export default class Recipe implements Calculable {
@@ -8,6 +9,8 @@ export default class Recipe implements Calculable {
   purity = 0.0
 
   index?: number
+
+  catalList?: Inventory
 
   readonly requirments: Stack[]
 

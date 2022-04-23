@@ -5,7 +5,8 @@ import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'
 import Definition from '../items/Definition'
 import DefinitionStore from '../items/DefinitionStore'
-import Stack from '../items/Stack'
+import Inventory from '../items/Inventory'
+import Stack, { MicroStack } from '../items/Stack'
 import Recipe from '../recipes/Recipe'
 
 import Calculable from './Calculable'
@@ -55,7 +56,7 @@ export default class Calculator {
           }
 
           for (const def of this.definitionStore.matchedBy(out.ingredient)) {
-            if (this.calcDefinition(def, calc, newDirty))
+            if (this.calcDefinition(def, calc, newDirty, rec))
               cli.bars?.[1].increment()
           }
         })
@@ -121,55 +122,64 @@ export default class Calculator {
    * @returns `true` if new value calculated, `false` if not changed or unable to
    */
   private calcRecipe(rec: Recipe): boolean {
-    const purity = this.recipePurity(rec)
-    if (rec.purity > purity) return false
+    const [catPurity, catDefs] = this.getBestDefs(rec.catalysts)
+    if (catPurity <= 0) return false
 
-    const cost = this.getStacksSumm('cost', rec.inputs) + 1.0
-    const processing = this.getStacksSumm('complexity', rec.catalysts) + 1.0
+    const [inPurity, inDefs] = this.getBestDefs(rec.inputs)
+    if (inPurity <= 0) return false
+
+    const purity = catPurity * inPurity
+    if (rec.purity > purity) return false
+    const samePurity = rec.purity === purity
+
+    const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.def.cost, 1.0)
+    if (samePurity && rec.complexity <= cost) return false
+
+    let catalList: Inventory | undefined
+    if (catDefs.length || inDefs.some((d) => d.def.mainRecipe?.catalList)) {
+      catalList = new Inventory(samePurity ? rec.complexity : Infinity)
+      catalList.merge(catDefs)
+      catalList.mergeList(catDefs)
+      catalList.mergeList(inDefs)
+    }
+    const processing = catalList?.cost ?? 0
+
     const complexity = cost + processing
     if (rec.complexity === complexity) return false
-    if (rec.purity === purity && rec.complexity < complexity) return false
+    if (samePurity && rec.complexity < complexity) return false
 
     rec.purity = purity
     rec.cost = cost
     rec.processing = processing
     rec.complexity = complexity
+    rec.catalList = catalList
 
     return true
   }
 
-  private recipePurity(rec: Recipe): number {
-    let p = 1.0
-    for (const stack of rec.requirments) {
-      const sPurity = this.getMinMax(stack, 'purity', 'max')
-      if (sPurity === 0) return 0
-      p *= sPurity
+  private getBestDefs(stacks?: Stack[]): [purity: number, defs: MicroStack[]] {
+    if (!stacks) return [1.0, []]
+    let purity = 1.0
+    const defs: MicroStack[] = []
+    for (const stack of stacks) {
+      let minComp = Infinity
+      let maxPur = 0.0
+      let bestDef: Definition | undefined
+      for (const def of this.definitionStore.matchedBy(stack.ingredient)) {
+        if (
+          def.purity > maxPur ||
+          (def.purity === maxPur && def.complexity < minComp)
+        ) {
+          bestDef = def
+          maxPur = def.purity
+          minComp = def.complexity
+        }
+      }
+      if (maxPur === 0) return [0, []]
+      purity *= maxPur
+      defs.push({ amount: stack.amount, def: bestDef as Definition })
     }
-    return p
-  }
-
-  private getStacksSumm(field: keyof Calculable, arr?: Stack[]): number {
-    if (!arr) return 0.0
-    return arr
-      .map((stack) => (stack.amount ?? 1) * this.getMinMax(stack, field, 'min'))
-      .reduce((a, b) => a + b, 0)
-  }
-
-  private getMinMax(
-    ingr: Stack,
-    field: keyof Calculable,
-    math: 'min' | 'max'
-  ): number {
-    let val = math === 'max' ? -Infinity : Infinity
-    for (const def of this.definitionStore.matchedBy(ingr.ingredient)) {
-      if (math === 'min') {
-        if (def[field] < val) val = def[field]
-      } else if (def[field] > val) val = def[field]
-    }
-    if (val === Infinity || val === -Infinity) {
-      throw new Error('No matched ingredients found')
-    }
-    return val
+    return [purity, defs]
   }
 
   /**
@@ -178,7 +188,8 @@ export default class Calculator {
   private calcDefinition(
     def: Definition,
     cal: Calculable,
-    dirtyRecipes: Set<number>
+    dirtyRecipes: Set<number>,
+    rec?: Recipe
   ): boolean {
     if (def.purity > cal.purity) return false
     if (def.purity === cal.purity && def.complexity <= cal.complexity)
@@ -188,6 +199,7 @@ export default class Calculator {
     def.cost = cal.cost
     def.processing = cal.processing
     def.complexity = cal.complexity
+    def.mainRecipe = rec
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
     return isFirtCalc
   }

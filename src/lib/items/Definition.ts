@@ -1,4 +1,5 @@
 import Calculable from '../calc/Calculable'
+import Recipe from '../recipes/Recipe'
 
 import Ingredient from './Ingredient'
 
@@ -38,6 +39,8 @@ export default class Definition implements Calculable {
    * Recipes that has this item as output
    */
   recipes?: Set<number>
+
+  mainRecipe?: Recipe
 
   /**
    * Recipes that depends on this item

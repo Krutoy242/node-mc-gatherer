@@ -53,3 +53,8 @@ export default class Stack {
     return this.toString()
   }
 }
+
+export interface MicroStack {
+  amount?: number
+  def: Definition
+}

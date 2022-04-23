@@ -1,4 +1,3 @@
-252 ▕ ▏0 "Ball of Fur" actuallyadditions:item_hairy_ball:0
 191 ▕ ▏0 "Ethereal Wood Planks" biomesoplenty:planks_0:4
 160 ▕ ▏0 "Iron Plate" libvulpes:productplate:1
 125 ▕ ▏0 "Copper Ingot" ic2:ingot:2
@@ -6264,7 +6263,6 @@
 1 ▕ ▏0 "Fission Controller (Old)" nuclearcraft:fission_controller_idle:0
 1 ▕ ▏0 "Aerial Faith Plate" cyclicmagic:plate_vector:0
 1 ▕ ▏0 "Apple of Lofty Stature" cyclicmagic:food_step:0
-1 ▕ ▏0 "Storage Bag" cyclicmagic:storage_bag:0
 1 ▕ ▏0 "Auto Crafter" cyclicmagic:auto_crafter:0
 1 ▕ ▏0 "Vision Helmet" cyclicmagic:glowing_helmet:0
 1 ▕ ▏0 "Apple Sprout" cyclicmagic:apple:0
@@ -6805,7 +6803,6 @@
 1 ▕ ▏0 "Advanced Powercell" rftools:powercell_advanced:0
 1 ▕ ▏0 "World Breaker" avaritia:infinity_pickaxe:0:{ench:[{id:35,lvl:10s}]}
 1 ▕ ▏0 "Skullfire Sword" avaritia:skullfire_sword:0
-1 ▕ ▏0 "§eFur Singularity" avaritia:singularity:8
 1 ▕ ▏0 "Diamond Nugget" extendedcrafting:material:128
 1 ▕ ▏0 "Crafting Table" extendedcrafting:crafting_table:0
 1 ▕ ▏0 "Portable Tank (Basic)" thermalexpansion:tank:0:{RSControl:0b,Level:0b,Fluid:{FluidName:"ic2coolant",Amount:100000}}
