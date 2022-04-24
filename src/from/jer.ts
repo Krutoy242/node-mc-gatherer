@@ -30,30 +30,33 @@ interface Fortunes {
 const maxHeight = 255
 const MID = 70
 function difficulty_from_level(x: number) {
-  // return 1
   const b = 7.13
   const c = 44
   const r = (2 ** (b - x / (MID / b)) + x ** 2 / c ** 2) / (MID * 2) - 0.025
-  return 1 - Math.min(Math.max(0, r), 1)
+  return 1 + Math.min(Math.max(0, r), 1)
 }
+
 const maxHeightDiff = new Array(maxHeight)
   .fill(0)
   .map((_a, i) => difficulty_from_level(i))
   .reduce((a, b) => a + b)
 
-const probFactor = 0.25
+const probFactor = 0.9
 
-function getDifficulty(lvl: number, prob: number): number {
+function getProbAcces(lvl: number, prob: number): number {
   return (difficulty_from_level(lvl) * prob ** probFactor) / maxHeightDiff
 }
 
 function getJERProbability(rawStrData: string) {
-  const probs = rawStrData
-    .split(';')
-    .map((s) => s.split(',').map(parseFloat))
-    .filter((o) => !isNaN(o[0]))
-    .map(([lvl, prob]) => getDifficulty(lvl, prob))
-  return 1 / _.sum(probs)
+  return (
+    1 /
+    rawStrData
+      .split(';')
+      .map((s) => s.split(',').map(parseFloat))
+      .filter((o) => !isNaN(o[0]))
+      .map(([lvl, prob]) => getProbAcces(lvl, prob))
+      .reduce((a, b) => a + b, 0)
+  )
 }
 
 const registeredDims: Set<string> = new Set()
