@@ -8,9 +8,9 @@ export default class Recipe implements Calculable {
   processing = 0.0
   purity = 0.0
 
-  index?: number
+  index!: number
 
-  catalList?: Inventory
+  inventory?: Inventory
 
   readonly requirments: Stack[]
 
@@ -26,6 +26,7 @@ export default class Recipe implements Calculable {
 
   export() {
     return {
+      index: this.index,
       source: this.source,
       outputs: this.outputs.map((o) => o.export()),
       inputs: this.inputs?.length

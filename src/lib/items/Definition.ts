@@ -1,7 +1,9 @@
+import numeral from 'numeral'
+
 import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
 
-import Ingredient from './Ingredient'
+const numFormat = (n: number) => numeral(n).format('0,0.00')
 
 export default class Definition implements Calculable {
   static actualMeta(meta?: string): string | undefined {
@@ -38,7 +40,7 @@ export default class Definition implements Calculable {
   /**
    * Recipes that has this item as output
    */
-  recipes?: Set<number>
+  recipes?: Set<Recipe>
 
   mainRecipe?: Recipe
 
@@ -57,13 +59,9 @@ export default class Definition implements Calculable {
   }
 
   toString() {
-    return `${getPurity(this.purity)}${this.complexity} "${this.display}" ${
-      this.id
-    }`
-  }
-
-  toIngredient() {
-    return new Ingredient([this])
+    return `${getPurity(this.purity)}${numFormat(this.complexity)} "${
+      this.display
+    }" ${this.id}`
   }
 }
 

@@ -19,12 +19,7 @@ export function createFileLogger(logFileName: string): CountableFunction {
   const filePath = join('logs/', logFileName)
   writeFileSync(filePath, '')
   const fnc = function (...args: unknown[]) {
-    appendFileSync(
-      filePath,
-      args.map((v) => String(v)).join(' ') /* (e) => {
-      throw e
-    } */
-    )
+    appendFileSync(filePath, args.map((v) => String(v)).join(' '))
     fnc.count = (fnc.count ?? 0) + 1
   } as CountableFunction
   return fnc
@@ -49,48 +44,22 @@ export function logTreeTo(
     const tab = '  '.repeat(tabLevel)
     writeLn(tab + def.toString())
 
-    if (def.recipes) {
-      const mainRecipe = [...def.recipes]
-        .map((rIndex) => recipeStore.store[rIndex])
-        .sort(recipeSorter)[0]
+    if (!def.mainRecipe) return
 
-      mainRecipe
-        .toString()
-        .split('\n')
-        .forEach((line) => writeLn(tab + line))
+    def.mainRecipe
+      .toString()
+      .split('\n')
+      .forEach((line) => writeLn(tab + line))
 
-      mainRecipe.requirments.forEach((stack) => {
-        const cheapest = [
-          ...recipeStore.definitionStore.matchedBy(stack.ingredient),
-        ].sort(getCheapest)[0]
-        defToString(cheapest, antiloop, tabLevel + 1)
-      })
-    }
-  }
-
-  function recipeSorter(a: Recipe, b: Recipe) {
-    return getCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a)
+    def.mainRecipe.requirments.forEach((stack) => {
+      const cheapest = [
+        ...recipeStore.definitionStore.matchedBy(stack.ingredient),
+      ].sort(getCheapest)[0]
+      defToString(cheapest, antiloop, tabLevel + 1)
+    })
   }
 
   function getCheapest(a: Calculable, b: Calculable) {
     return b.purity - a.purity || a.complexity - b.complexity
-  }
-
-  function reqPuritySumm(a: Recipe): number {
-    return puritySumm(a.inputs) + puritySumm(a.catalysts)
-  }
-
-  function puritySumm(arr?: Stack[]): number {
-    if (!arr) return 0
-    return arr.reduce(
-      (c, d) =>
-        c +
-        Math.max(
-          ...[...recipeStore.definitionStore.matchedBy(d.ingredient)].map(
-            (o) => o.purity
-          )
-        ),
-      0
-    )
   }
 }

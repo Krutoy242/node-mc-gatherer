@@ -120,7 +120,7 @@ export default class DefinitionStore {
       out[def.id] = {
         viewBox: def.viewBox,
         display: def.display,
-        recipes: def.recipes && [...def.recipes],
+        recipes: def.recipes && [...def.recipes].map((r) => r.index),
       }
     }
     return out

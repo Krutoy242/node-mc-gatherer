@@ -1,37 +1,65 @@
+import Recipe from '../recipes/Recipe'
+
 import Definition from './Definition'
 import { MicroStack } from './Stack'
 
 export default class Inventory {
-  cost = 0.0
-  private list = new Map<Definition, number>()
+  processing = 0.0
 
-  constructor(private treshold: number) {}
+  private steps = new Set<Recipe>()
+  private storage = new Map<Definition, number>()
+  private isDupe = false
 
-  merge(arr: MicroStack[]) {
-    if (this.outOfTreshold()) return
-    arr.forEach((ms) => this.mergeSingle(ms.def, ms.amount))
+  constructor(private treshold: number, private recipe: Recipe) {
+    this.steps.add(recipe)
+    this.processing += 1.0
   }
 
-  mergeList(microStacks: MicroStack[]) {
-    if (this.outOfTreshold()) return
-    microStacks.forEach((ms) => {
-      ms.def.mainRecipe?.catalList?.list.forEach((amount, def) =>
+  addCatalysts(microStacks: MicroStack[]) {
+    if (this.isFutile()) return this
+    microStacks.forEach((ms) => this.mergeSingle(ms.def, ms.amount))
+    return this
+  }
+
+  addCatalystsOf(microStacks: MicroStack[]) {
+    if (this.isFutile()) return this
+    for (const ms of microStacks) {
+      const r = ms.def.mainRecipe
+      if (!r || !r.inventory) return this
+
+      for (const rec of r.inventory.steps) {
+        this.mergeRecipe(rec)
+      }
+
+      for (const [def, amount] of r.inventory.storage) {
         this.mergeSingle(def, amount)
-      )
-    })
+      }
+    }
+    return this
   }
 
-  private outOfTreshold() {
-    return this.cost >= this.treshold
+  isFutile() {
+    return this.isDupe || this.processing >= this.treshold
   }
 
-  private mergeSingle(def: Definition, amount?: number) {
-    if (this.outOfTreshold()) return
-    const oldAmount = this.list.get(def)
+  private mergeRecipe(r: Recipe): void {
+    if (this.isFutile()) return
+    if (r === this.recipe) {
+      this.isDupe = true
+      return
+    }
+    if (this.steps.has(r)) return
+    this.steps.add(r)
+    this.processing += 1.0
+  }
+
+  private mergeSingle(def: Definition, amount?: number): void {
+    if (this.isFutile()) return
+    const oldAmount = this.storage.get(def)
     const newAmount = amount ?? 1
     if (oldAmount !== undefined && oldAmount >= newAmount) return
-    this.list.set(def, newAmount)
+    this.storage.set(def, newAmount)
     const added = newAmount - (oldAmount ?? 0)
-    this.cost += added * def.cost
+    this.processing += added * def.cost
   }
 }

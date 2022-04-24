@@ -46,7 +46,7 @@ export default async function append_JEIExporter(
 
   const sorted = jsonList
     .map((filePath) => [statSync(filePath).size, filePath] as const)
-    .sort(([a], [b]) => b - a)
+    .sort(([a], [b]) => a - b)
     .map(([, v]) => v)
 
   const noRecipes = createFileLogger('noRecipesCategory.log')

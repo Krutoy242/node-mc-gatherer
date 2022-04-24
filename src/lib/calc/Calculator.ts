@@ -38,6 +38,7 @@ export default class Calculator {
 
     while (dirtyRecipes.size) {
       const newDirty = new Set<number>()
+      let recalcDefs = 0
       dirtyRecipes.forEach((r) => {
         const rec = this.recipeStore[r]
         const oldPurity = rec.purity
@@ -56,15 +57,21 @@ export default class Calculator {
           }
 
           for (const def of this.definitionStore.matchedBy(out.ingredient)) {
-            if (this.calcDefinition(def, calc, newDirty, rec))
-              cli.bars?.[1].increment()
+            const isFirtCalc = def.purity <= 0
+            if (this.calcDefinition(def, calc, newDirty, rec)) {
+              if (isFirtCalc) cli.bars?.[1].increment()
+              recalcDefs++
+            }
           }
         })
       })
       dirtyRecipes = newDirty
 
       cli.bars?.[0].update(totalCalculated, {
-        task: 'Recalculated: ' + cli.num(dirtyRecipes.size),
+        task: `Recalculated: ${cli.num(dirtyRecipes.size)}`,
+      })
+      cli.bars?.[1].update({
+        task: `Recalculated: ${cli.num(recalcDefs)}`,
       })
 
       await sleep()
@@ -92,7 +99,7 @@ export default class Calculator {
 
       rec.outputs.forEach(({ ingredient }) => {
         for (const def of this.definitionStore.matchedBy(ingredient)) {
-          ;(def.recipes ??= new Set()).add(index)
+          ;(def.recipes ??= new Set()).add(rec)
         }
       })
 
@@ -121,38 +128,40 @@ export default class Calculator {
    * Calculate recipe
    * @returns `true` if new value calculated, `false` if not changed or unable to
    */
-  private calcRecipe(rec: Recipe): boolean {
+  private calcRecipe(rec: Recipe): boolean | undefined {
     const [catPurity, catDefs] = this.getBestDefs(rec.catalysts)
-    if (catPurity <= 0) return false
+    if (catPurity <= 0) return
 
     const [inPurity, inDefs] = this.getBestDefs(rec.inputs)
-    if (inPurity <= 0) return false
+    if (inPurity <= 0) return
 
     const purity = catPurity * inPurity
-    if (rec.purity > purity) return false
+    if (rec.purity > purity) return
     const samePurity = rec.purity === purity
 
     const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.def.cost, 1.0)
-    if (samePurity && rec.complexity <= cost) return false
+    if (samePurity && rec.complexity <= cost) return
 
     let catalList: Inventory | undefined
-    if (catDefs.length || inDefs.some((d) => d.def.mainRecipe?.catalList)) {
-      catalList = new Inventory(samePurity ? rec.complexity : Infinity)
-      catalList.merge(catDefs)
-      catalList.mergeList(catDefs)
-      catalList.mergeList(inDefs)
+    if (catDefs.length || inDefs.some((d) => d.def.mainRecipe?.inventory)) {
+      const maxCost = samePurity ? rec.complexity - cost : Infinity
+      catalList = new Inventory(maxCost, rec)
+        .addCatalysts(catDefs)
+        .addCatalystsOf(catDefs)
+        .addCatalystsOf(inDefs)
+      if (catalList.isFutile()) return
     }
-    const processing = catalList?.cost ?? 0
+    const processing = catalList?.processing ?? 0
 
     const complexity = cost + processing
-    if (rec.complexity === complexity) return false
-    if (samePurity && rec.complexity < complexity) return false
+    if (rec.complexity === complexity) return
+    if (samePurity && rec.complexity < complexity) return
 
     rec.purity = purity
     rec.cost = cost
     rec.processing = processing
     rec.complexity = complexity
-    rec.catalList = catalList
+    rec.inventory = catalList
 
     return true
   }
@@ -194,14 +203,13 @@ export default class Calculator {
     if (def.purity > cal.purity) return false
     if (def.purity === cal.purity && def.complexity <= cal.complexity)
       return false
-    const isFirtCalc = def.purity === 0
     def.purity = cal.purity
     def.cost = cal.cost
     def.processing = cal.processing
     def.complexity = cal.complexity
     def.mainRecipe = rec
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
-    return isFirtCalc
+    return true
   }
 
   private logInfo(recalculated: number[], allDefs: Definition[]) {
