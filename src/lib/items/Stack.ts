@@ -39,7 +39,7 @@ export default class Stack {
         : ingredient
   }
 
-  public withAmount(newAmount?: number) {
+  withAmount(newAmount?: number) {
     if (this.amount === newAmount) return this
     return new Stack(this.ingredient, newAmount)
   }
@@ -49,7 +49,7 @@ export default class Stack {
     return `${amount}x ${this.ingredient.toString()}`
   }
 
-  public export() {
+  export() {
     return this.toString()
   }
 }

@@ -20,6 +20,7 @@
     "update-sprite": "ts-node src/cli.ts --icons=\"D:/CODING/mc-icons/x32\" --output=\"data/\"",
     "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\"",
     "run:no-jec": "ts-node src/cli.ts --no-jec --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\"",
+    "run:no-jeie": "ts-node src/cli.ts --no-jeie --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\"",
     "run:only-jer": "ts-node src/cli.ts --no-jeie --no-jec --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\""
   },
   "engines": {

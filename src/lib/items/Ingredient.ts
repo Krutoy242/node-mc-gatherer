@@ -20,6 +20,11 @@ export default class Ingredient {
     }
   }
 
+  equals(other: Ingredient): boolean {
+    if (this.items.length !== other.items.length) return false
+    return this.items.every((it) => other.items.includes(it))
+  }
+
   stack(amount?: number): Stack {
     return new Stack(this, amount)
   }
