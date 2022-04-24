@@ -62,6 +62,7 @@ adapters.set(
       '|thermalexpansion__transposer__extract' +
       '|thermalexpansion__transposer__fill' +
       '|ftbquests__lootcrates' +
+      '|ftbquests__quests' +
       '|xu2__machine__extrautils2__generator__culinary'
   ),
   (cat) => (cat.recipes = [])
