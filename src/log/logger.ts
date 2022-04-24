@@ -51,15 +51,37 @@ export function logTreeTo(
       .split('\n')
       .forEach((line) => writeLn(tab + line))
 
-    def.mainRecipe.requirments.forEach((stack) => {
-      const cheapest = [
-        ...recipeStore.definitionStore.matchedBy(stack.ingredient),
-      ].sort(getCheapest)[0]
-      defToString(cheapest, antiloop, tabLevel + 1)
+    const cheapest = [
+      ...new Set(
+        [def.mainRecipe.catalysts, def.mainRecipe.inputs]
+          .filter((s): s is Stack[] => !!s)
+          .map((r) =>
+            r.map(getCheapest).sort((a, b) => b.complexity - a.complexity)
+          )
+          .flat()
+      ),
+    ]
+
+    const onHold = new Set<string>()
+    cheapest.forEach((def) => {
+      if (antiloop.has(def.id)) return
+      onHold.add(def.id)
+      antiloop.add(def.id)
+    })
+
+    cheapest.forEach((def) => {
+      if (onHold.has(def.id)) antiloop.delete(def.id)
+      defToString(def, antiloop, tabLevel + 1)
     })
   }
 
-  function getCheapest(a: Calculable, b: Calculable) {
+  function getCheapest(stack: Stack) {
+    return [...recipeStore.definitionStore.matchedBy(stack.ingredient)].sort(
+      cheapestSort
+    )[0]
+  }
+
+  function cheapestSort(a: Calculable, b: Calculable) {
     return b.purity - a.purity || a.complexity - b.complexity
   }
 }

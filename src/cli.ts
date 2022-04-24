@@ -6,6 +6,7 @@ import { join } from 'path'
 import { terminal as term } from 'terminal-kit'
 import yargs from 'yargs'
 
+import Definition from './lib/items/Definition'
 import { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
 import make_sprite from './tools/make_sprite'
@@ -60,10 +61,19 @@ else {
   ;(async () => {
     const cli = new CLIHelper()
     const exportData = await mcGather(argv as any, cli)
-    saveObjAsJson(exportData, join(argv.output, 'data.json'))
+    saveData(exportData)
     await prompt(exportData)
     term.processExit(0)
   })()
+}
+
+function saveData(exportData: ExportData) {
+  const defsCsv = [...exportData.store.iterate()]
+    .sort((a, b) => b.complexity - a.complexity)
+    .map((d) => d.csv())
+    .join('\n')
+  saveText(Definition.csvHeader + '\n' + defsCsv, 'data_items.csv')
+  saveObjAsJson(exportData.recipes, join(argv.output, 'data_recipes.json'))
 }
 
 async function prompt(exportData: ExportData) {

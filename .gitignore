@@ -9,4 +9,5 @@ coverage
 yarn.lock
 .vscode
 data/
-data.json
+data_recipes.json
+data_items.csv

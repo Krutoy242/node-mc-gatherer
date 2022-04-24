@@ -213,7 +213,6 @@ export default class Calculator {
   }
 
   private logInfo(recalculated: number[], allDefs: Definition[]) {
-    createFileLogger('computed.log')(this.definitionStore.toString())
     createFileLogger('recalc.log')(
       recalculated
         .map((r, i) => [i, r])

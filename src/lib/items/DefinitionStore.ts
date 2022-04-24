@@ -12,12 +12,6 @@ import Definition from './Definition'
 import hardReplaceMap from './HardReplace'
 import Ingredient from './Ingredient'
 
-export interface ExportDefinition {
-  viewBox?: string
-  display?: string
-  recipes?: number[]
-}
-
 export default class DefinitionStore {
   locked = false
   size = 0
@@ -112,18 +106,6 @@ export default class DefinitionStore {
         }
       }
     }
-  }
-
-  export() {
-    const out: { [id: string]: ExportDefinition } = {}
-    for (const def of this.iterate()) {
-      out[def.id] = {
-        viewBox: def.viewBox,
-        display: def.display,
-        recipes: def.recipes && [...def.recipes].map((r) => r.index),
-      }
-    }
-    return out
   }
 
   toString() {

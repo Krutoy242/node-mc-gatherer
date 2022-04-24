@@ -6,12 +6,16 @@ import { MicroStack } from './Stack'
 export default class Inventory {
   processing = 0.0
 
-  private steps = new Set<Recipe>()
+  private stepsRecipes = new Set<Recipe>()
   private storage = new Map<Definition, number>()
   private isDupe = false
 
+  public get steps(): number {
+    return this.isFutile() ? 0 : this.stepsRecipes.size
+  }
+
   constructor(private treshold: number, private recipe: Recipe) {
-    this.steps.add(recipe)
+    this.stepsRecipes.add(recipe)
     this.processing += 1.0
   }
 
@@ -27,7 +31,7 @@ export default class Inventory {
       const r = ms.def.mainRecipe
       if (!r || !r.inventory) return this
 
-      for (const rec of r.inventory.steps) {
+      for (const rec of r.inventory.stepsRecipes) {
         this.mergeRecipe(rec)
       }
 
@@ -48,8 +52,8 @@ export default class Inventory {
       this.isDupe = true
       return
     }
-    if (this.steps.has(r)) return
-    this.steps.add(r)
+    if (this.stepsRecipes.has(r)) return
+    this.stepsRecipes.add(r)
     this.processing += 1.0
   }
 

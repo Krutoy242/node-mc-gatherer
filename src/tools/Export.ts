@@ -1,4 +1,4 @@
-import { ExportDefinition } from '../lib/items/DefinitionStore'
+import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger, logTreeTo } from '../log/logger'
 // import { StackDef } from './lib/Stack'
@@ -11,9 +11,7 @@ export interface ExportEntry {
 }
 
 export interface ExportData {
-  store: {
-    [id: string]: ExportDefinition
-  }
+  store: DefinitionStore
   recipes: {
     outputs: string[]
     inputs?: string[]
@@ -35,7 +33,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   logger('storagedrawers:upgrade_creative:1')
 
   return {
-    store: store.export(),
+    store,
     recipes: recipesStore.export(),
     logger,
   }

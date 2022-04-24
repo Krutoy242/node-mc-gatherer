@@ -39,10 +39,10 @@ export default class Recipe implements Calculable {
   }
 
   toString(options?: { short?: boolean }) {
-    if (options?.short)
-      return ` [${this.source}] ${this.listToString('', 'outputs')}`
+    const recID = `[${this.source}] #${this.index}`
+    if (options?.short) return ` ${recID} ${this.listToString('', 'outputs')}`
     return (
-      `  [${this.source}]` +
+      `  ${recID}` +
       this.listToString('\n  ↱ ', 'outputs') +
       this.listToString('\n  ░ ', 'catalysts') +
       this.listToString('\n  ⮬ ', 'inputs')
