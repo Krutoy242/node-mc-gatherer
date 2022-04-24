@@ -58,10 +58,10 @@ adapters.set(
       '|jei__information' +
       '|jeresources__villager' +
       '|jeresources__worldgen' +
-      '|minecraft__brewing' +
       '|petrified__burn__time' +
       '|thermalexpansion__transposer__extract' +
       '|thermalexpansion__transposer__fill' +
+      '|ftbquests__lootcrates' +
       '|xu2__machine__extrautils2__generator__culinary'
   ),
   (cat) => (cat.recipes = [])
@@ -117,8 +117,7 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
     getIngr('tconstruct:casting:1'),
   ]
 
-  const newRecipes: JEIECustomRecipe[] = []
-  cat.recipes.forEach((rec) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.splice(1, 1) // Remove Duplicate of input liquid
 
     // Table with 0 or 1 cast on table
@@ -133,35 +132,26 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
       ) {
         // Cast is reusable, move it to catalysts
         rec.input.items.splice(1, 1)
-        newRecipes.push({
-          ...rec,
-          catalyst: [...catalyst, getIngr(castOnTable.name)],
-        })
-      } else {
-        newRecipes.push({ ...rec, catalyst })
+        rec.catalyst = [...catalyst, getIngr(castOnTable.name)]
       }
       return
     }
-
-    // Table with many casts on table
-    slot.stacks.forEach((stack) => {
-      newRecipes.push({
-        input: { items: [rec.input.items[0], { ...slot, stacks: [stack] }] },
-        output: rec.output,
-        catalyst,
-      })
-    })
   })
-
-  cat.recipes = newRecipes
 })
 
 adapters.set(/tconstruct__smeltery/, (cat) => {
-  const catalyst = [getIngr('tconstruct:smeltery_controller:0')]
+  cat.catalysts = getIngr('tconstruct:smeltery_controller:0').stacks
 
-  cat.recipes = cat.recipes.map((rec) => {
+  cat.recipes.forEach((rec) => {
     rec.output.items = [rec.output.items[0]]
-    return Object.assign(rec, { catalyst })
+  })
+})
+
+adapters.set(/minecraft__brewing/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    rec.input.items.splice(0, 2)
+    rec.input.items[0].amount = 3
+    rec.output.items[0].amount = 3
   })
 })
 
