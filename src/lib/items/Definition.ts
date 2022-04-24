@@ -1,4 +1,5 @@
 import numeral from 'numeral'
+import { Memoize } from 'typescript-memoize'
 
 import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
@@ -7,7 +8,7 @@ const numFormat = (n: number) => numeral(n).format('0,0.00')
 
 export default class Definition implements Calculable {
   static csvHeader =
-    'Display,Purity,Complexity,Cost,Processing,Steps,ViewBox,Recs,MainRec,Recipes,ID'
+    'Display,Tooltips,Purity,Complexity,Cost,Processing,Steps,ViewBox,Recs,MainRec,Recipes,ID'
 
   static actualMeta(meta?: string): string | undefined {
     return meta === undefined
@@ -39,6 +40,7 @@ export default class Definition implements Calculable {
 
   viewBox?: string
   display?: string
+  tooltips?: string[]
 
   /**
    * Recipes that has this item as output
@@ -65,6 +67,7 @@ export default class Definition implements Calculable {
     const recipes = [...(this.recipes ?? [])]
     return [
       escapeCsv(this.display),
+      this.tooltips?.map(escapeCsv).join('\\n'),
       this.purity,
       this.complexity,
       this.cost,
@@ -78,15 +81,17 @@ export default class Definition implements Calculable {
     ].join(',')
   }
 
-  toString() {
-    return `${getPurity(this.purity)}${complexity(this.complexity)} "${
-      this.display
-    }" ${this.id}`
+  @Memoize(JSON.stringify)
+  toString(options?: any) {
+    return `${getPurity(this.purity)}${this.complexity_s.padStart(
+      options?.complexityPad ?? 0
+    )} "${this.display}" ${this.id}`
   }
-}
 
-function complexity(n: number) {
-  return numFormat(n).padStart(20)
+  @Memoize()
+  public get complexity_s(): string {
+    return numFormat(this.complexity)
+  }
 }
 
 function getPurity(n: number): string {

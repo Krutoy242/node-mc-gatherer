@@ -35,6 +35,7 @@ export function logTreeTo(
 
   function defToString(
     def: Definition,
+    complexityPad = 1,
     antiloop = new Set<string>(),
     tabLevel = 0
   ) {
@@ -42,25 +43,20 @@ export function logTreeTo(
     antiloop.add(def.id)
 
     const tab = '  '.repeat(tabLevel)
-    writeLn(tab + def.toString())
+    writeLn(tab + def.toString({ complexityPad }))
 
-    if (!def.mainRecipe) return
+    if (!def.recipes) return
 
-    def.mainRecipe
+    const mainRecipe = def.mainRecipe ?? [...def.recipes].sort(recipeSorter)[0]
+
+    if (!mainRecipe) return
+
+    mainRecipe
       .toString()
       .split('\n')
       .forEach((line) => writeLn(tab + line))
 
-    const cheapest = [
-      ...new Set(
-        [def.mainRecipe.catalysts, def.mainRecipe.inputs]
-          .filter((s): s is Stack[] => !!s)
-          .map((r) =>
-            r.map(getCheapest).sort((a, b) => b.complexity - a.complexity)
-          )
-          .flat()
-      ),
-    ]
+    const [cheapest, maxPad] = getCheapestArr(mainRecipe)
 
     const onHold = new Set<string>()
     cheapest.forEach((def) => {
@@ -71,8 +67,51 @@ export function logTreeTo(
 
     cheapest.forEach((def) => {
       if (onHold.has(def.id)) antiloop.delete(def.id)
-      defToString(def, antiloop, tabLevel + 1)
+      defToString(def, maxPad, antiloop, tabLevel + 1)
     })
+  }
+
+  function recipeSorter(a: Recipe, b: Recipe) {
+    return sortCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a)
+  }
+
+  function sortCheapest(a: Calculable, b: Calculable) {
+    return b.purity - a.purity || a.complexity - b.complexity
+  }
+
+  function reqPuritySumm(a: Recipe): number {
+    return puritySumm(a.inputs) + puritySumm(a.catalysts)
+  }
+
+  function puritySumm(arr?: Stack[]): number {
+    if (!arr) return 0
+    return arr.reduce(
+      (c, d) =>
+        c +
+        Math.max(
+          ...[...recipeStore.definitionStore.matchedBy(d.ingredient)].map(
+            (o) => o.purity
+          )
+        ),
+      0
+    )
+  }
+
+  function getCheapestArr(main: Recipe) {
+    let maxPad = 0
+    const cheapestArr = [main.catalysts, main.inputs]
+      .filter((s): s is Stack[] => !!s)
+      .map((r) =>
+        r
+          .map((s) => {
+            const d = getCheapest(s)
+            maxPad = Math.max(maxPad, d.complexity_s.length)
+            return d
+          })
+          .sort(expensiveSort)
+      )
+      .flat()
+    return [[...new Set(cheapestArr)], maxPad] as const
   }
 
   function getCheapest(stack: Stack) {
@@ -83,5 +122,9 @@ export function logTreeTo(
 
   function cheapestSort(a: Calculable, b: Calculable) {
     return b.purity - a.purity || a.complexity - b.complexity
+  }
+
+  function expensiveSort(a: Calculable, b: Calculable) {
+    return b.complexity - a.complexity
   }
 }

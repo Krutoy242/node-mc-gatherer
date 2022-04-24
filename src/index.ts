@@ -110,12 +110,12 @@ export default async function mcGather(
     action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
   })
 
-  runTask({
+  await runTask({
     description: 'Assign visuals',
     action: () => definitionStore.assignVisuals(nameMap),
     moreInfo: (i) =>
-      `noDisp: ${cli.num(i.result.noDisplay)}, noVB: ${cli.num(
-        i.result.noViewBox
+      `noDisp: ${cli.num((i.result as any).noDisplay)}, noVB: ${cli.num(
+        (i.result as any).noViewBox
       )}`,
   })
 

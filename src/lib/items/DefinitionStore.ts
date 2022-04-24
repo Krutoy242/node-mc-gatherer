@@ -24,6 +24,7 @@ export default class DefinitionStore {
     sNbt?: string
   ) => Definition
 
+  lookById: (id: string) => Definition | undefined
   lookBased: (
     source: string,
     entry: string,
@@ -50,6 +51,7 @@ export default class DefinitionStore {
         sNbt ?? ''
       ]
     }
+    this.lookById = (id) => this.lookBased(...getBaseFromId(id))
 
     this.getBased = (source, entry, meta, sNbt) => {
       const actualMeta = Definition.actualMeta(meta)
@@ -66,20 +68,24 @@ export default class DefinitionStore {
     }
 
     this.getById = (id) => {
+      return this.getBased(...getBaseFromId(id))
+    }
+
+    function getBaseFromId(
+      id: string
+    ): [source: string, entry: string, meta?: string, sNbt?: string] {
       const actualId = hardReplaceMap[id] ?? id
       const splitted = actualId.split(':')
       if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
 
       // Ore can content : in name
-      if (splitted[0] === 'ore')
-        return this.getBased('ore', splitted.slice(1).join(':'))
-
-      return this.getBased(
+      if (splitted[0] === 'ore') return ['ore', splitted.slice(1).join(':')]
+      return [
         splitted[0],
         splitted[1],
         splitted[2],
-        splitted.slice(3).join(':')
-      )
+        splitted.slice(3).join(':'),
+      ]
     }
   }
 
@@ -116,7 +122,7 @@ export default class DefinitionStore {
       .join('\n')
   }
 
-  assignVisuals(nameMap: NameMap) {
+  async assignVisuals(nameMap: NameMap) {
     const log = {
       noViewBox: createFileLogger('noViewBox.log'),
       noDisplay: createFileLogger('noDisplay.log'),
@@ -126,15 +132,21 @@ export default class DefinitionStore {
     const self = this
 
     for (const def of this.iterate()) {
-      assignVisual(def)
+      await assignVisual(def)
     }
 
     return { noViewBox: log.noViewBox.count, noDisplay: log.noDisplay.count }
 
-    function assignVisual(def: Definition) {
+    async function assignVisual(def: Definition) {
+      const { source, entry, meta, sNbt } = def
+      const jeieId = sNbt
+        ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
+        : def.id
+      const jeieEntry = nameMap[jeieId]
+      if (jeieEntry) def.tooltips = jeieEntry.tooltips
+
       if (def.viewBox && def.display) return
 
-      const { source, entry, meta, sNbt } = def
       const attempts: () => IterableIterator<
         | {
             display?: string
@@ -146,12 +158,7 @@ export default class DefinitionStore {
         if (meta !== undefined && meta !== '0')
           yield self.lookBased(source, entry)
         yield {
-          display:
-            nameMap[
-              sNbt
-                ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
-                : def.id
-            ]?.en_us,
+          display: jeieEntry?.name,
         }
         yield customRender(source, entry, meta, sNbt, (id: string) =>
           self.getById(id)

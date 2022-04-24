@@ -8,10 +8,16 @@ export default function append_viewBoxes(
   storeHelper: DefinitionStore,
   spritesheetRaw: { [itemID: string]: string[][] }
 ) {
-  Object.entries(spritesheetRaw).forEach(([def, list]) => {
+  Object.entries(spritesheetRaw).forEach(([id, list]) => {
     list.forEach(([viewBox, sNbt]) => {
-      storeHelper.getById(def).viewBox ??= viewBox
-      if (sNbt) storeHelper.getById(`${def}:${sNbt}`).viewBox ??= viewBox
+      applyVB(id, viewBox)
+      if (sNbt) applyVB(`${id}:${sNbt}`, viewBox)
     })
   })
+
+  function applyVB(id: string, viewBox: string) {
+    const def = storeHelper.lookById(id)
+    if (!def) return
+    def.viewBox ??= viewBox
+  }
 }
