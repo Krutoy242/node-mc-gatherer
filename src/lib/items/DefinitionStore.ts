@@ -1,4 +1,3 @@
-/* eslint-disable guard-for-in */
 /* =============================================
 =           Additionals Store
 ============================================= */
@@ -11,6 +10,7 @@ import { createFileLogger } from '../../log/logger'
 import Definition from './Definition'
 import hardReplaceMap from './HardReplace'
 import Ingredient from './Ingredient'
+import { NBTMap, nbtMatch } from './NBT'
 
 export default class DefinitionStore {
   locked = false
@@ -186,12 +186,7 @@ export default class DefinitionStore {
 
   *matchedBy(ingr: Ingredient): IterableIterator<Definition> {
     const found = this.ingrCache.get(ingr)
-    if (found) {
-      for (const d of found) {
-        yield d
-      }
-      return
-    }
+    if (found) return yield* found
     const arr: Definition[] = []
 
     if (!this.oreDict)
@@ -225,21 +220,48 @@ export default class DefinitionStore {
       const se = this.tree[def.source][def.entry]
       for (const meta in se) {
         if (meta === '32767' || meta === '*') continue
-        const sem = se[meta]
-        for (const sNbt in sem) {
-          yield sem[sNbt]
-        }
+        yield* Object.values(se[meta])
       }
     } else {
-      const metaMap = this.tree[def.source][def.entry][def.meta ?? '']
+      const sNbtMap = this.tree[def.source][def.entry][def.meta ?? '']
       if (!def.sNbt) {
-        for (const sNbt in metaMap) {
-          yield metaMap[sNbt]
+        for (const sNbt in sNbtMap) {
+          yield sNbtMap[sNbt]
         }
       } else {
-        if (metaMap['*']) yield metaMap['*']
-        yield def
+        if (sNbtMap['*']) yield sNbtMap['*']
+        yield* this.matchedByNbt(def, sNbtMap)
       }
+    }
+  }
+
+  private *matchedByNbt(
+    def: Definition,
+    sNbtMap: { [sNbt: string]: Definition }
+  ): IterableIterator<Definition> {
+    // Empty nbt, any nbt match
+    if (!def.nbt) return yield* Object.values(sNbtMap)
+
+    // Wildcarded nbt - any except itself match
+    if (def.nbt === '*') {
+      for (const sNbt in sNbtMap) {
+        const d = sNbtMap[sNbt]
+        if (d !== def) yield d
+      }
+    }
+
+    const nbt = def.nbt as NBTMap
+
+    for (const sNbt in sNbtMap) {
+      const d = sNbtMap[sNbt]
+
+      // Wildcarded nbt or same def
+      if (d.nbt === '*' || sNbt === def.sNbt || def === d) {
+        yield d
+        continue
+      }
+
+      if (nbtMatch(nbt, d.nbt)) yield d
     }
   }
 }

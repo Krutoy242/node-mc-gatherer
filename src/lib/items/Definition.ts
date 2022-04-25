@@ -4,6 +4,8 @@ import { Memoize } from 'typescript-memoize'
 import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
 
+import { NBT, parseSNbt } from './NBT'
+
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
 export default class Definition implements Calculable {
@@ -86,6 +88,11 @@ export default class Definition implements Calculable {
     return `${getPurity(this.purity)}${this.complexity_s.padStart(
       options?.complexityPad ?? 0
     )} "${this.display}" ${this.id}`
+  }
+
+  @Memoize()
+  public get nbt(): NBT | undefined {
+    return parseSNbt(this.sNbt)
   }
 
   @Memoize()

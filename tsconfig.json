@@ -40,7 +40,10 @@
 
     "lib": ["es2017"],
     "types": ["node"],
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": ["./src/types"]
+  },
+  "ts-node": {
+    "files": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules/**"],
