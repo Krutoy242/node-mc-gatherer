@@ -11,6 +11,8 @@ import Recipe from '../recipes/Recipe'
 
 import Calculable from './Calculable'
 
+const logRecalc = createFileLogger('tmp_recalcOf.log')
+
 // eslint-disable-next-line no-promise-executor-return
 const sleep = () => new Promise((r) => setTimeout(r, 1))
 
@@ -36,45 +38,36 @@ export default class Calculator {
     const recalculated = new Array<number>(this.recipeStore.length).fill(0)
     let totalCalculated = 0
 
+    let iters = 0
+    let recalcDefs = 0
     while (dirtyRecipes.size) {
-      const newDirty = new Set<number>()
-      let recalcDefs = 0
-      dirtyRecipes.forEach((r) => {
-        const rec = this.recipeStore[r]
-        const oldPurity = rec.purity
-        if (!this.calcRecipe(rec)) return
+      iters++
 
-        recalculated[r]++
-        if (oldPurity <= 0) totalCalculated++
+      const [r] = dirtyRecipes
+      dirtyRecipes.delete(r)
 
-        rec.outputs.forEach((out) => {
-          const def_cost = rec.cost / (out.amount ?? 1)
-          const calc = {
-            purity: rec.purity,
-            cost: def_cost,
-            processing: rec.processing,
-            complexity: def_cost + rec.processing,
-          }
+      const rec = this.recipeStore[r]
+      const oldPurity = rec.purity
 
-          for (const def of this.definitionStore.matchedBy(out.ingredient)) {
-            const isFirtCalc = def.purity <= 0
-            if (this.calcDefinition(def, calc, newDirty, rec)) {
-              if (isFirtCalc) cli.bars?.[1].increment()
-              recalcDefs++
-            }
-          }
+      if (!this.calcRecipe(rec)) continue
+
+      recalculated[r]++
+      if (oldPurity <= 0) totalCalculated++
+
+      rec.outputs.forEach((stack) => {
+        recalcDefs += this.calcStack(stack, rec, dirtyRecipes, cli)
+      })
+
+      if (iters % 10000 === 0) {
+        cli.bars?.[0].update(totalCalculated, {
+          task: `In queue: ${cli.num(dirtyRecipes.size)}`,
         })
-      })
-      dirtyRecipes = newDirty
-
-      cli.bars?.[0].update(totalCalculated, {
-        task: `Recalculated: ${cli.num(dirtyRecipes.size)}`,
-      })
-      cli.bars?.[1].update({
-        task: `Recalculated: ${cli.num(recalcDefs)}`,
-      })
-
-      await sleep()
+        cli.bars?.[1].update({
+          task: `Recalculated: ${cli.num(recalcDefs)}`,
+        })
+        recalcDefs = 0
+        await sleep()
+      }
     }
     cli.multBarStop?.()
     await sleep()
@@ -191,6 +184,32 @@ export default class Calculator {
     return [purity, defs]
   }
 
+  private calcStack(
+    stack: Stack,
+    rec: Recipe,
+    dirtyRecipes: Set<number>,
+    cli: CLIHelper
+  ) {
+    let recalcDefs = 0
+    const def_cost = rec.cost / (stack.amount ?? 1)
+    const calc = {
+      purity: rec.purity,
+      cost: def_cost,
+      processing: rec.processing,
+      complexity: def_cost + rec.processing,
+    }
+
+    for (const def of this.definitionStore.matchedBy(stack.ingredient)) {
+      const isFirtCalc = def.purity <= 0
+      if (this.calcDefinition(def, calc, dirtyRecipes, rec)) {
+        if (isFirtCalc) cli.bars?.[1].increment()
+        recalcDefs++
+      }
+    }
+
+    return recalcDefs
+  }
+
   /**
    * @returns `true` if recipe was calculated for the first time
    */
@@ -203,6 +222,30 @@ export default class Calculator {
     if (def.purity > cal.purity) return false
     if (def.purity === cal.purity && def.complexity <= cal.complexity)
       return false
+
+    /* if (def.id === 'mekanism:gastank:0:{tier:4}') {
+      if (def.mainRecipe) {
+        const diff = def.mainRecipe.inventory?.difference(rec?.inventory)
+
+        ;(
+          [
+            ['➖', 'removed'],
+            ['➕', 'added'],
+          ] as const
+        ).forEach(([symbol, key]) => {
+          if (diff?.[key].length)
+            logRecalc(
+              `${symbol}\n    ${diff?.[key]
+                .map((r) =>
+                  r.toString({ detailed: true }).split('\n').join('\n      ')
+                )
+                .join('\n    ')}\n`
+            )
+        })
+      }
+      logRecalc(rec?.toString({ detailed: true }) + '\n')
+    } */
+
     def.purity = cal.purity
     def.cost = cal.cost
     def.processing = cal.processing
@@ -229,7 +272,10 @@ export default class Calculator {
     createFileLogger('needRecipes.log')(
       this.definitionStore
         .getIngrsNeedRecipe()
-        .map(([n, ingr]) => n + ' ' + ingr.toString({ names: true }))
+        .map(
+          ([n, ingr]) =>
+            n + ' ' + ingr.toString({ names: true }).substring(0, 120)
+        )
         .join('\n')
     )
   }
