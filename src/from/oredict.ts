@@ -22,7 +22,11 @@ export default function genOreDictionary(crafttweakerLogTxt: string) {
 
     const items = [...groups.block.matchAll(itemCapture)]
       .map((m) => m.groups as Record<string, string>)
-      .sort((a, b) => prefferedModSort(a!.source, b!.source))
+      .sort(
+        (a, b) =>
+          prefferedModSort(a!.source, b!.source) ||
+          naturalSort(a!.source, b!.source)
+      )
 
     if (!items[0])
       throw new Error('OreDict parsing error for block: ' + groups.block)
