@@ -2,6 +2,8 @@
 =           Additionals Store
 ============================================= */
 
+import _ from 'lodash'
+
 import customRender from '../../custom/visual'
 import { NameMap } from '../../from/jeie/NameMap'
 import { OredictMap } from '../../from/oredict'
@@ -120,6 +122,21 @@ export default class DefinitionStore {
       .sort((a, b) => a.complexity - b.complexity)
       .map((d) => d.toString())
       .join('\n')
+  }
+
+  getIngrsNeedRecipe(): [number, Ingredient][] {
+    const arr = _.uniqBy([...this.ingrCache], ([g]) => g.id)
+    return arr
+      .filter(([, d]) => d.every((d) => d.purity <= 0))
+      .map(
+        ([g, d]) =>
+          [
+            d.reduce((c, d) => Math.max(c, d.dependencies?.size ?? 0), 0),
+            g,
+          ] as [number, Ingredient]
+      )
+      .filter(([a]) => a > 0)
+      .sort(([a], [b]) => b - a)
   }
 
   async assignVisuals(nameMap: NameMap) {

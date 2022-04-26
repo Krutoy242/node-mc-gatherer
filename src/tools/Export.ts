@@ -1,3 +1,5 @@
+import open from 'open'
+
 import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger, logTreeTo } from '../log/logger'
@@ -23,14 +25,16 @@ export interface ExportData {
 export default function exportData(recipesStore: RecipeStore): ExportData {
   const store = recipesStore.definitionStore
 
-  function logger(id: string): boolean {
+  function logger(id: string, idPath = false): boolean {
     let def = store.getById(id)
-    const fileName = id.replace(/[/\\?%*:|"<>]/g, '_')
-    const write = createFileLogger(`tree/${fileName}.log`)
+    const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
+    const filePath = `tree/${fileName}.log`
+    const write = createFileLogger(filePath)
     logTreeTo(def, recipesStore, write)
+    open(filePath, { wait: true })
     return true
   }
-  logger('storagedrawers:upgrade_creative:1')
+  logger('storagedrawers:upgrade_creative:1', true)
 
   return {
     store,

@@ -15,10 +15,15 @@ export interface CountableFunction {
 }
 
 export function createFileLogger(logFileName: string): CountableFunction {
-  mkdirSync(parse('logs/' + logFileName).dir, { recursive: true })
+  let firstCall = true
   const filePath = join('logs/', logFileName)
-  writeFileSync(filePath, '')
   const fnc = function (...args: unknown[]) {
+    if (firstCall) {
+      firstCall = false
+      mkdirSync(parse('logs/' + logFileName).dir, { recursive: true })
+      writeFileSync(filePath, '')
+    }
+
     appendFileSync(filePath, args.map((v) => String(v)).join(' '))
     fnc.count = (fnc.count ?? 0) + 1
   } as CountableFunction
@@ -54,7 +59,7 @@ export function logTreeTo(
     mainRecipe
       .toString()
       .split('\n')
-      .forEach((line) => writeLn(tab + line))
+      .forEach((line) => writeLn(tab + '  ' + line))
 
     const [cheapest, maxPad] = getCheapestArr(mainRecipe)
 
@@ -114,7 +119,7 @@ export function logTreeTo(
     return [[...new Set(cheapestArr)], maxPad] as const
   }
 
-  function getCheapest(stack: Stack) {
+  function getCheapest(stack: Stack): Definition {
     return [...recipeStore.definitionStore.matchedBy(stack.ingredient)].sort(
       cheapestSort
     )[0]

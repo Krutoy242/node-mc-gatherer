@@ -84,10 +84,16 @@ export default class Definition implements Calculable {
   }
 
   @Memoize(JSON.stringify)
-  toString(options?: any) {
-    return `${getPurity(this.purity)}${this.complexity_s.padStart(
-      options?.complexityPad ?? 0
-    )} "${this.display}" ${this.id}`
+  toString(options?: {
+    complexityPad?: number
+    noPurity?: boolean
+    noComplexity?: boolean
+  }) {
+    return `${options?.noPurity ? '' : getPurity(this.purity)}${
+      options?.noComplexity
+        ? ''
+        : this.complexity_s.padStart(options?.complexityPad ?? 0)
+    } "${this.display}" ${this.id}`
   }
 
   @Memoize()

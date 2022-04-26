@@ -19,6 +19,19 @@ export default class Inventory {
     this.processing += 1.0
   }
 
+  difference(other?: Inventory) {
+    const result = { added: [] as Recipe[], removed: [] as Recipe[] }
+    if (!other) return result
+
+    this.stepsRecipes.forEach((rec) => {
+      if (!other.stepsRecipes.has(rec)) result.removed.push(rec)
+    })
+    other.stepsRecipes.forEach((rec) => {
+      if (!this.stepsRecipes.has(rec)) result.added.push(rec)
+    })
+    return result
+  }
+
   addCatalysts(microStacks: MicroStack[]) {
     if (this.isFutile()) return this
     microStacks.forEach((ms) => this.mergeSingle(ms.def, ms.amount))

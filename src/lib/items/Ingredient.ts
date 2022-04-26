@@ -8,16 +8,22 @@ export default class Ingredient {
   ): Ingredient {
     if (str === '') throw new Error('Ingredient cannot be empty')
     const items = str.split('|').map((s) => getById(s))
-    return new Ingredient(items)
+    const g = new Ingredient(items)
+    g.id = str
+    return g
   }
 
-  constructor(public readonly items: Definition[]) {
+  id: string
+
+  constructor(public readonly items: Definition[], id?: string) {
     if (items.length === 0)
       throw new Error('Ingredient must content at least 1 Definition')
 
     if (items.length > 2000) {
-      throw new Error('Ingredient list probably too large')
+      throw new Error('Ingredient list too large, might be error')
     }
+
+    this.id = id ?? items.map((d) => d.id).join('|')
   }
 
   equals(other: Ingredient): boolean {
@@ -29,7 +35,13 @@ export default class Ingredient {
     return new Stack(this, amount)
   }
 
-  toString(): string {
-    return this.items.map((d) => d.id).join('|')
+  toString(options?: { names?: boolean }): string {
+    return this.items
+      .map((d) =>
+        options?.names
+          ? d.toString({ noPurity: true, noComplexity: true })
+          : d.id
+      )
+      .join('|')
   }
 }

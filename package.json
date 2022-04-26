@@ -34,6 +34,7 @@
     "lodash": "^4.17.21",
     "mc-iexporter-iterator": "^1.0.0",
     "numeral": "^2.0.6",
+    "open": "^8.4.0",
     "terminal-kit": "^2.4.0",
     "typescript-memoize": "^1.1.0",
     "yargs": "^17.4.0"
@@ -113,6 +114,7 @@
       "WebAssembly": true
     },
     "rules": {
+      "guard-for-in": "off",
       "max-nested-callbacks": "off",
       "no-sequences": "off",
       "@typescript-eslint/explicit-member-accessibility": 0,

@@ -81,7 +81,7 @@ export default class Calculator {
 
     cli.write('Writing computed in file...')
     const allDefs = [...this.definitionStore.iterate()]
-    this.logInfo(recalculated, allDefs)
+    this.logInfo(recalculated)
     const totalWithPurity = allDefs.filter((def) => def.purity > 0).length
 
     return totalWithPurity
@@ -209,10 +209,11 @@ export default class Calculator {
     def.complexity = cal.complexity
     def.mainRecipe = rec
     def.dependencies?.forEach((r) => dirtyRecipes.add(r))
+
     return true
   }
 
-  private logInfo(recalculated: number[], allDefs: Definition[]) {
+  private logInfo(recalculated: number[]) {
     createFileLogger('recalc.log')(
       recalculated
         .map((r, i) => [i, r])
@@ -226,11 +227,9 @@ export default class Calculator {
     )
 
     createFileLogger('needRecipes.log')(
-      allDefs
-        .filter((d) => d.purity <= 0 && d.dependencies?.size)
-        .map((d) => [d.dependencies!.size, d.toString()] as const)
-        .sort(([a], [b]) => b - a)
-        .map(([n, s]) => `${n} ${s}`)
+      this.definitionStore
+        .getIngrsNeedRecipe()
+        .map(([n, ingr]) => n + ' ' + ingr.toString({ names: true }))
         .join('\n')
     )
   }
