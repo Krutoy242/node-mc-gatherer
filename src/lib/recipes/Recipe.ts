@@ -11,19 +11,17 @@ export default class Recipe implements Calculable {
   cost = 0.0
   processing = 0.0
   purity = 0.0
-
-  index!: number
-
   inventory?: Inventory
 
   readonly requirments: Stack[]
 
   constructor(
-    /** Recipe source (category name) */
+    public readonly index: number,
+    /** Category name */
     private source: string,
-    public outputs: Stack[],
-    public inputs?: Stack[],
-    public catalysts?: Stack[]
+    public readonly outputs: Stack[],
+    public readonly inputs?: Stack[],
+    public readonly catalysts?: Stack[]
   ) {
     this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
   }

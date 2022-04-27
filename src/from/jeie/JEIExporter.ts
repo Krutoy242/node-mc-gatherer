@@ -71,11 +71,11 @@ export default async function append_JEIExporter(
     const defaultCatalysts = category.catalysts.map(makeStack)
 
     let recipesLength = customRecipes.length
-    const addRecipe = recHelper.forCategory(fileName)
     customRecipes.forEach((rec) => {
       const outputs = convertIngredients(rec.output.items)
       outputs.length &&
-        addRecipe(
+        recHelper.addRecipe(
+          fileName,
           outputs,
           convertIngredients(rec.input.items),
           rec.catalyst ? convertIngredients(rec.catalyst) : defaultCatalysts

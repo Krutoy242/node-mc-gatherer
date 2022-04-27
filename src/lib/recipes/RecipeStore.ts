@@ -45,9 +45,7 @@ export default class RecipeStore {
     }
 
     const recipeLists = this.uniformCatalysts(outputs, inputs, catalysts)
-
-    const recipe = new Recipe(categoryName, ...recipeLists)
-    recipe.index = this.store.push(recipe) - 1
+    this.store.push(new Recipe(this.store.length, categoryName, ...recipeLists))
 
     return true
   }

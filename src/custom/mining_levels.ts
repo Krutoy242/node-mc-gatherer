@@ -29,7 +29,7 @@ export default function getTool(
   level: number
 ): string | undefined {
   if (toolClass === 'jackhammer') return 'advancedrocketry:jackhammer:0'
-  if (toolClass === 'shovel' && level === 0) return
+  if (level === 0 && toolClass !== 'pickaxe') return
 
   const tool = appropriateTools[toolClass]
   if (!tool) return

@@ -83,7 +83,6 @@ export default class Definition implements Calculable {
     ].join(',')
   }
 
-  @Memoize(JSON.stringify)
   toString(options?: {
     complexityPad?: number
     noPurity?: boolean
@@ -101,7 +100,6 @@ export default class Definition implements Calculable {
     return parseSNbt(this.sNbt)
   }
 
-  @Memoize()
   public get complexity_s(): string {
     return numFormat(this.complexity)
   }
