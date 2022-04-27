@@ -150,6 +150,10 @@ export default class Calculator {
     if (rec.complexity === complexity) return
     if (samePurity && rec.complexity < complexity) return
 
+    // Unsignificant difference, probably loop
+    const diffFactor = (rec.complexity - complexity) / complexity
+    if (samePurity && diffFactor < 0.0001) return
+
     rec.purity = purity
     rec.cost = cost
     rec.processing = processing
