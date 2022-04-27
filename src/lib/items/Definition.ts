@@ -1,6 +1,7 @@
 import numeral from 'numeral'
 import { Memoize } from 'typescript-memoize'
 
+import { createFileLogger } from '../../log/logger'
 import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
 
@@ -8,7 +9,9 @@ import { NBT, parseSNbt } from './NBT'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
-export default class Definition implements Calculable {
+const logRecalc = createFileLogger('tmp_recalcOf.log')
+
+export default class Definition extends Calculable {
   static csvHeader =
     'Display,Tooltips,Purity,Complexity,Cost,Processing,Steps,ViewBox,Recs,MainRec,Recipes,ID'
 
@@ -35,11 +38,6 @@ export default class Definition implements Calculable {
 
   readonly id: string
 
-  complexity = 0.0
-  cost = 0.0
-  processing = 0.0
-  purity = 0.0
-
   viewBox?: string
   display?: string
   tooltips?: string[]
@@ -50,6 +48,7 @@ export default class Definition implements Calculable {
   recipes?: Set<Recipe>
 
   mainRecipe?: Recipe
+  mainRecipeAmount?: number
 
   /**
    * Recipes that depends on this item
@@ -62,6 +61,7 @@ export default class Definition implements Calculable {
     public readonly meta?: string,
     public readonly sNbt?: string
   ) {
+    super()
     this.id = Definition.baseToId(source, entry, meta, sNbt)
   }
 
@@ -95,6 +95,65 @@ export default class Definition implements Calculable {
     } "${this.display}" ${this.id}`
   }
 
+  /**
+   * Suggest recipe to be chosen as main
+   * @returns `true` if calculable values was changed
+   */
+  suggest(rec: Recipe, amount: number): boolean {
+    if (this.purity > rec.purity) return false
+
+    // Just set recipe values, because they are purest
+    if (this.purity < rec.purity) {
+      this.setRecipe(rec, amount)
+      return true
+    }
+
+    // Recalculate old recipe
+    if (this.mainRecipe !== rec) {
+      if (this.mainRecipe?.calculate()) this.calculate()
+    }
+
+    if (this.complexity <= rec.complexity) return false
+
+    if (this.id === 'fluid:red_matter') {
+      if (this.mainRecipe) {
+        const diff = this.mainRecipe.inventory?.difference(rec?.inventory)
+        const filds = [
+          ['➖', 'removed'],
+          ['➕', 'added'],
+        ] as const
+        filds.forEach(([symbol, key]) => {
+          if (!diff?.[key].length) return
+          const list = diff?.[key].map((r) =>
+            r.toString({ detailed: true }).split('\n').join('\n      ')
+          )
+          logRecalc(`${symbol}\n    ${list.join('\n    ')}\n`)
+        })
+      }
+      logRecalc(this.toString() + '\n')
+      logRecalc(rec?.toString({ detailed: true }) + '\n')
+    }
+
+    this.setRecipe(rec, amount)
+    return true
+  }
+
+  calculate(): boolean {
+    const main = this.mainRecipe
+    if (!main) return false
+
+    const newCost = main.cost / (this.mainRecipeAmount ?? 1)
+    if (this.processing === main.processing && this.cost === newCost)
+      return false
+
+    this.set({
+      purity: main.purity,
+      cost: newCost,
+      processing: main.processing,
+    })
+    return true
+  }
+
   @Memoize()
   public get nbt(): NBT | undefined {
     return parseSNbt(this.sNbt)
@@ -102,6 +161,12 @@ export default class Definition implements Calculable {
 
   public get complexity_s(): string {
     return numFormat(this.complexity)
+  }
+
+  private setRecipe(rec: Recipe, amount: number) {
+    this.mainRecipe = rec
+    this.mainRecipeAmount = amount
+    this.calculate()
   }
 }
 

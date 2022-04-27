@@ -1,16 +1,13 @@
 import numeral from 'numeral'
 
 import Calculable from '../calc/Calculable'
+import Definition from '../items/Definition'
 import Inventory from '../items/Inventory'
-import Stack from '../items/Stack'
+import Stack, { MicroStack } from '../items/Stack'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
-export default class Recipe implements Calculable {
-  complexity = 0.0
-  cost = 0.0
-  processing = 0.0
-  purity = 0.0
+export default class Recipe extends Calculable {
   inventory?: Inventory
 
   readonly requirments: Stack[]
@@ -23,6 +20,7 @@ export default class Recipe implements Calculable {
     public readonly inputs?: Stack[],
     public readonly catalysts?: Stack[]
   ) {
+    super()
     this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
   }
 
@@ -41,6 +39,49 @@ export default class Recipe implements Calculable {
     }
   }
 
+  /**
+   * Calculate recipe
+   * @returns `true` if new value calculated, `false` if not changed or unable to
+   */
+  calculate(): boolean {
+    const [catPurity, catDefs] = this.getBestDefs(this.catalysts)
+    if (catPurity <= 0) return false
+
+    const [inPurity, inDefs] = this.getBestDefs(this.inputs)
+    if (inPurity <= 0) return false
+
+    const purity = catPurity * inPurity
+    if (this.purity > purity) return false
+
+    const samePurity = this.purity === purity
+    const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.def.cost, 1.0)
+    if (samePurity && this.complexity <= cost) return false
+
+    let catalList: Inventory | undefined
+    if (catDefs.length || inDefs.some((d) => d.def.mainRecipe?.inventory)) {
+      const maxCost = samePurity ? this.complexity - cost : Infinity
+      catalList = new Inventory(maxCost, this)
+        .addCatalysts(catDefs)
+        .addCatalystsOf(catDefs)
+        .addCatalystsOf(inDefs)
+      if (catalList.isFutile()) return false
+    }
+    const processing = catalList?.processing ?? 0
+
+    const complexity = cost + processing
+    if (this.complexity === complexity) return false
+    if (samePurity && this.complexity < complexity) return false
+
+    // Unsignificant difference, probably loop
+    const diffFactor = (this.complexity - complexity) / complexity
+    if (samePurity && diffFactor < 0.0001) return false
+
+    this.set({ purity, cost, processing })
+    this.inventory = catalList
+
+    return true
+  }
+
   toString(options?: { short?: boolean; detailed?: boolean }) {
     const recID = `[${this.source}] #${this.index}`
     if (options?.short) return ` ${recID} ${this.listToString('', 'outputs')}`
@@ -52,6 +93,31 @@ export default class Recipe implements Calculable {
       this.listToString('\n░ ', 'catalysts') +
       this.listToString('\n⮬ ', 'inputs')
     )
+  }
+
+  private getBestDefs(stacks?: Stack[]): [purity: number, defs: MicroStack[]] {
+    if (!stacks) return [1.0, []]
+    let purity = 1.0
+    const defs: MicroStack[] = []
+    for (const stack of stacks) {
+      let minComp = Infinity
+      let maxPur = 0.0
+      let bestDef: Definition | undefined
+      for (const def of stack.ingredient.matchedBy()) {
+        if (
+          def.purity > maxPur ||
+          (def.purity === maxPur && def.complexity < minComp)
+        ) {
+          bestDef = def
+          maxPur = def.purity
+          minComp = def.complexity
+        }
+      }
+      if (maxPur === 0) return [0, []]
+      purity *= maxPur
+      defs.push({ amount: stack.amount, def: bestDef as Definition })
+    }
+    return [purity, defs]
   }
 
   private listToString(

@@ -14,6 +14,7 @@ export default class Ingredient {
   }
 
   id: string
+  private matchedCache?: Definition[]
 
   constructor(public readonly items: Definition[], id?: string) {
     if (items.length === 0)
@@ -24,6 +25,20 @@ export default class Ingredient {
     }
 
     this.id = id ?? items.map((d) => d.id).join('|')
+  }
+
+  hasMatchedCache() {
+    return !!this.matchedCache
+  }
+
+  matchedBy() {
+    if (!this.matchedCache)
+      throw new Error('Trying to acces ingredient matcher before cache')
+    return this.matchedCache
+  }
+
+  setMatchedCache(cache: Definition[]) {
+    this.matchedCache = cache
   }
 
   equals(other: Ingredient): boolean {

@@ -26,11 +26,12 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   const store = recipesStore.definitionStore
 
   function logger(id: string, idPath = false): boolean {
-    let def = store.getById(id)
+    let def = store.lookById(id)
+    if (!def) return false
     const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
     const filePath = `tree/${fileName}.log`
     const write = createFileLogger(filePath)
-    logTreeTo(def, recipesStore, write)
+    logTreeTo(def, write)
     open(filePath, { wait: true })
     return true
   }

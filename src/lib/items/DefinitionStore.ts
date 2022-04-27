@@ -34,7 +34,6 @@ export default class DefinitionStore {
     sNbt?: string
   ) => Definition | undefined
 
-  private ingrCache = new Map<Ingredient, Definition[]>()
   private oreDict?: { [oreName: string]: Definition[] }
 
   private tree: {
@@ -202,8 +201,7 @@ export default class DefinitionStore {
   }
 
   *matchedBy(ingr: Ingredient): IterableIterator<Definition> {
-    const found = this.ingrCache.get(ingr)
-    if (found) return yield* found
+    if (ingr.hasMatchedCache()) return yield* ingr.matchedBy()
     const arr: Definition[] = []
 
     if (!this.oreDict)
@@ -229,7 +227,7 @@ export default class DefinitionStore {
         }
       }
     }
-    this.ingrCache.set(ingr, arr)
+    ingr.setMatchedCache(arr)
   }
 
   private *matchedByNonOre(def: Definition): IterableIterator<Definition> {

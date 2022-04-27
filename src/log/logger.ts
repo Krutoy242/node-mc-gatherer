@@ -30,11 +30,7 @@ export function createFileLogger(logFileName: string): CountableFunction {
   return fnc
 }
 
-export function logTreeTo(
-  def: Definition,
-  recipeStore: RecipeStore,
-  write: (str: string) => void
-) {
+export function logTreeTo(def: Definition, write: (str: string) => void) {
   const writeLn = (s: string) => write(s + '\n')
   defToString(def)
 
@@ -92,12 +88,7 @@ export function logTreeTo(
     if (!arr) return 0
     return arr.reduce(
       (c, d) =>
-        c +
-        Math.max(
-          ...[...recipeStore.definitionStore.matchedBy(d.ingredient)].map(
-            (o) => o.purity
-          )
-        ),
+        c + Math.max(...[...d.ingredient.matchedBy()].map((o) => o.purity)),
       0
     )
   }
@@ -120,9 +111,7 @@ export function logTreeTo(
   }
 
   function getCheapest(stack: Stack): Definition {
-    return [...recipeStore.definitionStore.matchedBy(stack.ingredient)].sort(
-      cheapestSort
-    )[0]
+    return [...stack.ingredient.matchedBy()].sort(cheapestSort)[0]
   }
 
   function cheapestSort(a: Calculable, b: Calculable) {
