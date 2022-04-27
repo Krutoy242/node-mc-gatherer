@@ -90,9 +90,10 @@ adapters.set(/minecraft__crafting/, (cat) => {
 
   const crTable = getIngr('minecraft:crafting_table:0')
   newRecs = newRecs.map((rec) => {
-    const x = rec.input.items.map((slot) => slot.x)
-    const y = rec.input.items.map((slot) => slot.y)
-    const isSimple = max(...x) - min(...x) <= 18 && max(...y) - min(...y) <= 18
+    const [x, y] = (['x', 'y'] as const).map((k) =>
+      rec.input.items.filter((s) => s.stacks.length).map((s) => s[k])
+    )
+    const isSimple = max(max(...x) - min(...x), max(...y) - min(...y)) <= 18
     return Object.assign(rec, { catalyst: isSimple ? [] : [crTable] })
   })
 
