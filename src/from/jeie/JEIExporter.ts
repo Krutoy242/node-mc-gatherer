@@ -98,6 +98,6 @@ export default async function append_JEIExporter(
   }
 
   function getFromStacks(stacks: JEIEItem[]): Ingredient {
-    return new Ingredient(stacks.map((s) => getById(fullId(s))))
+    return Ingredient.fromDefs(stacks.map((s) => getById(fullId(s))))
   }
 }

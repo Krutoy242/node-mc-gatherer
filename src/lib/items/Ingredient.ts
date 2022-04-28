@@ -2,21 +2,31 @@ import Definition from './Definition'
 import Stack from './Stack'
 
 export default class Ingredient {
+  static store = new Map<string, Ingredient>()
+
   static fromString(
-    str: string,
+    id: string,
     getById: (id: string) => Definition
   ): Ingredient {
-    if (str === '') throw new Error('Ingredient cannot be empty')
-    const items = str.split('|').map((s) => getById(s))
-    const g = new Ingredient(items)
-    g.id = str
-    return g
+    if (id === '') throw new Error('Ingredient cannot be empty')
+    return (
+      Ingredient.store.get(id) ??
+      new Ingredient(
+        id.split('|').map((s) => getById(s)),
+        id
+      )
+    )
+  }
+
+  static fromDefs(items: Definition[]): Ingredient {
+    const id = items.map((d) => d.id).join('|')
+    return Ingredient.store.get(id) ?? new Ingredient(items, id)
   }
 
   id: string
   private matchedCache?: Definition[]
 
-  constructor(public readonly items: Definition[], id?: string) {
+  private constructor(public readonly items: Definition[], id: string) {
     if (items.length === 0)
       throw new Error('Ingredient must content at least 1 Definition')
 
@@ -24,7 +34,15 @@ export default class Ingredient {
       throw new Error('Ingredient list too large, might be error')
     }
 
-    this.id = id ?? items.map((d) => d.id).join('|')
+    this.id = id
+    Ingredient.store.set(id, this)
+  }
+
+  public dependenciesCount(): number {
+    return this.items.reduce(
+      (c, d) => Math.max(c, d.dependencies?.size ?? 0),
+      0
+    )
   }
 
   hasMatchedCache() {
@@ -52,7 +70,7 @@ export default class Ingredient {
 
   toString(options?: { names?: boolean }): string {
     return this.items
-      .map((d) => (options?.names ? d.toString({ short: true }) : d.id))
+      .map((d) => (options?.names ? ` ${d.toString({ short: true })} ` : d.id))
       .join('|')
   }
 }

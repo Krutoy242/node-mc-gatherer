@@ -140,11 +140,15 @@ export default class Calculator {
     )
 
     createFileLogger('needRecipes.log')(
-      this.definitionStore
-        .getIngrsNeedRecipe()
+      [...Ingredient.store]
+        .map(([, g]) => g)
+        .filter((g) => g.items.every((d) => d.purity <= 0))
+        .map((g) => [g.dependenciesCount(), g] as [number, Ingredient])
+        .filter(([a]) => a > 0)
+        .sort(([a], [b]) => b - a)
         .map(
           ([n, ingr]) =>
-            n + ' ' + ingr.toString({ names: true }).substring(0, 120)
+            n + ' ' + ingr.toString({ names: true }).substring(0, 220)
         )
         .join('\n')
     )

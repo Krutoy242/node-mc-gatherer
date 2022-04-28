@@ -35,7 +35,7 @@ export default class Stack {
 
     this.ingredient =
       ingredient instanceof Definition
-        ? new Ingredient([ingredient])
+        ? Ingredient.fromDefs([ingredient])
         : ingredient
   }
 
