@@ -4,6 +4,7 @@ import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'
 import DefinitionStore from '../items/DefinitionStore'
+import Ingredient from '../items/Ingredient'
 import Stack from '../items/Stack'
 import Recipe from '../recipes/Recipe'
 
@@ -117,9 +118,11 @@ export default class Calculator {
 
   private assignPredefined(dirtyRecipes: Set<number>) {
     Object.entries(predefined).forEach(([id, val]) => {
-      const def = this.definitionStore.getBased('placeholder', id)
-      def.set({ purity: 1.0, cost: val, processing: 0.0 })
-      def.dependencies?.forEach((r) => dirtyRecipes.add(r))
+      const ingr = Ingredient.fromString(id, this.definitionStore.getById)
+      for (const def of this.definitionStore.matchedBy(ingr)) {
+        def.set({ purity: 1.0, cost: val, processing: 0.0 })
+        def.dependencies?.forEach((r) => dirtyRecipes.add(r))
+      }
     })
   }
 
