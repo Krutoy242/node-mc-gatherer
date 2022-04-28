@@ -52,11 +52,7 @@ export default class Ingredient {
 
   toString(options?: { names?: boolean }): string {
     return this.items
-      .map((d) =>
-        options?.names
-          ? d.toString({ noPurity: true, noComplexity: true })
-          : d.id
-      )
+      .map((d) => (options?.names ? d.toString({ short: true }) : d.id))
       .join('|')
   }
 }

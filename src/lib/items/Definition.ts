@@ -8,6 +8,7 @@ import Recipe from '../recipes/Recipe'
 import { NBT, parseSNbt } from './NBT'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
+const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 const logRecalc = createFileLogger('tmp_recalcOf.log')
 
@@ -83,16 +84,15 @@ export default class Definition extends Calculable {
     ].join(',')
   }
 
-  toString(options?: {
-    complexityPad?: number
-    noPurity?: boolean
-    noComplexity?: boolean
-  }) {
-    return `${options?.noPurity ? '' : getPurity(this.purity)}${
-      options?.noComplexity
-        ? ''
-        : this.complexity_s.padStart(options?.complexityPad ?? 0)
-    } "${this.display}" ${this.id}`
+  toString(options?: { complexityPad?: number; short?: boolean }) {
+    const display = `"${this.display}" ${this.id}`
+    if (options?.short) return display
+    const full =
+      getPurity(this.purity) +
+      this.complexity_s.padStart(options?.complexityPad ?? 0) +
+      ` 🧮${siFormat(this.cost)}` +
+      ` ⚙️${siFormat(this.processing)}`
+    return `${full} ${display}`
   }
 
   /**
