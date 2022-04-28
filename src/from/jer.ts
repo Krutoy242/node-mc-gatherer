@@ -102,7 +102,7 @@ export default function append_JER(
       ?.map((drop) => getDrops(blockDef, drop))
       .filter((s): s is Stack => !!s)
 
-    if (drops?.length) recipesStore.addRecipe('JER', drops, block, tool)
+    if (drops?.length) recipesStore.addRecipe('JER_Drops', drops, block, tool)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 

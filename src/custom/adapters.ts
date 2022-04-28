@@ -118,6 +118,7 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
     getIngr('tconstruct:casting:0'),
     getIngr('tconstruct:casting:1'),
   ]
+  cat.catalysts = catalyst.map((g) => g.stacks[0])
 
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.splice(1, 1) // Remove Duplicate of input liquid
@@ -147,6 +148,10 @@ adapters.set(/tconstruct__smeltery/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.output.items = [rec.output.items[0]]
   })
+})
+
+adapters.set(/tconstruct__alloy/, (cat) => {
+  cat.catalysts = getIngr('tconstruct:smeltery_controller:0').stacks
 })
 
 adapters.set(/minecraft__brewing/, (cat) => {
@@ -202,14 +207,18 @@ adapters.set(/machine_produce_category/, (cat, getFullID) => {
   })
 })
 
-adapters.set(/thermalexpansion__sawmill_tapper/, (cat) => {
-  cat.recipes.forEach((rec) => {
-    rec.input.items = rec.input.items.filter(
-      (slot) =>
-        slot.stacks[0].type !== 'fluid' || (rec.output.items.push(slot), false)
-    )
-  })
-})
+adapters.set(
+  /thermalexpansion__sawmill_tapper|thermalexpansion__furnace_pyrolysis/,
+  (cat) => {
+    cat.recipes.forEach((rec) => {
+      rec.input.items = rec.input.items.filter(
+        (slot) =>
+          slot.stacks[0].type !== 'fluid' ||
+          (rec.output.items.push(slot), false)
+      )
+    })
+  }
+)
 
 adapters.set(/tubing/, (cat) => {
   cat.recipes.forEach((rec) => {
@@ -220,6 +229,21 @@ adapters.set(/tubing/, (cat) => {
 adapters.set(/^recycler$/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items[0].stacks = getIngr('minecraft:stone:0').stacks
+  })
+})
+
+adapters.set(/extendedcrafting__compressor/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    if (rec.input.items.length >= 2)
+      rec.catalyst = [rec.input.items.pop() as JEIESlot]
+    rec.input.items[0].amount = 10000
+  })
+})
+
+adapters.set(/forestry__fabricator/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    const slot = rec.input.items.find((slot) => slot.x === 118 && slot.y === 0)
+    if (slot) slot.amount = rec.output.items[0].amount / 33 // TODO max durability
   })
 })
 
@@ -248,6 +272,8 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
     amount: number
     aspect: string
   }
+
+  // Items that should not be used as aspect sources
   const inputBlacklist = [
     'minecraft:spawn_egg:0',
     'conarm:boots:0',
@@ -260,6 +286,10 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
     'mekanism:gastank:0',
     'astralsorcery:itemtunedrockcrystal:0',
   ]
+
+  /**
+   * ItemID: Aspects output
+   */
   const itemMap = new Map<string, AmountAspect[]>()
   cat.recipes.forEach((rec) => {
     rec.input.items.forEach((slot) => {
@@ -277,6 +307,8 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
       })
     })
   })
+
+  // Create recipes item=>Aspects
   const catal = getIngr('thaumcraft:crucible:0')
   cat.recipes = [...itemMap].map(([id, aspectsArr]) => ({
     input: { items: [{ x: 0, y: 0, ...getIngr(id) }] },
@@ -292,6 +324,22 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
     },
     catalyst: [catal],
   }))
+
+  cat.recipes.push(
+    ...cat.recipes
+      // Only Phials as input
+      .filter((rec) =>
+        rec.input.items[0].stacks[0].name.startsWith('thaumcraft:phial:1:')
+      )
+      // Swap phial with output
+      .map((rec) => ({
+        input: {
+          items: rec.output.items.concat(getSlot('thaumcraft:phial:0')),
+        },
+        output: { items: rec.input.items },
+        catalyst: [],
+      }))
+  )
 })
 
 adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
@@ -302,20 +350,12 @@ adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
   })
 })
 
-adapters.set(/exnihilocreatio__hammer/, (cat) => {
-  cat.catalysts = getIngr('tcomplement:sledge_hammer:0').stacks
-})
-
 adapters.set(/jeresources__dungeon/, (cat) => {
   const catal: JEIEIngredient = {
     stacks: [{ type: 'placeholder', name: 'placeholder:exploration' }],
     amount: 500000,
   }
   cat.recipes.forEach((rec: JEIECustomRecipe) => (rec.catalyst = [catal]))
-})
-
-adapters.set(/exnihilocreatio__compost/, (cat) => {
-  cat.recipes.forEach((rec) => (rec.output.items = [getSlot('minecraft:dirt')]))
 })
 
 adapters.set(
@@ -353,8 +393,16 @@ adapters.set(/mekanism__osmiumcompressor/, (cat) => {
   })
 })
 
+adapters.set(/exnihilocreatio__compost/, (cat) => {
+  cat.recipes.forEach((rec) => (rec.output.items = [getSlot('minecraft:dirt')]))
+})
+
+adapters.set(/exnihilocreatio__hammer/, (cat) => {
+  cat.catalysts = getIngr('tcomplement:sledge_hammer:*').stacks
+})
+
 adapters.set(
-  /exnihilocreatio__fluid_(transform|block_transform)/,
+  /exnihilocreatio__fluid_(transform|block_transform|on_top)/,
   (cat, getFullID) => {
     const convertBucket = (ingr: JEIEIngredient) =>
       bucketToFluid(ingr, getFullID)
@@ -416,7 +464,14 @@ adapters.set(/chisel__chiseling/, (cat) => {
 
 adapters.set(/jeresources__mob/, (cat) => {
   cat.recipes.forEach((rec) => {
-    rec.input.items = [{ x: 0, y: 0, ...getIngr('placeholder:fight', 10000) }]
+    rec.input.items = [{ x: 0, y: 0, ...getIngr('placeholder:fight', 100000) }]
+  })
+})
+
+adapters.set(/jeresources__plant/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.catalyst = rec.input.items
+    rec.input.items = [getSlot('placeholder:ticks', 200)]
   })
 })
 

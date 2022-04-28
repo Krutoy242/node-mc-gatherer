@@ -5,7 +5,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
 
   addRecipe(
     'dimension:nether_-1',
-    'minecraft:flint_and_steel:0',
+    '0.015x minecraft:flint_and_steel:0',
     '8x minecraft:obsidian:0'
   )
   addRecipe('dimension:the_end_1', '12x minecraft:ender_eye:0')
