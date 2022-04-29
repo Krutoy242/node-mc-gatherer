@@ -1,20 +1,12 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
-
 import { parse as csvParseSync } from 'csv-parse/sync'
 
 import RecipeStore from '../lib/recipes/RecipeStore'
 
-export default async function append_tellme(
+export default async function append_fluids(
   recipeStore: RecipeStore,
-  mcPath: string
+  csvText: string
 ) {
-  const fileContent = readFileSync(
-    join(mcPath, 'config/tellme/fluids-csv.csv'),
-    'utf8'
-  )
-
-  const fluids: Record<string, string>[] = csvParseSync(fileContent, {
+  const fluids: Record<string, string>[] = csvParseSync(csvText, {
     columns: true,
   })
 

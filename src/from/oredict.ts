@@ -1,3 +1,5 @@
+import { parse as csvParseSync } from 'csv-parse/sync'
+
 import { naturalSort } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
 
@@ -8,33 +10,34 @@ export interface OredictMap {
 }
 const log = createFileLogger('oreDict.log')
 
-export default function genOreDictionary(crafttweakerLogTxt: string) {
+export default function genOreDictionary(csvText: string) {
   const dict: OredictMap = {}
 
-  const oreEntriesRgx =
-    /^Ore entries for <ore:(?<oreName>[^>]+)> :\s*(?<block>(\n-<[^>]+>.*)+)/gm
-  for (const match of crafttweakerLogTxt.matchAll(oreEntriesRgx)) {
-    const { groups } = match
-    if (!groups) throw new Error('OreDict parsing error for: ' + match[0])
+  const fluids: {
+    'OreDict Key': string
+    'Registry name': string
+    'Meta/dmg': string
+    'Display name': string
+    NBT: string
+  }[] = csvParseSync(csvText, {
+    columns: true,
+  })
 
-    const itemCapture =
-      /<(?<source>[^:>]+):(?<entry>[^:>]+):?(?<meta>[^:>]+)?>/gm
+  for (const line of fluids) {
+    const id =
+      `${line['Registry name']}:${line['Meta/dmg']}` +
+      (line.NBT ? ':' + line.NBT : '')
 
-    const items = [...groups.block.matchAll(itemCapture)]
-      .map((m) => m.groups as Record<string, string>)
-      .sort(
-        (a, b) =>
-          prefferedModSort(a!.source, b!.source) ||
-          naturalSort(a!.source, b!.source)
-      )
-
-    if (!items[0])
-      throw new Error('OreDict parsing error for block: ' + groups.block)
-
-    dict[groups.oreName] = items.map(
-      ({ source, entry, meta }) => `${source}:${entry}:${meta ?? 0}`
-    )
+    ;(dict[line['OreDict Key']] ??= []).push(id)
   }
+
+  Object.values(dict).forEach((arr) =>
+    arr.sort(
+      (a, b) =>
+        prefferedModSort(getItemSource(a), getItemSource(b)) ||
+        naturalSort(a, b)
+    )
+  )
 
   log(
     Object.entries(dict)
@@ -44,4 +47,8 @@ export default function genOreDictionary(crafttweakerLogTxt: string) {
   )
 
   return dict
+}
+
+function getItemSource(id: string): string {
+  return id.split(':')[0]
 }

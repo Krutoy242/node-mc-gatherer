@@ -11,13 +11,13 @@ import { join } from 'path'
 import chalk from 'chalk'
 
 import applyCustoms from './custom/customs'
+import append_fluids from './from/fluids'
 import append_JECgroups from './from/jec'
 import append_JEIExporter from './from/jeie/JEIExporter'
 import getNameMap, { NameMap } from './from/jeie/NameMap'
 import append_JER from './from/jer'
-import genOreDictionary from './from/oredict'
+import genOreDictionary, { OredictMap } from './from/oredict'
 import append_viewBoxes from './from/spritesheet'
-import append_tellme from './from/tellme'
 import Calculator from './lib/calc/Calculator'
 import DefinitionStore from './lib/items/DefinitionStore'
 import RecipeStore from './lib/recipes/RecipeStore'
@@ -52,51 +52,47 @@ export default async function mcGather(
   // ------------------------
 
   if (options['jec'])
-    runTask<number>({
-      description: 'Addding JEC recipes',
+    runTask<number>('Addding JEC recipes', {
       textSource: fromMC('/config/JustEnoughCalculation/data/groups.json'),
       action: (text) => append_JECgroups(recipesStore, text),
       moreInfo: (info) => `Recipes: ${cli.num(info.result)}`,
+      '⚠️': chalk`JustEnoughCalculation {green groups.json} not found. Continue without custom JEC recipes.`,
     })
 
-  await runTask({
-    description: 'Add custom recipes',
+  await runTask('Add custom recipes', {
     action: () => applyCustoms(recipesStore),
     moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
   })
 
-  await runTask({
-    description: 'Add Tellme recipes',
-    action: () => append_tellme(recipesStore, options.mc),
+  await runTask('Add Fluid recipes', {
+    textSource: fromMC('config/tellme/fluids-csv.csv'),
+    action: (text) => append_fluids(recipesStore, text),
     moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
+    '⚠️': chalk`Tellme file {green fluids-csv.csv} not found. Continue without {#0099FF fluid} <=> {#0099FF block} recipes.`,
   })
 
-  const crafttweaker_log: string = runTask({
+  const crafttweaker_log = runTask<string>('', {
     textSource: fromMC('/crafttweaker.log'),
-    fileError: 'Unable to open crafttweaker.log file',
+    '⚠️': chalk`Unable to open {green crafttweaker.log} file. You must load game with installed CraftTweaker and additional provided by gatherer scripts`,
   })
 
-  runTask({
-    description: 'Append JER recipes',
+  runTask('Append JER recipes', {
     textSource: fromMC('config/jeresources/world-gen.json'),
     action: (text) =>
       append_JER(recipesStore, JSON.parse(text), crafttweaker_log),
     moreInfo: (info) => `Added: ${cli.num(info.addedRecs)}`,
+    '⚠️': chalk`Unable to open Just Enough Resources world file {green world-gen.json}. Install mod JER and run world scan.`,
   })
 
-  const nameMap: NameMap = runTask({
-    description: 'Loading Tooltip map',
+  const nameMap: NameMap | undefined = runTask('Loading Tooltip map', {
     textSource: fromMC('exports/nameMap.json'),
     action: (text) => getNameMap(text),
     moreInfo: (i) => `Loaded: ${cli.num(i.result.info.total)}`,
-    fileError:
-      'tooltipMap.json cant be opened. ' +
-      'This file should be created by JEIExporter',
+    '⚠️': chalk`tooltipMap.json cant be opened. This file should be created by JEIExporter. Program would continue anyway`,
   })
 
-  if (options['jeie'])
-    await runTask({
-      description: 'Loading JEIExporter\n',
+  if (options['jeie'] && nameMap)
+    await runTask('Loading JEIExporter\n', {
       action: () => append_JEIExporter(nameMap, recipesStore, options.mc, cli),
     })
 
@@ -104,14 +100,12 @@ export default async function mcGather(
   // Visuals
   // ------------------------
 
-  runTask({
-    description: 'Load Spritesheet',
+  runTask('Load Spritesheet', {
     textSource: 'data/spritesheet.json',
     action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
   })
 
-  await runTask({
-    description: 'Assign visuals',
+  await runTask('Assign visuals', {
     action: () => definitionStore.assignVisuals(nameMap),
     moreInfo: (i) =>
       `noDisp: ${cli.num((i.result as any).noDisplay)}, noVB: ${cli.num(
@@ -123,26 +117,24 @@ export default async function mcGather(
   // Caclulating
   // ------------------------
 
-  definitionStore.addOreDict(
-    runTask({
-      description: 'Creating OreDict',
-      action: () => genOreDictionary(crafttweaker_log),
-      moreInfo: (info) =>
-        `OreDict size: ${cli.num(Object.keys(info.result).length)}`,
-    })
-  )
+  const oreDict = runTask<OredictMap>('Creating OreDict', {
+    textSource: fromMC('config/tellme/oredictionary-by-key-individual-csv'),
+    action: (text) => genOreDictionary(text),
+    moreInfo: (info) =>
+      `OreDict size: ${cli.num(Object.keys(info.result).length)}`,
+    '⚠️': chalk`Tellme file {green oredictionary-by-key-individual-csv} not found. All oredict recipes would be unknown.`,
+  })
+  if (oreDict) definitionStore.addOreDict(oreDict)
 
-  await runTask({
-    description: 'Calculate each item\n',
+  await runTask('Calculate each item\n', {
     action: () =>
       new Calculator(definitionStore, recipesStore.store).compute(cli),
     moreInfo: (info) => `\nAdded: ${cli.num(info.result as any)}`,
   })
 
-  const exported = runTask({
-    description: 'Exporting data.json\n',
+  const exported = runTask('Exporting data.json\n', {
     action: () => exportData(recipesStore),
-  })
+  }) as ExportData
 
   return exported
 }

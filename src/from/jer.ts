@@ -72,7 +72,7 @@ function jerDimToPlaceholder(jerDimText: string): string {
 export default function append_JER(
   recipesStore: RecipeStore,
   jer: JER_Entry[],
-  crafttweakerLogTxt: string
+  crafttweakerLogTxt?: string
 ) {
   const logExploration = createFileLogger('jer_exploration.log')
   const logDimensions = createFileLogger('jer_dimensions.log')
@@ -107,8 +107,11 @@ export default function append_JER(
   }
 
   function generateTool(blockId: string): string | undefined {
+    if (!blockMinings) return
+
     const bMining = blockMinings[blockId]
     if (!bMining) return
+
     return getTool(bMining.toolClass, bMining.level)
   }
 
@@ -154,7 +157,11 @@ function getTextFromTo(text: string, from: string, to: string): string {
   return endIndex === -1 ? sub : sub.substring(0, endIndex)
 }
 
-function generateBlockMinings(crafttweakerLogTxt: string): BlockMinings {
+function generateBlockMinings(
+  crafttweakerLogTxt?: string
+): BlockMinings | undefined {
+  if (!crafttweakerLogTxt) return
+
   const txtBlock = getTextFromTo(
     crafttweakerLogTxt,
     '#          Harvest tool and level                #',

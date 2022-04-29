@@ -123,7 +123,7 @@ export default class DefinitionStore {
       .join('\n')
   }
 
-  async assignVisuals(nameMap: NameMap) {
+  async assignVisuals(nameMap?: NameMap) {
     const log = {
       noViewBox: createFileLogger('noViewBox.log'),
       noDisplay: createFileLogger('noDisplay.log'),
@@ -143,7 +143,7 @@ export default class DefinitionStore {
       const jeieId = sNbt
         ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
         : def.id
-      const jeieEntry = nameMap[jeieId]
+      const jeieEntry = nameMap?.[jeieId]
       if (jeieEntry) def.tooltips = jeieEntry.tooltips
 
       if (def.viewBox && def.display) return

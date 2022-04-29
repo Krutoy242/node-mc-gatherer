@@ -23,6 +23,23 @@ function logMore(text: string) {
 /* =============================================
 =
 ============================================= */
+interface TaskOptionsBased<T> {
+  description?: string
+  moreInfo?: (info: {
+    addedDefs: number
+    addedRecs: number
+    result: T
+  }) => string
+  action?: (text: string) => T
+}
+
+interface TaskOptionsFiled<T> extends TaskOptionsBased<T> {
+  textSource?: string
+  '🛑'?: string
+  '⚠️'?: string
+}
+
+// type TaskOptions<T> = TaskOptionsBased<T> | TaskOptionsFiled<T>
 
 const numFormat = (n: number) => numeral(n).format('+,')
 
@@ -92,25 +109,22 @@ export default class CLIHelper {
   }
 
   createRunTask(definitionStore: DefinitionStore, recipesStore: RecipeStore) {
-    return function runTask<T>(opts: {
-      description?: string
-      moreInfo?: (info: {
-        addedDefs: number
-        addedRecs: number
-        result: T
-      }) => string
-      textSource?: string
-      action?: (text: string) => T
-      fileError?: string
-    }): T {
-      if (opts.description) logTask(opts.description)
+    return function runTask<T>(
+      description: string,
+      opts: TaskOptionsFiled<T>
+    ): T | undefined {
+      if (description) logTask(description)
       let text = ''
       if (opts.textSource)
         try {
           text = loadText(opts.textSource)
         } catch (err: unknown) {
-          console.error(`🛑  Error at task: ${opts.fileError}`)
-          throw new Error('Unable to complete task')
+          if (!opts['⚠️']) {
+            console.error(`🛑  Error at task: ${opts['🛑']}`)
+            throw new Error('Unable to complete task')
+          }
+          console.log(`⚠️  ${opts['⚠️']}`)
+          return undefined
         }
 
       const oldDefs = definitionStore.size
