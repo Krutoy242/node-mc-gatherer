@@ -6,6 +6,8 @@ import Stack from '../lib/items/Stack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
+import { BlockMinings } from './blockMinings'
+
 interface JER_Entry {
   block: string
   distrib: string
@@ -61,10 +63,9 @@ function getJERProbability(rawStrData: string) {
 
 const registeredDims: Set<string> = new Set()
 function jerDimToPlaceholder(jerDimText: string): string {
-  const dim = jerDimText
-    .toLowerCase()
-    .replace(/[: ]/g, '_')
-    .replace(/[()]/g, '')
+  const match = jerDimText.toLowerCase().match(/\((.+)\)|^.+: (-?\d+|[\w ]+)$/)
+  const dimId = match?.[1] ?? match?.[2] ?? jerDimText
+  const dim = dimId.replace(/[:\s]/g, '_')
   registeredDims.add(dim)
   return 'dimension:' + dim
 }
@@ -72,11 +73,10 @@ function jerDimToPlaceholder(jerDimText: string): string {
 export default function append_JER(
   recipesStore: RecipeStore,
   jer: JER_Entry[],
-  crafttweakerLogTxt?: string
+  blockMinings?: BlockMinings
 ) {
   const logExploration = createFileLogger('jer_exploration.log')
   const logDimensions = createFileLogger('jer_dimensions.log')
-  const blockMinings = generateBlockMinings(crafttweakerLogTxt)
   const getById = recipesStore.definitionStore.getById
 
   let ii_exploration = Stack.fromString('placeholder:exploration', getById)
@@ -137,48 +137,4 @@ ${Object.entries(o)
   )
 
   logDimensions([...registeredDims].sort().join('\n'))
-}
-
-export interface BlockMinings {
-  [id: string]: {
-    hardness: number
-    toolClass: string
-    level: number
-  }
-}
-
-function getTextFromTo(text: string, from: string, to: string): string {
-  const startIndex = text.indexOf(from)
-  if (startIndex === -1) return ''
-
-  const sub = text.substring(startIndex + from.length)
-  const endIndex = sub.indexOf(to)
-
-  return endIndex === -1 ? sub : sub.substring(0, endIndex)
-}
-
-function generateBlockMinings(
-  crafttweakerLogTxt?: string
-): BlockMinings | undefined {
-  if (!crafttweakerLogTxt) return
-
-  const txtBlock = getTextFromTo(
-    crafttweakerLogTxt,
-    '#          Harvest tool and level                #',
-    '##################################################'
-  )
-  if (!txtBlock) throw new Error('Cant read harvest data from crafttweaker.log')
-
-  const result: BlockMinings = {}
-  for (const { groups } of txtBlock.matchAll(
-    /^\[SERVER_STARTED\]\[SERVER\]\[INFO\] <(?<id>[^>]+)> = (?<hardness>[^:]+):(?<toolClass>[^:]+):(?<level>.+)$/gm
-  )) {
-    if (!groups) continue
-    result[groups.id] = {
-      hardness: Number(groups.hardness),
-      toolClass: groups.toolClass,
-      level: Number(groups.level),
-    }
-  }
-  return result
 }

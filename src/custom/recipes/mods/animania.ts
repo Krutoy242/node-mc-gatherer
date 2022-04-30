@@ -1,6 +1,8 @@
-import { AddRecipeFn } from '../../customs'
+export default function addRecipes(
+  addRecipe: import('../../customs').AddRecipeFn
+) {
+  addRecipe('animania:wool:*', '9000x placeholder:ticks')
 
-export default function addRecipes(addRecipe: AddRecipeFn) {
   Object.entries({
     sheep_cheese_wheel: 'milk_sheep',
     goat_cheese_wheel: 'milk_goat',

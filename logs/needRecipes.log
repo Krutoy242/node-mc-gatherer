@@ -2,34 +2,35 @@
 125  "Copper Ingot" mekanism:ingot:5 
 125  "Copper Ingot" immersiveengineering:metal:0 
 125  "Copper Ingot" exnihilocreatio:item_ore_copper:3 
-125  "ic2.ingot.copper" ic2:ingot:2 
+125  "Copper Ingot" ic2:ingot:2 
 125  "Copper Ingot" forestry:ingot_copper:0 
 118  "Steel Ingot" bigreactors:ingotsteel:0 
 118  "Steel Ingot" tcomplement:materials:10 
 118  "Steel Ingot" immersiveengineering:metal:8 
-118  "ic2.ingot.steel" ic2:ingot:5 
+118  "Steel Ingot" ic2:ingot:5 
 118  "Steel Ingot" mekanism:ingot:4 
 90  "Bronze Ingot" mekanism:ingot:2 
-89  "ic2.ingot.bronze" ic2:ingot:1 
+89  "Bronze Ingot" ic2:ingot:1 
 89  "Bronze Ingot" forestry:ingot_bronze:0 
 84  "Tin Ingot" exnihilocreatio:item_ore_tin:3 
 84  "Tin Ingot" forestry:ingot_tin:0 
-84  "ic2.ingot.tin" ic2:ingot:6 
+84  "Tin Ingot" ic2:ingot:6 
 84  "Tin Ingot" mekanism:ingot:6 
 77  "Common Treasure" thaumcraft:loot_bag:0 
 77  "Common Treasure" thaumcraft:loot_bag:0 | "Common Crate" thaumcraft:loot_crate_common:0 | "Common Urn" thaumcraft:loot_urn_common:0 
+70  "Thermal Centrifuge" ic2:te:52 
 61  "Aluminum Ingot" nuclearcraft:ingot:12 
 61  "Aluminium Ingot" exnihilocreatio:item_ore_aluminium:3 
 61  "Aluminium Ingot" immersiveengineering:metal:1 
 60  "Lead Ingot" immersiveengineering:metal:2 
 60  "Lead Ingot" exnihilocreatio:item_ore_lead:3 
 59  "Electrum Ingot" immersiveengineering:metal:7 
+54  "Desert Acacia Wood Slab (Fireproof)" forestry:slabs.fireproof.0:2 
 53  "Silver Ingot" nuclearcraft:ingot:13 
 53  "Silver Ingot" exnihilocreatio:item_ore_silver:3 
 53  "Silver Ingot" immersiveengineering:metal:3 
-53  "ic2.ingot.silver" ic2:ingot:4 
+53  "Silver Ingot" ic2:ingot:4 
 53  "Silver Ingot" iceandfire:silver_ingot:0 
-53  "Desert Acacia Wood Slab (Fireproof)" forestry:slabs.fireproof.0:2 
 47  "Giant Flower Stem" biomesoplenty:log_4:4 
 41  "Magical Wooden Shard" tconstruct:shard:0:{Material:"xu_magical_wood"} 
 39  "Fusewood Shard" tconstruct:shard:0:{Material:"fusewood",display:{Name:"Fusewood Shard"}} 
@@ -52,59 +53,22 @@
 27  "Uncommon Treasure" thaumcraft:loot_bag:1 
 26  "Wintry Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry",UID1:"forestry.speciesWintry"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
 26  "Wintry Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry",UID1:"forestry.speciesWintry"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
+26  "Apple Leaves" rustic:leaves_apple:0 
 26  "Wintry Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry",UID1:"forestry.speciesWintry"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry.spee
 25  "Tropical Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical",UID1:"forestry.speciesTropical"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"f
 25  "Modest Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesModest",UID1:"forestry.speciesModest"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry.spee
 25  "Tropical Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical",UID1:"forestry.speciesTropical"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"f
 25  "Modest Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesModest",UID1:"forestry.speciesModest"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry.spee
-25  "Apple Leaves" rustic:leaves_apple:0 
 25  "Tropical Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical",UID1:"forestry.speciesTropical"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
+25  "Coast Sequoia Leaves" forestry:leaves.decorative.0:13 
+25  "Giant Sequoia Leaves" forestry:leaves.decorative.0:14 
+25  "Giant Red Flower Petal" biomesoplenty:leaves_6:8 
+25  "Giant Yellow Flower Petal" biomesoplenty:leaves_6:9 
 25  "Slime Block" tconstruct:slime:0 
 24  "undefined" immersiveengineering:stone_device:7 
 24  "Marshy Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy",UID1:"forestry.speciesMarshy"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forest
 24  "Marshy Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy",UID1:"forestry.speciesMarshy"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forest
 24  "Marshy Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy",UID1:"forestry.speciesMarshy"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.spe
-24  "Miner's Leaves" twilightforest:magic_leaves:2 
-24  "Sorting Leaves" twilightforest:magic_leaves:3 
-24  "Apple Oak Leaves" forestry:leaves.decorative.0:0 
-24  "Dark Oak Leaves" forestry:leaves.decorative.0:1 
-24  "Silver Birch Leaves" forestry:leaves.decorative.0:2 
-24  "Silver Lime Leaves" forestry:leaves.decorative.0:3 
-24  "Common Walnut Leaves" forestry:leaves.decorative.0:4 
-24  "Sweet Chestnut Leaves" forestry:leaves.decorative.0:5 
-24  "Hill Cherry Leaves" forestry:leaves.decorative.0:6 
-24  "Lemon Leaves" forestry:leaves.decorative.0:7 
-24  "Plum Leaves" forestry:leaves.decorative.0:8 
-24  "Sugar Maple Leaves" forestry:leaves.decorative.0:9 
-24  "Red Spruce Leaves" forestry:leaves.decorative.0:10 
-24  "Mundane Larch Leaves" forestry:leaves.decorative.0:11 
-24  "Bull Pine Leaves" forestry:leaves.decorative.0:12 
-24  "Coast Sequoia Leaves" forestry:leaves.decorative.0:13 
-24  "Giant Sequoia Leaves" forestry:leaves.decorative.0:14 
-24  "Jungle Leaves" forestry:leaves.decorative.0:15 
-24  "Teak Leaves" forestry:leaves.decorative.1:0 
-24  "Ipe Leaves" forestry:leaves.decorative.1:1 
-24  "Kapok Leaves" forestry:leaves.decorative.1:2 
-24  "Myrtle Ebony Leaves" forestry:leaves.decorative.1:3 
-24  "Zebrawood Leaves" forestry:leaves.decorative.1:4 
-24  "Yellow Meranti Leaves" forestry:leaves.decorative.1:5 
-24  "Acacia Leaves" forestry:leaves.decorative.1:6 
-24  "Desert Acacia Leaves" forestry:leaves.decorative.1:7 
-24  "Padauk Leaves" forestry:leaves.decorative.1:8 
-24  "Balsa Leaves" forestry:leaves.decorative.1:9 
-24  "Cocobolo Leaves" forestry:leaves.decorative.1:10 
-24  "Wenge Leaves" forestry:leaves.decorative.1:11 
-24  "Grandidier's Baobab Leaves" forestry:leaves.decorative.1:12 
-24  "Blue Mahoe Leaves" forestry:leaves.decorative.1:13 
-24  "White Willow Leaves" forestry:leaves.decorative.1:14 
-24  "Sipiri Leaves" forestry:leaves.decorative.1:15 
-24  "Papaya Leaves" forestry:leaves.decorative.2:0 
-24  "Date Palm Leaves" forestry:leaves.decorative.2:1 
-24  "White Poplar Leaves" forestry:leaves.decorative.2:2 
-24  "Origin Leaves" biomesoplenty:leaves_2:8 
-24  "Giant Red Flower Petal" biomesoplenty:leaves_6:8 
-24  "Giant Yellow Flower Petal" biomesoplenty:leaves_6:9 
-24  "Timewood Leaves" twilightforest:magic_leaves:0 
 23  "Meadows Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMeadows",UID1:"forestry.speciesMeadows"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"for
 23  "Common Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon",UID1:"forestry.speciesCommon"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
 23  "Cultivated Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated",UID1:"forestry.speciesCultivated"},{Slot:1b,UID0:"forestry.speedFast",UID
@@ -158,8 +122,8 @@
 19  "Monastic Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMonastic",UID1:"forestry.speciesMonastic"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
 19  "Miry Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry",UID1:"forestry.speciesMiry"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.speedSlow
 19  "Common Urn" thaumcraft:loot_urn_common:0 
-18  "Attuned Rock Crystal" astralsorcery:itemtunedrockcrystal:0 
 18  "Attuned Celestial Crystal" astralsorcery:itemtunedcelestialcrystal:0 
+18  "Attuned Rock Crystal" astralsorcery:itemtunedrockcrystal:0 
 18  "Noble Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble",UID1:"forestry.speciesNoble"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry.s
 18  "Diligent Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent",UID1:"forestry.speciesDiligent"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"f
 18  "Valiant Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesValiant",UID1:"forestry.speciesValiant"},{Slot:1b,UID0:"forestry.speedSlow",UID1:"forest
@@ -178,8 +142,8 @@
 18  "Vindictive Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive",UID1:"forestry.speciesVindictive"},{Slot:1b,UID0:"forestry.speedSlower",U
 18  "Farmerly Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly",UID1:"forestry.speciesFarmerly"},{Slot:1b,UID0:"forestry.speedSlow",UID1:"for
 18  "Vain Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain",UID1:"gendustry.bee.vain"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedNor
-18  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:metabolism_strong"} 
 18  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:metabolism_extended"} 
+18  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:metabolism_strong"} 
 18  "Uncraftable Potion" minecraft:potion:0:{Potion:"extrautils2:xu2.doom"} 
 18  "Valiant Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesValiant",UID1:"forestry.speciesValiant"},{Slot:1b,UID0:"forestry.speedSlow",UID1:"forestry.spe
 18  "Diligent Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent",UID1:"forestry.speciesDiligent"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
@@ -229,78 +193,78 @@
 17  "Derpious Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious",UID1:"gendustry.bee.derpious"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"fore
 17  "Monastic Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMonastic",UID1:"forestry.speciesMonastic"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
 17  "Miry Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry",UID1:"forestry.speciesMiry"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.speedSlow
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:softstomach_extended"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:long_broken_magic_shield"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:strong_spin"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:softstomach_strong"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:bloated_strong"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:deficiency"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:healing3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:ironstomach"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:long_floating"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:bloated"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:softstomach_extended"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:healing4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:deficiency_strong"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:strong_spin"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:ironstomach_strong"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:spin"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:softstomach_strong"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:floating"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:softstomach"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:ironstomach_extended"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:healing3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:deficiency"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:withering"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:bloated"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:strong_broken_magic_shield"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:deficiency_strong"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:broken_magic_shield"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:floating"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:spin"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:ironstomach_strong"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:bloated_extended"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:ironstomach_extended"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:long_spin"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:strong_floating"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:healing4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:bloated_strong"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:confusion"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:long_confusion"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:harming3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:long_withering"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:long_spin"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:harming4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:softstomach"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping4"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck3+"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither3"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration3+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste2+"} 
-17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:strong_broken_magic_shield"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:long_confusion"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:harming3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:absorption3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:leaping2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:luck2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:bloated_extended"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:broken_magic_shield"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:wither2+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration4"} 
 17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"scalingfeast:ironstomach"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:resistance3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:strength3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:unluck3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:regeneration3+"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:strong_floating"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"enderio:long_withering"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"potioncore:long_broken_magic_shield"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:poison4"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:haste3"} 
+17  "Uncraftable Potion" minecraft:potion:0:{Potion:"cofhcore:swiftness3"} 
 17  "Dull Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull",UID1:"gendustry.bee.dull"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.speedSlowest"
 17  "Unweary Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:35,MaxH:35,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary",UID1:"forestry.speciesUnweary"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.s
 17  "Austere Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere",UID1:"forestry.speciesAustere"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.
@@ -599,9 +563,9 @@
 14  "Wacky Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky",UID1:"gendustry.bee.wacky"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.speedSlowe
 14  "Derpious Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious",UID1:"gendustry.bee.derpious"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestry.s
 14  "Red Spruce Pollen" forestry:pollen_fertile:0:{IsAnalyzed:1b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeSpruce",UID1:"forestry.treeSpruce"},{Slot:1b,UID0:"forestry.heightAverage",UID1:"forestry.heightAverage"},{Sl
-14  "ic2.misc_resource.iridium_shard" ic2:misc_resource:2 
-14  "ic2.misc_resource.iridium_shard" ic2:misc_resource:2 | "Air Charm" cyclicmagic:charm_air:0 
-14  "ic2.misc_resource.iridium_shard" ic2:misc_resource:2 | "Antidote Charm" cyclicmagic:charm_antidote:0 
+14  "Iridium Shard" ic2:misc_resource:2 
+14  "Iridium Shard" ic2:misc_resource:2 | "Air Charm" cyclicmagic:charm_air:0 
+14  "Iridium Shard" ic2:misc_resource:2 | "Antidote Charm" cyclicmagic:charm_antidote:0 
 14  "Leopard Lacewing Butterfly" forestry:butterfly_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiLLacewing",UID1:"forestry.lepiLLacewing"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:"f
 14  "Gozora Azure Butterfly" forestry:butterfly_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiGozoraAzure",UID1:"forestry.lepiGozoraAzure"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:
 14  "Atlas Moth Butterfly" forestry:butterfly_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothAtlas",UID1:"forestry.mothAtlas"},{Slot:1b,UID0:"forestry.sizeLargest",UID1:"forestry.size
@@ -785,7 +749,7 @@
 9  "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:2s}]} 
 9  "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:3s}]} 
 9  "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:84,lvl:1s}]} 
-8  "undefined" dimension:rftools_dimension 
+8  "undefined" dimension:RFTools_Dimension 
 8  "Witchwater Bucket" forge:bucketfilled:0:{FluidName:"witchwater",Amount:1000} 
 8  "Slime Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:slime"} 
 8  "Iron Chestplate" minecraft:iron_chestplate:0 
@@ -797,8 +761,8 @@
 8  "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:3s}]} 
 8  "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:4s}]} 
 8  "Cooked Crab Meat" betteranimalsplus:crab_meat_cooked:0 
-8  "ic2.dust.bronze" ic2:dust:0 
-8  "ic2.advanced_re_battery" ic2:advanced_re_battery:26 
+8  "Bronze Dust" ic2:dust:0 
+8  "Advanced RE-Battery" ic2:advanced_re_battery:26 
 7  "undefined" avaritia:neutronium_compressor:0 
 7  "Enchanted Book" minecraft:enchanted_book:0 
 7  "Blubber" betteranimalsplus:blubber:0 
@@ -815,10 +779,10 @@
 7  "Copper Ore" mekanism:oreblock:1 
 7  "Tin Ore" mekanism:oreblock:2 
 7  "Tin Ore" nuclearcraft:ore:1 
-7  "ic2.resource.copper_ore" ic2:resource:1 
+7  "Copper Ore" ic2:resource:1 
 7  "Copper Ore" nuclearcraft:ore:0 
-7  "ic2.resource.lead_ore" ic2:resource:2 
-7  "ic2.resource.tin_ore" ic2:resource:3 
+7  "Lead Ore" ic2:resource:2 
+7  "Tin Ore" ic2:resource:3 
 7  "Lead Ore" nuclearcraft:ore:2 
 7  "End Arkenium Ore" netherendingores:ore_end_modded_2:8 
 7  "End Icestone Ore" netherendingores:ore_end_modded_2:9 
@@ -831,12 +795,15 @@
 7  "End Zanite Ore" netherendingores:ore_end_modded_2:7 
 7  "Nether Arkenium Ore" netherendingores:ore_nether_modded_2:8 
 7  "Uranium Ingot" nuclearcraft:ingot:4 
+7  "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:0} 
 7  "Golden Boots" minecraft:golden_boots:0 
-7  "Golden Helmet" minecraft:golden_helmet:0 
 7  "Golden Leggings" minecraft:golden_leggings:0 
 7  "Golden Chestplate" minecraft:golden_chestplate:0 
+7  "Golden Helmet" minecraft:golden_helmet:0 
 7  "Industrial Hemp Fiber" immersiveengineering:material:4 
 7  "Biome Crystal" randomthings:biomecrystal:0 
+7  "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:0} | "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:800000} 
+6  "Part Builder" tconstruct:tooltables:2:{textureBlock:{id:"minecraft:log",Count:1b,Damage:0s}} 
 6  "undefined" modularmachinery:blockcontroller:0 
 6  "§6OVERWORLD" biomesoplenty:earth:0:{display:{Name:"§6OVERWORLD"}} 
 6  "Bitumen" immersivepetroleum:material:0 
@@ -848,7 +815,7 @@
 6  "Copper Ore Chunk" exnihilocreatio:item_ore_copper:1 
 6  "Gold Ore Chunk" exnihilocreatio:item_ore_gold:1 
 6  "Lead Ingot" nuclearcraft:ingot:2 
-6  "ic2.ingot.lead" ic2:ingot:3 
+6  "Lead Ingot" ic2:ingot:3 
 6  "Compressed Sand" excompressum:compressed_block:3 
 6  "Compressed Gravel" excompressum:compressed_block:2 
 6  "Golden Minotaur Axe" twilightforest:minotaur_axe_gold:0 
@@ -865,23 +832,32 @@
 6  "Black Bear Skin" betteranimalsplus:bear_skin_black:0 
 6  "Kermode Bear Skin" betteranimalsplus:bear_skin_kermode:0 
 6  "Music Disc" biomesoplenty:record_wanderer:0 
-6  "ic2.ingot.uranium" ic2:ingot:8 
+6  "Refined Uranium" ic2:ingot:8 
+5  "Fire Starter" cyclicmagic:fire_starter:0 
 5  "Dimensional Pattern 1 Block" rftoolsdim:dimensional_pattern1_block:0 
 5  "Dimensional Pattern 2 Block" rftoolsdim:dimensional_pattern2_block:0 
 5  "undefined" psi:cad:0 
 5  "undefined" immersiveengineering:stone_device:0 
-5  "ic2.dust.small_gold" ic2:dust:20 
-5  "ic2.dust.sulfur" ic2:dust:16 
-5  "ic2.dust.small_tin" ic2:dust:28 
-5  "ic2.dust.small_copper" ic2:dust:19 
-5  "ic2.dust.small_iron" ic2:dust:21 
-5  "ic2.dust.small_lead" ic2:dust:23 
-5  "ic2.dust.small_silver" ic2:dust:26 
-5  "ic2.dust.coal" ic2:dust:2 
-5  "ic2.dust.ender_pearl" ic2:dust:31 
-5  "ic2.dust.small_diamond" ic2:dust:36 
+5  "Golden Fruit" ic2:dust:20 
+5  "Fiery Fruit" ic2:dust:16 
+5  "Tiny Fruit" ic2:dust:28 
+5  "Coppery Fruit" ic2:dust:19 
+5  "Irony Fruit" ic2:dust:21 
+5  "Leaden Fruit" ic2:dust:23 
+5  "Silvery Fruit" ic2:dust:26 
+5  "Blackened Fruit" ic2:dust:2 
+5  "Spectral Fruit" ic2:dust:31 
+5  "Gelided Fruit" ic2:dust:36 
 5  "Pristine Ender Dragon Matter" deepmoblearning:pristine_matter_dragon:0 
-5  "ic2.plate.gold" ic2:plate:2 
+5  "Gold Plate" ic2:plate:2 
+5  "Blue Slimy Grass" tconstruct:slime_grass:12 
+5  "Purple Slimy Grass" tconstruct:slime_grass:13 
+5  "Green Slimy Grass" tconstruct:slime_grass:6 
+5  "Blue Slimy Grass" tconstruct:slime_grass:7 
+5  "Purple Slimy Grass" tconstruct:slime_grass:3 
+5  "Magma Slimy Grass" tconstruct:slime_grass:4 
+5  "Magma Slimy Grass" tconstruct:slime_grass:9 
+5  "Green Slimy Grass" tconstruct:slime_grass:11 
 5  "Block of Charcoal" forestry:charcoal:0 
 5  "Nether Prosperity Ore" mysticalagriculture:nether_prosperity_ore:0 
 5  "§eNether Inferium Ore" mysticalagriculture:nether_inferium_ore:0 
@@ -915,8 +891,8 @@
 5  "Ice Dragonsteel Shovel" iceandfire:dragonsteel_ice_shovel:0 
 5  "Ice Dragonsteel Pickaxe" iceandfire:dragonsteel_ice_pickaxe:0 
 5  "Ice Dragonsteel Hoe" iceandfire:dragonsteel_ice_hoe:0 
-5  "Metabolic Lingering Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:metabolism"} 
-5  "Lingering Potion of Levitation" minecraft:lingering_potion:0:{Potion:"potioncore:levitation"} 
+5  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:levitation"} 
+5  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:metabolism"} 
 5  "Shard" tconstruct:shard:0:{Material:"hemp"} 
 5  "Tough Tool Rod" tconstruct:tough_tool_rod:0:{Material:"weezer"} 
 5  "Wide Guard" tconstruct:wide_guard:0:{Material:"weezer"} 
@@ -924,48 +900,52 @@
 5  "Tough Tool Rod" tconstruct:tough_tool_rod:0:{Material:"xu_magical_wood"} 
 5  "Wide Guard" tconstruct:wide_guard:0:{Material:"xu_magical_wood"} 
 5  "Magical Wooden Armor Trim" conarm:armor_trim:0:{Material:"xu_magical_wood"} 
+5  "Pipe Piece" plustic:pipe_piece:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Excavator Head" tconstruct:excavator_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Axe Head" tconstruct:axe_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Hand Guard" tconstruct:hand_guard:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Tool Rod" tconstruct:tool_rod:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Cross Guard" tconstruct:cross_guard:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Arrow Head" tconstruct:arrow_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
-5  "Pipe Piece" plustic:pipe_piece:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
+5  "Sledge Hammer Head" tcomplement:sledge_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Broad Axe Head" tconstruct:broad_axe_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
+5  "Silver Ore Dust" exnihilocreatio:item_ore_silver:2 
 5  "Kama Head" tconstruct:kama_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Sword Blade" tconstruct:sword_blade:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
+5  "Copper Ore Dust" exnihilocreatio:item_ore_copper:2 
 5  "Binding" tconstruct:binding:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Scythe Head" tconstruct:scythe_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
+5  "Nickel Ore Dust" exnihilocreatio:item_ore_nickel:2 
 5  "Large Plate" tconstruct:large_plate:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
-5  "Chisel Head" tcomplement:chisel_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Knife Blade" tconstruct:knife_blade:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Sharpening Kit" tconstruct:sharpening_kit:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Pickaxe Head" tconstruct:pick_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Pan" tconstruct:pan_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Large Sword Blade" tconstruct:large_sword_blade:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
-5  "Silver Ore Dust" exnihilocreatio:item_ore_silver:2 
 5  "Tough Binding" tconstruct:tough_binding:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Sign Plate" tconstruct:sign_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
-5  "Nickel Ore Dust" exnihilocreatio:item_ore_nickel:2 
 5  "Bowlimb" tconstruct:bow_limb:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Sigil of the Whirlwind" bloodmagic:sigil_whirlwind:0 
-5  "Sledge Hammer Head" tcomplement:sledge_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
-5  "Copper Ore Dust" exnihilocreatio:item_ore_copper:2 
+5  "Chisel Head" tcomplement:chisel_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Hammer Head" tconstruct:hammer_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
 5  "Shovel Head" tconstruct:shovel_head:0:{Material:"integrationforegoing.reinforced_pink_slime"} 
-5  "ic2.coolant Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}} 
+5  "IC2 Coolant Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}} 
 5  "Shard" tconstruct:shard:0:{Material:"crude_steel"} 
 5  "Shard" tconstruct:shard:0:{Material:"energetic_silver"} 
 5  "Shard" tconstruct:shard:0:{Material:"vivid_alloy"} 
+5  "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:800000} 
 5  "Flux-Infused Sword" redstonearsenal:tool.sword_flux:0:{Energy:320000} 
 5  "Energy Battery" integrateddynamics:energy_battery:0:{energy:100000} 
 5  "Energy Battery" integrateddynamics:energy_battery:0:{energy:400000,capacity:400000} 
 5  "Energy Battery" integrateddynamics:energy_battery:0:{energy:1600000,capacity:1600000} 
 5  "Cinder Log [NYI]" twilightforest:cinder_log:0 
+5  "Wyvern Chestplate" draconicevolution:wyvern_chest:0:{Energy:2000000} 
+5  "Wyvern Helm" draconicevolution:wyvern_helm:0:{Energy:2000000} 
 5  "Base Addon" teslacorelib:base_addon:0 
-4  "Part Builder" tconstruct:tooltables:2:{textureBlock:{id:"minecraft:log",Count:1b,Damage:0s}} 
-4  "ic2.distilled_water" fluid:ic2distilled_water 
-4  "ic2.steam" fluid:ic2steam 
+4  "Dragon Egg Seeds" mysticalagradditions:dragon_egg_seeds:0 
+4  "Dragon Egg Crux" mysticalagradditions:special:1 
+4  "Distilled Water" fluid:ic2distilled_water 
+4  "Steam" fluid:ic2steam 
 4  "Poison" fluid:poison 
 4  "Dimensional Block" rftoolsdim:dimensional_block:0 
 4  "Dimensional Cross 2 Block" rftoolsdim:dimensional_cross2_block:0 
@@ -974,22 +954,24 @@
 4  "Corrupted Chorus Fruit" cyclicmagic:corrupted_chorus:0 
 4  "Withering Soul" mysticalagradditions:stuff:1 
 4  "Frypan" tconstruct:frypan:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:6,HarvestLevel:0,Attack:0.0375f,MiningSpeed:0.3825f,AttackSpeedMultiplier:1.0f,FreeModifiers:3},Stats
-4  "Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:6,HarvestLevel:0,Attack:0.5375f,MiningSpeed:0.3825f,AttackSpeedMultiplier:1.0f,FreeModifiers:3},Sta
+4  "Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:21,HarvestLevel:0,Attack:1.14375f,MiningSpeed:0.94124997f,AttackSpeedMultiplier:1.0f,FreeModifi
 4  "Frypan" tconstruct:frypan:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:860,HarvestLevel:8,Attack:6.54f,MiningSpeed:5.265f,AttackSpeedMultiplier:1.0f,FreeModi
-4  "Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:860,HarvestLevel:8,Attack:7.04f,MiningSpeed:5.265f,AttackSpeedMultiplier:1.0f,FreeMo
+4  "Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:1277,HarvestLevel:8,Attack:4.9575f,MiningSpeed:4.9575f,AttackSpeedMultiplier:1.0
 4  "Frypan" tconstruct:frypan:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:6448,HarvestLevel:13,Attack:26.25f,MiningSpeed:13.5f,AttackSpeedMultiplie
-4  "Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:6448,HarvestLevel:13,Attack:26.75f,MiningSpeed:13.5f,AttackSpeedMultipl
+4  "Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:8669,HarvestLevel:13,Attack:18.75f,MiningSpeed:11.25f,AttackSpeedMu
 4  "Frypan" tconstruct:frypan:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.3825f,FreeModifiers:3,Durability:6,HarvestLevel:0,Attack:0.0375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:7.8825f,FreeModifiers
-4  "Hatchet" tconstruct:hatchet:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.3825f,FreeModifiers:3,Durability:6,HarvestLevel:0,Attack:0.5375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:7.8825f,FreeModifie
+4  "Excavator" tconstruct:excavator:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.94124997f,FreeModifiers:3,Durability:21,HarvestLevel:0,Attack:1.14375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:8.44125f,
 4  "Frypan" tconstruct:frypan:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:5.265f,FreeModifiers:3,Durability:860,HarvestLevel:8,Attack:6.54f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.764999f,FreeModifie
-4  "Hatchet" tconstruct:hatchet:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:5.265f,FreeModifiers:3,Durability:860,HarvestLevel:8,Attack:7.04f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.764999f,FreeModif
+4  "Excavator" tconstruct:excavator:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:4.9575f,FreeModifiers:3,Durability:1277,HarvestLevel:8,Attack:4.9575f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.4575f,Fre
 4  "Frypan" tconstruct:frypan:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:13.5f,FreeModifiers:3,Durability:6448,HarvestLevel:13,Attack:26.25f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:21.0f,FreeModifiers:
-4  "Hatchet" tconstruct:hatchet:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:13.5f,FreeModifiers:3,Durability:6448,HarvestLevel:13,Attack:26.75f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:21.0f,FreeModifier
-4  "ic2.crop_res.oil_berry" ic2:crop_res:7 
-4  "ic2.crop_res.bobs_yer_uncle_ranks_berry" ic2:crop_res:8 
+4  "Excavator" tconstruct:excavator:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:11.25f,FreeModifiers:3,Durability:8669,HarvestLevel:13,Attack:18.75f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:18.75f,FreeMo
+4  "Oil Berry" ic2:crop_res:7 
+4  "Bobs-Yer-Uncle-Ranks Berry" ic2:crop_res:8 
 4  "Raw Eel Meat" betteranimalsplus:eel_meat_raw:0 
-4  "ic2.crop_res.milk_wart" ic2:crop_res:6 
-4  "ic2.crop_res.coffee_beans" ic2:crop_res:0 
+4  "Milk Wart" ic2:crop_res:6 
+4  "Arabica" ic2:crop_res:0 
+4  "Wyvern Helm" draconicevolution:wyvern_helm:0 
+4  "Wyvern Chestplate" draconicevolution:wyvern_chest:0 
 4  "Sakanade Spores" randomthings:ingredient:0 
 4  "Proven Grafter" forestry:grafter_proven:0 | "Corrupted Chorus Fruit" cyclicmagic:corrupted_chorus:0 
 4  "Truffle" animania:truffle:0 
@@ -1005,8 +987,8 @@
 4  "Diamond Helmet" minecraft:diamond_helmet:0 
 4  "Diamond Leggings" minecraft:diamond_leggings:0 
 4  "Diamond Chestplate" minecraft:diamond_chestplate:0 
-4  "Splash Potion of Levitation" minecraft:splash_potion:0:{Potion:"potioncore:levitation"} 
-4  "Metabolic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:metabolism"} 
+4  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:levitation"} 
+4  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:metabolism"} 
 4  "Hemp Fiber Bowstring" tconstruct:bow_string:0:{Material:"hemp"} 
 4  "Weezer Sharpening Kit" tconstruct:sharpening_kit:0:{Material:"weezer"} 
 4  "Weezer Tool Rod" tconstruct:tool_rod:0:{Material:"weezer"} 
@@ -1071,11 +1053,11 @@
 4  "Magical Wooden Chisel Head" tcomplement:chisel_head:0:{Material:"xu_magical_wood"} 
 4  "Magical Wooden Sledge Hammer Head" tcomplement:sledge_head:0:{Material:"xu_magical_wood"} 
 4  "Clover Patch [WIP]" twilightforest:twilight_plant:2 
-4  "Dyeable Wooden Planks (Vertical) Block" kirosblocks:colored_wooden_planks_block:0 
 4  "Rune of Sacrifice" bloodmagic:blood_rune:3 
-4  "Glass Shard" quark:glass_shards:0 | "White Glass Shard" quark:glass_shards:1 | "Orange Glass Shard" quark:glass_shards:2 | "Magenta Glass Shard" quark:glass_shards:3 | "Light Blue Glass Shard" quark:glass_shards:4 | "Y
 4  "Dyeable Wooden Planks Block" kirosblocks:colored_wooden_planks_vertical_block:0 
-4  "ic2.coolant Can" forestry:can:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}} 
+4  "Dyeable Wooden Planks (Vertical) Block" kirosblocks:colored_wooden_planks_block:0 
+4  "Glass Shard" quark:glass_shards:0 | "White Glass Shard" quark:glass_shards:1 | "Orange Glass Shard" quark:glass_shards:2 | "Magenta Glass Shard" quark:glass_shards:3 | "Light Blue Glass Shard" quark:glass_shards:4 | "Y
+4  "IC2 Coolant Can" forestry:can:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}} 
 4  "Milk Can" forestry:can:1:{Fluid:{FluidName:"milk",Amount:1000}} 
 4  "Creosote Oil Can" forestry:can:1:{Fluid:{FluidName:"creosote",Amount:1000}} 
 4  "Liquid Hydrogen Capsule" forestry:capsule:1:{Fluid:{FluidName:"liquidhydrogen",Amount:1000}} 
@@ -1092,16 +1074,16 @@
 4  "Liquid D-T Fuel Capsule" forestry:capsule:1:{Fluid:{FluidName:"liquidfusionfuel",Amount:1000}} 
 4  "Liquid Lithium Capsule" forestry:capsule:1:{Fluid:{FluidName:"liquidlithium",Amount:1000}} 
 4  "Heavy Water Capsule" forestry:capsule:1:{Fluid:{FluidName:"heavywater",Amount:1000}} 
-4  "ic2.construction_foam Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}} 
-4  "ic2.creosote Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2creosote",Amount:1000}} 
-4  "ic2.biomass Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2biomass",Amount:1000}} 
-4  "ic2.distilled_water Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2distilled_water",Amount:1000}} 
-4  "ic2.weed_ex Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}} 
-4  "ic2.air Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2air",Amount:1000}} 
-4  "ic2.hydrogen Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2hydrogen",Amount:1000}} 
-4  "ic2.oxygen Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2oxygen",Amount:1000}} 
-4  "ic2.heavy_water Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2heavy_water",Amount:1000}} 
-4  "ic2.milk Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2milk",Amount:1000}} 
+4  "Construction Foam Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}} 
+4  "Creosote Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2creosote",Amount:1000}} 
+4  "Biomass Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2biomass",Amount:1000}} 
+4  "Distilled Water Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2distilled_water",Amount:1000}} 
+4  "Weed-Ex Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}} 
+4  "Air Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2air",Amount:1000}} 
+4  "Hydrogen Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2hydrogen",Amount:1000}} 
+4  "Oxygen Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2oxygen",Amount:1000}} 
+4  "Heavy Water Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2heavy_water",Amount:1000}} 
+4  "Milk Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2milk",Amount:1000}} 
 4  "Biomass Capsule" forestry:capsule:1:{Fluid:{FluidName:"biomass",Amount:1000}} 
 4  "Honey Capsule" forestry:capsule:1:{Fluid:{FluidName:"for.honey",Amount:1000}} 
 4  "Crushed Ice Capsule" forestry:capsule:1:{Fluid:{FluidName:"ice",Amount:1000}} 
@@ -1257,10 +1239,10 @@
 4  "Ancient Stone Tile" thaumcraft:stone_ancient_tile:0 
 4  "Ancient Stone Tile Slab" thaumicaugmentation:slab:0 
 4  "Crystal Sword" astralsorcery:itemcrystalsword:0:{astralsorcery:{size:1800,purity:100,collect:100,fract:0,sizeOverride:-1}} 
-4  "ic2.quantum_chestplate" ic2:quantum_chestplate:0:{charge:1.0E7d} 
-4  "ic2.quantum_leggings" ic2:quantum_leggings:0:{charge:1.0E7d} 
-4  "ic2.quantum_boots" ic2:quantum_boots:0:{charge:1.0E7d} 
-4  "ic2.quantum_helmet" ic2:quantum_helmet:0:{charge:1.0E7d} 
+4  "QuantumSuit Bodyarmor" ic2:quantum_chestplate:0:{charge:1.0E7d} 
+4  "QuantumSuit Leggings" ic2:quantum_leggings:0:{charge:1.0E7d} 
+4  "QuantumSuit Boots" ic2:quantum_boots:0:{charge:1.0E7d} 
+4  "QuantumSuit Helmet" ic2:quantum_helmet:0:{charge:1.0E7d} 
 4  "Map" minecraft:filled_map:0 
 4  "Shape Card" rftools:shape_card:0 
 4  "Glass Shard" quark:glass_shards:0 
@@ -1282,16 +1264,13 @@
 4  "Black Glass Shard" quark:glass_shards:16 
 4  "Energy Battery" integrateddynamics:energy_battery:0 
 4  "Silver Block" iceandfire:silver_block:0 
-4  "Copper Nugget" immersiveengineering:metal:20 
 4  "Aluminium Nugget" immersiveengineering:metal:21 
+4  "Copper Nugget" immersiveengineering:metal:20 
 4  "Nickel Nugget" immersiveengineering:metal:24 
-3  "Dragon Egg Seeds" mysticalagradditions:dragon_egg_seeds:0 
-3  "Dragon Egg Crux" mysticalagradditions:special:1 
-3  "Fire Starter" cyclicmagic:fire_starter:0 
 3  "Ale Wort" fluid:alewort 
 3  "Quicksilver" fluid:fluid_quicksilver 
 3  "High Pressure Steam" fluid:highpressuresteam 
-3  "ic2.superheated_steam" fluid:ic2superheated_steam 
+3  "Superheated Steam" fluid:ic2superheated_steam 
 3  "Molten Infinity" fluid:infinity 
 3  "Refined Glowstone" fluid:refinedglowstone 
 3  "Molten Refined Obsidian" fluid:refinedobsidian 
@@ -1304,8 +1283,8 @@
 3  "§6A book written by a Cow" minecraft:written_book:0:{pages:["Moo?","Moam?"],author:"Cow",display:{Name:"§6A book written by a Cow"}} 
 3  "Worm" actuallyadditions:item_worm:0 
 3  "Glowing Chorus Fruit" cyclicmagic:glowing_chorus:0 
-3  "ic2.crop_res.hops" ic2:crop_res:4 
-3  "ic2.terra_wart" ic2:terra_wart:0 
+3  "Hops" ic2:crop_res:4 
+3  "Terra Wart" ic2:terra_wart:0 
 3  "Apple Oak Pollen" forestry:pollen_fertile:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeOak",UID1:"forestry.treeOak"},{Slot:1b,UID0:"forestry.heightSmall",UID1:"forestry.heightSmall"},{Slot:2b,UID0:
 3  "Brimstone Moth Caterpillar" forestry:caterpillar_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothBrimstone",UID1:"forestry.mothBrimstone"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:
 3  "Creeper Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:creeper"} | "Zombie Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:zombie"} 
@@ -1314,6 +1293,7 @@
 3  "Triple Meat Treat" thaumcraft:triple_meat_treat:0 
 3  "Orange Tip Caterpillar" forestry:caterpillar_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestr
 3  "Desert Acacia Pollen" forestry:pollen_fertile:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeAcacia",UID1:"forestry.treeAcacia"},{Slot:1b,UID0:"forestry.heightSmall",UID1:"forestry.heightSmall"},{Slo
+3  "Tiny Pile of Uranium 235" ic2:nuclear:5 
 3  "Crude Steel Ingot" enderio:item_alloy_endergy_ingot:0 
 3  "Charred Grass Path" iceandfire:chared_grass_path:0 
 3  "Sapphire Ore" iceandfire:sapphire_ore:0 
@@ -1321,13 +1301,14 @@
 3  "Timewood Clock" twilightforest:magic_log_core:0 
 3  "Minewood Core" twilightforest:magic_log_core:2 
 3  "Sortingwood Engine" twilightforest:magic_log_core:3 
+3  "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:4000} 
 3  "Flux-Infused Bow" redstonearsenal:tool.bow_flux:0:{Energy:4000} 
 3  "Eldritch Lead Cluster" thaumicwonders:eldritch_cluster:5 
 3  "Steadfast Drone" forestry:bee_drone_ge:0:{IsAnalyzed:0b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSteadfast",UID1:"forestry.speciesSteadfast"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"fore
 3  "Contaminated Food" rats:contaminated_food:0 | "Antidote Charm" cyclicmagic:charm_antidote:0 
 3  "Contaminated Food" rats:contaminated_food:0 
-3  "Golden Goose Egg" betteranimalsplus:golden_goose_egg:0 
 3  "Sinister Drone" forestry:bee_drone_ge:0:{IsAnalyzed:0b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister",UID1:"forestry.speciesSinister"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestr
+3  "Golden Goose Egg" betteranimalsplus:golden_goose_egg:0 
 3  "Crushed Quartz" actuallyadditions:item_dust:5 
 3  "Crushed Quartz" nuclearcraft:gem_dust:2 
 3  "Nickel Ore Chunk" exnihilocreatio:item_ore_nickel:1 
@@ -1336,16 +1317,17 @@
 3  "Mithril Ore Chunk" jaopca:item_hunkmithril:0 
 3  "Platinum Ore Chunk" jaopca:item_hunkplatinum:0 
 3  "Draconium Ore Chunk" jaopca:item_hunkdraconium:0 
+3  "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0 
 3  "Flux-Infused OmniWrench" redstonearsenal:tool.wrench_flux:0 
 3  "Flux-Infused Bow" redstonearsenal:tool.bow_flux:0 
 3  "Flux-Infused Fishing Rod" redstonearsenal:tool.fishing_rod_flux:0 
 3  "Flux-Infused Shield" redstonearsenal:tool.shield_flux:0 
-3  "ic2.quantum_boots" ic2:quantum_boots:0 
-3  "ic2.quantum_chestplate" ic2:quantum_chestplate:0 
-3  "ic2.quantum_helmet" ic2:quantum_helmet:0 
-3  "ic2.quantum_leggings" ic2:quantum_leggings:0 
+3  "QuantumSuit Boots" ic2:quantum_boots:0 
+3  "QuantumSuit Bodyarmor" ic2:quantum_chestplate:0 
+3  "QuantumSuit Helmet" ic2:quantum_helmet:0 
+3  "QuantumSuit Leggings" ic2:quantum_leggings:0 
 3  "Yellorium Block" bigreactors:blockyellorium:0 
-3  "ic2.mug.cold_coffee" ic2:mug:1 
+3  "Cold Coffee" ic2:mug:1 
 3  "Block of Charcoal" actuallyadditions:block_misc:5 
 3  "Ethereal Wood Stairs" biomesoplenty:ethereal_stairs:0 
 3  "Ethereal Fence" biomesoplenty:ethereal_fence:0 
@@ -1375,86 +1357,86 @@
 3  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"alkimia",amount:1}]} 
 3  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"fluctus",amount:1}]} 
 3  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"draco",amount:1}]} 
-3  "Lingering Potion of Bloating" minecraft:lingering_potion:0:{Potion:"scalingfeast:bloated_strong"} 
-3  "Lingering Potion of Rising" minecraft:lingering_potion:0:{Potion:"enderio:floating"} 
-3  "Lingering Potion of Decay" minecraft:lingering_potion:0:{Potion:"cofhcore:wither3"} 
-3  "Lingering Potion of Poison" minecraft:lingering_potion:0:{Potion:"cofhcore:poison2+"} 
-3  "Lingering Potion of Healing" minecraft:lingering_potion:0:{Potion:"cofhcore:healing3"} 
-3  "Lingering Potion of Gyration" minecraft:lingering_potion:0:{Potion:"potioncore:long_spin"} 
-3  "Lingering Potion of Deficiency" minecraft:lingering_potion:0:{Potion:"scalingfeast:deficiency"} 
-3  "Lingering Potion of Fatiguing" minecraft:lingering_potion:0:{Potion:"scalingfeast:softstomach_strong"} 
-3  "Lingering Potion of Gyration" minecraft:lingering_potion:0:{Potion:"potioncore:spin"} 
-3  "Lingering Potion of Swiftness" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness2+"} 
-3  "Lingering Potion of Leaping" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping3"} 
-3  "Lingering Potion of Haste" minecraft:lingering_potion:0:{Potion:"cofhcore:haste3"} 
-3  "Lingering Potion of Bad Luck" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck4"} 
-3  "Lingering Potion of Strength" minecraft:lingering_potion:0:{Potion:"cofhcore:strength3"} 
-3  "Lingering Potion of Regeneration" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration2+"} 
-3  "Lingering Potion of Confusion" minecraft:lingering_potion:0:{Potion:"enderio:confusion"} 
-3  "Lingering Potion of Deficiency" minecraft:lingering_potion:0:{Potion:"scalingfeast:deficiency_strong"} 
-3  "Lingering Potion of Decay" minecraft:lingering_potion:0:{Potion:"cofhcore:wither2+"} 
-3  "Lingering Potion of Leaping" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping4"} 
-3  "Lingering Potion of Haste" minecraft:lingering_potion:0:{Potion:"cofhcore:haste3+"} 
-3  "Lingering Potion of Regeneration" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration3"} 
-3  "Lingering Potion of Fortitude" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance4"} 
-3  "Lingering Potion of Luck" minecraft:lingering_potion:0:{Potion:"cofhcore:luck4"} 
-3  "Lingering Potion of Regeneration" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration3+"} 
-3  "Metabolic Lingering Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:metabolism_extended"} 
-3  "Lingering Potion of Absorption" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption3+"} 
-3  "Lingering Potion of Swiftness" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness4"} 
-3  "Lingering Potion of Healing" minecraft:lingering_potion:0:{Potion:"cofhcore:healing4"} 
-3  "Lingering Potion of Broken Magic Shielding" minecraft:lingering_potion:0:{Potion:"potioncore:strong_broken_magic_shield"} 
-3  "Lingering Potion of Decay" minecraft:lingering_potion:0:{Potion:"enderio:withering"} 
-3  "Lingering Potion of Leaping" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping3+"} 
-3  "Lingering Potion of Strength" minecraft:lingering_potion:0:{Potion:"cofhcore:strength2+"} 
-3  "Lingering Potion of Confusion" minecraft:lingering_potion:0:{Potion:"enderio:long_confusion"} 
-3  "Lingering Potion of Rising" minecraft:lingering_potion:0:{Potion:"enderio:strong_floating"} 
-3  "Lingering Potion of Fatiguing" minecraft:lingering_potion:0:{Potion:"scalingfeast:softstomach"} 
-3  "Lingering Potion of Fatiguing" minecraft:lingering_potion:0:{Potion:"scalingfeast:softstomach_extended"} 
-3  "Lingering Potion of Poison" minecraft:lingering_potion:0:{Potion:"cofhcore:poison4"} 
-3  "Lingering Potion of Absorption" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption3"} 
-3  "Lingering Potion of Strength" minecraft:lingering_potion:0:{Potion:"cofhcore:strength3+"} 
-3  "Lingering Potion of Luck" minecraft:lingering_potion:0:{Potion:"cofhcore:luck3+"} 
-3  "Lingering Potion of Haste" minecraft:lingering_potion:0:{Potion:"cofhcore:haste2+"} 
-3  "Lingering Potion of Haste" minecraft:lingering_potion:0:{Potion:"cofhcore:haste4"} 
-3  "Energetic Lingering Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:ironstomach_extended"} 
-3  "Lingering Potion of Regeneration" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration4"} 
-3  "Lingering Potion of Fortitude" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance2+"} 
-3  "Lingering Potion of Decay" minecraft:lingering_potion:0:{Potion:"cofhcore:wither4"} 
-3  "Energetic Lingering Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:ironstomach_strong"} 
-3  "Lingering Potion of Harming" minecraft:lingering_potion:0:{Potion:"cofhcore:harming3"} 
-3  "Lingering Potion of Broken Magic Shielding" minecraft:lingering_potion:0:{Potion:"potioncore:broken_magic_shield"} 
-3  "Lingering Potion of Swiftness" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness3"} 
-3  "Lingering Potion of Bad Luck" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck2+"} 
-3  "Lingering Potion of Broken Magic Shielding" minecraft:lingering_potion:0:{Potion:"potioncore:long_broken_magic_shield"} 
-3  "Lingering Potion of Luck" minecraft:lingering_potion:0:{Potion:"cofhcore:luck2+"} 
-3  "Lingering Potion of Bloating" minecraft:lingering_potion:0:{Potion:"scalingfeast:bloated"} 
 3  "Lingering Potion of Bad Luck" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck3+"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption4"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:ironstomach"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:harming4"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:wither3+"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:metabolism_strong"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:bloated_extended"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness3+"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:poison3"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck3"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:long_floating"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:luck3"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption2+"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:strength4"} 
+3  "Lingering Potion of Absorption" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption3+"} 
+3  "Lingering Potion of Leaping" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:poison4"} 
 3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping2+"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:long_withering"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:metabolism_extended"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:bloated_extended"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:haste4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:ironstomach"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:strength3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:deficiency_strong"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:healing3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:harming3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:poison2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:deficiency"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:wither3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:ironstomach_extended"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:haste3+"} 
 3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance3"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:strong_spin"} 
-3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:bloated_strong"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:strong_floating"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:bloated"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:luck4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:confusion"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:strength4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:wither4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:haste2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:withering"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:ironstomach_strong"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:softstomach_strong"} 
 3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:poison3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:healing4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:long_withering"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:strong_broken_magic_shield"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:leaping3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:floating"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:long_broken_magic_shield"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:resistance3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:luck2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:broken_magic_shield"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:metabolism_strong"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:strength2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:softstomach"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:spin"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:regeneration3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:strength3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:long_floating"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:strong_spin"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"scalingfeast:softstomach_extended"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:wither3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:luck3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:luck3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:wither2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"potioncore:long_spin"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:haste3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:harming4"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:poison3"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:absorption2+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:swiftness3+"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"enderio:long_confusion"} 
+3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"cofhcore:unluck4"} 
 3  "Terrorcotta (Circular)" twilightforest:terrorcotta_circle:0 
 3  "Terrorcotta (Circular)" twilightforest:terrorcotta_circle:0 | "Terrorcotta (Diagonal)" twilightforest:terrorcotta_diagonal:0 
 3  "Terrorcotta (Diagonal)" twilightforest:terrorcotta_diagonal:0 
 3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"extrautils2:xu2.doom"} 
-3  "Gaia Guardian's Head" botania:gaiahead:0 
 3  "Lead Ore Dust" exnihilocreatio:item_ore_lead:2 
+3  "Gaia Guardian's Head" botania:gaiahead:0 
 3  "Tin Horse Armor" thermalfoundation:horse_armor_tin:0 
 3  "Steel Horse Armor" thermalfoundation:horse_armor_steel:0 
 3  "Lava Can" forestry:can:1:{Fluid:{FluidName:"lava",Amount:1000}} 
@@ -1497,23 +1479,23 @@
 3  "Refined Canola Oil Can" forestry:can:1:{Fluid:{FluidName:"refinedcanolaoil",Amount:1000}} 
 3  "Crystallized Oil Can" forestry:can:1:{Fluid:{FluidName:"crystaloil",Amount:1000}} 
 3  "Empowered Oil Can" forestry:can:1:{Fluid:{FluidName:"empoweredoil",Amount:1000}} 
-3  "ic2.uu_matter Can" forestry:can:1:{Fluid:{FluidName:"ic2uu_matter",Amount:1000}} 
-3  "ic2.construction_foam Can" forestry:can:1:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}} 
-3  "ic2.creosote Can" forestry:can:1:{Fluid:{FluidName:"ic2creosote",Amount:1000}} 
-3  "ic2.hot_coolant Can" forestry:can:1:{Fluid:{FluidName:"ic2hot_coolant",Amount:1000}} 
-3  "ic2.pahoehoe_lava Can" forestry:can:1:{Fluid:{FluidName:"ic2pahoehoe_lava",Amount:1000}} 
-3  "ic2.biomass Can" forestry:can:1:{Fluid:{FluidName:"ic2biomass",Amount:1000}} 
-3  "ic2.biogas Can" forestry:can:1:{Fluid:{FluidName:"ic2biogas",Amount:1000}} 
-3  "ic2.distilled_water Can" forestry:can:1:{Fluid:{FluidName:"ic2distilled_water",Amount:1000}} 
-3  "ic2.superheated_steam Can" forestry:can:1:{Fluid:{FluidName:"ic2superheated_steam",Amount:1000}} 
-3  "ic2.steam Can" forestry:can:1:{Fluid:{FluidName:"ic2steam",Amount:1000}} 
-3  "ic2.hot_water Can" forestry:can:1:{Fluid:{FluidName:"ic2hot_water",Amount:1000}} 
-3  "ic2.weed_ex Can" forestry:can:1:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}} 
-3  "ic2.air Can" forestry:can:1:{Fluid:{FluidName:"ic2air",Amount:1000}} 
-3  "ic2.hydrogen Can" forestry:can:1:{Fluid:{FluidName:"ic2hydrogen",Amount:1000}} 
-3  "ic2.oxygen Can" forestry:can:1:{Fluid:{FluidName:"ic2oxygen",Amount:1000}} 
-3  "ic2.heavy_water Can" forestry:can:1:{Fluid:{FluidName:"ic2heavy_water",Amount:1000}} 
-3  "ic2.milk Can" forestry:can:1:{Fluid:{FluidName:"ic2milk",Amount:1000}} 
+3  "UU-Matter Can" forestry:can:1:{Fluid:{FluidName:"ic2uu_matter",Amount:1000}} 
+3  "Construction Foam Can" forestry:can:1:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}} 
+3  "Creosote Can" forestry:can:1:{Fluid:{FluidName:"ic2creosote",Amount:1000}} 
+3  "IC2 Hot Coolant Can" forestry:can:1:{Fluid:{FluidName:"ic2hot_coolant",Amount:1000}} 
+3  "Pahoehoe Lava Can" forestry:can:1:{Fluid:{FluidName:"ic2pahoehoe_lava",Amount:1000}} 
+3  "Biomass Can" forestry:can:1:{Fluid:{FluidName:"ic2biomass",Amount:1000}} 
+3  "Biogas Can" forestry:can:1:{Fluid:{FluidName:"ic2biogas",Amount:1000}} 
+3  "Distilled Water Can" forestry:can:1:{Fluid:{FluidName:"ic2distilled_water",Amount:1000}} 
+3  "Superheated Steam Can" forestry:can:1:{Fluid:{FluidName:"ic2superheated_steam",Amount:1000}} 
+3  "Steam Can" forestry:can:1:{Fluid:{FluidName:"ic2steam",Amount:1000}} 
+3  "Hotspring Water Can" forestry:can:1:{Fluid:{FluidName:"ic2hot_water",Amount:1000}} 
+3  "Weed-Ex Can" forestry:can:1:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}} 
+3  "Air Can" forestry:can:1:{Fluid:{FluidName:"ic2air",Amount:1000}} 
+3  "Hydrogen Can" forestry:can:1:{Fluid:{FluidName:"ic2hydrogen",Amount:1000}} 
+3  "Oxygen Can" forestry:can:1:{Fluid:{FluidName:"ic2oxygen",Amount:1000}} 
+3  "Heavy Water Can" forestry:can:1:{Fluid:{FluidName:"ic2heavy_water",Amount:1000}} 
+3  "Milk Can" forestry:can:1:{Fluid:{FluidName:"ic2milk",Amount:1000}} 
 3  "Ethanol Can" forestry:can:1:{Fluid:{FluidName:"bio.ethanol",Amount:1000}} 
 3  "Biomass Can" forestry:can:1:{Fluid:{FluidName:"biomass",Amount:1000}} 
 3  "Liquid Glass Can" forestry:can:1:{Fluid:{FluidName:"glass",Amount:1000}} 
@@ -2098,6 +2080,7 @@
 3  "Red Diamond Shulker Box" ironchest:iron_shulker_box_red:2 
 3  "Black Diamond Shulker Box" ironchest:iron_shulker_box_black:2 
 3  "Shape Card (Silk Quarry)" rftools:shape_card:3 
+3  "Gelid Enderium Sword" redstonerepository:tool.sword_gelid:0:{Energy:3200000} 
 3  "Ender Inventory Panel Remote" enderio:item_inventory_remote:2:{"enderio:energy":150000,"enderio:famount":1500} 
 3  "Dark Bow" enderio:item_dark_steel_bow:0:{enderio.darksteel.upgrade.energyUpgrade:{level:3,energy:1000000}} 
 3  "Red Mushroom Pixie Hovel" iceandfire:pixie_house:1 
@@ -2106,16 +2089,12 @@
 3  "Dark Oak Pixie Hovel" iceandfire:pixie_house:4 
 3  "Spruce Pixie Hovel" iceandfire:pixie_house:5 
 3  "Elementium Pickaxe" botania:elementiumpick:0 
-3  "ic2.mining_laser" ic2:mining_laser:26 
+3  "Mining Laser" ic2:mining_laser:26 
 3  "Gold Crook" exnihilocreatio:crook_gold:0 
 3  "Iron Crook" exnihilocreatio:crook_iron:0 
 3  "Extracting Conveyor Belt" immersiveengineering:conveyor:0:{conveyorType:"immersiveengineering:extract"} 
 3  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"extrautils2:oily"} 
 3  "Fiery Blood" twilightforest:fiery_blood:0 
-3  "ic2.nano_chestplate" ic2:nano_chestplate:0:{charge:1000000.0d} 
-3  "ic2.nano_leggings" ic2:nano_leggings:0:{charge:1000000.0d} 
-3  "ic2.nano_boots" ic2:nano_boots:0:{charge:1000000.0d} 
-3  "ic2.nano_helmet" ic2:nano_helmet:0:{charge:1000000.0d} 
 3  "Water Walking Boots" randomthings:waterwalkingboots:0 
 3  "Iron Sword" minecraft:iron_sword:7 
 3  "Iron Sword" minecraft:iron_sword:10 
@@ -2146,20 +2125,19 @@
 3  "Golden Boots" minecraft:golden_boots:91 
 3  "Fiery Blood" twilightforest:fiery_blood:0 | "Fiery Tears" twilightforest:fiery_tears:0 
 3  "Ender Fragment" enderio:item_material:62 
+3  "Iron Nugget" thaumcraft:nugget:0 
 3  "Iron Nugget" immersiveengineering:metal:29 
 3  "Silver Nugget" immersiveengineering:metal:23 
-3  "Iron Nugget" thaumcraft:nugget:0 
-3  "Dark Bow" enderio:item_dark_steel_bow:0 | "Dark Bow" enderio:item_dark_steel_bow:0:{enderio.darksteel.upgrade.energyUpgrade:{level:3,energy:1000000}} 
 3  "Solid Ender Eye" cyclicmagic:ender_eye_orb:0 
 3  "undefined" nuclearcraft:lithium_ion_cell:0 
 3  "Tainted Rock" thaumcraft:taint_rock:0 | "Tainted Soil" thaumcraft:taint_soil:0 | "Crusted Taint" thaumcraft:taint_crust:0 
 2  "Dragon Egg Essence" mysticalagradditions:dragon_egg_essence:0 
 2  "Frost Fire" cyclicmagic:fire_frost:0 
-2  "undefined" dimension:spectre_-343800852 
+2  "undefined" dimension:-343800852 
 2  "Liquid Dirt" fluid:blockfluiddirt 
 2  "Crystal Water" fluid:crystal_water 
-2  "ic2.air" fluid:ic2air 
-2  "ic2.weed_ex" fluid:ic2weed_ex 
+2  "Air" fluid:ic2air 
+2  "Weed-Ex" fluid:ic2weed_ex 
 2  "Liquid Death" fluid:liquid_death 
 2  "Seed" fluid:seed 
 2  "Molten Zinc" fluid:zinc 
@@ -2177,84 +2155,81 @@
 2  "Lapis Apple" cyclicmagic:apple_lapis:0 
 2  "Cow Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:cow"} 
 2  "Bottle of Wildberry Juice" rustic:fluid_bottle:0:{Fluid:{FluidName:"wildberryjuice",Amount:1000}} 
+2  "Gelid Enderium Sword" redstonerepository:tool.sword_gelid:0 
 2  "§bEnder Dragon Data Model§r" deepmoblearning:data_model_dragon:0:{tier:1} 
 2  "undefined" ic2:cable:0 
 2  "Brimstone Moth Serum" forestry:serum_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothBrimstone",UID1:"forestry.mothBrimstone"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:"forestry.si
-2  "Green Slimy Grass" tconstruct:slime_grass:11 
-2  "Purple Slimy Grass" tconstruct:slime_grass:3 
-2  "Magma Slimy Grass" tconstruct:slime_grass:9 
-2  "Green Slimy Grass" tconstruct:slime_grass:6 
-2  "Blue Slimy Grass" tconstruct:slime_grass:7 
-2  "Purple Slimy Grass" tconstruct:slime_grass:13 
-2  "Magma Slimy Grass" tconstruct:slime_grass:4 
-2  "Blue Slimy Grass" tconstruct:slime_grass:12 
 2  "Orange Tip Serum" forestry:serum_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.sizeSmalle
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants an
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"beetroots",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"pumpkin",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"wheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blackthorn",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"brown_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"carrots",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyazint",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"dandelion",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"flax",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"melon",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"potato",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9; Must be harvested early or it will drop §nPoisonous 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"red_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"reed",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"rose",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tulip",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cocoa",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Nutrients of at least 3"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"venomilia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12; Only drops §nGrin Powder§r§6 during second to la
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stickreed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Drops §nSticky Resin§r§6 only when mature"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corpse_plant",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"hops",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"nether_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSoul Sand§r§6 under it; Turns into §nTerra Wart§r§6 if
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"terra_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSnow§r§6 under it; Turns into §nNether Wart§r§6 if ther
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"aurelia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is a §nGold Ore§r§6 or §nBlock of Gold§r§6 below it"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blazereed",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corium",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stagnium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nTin Ore§r§6 or §nTin Block§r§6 below it"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyprium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nCopper Ore§r§6 or §nCopper Block§r§6 below it"]}
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"eatingplant",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 10; Only matures if §nLava§r§6 is below it; Will a
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"egg_plant",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ferru",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nIron Ore§r§6 or §nBlock of Iron§r§6 below it"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"milk_wart",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"plumbiscus",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nLead Ore§r§6 or §nLead Block§r§6 below it"]}}
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"redwheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level between 5 and 10 inclusive; Drops §nRedstone§r§6 only when powere
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"shining",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nSilver Block§r§6 or §nSilver Ore§r§6 below it"]}
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"slime_plant",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"spidernip",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"coffee",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"creeper_weed",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"meat_rose",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tearstalks",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"withereed",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"oil_berries",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ender_blossom",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"bobs_yer_uncle_ranks_berries",resistance:1b,gain:1b} 
-2  "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"diareed",resistance:1b,gain:1b} 
+2  "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants and sp
+2  "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"beetroots",resistance:1b,gain:1b} 
+2  "Pumpkin Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"pumpkin",resistance:1b,gain:1b} 
+2  "Wheat Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"wheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
+2  "Blackthorn Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blackthorn",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
+2  "Brown Mushroom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"brown_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}} 
+2  "Carrots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"carrots",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
+2  "Cyazint Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyazint",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
+2  "Dandelion Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"dandelion",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
+2  "Flax Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"flax",resistance:1b,gain:1b} 
+2  "Melon Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"melon",resistance:1b,gain:1b} 
+2  "Potato Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"potato",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9; Must be harvested early or it will drop §nPoisonous Po
+2  "Red Mushroom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"red_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}} 
+2  "Reed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"reed",resistance:1b,gain:1b} 
+2  "Rose Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"rose",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
+2  "Tulip Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tulip",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}} 
+2  "Cocoa Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cocoa",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Nutrients of at least 3"]}} 
+2  "Venomilia Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"venomilia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12; Only drops §nGrin Powder§r§6 during second to l
+2  "Stickreed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stickreed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Drops §nSticky Resin§r§6 only when mature"]}} 
+2  "Corpse Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corpse_plant",resistance:1b,gain:1b} 
+2  "Hops Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"hops",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
+2  "Nether Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"nether_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSoul Sand§r§6 under it; Turns into §nTerra Wart§r§6
+2  "Terra Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"terra_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSnow§r§6 under it; Turns into §nNether Wart§r§6 if th
+2  "Aurelia Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"aurelia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is a §nGold Ore§r§6 or §nBlock of Gold§r§6 below it"]}} 
+2  "Blazereed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blazereed",resistance:1b,gain:1b} 
+2  "Corium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corium",resistance:1b,gain:1b} 
+2  "Stagnium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stagnium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nTin Ore§r§6 or §nTin Block§r§6 below it"]}} 
+2  "Cyprium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyprium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nCopper Ore§r§6 or §nCopper Block§r§6 below it"]}}
+2  "Eating Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"eatingplant",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 10; Only matures if §nLava§r§6 is below it; Wi
+2  "Egg Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"egg_plant",resistance:1b,gain:1b} 
+2  "Ferru Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ferru",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nIron Ore§r§6 or §nBlock of Iron§r§6 below it"]}} 
+2  "Milk Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"milk_wart",resistance:1b,gain:1b} 
+2  "Plumbiscus Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"plumbiscus",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nLead Ore§r§6 or §nLead Block§r§6 below it"]
+2  "Redwheat Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"redwheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level between 5 and 10 inclusive; Drops §nRedstone§r§6 only when powere
+2  "Shining Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"shining",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nSilver Block§r§6 or §nSilver Ore§r§6 below it"]}}
+2  "Slime Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"slime_plant",resistance:1b,gain:1b} 
+2  "Spidernip Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"spidernip",resistance:1b,gain:1b} 
+2  "Coffee Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"coffee",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}} 
+2  "Creeper Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"creeper_weed",resistance:1b,gain:1b} 
+2  "Meat Rose Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"meat_rose",resistance:1b,gain:1b} 
+2  "Tearstalks Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tearstalks",resistance:1b,gain:1b} 
+2  "Withereed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"withereed",resistance:1b,gain:1b} 
+2  "Oil Berries Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"oil_berries",resistance:1b,gain:1b} 
+2  "Ender Blossom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ender_blossom",resistance:1b,gain:1b} 
+2  "Bobs-Yer-Uncle-Ranks Berries Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"bobs_yer_uncle_ranks_berries",resistance:1b,gain:1b} 
+2  "Diareed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"diareed",resistance:1b,gain:1b} 
 2  "Graphite Electrode" immersiveengineering:graphite_electrode:0 
 2  "Engineer's Blueprint" immersiveengineering:blueprint:0:{blueprint:"electrode"} 
+2  "Tiny Pile of Iron Dust" rustic:dust_tiny_iron:0 
 2  "Slimeball" tconstruct:edible:5 
+2  "Random Peacock" animania:entity_egg_peacock_random:0 
 2  "Random Rabbit" animania:entity_egg_rabbit_random:0 
 2  "Random Pig" animania:entity_egg_pig_random:0 
 2  "Bacon" tconstruct:edible:0 
-2  "Hamster" animania:entity_egg_hamster:0 
-2  "Random Peacock" animania:entity_egg_peacock_random:0 
 2  "Random Cow" animania:entity_egg_cow_random:0 
-2  "Random Chicken" animania:entity_egg_chicken_random:0 
-2  "Random Goat" animania:entity_egg_goat_random:0 
 2  "Random Sheep" animania:entity_egg_sheep_random:0 
+2  "Random Chicken" animania:entity_egg_chicken_random:0 
+2  "Hamster" animania:entity_egg_hamster:0 
+2  "Random Goat" animania:entity_egg_goat_random:0 
+2  "QuantumSuit Helmet" ic2:quantum_helmet:26 
+2  "QuantumSuit Bodyarmor" ic2:quantum_chestplate:26 
 2  "Sapphire" iceandfire:sapphire_gem:0 
 2  "Jungle Myrmex Bioluminescence" iceandfire:myrmex_jungle_biolight:0 
 2  "Desert Myrmex Bioluminescence" iceandfire:myrmex_desert_biolight:0 
 2  "Enchanted Soil" botania:enchantedsoil:0 
 2  "Mana Enchanter" botania:enchanter:0 
-2  "ic2.scaffold.reinforced_wood" ic2:scaffold:1 
+2  "Reinforced Scaffold" ic2:scaffold:1 
 2  "Strange Crystal" thaumicaugmentation:strange_crystal:0 
 2  "Trollber" twilightforest:trollber:0 
+2  "Enderium Flux Helmet" redstonerepository:armor.helmet_gelid:0:{Energy:0} 
 2  "Basic Smelting Factory" mekanism:machineblock:5:{recipeType:0,mekData:{energyStored:30000.0d}} 
 2  "Basic Smelting Factory" mekanism:machineblock:5:{recipeType:0,mekData:{}} 
 2  "Basic Enriching Factory" mekanism:machineblock:5:{recipeType:1,mekData:{energyStored:30000.0d}} 
@@ -2307,7 +2282,7 @@
 2  "Sponge Laser Gun" plustic:laser_gun:0:{TinkerData:{Materials:["sponge","sponge","prismarine","manyullyn"],Modifiers:["toolleveling"]},Stats:{Durability:1134,HarvestLevel:1,Attack:9.0f,MiningSpeed:2.265f,AttackSpeedMult
 2  "Rubber Laser Gun" plustic:laser_gun:0:{TinkerData:{Materials:["rubber","rubber","prismarine","manyullyn"],Modifiers:["toolleveling"]},Stats:{Durability:57,HarvestLevel:1,Attack:9.0f,MiningSpeed:3.75f,AttackSpeedMultipl
 2  "Rubber Laser Gun" plustic:laser_gun:0:{TinkerData:{Materials:["rubber","rubber","prismarine","manyullyn"],Modifiers:["toolleveling"]},Stats:{Durability:57,HarvestLevel:1,Attack:9.0f,MiningSpeed:3.75f,AttackSpeedMultipl
-2  "ic2.crop_res.coffee_powder" ic2:crop_res:1 
+2  "Coffee Powder" ic2:crop_res:1 
 2  "Dark Bow" enderio:item_dark_steel_bow:0 
 2  "Manuscript" iceandfire:manuscript:0 | "Ender Wing" cyclicmagic:tool_warp_spawn:0 
 2  "Manuscript" iceandfire:manuscript:0 
@@ -2325,20 +2300,20 @@
 2  "Naga Scale Tunic" twilightforest:naga_chestplate:0 
 2  "Naga Scale Leggings" twilightforest:naga_leggings:0 
 2  "Sandy Glass" extrautils2:decorativesolid:4 
-2  "Hardened Leather Boots" harvestcraft:hardenedleatherbootsitem:0 
+2  "Hardened Leather Helm" harvestcraft:hardenedleatherhelmitem:0 
 2  "Forest Troll Leather Leggings" iceandfire:forest_troll_leather_leggings:0 
+2  "Hardened Leather Leggings" harvestcraft:hardenedleatherleggingsitem:0 
 2  "Mountain Troll Leather Chestplate" iceandfire:mountain_troll_leather_chestplate:0 
 2  "Frost Troll Leather Chestplate" iceandfire:frost_troll_leather_chestplate:0 
 2  "Mountain Troll Leather Boots" iceandfire:mountain_troll_leather_boots:0 
 2  "Frost Troll Leather Boots" iceandfire:frost_troll_leather_boots:0 
 2  "Forest Troll Leather Chestplate" iceandfire:forest_troll_leather_chestplate:0 
-2  "Hardened Leather Helm" harvestcraft:hardenedleatherhelmitem:0 
 2  "Mountain Troll Leather Helmet" iceandfire:mountain_troll_leather_helmet:0 
 2  "Forest Troll Leather Boots" iceandfire:forest_troll_leather_boots:0 
-2  "Hardened Leather Leggings" harvestcraft:hardenedleatherleggingsitem:0 
 2  "Mountain Troll Leather Leggings" iceandfire:mountain_troll_leather_leggings:0 
-2  "Frost Troll Leather Helmet" iceandfire:frost_troll_leather_helmet:0 
 2  "Hardened Leather Chest" harvestcraft:hardenedleatherchestitem:0 
+2  "Frost Troll Leather Helmet" iceandfire:frost_troll_leather_helmet:0 
+2  "Hardened Leather Boots" harvestcraft:hardenedleatherbootsitem:0 
 2  "Frost Troll Leather Leggings" iceandfire:frost_troll_leather_leggings:0 
 2  "Forest Troll Leather Helmet" iceandfire:forest_troll_leather_helmet:0 
 2  "Bound Khopesh" animus:kama_bound:0 
@@ -2346,6 +2321,7 @@
 2  "Tan Death Worm Chitin Leggings" iceandfire:deathworm_yellow_leggings:0 
 2  "Jungle Myrmex Chitin Chestplate" iceandfire:myrmex_jungle_chestplate:0 
 2  "Desert Myrmex Chitin Hoe" iceandfire:myrmex_desert_hoe:0 
+2  "Black Lotus" actuallyadditions:block_black_lotus:0 
 2  "Red Death Worm Chitin Boots" iceandfire:deathworm_red_boots:0 
 2  "Jungle Myrmex Chitin Boots" iceandfire:myrmex_jungle_boots:0 
 2  "Desert Myrmex Chitin Helmet" iceandfire:myrmex_desert_helmet:0 
@@ -2357,7 +2333,6 @@
 2  "Jungle Myrmex Chitin Hoe" iceandfire:myrmex_jungle_hoe:0 
 2  "Desert Myrmex Chitin Axe" iceandfire:myrmex_desert_axe:0 
 2  "White Death Worm Chitin Leggings" iceandfire:deathworm_white_leggings:0 
-2  "Black Lotus" actuallyadditions:block_black_lotus:0 
 2  "Jungle Myrmex Chitin Leggings" iceandfire:myrmex_jungle_leggings:0 
 2  "Red Death Worm Chitin Helmet" iceandfire:deathworm_red_helmet:0 
 2  "Tan Death Worm Chitin Chestplate" iceandfire:deathworm_yellow_chestplate:0 
@@ -2382,7 +2357,7 @@
 2  "Celestial Notes" thaumcraft:celestial_notes:12 
 2  "Celestial Notes" thaumcraft:celestial_notes:0 
 2  "Metabolic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:metabolism_extended"} 
-2  "Metabolic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:metabolism_strong"} 
+2  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:metabolism_strong"} 
 2  "Soularium Pressure Plate (Tuned)" enderio:block_painted_pressure_plate:12 
 2  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"extrautils2:xu2.doom"} 
 2  "Lingering Uncraftable Potion" minecraft:lingering_potion:0:{Potion:"minecraft:weight"} 
@@ -2530,7 +2505,7 @@
 2  "Titanium Slurry Capsule" forestry:capsule:1:{Fluid:{FluidName:"ec.internal.slurrytitanium",Amount:1000}} 
 2  "Tungsten Slurry Capsule" forestry:capsule:1:{Fluid:{FluidName:"ec.internal.slurrytungsten",Amount:1000}} 
 2  "Uranium Slurry Capsule" forestry:capsule:1:{Fluid:{FluidName:"ec.internal.slurryuranium",Amount:1000}} 
-2  "ic2.coolant Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}} 
+2  "IC2 Coolant Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}} 
 2  "Milk Capsule" forestry:refractory:1:{Fluid:{FluidName:"milk",Amount:1000}} 
 2  "Creosote Oil Capsule" forestry:refractory:1:{Fluid:{FluidName:"creosote",Amount:1000}} 
 2  "Ender Inventory Panel Remote" enderio:item_inventory_remote:2:{"enderio:famount":1000} 
@@ -2540,7 +2515,7 @@
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"aqua",amount:1}]} 
 2  "Hempcrete Stairs" immersiveengineering:stone_decoration_stairs_hempcrete:0 
 2  "Cacophonium Block" botania:cacophoniumblock:0 
-2  "Praemunio Crystal Block" thaumadditions:crystal_block:0 
+2  "Permutatio Crystal Block" thaumadditions:crystal_block:0 
 2  "Huge Mushgloom" twilightforest:huge_mushgloom:0 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"aer",amount:1}]} 
 2  "Personal Nano Bot Beacon Tier 1" environmentaltech:nano_cont_personal_1:0 
@@ -2551,6 +2526,8 @@
 2  "Pharos Beacon" cyclicmagic:beacon_potion:0 
 2  "Glass Sword" twilightforest:glass_sword:0:{Unbreakable:1b} 
 2  "Dimension Builder" rftoolsdim:dimension_builder:0 
+2  "Diamond Drill" ic2:diamond_drill:0:{charge:30000.0d} 
+2  "Iridium Drill" ic2:iridium_drill:0:{charge:300000.0d} 
 2  "Shape Card (Clearing Quarry)" rftools:shape_card:5 
 2  "Shape Card (Clearing Silk Quarry)" rftools:shape_card:6 
 2  "Shape Card (Clearing Fortune Quarry)" rftools:shape_card:7 
@@ -2599,7 +2576,6 @@
 2  "Flux-Infused BattleWrench" redstonearsenal:tool.battlewrench_flux:0:{Energy:320000} 
 2  "Flux-Infused Sickle" redstonearsenal:tool.sickle_flux:0:{Energy:320000} 
 2  "Gelid Enderium Battle-Wrench" redstonerepository:tool.battlewrench_gelid:0:{Energy:3200000} 
-2  "Gelid Enderium Sword" redstonerepository:tool.sword_gelid:0:{Energy:3200000} 
 2  "Gelid Enderium Sickle" redstonerepository:tool.sickle_gelid:0:{Energy:3200000} 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"vitreus",amount:1}]} 
 2  "Moonworm Queen" twilightforest:moonworm_queen:0 
@@ -2651,7 +2627,7 @@
 2  "Energy Upgrade I" teslacorelib:energy_tier1:0 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"machina",amount:1}]} 
 2  "Fiery Pick" twilightforest:fiery_pickaxe:0 
-2  "ic2.diamond_drill" ic2:diamond_drill:26 
+2  "Diamond Drill" ic2:diamond_drill:26 
 2  "Spectre Pickaxe" randomthings:spectrepickaxe:0 
 2  "Spectre Axe" randomthings:spectreaxe:0 
 2  "Spectre Shovel" randomthings:spectreshovel:0 
@@ -2664,7 +2640,7 @@
 2  "Crystal Pickaxe" astralsorcery:itemcrystalpickaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}} 
 2  "Crystal Shovel" astralsorcery:itemcrystalshovel:0:{astralsorcery:{size:900,purity:100,collect:100,fract:0,sizeOverride:-1}} 
 2  "Crystal Axe" astralsorcery:itemcrystalaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}} 
-2  "ic2.drill" ic2:drill:26 
+2  "Mining Drill" ic2:drill:26 
 2  "Ironwood Pick" twilightforest:ironwood_pickaxe:0:{ench:[{id:32,lvl:1s}]} 
 2  "Iron Hammer" exnihilocreatio:hammer_iron:0 
 2  "Steel Pickaxe" immersiveengineering:pickaxe_steel:0 
@@ -2726,10 +2702,6 @@
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"sensus",amount:1}]} 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"bestia",amount:1}]} 
 2  "Scepter of Life Draining" twilightforest:lifedrain_scepter:0 
-2  "Sponge Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["sponge","sponge","string"],Modifiers:["toolleveling"]},Stats:{Durability:788,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,Free
-2  "Rubber Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["rubber","rubber","string"],Modifiers:["toolleveling"]},Stats:{Durability:1,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeM
-2  "Sponge Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["sponge","sponge","sponge","string"],Modifiers:["toolleveling"]},Stats:{Durability:1359,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier
-2  "Rubber Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["rubber","rubber","rubber","string"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"permutatio",amount:1}]} 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"sonus",amount:1}]} 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"desiderium",amount:1}]} 
@@ -2754,19 +2726,24 @@
 2  "Steeleaf Helm" twilightforest:steeleaf_helmet:0:{ench:[{id:4,lvl:2s}]} 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"praecantatio",amount:1}]} 
 2  "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"mythus",amount:1}]} 
-2  "ic2.batpack" ic2:batpack:26 
-2  "ic2.jetpack_electric" ic2:jetpack_electric:26 
+2  "BatPack" ic2:batpack:26 
+2  "Electric Jetpack" ic2:jetpack_electric:26 
+2  "NanoSuit Bodyarmor" ic2:nano_chestplate:0:{charge:1000000.0d} 
 2  "Knightly Plate" twilightforest:knightmetal_chestplate:0 
 2  "Manyullyn Chestplate" tcomplement:manyullyn_chestplate:0 
 2  "Steel Chestplate" immersiveengineering:steel_armor_chest:0 
 2  "Steel Chestplate" tcomplement:steel_chestplate:0 
+2  "NanoSuit Leggings" ic2:nano_leggings:0:{charge:1000000.0d} 
 2  "Knightly Greaves" twilightforest:knightmetal_leggings:0 
 2  "Steel Leggings" immersiveengineering:steel_armor_legs:0 
 2  "Manyullyn Leggings" tcomplement:manyullyn_leggings:0 
+2  "NanoSuit Helmet" ic2:nano_helmet:26 
 2  "Knightslime Chestplate" tcomplement:knightslime_chestplate:0 
 2  "Steel Leggings" tcomplement:steel_leggings:0 
 2  "Knightslime Leggings" tcomplement:knightslime_leggings:0 
-2  "ic2.nightvision_goggles" ic2:nightvision_goggles:26 
+2  "NanoSuit Boots" ic2:nano_boots:0:{charge:1000000.0d} 
+2  "NanoSuit Helmet" ic2:nano_helmet:0:{charge:1000000.0d} 
+2  "Nightvision Goggles" ic2:nightvision_goggles:26 
 2  "Knightly Helm" twilightforest:knightmetal_helmet:0 
 2  "Knightly Boots" twilightforest:knightmetal_boots:0 
 2  "Faraday Leggings" immersiveengineering:faraday_suit_legs:0 
@@ -2833,18 +2810,16 @@
 2  "Weighted Pressure Plate (Heavy)" enderio:block_painted_pressure_plate:4 
 2  "Nutritious Stick" enderio:item_material:8 
 2  "Confusing Powder" enderio:item_material:61 
-2  "Lead Nugget" immersiveengineering:metal:22 
-2  "Steel Nugget" immersiveengineering:metal:28 
-2  "Electrum Nugget" immersiveengineering:metal:27 
 2  "Constantan Nugget" immersiveengineering:metal:26 
-2  "Fusewood Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["fusewood","fusewood","string"],Modifiers:["toolleveling"]},Stats:{Durability:36,HarvestLevel:2,Attack:6.75f,MiningSpeed:8.25f,AttackSpeedMultiplier:1.0f
-2  "Fusewood Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["fusewood","fusewood","fusewood","string"],Modifiers:["toolleveling"]},Stats:{Durability:282,HarvestLevel:2,Attack:6.75f,MiningSpeed:8.25f,AttackSpeedMul
-2  "§aLong Elixir" rustic:elixir:0:{enchantmentColor:2720000,ench:[{lvl:1s,id:44s}],display:{Name:"§aLong Elixir",Lore:["Increase duration of potion x10"]},PotionLong:1,ElixirEffects:[{Effect:"minecraft:speed",Duration:172
+2  "Electrum Nugget" immersiveengineering:metal:27 
+2  "Steel Nugget" immersiveengineering:metal:28 
+2  "Lead Nugget" immersiveengineering:metal:22 
+2  "§aLong Elixir" rustic:elixir:0:{enchantmentColor:2720000,ench:[{lvl:1s,id:42s}],display:{Name:"§aLong Elixir",Lore:["Increase duration of potion x10"]},PotionLong:1,ElixirEffects:[{Effect:"minecraft:speed",Duration:172
+1  "undefined" bloodmagic:bound_sword:0 
 1  "undefined" randomthings:spectrekey 
 1  "undefined" rftdimtweak:dimension_enscriber 
 1  "undefined" rftoolsdim:dimension_builder 
 1  "undefined" rftoolsdim:dimension_editor 
-1  "undefined" bloodmagic:bound_sword:0 
 1  "undefined" rustic:ale_wort:0 
 1  "undefined" animus:blockfluiddirt:0 
 1  "undefined" enderio:block_fluid_crude_steel:0 
@@ -2869,7 +2844,7 @@
 1  "Spectre Block" randomthings:spectreblock:0 
 1  "Digital Mob Agonizer" deepmoblearningbm:digital_agonizer:0 
 1  "Ultimate Crop" mysticalcreations:ultimate_crop:0 
-1  "ic2.resource.basalt" ic2:resource:0 
+1  "Basalt" ic2:resource:0 
 1  "Skeleton Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:skeleton"} 
 1  "Spider Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:spider"} 
 1  "Squid Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:squid"} 
@@ -2892,7 +2867,7 @@
 1  "Wildberry Wine" fluid:wildberrywine | "Wildberry Wine" fluid:wildberrywine 
 1  "Jellyfish Soul" draconicevolution:mob_soul:0:{EntityName:"betteranimalsplus:jellyfish"} 
 1  "Timberwolf Soul" draconicevolution:mob_soul:0:{EntityName:"emberroot:timberwolf"} 
-1  "Gilded Golem Soul" draconicevolution:mob_soul:0:{EntityName:"emberroot:rainbow_golem"} 
+1  "Nature Golem Soul" draconicevolution:mob_soul:0:{EntityName:"emberroot:rainbow_golem"} 
 1  "Frozen Skeleton Soul" draconicevolution:mob_soul:0:{EntityName:"emberroot:skeleton_frozen"} 
 1  "Walrus Soul" draconicevolution:mob_soul:0:{EntityName:"betteranimalsplus:walrus"} 
 1  "Robit Soul" draconicevolution:mob_soul:0:{EntityName:"mekanism:robit"} 
@@ -2901,9 +2876,9 @@
 1  "Pink Slime Soul" draconicevolution:mob_soul:0:{EntityName:"industrialforegoing:pink_slime"} 
 1  "Neo-Ratlantean Soul" draconicevolution:mob_soul:0:{EntityName:"rats:neo_ratlantean"} 
 1  "Name-Error Soul" draconicevolution:mob_soul:0:{EntityName:"draconicevolution:chaosguardian"} 
-1  "ic2.fluid_cell" ic2:fluid_cell:5 
+1  "Universal Fluid Cell" ic2:fluid_cell:5 
 1  "Molten Gold Capsule" forestry:refractory:1:{Fluid:{FluidName:"gold",Amount:1000}} 
-1  "ic2.pahoehoe_lava Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2pahoehoe_lava",Amount:1000}} 
+1  "Pahoehoe Lava Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2pahoehoe_lava",Amount:1000}} 
 1  "Molten Tin Capsule" forestry:refractory:1:{Fluid:{FluidName:"tin",Amount:1000}} 
 1  "Molten Copper Capsule" forestry:refractory:1:{Fluid:{FluidName:"copper",Amount:1000}} 
 1  "Molten Iron Capsule" forestry:refractory:1:{Fluid:{FluidName:"iron",Amount:1000}} 
@@ -2919,7 +2894,8 @@
 1  "§6THE END" biomesoplenty:earth:0:{display:{Name:"§6THE END"}} 
 1  "Ancient Pedestal" thaumcraft:pedestal_ancient:0 
 1  "Cooked Eel Meat" betteranimalsplus:eel_meat_cooked:0 
-1  "ic2.nuclear.mox_pellet" ic2:nuclear:9 
+1  "Uranium 235" ic2:nuclear:1 
+1  "Pellets of MOX Nuclear Fuel" ic2:nuclear:9 
 1  "Orange Tip Cocoon" forestry:cocoon_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.sizeSmal
 1  "Brimstone Moth Cocoon" forestry:cocoon_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothBrimstone",UID1:"forestry.mothBrimstone"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:"forestry.
 1  "§bTier: 0" openblocks:glyph:48:{display:{Name:"§bTier: 0",Lore:["§e§lAttributes: ","§eWeed Bad"]}} 
@@ -2969,18 +2945,18 @@
 1  "§bTier: 11" openblocks:glyph:66:{display:{Name:"§bTier: 11",Lore:["§e§lAttributes: ","§eShiny Vine Emerald Berylium Crystal"]}} 
 1  "§bTier: 12" openblocks:glyph:67:{display:{Name:"§bTier: 12",Lore:["§e§lAttributes: ","§eFire Shiny Reed Coal Diamond Crystal"]}} 
 1  "Homing Cartridge" immersiveengineering:bullet:2:{bullet:"terrasteel"} | "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"} 
-1  "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"} 
 1  "Homing Cartridge" immersiveengineering:bullet:2:{bullet:"terrasteel"} 
-1  "ic2.nuclear.depleted_uranium" ic2:nuclear:11 
-1  "ic2.nuclear.depleted_dual_mox" ic2:nuclear:15 
-1  "ic2.nuclear.depleted_quad_mox" ic2:nuclear:16 
-1  "ic2.nuclear.depleted_dual_uranium" ic2:nuclear:12 
-1  "ic2.nuclear.depleted_mox" ic2:nuclear:14 
-1  "ic2.nuclear.depleted_quad_uranium" ic2:nuclear:13 
-1  "Crystal Axe" astralsorcery:itemcrystalaxe:0:{astralsorcery:{}} 
-1  "Crystal Pickaxe" astralsorcery:itemcrystalpickaxe:0:{astralsorcery:{}} 
-1  "Crystal Shovel" astralsorcery:itemcrystalshovel:0:{astralsorcery:{}} 
-1  "Crystal Sword" astralsorcery:itemcrystalsword:0:{astralsorcery:{}} 
+1  "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"} 
+1  "Fuel Rod (Depleted Uranium)" ic2:nuclear:11 
+1  "Dual Fuel Rod (Depleted Uranium)" ic2:nuclear:12 
+1  "Fuel Rod (Depleted MOX)" ic2:nuclear:14 
+1  "Quad Fuel Rod (Depleted Uranium)" ic2:nuclear:13 
+1  "Quad Fuel Rod (Depleted MOX)" ic2:nuclear:16 
+1  "Dual Fuel Rod (Depleted MOX)" ic2:nuclear:15 
+1  "Crystal Axe" astralsorcery:itemcrystalaxe:0 
+1  "Crystal Pickaxe" astralsorcery:itemcrystalpickaxe:0 
+1  "Crystal Shovel" astralsorcery:itemcrystalshovel:0 
+1  "Crystal Sword" astralsorcery:itemcrystalsword:0 
 1  "Skullfire Sword" avaritia:skullfire_sword:0 
 1  "Wide Guard" tconstruct:wide_guard:0 
 1  "Fiery Cleaver" tconstruct:cleaver:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:7.2f,FreeModifiers:3,Durability:2088,HarvestLevel:3,Attack:11.58f},Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:7.2f,FreeModif
@@ -3017,8 +2993,8 @@
 1  "Fertilized Farmland" farmingforblockheads:fertilized_farmland_rich:0 
 1  "Fertilized Farmland" farmingforblockheads:fertilized_farmland_stable:0 
 1  "Ash Block" forestry:ash_block_2:0 
-1  "ic2.foam.reinforced" ic2:foam:1 
-1  "ic2.scaffold.reinforced_iron" ic2:scaffold:3 
+1  "Reinforced Construction Foam" ic2:foam:1 
+1  "Reinforced Iron Scaffold" ic2:scaffold:3 
 1  "Burnt Out Torch" iceandfire:burnt_torch:0 
 1  "White Grass" randomthings:coloredgrass:0 
 1  "Orange Grass" randomthings:coloredgrass:1 
@@ -3382,7 +3358,7 @@
 1  "Emerald Laser Gun" plustic:laser_gun:0:{TinkerData:{Materials:["emerald_plustic","emerald_plustic","prismarine","manyullyn"],Modifiers:["toolleveling"]},Stats:{Durability:1009,HarvestLevel:4,Attack:9.0f,MiningSpeed:5.2
 1  "Wooden Laser Gun" plustic:laser_gun:0:{TinkerData:{Materials:["wood","wood","prismarine","manyullyn"],Modifiers:["toolleveling"]},Stats:{Durability:45,HarvestLevel:0,Attack:9.0f,MiningSpeed:1.5f,AttackSpeedMultiplier:1
 1  "Wooden Laser Gun" plustic:laser_gun:0:{TinkerData:{Materials:["wood","wood","prismarine","manyullyn"],Modifiers:["toolleveling"]},Stats:{Durability:45,HarvestLevel:0,Attack:9.0f,MiningSpeed:1.5f,AttackSpeedMultiplier:1
-1  "ic2.crop.seeds" ic2:crop_seed_bag:0 
+1  "Invalid Seeds" ic2:crop_seed_bag:0 
 1  "Music Disc" endreborn:end_record:0 
 1  "Bat's Wing" actuallyadditions:item_misc:15 
 1  "Amazing Technicolor Glasses" openblocks:technicolor_glasses:0 | "Codex" villagenames:codex:0 
@@ -3392,16 +3368,18 @@
 1  "Ender Wing" cyclicmagic:tool_warp_spawn:0 
 1  "Lotus Seeds" randomthings:lotusseeds:0 
 1  "Nitrate Dust" immersiveengineering:material:24 
+1  "Diamond Drill" ic2:diamond_drill:0 
+1  "Iridium Drill" ic2:iridium_drill:0 
 1  "Ancient Cobblestone" thaumicaugmentation:stone:10 
 1  "Primordial Grain" thaumicwonders:primordial_grain:0 
 1  "AbandonedBurnable" reccomplex:inventory_generation_tag:0:{itemCollectionKey:"AbandonedBurnable"} | "AbandonedChest" reccomplex:inventory_generation_tag:0:{itemCollectionKey:"AbandonedChest"} | "AirShrine" reccomplex:in
-1  "ic2.mug.dark_coffee" ic2:mug:2 
+1  "Dark Coffee" ic2:mug:2 
 1  "Unfired Death Urn" enderio:item_material:81 
 1  "Desert Myrmex Chitin Sword" iceandfire:myrmex_desert_sword:0 
 1  "Black Dye" actuallyadditions:item_misc:17 
 1  "Jungle Myrmex Chitin Sword" iceandfire:myrmex_jungle_sword:0 
-1  "Broken Pickaxe" forestry:broken_bronze_pickaxe:0 
 1  "Broken Shovel" forestry:broken_bronze_shovel:0 
+1  "Broken Pickaxe" forestry:broken_bronze_pickaxe:0 
 1  "Cooked Crab Leg" quark:cooked_crab_leg:0 
 1  "Crystal Crusher" thaumadditions:crystal_crusher:0 
 1  "Vis Salt" thaumadditions:salt_essence:0 
@@ -3410,80 +3388,80 @@
 1  "Axe of the Stream" thaumcraft:elemental_axe:0 
 1  "Pickaxe of the Core" thaumcraft:elemental_pick:0 
 1  "Essentia Pistol" thaumadditions:essentia_pistol:0 
-1  "Splash Potion of Gyration" minecraft:splash_potion:0:{Potion:"potioncore:spin"} 
-1  "Splash Potion of Swiftness" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness3+"} 
-1  "Splash Potion of Luck" minecraft:splash_potion:0:{Potion:"cofhcore:luck4"} 
-1  "Splash Potion of Confusion" minecraft:splash_potion:0:{Potion:"enderio:long_confusion"} 
-1  "Splash Potion of Deficiency" minecraft:splash_potion:0:{Potion:"scalingfeast:deficiency_strong"} 
-1  "Splash Potion of Swiftness" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness3"} 
-1  "Splash Potion of Regeneration" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration3"} 
-1  "Splash Potion of Poison" minecraft:splash_potion:0:{Potion:"cofhcore:poison2+"} 
-1  "Splash Potion of Regeneration" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration3+"} 
-1  "Splash Potion of Healing" minecraft:splash_potion:0:{Potion:"cofhcore:healing3"} 
-1  "Splash Potion of Fatiguing" minecraft:splash_potion:0:{Potion:"scalingfeast:softstomach"} 
-1  "Splash Potion of Regeneration" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration4"} 
-1  "Splash Potion of Fortitude" minecraft:splash_potion:0:{Potion:"cofhcore:resistance2+"} 
-1  "Splash Potion of Bloating" minecraft:splash_potion:0:{Potion:"scalingfeast:bloated_strong"} 
-1  "Splash Potion of Leaping" minecraft:splash_potion:0:{Potion:"cofhcore:leaping3+"} 
-1  "Splash Potion of Broken Magic Shielding" minecraft:splash_potion:0:{Potion:"potioncore:broken_magic_shield"} 
-1  "Splash Potion of Haste" minecraft:splash_potion:0:{Potion:"cofhcore:haste3"} 
-1  "Splash Potion of Luck" minecraft:splash_potion:0:{Potion:"cofhcore:luck2+"} 
-1  "Splash Potion of Gyration" minecraft:splash_potion:0:{Potion:"potioncore:strong_spin"} 
-1  "Splash Potion of Bloating" minecraft:splash_potion:0:{Potion:"scalingfeast:bloated_extended"} 
-1  "Splash Potion of Swiftness" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness4"} 
-1  "Splash Potion of Haste" minecraft:splash_potion:0:{Potion:"cofhcore:haste4"} 
-1  "Splash Potion of Bad Luck" minecraft:splash_potion:0:{Potion:"cofhcore:unluck4"} 
-1  "Splash Potion of Bad Luck" minecraft:splash_potion:0:{Potion:"cofhcore:unluck3"} 
-1  "Energetic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:ironstomach_strong"} 
-1  "Splash Potion of Fortitude" minecraft:splash_potion:0:{Potion:"cofhcore:resistance4"} 
-1  "Splash Potion of Absorption" minecraft:splash_potion:0:{Potion:"cofhcore:absorption3+"} 
-1  "Splash Potion of Bad Luck" minecraft:splash_potion:0:{Potion:"cofhcore:unluck3+"} 
-1  "Splash Potion of Broken Magic Shielding" minecraft:splash_potion:0:{Potion:"potioncore:long_broken_magic_shield"} 
-1  "Splash Potion of Decay" minecraft:splash_potion:0:{Potion:"cofhcore:wither3+"} 
-1  "Splash Potion of Fortitude" minecraft:splash_potion:0:{Potion:"cofhcore:resistance3"} 
-1  "Splash Potion of Rising" minecraft:splash_potion:0:{Potion:"enderio:strong_floating"} 
-1  "Splash Potion of Strength" minecraft:splash_potion:0:{Potion:"cofhcore:strength2+"} 
-1  "Energetic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:ironstomach_extended"} 
-1  "Splash Potion of Leaping" minecraft:splash_potion:0:{Potion:"cofhcore:leaping3"} 
-1  "Splash Potion of Fatiguing" minecraft:splash_potion:0:{Potion:"scalingfeast:softstomach_extended"} 
-1  "Splash Potion of Leaping" minecraft:splash_potion:0:{Potion:"cofhcore:leaping4"} 
-1  "Splash Potion of Harming" minecraft:splash_potion:0:{Potion:"cofhcore:harming4"} 
 1  "Splash Potion of Confusion" minecraft:splash_potion:0:{Potion:"enderio:confusion"} 
-1  "Splash Potion of Absorption" minecraft:splash_potion:0:{Potion:"cofhcore:absorption2+"} 
-1  "Energetic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:ironstomach"} 
-1  "Splash Potion of Strength" minecraft:splash_potion:0:{Potion:"cofhcore:strength3+"} 
-1  "Splash Potion of Haste" minecraft:splash_potion:0:{Potion:"cofhcore:haste2+"} 
-1  "Splash Potion of Poison" minecraft:splash_potion:0:{Potion:"cofhcore:poison4"} 
-1  "Splash Potion of Absorption" minecraft:splash_potion:0:{Potion:"cofhcore:absorption3"} 
-1  "Splash Potion of Fatiguing" minecraft:splash_potion:0:{Potion:"scalingfeast:softstomach_strong"} 
-1  "Splash Potion of Poison" minecraft:splash_potion:0:{Potion:"cofhcore:poison3+"} 
-1  "Splash Potion of Gyration" minecraft:splash_potion:0:{Potion:"potioncore:long_spin"} 
-1  "Splash Potion of Strength" minecraft:splash_potion:0:{Potion:"cofhcore:strength3"} 
-1  "Splash Potion of Harming" minecraft:splash_potion:0:{Potion:"cofhcore:harming3"} 
-1  "Splash Potion of Fortitude" minecraft:splash_potion:0:{Potion:"cofhcore:resistance3+"} 
-1  "Splash Potion of Luck" minecraft:splash_potion:0:{Potion:"cofhcore:luck3+"} 
 1  "Splash Potion of Rising" minecraft:splash_potion:0:{Potion:"enderio:floating"} 
-1  "Splash Potion of Luck" minecraft:splash_potion:0:{Potion:"cofhcore:luck3"} 
-1  "Splash Potion of Healing" minecraft:splash_potion:0:{Potion:"cofhcore:healing4"} 
+1  "Splash Potion of Haste" minecraft:splash_potion:0:{Potion:"cofhcore:haste2+"} 
+1  "Splash Potion of Luck" minecraft:splash_potion:0:{Potion:"cofhcore:luck3+"} 
+1  "Splash Potion of Absorption" minecraft:splash_potion:0:{Potion:"cofhcore:absorption3"} 
+1  "Splash Potion of Harming" minecraft:splash_potion:0:{Potion:"cofhcore:harming3"} 
+1  "Splash Potion of Haste" minecraft:splash_potion:0:{Potion:"cofhcore:haste3"} 
+1  "Splash Potion of Fortitude" minecraft:splash_potion:0:{Potion:"cofhcore:resistance3+"} 
+1  "Splash Potion of Fatiguing" minecraft:splash_potion:0:{Potion:"scalingfeast:softstomach"} 
+1  "Splash Potion of Swiftness" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness4"} 
 1  "Splash Potion of Strength" minecraft:splash_potion:0:{Potion:"cofhcore:strength4"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:long_floating"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness2+"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:long_withering"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither3"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:absorption4"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:unluck2+"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:withering"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:haste3+"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration2+"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither4"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither2+"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:bloated"} 
-1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:leaping2+"} 
+1  "Splash Potion of Poison" minecraft:splash_potion:0:{Potion:"cofhcore:poison2+"} 
+1  "Splash Potion of Regeneration" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration4"} 
+1  "Splash Potion of Fortitude" minecraft:splash_potion:0:{Potion:"cofhcore:resistance3"} 
+1  "Splash Potion of Leaping" minecraft:splash_potion:0:{Potion:"cofhcore:leaping3+"} 
+1  "Splash Potion of Bloating" minecraft:splash_potion:0:{Potion:"scalingfeast:bloated"} 
+1  "Splash Potion of Healing" minecraft:splash_potion:0:{Potion:"cofhcore:healing3"} 
+1  "Splash Potion of Fatiguing" minecraft:splash_potion:0:{Potion:"scalingfeast:softstomach_extended"} 
+1  "Splash Potion of Decay" minecraft:splash_potion:0:{Potion:"enderio:withering"} 
+1  "Splash Potion of Absorption" minecraft:splash_potion:0:{Potion:"cofhcore:absorption3+"} 
+1  "Splash Potion of Strength" minecraft:splash_potion:0:{Potion:"cofhcore:strength3+"} 
+1  "Splash Potion of Strength" minecraft:splash_potion:0:{Potion:"cofhcore:strength2+"} 
+1  "Energetic Splash Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:ironstomach"} 
+1  "Splash Potion of Absorption" minecraft:splash_potion:0:{Potion:"cofhcore:absorption4"} 
 1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:deficiency"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:unluck2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:poison4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:long_confusion"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither4"} 
 1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:poison3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:unluck3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:ironstomach_extended"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:healing4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:long_spin"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:strength3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration3+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:long_broken_magic_shield"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:bloated_strong"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:haste3+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:long_withering"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:unluck4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:leaping2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:haste4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:poison3+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:leaping3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:swiftness3+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:softstomach_strong"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:broken_magic_shield"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:long_floating"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:resistance4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:deficiency_strong"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:luck4"} 
 1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:strong_broken_magic_shield"} 
-1  "Vis Stone" thaumcraft:amulet_vis:0 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:leaping4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:harming4"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:ironstomach_strong"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither3+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:spin"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:luck2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:resistance2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:wither3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:unluck3+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:luck3"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:absorption2+"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"scalingfeast:bloated_extended"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"potioncore:strong_spin"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"enderio:strong_floating"} 
+1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"cofhcore:regeneration3"} 
 1  "Lingering Uncraftable Potion" minecraft:lingering_potion:0 
+1  "Vis Stone" thaumcraft:amulet_vis:0 
 1  "Apprentice's Ring" thaumcraft:baubles:3 
 1  "Tough Tool Rod" tconstruct:tough_tool_rod:0:{Material:"fusewood"} 
 1  "Wide Guard" tconstruct:wide_guard:0:{Material:"fusewood"} 
@@ -3491,7 +3469,7 @@
 1  "Tough Tool Rod" tconstruct:tough_tool_rod:0:{Material:"bloodwood"} 
 1  "Wide Guard" tconstruct:wide_guard:0:{Material:"bloodwood"} 
 1  "Bloodwood Armor Trim" conarm:armor_trim:0:{Material:"bloodwood"} 
-1  "ic2.te.recycler" ic2:te:48 
+1  "Recycler" ic2:te:48 
 1  "Splash Uncraftable Potion" minecraft:splash_potion:0:{Potion:"minecraft:weight"} 
 1  "Camouflaged Paneling" forestry:crafting_material:7 
 1  "Syrup" fluid:syrup 
@@ -3529,22 +3507,22 @@
 1  "Refined Canola Oil Capsule" forestry:refractory:1:{Fluid:{FluidName:"refinedcanolaoil",Amount:1000}} 
 1  "Crystallized Oil Capsule" forestry:refractory:1:{Fluid:{FluidName:"crystaloil",Amount:1000}} 
 1  "Empowered Oil Capsule" forestry:refractory:1:{Fluid:{FluidName:"empoweredoil",Amount:1000}} 
-1  "ic2.uu_matter Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2uu_matter",Amount:1000}} 
-1  "ic2.construction_foam Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}} 
-1  "ic2.creosote Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2creosote",Amount:1000}} 
-1  "ic2.hot_coolant Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2hot_coolant",Amount:1000}} 
-1  "ic2.biomass Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2biomass",Amount:1000}} 
-1  "ic2.biogas Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2biogas",Amount:1000}} 
-1  "ic2.distilled_water Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2distilled_water",Amount:1000}} 
-1  "ic2.superheated_steam Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2superheated_steam",Amount:1000}} 
-1  "ic2.steam Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2steam",Amount:1000}} 
-1  "ic2.hot_water Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2hot_water",Amount:1000}} 
-1  "ic2.weed_ex Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}} 
-1  "ic2.air Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2air",Amount:1000}} 
-1  "ic2.hydrogen Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2hydrogen",Amount:1000}} 
-1  "ic2.oxygen Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2oxygen",Amount:1000}} 
-1  "ic2.heavy_water Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2heavy_water",Amount:1000}} 
-1  "ic2.milk Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2milk",Amount:1000}} 
+1  "UU-Matter Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2uu_matter",Amount:1000}} 
+1  "Construction Foam Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2construction_foam",Amount:1000}} 
+1  "Creosote Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2creosote",Amount:1000}} 
+1  "IC2 Hot Coolant Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2hot_coolant",Amount:1000}} 
+1  "Biomass Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2biomass",Amount:1000}} 
+1  "Biogas Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2biogas",Amount:1000}} 
+1  "Distilled Water Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2distilled_water",Amount:1000}} 
+1  "Superheated Steam Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2superheated_steam",Amount:1000}} 
+1  "Steam Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2steam",Amount:1000}} 
+1  "Hotspring Water Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2hot_water",Amount:1000}} 
+1  "Weed-Ex Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}} 
+1  "Air Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2air",Amount:1000}} 
+1  "Hydrogen Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2hydrogen",Amount:1000}} 
+1  "Oxygen Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2oxygen",Amount:1000}} 
+1  "Heavy Water Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2heavy_water",Amount:1000}} 
+1  "Milk Capsule" forestry:refractory:1:{Fluid:{FluidName:"ic2milk",Amount:1000}} 
 1  "Ethanol Capsule" forestry:refractory:1:{Fluid:{FluidName:"bio.ethanol",Amount:1000}} 
 1  "Biomass Capsule" forestry:refractory:1:{Fluid:{FluidName:"biomass",Amount:1000}} 
 1  "Liquid Glass Capsule" forestry:refractory:1:{Fluid:{FluidName:"glass",Amount:1000}} 
@@ -4168,7 +4146,7 @@
 1  "Bee Nest" animania:wild_hive:0 
 1  "Shape Card (Placing Liquids)" rftools:shape_card:10 
 1  "Shape Card (Void)" rftools:shape_card:1 
-1  "ic2.mug.coffee" ic2:mug:3 
+1  "Coffee" ic2:mug:3 
 1  "Aqua Vis Pod" thaumadditions:vis_pod:0:{Aspect:"aqua"} 
 1  "Taint Geyser" thaumcraft:taint_geyser:0 
 1  "Particle Emitter" littletiles:premade:0:{structure:{id:"particle_emitter"}} 
@@ -4241,6 +4219,7 @@
 1  "Enderium Flux Boots" redstonerepository:armor.boots_gelid:0:{Energy:4000000} 
 1  "Temporary Bifrost Block" botania:bifrost:0 
 1  "Flux-Infused Quiver" redstonearsenal:util.quiver_flux:0:{Energy:320000} 
+1  "Crop Harvester" ic2:te:58 
 1  "Modifier: Elemental" thaumicaugmentation:augment_builder_power:0:{id:"thaumicaugmentation:strength_elemental"} 
 1  "Can" forestry:can:1:{Fluid:{FluidName:"betterquesting.placeholder",Amount:1000}} 
 1  "Biome Glass" randomthings:biomeglass:0 
@@ -4270,7 +4249,10 @@
 1  "Elite Compressing Factory" mekanism:machineblock:7:{recipeType:3} 
 1  "Elite Injecting Factory" mekanism:machineblock:7:{recipeType:6} 
 1  "Elite Infusing Factory" mekanism:machineblock:7:{recipeType:7} 
+1  "OV Scanner" ic2:advanced_scanner:0:{charge:1000000.0d} 
+1  "Pattern Storage" ic2:te:62 
 1  "Elite Sawing Factory" mekanism:machineblock:7:{recipeType:8} 
+1  "Electric Jetpack" ic2:jetpack_electric:0:{charge:30000.0d} 
 1  "Glowing Crusted Stone" thaumicaugmentation:stone:7 
 1  "Ancient Lantern" thaumicaugmentation:stone:11 
 1  "Lux Vis Pod" thaumadditions:vis_pod:0:{Aspect:"lux"} 
@@ -4280,7 +4262,7 @@
 1  "Celestial Notes" thaumcraft:celestial_notes:4 
 1  "Magic Map" twilightforest:magic_map:0 
 1  "Balloon" immersiveengineering:cloth_device:1 
-1  "undefined" cyclicmagic:plate_vector:0 
+1  "Aerial Faith Plate" cyclicmagic:plate_vector:0 
 1  "Minoshroom Trophy" twilightforest:trophy:6 
 1  "Knight Phantom Trophy" twilightforest:trophy:4 
 1  "Snow Queen Trophy" twilightforest:trophy:5 
@@ -4455,9 +4437,9 @@
 1  "Endorium Pickaxe" endreborn:tool_pickaxe_endorium:0 
 1  "Endorium Axe" endreborn:tool_axe_endorium:0 
 1  "Endorium Shovel" endreborn:tool_shovel_endorium:0 
-1  "ic2.bronze_hoe" ic2:bronze_hoe:0 
-1  "ic2.iridium_drill" ic2:iridium_drill:26 
-1  "ic2.nano_saber" ic2:nano_saber:26 
+1  "Bronze Hoe" ic2:bronze_hoe:0 
+1  "Iridium Drill" ic2:iridium_drill:26 
+1  "Nano Saber" ic2:nano_saber:26 
 1  "Chicken Stick" excompressum:chicken_stick:0 
 1  "Mana Hammer" excompressum:hammer_mana:0 
 1  "Endorium Hoe" endreborn:tool_hoe_endorium:0 
@@ -4467,13 +4449,13 @@
 1  "Tungsten Shovel" endreborn:tool_shovel_wolframium:0 
 1  "Infused Crystal Axe" astralsorcery:itemchargedcrystalaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}} 
 1  "Infused Crystal Pickaxe" astralsorcery:itemchargedcrystalpickaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}} 
-1  "ic2.bronze_axe" ic2:bronze_axe:0 
-1  "ic2.bronze_pickaxe" ic2:bronze_pickaxe:0 
-1  "ic2.bronze_shovel" ic2:bronze_shovel:0 
-1  "ic2.chainsaw" ic2:chainsaw:26 
-1  "ic2.electric_hoe" ic2:electric_hoe:26 
-1  "ic2.electric_treetap" ic2:electric_treetap:26 
-1  "ic2.wind_meter" ic2:wind_meter:26 
+1  "Bronze Axe" ic2:bronze_axe:0 
+1  "Bronze Pickaxe" ic2:bronze_pickaxe:0 
+1  "Bronze Shovel" ic2:bronze_shovel:0 
+1  "Chainsaw" ic2:chainsaw:26 
+1  "Electric Hoe" ic2:electric_hoe:26 
+1  "Electric Treetap" ic2:electric_treetap:26 
+1  "Windmeter" ic2:wind_meter:26 
 1  "Manasteel Shears" botania:manasteelshears:0 
 1  "Elementium Shears" botania:elementiumshears:0 
 1  "Compressed Iron Hammer" excompressum:compressed_hammer_iron:0 
@@ -4524,7 +4506,7 @@
 1  "Cursed Spirit's Blade" thaumictinkerer:blood_sword:0 
 1  "Infused Crystal Sword" astralsorcery:itemchargedcrystalsword:0:{astralsorcery:{size:1800,purity:100,collect:100,fract:0,sizeOverride:-1}} 
 1  "Endorium Sword" endreborn:tool_sword_endorium:0 
-1  "ic2.bronze_sword" ic2:bronze_sword:0 
+1  "Bronze Sword" ic2:bronze_sword:0 
 1  "Tungsten Sword" endreborn:tool_sword_wolframium:0 
 1  "Tri-bow" twilightforest:triple_bow:0 
 1  "Endorium Bow" endreborn:ender_bow:0 
@@ -4552,16 +4534,16 @@
 1  "Rubber Pickaxe" tconstruct:pickaxe:0:{TinkerData:{Materials:["rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeMo
 1  "Sponge Shovel" tconstruct:shovel:0:{TinkerData:{Materials:["sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:1359,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,FreeMod
 1  "Rubber Shovel" tconstruct:shovel:0:{TinkerData:{Materials:["rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeModi
-1  "Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:1359,HarvestLevel:1,Attack:0.5f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,FreeModifier
-1  "Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.625f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeModifiers
+1  "Sponge Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:1359,HarvestLevel:1,Attack:0.5f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,FreeM
+1  "Rubber Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.625f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeMo
 1  "Sponge Mattock" tconstruct:mattock:0:{TinkerData:{Materials:["sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:1134,HarvestLevel:1,Attack:3.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,FreeM
 1  "Rubber Mattock" tconstruct:mattock:0:{TinkerData:{Materials:["rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:57,HarvestLevel:1,Attack:4.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeMo
 1  "Sponge Kama" tconstruct:kama:0:{TinkerData:{Materials:["sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:1359,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,FreeModifie
 1  "Rubber Kama" tconstruct:kama:0:{TinkerData:{Materials:["rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeModifier
 1  "Sponge Hammer" tconstruct:hammer:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:2835,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0
 1  "Rubber Hammer" tconstruct:hammer:0:{TinkerData:{Materials:["rubber","rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:142,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0
-1  "Sponge Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:2378,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultipli
-1  "Rubber Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["rubber","rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:133,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultipli
+1  "Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:2378,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f
+1  "Excavator" tconstruct:excavator:0:{TinkerData:{Materials:["rubber","rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:133,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f
 1  "Sponge Lumberaxe" tconstruct:lumberaxe:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:2718,HarvestLevel:1,Attack:2.0f,MiningSpeed:2.265f,AttackSpeedMultipli
 1  "Rubber Lumberaxe" tconstruct:lumberaxe:0:{TinkerData:{Materials:["rubber","rubber","rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:152,HarvestLevel:1,Attack:3.125f,MiningSpeed:3.75f,AttackSpeedMultipli
 1  "Sponge Scythe" tconstruct:scythe:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:2989,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0
@@ -4578,8 +4560,12 @@
 1  "Rubber Battlesign" tconstruct:battlesign:0:{TinkerData:{Materials:["rubber","rubber"],Modifiers:["toolleveling"]},Stats:{Durability:57,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeModif
 1  "Sponge Cleaver" tconstruct:cleaver:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["beheading_cleaver","toolleveling"]},Stats:{Durability:2718,HarvestLevel:1,Attack:3.0f,MiningSpeed:2.265f,Att
 1  "Rubber Cleaver" tconstruct:cleaver:0:{TinkerData:{Materials:["rubber","rubber","rubber","rubber"],Modifiers:["beheading_cleaver","toolleveling"]},Stats:{Durability:152,HarvestLevel:1,Attack:4.4625f,MiningSpeed:3.75f,At
+1  "Sponge Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["sponge","sponge","string"],Modifiers:["toolleveling"]},Stats:{Durability:788,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,Free
+1  "Rubber Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["rubber","rubber","string"],Modifiers:["toolleveling"]},Stats:{Durability:1,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeM
 1  "Sponge Longbow" tconstruct:longbow:0:{TinkerData:{Materials:["sponge","sponge","sponge","string"],Modifiers:["toolleveling"]},Stats:{Durability:1366,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1
 1  "Rubber Longbow" tconstruct:longbow:0:{TinkerData:{Materials:["rubber","rubber","rubber","string"],Modifiers:["toolleveling"]},Stats:{Durability:54,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.
+1  "Sponge Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["sponge","sponge","sponge","string"],Modifiers:["toolleveling"]},Stats:{Durability:1359,HarvestLevel:1,Attack:0.0f,MiningSpeed:2.265f,AttackSpeedMultiplier
+1  "Rubber Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["rubber","rubber","rubber","string"],Modifiers:["toolleveling"]},Stats:{Durability:76,HarvestLevel:1,Attack:1.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:
 1  "Sponge Arrow" tconstruct:arrow:0:{TinkerData:{Materials:["wood","sponge","feather"],Modifiers:["toolleveling"]},Stats:{Durability:788,HarvestLevel:1,Attack:2.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:1.0f,FreeModifie
 1  "Rubber Arrow" tconstruct:arrow:0:{TinkerData:{Materials:["wood","rubber","feather"],Modifiers:["toolleveling"]},Stats:{Durability:1,HarvestLevel:1,Attack:3.125f,MiningSpeed:3.75f,AttackSpeedMultiplier:1.0f,FreeModifier
 1  "Sponge Shuriken" tconstruct:shuriken:0:{TinkerData:{Materials:["sponge","sponge","sponge","sponge"],Modifiers:["toolleveling"]},Stats:{Durability:976,HarvestLevel:1,Attack:1.0f,MiningSpeed:2.265f,AttackSpeedMultiplier:
@@ -4616,7 +4602,7 @@
 1  "Ignis Vis Pod" thaumadditions:vis_pod:0:{Aspect:"ignis"} 
 1  "Praecantatio Vis Pod" thaumadditions:vis_pod:0:{Aspect:"praecantatio"} 
 1  "Mythus Vis Pod" thaumadditions:vis_pod:0:{Aspect:"mythus"} 
-1  "ic2.alloy_chestplate" ic2:alloy_chestplate:0 
+1  "Composite Vest" ic2:alloy_chestplate:0 
 1  "Dragon Scale Chestplate" iceandfire:armor_red_chestplate:0 
 1  "Dragon Scale Chestplate" iceandfire:armor_bronze_chestplate:0 
 1  "Dragon Scale Chestplate" iceandfire:armor_green_chestplate:0 
@@ -4625,10 +4611,10 @@
 1  "Dragon Scale Chestplate" iceandfire:armor_white_chestplate:0 
 1  "Dragon Scale Chestplate" iceandfire:armor_sapphire_chestplate:0 
 1  "Dragon Scale Chestplate" iceandfire:armor_silver_chestplate:0 
-1  "ic2.advanced_batpack" ic2:advanced_batpack:26 
-1  "ic2.cf_pack" ic2:cf_pack:1:{Fluid:{FluidName:"ic2construction_foam",Amount:80000}} 
-1  "ic2.energy_pack" ic2:energy_pack:26 
-1  "ic2.jetpack" ic2:jetpack:1:{Fluid:{FluidName:"ic2biogas",Amount:30000}} 
+1  "Adv.Batpack" ic2:advanced_batpack:26 
+1  "CF Backpack" ic2:cf_pack:1:{Fluid:{FluidName:"ic2construction_foam",Amount:80000}} 
+1  "Energypack" ic2:energy_pack:26 
+1  "Jetpack" ic2:jetpack:1:{Fluid:{FluidName:"ic2biogas",Amount:30000}} 
 1  "Tide Guardian Leggings" iceandfire:tide_blue_leggings:0 
 1  "Tide Guardian Leggings" iceandfire:tide_bronze_leggings:0 
 1  "Tide Guardian Leggings" iceandfire:tide_deepblue_leggings:0 
@@ -4653,9 +4639,9 @@
 1  "Tide Guardian Chestplate" iceandfire:tide_red_chestplate:0 
 1  "Tide Guardian Chestplate" iceandfire:tide_teal_chestplate:0 
 1  "Obsidian Leggins" endreborn:armour_leggings_obsidian:0 
-1  "ic2.bronze_chestplate" ic2:bronze_chestplate:0 
-1  "undefined" bloodmagic:sentient_armour_chest:0 
-1  "ic2.bronze_leggings" ic2:bronze_leggings:0 
+1  "Bronze Chestplate" ic2:bronze_chestplate:0 
+1  "Sentient Chestplate" bloodmagic:sentient_armour_chest:0 
+1  "Bronze Leggings" ic2:bronze_leggings:0 
 1  "undefined" bloodmagic:sentient_armour_leggings:0 
 1  "Dragon Scale Helmet" iceandfire:armor_red_helmet:0 
 1  "Dragon Scale Boots" iceandfire:armor_red_boots:0 
@@ -4689,15 +4675,15 @@
 1  "Tide Guardian Boots" iceandfire:tide_teal_boots:0 
 1  "Obsidian Boots" endreborn:armour_boots_obsidian:0 
 1  "Obsidian Helmet" endreborn:armour_helmet_helmet:0 
-1  "ic2.static_boots" ic2:static_boots:0 
-1  "ic2.bronze_boots" ic2:bronze_boots:0 
-1  "ic2.bronze_helmet" ic2:bronze_helmet:0 
+1  "Static Boots" ic2:static_boots:0 
+1  "Bronze Boots" ic2:bronze_boots:0 
+1  "Bronze Helmet" ic2:bronze_helmet:0 
 1  "Magic Hood" randomthings:magichood:0 
 1  "Amazing Technicolor Glasses" openblocks:technicolor_glasses:0 
 1  "Badass Glasses" openblocks:serious_glasses:0 
 1  "undefined" bloodmagic:sentient_armour_helmet:0 
 1  "undefined" bloodmagic:sentient_armour_boots:0 
-1  "undefined" cyclicmagic:glowing_helmet:0 
+1  "Vision Helmet" cyclicmagic:glowing_helmet:0 
 1  "Praemunio Vis Pod" thaumadditions:vis_pod:0:{Aspect:"praemunio"} 
 1  "Lava Waders" randomthings:lavawader:0 
 1  "Slime Boots" tconstruct:slime_boots:0 
@@ -4713,6 +4699,11 @@
 1  "Violet Force Field" twilightforest:force_field:0 
 1  "Orange Force Field" twilightforest:force_field:2 
 1  "Auram Vis Pod" thaumadditions:vis_pod:0:{Aspect:"auram"} 
+1  "Shield" minecraft:shield:252 
+1  "Chain Helmet" minecraft:chainmail_helmet:82 
+1  "Chain Chestplate" minecraft:chainmail_chestplate:120 
+1  "Chain Leggings" minecraft:chainmail_leggings:112 
+1  "Chain Boots" minecraft:chainmail_boots:97 
 1  "Leather Cap" minecraft:leather_helmet:41 
 1  "Leather Cap" minecraft:leather_helmet:55 
 1  "Leather Tunic" minecraft:leather_chestplate:60 
@@ -4743,14 +4734,11 @@
 1  "Stone Axe" minecraft:stone_axe:1 
 1  "Stone Shovel" minecraft:stone_shovel:1 
 1  "Stone Hoe" minecraft:stone_hoe:1 
-1  "Shield" minecraft:shield:252 
-1  "Chain Helmet" minecraft:chainmail_helmet:82 
-1  "Chain Chestplate" minecraft:chainmail_chestplate:120 
-1  "Chain Leggings" minecraft:chainmail_leggings:112 
-1  "Chain Boots" minecraft:chainmail_boots:97 
 1  "Lava Charm" randomthings:lavacharm:0 
-1  "ic2.te.tank" ic2:te:81 
-1  "ic2.boat.broken_rubber" ic2:boat:0 
+1  "Cropnalyzer" ic2:cropnalyzer:26 
+1  "OD Scanner" ic2:scanner:26 
+1  "Tank" ic2:te:81 
+1  "Damaged Rubber Dinghy" ic2:boat:0 
 1  "Creative Drum" extrautils2:drum:4 
 1  "Compressed Netherrack" excompressum:compressed_block:9 
 1  "Compressed Cobblestone" excompressum:compressed_block:1 
@@ -4763,6 +4751,7 @@
 1  "Yellow Heart Canister" bhc:yellow_heart_canister:0 
 1  "Red Heart Canister" bhc:red_heart_canister:0 
 1  "Green Heart Canister" bhc:green_heart_canister:0 
+1  "Slotted Book" bibliocraft:slottedbook:0 
 1  "Nether Star Shard" mysticalagradditions:stuff:0 
 1  "Dragon Egg Chunk" mysticalagradditions:stuff:2 
 1  "Dragonite Berries" endreborn:food_dragonite_berries:0 
@@ -4796,6 +4785,7 @@
 1  "SiC-SiC Ceramic Matrix Composite" nuclearcraft:alloy:14 
 1  "Survivalist's Pickaxe" forestry:bronze_pickaxe:0 
 1  "Lit Candle" forestry:candle:1 
+1  "Letter" forestry:letters:3 
 1  "Greenhouse Block" forestry:greenhouse:0 
 1  "Greenhouse Control" forestry:greenhouse:4 
 1  "Greenhouse Hygroregulator" forestry:climatiser:0 
@@ -4805,25 +4795,26 @@
 1  "Greenhouse Humidifier" forestry:climatiser:3 
 1  "Greenhouse Window" forestry:greenhouse.window:0 
 1  "Greenhouse Roof Window" forestry:greenhouse.window_up:0 
-1  "Letter" forestry:letters:3 
 1  "Microcontroller" opencomputers:microcontroller:0 
 1  "Wooden Pressure Plate" enderio:block_painted_pressure_plate:0 
 1  "Stone Pressure Plate" enderio:block_painted_pressure_plate:2 
 1  "Weighted Pressure Plate (Light)" enderio:block_painted_pressure_plate:6 
+1  "Industrial Credit" ic2:crafting:38 
 1  "Greenhouse Energy Distributor" forestry:greenhouse:3 
-1  "ic2.crafting.coin" ic2:crafting:38 
-1  "undefined" ic2:nano_boots:0 
-1  "undefined" ic2:nano_chestplate:0 
-1  "ic2.nano_helmet" ic2:nano_helmet:0 
-1  "undefined" ic2:nano_leggings:0 
+1  "NanoSuit Boots" ic2:nano_boots:0 
+1  "NanoSuit Bodyarmor" ic2:nano_chestplate:0 
+1  "NanoSuit Helmet" ic2:nano_helmet:0 
+1  "NanoSuit Leggings" ic2:nano_leggings:0 
 1  "Dragonforge Ice Core" iceandfire:dragonforge_ice_core:0 
 1  "Dragonforge Fire Core" iceandfire:dragonforge_fire_core:0 
-1  "ic2.dust.small_lapis" ic2:dust:22 
-1  "ic2.dust.small_obsidian" ic2:dust:25 
-1  "ic2.dust.small_emerald" ic2:dust:35 
-1  "ic2.dust.small_bronze" ic2:dust:18 
-1  "ic2.dust.small_sulfur" ic2:dust:27 
+1  "Tiny Pile of Lapis Dust" ic2:dust:22 
+1  "Tiny Pile of Obsidian Dust" ic2:dust:25 
+1  "Tiny Pile of Emerald Dust" ic2:dust:35 
+1  "Tiny Pile of Bronze Dust" ic2:dust:18 
+1  "Tiny Pile of Sulfur Dust" ic2:dust:27 
 1  "§k--§r Any §eDIFFERENT§r item §k--§r" contenttweaker:any_different_item:0:{display:{Lore:["§6Affect output amount§r"]}} 
+1  "Fusewood Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["fusewood","fusewood","string"],Modifiers:["toolleveling"]},Stats:{Durability:36,HarvestLevel:2,Attack:6.75f,MiningSpeed:8.25f,AttackSpeedMultiplier:1.0f
+1  "Fusewood Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["fusewood","fusewood","fusewood","string"],Modifiers:["toolleveling"]},Stats:{Durability:282,HarvestLevel:2,Attack:6.75f,MiningSpeed:8.25f,AttackSpeedMul
 1  "Enchanted Plate" bibliocraft:enchantedplate:0 
 1  "undefined" thermalexpansion:machine:13 
 1  "Core Sample" immersiveengineering:coresample:0 

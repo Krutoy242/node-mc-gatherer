@@ -26,6 +26,8 @@ export const iTypePrefix = {
     'multiblock',
   'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid': '',
   'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'rf',
+  'lach_01298.qmd.particle.ParticleStack': 'particle',
+  'com.warmthdawn.mod.gugu_utils.jei.ingedients.IngredientHotAir': 'hotair',
 } as const
 
 export type IType = keyof typeof iTypePrefix

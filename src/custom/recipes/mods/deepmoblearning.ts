@@ -1,6 +1,11 @@
-import { AddRecipeFn } from '../../customs'
-
-export default function addRecipes(addRecipe: AddRecipeFn) {
+export default function addRecipes(
+  addRecipe: import('../../customs').AddRecipeFn
+) {
+  addRecipe(
+    '3x deepmoblearning:glitch_fragment:0',
+    'deepmoblearning:glitch_heart:0',
+    'minecraft:obsidian:0'
+  )
   ;(
     [
       ['zombie', 200],

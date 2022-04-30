@@ -3,6 +3,7 @@
 import DefinitionStore from '../lib/items/DefinitionStore'
 import Stack from '../lib/items/Stack'
 import RecipeStore from '../lib/recipes/RecipeStore'
+import { createFileLogger } from '../log/logger'
 
 export type JEC_Types =
   | 'itemStack'
@@ -43,6 +44,8 @@ interface JEC_Content {
 interface Nbt {
   [key: string]: never
 }
+
+// const logRecipe = createFileLogger('jecRecipes.log')
 
 /**
  * Organize raw Just Enough Calculation json input
@@ -188,12 +191,13 @@ function applyToAdditionals(
   const fromJECMap = (raw: JEC_Ingredient) =>
     fromJEC(storeHelper.definitionStore, raw)
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
-    storeHelper.addRecipe(
+    const rec = storeHelper.addRecipe(
       'JEC',
       output.map(fromJECMap),
       input.map(fromJECMap),
       catalyst.map(fromJECMap)
     )
+    // logRecipe(rec?.commandString() + '\n')
   })
 }
 
@@ -218,11 +222,12 @@ function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
   }
 
   const [source, entry, meta] = switcher[raw.type]()
-  const sNbt = raw.content.fNbt
-    ? '*'
-    : typeof raw.content.nbt !== 'string'
-    ? ''
-    : raw.content.nbt
+  const sNbt =
+    raw.content.fNbt && !raw.content.fMeta
+      ? '*'
+      : typeof raw.content.nbt !== 'string'
+      ? ''
+      : raw.content.nbt
 
   return new Stack(
     storeHelper.getBased(source, entry, meta, sNbt),

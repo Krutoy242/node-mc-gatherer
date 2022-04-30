@@ -33,21 +33,22 @@ export default class RecipeStore {
     return this.store.map((r) => r.export())
   }
 
-  addRecipe(categoryName: string, ...params: RecipeParams): boolean {
+  addRecipe(categoryName: string, ...params: RecipeParams): Recipe | undefined {
     const [outputs, inputs, catalysts] = params.map((p) =>
       this.parseRecipeParams(p)
     )
 
-    if (!outputs.length) return false
+    if (!outputs.length) return
     if (!inputs.length && !catalysts?.length) {
       noReqLog(categoryName, ...outputs.map((o) => o.toString()), '\n')
-      return false
+      return
     }
 
     const recipeLists = this.uniformCatalysts(outputs, inputs, catalysts)
-    this.store.push(new Recipe(this.store.length, categoryName, ...recipeLists))
+    const rec = new Recipe(this.store.length, categoryName, ...recipeLists)
+    this.store.push(rec)
 
-    return true
+    return rec
   }
 
   uniformCatalysts(...args: RecipeLists): RecipeLists {

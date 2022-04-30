@@ -32,11 +32,13 @@ const relPath = 'exports/recipes'
 
 export default async function append_JEIExporter(
   tooltipMap: NameMap,
+  toolDurability: { [id: string]: number } | undefined,
   recHelper: RecipeStore,
   mcDir: string,
   cli: CLIHelper
 ) {
   const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
+  const tools = { getFullID: fullId, toolDurability: toolDurability ?? {} }
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
   const getById = recHelper.definitionStore.getById
@@ -64,7 +66,7 @@ export default async function append_JEIExporter(
     let category: JEIECategory = JSON.parse(readFileSync(filePath, 'utf8'))
 
     const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
-    adapterList.forEach(([, adapter]) => adapter(category, fullId))
+    adapterList.forEach(([, adapter]) => adapter(category, tools))
     if (!category.recipes.length) return
 
     const customRecipes: JEIECustomRecipe[] = category.recipes
