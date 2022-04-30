@@ -24,7 +24,6 @@ function logMore(text: string) {
 =
 ============================================= */
 interface TaskOptionsBased<T> {
-  description?: string
   moreInfo?: (info: {
     addedDefs: number
     addedRecs: number
@@ -138,11 +137,10 @@ export default class CLIHelper {
         else logMoreInfo()
       }
 
-      if (opts.description) {
+      if (description)
         if (isPromise) {
           ;(result as any).then(() => process.stdout.write('\n'))
         } else process.stdout.write('\n')
-      }
 
       return result
 

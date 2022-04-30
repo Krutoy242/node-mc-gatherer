@@ -115,25 +115,6 @@ export default class Definition extends Calculable {
 
     if (this.complexity <= rec.complexity) return false
 
-    if (this.id === 'fluid:red_matter') {
-      if (this.mainRecipe) {
-        const diff = this.mainRecipe.inventory?.difference(rec?.inventory)
-        const filds = [
-          ['➖', 'removed'],
-          ['➕', 'added'],
-        ] as const
-        filds.forEach(([symbol, key]) => {
-          if (!diff?.[key].length) return
-          const list = diff?.[key].map((r) =>
-            r.toString({ detailed: true }).split('\n').join('\n      ')
-          )
-          logRecalc(`${symbol}\n    ${list.join('\n    ')}\n`)
-        })
-      }
-      logRecalc(this.toString() + '\n')
-      logRecalc(rec?.toString({ detailed: true }) + '\n')
-    }
-
     this.setRecipe(rec, amount)
     return true
   }
@@ -164,9 +145,32 @@ export default class Definition extends Calculable {
   }
 
   private setRecipe(rec: Recipe, amount: number) {
+    if (this.id === 'mekanism:energycube:0:{tier:4}') {
+      this.logRecalculation(rec)
+    }
+
     this.mainRecipe = rec
     this.mainRecipeAmount = amount
     this.calculate()
+  }
+
+  private logRecalculation(rec: Recipe) {
+    if (this.mainRecipe) {
+      const diff = this.mainRecipe.inventory?.difference(rec?.inventory)
+      const filds = [
+        ['➖', 'removed'],
+        ['➕', 'added'],
+      ] as const
+      filds.forEach(([symbol, key]) => {
+        if (!diff?.[key].length) return
+        const list = diff?.[key].map((r) =>
+          r.toString({ detailed: true }).split('\n').join('\n      ')
+        )
+        logRecalc(`${symbol}\n    ${list.join('\n    ')}\n`)
+      })
+    }
+    logRecalc(this.toString() + '\n')
+    logRecalc(rec?.toString({ detailed: true }) + '\n')
   }
 }
 

@@ -46,7 +46,7 @@ export default class Stack {
 
   toString() {
     const amount = this.amount === undefined ? '?' : this.amount
-    return `${amount}x ${this.ingredient.toString()}`
+    return `${amount !== 1 ? amount + 'x ' : ''}${this.ingredient.toString()}`
   }
 
   export() {

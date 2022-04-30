@@ -95,6 +95,15 @@ export default class Recipe extends Calculable {
     )
   }
 
+  commandString() {
+    const arr = (['outputs', 'inputs', 'catalysts'] as const)
+      .map((k) => this.listToArr(k, "''"))
+      .map((s) => (!s ? undefined : s.length > 1 ? `[${s.join(', ')}]` : s))
+    if (!arr[2]) arr.splice(2, 1)
+    if (!arr[1]) arr[1] = "''"
+    return `addRecipe("${this.source}", ${arr.join(', ')})`
+  }
+
   private getBestDefs(stacks?: Stack[]): [purity: number, defs: MicroStack[]] {
     if (!stacks) return [1.0, []]
     let purity = 1.0
@@ -120,13 +129,28 @@ export default class Recipe extends Calculable {
     return [purity, defs]
   }
 
+  private listToArr(
+    listName: 'outputs' | 'inputs' | 'catalysts',
+    parenth?: string
+  ): string[] | undefined {
+    if (!this[listName]?.length) return undefined
+    const p = [...(parenth ?? '')].map((c) => c ?? '')
+    const stackToStr = (o: Stack) => {
+      let s = o.toString()
+      if (p[0] === '"') s = s.replace(/"/g, '\\"')
+      if (p[0] === "'") s = s.replace(/'/g, "\\'")
+      return (p[0] ?? '') + s + (p[1] ?? '')
+    }
+    return this[listName]?.map(stackToStr)
+  }
+
   private listToString(
     prefix: string,
-    listName: 'outputs' | 'inputs' | 'catalysts'
+    listName: 'outputs' | 'inputs' | 'catalysts',
+    parenth?: string
   ): string {
-    return !this[listName]?.length
-      ? ''
-      : prefix + (this[listName]?.map((o) => o.toString()).join(', ') ?? '')
+    if (!this[listName]?.length) return ''
+    return prefix + this.listToArr(listName, parenth)?.join(', ') ?? ''
   }
 
   private toStringDetailed(): string {

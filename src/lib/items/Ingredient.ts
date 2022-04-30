@@ -31,7 +31,8 @@ export default class Ingredient {
       throw new Error('Ingredient must content at least 1 Definition')
 
     if (items.length > 2000) {
-      throw new Error('Ingredient list too large, might be error')
+      // throw new Error('Ingredient list too large, might be error')
+      this.items = [items[0]]
     }
 
     this.id = id
