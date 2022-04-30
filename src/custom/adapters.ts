@@ -10,6 +10,7 @@ const { max, min } = Math
 export interface Tools {
   getFullID: (ingr: JEIEItem) => string
   toolDurability: { [id: string]: number }
+  getTool: (blockId: string) => string | undefined
 }
 
 const adapters: Map<RegExp, (cat: JEIECategory, tools: Tools) => void> =
@@ -230,6 +231,13 @@ adapters.set(
   }
 )
 
+adapters.set(/blockdrops/, (cat, tools) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    const toolId = tools.getTool(rec.input.items[0].stacks[0].name)
+    rec.catalyst = toolId ? [getIngr(toolId)] : []
+  })
+})
+
 adapters.set(/tubing/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items.shift()
@@ -387,7 +395,7 @@ adapters.set(
 )
 
 adapters.set(
-  /inworldcrafting__burn_item|inworldcrafting__exploding_blocks|inworldcrafting__itemtransform/,
+  /inworldcrafting__(burn_item|exploding_blocks|itemtransform|fluid_to_fluid)/,
   (cat) => {
     cat.recipes.forEach((rec) => {
       const sorted = rec.input.items.sort((a, b) => a.x - b.x)
@@ -497,44 +505,59 @@ adapters.set(/jeresources__plant/, (cat) => {
   })
 })
 
-adapters.set(/bdew__jeibees__mutation__rootBees/, (cat, tools) => {
-  const queensInOut = cat.recipes.filter((rec) =>
-    rec.output.items.some((slot) =>
-      slot.stacks.some((st) => st.name.startsWith('forestry:bee_queen_ge:0:'))
-    )
-  )
-  queensInOut.forEach((rec) => {
-    const fullId = tools.getFullID(rec.output.items[0].stacks[0])
-    const queenGenes = fullId.substring(24).replace(/,\s*Mate:.+/, '}')
-    const getBee = (n: number, id: string) => ({
-      ...getIngr(id + queenGenes, n),
-      x: 0,
-      y: 0,
-    })
-    cat.recipes.push({
-      input: rec.output,
-      output: {
-        items: [
-          getBee(1, 'forestry:bee_princess_ge:0:'),
-          getBee(2, 'forestry:bee_drone_ge:0:'),
-        ],
-      },
-    })
-  })
+const beeOnlySpecie = (item: JEIEItem, tools: Tools) => {
+  const specieGenes = tools
+    .getFullID(item)
+    .match(/(\{Slot:0b,UID0:"[^"]+")/)?.[1]
+  if (!specieGenes) throw new Error('Cant parse bee genes')
 
-  cat.recipes.forEach((rec) => {
-    // Add analyzed / not analyzed bee alternative
-    const anyAnalyzed = (it: JEIESlot) => {
-      it.stacks = [
-        it.stacks[0],
-        {
-          type: 'item',
-          name: it.stacks[0].name.replace(/IsAnalyzed:1b/, 'IsAnalyzed:0b'),
+  return {
+    ...item,
+    name: item.name.replace(
+      /(forestry:bee_[^:]+:\d+:).+/,
+      `$1{Genome:{Chromosomes:[${specieGenes}}]}}`
+    ),
+  }
+}
+
+adapters.set(/bdew__jeibees__mutation__rootBees/, (cat, tools) => {
+  cat.recipes
+    .filter((rec) =>
+      rec.output.items.some((slot) =>
+        slot.stacks.some((st) => st.name.startsWith('forestry:bee_queen_ge:0:'))
+      )
+    )
+    .forEach((rec) => {
+      rec.input.items.forEach((slot) => {
+        slot.stacks = [beeOnlySpecie(slot.stacks[0], tools)]
+      })
+      const fullId = tools.getFullID(rec.output.items[0].stacks[0])
+      const queenGenes = fullId.substring(24).replace(/,\s*Mate:.+/, '}')
+      cat.recipes.push({
+        input: {
+          items: rec.output.items.map((slot) => ({
+            ...slot,
+            stacks: slot.stacks.map((s) => beeOnlySpecie(s, tools)),
+          })),
         },
-      ]
-    }
-    rec.input.items.forEach(anyAnalyzed)
-    rec.output.items.forEach(anyAnalyzed)
+        output: {
+          items: [
+            getSlot('forestry:bee_princess_ge:0:' + queenGenes, 1),
+            getSlot('forestry:bee_drone_ge:0:' + queenGenes, 4),
+          ],
+        },
+      })
+    })
+})
+
+adapters.set(/bdew__jeibees__produce__rootBees/, (cat, tools) => {
+  const time = getSlot('placeholder:ticks', 2000)
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.catalyst = rec.input.items.map((s) => ({
+      ...s,
+      stacks: s.stacks.map((o) => beeOnlySpecie(o, tools)),
+    }))
+    rec.input.items = [time]
   })
 })
 

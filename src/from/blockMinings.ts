@@ -18,7 +18,7 @@ export function generateBlockMinings(
     '#          Harvest tool and level                #',
     '##################################################'
   )
-  if (!txtBlock.length) return
+  if (!txtBlock?.length) return
 
   const result: BlockMinings = {}
 

@@ -19,4 +19,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     'minecraft:glass_bottle:0',
     'dimension:1'
   )
+
+  addRecipe('minecraft:obsidian:0', '1000x fluid:lava', '1000x fluid:water')
+  addRecipe('1000x fluid:lava', '1000x placeholder:exploration')
 }

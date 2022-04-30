@@ -45,7 +45,7 @@ interface Nbt {
   [key: string]: never
 }
 
-// const logRecipe = createFileLogger('jecRecipes.log')
+const logRecipe = createFileLogger('jecRecipes.log')
 
 /**
  * Organize raw Just Enough Calculation json input
@@ -197,7 +197,7 @@ function applyToAdditionals(
       input.map(fromJECMap),
       catalyst.map(fromJECMap)
     )
-    // logRecipe(rec?.commandString() + '\n')
+    logRecipe(rec?.commandString() + '\n')
   })
 }
 

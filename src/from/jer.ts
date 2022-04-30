@@ -87,7 +87,7 @@ export default function append_JER(
     const block = new Stack(blockDef)
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
-    const tool = generateTool(jer_entry.block)
+    const tool = getTool(blockMinings, jer_entry.block)
     if (tool) catalysts.push(tool)
 
     recipesStore.addRecipe(
@@ -104,15 +104,6 @@ export default function append_JER(
 
     if (drops?.length) recipesStore.addRecipe('JER_Drops', drops, block, tool)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
-  }
-
-  function generateTool(blockId: string): string | undefined {
-    if (!blockMinings) return
-
-    const bMining = blockMinings[blockId]
-    if (!bMining) return
-
-    return getTool(bMining.toolClass, bMining.level)
   }
 
   function getDrops(blockDef: Definition, drop: DropsEntry): Stack | undefined {

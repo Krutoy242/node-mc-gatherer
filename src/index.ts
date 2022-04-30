@@ -12,7 +12,8 @@ import chalk from 'chalk'
 import glob from 'glob'
 
 import applyCustoms from './custom/customs'
-import { BlockMinings, generateBlockMinings } from './from/blockMinings'
+import getTool from './custom/mining_levels'
+import { generateBlockMinings } from './from/blockMinings'
 import append_fluids from './from/fluids'
 import append_JECgroups from './from/jec'
 import append_JEIExporter from './from/jeie/JEIExporter'
@@ -85,7 +86,7 @@ export default async function mcGather(
   const blockMinings = runTask('Generate mining levels', {
     action: () => generateBlockMinings(crafttweaker_log),
     moreInfo: (info) =>
-      `Added: ${cli.num(Object.keys(info.result as BlockMinings).length)}`,
+      `Added: ${cli.num(Object.keys(info.result ?? {}).length)}`,
     '⚠️': chalk`Block mining levels is unavaliable.`,
   })
 
@@ -105,7 +106,7 @@ export default async function mcGather(
 
   const toolDurability = runTask('Loading Tool durabilities', {
     action: () => genToolDurability(crafttweaker_log),
-    moreInfo: (i) => `Tools: ${cli.num(Object.keys(i.result as any).length)}`,
+    moreInfo: (i) => `Tools: ${cli.num(Object.keys(i.result ?? {}).length)}`,
     '⚠️': chalk`Cant find dumped tools. All tools would be consumed entirely.`,
   })
 
@@ -115,6 +116,7 @@ export default async function mcGather(
         append_JEIExporter(
           nameMap,
           toolDurability,
+          (s) => getTool(blockMinings, s),
           recipesStore,
           options.mc,
           cli

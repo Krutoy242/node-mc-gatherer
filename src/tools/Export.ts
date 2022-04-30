@@ -35,7 +35,16 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     open(filePath, { wait: true })
     return true
   }
+
   logger('storagedrawers:upgrade_creative:1', true)
+  logger(
+    [...store.iterate()].sort(
+      (a, b) =>
+        (b.mainRecipe?.inventory?.steps ?? 0) -
+          (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity
+    )[0].id,
+    true
+  )
 
   return {
     store,

@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import Definition from './Definition'
 import Stack from './Stack'
 
@@ -9,34 +11,41 @@ export default class Ingredient {
     getById: (id: string) => Definition
   ): Ingredient {
     if (id === '') throw new Error('Ingredient cannot be empty')
-    return (
-      Ingredient.store.get(id) ??
-      new Ingredient(
-        id.split('|').map((s) => getById(s)),
-        id
-      )
-    )
-  }
-
-  static fromDefs(items: Definition[]): Ingredient {
-    const id = items.map((d) => d.id).join('|')
+    const items = id.split('|').map((s) => getById(s))
     return Ingredient.store.get(id) ?? new Ingredient(items, id)
   }
 
+  static fromDefs(items: Definition[]): Ingredient {
+    const id = Ingredient.itemsToID(items)
+    return Ingredient.store.get(id) ?? new Ingredient(items, id)
+  }
+
+  static itemsToID(items: Definition[]): string {
+    return items.map((d) => d.id).join('|')
+  }
+
   id: string
+  public readonly items: Definition[]
   private matchedCache?: Definition[]
 
-  private constructor(public readonly items: Definition[], id: string) {
+  private constructor(items: Definition[], id: string) {
     if (items.length === 0)
       throw new Error('Ingredient must content at least 1 Definition')
 
-    if (items.length > 2000) {
-      // throw new Error('Ingredient list too large, might be error')
-      this.items = [items[0]]
+    let itemsFiltered = _.uniqBy(items, 'id')
+
+    if (itemsFiltered.length > 2000) {
+      itemsFiltered = [itemsFiltered[0]]
     }
 
-    this.id = id
-    Ingredient.store.set(id, this)
+    let idFiltered = id
+    if (itemsFiltered.length !== items.length) {
+      idFiltered = Ingredient.itemsToID(itemsFiltered)
+    }
+
+    this.items = itemsFiltered
+    this.id = idFiltered
+    Ingredient.store.set(idFiltered, this)
   }
 
   public dependenciesCount(): number {

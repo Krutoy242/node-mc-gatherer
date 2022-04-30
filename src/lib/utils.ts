@@ -15,9 +15,10 @@ export function getCTBlock(
   crafttweakerLogTxt: string,
   from: string,
   to: string
-): string[] {
+): string[] | undefined {
   const txtBlock = getTextFromTo(crafttweakerLogTxt, from, to)
-  if (!txtBlock) throw new Error('Cant read data from crafttweaker.log')
+  // if (!txtBlock) throw new Error('Cant read data from crafttweaker.log')
+  if (!txtBlock) return
 
   return [...txtBlock.matchAll(/^\[SERVER_STARTED\]\[SERVER\]\[INFO\] (.*)$/gm)]
     .map((m) => m[1])

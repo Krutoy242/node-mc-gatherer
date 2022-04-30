@@ -1,3 +1,5 @@
+import { BlockMinings } from '../from/blockMinings'
+
 const appropriateTools: { [toolClass: string]: string } = {
   pickaxe: 'tconstruct:pick_head:0',
   axe: 'tconstruct:axe_head:0',
@@ -24,10 +26,7 @@ const materialsByLevel = [
   'infinity_metal',
 ]
 
-export default function getTool(
-  toolClass: string,
-  level: number
-): string | undefined {
+function getTconTool(toolClass: string, level: number): string | undefined {
   if (toolClass === 'jackhammer') return 'advancedrocketry:jackhammer:0'
   if (level === 0 && toolClass !== 'pickaxe') return
 
@@ -38,4 +37,16 @@ export default function getTool(
     materialsByLevel[level] ?? materialsByLevel[materialsByLevel.length - 1]
 
   return tool + `:{Material:"${mat}"}`
+}
+
+export default function getTool(
+  blockMinings: BlockMinings | undefined,
+  blockId: string
+): string | undefined {
+  if (!blockMinings) return
+
+  const bMining = blockMinings[blockId]
+  if (!bMining) return
+
+  return getTconTool(bMining.toolClass, bMining.level)
 }

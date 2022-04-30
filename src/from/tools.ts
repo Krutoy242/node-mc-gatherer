@@ -10,7 +10,7 @@ export function genToolDurability(
     '#                   Tools                        #',
     '##################################################'
   )
-  if (!txtBlock.length) return
+  if (!txtBlock?.length) return
 
   return Object.fromEntries(
     txtBlock.map((l) => [l.replace(/\d+ /, ''), Number(l.split(' ')[0])])

@@ -33,12 +33,17 @@ const relPath = 'exports/recipes'
 export default async function append_JEIExporter(
   tooltipMap: NameMap,
   toolDurability: { [id: string]: number } | undefined,
+  getTool: (blockId: string) => string | undefined,
   recHelper: RecipeStore,
   mcDir: string,
   cli: CLIHelper
 ) {
   const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
-  const tools = { getFullID: fullId, toolDurability: toolDurability ?? {} }
+  const tools = {
+    getFullID: fullId,
+    toolDurability: toolDurability ?? {},
+    getTool,
+  }
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
   const getById = recHelper.definitionStore.getById
