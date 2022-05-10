@@ -95,13 +95,15 @@ export default class Recipe extends Calculable {
     )
   }
 
-  commandString() {
+  commandString(options?: { noSource?: boolean }) {
     const arr = (['outputs', 'inputs', 'catalysts'] as const)
       .map((k) => this.listToArr(k, "''"))
       .map((s) => (!s ? undefined : s.length > 1 ? `[${s.join(', ')}]` : s))
     if (!arr[2]) arr.splice(2, 1)
     if (!arr[1]) arr[1] = "''"
-    return `addRecipe("${this.source}", ${arr.join(', ')})`
+    return `addRecipe(${
+      options?.noSource ? '' : `"${this.source}", `
+    }${arr.join(', ')})`
   }
 
   private getBestDefs(stacks?: Stack[]): [purity: number, defs: MicroStack[]] {

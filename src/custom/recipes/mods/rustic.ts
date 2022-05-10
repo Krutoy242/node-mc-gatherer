@@ -12,4 +12,15 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     '100x placeholder:ticks',
     'rustic:wildberry_bush:0'
   )
+  addRecipe('rustic:sapling_apple:0', 'rustic:apple_seeds:0')
+  addRecipe(
+    [
+      '15x rustic:leaves_apple:0',
+      '8x minecraft:log:0',
+      '2x rustic:sapling_apple:0',
+    ],
+    '4x minecraft:dye:15',
+    'rustic:sapling_apple:0'
+  )
+  addRecipe('minecraft:apple:0', '2x minecraft:dye:15', 'rustic:leaves_apple:0')
 }

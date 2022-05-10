@@ -197,7 +197,7 @@ function applyToAdditionals(
       input.map(fromJECMap),
       catalyst.map(fromJECMap)
     )
-    logRecipe(rec?.commandString() + '\n')
+    logRecipe(rec?.commandString({ noSource: true }) + '\n')
   })
 }
 

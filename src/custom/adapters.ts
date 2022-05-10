@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import {
   JEIECategory,
   JEIECustomRecipe,
@@ -54,13 +56,28 @@ function bucketToFluid(
   })
 }
 
+const removeByPredicate = (
+  items: JEIESlot[],
+  predicate: (s: JEIEItem) => boolean
+) => {
+  items.splice(
+    items.findIndex((o) => o.stacks.some(predicate)),
+    1
+  )
+}
+
+const removeByNameStarts = (items: JEIESlot[], name: string) => {
+  return removeByPredicate(items, (s) => s.name.startsWith(name))
+}
+
 // Clear recipes for this entries
 adapters.set(
   new RegExp(
     'EIOTank' +
-      '|GENDUSTRY__SAMPLER' +
+      '|GENDUSTRY_SAMPLER' +
+      '|GENDUSTRY_MUTATRON' +
+      '|GENDUSTRY_REPLICATOR' +
       '|jei__information' +
-      '|jeresources__villager' +
       '|jeresources__worldgen' +
       '|petrified__burn__time' +
       '|thermalexpansion__transposer__extract' +
@@ -372,10 +389,52 @@ adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
 
 adapters.set(/jeresources__dungeon/, (cat) => {
   const catal: JEIEIngredient = {
-    stacks: [{ type: 'placeholder', name: 'placeholder:exploration' }],
+    stacks: [{ type: 'placeholder', name: 'exploration' }],
     amount: 500000,
   }
   cat.recipes.forEach((rec: JEIECustomRecipe) => (rec.catalyst = [catal]))
+})
+
+adapters.set(/jeresources__villager/, (cat) => {
+  const newRecipes: JEIECustomRecipe[] = []
+  cat.recipes.forEach((rec) => {
+    const [input, output] = (['input', 'output'] as const).map((o) =>
+      _.sortBy(_.groupBy(rec[o].items, 'y'), 'y')
+    )
+    input.forEach((inp, y_i) => {
+      const out = output[y_i]?.[0]
+      if (!out) throw new Error('Villager recipe inconsistency')
+      const [aa, bb] = inp
+      aa.stacks.forEach((a, j) => {
+        const outStack = out.stacks[j] ?? out.stacks[0]
+        if (!outStack) throw new Error('Villager recipe inconsistency')
+        newRecipes.push({
+          input: {
+            items: [a, bb.stacks[j]]
+              .filter((o) => o.name !== 'minecraft:air:0')
+              .map((o) => ({
+                x: aa.x,
+                y: aa.y,
+                amount: aa.amount || 1,
+                stacks: [{ type: o.type, name: o.name }],
+              })),
+          },
+          output: {
+            items: [
+              {
+                x: out.x,
+                y: out.y,
+                amount: out.amount || 1,
+                stacks: [{ type: outStack.type, name: outStack.name }],
+              },
+            ],
+          },
+          catalyst: [getIngr('placeholder:trade', 100000 + y_i * 10000)],
+        })
+      })
+    })
+  })
+  cat.recipes = newRecipes
 })
 
 adapters.set(
@@ -492,6 +551,20 @@ adapters.set(/chisel__chiseling/, (cat) => {
   cat.recipes = newRecipes
 })
 
+adapters.set(/requious__scented_hive/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.catalyst = rec.input.items.filter(
+      (o) =>
+        !o.stacks.some(
+          (s) =>
+            s.name === 'exnihilocreatio:hive:1' ||
+            s.name.startsWith('biomesoplenty:earth')
+        )
+    )
+    rec.input.items = [getSlot('exnihilocreatio:hive:1')]
+  })
+})
+
 adapters.set(/jeresources__mob/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items = [{ x: 0, y: 0, ...getIngr('placeholder:fight', 100000) }]
@@ -558,6 +631,19 @@ adapters.set(/bdew__jeibees__produce__rootBees/, (cat, tools) => {
       stacks: s.stacks.map((o) => beeOnlySpecie(o, tools)),
     }))
     rec.input.items = [time]
+  })
+})
+
+adapters.set(/rustic__brewing/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items = rec.input.items.filter(
+      (inp) =>
+        !rec.output.items.some((out) =>
+          out.stacks.some((stack) =>
+            inp.stacks.some((s) => s.name === stack.name)
+          )
+        )
+    )
   })
 })
 

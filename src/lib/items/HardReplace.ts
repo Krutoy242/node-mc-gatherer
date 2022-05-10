@@ -3,6 +3,7 @@ const hardReplaceMap: Record<string, string> = {
   'ic2:energy_crystal:27': 'ic2:energy_crystal:0',
   'ic2:lapotron_crystal:26': 'ic2:energy_crystal:0',
   'ic2:lapotron_crystal:27': 'ic2:energy_crystal:0',
+  'ic2:mining_laser:26': 'ic2:mining_laser:*',
   'astralsorcery:itemrockcrystalsimple:0:{astralsorcery:{crystalProperties:{size:400,purity:100,collectiveCapability:100,fract:0,sizeOverride:-1}}}':
     'astralsorcery:itemrockcrystalsimple:0',
   'astralsorcery:itemrockcrystalsimple:0:{astralsorcery:{}}':

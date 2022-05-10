@@ -46,12 +46,9 @@ export function logTreeTo(def: Definition, write: (str: string) => void) {
     const tab = '  '.repeat(tabLevel)
     writeLn(tab + def.toString({ complexityPad }))
 
-    if (!def.recipes) return
+    if (!def.recipes || def.recipes.size === 0) return // No recipes
 
     const mainRecipe = def.mainRecipe ?? [...def.recipes].sort(recipeSorter)[0]
-
-    if (!mainRecipe) return
-
     mainRecipe
       .toString()
       .split('\n')

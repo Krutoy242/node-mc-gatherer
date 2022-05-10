@@ -8,7 +8,7 @@ export default function addRecipes(
     'rats:rat_upgrade_aristocrat:0'
   )
   addRecipe(
-    'rats:rat_nugget_ore:*:*',
+    'rats:rat_nugget_ore:*',
     '100000x placeholder:ticks',
     'rats:rat_upgrade_ore_doubling:0'
   )

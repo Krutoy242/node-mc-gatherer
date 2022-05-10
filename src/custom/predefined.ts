@@ -8,6 +8,7 @@ const predefined: Record<string, number> = {
   'placeholder:ticks': 0.1, // Cost of one tick
   'placeholder:exploration': 1, // Cost to find 1 any block in world
   'placeholder:fight': 1.0,
+  'placeholder:trade': 1.0, // Villager trade
   'placeholder:rf': 1,
 
   'minecraft:crafting_table:0': 50,

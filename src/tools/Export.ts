@@ -42,8 +42,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
       (a, b) =>
         (b.mainRecipe?.inventory?.steps ?? 0) -
           (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity
-    )[0].id,
-    true
+    )[0].id
   )
 
   return {

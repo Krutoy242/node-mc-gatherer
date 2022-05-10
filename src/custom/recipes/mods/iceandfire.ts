@@ -11,6 +11,11 @@ export default function addRecipes(
     'minecraft:glass_bottle:0',
   ])
 
+  addRecipe('iceandfire:weezer_blue_album:0', [
+    '400000x placeholder:exploration',
+    'dimension:0',
+  ])
+
   addRecipe(
     [
       'iceandfire:myrmex_desert_egg:2',
