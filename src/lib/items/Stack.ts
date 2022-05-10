@@ -1,3 +1,5 @@
+import Calculable from '../calc/Calculable'
+
 import Definition from './Definition'
 import Ingredient from './Ingredient'
 
@@ -5,6 +7,16 @@ import Ingredient from './Ingredient'
  * Stack is item that have amount
  */
 export default class Stack {
+  static toMicroStacks(stacks?: Stack[]): MicroStack[] {
+    if (!stacks) return []
+    return stacks
+      .map(({ ingredient, amount }) => ({
+        def: getCheapest(ingredient),
+        amount,
+      }))
+      .sort(expensiveSort)
+  }
+
   static fromString(str: string, getFromId: (id: string) => Definition): Stack {
     if (str === undefined || str === '')
       throw new Error('Stack cannot be empty')
@@ -54,7 +66,22 @@ export default class Stack {
   }
 }
 
+/**
+ * Definition with amount
+ */
 export interface MicroStack {
   amount?: number
   def: Definition
+}
+
+function getCheapest(ingredient: Ingredient): Definition {
+  return [...ingredient.matchedBy()].sort(cheapestSort)[0]
+}
+
+function cheapestSort(a: Calculable, b: Calculable) {
+  return b.purity - a.purity || a.complexity - b.complexity
+}
+
+function expensiveSort(a: MicroStack, b: MicroStack) {
+  return b.def.complexity - a.def.complexity
 }

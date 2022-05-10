@@ -24,3 +24,7 @@ export function getCTBlock(
     .map((m) => m[1])
     .filter((s) => s)
 }
+
+export function escapeCsv(s?: string): string {
+  return s?.replace(/,/g, '،') ?? ''
+}

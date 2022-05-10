@@ -5,9 +5,10 @@ import _ from 'lodash'
 
 import Calculable from '../lib/calc/Calculable'
 import Definition from '../lib/items/Definition'
-import Stack from '../lib/items/Stack'
+import Stack, { MicroStack } from '../lib/items/Stack'
 import Recipe from '../lib/recipes/Recipe'
-import RecipeStore from '../lib/recipes/RecipeStore'
+
+import Playthrough from './Playthrough'
 
 export interface CountableFunction {
   (...args: unknown[]): void
@@ -32,10 +33,16 @@ export function createFileLogger(logFileName: string): CountableFunction {
 
 export function logTreeTo(def: Definition, write: (str: string) => void) {
   const writeLn = (s: string) => write(s + '\n')
-  defToString(def)
+
+  const playthrough = new Playthrough()
+
+  defToString(def, 1)
+
+  return playthrough
 
   function defToString(
     def: Definition,
+    amount: number,
     complexityPad = 1,
     antiloop = new Set<string>(),
     tabLevel = 0
@@ -48,25 +55,44 @@ export function logTreeTo(def: Definition, write: (str: string) => void) {
 
     if (!def.recipes || def.recipes.size === 0) return // No recipes
 
-    const mainRecipe = def.mainRecipe ?? [...def.recipes].sort(recipeSorter)[0]
-    mainRecipe
+    const recipe = def.mainRecipe ?? [...def.recipes].sort(recipeSorter)[0]
+    recipe
       .toString()
       .split('\n')
       .forEach((line) => writeLn(tab + '  ' + line))
 
-    const [cheapest, maxPad] = getCheapestArr(mainRecipe)
+    const catalysts = Stack.toMicroStacks(recipe.catalysts)
+    const usages = Stack.toMicroStacks(recipe.inputs)
+
+    playthrough.addCatalysts(catalysts)
+    playthrough.addInputs(usages, amount)
+
+    const combined = _.uniqBy([catalysts, usages].flat(), (ms) => ms.def.id)
+    const maxPad = Math.max(...combined.map((ms) => ms.def.complexity_s.length))
 
     const onHold = new Set<string>()
-    cheapest.forEach((def) => {
-      if (antiloop.has(def.id)) return
-      onHold.add(def.id)
-      antiloop.add(def.id)
+    combined.forEach((ms) => {
+      if (antiloop.has(ms.def.id)) return
+      onHold.add(ms.def.id)
+      antiloop.add(ms.def.id)
     })
 
-    cheapest.forEach((def) => {
-      if (onHold.has(def.id)) antiloop.delete(def.id)
-      defToString(def, maxPad, antiloop, tabLevel + 1)
-    })
+    const further = (ms: MicroStack) => {
+      if (onHold.has(ms.def.id)) {
+        onHold.delete(ms.def.id)
+        antiloop.delete(ms.def.id)
+      }
+      defToString(
+        ms.def,
+        amount * (ms.amount ?? 1),
+        maxPad,
+        antiloop,
+        tabLevel + 1
+      )
+    }
+
+    catalysts.forEach(further)
+    usages.forEach(further)
   }
 
   function recipeSorter(a: Recipe, b: Recipe) {
@@ -88,34 +114,5 @@ export function logTreeTo(def: Definition, write: (str: string) => void) {
         c + Math.max(...[...d.ingredient.matchedBy()].map((o) => o.purity)),
       0
     )
-  }
-
-  function getCheapestArr(main: Recipe) {
-    let maxPad = 0
-    const cheapestArr = [main.catalysts, main.inputs]
-      .filter((s): s is Stack[] => !!s)
-      .map((r) =>
-        r
-          .map((s) => {
-            const d = getCheapest(s)
-            maxPad = Math.max(maxPad, d.complexity_s.length)
-            return d
-          })
-          .sort(expensiveSort)
-      )
-      .flat()
-    return [[...new Set(cheapestArr)], maxPad] as const
-  }
-
-  function getCheapest(stack: Stack): Definition {
-    return [...stack.ingredient.matchedBy()].sort(cheapestSort)[0]
-  }
-
-  function cheapestSort(a: Calculable, b: Calculable) {
-    return b.purity - a.purity || a.complexity - b.complexity
-  }
-
-  function expensiveSort(a: Calculable, b: Calculable) {
-    return b.complexity - a.complexity
   }
 }
