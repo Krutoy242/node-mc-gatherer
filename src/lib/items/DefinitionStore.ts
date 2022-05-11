@@ -5,6 +5,7 @@
 import _ from 'lodash'
 
 import customRender from '../../custom/visual'
+import { BlockToFluidMap } from '../../from/fluids'
 import { NameMap } from '../../from/jeie/NameMap'
 import { OredictMap } from '../../from/oredict'
 import { createFileLogger } from '../../log/logger'
@@ -123,7 +124,7 @@ export default class DefinitionStore {
       .join('\n')
   }
 
-  async assignVisuals(nameMap?: NameMap) {
+  async assignVisuals(nameMap?: NameMap, blockToFluidMap?: BlockToFluidMap) {
     const log = {
       noViewBox: createFileLogger('noViewBox.log'),
       noDisplay: createFileLogger('noDisplay.log'),
@@ -132,13 +133,20 @@ export default class DefinitionStore {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this
 
+    // Assign defined
+    for (const def of this.iterate()) {
+      await assignVisual(def, true)
+    }
     for (const def of this.iterate()) {
       await assignVisual(def)
     }
 
     return { noViewBox: log.noViewBox.count, noDisplay: log.noDisplay.count }
 
-    async function assignVisual(def: Definition) {
+    async function assignVisual(def: Definition, firstRun = false) {
+      const fine = () => def.viewBox && def.display
+      if (fine()) return
+
       const { source, entry, meta, sNbt } = def
       const jeieId = sNbt
         ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
@@ -146,7 +154,7 @@ export default class DefinitionStore {
       const jeieEntry = nameMap?.[jeieId]
       if (jeieEntry) def.tooltips = jeieEntry.tooltips
 
-      if (def.viewBox && def.display) return
+      if (firstRun || fine()) return
 
       const attempts: () => IterableIterator<
         | {
@@ -155,19 +163,23 @@ export default class DefinitionStore {
           }
         | undefined
       > = function* () {
-        if (sNbt) yield self.lookBased(source, entry, meta)
+        if (sNbt) yield* self.matchedByDef(self.lookBased(source, entry, meta))
+        if (meta === '*' || entry === 'ore') yield* self.matchedByDef(def)
         if (meta !== undefined && meta !== '0')
           yield self.lookBased(source, entry)
+        if (blockToFluidMap && meta === '0' && !sNbt) {
+          const id = blockToFluidMap[def.id]
+          if (id) yield self.lookById(id)
+        }
         yield {
           display: jeieEntry?.name,
         }
-        yield customRender(source, entry, meta, sNbt, (id: string) =>
-          self.getById(id)
-        )
+        yield customRender(source, entry, meta, sNbt, self.getById)
+        yield* self.matchedByDef(def)
       }
 
       for (const defOther of attempts()) {
-        if (def.viewBox && def.display) return
+        if (fine()) return
         if (!defOther || defOther === def) continue
         def.viewBox ??= defOther.viewBox
         def.display ??= defOther.display
@@ -189,30 +201,32 @@ export default class DefinitionStore {
     if (ingr.hasMatchedCache()) return yield* ingr.matchedBy()
     const arr: Definition[] = []
 
-    if (!this.oreDict)
-      throw new Error('OreDict must be intitialized before iteration')
-
     for (const def of ingr.items) {
-      if (def.source === 'ore') {
-        const oreList = this.oreDict[def.entry]
-        if (!oreList) {
-          throw new Error(`This ore is empty: ${def.entry}`)
-        }
-
-        for (const oreDef of oreList) {
-          for (const d of this.matchedByNonOre(oreDef)) {
-            arr.push(d)
-            yield d
-          }
-        }
-      } else {
-        for (const d of this.matchedByNonOre(def)) {
-          arr.push(d)
-          yield d
-        }
+      for (const d of this.matchedByDef(def)) {
+        arr.push(d)
+        yield d
       }
     }
     ingr.setMatchedCache(arr)
+  }
+
+  private *matchedByDef(def?: Definition): IterableIterator<Definition> {
+    if (!def) return
+    if (!this.oreDict)
+      throw new Error('OreDict must be intitialized before iteration')
+
+    if (def.source === 'ore') {
+      const oreList = this.oreDict[def.entry]
+      if (!oreList) {
+        throw new Error(`This ore is empty: ${def.entry}`)
+      }
+
+      for (const oreDef of oreList) {
+        yield* this.matchedByNonOre(oreDef)
+      }
+    } else {
+      yield* this.matchedByNonOre(def)
+    }
   }
 
   private *matchedByNonOre(def: Definition): IterableIterator<Definition> {

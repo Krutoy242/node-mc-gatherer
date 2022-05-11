@@ -483,7 +483,9 @@ adapters.set(/mekanism__osmiumcompressor/, (cat) => {
 })
 
 adapters.set(/exnihilocreatio__compost/, (cat) => {
-  cat.recipes.forEach((rec) => (rec.output.items = [getSlot('minecraft:dirt')]))
+  cat.recipes.forEach(
+    (rec) => (rec.output.items = [getSlot('minecraft:dirt:0')])
+  )
 })
 
 adapters.set(/exnihilocreatio__hammer/, (cat) => {

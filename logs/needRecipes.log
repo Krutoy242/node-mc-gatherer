@@ -20,9 +20,9 @@
 59 "Electrum Ingot" immersiveengineering:metal:7
 53 "Desert Acacia Wood Slab (Fireproof)" forestry:slabs.fireproof.0:2
 47 "Giant Flower Stem" biomesoplenty:log_4:4
-41 "Magical Wooden Shard" tconstruct:shard:0:{Material:"xu_magical_wood"}
+41 "Fusewood Shard" tconstruct:shard:0:{Material:"xu_magical_wood"}
 39 "Fusewood Shard" tconstruct:shard:0:{Material:"fusewood"}
-39 "Shard" tconstruct:shard:0:{Material:"bloodwood"}
+39 "Fusewood Shard" tconstruct:shard:0:{Material:"bloodwood"}
 25 "Slime Block" tconstruct:slime:0
 24 "Coast Sequoia Leaves" forestry:leaves.decorative.0:13
 24 "Giant Sequoia Leaves" forestry:leaves.decorative.0:14
@@ -43,7 +43,7 @@
 16 "Nether Mithril Ore" netherendingores:ore_nether_modded_1:4
 16 "Narcissistic Honey Drop" gendustry:honey_drop:16
 15 "undefined" industrialwires:hv_multiblock:0
-15 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon"}]}}
+15 "Common Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon"}]}}
 15 "Nether Yellorite Ore" netherendingores:ore_nether_modded_1:13
 15 "Nether Iridium Ore" netherendingores:ore_nether_modded_1:2
 15 "invalid.name" gendustry:honey_drop:17
@@ -81,122 +81,122 @@
 10 "Dimensional Shard Ore" rftools:dimensional_shard_ore:1
 10 "Dimensional Shard Ore" rftools:dimensional_shard_ore:2
 10 "Lapis Lazuli Powder" enderio:item_material:32
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:12,lvl:2s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:12,lvl:3s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:13,lvl:2s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:13,lvl:3s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:2s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:3s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:4s}]}
-10 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:5s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:12,lvl:2s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:12,lvl:3s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:13,lvl:2s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:13,lvl:3s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:2s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:3s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:4s}]}
+10 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:15,lvl:5s}]}
 9 "Molten Crude Steel" fluid:crude_steel
 9 "Molten Energetic Silver" fluid:energetic_silver
 9 "Molten Vivid Alloy" fluid:vivid_alloy
 9 "Brimstone Moth Butterfly" forestry:butterfly_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothBrimstone",UID1:"forestry.mothBrimstone"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:"fore
-9 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon"}]}}
+9 "Common Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon"}]}}
 9 "Copper Ingot" libvulpes:productingot:4
 9 "Copper Ingot" nuclearcraft:ingot:0
 9 "Orange Tip Butterfly" forestry:butterfly_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.siz
 9 "Engineer's Blueprint" immersiveengineering:blueprint:0:{blueprint:"specialBullet"}
 9 "Tallow" quark:tallow:0
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:1s}]}
 9 "Tin Ingot" libvulpes:productingot:5
 9 "Tin Ingot" nuclearcraft:ingot:1
 9 "Coal Coke" thermalfoundation:material:802
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:25,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:25,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:25,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:26,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:26,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:4s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:28,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:28,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:28,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:29,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:29,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:29,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:4s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:5s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:31,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:31,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:31,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:36,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:37,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:38,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:40,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:40,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:46,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:4s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:5s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:52,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:52,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:52,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:53,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:53,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:53,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:54,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:55,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:56,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:57,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:57,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:58,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:58,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:58,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:4s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:5s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:68,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:68,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:73,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:4s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:5s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:75,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:76,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:76,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:76,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:77,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:78,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:79,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:80,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:80,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:81,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:1s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:2s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:3s}]}
-9 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:84,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:25,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:25,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:25,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:26,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:26,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:27,lvl:4s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:28,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:28,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:28,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:29,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:29,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:29,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:4s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:30,lvl:5s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:31,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:31,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:31,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:36,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:37,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:38,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:40,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:40,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:46,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:4s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:47,lvl:5s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:52,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:52,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:52,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:53,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:53,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:53,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:54,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:55,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:56,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:57,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:57,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:58,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:58,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:58,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:4s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:59,lvl:5s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:68,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:68,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:73,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:4s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:74,lvl:5s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:75,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:76,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:76,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:76,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:77,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:78,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:79,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:80,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:80,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:81,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:1s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:2s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:82,lvl:3s}]}
+9 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:84,lvl:1s}]}
 8 "undefined" dimension:RFTools_Dimension
 8 "Witchwater Bucket" forge:bucketfilled:0:{FluidName:"witchwater",Amount:1000}
 8 "Slime Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:slime"}
 8 "Iron Leggings" minecraft:iron_leggings:0
 8 "Iron Boots" minecraft:iron_boots:0
-8 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesModest"}]}}
+8 "Modest Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesModest"}]}}
 8 "Ancient Stone" thaumcraft:stone_ancient:0
-8 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical"}]}}
-8 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry"}]}}
+8 "Tropical Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical"}]}}
+8 "Wintry Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry"}]}}
 8 "Flour" enderio:item_material:21
-8 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:2s}]}
-8 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:3s}]}
-8 "Enchanted Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:4s}]}
+8 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:2s}]}
+8 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:3s}]}
+8 "Split Book" minecraft:enchanted_book:0:{StoredEnchantments:[{id:43,lvl:4s}]}
 8 "Cooked Crab Meat" betteranimalsplus:crab_meat_cooked:0
 8 "Bronze Dust" ic2:dust:0
 8 "Advanced RE-Battery" ic2:advanced_re_battery:26
 7 "undefined" avaritia:neutronium_compressor:0
 7 "Enchanted Book" minecraft:enchanted_book:0
 7 "Blubber" betteranimalsplus:blubber:0
-7 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMeadows"}]}}
+7 "Meadows Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMeadows"}]}}
 7 "Ancient Stone Slab" thaumcraft:slab_ancient:0
 7 "Gold Ore Dust" exnihilocreatio:item_ore_gold:2
 7 "Copper Ore" immersiveengineering:ore:0
@@ -236,11 +236,11 @@
 7 "Biome Crystal" randomthings:biomecrystal:0
 7 "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:0} | "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:800000}
 6 "undefined" modularmachinery:blockcontroller:0
-6 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesForest"}]}}
-6 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister"}]}}
-6 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy"}]}}
-6 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated"}]}}
-6 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated"}]}}
+6 "Forest Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesForest"}]}}
+6 "Sinister Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister"}]}}
+6 "Marshy Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy"}]}}
+6 "Cultivated Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated"}]}}
+6 "Cultivated Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated"}]}}
 6 "Bitumen" immersivepetroleum:material:0
 6 "Lead Ore Chunk" exnihilocreatio:item_ore_lead:1
 6 "Tin Ore Chunk" exnihilocreatio:item_ore_tin:1
@@ -255,7 +255,7 @@
 6 "Compressed Gravel" excompressum:compressed_block:2
 6 "Golden Minotaur Axe" twilightforest:minotaur_axe_gold:0
 6 "Tough Tool Rod" tconstruct:tough_tool_rod:0:{Material:"integrationforegoing.reinforced_pink_slime"}
-6 "Shard" tconstruct:shard:0:{Material:"integrationforegoing.reinforced_pink_slime"}
+6 "Fusewood Shard" tconstruct:shard:0:{Material:"integrationforegoing.reinforced_pink_slime"}
 6 "Wide Guard" tconstruct:wide_guard:0:{Material:"integrationforegoing.reinforced_pink_slime"}
 6 "Timber Wolf Pelt" betteranimalsplus:wolf_pelt_timber:0
 6 "Black Wolf Pelt" betteranimalsplus:wolf_pelt_black:0
@@ -267,11 +267,11 @@
 5 "Dimensional Pattern 2 Block" rftoolsdim:dimensional_pattern2_block:0
 5 "undefined" psi:cad:0
 5 "undefined" immersiveengineering:stone_device:0
-5 "§6A book written by a Cow" minecraft:written_book:0:{pages:["Moo?","Moam?"],author:"Cow",display:{Name:"§6A book written by a Cow"}}
+5 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Moo?","Moam?"],author:"Cow",display:{Name:"§6A book written by a Cow"}}
 5 "Gold Plate" ic2:plate:2
 5 "Irradiated Comb" forestry:bee_combs:9
 5 "Mellow Comb" forestry:bee_combs:16
-5 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMonastic"}]}}
+5 "Monastic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMonastic"}]}}
 5 "Blue Slimy Grass" tconstruct:slime_grass:12
 5 "Purple Slimy Grass" tconstruct:slime_grass:13
 5 "Green Slimy Grass" tconstruct:slime_grass:6
@@ -281,7 +281,7 @@
 5 "Magma Slimy Grass" tconstruct:slime_grass:9
 5 "Green Slimy Grass" tconstruct:slime_grass:11
 5 "Agrarian Queen" forestry:bee_queen_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAgrarian",UID1:"forestry.speciesAgrarian"},{Slot:1b,UID0:"forestry.speedSlow",UID1:"forestry.s
-5 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesModest"}]}}
+5 "Modest Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesModest"}]}}
 5 "Block of Charcoal" forestry:charcoal:0
 5 "Nether Prosperity Ore" mysticalagriculture:nether_prosperity_ore:0
 5 "§eNether Inferium Ore" mysticalagriculture:nether_inferium_ore:0
@@ -347,9 +347,9 @@
 5 "Hammer Head" tconstruct:hammer_head:0:{Material:"integrationforegoing.reinforced_pink_slime"}
 5 "Shovel Head" tconstruct:shovel_head:0:{Material:"integrationforegoing.reinforced_pink_slime"}
 5 "IC2 Coolant Capsule" forestry:capsule:1:{Fluid:{FluidName:"ic2coolant",Amount:1000}}
-5 "Shard" tconstruct:shard:0:{Material:"crude_steel"}
-5 "Shard" tconstruct:shard:0:{Material:"energetic_silver"}
-5 "Shard" tconstruct:shard:0:{Material:"vivid_alloy"}
+5 "Fusewood Shard" tconstruct:shard:0:{Material:"crude_steel"}
+5 "Fusewood Shard" tconstruct:shard:0:{Material:"energetic_silver"}
+5 "Fusewood Shard" tconstruct:shard:0:{Material:"vivid_alloy"}
 5 "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:800000}
 5 "Flux-Infused Sword" redstonearsenal:tool.sword_flux:0:{Energy:320000}
 5 "Bee Diversity Store" contenttweaker:bee_diversity:0
@@ -385,8 +385,8 @@
 4 "Excavator" tconstruct:excavator:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:11.25f,FreeModifiers:3,Durability:8669,HarvestLevel:13,Attack:18.75f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:18.75f,FreeMod
 4 "Oil Berry" ic2:crop_res:7
 4 "Bobs-Yer-Uncle-Ranks Berry" ic2:crop_res:8
-4 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry"}]}}
-4 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy"}]}}
+4 "Wintry Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesWintry"}]}}
+4 "Marshy Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMarshy"}]}}
 4 "Milk Wart" ic2:crop_res:6
 4 "Arabica" ic2:crop_res:0
 4 "Wyvern Helm" draconicevolution:wyvern_helm:0
@@ -666,32 +666,32 @@
 3 "Hops" ic2:crop_res:4
 3 "Terra Wart" ic2:terra_wart:0
 3 "Brimstone Moth Caterpillar" forestry:caterpillar_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothBrimstone",UID1:"forestry.mothBrimstone"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:"
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesRural"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry"}]}}
+3 "Cultivated Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated"}]}}
+3 "Noble Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble"}]}}
+3 "Diligent Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent"}]}}
+3 "Tropical Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTropical"}]}}
+3 "Rural Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesRural"}]}}
+3 "Farmerly Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly"}]}}
+3 "Miry Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry"}]}}
 3 "Artisan Comb" gendustry:honey_comb:14
 3 "Tinker Comb" gendustry:honey_comb:13
 3 "Paughty Comb" gendustry:honey_comb:10
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.paughty"}]}}
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.chilled"}]}}
+3 "Paughty Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.paughty"}]}}
+3 "Chilled Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.chilled"}]}}
 3 "Selfish Comb" gendustry:honey_comb:15
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.gallant"}]}}
+3 "Gallant Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.gallant"}]}}
 3 "Vain Comb" gendustry:honey_comb:12
-3 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain"}]}}
+3 "Vain Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain"}]}}
 3 "Creeper Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:creeper"} | "Zombie Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:zombie"}
 3 "Gold Dust" libvulpes:productdust:2
 3 "Crushed Gold" actuallyadditions:item_dust:1
 3 "Triple Meat Treat" thaumcraft:triple_meat_treat:0
 3 "Orange Tip Caterpillar" forestry:caterpillar_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry
-3 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMeadows"}]}}
-3 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesForest"}]}}
-3 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesValiant"}]}}
-3 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
-3 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFiendish"}]}}
+3 "Meadows Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMeadows"}]}}
+3 "Forest Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesForest"}]}}
+3 "Valiant Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesValiant"}]}}
+3 "Vindictive Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
+3 "Fiendish Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFiendish"}]}}
 3 "Vindictive Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive",UID1:"forestry.speciesVindictive"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"fo
 3 "Vain Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain",UID1:"gendustry.bee.vain"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedNorm
 3 "Paughty Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.paughty",UID1:"gendustry.bee.paughty"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.
@@ -724,7 +724,7 @@
 3 "QuantumSuit Leggings" ic2:quantum_leggings:0
 3 "Yellorium Block" bigreactors:blockyellorium:0
 3 "Cold Coffee" ic2:mug:1
-3 "Tree Sample - Species: Dark Oak" gendustry:gene_sample:0:{species:"rootTrees",chromosome:0,allele:"forestry.treeDarkOak"} | "Tree Sample - Height: Small" gendustry:gene_sample:0:{species:"rootTrees",chromosome:1,allele:
+3 "Tree Sample - Species: Dark Oak" gendustry:gene_sample:0:{species:"rootTrees",chromosome:0,allele:"forestry.treeDarkOak"} | "Tree Sample - Species: Dark Oak" gendustry:gene_sample:0:{species:"rootTrees",chromosome:1,all
 3 "Block of Charcoal" actuallyadditions:block_misc:5
 3 "Ethereal Wood Stairs" biomesoplenty:ethereal_stairs:0
 3 "Ethereal Fence" biomesoplenty:ethereal_fence:0
@@ -732,7 +732,7 @@
 3 "Ethereal Boat" biomesoplenty:boat_ethereal:0
 3 "Frozen Splinters" iceandfire:frozen_splinters:0
 3 "Crab Leg" quark:crab_leg:0
-3 "INVALID Sample - ERROR" gendustry:gene_sample:0 | "Butterfly Sample - Speed: Slowest" gendustry:gene_sample:0:{species:"rootButterflies",chromosome:2,allele:"forestry.speedSlowest"} | "Bee Sample - Species: Wacky" gendu
+3 "INVALID Sample - ERROR" gendustry:gene_sample:0 | "Tree Sample - Species: Dark Oak" gendustry:gene_sample:0:{species:"rootButterflies",chromosome:2,allele:"forestry.speedSlowest"} | "Tree Sample - Species: Dark Oak" gen
 3 "Fire Dragonsteel Chestplate" iceandfire:dragonsteel_fire_chestplate:0
 3 "Silver Pickaxe" iceandfire:silver_pickaxe:0
 3 "Very Damaged Anvil" minecraft:anvil:2
@@ -1375,8 +1375,8 @@
 3 "Liquid Starlight Can" forestry:can:1:{Fluid:{FluidName:"astralsorcery.liquidstarlight",Amount:1000}}
 3 "Molten Mithril Can" forestry:can:1:{Fluid:{FluidName:"mithril",Amount:1000}}
 3 "Molten Tungsten Can" forestry:can:1:{Fluid:{FluidName:"tungsten",Amount:1000}}
-3 "undefined" thermalinnovation:injector:32000
-3 "undefined" thermalinnovation:quiver:32000
+3 "Hypoinfuser (Creative)" thermalinnovation:injector:32000
+3 "Alchemical Quiver (Creative)" thermalinnovation:quiver:32000
 3 "Inventory Panel Remote" enderio:item_inventory_remote:0:{"enderio:famount":1000}
 3 "Inventory Panel Remote" enderio:item_inventory_remote:0
 3 "Advanced Inventory Panel Remote" enderio:item_inventory_remote:1:{"enderio:famount":1000}
@@ -1446,7 +1446,7 @@
 3 "Iron Nugget" immersiveengineering:metal:29
 3 "Silver Nugget" immersiveengineering:metal:23
 3 "Solid Ender Eye" cyclicmagic:ender_eye_orb:0
-3 "undefined" nuclearcraft:lithium_ion_cell:0
+3 "Lithium Ion Cell" nuclearcraft:lithium_ion_cell:0
 3 "Tainted Rock" thaumcraft:taint_rock:0 | "Tainted Soil" thaumcraft:taint_soil:0 | "Crusted Taint" thaumcraft:taint_crust:0
 2 "Frost Fire" cyclicmagic:fire_frost:0
 2 "undefined" dimension:-343800852
@@ -1471,98 +1471,98 @@
 2 "Salt" immersivetech:material:0
 2 "Lapis Apple" cyclicmagic:apple_lapis:0
 2 "Cow Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:cow"}
-2 "Bottle of Wildberry Juice" rustic:fluid_bottle:0:{Fluid:{FluidName:"wildberryjuice",Amount:1000}}
+2 "Bottle of Wine" rustic:fluid_bottle:0:{Fluid:{FluidName:"wildberryjuice",Amount:1000}}
 2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Darkness?","Shhhh?"],author:"Enderman",display:{Name:"§6A book written by a Enderman"}}
-2 "§6A book written by a Zombie" minecraft:written_book:0:{pages:["Brains?","Eeehhhahhh?"],author:"Zombie",display:{Name:"§6A book written by a Zombie"}}
-2 "§6A book written by a Creeper" minecraft:written_book:0:{pages:["Sssss?","Hsssss?"],author:"Creeper",display:{Name:"§6A book written by a Creeper"}}
-2 "§6A book written by a Cat" minecraft:written_book:0:{pages:["Meeeoow?","Rreraow?"],author:"Cat",display:{Name:"§6A book written by a Cat"}}
-2 "§6A book written by a Sheep" minecraft:written_book:0:{pages:["Baa?","Maaaa?"],author:"Sheep",display:{Name:"§6A book written by a Sheep"}}
-2 "§6A book written by a Chicken" minecraft:written_book:0:{pages:["Cock A Doodle?","Cluck?"],author:"Chicken",display:{Name:"§6A book written by a Chicken"}}
-2 "§6A book written by a Dog" minecraft:written_book:0:{pages:["Wooof?","Ruff?"],author:"Dog",display:{Name:"§6A book written by a Dog"}}
-2 "§6A book written by a Pig" minecraft:written_book:0:{pages:["Oink?","Weeeet?"],author:"Pig",display:{Name:"§6A book written by a Pig"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Brains?","Eeehhhahhh?"],author:"Zombie",display:{Name:"§6A book written by a Zombie"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Sssss?","Hsssss?"],author:"Creeper",display:{Name:"§6A book written by a Creeper"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Meeeoow?","Rreraow?"],author:"Cat",display:{Name:"§6A book written by a Cat"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Baa?","Maaaa?"],author:"Sheep",display:{Name:"§6A book written by a Sheep"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Cock A Doodle?","Cluck?"],author:"Chicken",display:{Name:"§6A book written by a Chicken"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Wooof?","Ruff?"],author:"Dog",display:{Name:"§6A book written by a Dog"}}
+2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Oink?","Weeeet?"],author:"Pig",display:{Name:"§6A book written by a Pig"}}
 2 "Gelid Enderium Sword" redstonerepository:tool.sword_gelid:0
-2 "undefined" ic2:cable:0
+2 "Copper Cable" ic2:cable:0
 2 "Brimstone Moth Serum" forestry:serum_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothBrimstone",UID1:"forestry.mothBrimstone"},{Slot:1b,UID0:"forestry.sizeSmall",UID1:"forestry.siz
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIndustrious"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSteadfast"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHeroic"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFrugal"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesExotic"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSpectral"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIcy"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVengeful"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAgrarian"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHermitic"}]}}
+2 "Industrious Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIndustrious"}]}}
+2 "Steadfast Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSteadfast"}]}}
+2 "Heroic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHeroic"}]}}
+2 "Demonic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
+2 "Frugal Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFrugal"}]}}
+2 "Austere Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
+2 "Exotic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesExotic"}]}}
+2 "Spectral Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSpectral"}]}}
+2 "Icy Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIcy"}]}}
+2 "Vengeful Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVengeful"}]}}
+2 "Agrarian Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAgrarian"}]}}
+2 "Hermitic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHermitic"}]}}
 2 "Narcissistic Comb" gendustry:honey_comb:16
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.elysian"}]}}
-2 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.scrappy"}]}}
+2 "Elysian Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.elysian"}]}}
+2 "Scrappy Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.scrappy"}]}}
 2 "Orange Tip Serum" forestry:serum_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.sizeSmaller
 2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Can only be harvested with §nWeeding Trowel§r§6; Takes over neighboring plants and spr
-2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"beetroots",resistance:1b,gain:1b}
-2 "Pumpkin Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"pumpkin",resistance:1b,gain:1b}
-2 "Wheat Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"wheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
-2 "Blackthorn Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blackthorn",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
-2 "Brown Mushroom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"brown_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}}
-2 "Carrots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"carrots",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
-2 "Cyazint Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyazint",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
-2 "Dandelion Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"dandelion",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
-2 "Flax Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"flax",resistance:1b,gain:1b}
-2 "Melon Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"melon",resistance:1b,gain:1b}
-2 "Potato Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"potato",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9; Must be harvested early or it will drop §nPoisonous Pot
-2 "Red Mushroom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"red_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}}
-2 "Reed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"reed",resistance:1b,gain:1b}
-2 "Rose Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"rose",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
-2 "Tulip Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tulip",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
-2 "Cocoa Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cocoa",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Nutrients of at least 3"]}}
-2 "Venomilia Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"venomilia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12; Only drops §nGrin Powder§r§6 during second to la
-2 "Stickreed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stickreed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Drops §nSticky Resin§r§6 only when mature"]}}
-2 "Corpse Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corpse_plant",resistance:1b,gain:1b}
-2 "Hops Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"hops",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
-2 "Nether Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"nether_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSoul Sand§r§6 under it; Turns into §nTerra Wart§r§6 
-2 "Terra Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"terra_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSnow§r§6 under it; Turns into §nNether Wart§r§6 if the
-2 "Aurelia Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"aurelia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is a §nGold Ore§r§6 or §nBlock of Gold§r§6 below it"]}}
-2 "Blazereed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blazereed",resistance:1b,gain:1b}
-2 "Corium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corium",resistance:1b,gain:1b}
-2 "Stagnium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stagnium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nTin Ore§r§6 or §nTin Block§r§6 below it"]}}
-2 "Cyprium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyprium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nCopper Ore§r§6 or §nCopper Block§r§6 below it"]}}
-2 "Eating Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"eatingplant",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 10; Only matures if §nLava§r§6 is below it; Wil
-2 "Egg Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"egg_plant",resistance:1b,gain:1b}
-2 "Ferru Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ferru",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nIron Ore§r§6 or §nBlock of Iron§r§6 below it"]}}
-2 "Milk Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"milk_wart",resistance:1b,gain:1b}
-2 "Plumbiscus Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"plumbiscus",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nLead Ore§r§6 or §nLead Block§r§6 below it"]}
-2 "Redwheat Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"redwheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level between 5 and 10 inclusive; Drops §nRedstone§r§6 only when powered
-2 "Shining Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"shining",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nSilver Block§r§6 or §nSilver Ore§r§6 below it"]}}
-2 "Slime Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"slime_plant",resistance:1b,gain:1b}
-2 "Spidernip Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"spidernip",resistance:1b,gain:1b}
-2 "Coffee Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"coffee",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
-2 "Creeper Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"creeper_weed",resistance:1b,gain:1b}
-2 "Meat Rose Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"meat_rose",resistance:1b,gain:1b}
-2 "Tearstalks Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tearstalks",resistance:1b,gain:1b}
-2 "Withereed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"withereed",resistance:1b,gain:1b}
-2 "Oil Berries Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"oil_berries",resistance:1b,gain:1b}
-2 "Ender Blossom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ender_blossom",resistance:1b,gain:1b}
-2 "Bobs-Yer-Uncle-Ranks Berries Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"bobs_yer_uncle_ranks_berries",resistance:1b,gain:1b}
-2 "Diareed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"diareed",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"beetroots",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"pumpkin",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"wheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blackthorn",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"brown_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"carrots",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyazint",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"dandelion",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"flax",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"melon",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"potato",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9; Must be harvested early or it will drop §nPoisonous Potat
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"red_mushroom",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Must be hydrated"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"reed",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"rose",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tulip",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cocoa",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Nutrients of at least 3"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"venomilia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 12; Only drops §nGrin Powder§r§6 during second to last st
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stickreed",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Drops §nSticky Resin§r§6 only when mature"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corpse_plant",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"hops",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"nether_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSoul Sand§r§6 under it; Turns into §nTerra Wart§r§6 if ther
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"terra_wart",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Grows faster with §nSnow§r§6 under it; Turns into §nNether Wart§r§6 if there is 
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"aurelia",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is a §nGold Ore§r§6 or §nBlock of Gold§r§6 below it"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blazereed",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corium",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stagnium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nTin Ore§r§6 or §nTin Block§r§6 below it"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyprium",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nCopper Ore§r§6 or §nCopper Block§r§6 below it"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"eatingplant",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 10; Only matures if §nLava§r§6 is below it; Will attack
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"egg_plant",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ferru",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nIron Ore§r§6 or §nBlock of Iron§r§6 below it"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"milk_wart",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"plumbiscus",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nLead Ore§r§6 or §nLead Block§r§6 below it"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"redwheat",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level between 5 and 10 inclusive; Drops §nRedstone§r§6 only when powered by 
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"shining",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Only matures if there is an §nSilver Block§r§6 or §nSilver Ore§r§6 below it"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"slime_plant",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"spidernip",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"coffee",resistance:1b,gain:1b,display:{Lore:["§6§lRequirments: ","§6Light level of at least 9"]}}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"creeper_weed",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"meat_rose",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tearstalks",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"withereed",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"oil_berries",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ender_blossom",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"bobs_yer_uncle_ranks_berries",resistance:1b,gain:1b}
+2 "Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"diareed",resistance:1b,gain:1b}
 2 "Engineer's Blueprint" immersiveengineering:blueprint:0:{blueprint:"electrode"}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary"}]}}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFiendish"}]}}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister"}]}}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEnded"}]}}
+2 "Unweary Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary"}]}}
+2 "Fiendish Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFiendish"}]}}
+2 "Sinister Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister"}]}}
+2 "Ender Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEnded"}]}}
 2 "Vengeful Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVengeful",UID1:"forestry.speciesVengeful"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry"}]}}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHeroic"}]}}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull"}]}}
-2 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious"}]}}
-2 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister"}]}}
-2 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFrugal"}]}}
+2 "Miry Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry"}]}}
+2 "Heroic Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHeroic"}]}}
+2 "Dull Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull"}]}}
+2 "Derpious Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious"}]}}
+2 "Sinister Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSinister"}]}}
+2 "Frugal Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFrugal"}]}}
 2 "Spectral Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSpectral",UID1:"forestry.speciesSpectral"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"fo
 2 "Vengeful Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVengeful",UID1:"forestry.speciesVengeful"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"fo
-2 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVengeful"}]}}
+2 "Vengeful Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVengeful"}]}}
 2 "Hermitic Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHermitic",UID1:"forestry.speciesHermitic"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"fo
-2 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.scrappy"}]}}
-2 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull"}]}}
+2 "Scrappy Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.scrappy"}]}}
+2 "Dull Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull"}]}}
 2 "Slimeball" tconstruct:edible:5
 2 "Random Pig" animania:entity_egg_pig_random:0
 2 "Bacon" tconstruct:edible:0
@@ -1939,7 +1939,7 @@
 2 "Ancient Bricks" thaumicaugmentation:stone:5
 2 "Ancient Pillar" thaumicaugmentation:stone:8
 2 "Smooth Ancient Bricks" thaumicaugmentation:stone:9
-2 "undefined" openblocks:imaginary:0
+2 "Magic Pencil" openblocks:imaginary:0
 2 "Ancient Stone Tile Stairs" thaumcraft:stairs_ancient:0
 2 "Ancient Stone Stairs" thaumicaugmentation:stairs_ancient:0
 2 "Vis Salt" thaumadditions:salt_essence:0:{Aspects:[{key:"alienis",amount:1}]}
@@ -2155,26 +2155,26 @@
 1 "undefined" rftdimtweak:dimension_enscriber
 1 "undefined" rftoolsdim:dimension_builder
 1 "undefined" rftoolsdim:dimension_editor
-1 "undefined" rustic:ale_wort:0
-1 "undefined" animus:blockfluiddirt:0
-1 "undefined" enderio:block_fluid_crude_steel:0
-1 "undefined" thaumadditions:crystal_water:0
-1 "undefined" enderio:block_fluid_energetic_silver:0
-1 "undefined" thaumicwonders:fluid_quicksilver:0
-1 "undefined" immersivetech:fluidhighpressuresteam:0
-1 "undefined" ic2:air:0
-1 "undefined" ic2:distilled_water:0
-1 "undefined" ic2:steam:0
-1 "undefined" ic2:superheated_steam:0
-1 "undefined" ic2:weed_ex:0
-1 "undefined" plustic:plustic.molten_infinity:0
-1 "undefined" thaumcraft:liquid_death:0
-1 "undefined" biomesoplenty:poison:0
-1 "undefined" plustic:plustic.molten_refinedglowstone:0
-1 "undefined" plustic:plustic.molten_refinedobsidian:0
-1 "undefined" contenttweaker:seed:0
-1 "undefined" enderio:block_fluid_vivid_alloy:0
-1 "undefined" tconstruct:molten_zinc:0
+1 "Ale Wort" rustic:ale_wort:0
+1 "Liquid Dirt" animus:blockfluiddirt:0
+1 "Molten Crude Steel" enderio:block_fluid_crude_steel:0
+1 "Crystal Water" thaumadditions:crystal_water:0
+1 "Molten Energetic Silver" enderio:block_fluid_energetic_silver:0
+1 "Quicksilver" thaumicwonders:fluid_quicksilver:0
+1 "High Pressure Steam" immersivetech:fluidhighpressuresteam:0
+1 "Air" ic2:air:0
+1 "Distilled Water" ic2:distilled_water:0
+1 "Steam" ic2:steam:0
+1 "Superheated Steam" ic2:superheated_steam:0
+1 "Weed-Ex" ic2:weed_ex:0
+1 "Molten Infinity" plustic:plustic.molten_infinity:0
+1 "Liquid Death" thaumcraft:liquid_death:0
+1 "Poison" biomesoplenty:poison:0
+1 "Refined Glowstone" plustic:plustic.molten_refinedglowstone:0
+1 "Molten Refined Obsidian" plustic:plustic.molten_refinedobsidian:0
+1 "Seed" contenttweaker:seed:0
+1 "Molten Vivid Alloy" enderio:block_fluid_vivid_alloy:0
+1 "Molten Zinc" tconstruct:molten_zinc:0
 1 "Spectre Block" randomthings:spectreblock:0
 1 "Digital Mob Agonizer" deepmoblearningbm:digital_agonizer:0
 1 "Latticed Heath Butterfly" forestry:butterfly_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.mothLatticedHeath",UID1:"forestry.mothLatticedHeath"},{Slot:1b,UID0:"forestry.sizeSmallest"
@@ -2208,34 +2208,34 @@
 1 "Ocelot Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:ocelot"}
 1 "Sheep Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:sheep"}
 1 "Chicken Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:chicken"}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMajestic"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesImperial"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesValiant"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFiendish"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEdenic"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEnded"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesGlacial"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAvenging"}]}}
+1 "Majestic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMajestic"}]}}
+1 "Imperial Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesImperial"}]}}
+1 "Unweary Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary"}]}}
+1 "Valiant Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesValiant"}]}}
+1 "Fiendish Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFiendish"}]}}
+1 "Edenic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEdenic"}]}}
+1 "Ender Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEnded"}]}}
+1 "Phantasmal Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal"}]}}
+1 "Glacial Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesGlacial"}]}}
+1 "Vindictive Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
+1 "Avenging Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAvenging"}]}}
 1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesLeporine"}]}}
 1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMerry"}]}}
 1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTipsy"}]}}
 1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTricky"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesBoggy"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.artisan"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinker"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.narcissistic"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.oozy"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinsmith"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.potter"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.selfish"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.egoistic"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious"}]}}
-1 "undefined" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky"}]}}
+1 "Boggy Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesBoggy"}]}}
+1 "Secluded Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
+1 "Artisan Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.artisan"}]}}
+1 "Tinker Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinker"}]}}
+1 "Narcissistic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.narcissistic"}]}}
+1 "Oozy Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.oozy"}]}}
+1 "Dull Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.dull"}]}}
+1 "Tinsmith Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinsmith"}]}}
+1 "Potter Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.potter"}]}}
+1 "Selfish Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.selfish"}]}}
+1 "Egoistic Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.egoistic"}]}}
+1 "Derpious Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious"}]}}
+1 "Wacky Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky"}]}}
 1 "Ancient Pedestal" thaumcraft:pedestal_ancient:0
 1 "Pellets of MOX Nuclear Fuel" ic2:nuclear:9
 1 "Orange Tip Cocoon" forestry:cocoon_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.sizeSmall
@@ -2289,88 +2289,88 @@
 1 "Homing Cartridge" immersiveengineering:bullet:2:{bullet:"terrasteel"} | "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"}
 1 "Homing Cartridge" immersiveengineering:bullet:2:{bullet:"terrasteel"}
 1 "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMajestic"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFrugal"}]}}
+1 "Majestic Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMajestic"}]}}
+1 "Frugal Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFrugal"}]}}
 1 "Spectral Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSpectral",UID1:"forestry.speciesSpectral"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry
 1 "Phantasmal Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:70,MaxH:70,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal",UID1:"forestry.speciesPhantasmal"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"f
 1 "Vindictive Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive",UID1:"forestry.speciesVindictive"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"fo
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
+1 "Demonic Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
 1 "Avenging Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:70,MaxH:70,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAvenging",UID1:"forestry.speciesAvenging"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"forestr
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIndustrious"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble"}]}}
+1 "Common Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCommon"}]}}
+1 "Diligent Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent"}]}}
+1 "Industrious Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIndustrious"}]}}
+1 "Noble Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble"}]}}
 1 "Secluded Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded",UID1:"forestry.speciesSecluded"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
+1 "Austere Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
 1 "Hermitic Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHermitic",UID1:"forestry.speciesHermitic"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
+1 "Secluded Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
 1 "Narcissistic Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.narcissistic",UID1:"gendustry.bee.narcissistic"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain"}]}}
+1 "Vain Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain"}]}}
 1 "Selfish Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.selfish",UID1:"gendustry.bee.selfish"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedN
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.scrappy"}]}}
+1 "Scrappy Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.scrappy"}]}}
 1 "Artisan Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.artisan",UID1:"gendustry.bee.artisan"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedN
 1 "Tinker Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinker",UID1:"gendustry.bee.tinker"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedNorm
 1 "Vain Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain",UID1:"gendustry.bee.vain"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedNormal"},{
 1 "Paughty Queen" forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.paughty",UID1:"gendustry.bee.paughty"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedN
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.oozy"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesBoggy"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky"}]}}
-1 "undefined" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMajestic"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesImperial"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIndustrious"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHeroic"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesExotic"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEdenic"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSpectral"}]}}
+1 "Phantasmal Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal"}]}}
+1 "Oozy Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.oozy"}]}}
+1 "Boggy Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesBoggy"}]}}
+1 "Wacky Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky"}]}}
+1 "Farmerly Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly"}]}}
+1 "Noble Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesNoble"}]}}
+1 "Majestic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMajestic"}]}}
+1 "Imperial Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesImperial"}]}}
+1 "Diligent Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDiligent"}]}}
+1 "Unweary Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesUnweary"}]}}
+1 "Industrious Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIndustrious"}]}}
+1 "Heroic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHeroic"}]}}
+1 "Demonic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
+1 "Austere Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
+1 "Exotic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesExotic"}]}}
+1 "Edenic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesEdenic"}]}}
+1 "Spectral Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSpectral"}]}}
 1 "Phantasmal Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:70,MaxH:70,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal",UID1:"forestry.speciesPhantasmal"},{Slot:1b,UID0:"forestry.speedSlowest",U
 1 "Phantasmal Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:70,MaxH:70,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal",UID1:"forestry.speciesPhantasmal"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"f
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIcy"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesGlacial"}]}}
+1 "Phantasmal Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesPhantasmal"}]}}
+1 "Icy Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesIcy"}]}}
+1 "Glacial Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesGlacial"}]}}
 1 "Vindictive Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive",UID1:"forestry.speciesVindictive"},{Slot:1b,UID0:"forestry.speedSlower",UI
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
+1 "Vindictive Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
 1 "Avenging Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:70,MaxH:70,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAvenging",UID1:"forestry.speciesAvenging"},{Slot:1b,UID0:"forestry.speedSlowest",UID1:"f
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAvenging"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesLeporine"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMerry"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTipsy"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTricky"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesRural"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAgrarian"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesBoggy"}]}}
+1 "Avenging Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAvenging"}]}}
+1 "Leporine Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesLeporine"}]}}
+1 "Merry Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMerry"}]}}
+1 "Tipsy Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTipsy"}]}}
+1 "Tricky Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesTricky"}]}}
+1 "Rural Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesRural"}]}}
+1 "Farmerly Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesFarmerly"}]}}
+1 "Agrarian Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAgrarian"}]}}
+1 "Miry Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMiry"}]}}
+1 "Boggy Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesBoggy"}]}}
 1 "Secluded Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded",UID1:"forestry.speciesSecluded"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"fo
 1 "Secluded Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded",UID1:"forestry.speciesSecluded"},{Slot:1b,UID0:"forestry.speedSlower",UID1:"forestry
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHermitic"}]}}
+1 "Secluded Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
+1 "Hermitic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesHermitic"}]}}
 1 "Narcissistic Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.narcissistic",UID1:"gendustry.bee.narcissistic"},{Slot:1b,UID0:"forestry.speedNormal",
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.narcissistic"}]}}
+1 "Narcissistic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.narcissistic"}]}}
 1 "Selfish Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.selfish",UID1:"gendustry.bee.selfish"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.selfish"}]}}
+1 "Selfish Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.selfish"}]}}
 1 "Artisan Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.artisan",UID1:"gendustry.bee.artisan"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.artisan"}]}}
+1 "Artisan Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.artisan"}]}}
 1 "Tinker Princess" forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinker",UID1:"gendustry.bee.tinker"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.spe
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinker"}]}}
+1 "Tinker Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinker"}]}}
 1 "Vain Drone" forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain",UID1:"gendustry.bee.vain"},{Slot:1b,UID0:"forestry.speedNormal",UID1:"forestry.speedNormal"},{
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.egoistic"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.paughty"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.potter"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinsmith"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.gallant"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.elysian"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.oozy"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.chilled"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky"}]}}
-1 "undefined" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious"}]}}
+1 "Vain Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.vain"}]}}
+1 "Egoistic Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.egoistic"}]}}
+1 "Paughty Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.paughty"}]}}
+1 "Potter Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.potter"}]}}
+1 "Tinsmith Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.tinsmith"}]}}
+1 "Gallant Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.gallant"}]}}
+1 "Elysian Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.elysian"}]}}
+1 "Oozy Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.oozy"}]}}
+1 "Chilled Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.chilled"}]}}
+1 "Wacky Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.wacky"}]}}
+1 "Derpious Queen" forestry:bee_queen_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"gendustry.bee.derpious"}]}}
 1 "Fuel Rod (Depleted Uranium)" ic2:nuclear:11
 1 "Dual Fuel Rod (Depleted Uranium)" ic2:nuclear:12
 1 "Fuel Rod (Depleted MOX)" ic2:nuclear:14
@@ -4129,7 +4129,7 @@
 1 "Fusewood Shortbow" tconstruct:shortbow:0:{TinkerData:{Materials:["fusewood","fusewood","string"],Modifiers:["toolleveling"]},Stats:{Durability:36,HarvestLevel:2,Attack:6.75f,MiningSpeed:8.25f,AttackSpeedMultiplier:1.0f,
 1 "Fusewood Crossbow" tconstruct:crossbow:0:{TinkerData:{Materials:["fusewood","fusewood","fusewood","string"],Modifiers:["toolleveling"]},Stats:{Durability:282,HarvestLevel:2,Attack:6.75f,MiningSpeed:8.25f,AttackSpeedMult
 1 "Enchanted Plate" bibliocraft:enchantedplate:0
-1 "undefined" thermalexpansion:machine:13
+1 "Arcane Ensorcellator (Basic)" thermalexpansion:machine:13
 1 "Core Sample" immersiveengineering:coresample:0
 1 "Death Inventory List" tombmanygraves:death_list:0
 1 "Dimlet Base Part" rftoolsdim:dimlet_base:0

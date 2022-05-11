@@ -107,7 +107,7 @@
                               ░ dimension:0
                               ⮬ 216.2507679577301x placeholder:exploration
                               ▕█▏2.00 🧮   2 ⚙️   0 "undefined" dimension:0
-                                [custom:dimensions] #8
+                                [custom:dimensions] #3
                                 ↱ dimension:0
                                 ⮬ placeholder:exploration
                               ▕█▏1.00 🧮   1 ⚙️   0 "{exploration}" placeholder:exploration
@@ -209,7 +209,7 @@
                                 ↱ 5x rats:plague_essence:0
                                 ⮬ 0.0006666666666666666x rats:plague_scythe:0
                                 ▕█▏9,901.00 🧮 10k ⚙️   0 "Black Death Scythe" rats:plague_scythe:0
-                                  [custom:rats] #207
+                                  [custom:rats] #204
                                   ↱ rats:plague_scythe:0
                                   ⮬ 9900x placeholder:fight
                     ▕█▏ 6,789.00 🧮   3 ⚙️  7k "Molten Copper" fluid:copper
@@ -481,7 +481,7 @@
                                           ░ dimension:0, tconstruct:pick_head:0:{Material:"copper"}
                                           ⮬ 1807.534155113462x placeholder:exploration
                                     ▕█▏    0.00 🧮   0 ⚙️   0 "Water" fluid:water
-                                      [custom:dimensions] #12
+                                      [custom:dimensions] #7
                                       ↱ 1000x fluid:water
                                       ⮬ placeholder:exploration
                       ▕█▏ 1,837.85 🧮  1k ⚙️ 437 "Tin Ingot" thermalfoundation:material:129
@@ -498,7 +498,7 @@
                         ↱ minecraft:leather:0
                         ⮬ 4x rats:rat_pelt:0
                         ▕█▏41.00 🧮  41 ⚙️   0 "Rat Pelt" rats:rat_pelt:0
-                          [custom:rats] #202
+                          [custom:rats] #199
                           ↱ rats:rat_pelt:0
                           ⮬ 400x placeholder:ticks
               ▕█▏22,069.70 🧮  3k ⚙️ 19k "Copper Gear" thermalfoundation:material:256
@@ -632,12 +632,12 @@
                     ░ ?x minecraft:obsidian:0
                     ⮬ minecraft:brick_block:*
                     ▕█▏1,005.00 🧮  1k ⚙️   3 "Obsidian" minecraft:obsidian:0
-                      [custom:dimensions] #14
+                      [custom:dimensions] #9
                       ↱ minecraft:obsidian:0
                       ░ 1000x fluid:water
                       ⮬ 1000x fluid:lava
                       ▕█▏1.00 🧮   1 ⚙️   0 "Lava" fluid:lava
-                        [custom:dimensions] #15
+                        [custom:dimensions] #10
                         ↱ 1000x fluid:lava
                         ⮬ 1000x placeholder:exploration
                     ▕█▏  978.35 🧮 542 ⚙️ 436 "Bricks" minecraft:brick_block:0
@@ -774,7 +774,7 @@
                               ↱ thaumcraft:salis_mundus:0
                               ░ minecraft:crafting_table:0
                               ⮬ 3x thaumcraft:crystal_essence:0:{Aspects:[{key:"aer",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"terra",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"ignis",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"aqua",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"ordo",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"perditio",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"vacuos",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"lux",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"motus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"gelum",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"vitreus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"metallum",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"victus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"mortuus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"potentia",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"permutatio",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"praecantatio",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"auram",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"alkimia",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"vitium",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"tenebrae",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"alienis",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"volatus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"herba",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"instrumentum",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"fabrico",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"machina",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"vinculum",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"spiritus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"cognitio",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"sensus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"aversio",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"praemunio",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"desiderium",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"exanimis",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"bestia",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"humanus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"fluctus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"sonus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"exitium",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"caeles",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"draco",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"infernum",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"ventus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"visum",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"imperium",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"mythus",amount:1}]} | thaumcraft:crystal_essence:0:{Aspects:[{key:"rattus",amount:1}]}, minecraft:redstone:0, minecraft:flint:0, minecraft:bowl:0
-                              ▕█▏6,752.66 🧮  7k ⚙️   4 "Perditio Vis Crystal" thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}
+                              ▕█▏6,752.66 🧮  7k ⚙️   4 "Aer Vis Crystal" thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}
                                 [JER_Drops] #2044
                                 ↱ 4x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}
                                 ⮬ ?x thaumcraft:crystal_perditio:0
@@ -867,7 +867,7 @@
                                 ░ dimension:0, tconstruct:pick_head:0:{Material:"flint"}
                                 ⮬ 590.4943875164009x placeholder:exploration
                   ▕█▏39,209.54 🧮 29k ⚙️ 10k "Sun Crystal" extrautils2:suncrystal:0
-                    [custom:extrautils2] #153
+                    [custom:extrautils2] #148
                     ↱ extrautils2:suncrystal:0
                     ⮬ extrautils2:suncrystal:250, 800x placeholder:ticks
                     ▕█▏39,127.54 🧮 29k ⚙️ 10k "Sun Crystal (Empty)" extrautils2:suncrystal:250
@@ -1096,7 +1096,7 @@
                           ░ dimension:1
                           ⮬ 200254.50208561085x placeholder:exploration
                           ▕█▏50,357.54 🧮 242 ⚙️ 50k "undefined" dimension:1
-                            [custom:dimensions] #11
+                            [custom:dimensions] #6
                             ↱ dimension:1
                             ⮬ 12x minecraft:ender_eye:0
                             ▕█▏47,853.66 🧮  20 ⚙️ 48k "Eye of Ender" minecraft:ender_eye:0
@@ -1163,7 +1163,7 @@
                                 ↱ minecraft:gravel:0, minecraft:blaze_powder:0
                                 ░ ?x extrautils2:machine:0:{Type:"extrautils2:crusher"}
                                 ⮬ quark:biome_cobblestone:0
-                                ▕█▏7,043.22 🧮  7k ⚙️ 483 "Crusher" extrautils2:machine:0:{Type:"extrautils2:crusher"}
+                                ▕█▏7,043.22 🧮  7k ⚙️ 483 "Halitosis Generator" extrautils2:machine:0:{Type:"extrautils2:crusher"}
                                   [minecraft__crafting] #83123
                                   ↱ extrautils2:machine:0:{Type:"extrautils2:crusher"}
                                   ░ minecraft:crafting_table:0
@@ -1173,7 +1173,7 @@
                                     ↱ 2x minecraft:piston:0
                                     ░ minecraft:crafting_table:0
                                     ⮬ 3x ore:plankTreatedWood, 4x extrautils2:compressedcobblestone:0, ore:plateCopper, minecraft:redstone:0
-                                  ▕█▏1,852.77 🧮  1k ⚙️ 473 "Machine Block" extrautils2:machine:0:{Type:"extrautils2:generator_survival"}
+                                  ▕█▏1,852.77 🧮  1k ⚙️ 473 "Halitosis Generator" extrautils2:machine:0:{Type:"extrautils2:generator_survival"}
                                     [minecraft__crafting] #83125
                                     ↱ extrautils2:machine:0:{Type:"extrautils2:generator_survival"}
                                     ░ minecraft:crafting_table:0
@@ -1193,7 +1193,7 @@
                                       ░ minecraft:crafting_table:0
                                       ⮬ 3x minecraft:stone:0
                         ▕█▏ 24,697.25 🧮   2 ⚙️ 25k "Dark Fire" cyclicmagic:fire_dark:0
-                          [custom:cyclicmagic] #104
+                          [custom:cyclicmagic] #99
                           ↱ cyclicmagic:fire_dark:0
                           ░ cyclicmagic:ender_blaze:0:{}
                           ⮬ 10x placeholder:ticks
@@ -1208,7 +1208,7 @@
                               ░ minecraft:crafting_table:0
                               ⮬ 4x minecraft:dye:4, 4x rustic:wildberries:0, ore:workbench
                               ▕█▏18,855.85 🧮  11 ⚙️ 19k "Wildberries" rustic:wildberries:0
-                                [custom:rustic] #224
+                                [custom:rustic] #221
                                 ↱ rustic:wildberries:0
                                 ░ rustic:wildberry_bush:0
                                 ⮬ 100x placeholder:ticks
@@ -1228,7 +1228,7 @@
                                       ░ minecraft:crafting_table:0
                                       ⮬ 9x minecraft:emerald:0
                                     ▕█▏   901.00 🧮 901 ⚙️   0 "Wool (Dorset, Brown)" animania:wool:0
-                                      [custom:animania] #46
+                                      [custom:animania] #41
                                       ↱ animania:wool:*
                                       ⮬ 9000x placeholder:ticks
                                   ▕█▏17,287.12 🧮  33 ⚙️ 17k "Emerald" minecraft:emerald:0
@@ -1535,7 +1535,7 @@
                                               ↱ ?x endreborn:block_wolframium_ore:0
                                               ░ dimension:1, tconstruct:pick_head:0:{Material:"certus_quartz"}
                                               ⮬ 5832.004581155871x placeholder:exploration
-                                    ▕█▏70,198.21 🧮  1k ⚙️ 69k "Shard" tconstruct:shard:0:{Material:"dark_steel"}
+                                    ▕█▏70,198.21 🧮  1k ⚙️ 69k "Fusewood Shard" tconstruct:shard:0:{Material:"dark_steel"}
                                       [tconstruct__casting_table] #51949
                                       ↱ tconstruct:shard:0:{Material:"dark_steel"}
                                       ░ ?x tconstruct:casting:0, ?x tconstruct:casting:1
@@ -1545,7 +1545,7 @@
                                         ↱ tconstruct:clay_cast:0:{PartType:"tconstruct:shard"}
                                         ░ ?x tconstruct:casting:0, ?x tconstruct:casting:1
                                         ⮬ tconstruct:shard:0:{Material:"xu_magical_wood"} | tconstruct:shard:0:{Material:"xu_evil_metal"} | tconstruct:shard:0:{Material:"xu_enchanted_metal"} | tconstruct:shard:0:{Material:"xu_demonic_metal"} | tconstruct:shard:0:{Material:"sunnarium"} | tconstruct:shard:0:{Material:"sky_stone"} | tconstruct:shard:0:{Material:"fluix_steel"} | tconstruct:shard:0:{Material:"starmetal"} | tconstruct:shard:0:{Material:"crystal_matrix"} | tconstruct:shard:0:{Material:"neutronium"} | tconstruct:shard:0:{Material:"infinity_metal"} | tconstruct:shard:0:{Material:"bound_metal"} | tconstruct:shard:0:{Material:"sentient_metal"} | tconstruct:shard:0:{Material:"livingrock"} | tconstruct:shard:0:{Material:"manasteel"} | tconstruct:shard:0:{Material:"terrasteel"} | tconstruct:shard:0:{Material:"elementium"} | tconstruct:shard:0:{Material:"draconium"} | tconstruct:shard:0:{Material:"wyvern_metal"} | tconstruct:shard:0:{Material:"draconic_metal"} | tconstruct:shard:0:{Material:"chaotic_metal"} | tconstruct:shard:0:{Material:"mica"} | tconstruct:shard:0:{Material:"essence_metal"} | tconstruct:shard:0:{Material:"pink_metal"} | tconstruct:shard:0:{Material:"energetic_metal"} | tconstruct:shard:0:{Material:"iridium"} | tconstruct:shard:0:{Material:"universal_metal"} | tconstruct:shard:0:{Material:"osmium"} | tconstruct:shard:0:{Material:"refined_obsidian"} | tconstruct:shard:0:{Material:"refined_glowstone"} | tconstruct:shard:0:{Material:"dark_matter"} | tconstruct:shard:0:{Material:"red_matter"} | tconstruct:shard:0:{Material:"fluxed_electrum"} | tconstruct:shard:0:{Material:"gelid_enderium"} | tconstruct:shard:0:{Material:"thaumium"} | tconstruct:shard:0:{Material:"void_metal"} | tconstruct:shard:0:{Material:"primal_metal"} | tconstruct:shard:0:{Material:"tin"} | tconstruct:shard:0:{Material:"aluminium"} | tconstruct:shard:0:{Material:"nickel"} | tconstruct:shard:0:{Material:"platinum"} | tconstruct:shard:0:{Material:"invar"} | tconstruct:shard:0:{Material:"constantan"} | tconstruct:shard:0:{Material:"signalum"} | tconstruct:shard:0:{Material:"lumium"} | tconstruct:shard:0:{Material:"enderium"} | tconstruct:shard:0:{Material:"obsidian"} | tconstruct:shard:0:{Material:"nagascale"} | tconstruct:shard:0:{Material:"steeleaf"} | tconstruct:shard:0:{Material:"fierymetal"} | tconstruct:shard:0:{Material:"knightmetal"} | tconstruct:shard:0:{Material:"raven_feather"} | tconstruct:shard:0:{Material:"electrical_steel"} | tconstruct:shard:0:{Material:"energetic_alloy"} | tconstruct:shard:0:{Material:"vibrant_alloy"} | tconstruct:shard:0:{Material:"redstone_alloy"} | tconstruct:shard:0:{Material:"conductive_iron"} | tconstruct:shard:0:{Material:"pulsating_iron"} | tconstruct:shard:0:{Material:"dark_steel"} | tconstruct:shard:0:{Material:"soularium"} | tconstruct:shard:0:{Material:"end_steel"} | tconstruct:shard:0:{Material:"construction_alloy"} | tconstruct:shard:0:{Material:"crude_steel"} | tconstruct:shard:0:{Material:"crystalline_alloy"} | tconstruct:shard:0:{Material:"melodic_alloy"} | tconstruct:shard:0:{Material:"stellar_alloy"} | tconstruct:shard:0:{Material:"crystalline_pink_slime"} | tconstruct:shard:0:{Material:"energetic_silver"} | tconstruct:shard:0:{Material:"vivid_alloy"} | tconstruct:shard:0:{Material:"wood"} | tconstruct:shard:0:{Material:"stone"} | tconstruct:shard:0:{Material:"flint"} | tconstruct:shard:0:{Material:"cactus"} | tconstruct:shard:0:{Material:"bone"} | tconstruct:shard:0:{Material:"prismarine"} | tconstruct:shard:0:{Material:"endstone"} | tconstruct:shard:0:{Material:"paper"} | tconstruct:shard:0:{Material:"sponge"} | tconstruct:shard:0:{Material:"firewood"} | tconstruct:shard:0:{Material:"iron"} | tconstruct:shard:0:{Material:"pigiron"} | tconstruct:shard:0:{Material:"knightslime"} | tconstruct:shard:0:{Material:"slime"} | tconstruct:shard:0:{Material:"blueslime"} | tconstruct:shard:0:{Material:"magmaslime"} | tconstruct:shard:0:{Material:"netherrack"} | tconstruct:shard:0:{Material:"cobalt"} | tconstruct:shard:0:{Material:"ardite"} | tconstruct:shard:0:{Material:"manyullyn"} | tconstruct:shard:0:{Material:"copper"} | tconstruct:shard:0:{Material:"bronze"} | tconstruct:shard:0:{Material:"lead"} | tconstruct:shard:0:{Material:"silver"} | tconstruct:shard:0:{Material:"electrum"} | tconstruct:shard:0:{Material:"steel"} | tconstruct:shard:0:{Material:"string"} | tconstruct:shard:0:{Material:"slimevine_blue"} | tconstruct:shard:0:{Material:"slimevine_purple"} | tconstruct:shard:0:{Material:"vine"} | tconstruct:shard:0:{Material:"blaze"} | tconstruct:shard:0:{Material:"reed"} | tconstruct:shard:0:{Material:"ice"} | tconstruct:shard:0:{Material:"endrod"} | tconstruct:shard:0:{Material:"feather"} | tconstruct:shard:0:{Material:"slimeleaf_blue"} | tconstruct:shard:0:{Material:"slimeleaf_orange"} | tconstruct:shard:0:{Material:"slimeleaf_purple"} | tconstruct:shard:0:{Material:"leaf"} | tconstruct:shard:0:{Material:"treatedwood"} | tconstruct:shard:0:{Material:"hemp"} | tconstruct:shard:0:{Material:"spectre"} | tconstruct:shard:0:{Material:"heavy"} | tconstruct:shard:0:{Material:"dragonbone"} | tconstruct:shard:0:{Material:"desert_myrmex"} | tconstruct:shard:0:{Material:"jungle_myrmex"} | tconstruct:shard:0:{Material:"dragonsteel_fire"} | tconstruct:shard:0:{Material:"dragonsteel_ice"} | tconstruct:shard:0:{Material:"stymph_feather"} | tconstruct:shard:0:{Material:"amphithere_feather"} | tconstruct:shard:0:{Material:"weezer"} | tconstruct:shard:0:{Material:"leatherfrosttroll"} | tconstruct:shard:0:{Material:"chitintandeathworm"} | tconstruct:shard:0:{Material:"scalebronzedragon"} | tconstruct:shard:0:{Material:"scaleblueseaserpent"} | tconstruct:shard:0:{Material:"scalepurpleseaserpent"} | tconstruct:shard:0:{Material:"scalewhitedragon"} | tconstruct:shard:0:{Material:"chitinwhitedeathworm"} | tconstruct:shard:0:{Material:"chitinbrowndeathworm"} | tconstruct:shard:0:{Material:"scalegraydragon"} | tconstruct:shard:0:{Material:"scalesapphiredragon"} | tconstruct:shard:0:{Material:"scaletealseaserpent"} | tconstruct:shard:0:{Material:"scalebluedragon"} | tconstruct:shard:0:{Material:"leatherforesttroll"} | tconstruct:shard:0:{Material:"scalegreendragon"} | tconstruct:shard:0:{Material:"leathermountaintroll"} | tconstruct:shard:0:{Material:"scalebronzeseaserpent"} | tconstruct:shard:0:{Material:"scalereddragon"} | tconstruct:shard:0:{Material:"scaledeepblueseaserpent"} | tconstruct:shard:0:{Material:"scaleredseaserpent"} | tconstruct:shard:0:{Material:"scalegreenseaserpent"} | tconstruct:shard:0:{Material:"scalesilverdragon"} | tconstruct:shard:0:{Material:"ma.prosperity"} | tconstruct:shard:0:{Material:"ma.soulium"} | tconstruct:shard:0:{Material:"ma.base_essence"} | tconstruct:shard:0:{Material:"ma.inferium"} | tconstruct:shard:0:{Material:"ma.prudentium"} | tconstruct:shard:0:{Material:"ma.intermedium"} | tconstruct:shard:0:{Material:"ma.superium"} | tconstruct:shard:0:{Material:"ma.supremium"} | tconstruct:shard:0:{Material:"endorium"} | tconstruct:shard:0:{Material:"wolframium"} | tconstruct:shard:0:{Material:"boron"} | tconstruct:shard:0:{Material:"tough"} | tconstruct:shard:0:{Material:"hard_carbon"} | tconstruct:shard:0:{Material:"boron_nitride"} | tconstruct:shard:0:{Material:"thorium"} | tconstruct:shard:0:{Material:"uranium"} | tconstruct:shard:0:{Material:"magnesium"} | tconstruct:shard:0:{Material:"chocolate"} | tconstruct:shard:0:{Material:"integrationforegoing.plastic"} | tconstruct:shard:0:{Material:"integrationforegoing.pink_slime"} | tconstruct:shard:0:{Material:"integrationforegoing.reinforced_pink_slime"} | tconstruct:shard:0:{Material:"tnt"} | tconstruct:shard:0:{Material:"alumite"} | tconstruct:shard:0:{Material:"sapphire"} | tconstruct:shard:0:{Material:"ruby"} | tconstruct:shard:0:{Material:"peridot"} | tconstruct:shard:0:{Material:"malachite_gem"} | tconstruct:shard:0:{Material:"amber"} | tconstruct:shard:0:{Material:"topaz"} | tconstruct:shard:0:{Material:"tanzanite"} | tconstruct:shard:0:{Material:"amethyst"} | tconstruct:shard:0:{Material:"osgloglas"} | tconstruct:shard:0:{Material:"osmiridium"} | tconstruct:shard:0:{Material:"titanium"} | tconstruct:shard:0:{Material:"psimetal"} | tconstruct:shard:0:{Material:"psigem"} | tconstruct:shard:0:{Material:"cheese"} | tconstruct:shard:0:{Material:"string_cheese"} | tconstruct:shard:0:{Material:"plague_metal"} | tconstruct:shard:0:{Material:"exhaustium"} | tconstruct:shard:0:{Material:"mirion"} | tconstruct:shard:0:{Material:"emerald_plustic"}, 288x fluid:clay
-                                        ▕█▏    31.36 🧮   3 ⚙️  29 "Plague Metal Shard" tconstruct:shard:0:{Material:"plague_metal"}
+                                        ▕█▏    31.36 🧮   3 ⚙️  29 "Fusewood Shard" tconstruct:shard:0:{Material:"plague_metal"}
                                           [tinkersjei__tool_stats] #29246
                                           ↱ tconstruct:shard:0:{Material:"plague_metal"}
                                           ░ tconstruct:tooltables:3
@@ -1650,7 +1650,7 @@
                                   ↱ minecraft:diamond_sword:0
                                   ░ minecraft:crafting_table:0
                                   ⮬ 2x minecraft:diamond:0, ore:stickWood
-                              ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"iceandfire:if_cockatrice"}
+                              ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"iceandfire:if_cockatrice"}
                                 [minecraft__crafting] #91759
                                 ↱ 8x thermalexpansion:morb:0
                                 ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -1869,7 +1869,7 @@
                               ░ minecraft:crafting_table:0
                               ⮬ 8x ic2:crop_res:5, ore:seed
                               ▕█▏21,986.29 🧮  21 ⚙️ 22k "Weed" ic2:crop_res:5
-                                [custom:ic2] #157
+                                [custom:ic2] #152
                                 ↱ ic2:crop_res:5
                                 ░ ic2:weeding_trowel:0
                                 ⮬ 200x placeholder:ticks
@@ -1884,12 +1884,12 @@
                                 ░ minecraft:crafting_table:0
                                 ⮬ 9x ore:ratPoop
                                 ▕█▏116.00 🧮  74 ⚙️  42 "Rat §o"Nugget"" rats:rat_nugget:0
-                                  [custom:rats] #199
+                                  [custom:rats] #196
                                   ↱ rats:rat_nugget:0
                                   ░ rats:raw_rat:0
                                   ⮬ 730x placeholder:ticks
                                   ▕█▏41.00 🧮  41 ⚙️   0 "Raw Rat" rats:raw_rat:0
-                                    [custom:rats] #201
+                                    [custom:rats] #198
                                     ↱ rats:raw_rat:0
                                     ⮬ 400x placeholder:ticks
                             ▕█▏     7.67 🧮   1 ⚙️   6 "Canola Seeds" actuallyadditions:item_canola_seed:0
@@ -1929,7 +1929,7 @@
                               ░ minecraft:crafting_table:0
                               ⮬ 6x ore:plankTreatedWood, forestry:wood_pile:0
                       ▕█▏     26.00 🧮  26 ⚙️   0 "Egg" animania:brown_egg:0
-                        [custom:animania] #66
+                        [custom:animania] #61
                         ↱ animania:brown_egg:0
                         ⮬ 250x placeholder:ticks
                     ▕█▏  102,869.37 🧮  31 ⚙️103k "Amber" fluid:amber
@@ -2158,7 +2158,7 @@
                 [xu2_machine_extrautils2__generator_lava] #4977
                 ↱ 50x fluid:pyrotheum
                 ░ ?x extrautils2:machine:0:{Type:"extrautils2:generator_lava"}
-                ▕█▏27,439.02 🧮 14k ⚙️ 14k "Magmatic Generator" extrautils2:machine:0:{Type:"extrautils2:generator_lava"}
+                ▕█▏27,439.02 🧮 14k ⚙️ 14k "Halitosis Generator" extrautils2:machine:0:{Type:"extrautils2:generator_lava"}
                   [minecraft__crafting] #97665
                   ↱ extrautils2:machine:0
                   ░ minecraft:crafting_table:0
@@ -2297,7 +2297,7 @@
                               ↱ endreborn:food_ender_flesh:0
                               ⮬ minecraft:rotten_flesh:0, minecraft:blaze_powder:0
                             ▕█▏    41.00 🧮  41 ⚙️   0 "Ectoplasm" randomthings:ingredient:2
-                              [custom:randomthings] #192
+                              [custom:randomthings] #189
                               ↱ randomthings:ingredient:2
                               ⮬ 400x placeholder:ticks
                         ▕█▏26,655.75 🧮 158 ⚙️ 26k "Farmland" minecraft:farmland:0
@@ -2324,7 +2324,7 @@
                   ↱ ic2:crafting:1
                   ░ minecraft:crafting_table:0
                   ⮬ 6x ic2:cable:0:{type:0b,insulation:1b}, 2x minecraft:redstone:0, ore:plateIron
-                  ▕█▏21,904.88 🧮  1k ⚙️ 21k "Insulated Copper Cable" ic2:cable:0:{type:0b,insulation:1b}
+                  ▕█▏21,904.88 🧮  1k ⚙️ 21k "Copper Cable" ic2:cable:0:{type:0b,insulation:1b}
                     [minecraft__crafting] #82913
                     ↱ ic2:cable:0:{type:0b,insulation:1b}
                     ⮬ ore:itemRubber, ic2:cable:0:{type:0b,insulation:0b}
@@ -2425,7 +2425,7 @@
                               ░ ?x immersiveengineering:stone_device:7
                               ⮬ minecraft:iron_ingot:0
                               ▕█▏36,596.61 🧮 16k ⚙️ 21k "undefined" immersiveengineering:stone_device:7
-                                [JEC] #5
+                                [custom:immersiveengineering] #165
                                 ↱ immersiveengineering:stone_device:7
                                 ░ immersiveengineering:tool:0
                                 ⮬ 8x immersiveengineering:stone_decoration:10
@@ -2560,7 +2560,7 @@
                           ↱ 65x minecraft:iron_ore:0, 64x thermalfoundation:ore:1, 53x minecraft:coal_ore:0, 31x thermalfoundation:ore:2, 31x thermalfoundation:ore:5, 29x thermalfoundation:ore:0, 28x minecraft:gold_ore:0, 24x mekanism:oreblock:0, 23x thermalfoundation:ore:3, 22x thermalfoundation:ore:4, 18x minecraft:clay:0, 16x minecraft:redstone_ore:0, 15x thermalfoundation:material:771, 11x minecraft:sand:0, 8x minecraft:lapis_ore:0, 8x nuclearcraft:ore:3, 8x nuclearcraft:ore:5, 8x nuclearcraft:ore:6, 8x nuclearcraft:ore:7, 8x actuallyadditions:block_misc:3, 8x minecraft:gravel:0, 6x immersiveengineering:ore:5, 4x minecraft:quartz_ore:0, 4x thermalfoundation:ore:6, 3x appliedenergistics2:charged_quartz_ore:0, 3x thaumcraft:ore_cinnabar:0, 2x libvulpes:ore0:8, 2x biomesoplenty:gem_ore:1, minecraft:diamond_ore:0, minecraft:emerald_ore:0
                           ░ ?x immersiveengineering:metal_multiblock:11
                           ▕█▏278,686.76 🧮115k ⚙️163k "undefined" immersiveengineering:metal_multiblock:11
-                            [custom:immersiveengineering] #169
+                            [custom:immersiveengineering] #164
                             ↱ immersiveengineering:metal_multiblock:*
                             ░ immersiveengineering:tool:0
                             ⮬ 4x immersiveengineering:metal_decoration0:3, 4x immersiveengineering:metal_decoration0:4, 4x immersiveengineering:metal_decoration0:5
@@ -3303,7 +3303,7 @@
               ░ ?x immersiveengineering:metal_multiblock:0
               ⮬ opencomputers:screen3:0, immersiveengineering:mold:0
               ▕█▏191,317.76 🧮 28k ⚙️163k "undefined" immersiveengineering:metal_multiblock:0
-                [custom:immersiveengineering] #168
+                [custom:immersiveengineering] #163
                 ↱ immersiveengineering:metal_multiblock:0
                 ░ immersiveengineering:tool:0
                 ⮬ minecraft:piston:0, 2x immersiveengineering:metal_decoration1:1, 2x immersiveengineering:conveyor:0:{conveyorType:"immersiveengineering:conveyor"}, immersiveengineering:metal_decoration0:5, immersiveengineering:metal_decoration0:3
@@ -3775,7 +3775,7 @@
                     [fluid_blocks] #1237
                     ↱ 1000x fluid:sulfur_dioxide
                     ⮬ nuclearcraft:fluid_sulfur_dioxide:0
-                    ▕█▏1,467,692.64 🧮  2k ⚙️  1m "undefined" nuclearcraft:fluid_sulfur_dioxide:0
+                    ▕█▏1,467,692.64 🧮  2k ⚙️  1m "Sulfur Dioxide" nuclearcraft:fluid_sulfur_dioxide:0
                       [fluid_blocks] #1238
                       ↱ nuclearcraft:fluid_sulfur_dioxide:0
                       ⮬ 1000x fluid:sulfur_dioxide
@@ -3799,7 +3799,7 @@
                         ↱ mekanism:machineblock2:11:{tier:0}
                         ░ minecraft:crafting_table:0
                         ⮬ 4x mekanism:enrichedalloy:0, 2x ore:ingotFakeIron
-                      ▕█▏ 11,484.56 🧮  5k ⚙️  6k "Basic Gas Tank" mekanism:gastank:0:{tier:0,mekData:{stored:{gasName:"liquidosmium",amount:64000}}}
+                      ▕█▏ 11,484.56 🧮  5k ⚙️  6k "Advanced Gas Tank" mekanism:gastank:0:{tier:0,mekData:{stored:{gasName:"liquidosmium",amount:64000}}}
                         [minecraft__crafting] #98083
                         ↱ mekanism:gastank:0:{tier:0}
                         ░ minecraft:crafting_table:0
@@ -3825,7 +3825,7 @@
                             ░ ?x astralsorcery:blockmachine:1
                             ⮬ mekanism:oreblock:0
                       ▕█▏267,607.83 🧮   0 ⚙️268k "Heavy Water" fluid:heavywater
-                        [custom:mekanism] #181
+                        [custom:mekanism] #178
                         ↱ 1000x fluid:heavywater
                         ░ mekanism:machineblock:12, mekanism:filterupgrade:0
                         ⮬ 1000x fluid:water
@@ -3855,7 +3855,7 @@
               ░ dimension:-8, tconstruct:pick_head:0:{Material:"manyullyn"}
               ⮬ 115372.18510162963x placeholder:exploration
               ▕█▏520,800.22 🧮  3k ⚙️518k "undefined" dimension:-8
-                [custom:rats] #196
+                [custom:rats] #193
                 ↱ dimension:-8
                 ⮬ rats:chunky_cheese_token:0
                 ▕█▏520,798.22 🧮  3k ⚙️518k "Chunky Cheese Token" rats:chunky_cheese_token:0
@@ -3891,7 +3891,7 @@
                             ↱ animania:carving_knife:0
                             ⮬ 2x minecraft:iron_ingot:0, ore:stickWood
                   ▕█▏ 30,404.89 🧮  32 ⚙️ 30k "Cheese Wheel (Friesian)" animania:friesian_cheese_wheel:0
-                    [custom:animania] #55
+                    [custom:animania] #50
                     ↱ animania:friesian_cheese_wheel:0
                     ░ animania:cheese_mold:0
                     ⮬ 1000x fluid:milk_friesian
@@ -3901,7 +3901,7 @@
                       ░ minecraft:crafting_table:0
                       ⮬ 3x ore:plankWood, minecraft:iron_ingot:0
                     ▕█▏30,001.03 🧮   0 ⚙️ 30k "Friesian Milk" fluid:milk_friesian
-                      [custom:animania] #56
+                      [custom:animania] #51
                       ↱ 1000x fluid:milk_friesian
                       ░ 30000x placeholder:exploration
                       ⮬ 300x placeholder:ticks
@@ -3926,7 +3926,7 @@
                       ░ dimension:-1, tconstruct:pick_head:0:{Material:"obsidian"}
                       ⮬ 2787.0524515016687x placeholder:exploration
                       ▕█▏77,205.12 🧮   9 ⚙️ 77k "undefined" dimension:-1
-                        [custom:dimensions] #10
+                        [custom:dimensions] #5
                         ↱ dimension:-1
                         ░ 8x minecraft:obsidian:0
                         ⮬ 0.015x minecraft:flint_and_steel:0
@@ -4035,7 +4035,7 @@
               ↱ thermalfoundation:material:2050, 2x thermalfoundation:material:772, thermalexpansion:morb:0, 200x fluid:experience
               ░ ?x thermalexpansion:augment:416
               ⮬ thermalexpansion:morb:0:{id:"thermalfoundation:blitz"}
-              ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"thermalfoundation:blitz"}
+              ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"thermalfoundation:blitz"}
                 [minecraft__crafting] #91759
                 ↱ 8x thermalexpansion:morb:0
                 ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -4050,7 +4050,7 @@
                 ░ minecraft:crafting_table:0
                 ⮬ minecraft:flint:0, ore:stickWood, ore:feather
                 ▕█▏ 31.00 🧮  31 ⚙️   0 "Blue Peacock Feather" animania:blue_peacock_feather:0
-                  [custom:animania] #57
+                  [custom:animania] #52
                   ↱ animania:blue_peacock_feather:0
                   ⮬ 300x placeholder:ticks
         ▕█▏  783,004.22 🧮229k ⚙️554k "Mana Dust" thermalfoundation:material:1028
@@ -4063,7 +4063,7 @@
             ↱ randomthings:ingredient:11, biomesoplenty:gem:1, biomesoplenty:gem:2, biomesoplenty:gem:3, biomesoplenty:gem:4, biomesoplenty:gem:5, biomesoplenty:gem:6, minecraft:iron_ingot:0, minecraft:gold_ingot:0
             ⮬ randomthings:beanpod:0
             ▕█▏442,222.90 🧮103k ⚙️339k "Bean Pod" randomthings:beanpod:0
-              [custom:randomthings] #193
+              [custom:randomthings] #190
               ↱ randomthings:beanpod:0
               ⮬ randomthings:beans:2
               ▕█▏442,220.90 🧮103k ⚙️339k "Magic Bean" randomthings:beans:2
@@ -4201,12 +4201,12 @@
                       ↱ 8x harvestcraft:freshmilkitem:0, minecraft:bucket:0
                       ⮬ minecraft:milk_bucket:0
                       ▕█▏7,647.31 🧮  7k ⚙️ 640 "Milk" minecraft:milk_bucket:0
-                        [custom:entities] #17
+                        [custom:entities] #12
                         ↱ minecraft:milk_bucket:0
                         ░ entity:cow
                         ⮬ minecraft:bucket:0
                         ▕█▏  201.00 🧮 201 ⚙️   0 "undefined" entity:cow
-                          [custom:entities] #16
+                          [custom:entities] #11
                           ↱ entity:cow
                           ⮬ 200x placeholder:exploration
                   ▕█▏  6,332.57 🧮  6k ⚙️  23 "Rat Upgrade: Basic" rats:rat_upgrade_basic:0
@@ -4215,7 +4215,7 @@
                     ░ minecraft:crafting_table:0
                     ⮬ 9x rats:rat_upgrade_fragment:0
                     ▕█▏701.00 🧮 701 ⚙️   0 "Rat Upgrade Fragment" rats:rat_upgrade_fragment:0
-                      [custom:rats] #203
+                      [custom:rats] #200
                       ↱ rats:rat_upgrade_fragment:0
                       ⮬ 7000x placeholder:ticks
                   ▕█▏  3,655.57 🧮  4k ⚙️  23 "Chef Toque" rats:chef_toque:0
@@ -4228,7 +4228,7 @@
                       ↱ minecraft:wool:0
                       ⮬ animania:wool:3
                       ▕█▏901.00 🧮 901 ⚙️   0 "Wool (Jacob)" animania:wool:3
-                        [custom:animania] #46
+                        [custom:animania] #41
                         ↱ animania:wool:*
                         ⮬ 9000x placeholder:ticks
                 ▕█▏106,665.12 🧮103k ⚙️  4k "Lesser Magic Bean" randomthings:beans:1
@@ -4296,7 +4296,7 @@
                 ↱ thermalfoundation:material:2052, 2x thermalfoundation:material:770, thermalexpansion:morb:0, 200x fluid:experience
                 ░ ?x thermalexpansion:augment:416
                 ⮬ thermalexpansion:morb:0:{id:"thermalfoundation:basalz"}
-                ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"thermalfoundation:basalz"}
+                ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"thermalfoundation:basalz"}
                   [minecraft__crafting] #91759
                   ↱ 8x thermalexpansion:morb:0
                   ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -4387,7 +4387,7 @@
                 ↱ extrautils2:ingredients:12
                 ░ ?x extrautils2:machine:0:{Type:"extrautils2:enchanter"}
                 ⮬ minecraft:gold_ingot:0, minecraft:dye:4
-                ▕█▏27,439.02 🧮 14k ⚙️ 14k "Enchanter" extrautils2:machine:0:{Type:"extrautils2:enchanter"}
+                ▕█▏27,439.02 🧮 14k ⚙️ 14k "Halitosis Generator" extrautils2:machine:0:{Type:"extrautils2:enchanter"}
                   [minecraft__crafting] #97665
                   ↱ extrautils2:machine:0
                   ░ minecraft:crafting_table:0
@@ -4669,7 +4669,7 @@
                         ░ minecraft:crafting_table:0
                         ⮬ ore:plankWood, 2x ore:stickWood
                 ▕█▏ 28,908.98 🧮  5k ⚙️ 24k "Demonic Will" bloodmagic:monster_soul:0:{souls:10.0f}
-                  [custom:bloodmagic] #94
+                  [custom:bloodmagic] #89
                   ↱ bloodmagic:monster_soul:0
                   ⮬ bloodmagic:soul_snare:0
                   ▕█▏29,229.98 🧮  5k ⚙️ 24k "Rudimentary Snare" bloodmagic:soul_snare:0
@@ -4711,7 +4711,7 @@
                 ░ ?x extrautils2:machine:0:{Type:"extrautils2:crusher"}
                 ⮬ 2x rats:rat_nugget_ore:53:{OreItem:{id:"thermalfoundation:ore",Count:1b,Damage:8s},IngotItem:{id:"thermalfoundation:material",Count:1b,Damage:136s}}
                 ▕█▏462,318.69 🧮 10k ⚙️452k "Mana Infused §o"Nugget"" rats:rat_nugget_ore:53:{OreItem:{id:"thermalfoundation:ore",Count:1b,Damage:8s},IngotItem:{id:"thermalfoundation:material",Count:1b,Damage:136s}}
-                  [custom:rats] #198
+                  [custom:rats] #195
                   ↱ rats:rat_nugget_ore:*
                   ░ rats:rat_upgrade_ore_doubling:0
                   ⮬ 100000x placeholder:ticks
@@ -5037,7 +5037,7 @@
                     ░ minecraft:crafting_table:0
                     ⮬ 6x ore:itemRubber, 2x ore:ingotFakeIron, minecraft:redstone:0
         ▕█▏2,784,492.29 🧮  20 ⚙️  3m "IC2 Hot Coolant" fluid:ic2hot_coolant
-          [custom:ic2] #162
+          [custom:ic2] #157
           ↱ 10000x fluid:ic2hot_coolant
           ░ 95x ic2:resource:14, ic2:te:25, ic2:te:26, ic2:te:23, 6x ic2:te:24, ic2:te:22
           ⮬ 10000x fluid:ic2coolant, ic2:nuclear:0
@@ -5136,7 +5136,7 @@
           ↱ minecraft:shulker_shell:0, thermalexpansion:morb:0, 100x fluid:experience
           ░ ?x thermalexpansion:augment:416
           ⮬ thermalexpansion:morb:0:{id:"minecraft:shulker"}
-          ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"minecraft:shulker"}
+          ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"minecraft:shulker"}
             [minecraft__crafting] #91759
             ↱ 8x thermalexpansion:morb:0
             ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -5226,7 +5226,7 @@
           ░ ?x minecraft:furnace:0
           ⮬ rats:rat_nugget_ore:44:{OreItem:{id:"biomesoplenty:gem_ore",Count:1b,Damage:0s},IngotItem:{id:"biomesoplenty:gem",Count:1b,Damage:0s}}
           ▕█▏462,318.69 🧮 10k ⚙️452k "Ender Amethyst §o"Nugget"" rats:rat_nugget_ore:44:{OreItem:{id:"biomesoplenty:gem_ore",Count:1b,Damage:0s},IngotItem:{id:"biomesoplenty:gem",Count:1b,Damage:0s}}
-            [custom:rats] #198
+            [custom:rats] #195
             ↱ rats:rat_nugget_ore:*
             ░ rats:rat_upgrade_ore_doubling:0
             ⮬ 100000x placeholder:ticks
@@ -5305,7 +5305,7 @@
                 ░ ?x immersiveengineering:metal_multiblock:13
                 ⮬ ore:dustIron, ore:dustCoal, appliedenergistics2:material:5
                 ▕█▏278,686.76 🧮115k ⚙️163k "undefined" immersiveengineering:metal_multiblock:13
-                  [custom:immersiveengineering] #169
+                  [custom:immersiveengineering] #164
                   ↱ immersiveengineering:metal_multiblock:*
                   ░ immersiveengineering:tool:0
                   ⮬ 4x immersiveengineering:metal_decoration0:3, 4x immersiveengineering:metal_decoration0:4, 4x immersiveengineering:metal_decoration0:5
@@ -5463,7 +5463,7 @@
               ░ minecraft:crafting_table:0
               ⮬ 2x actuallyadditions:item_water_bowl:0, forestry:carpenter:0, 2x tconstruct:large_plate:0:{Material:"black_quartz"}, thermalexpansion:frame:0, 2x thermalfoundation:material:290, thermalfoundation:material:513
               ▕█▏       30.68 🧮   7 ⚙️  24 "Bowl of Water" actuallyadditions:item_water_bowl:0
-                [custom:actuallyadditions] #25
+                [custom:actuallyadditions] #20
                 ↱ actuallyadditions:item_water_bowl:0
                 ⮬ minecraft:bowl:0, 1000x fluid:water
             ▕█▏2,421,177.11 🧮334k ⚙️  2m "Reinforced Cell Frame (Empty)" thermalexpansion:frame:130
@@ -5516,7 +5516,7 @@
             ░ ?x immersiveengineering:metal_multiblock:1
             ⮬ minecraft:redstone_ore:0
             ▕█▏278,686.76 🧮115k ⚙️163k "undefined" immersiveengineering:metal_multiblock:1
-              [custom:immersiveengineering] #169
+              [custom:immersiveengineering] #164
               ↱ immersiveengineering:metal_multiblock:*
               ░ immersiveengineering:tool:0
               ⮬ 4x immersiveengineering:metal_decoration0:3, 4x immersiveengineering:metal_decoration0:4, 4x immersiveengineering:metal_decoration0:5
@@ -5652,7 +5652,7 @@
                     ░ minecraft:crafting_table:0
                     ⮬ 4x minecraft:dirt:0 | minecraft:dirt:1 | minecraft:dirt:2, 4x ore:sand, minecraft:water_bucket:0
                     ▕█▏7,448.31 🧮  7k ⚙️ 439 "Water Bucket" minecraft:water_bucket:0
-                      [custom:interactions] #21
+                      [custom:interactions] #16
                       ↱ minecraft:water_bucket:0
                       ⮬ minecraft:bucket:0, 1000x fluid:water
                 ▕█▏ 22,467.39 🧮 14k ⚙️  9k "Podzol" minecraft:dirt:2
@@ -5836,7 +5836,7 @@
               ░ ?x ic2:te:42
               ⮬ tconevo:material:0, 72x fluid:ic2uu_matter
               ▕█▏1,210,831.88 🧮880k ⚙️331k "UU-Matter" fluid:ic2uu_matter
-                [custom:ic2] #159
+                [custom:ic2] #154
                 ↱ fluid:ic2uu_matter
                 ░ ic2:te:61
                 ⮬ 880000x placeholder:rf
@@ -5974,7 +5974,7 @@
                             ↱ ic2:dust:3
                             ⮬ ore:dustCoal, minecraft:water_bucket:0:{display:{Name:"Any container with Water * 1000 mB"}}
                             ▕█▏7,448.31 🧮  7k ⚙️ 439 "Water Bucket" minecraft:water_bucket:0:{display:{Name:"Any container with Water * 1000 mB"}}
-                              [custom:interactions] #21
+                              [custom:interactions] #16
                               ↱ minecraft:water_bucket:0
                               ⮬ minecraft:bucket:0, 1000x fluid:water
                           ▕█▏     98.76 🧮  76 ⚙️  23 "Ball of Moss" tconstruct:materials:18
@@ -6126,7 +6126,7 @@
                         ░ ?x mekanism:machineblock:8
                         ⮬ animania:peacock_egg_white:0, mekanism:compressedcarbon:0 | mekanism:basicblock:3 | minecraft:coal:0 | minecraft:coal_block:0 | minecraft:coal:1
                         ▕█▏     26.00 🧮  26 ⚙️   0 "Peafowl Egg" animania:peacock_egg_white:0
-                          [custom:animania] #65
+                          [custom:animania] #60
                           ↱ animania:peacock_egg_white:0
                           ⮬ 250x placeholder:ticks
                   ▕█▏   324,289.91 🧮 201 ⚙️324k "Skeleton Skull" minecraft:skull:0
@@ -6538,7 +6538,7 @@
                               ░ minecraft:crafting_table:0
                               ⮬ 3x minecraft:leather:0, thaumcraft:ingot:2
                         ▕█▏      121.00 🧮 121 ⚙️   0 "§eInferium Essence" mysticalagriculture:crafting:0
-                          [custom:mysticalagriculture] #183
+                          [custom:mysticalagriculture] #180
                           ↱ mysticalagriculture:crafting:0
                           ⮬ 120x placeholder:fight
                       ▕█▏    7,968.38 🧮  8k ⚙️  23 "§aPrudentium Essence" mysticalagriculture:crafting:1
@@ -6602,7 +6602,7 @@
               ░ ?x iceandfire:dragonforge_fire_core_disabled:0
               ⮬ minecraft:iron_ingot:0, iceandfire:fire_dragon_blood:0
               ▕█▏   41,236.44 🧮 41k ⚙️   1 "Fire Dragon Blood" iceandfire:fire_dragon_blood:0
-                [custom:iceandfire] #163
+                [custom:iceandfire] #158
                 ↱ iceandfire:fire_dragon_blood:0
                 ⮬ 40000x placeholder:fight, minecraft:glass_bottle:0
             ▕█▏  1,841,785.96 🧮  1k ⚙️  2m "Titanium Iridium Alloy Ingot" advancedrocketry:productingot:1
@@ -6689,7 +6689,7 @@
               ░ minecraft:crafting_table:0
               ⮬ 8x psi:material:5, psi:material:1
               ▕█▏423,685.57 🧮 209 ⚙️423k "Ebony Substance" psi:material:5
-                [custom:psi] #189
+                [custom:psi] #186
                 ↱ psi:material:5
                 ░ psi:cad_assembly:2
                 ⮬ minecraft:coal:0
@@ -6728,7 +6728,7 @@
               ░ minecraft:crafting_table:0
               ⮬ 8x psi:material:6, psi:material:1
               ▕█▏423,483.83 🧮   4 ⚙️423k "Ivory Substance" psi:material:6
-                [custom:psi] #190
+                [custom:psi] #187
                 ↱ psi:material:6
                 ░ psi:cad_assembly:2
                 ⮬ minecraft:quartz:0
@@ -6757,7 +6757,7 @@
               ↱ deepmoblearning:glitch_infused_ingot:0
               ⮬ deepmoblearning:glitch_fragment:0, minecraft:dye:4, minecraft:gold_ingot:0, 1000x fluid:water
               ▕█▏225,399.18 🧮 183 ⚙️225k "§bUnstable Glitch Fragment§r" deepmoblearning:glitch_fragment:0
-                [custom:deepmoblearning] #107
+                [custom:deepmoblearning] #102
                 ↱ 3x deepmoblearning:glitch_fragment:0
                 ░ minecraft:obsidian:0
                 ⮬ deepmoblearning:glitch_heart:0
@@ -6927,7 +6927,7 @@
                   ░ ?x exnihilocreatio:block_barrel0:0
                   ⮬ draconicevolution:mob_soul:0:{EntityName:"excompressum:angry_chicken"}
                   ▕█▏201.00 🧮 201 ⚙️   0 "Angry Chicken Soul" draconicevolution:mob_soul:0:{EntityName:"excompressum:angry_chicken"}
-                    [custom:entities] #19
+                    [custom:entities] #14
                     ↱ draconicevolution:mob_soul:0:{EntityName:"excompressum:angry_chicken"}
                     ⮬ 2000x placeholder:ticks
             ▕█▏    112,710.45 🧮 25k ⚙️ 88k "Enhanced Ender Ingot" extendedcrafting:material:48
@@ -6965,7 +6965,7 @@
                   ↱ 2x twilightforest:armor_shard:0, thermalexpansion:morb:0, 100x fluid:experience
                   ░ ?x thermalexpansion:augment:416
                   ⮬ thermalexpansion:morb:0:{id:"twilightforest:goblin_knight_lower"}
-                  ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"twilightforest:goblin_knight_lower"}
+                  ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"twilightforest:goblin_knight_lower"}
                     [minecraft__crafting] #91759
                     ↱ 8x thermalexpansion:morb:0
                     ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -7092,7 +7092,7 @@
                   ░ ?x tcomplement:high_oven_controller:0
                   ⮬ enderio:item_material:20, minecraft:redstone:0, minecraft:iron_ore:0 | netherendingores:ore_nether_vanilla:4 | minecraft:chainmail_helmet:0 | minecraft:chainmail_chestplate:0 | minecraft:chainmail_leggings:0 | minecraft:chainmail_boots:0 | iceandfire:chain:0 | iceandfire:chain_sticky:0 | iceandfire:iron_hippogryph_armor:0 | quark:iron_plate:1 | quark:iron_rod:0 | quark:grate:0 | quark:iron_button:0 | netherendingores:ore_end_vanilla:4 | minecraft:iron_horse_armor:0 | minecraft:rail:0 | minecraft:activator_rail:0 | minecraft:detector_rail:0 | minecraft:iron_nugget:0 | minecraft:iron_ingot:0 | minecraft:iron_block:0 | chisel:blockiron:0 | chisel:blockiron:1 | chisel:blockiron:2 | chisel:blockiron:3 | chisel:blockiron:4 | chisel:blockiron:5 | chisel:blockiron:6 | chisel:iron:0 | chisel:iron:1 | chisel:iron:2 | chisel:iron:3 | chisel:iron:4 | chisel:iron:5 | chisel:iron:6 | chisel:iron:7 | chisel:iron:8 | chisel:iron:9 | chisel:iron:10 | chisel:iron:11 | chisel:iron:12 | chisel:iron:13 | chisel:iron:14 | thermalfoundation:material:32 | libvulpes:productplate:1 | thermalfoundation:material:24 | thermalfoundation:material:0 | immersiveengineering:metal:18 | ic2:dust:8 | mekanism:dust:0 | appliedenergistics2:material:49 | enderio:item_material:24 | bloodmagic:component:19 | tconstruct:sharpening_kit:0:{Material:"iron"} | tconstruct:shard:0:{Material:"iron"} | tconstruct:tool_rod:0:{Material:"iron"} | tconstruct:pick_head:0:{Material:"iron"} | tconstruct:binding:0:{Material:"iron"} | tconstruct:shovel_head:0:{Material:"iron"} | tconstruct:axe_head:0:{Material:"iron"} | tconstruct:kama_head:0:{Material:"iron"} | tconstruct:tough_tool_rod:0:{Material:"iron"} | tconstruct:hammer_head:0:{Material:"iron"} | tconstruct:large_plate:0:{Material:"iron"} | tconstruct:excavator_head:0:{Material:"iron"} | tconstruct:tough_binding:0:{Material:"iron"} | tconstruct:broad_axe_head:0:{Material:"iron"} | tconstruct:scythe_head:0:{Material:"iron"} | tconstruct:sword_blade:0:{Material:"iron"} | tconstruct:wide_guard:0:{Material:"iron"} | tconstruct:hand_guard:0:{Material:"iron"} | tconstruct:cross_guard:0:{Material:"iron"} | tconstruct:pan_head:0:{Material:"iron"} | tconstruct:sign_head:0:{Material:"iron"} | tconstruct:large_sword_blade:0:{Material:"iron"} | tconstruct:bow_limb:0:{Material:"iron"} | tconstruct:arrow_head:0:{Material:"iron"} | tconstruct:knife_blade:0:{Material:"iron"} | conarm:helmet_core:0:{Material:"iron"} | conarm:armor_plate:0:{Material:"iron"} | conarm:armor_trim:0:{Material:"iron"} | conarm:chest_core:0:{Material:"iron"} | conarm:leggings_core:0:{Material:"iron"} | conarm:boots_core:0:{Material:"iron"} | conarm:polishing_kit:0:{Material:"iron"} | plustic:pipe_piece:0:{Material:"iron"} | tcomplement:chisel_head:0:{Material:"iron"} | tcomplement:sledge_head:0:{Material:"iron"} | minecraft:tripwire_hook:0 | minecraft:shield:0 | minecraft:shears:0 | minecraft:minecart:0 | minecraft:iron_trapdoor:0 | minecraft:iron_sword:0 | minecraft:iron_shovel:0 | minecraft:iron_pickaxe:0 | minecraft:iron_hoe:0 | minecraft:iron_door:0 | minecraft:iron_bars:0 | minecraft:iron_axe:0 | minecraft:heavy_weighted_pressure_plate:0 | minecraft:compass:0 | minecraft:anvil:0 | ic2:crafting:32 | ic2:cutter:0 | ic2:forge_hammer:0 | extrautils2:glasscutter:0 | extrautils2:sickle_iron:0 | harvestcraft:well:0 | animania:block_trough:0 | immersiveengineering:tool:1 | immersiveengineering:sheetmetal:9 | bibliocraft:maptool:0 | randomthings:irondropper:0 | randomthings:advancedredstonetorch_on:0 | rustic:chain:0 | openblocks:wrench:0 | usefulrailroads:rail_intersection:0 | villagenames:lunarinironbrick:0 | xnet:antenna_base:0 | chisel:factory:0 | chisel:tyrian:0 | thaumcraft:bellows:0 | animania:wheel:0 | animania:cheese_mold:0 | animania:carving_knife:0 | quark:iron_ladder:0 | quark:chain:0 | quark:iron_plate:0 | quark:trowel:0 | minecraft:chest_minecart:0 | quark:horse_whistle:0 | thermalfoundation:material:512 | cyclicmagic:trash:0 | architecturecraft:sawblade:0 | thaumadditions:iron_framed_greatwood:0 | rustic:iron_lattice:0 | opencomputers:cable:0 | opencomputers:material:12 | advgenerators:upgrade_kit:0 | integrateddynamics:squeezer:0 | advgenerators:turbine_blade_iron:0 | betterbuilderswands:wandiron:0 | immersiveengineering:conveyor:0:{conveyorType:"immersiveengineering:conveyor"} | immersiveengineering:metal_device1:6 | ironchest:iron_chest:0 | ironchest:wood_iron_chest_upgrade:0 | iceandfire:chain_link:0 | minecraft:cauldron:0 | minecraft:bucket:0 | exnihilocreatio:item_ore_iron:2 | iceandfire:troll_weapon.axe:0 | bloodmagic:living_armour_helmet:0 | bloodmagic:living_armour_chest:0 | bloodmagic:living_armour_leggings:0 | bloodmagic:living_armour_boots:0 | extrautils2:ironwood_log:0 | extrautils2:ironwood_planks:0 | extrautils2:ironwood_log:1 | extrautils2:ironwood_planks:1 | immersiveengineering:conveyor:0:{conveyorType:"immersiveengineering:chute_iron"} | ic2:block_cutting_blade:0 | rats:rat_nugget_ore:47:{OreItem:{id:"minecraft:iron_ore",Count:1b,Damage:0s},IngotItem:{id:"minecraft:iron_ingot",Count:1b,Damage:0s}} | ic2:crushed:2 | thaumcraft:cluster:0 | jaopca:item_dirtygemiron:0, minecraft:coal:1 | thermalfoundation:storage_resource:0 | ic2:coke:0 | thermalfoundation:storage_resource:1, 144x fluid:iron
             ▕█▏     19,663.89 🧮  1k ⚙️ 18k "Psimetal Ingot" psi:material:1
-              [custom:psi] #187
+              [custom:psi] #184
               ↱ psi:material:1
               ░ psi:cad_assembly:0
               ⮬ minecraft:gold_ingot:0
@@ -7400,7 +7400,7 @@
               ░ ?x multiblock:tile.immersivetech.metal_multiblock.solar_tower1
               ⮬ 1000x fluid:carbon_dioxide
               ▕█▏  394,143.82 🧮231k ⚙️163k "undefined" multiblock:tile.immersivetech.metal_multiblock.solar_tower1
-                [custom:immersivetech] #174
+                [custom:immersivetech] #171
                 ↱ multiblock:tile.immersivetech.metal_multiblock.solar_tower1
                 ░ immersiveengineering:tool:0
                 ⮬ 8x immersiveengineering:metal_decoration0:3, 8x immersiveengineering:metal_decoration0:4, 8x immersiveengineering:metal_decoration0:5
@@ -7457,7 +7457,7 @@
             [minecraft__crafting] #96527
             ↱ 2x thaumcraft:plank_greatwood:0
             ⮬ thaumcraft:log_greatwood:0
-          ▕█▏ 8,391.41 🧮  8k ⚙️   4 "Terra Vis Crystal" thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}
+          ▕█▏ 8,391.41 🧮  8k ⚙️   4 "Aer Vis Crystal" thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}
             [JER_Drops] #2046
             ↱ 3x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}
             ⮬ ?x thaumcraft:crystal_terra:0
@@ -7550,7 +7550,7 @@
         ↱ actuallyadditions:item_misc:19
         ⮬ minecraft:nether_star:0, minecraft:dragon_breath:0, actuallyadditions:item_misc:5, minecraft:prismarine_shard:0
         ▕█▏ 52,043.46 🧮  1k ⚙️ 51k "Dragon's Breath" minecraft:dragon_breath:0
-          [custom:dimensions] #13
+          [custom:dimensions] #8
           ↱ minecraft:dragon_breath:0
           ░ dimension:1
           ⮬ minecraft:glass_bottle:0
@@ -7569,11 +7569,11 @@
       ↱ mekanismgenerators:reactor:0
       ░ ?x botania_tweaks:advanced_extended_crafty_crate:0
       ⮬ 4x nuclearcraft:part:3, 3x advancedrocketry:blocklens:0, 4x mekanismgenerators:reactor:2, 4x ic2:iridium_reflector:0, 2x mekanism:gastank:0:{tier:3}, 2x nuclearcraft:electromagnet_supercooler_idle:0, 2x advancedrocketry:intake:0, nuclearcraft:fusion_core:0, 3x nuclearcraft:lithium_ion_battery_elite:0
-      ▕█▏10,793,332.00 🧮  3m ⚙️  7m "Ultimate Gas Tank" mekanism:gastank:0:{tier:3}
+      ▕█▏10,793,332.00 🧮  3m ⚙️  7m "Advanced Gas Tank" mekanism:gastank:0:{tier:3}
         [minecraft__crafting] #96864
         ↱ mekanism:gastank:0:{tier:3}
         ⮬ mekanism:gastank:0:{tier:2}, mekanism:tierinstaller:3
-        ▕█▏ 1,789,554.54 🧮315k ⚙️  1m "Basic Gas Tank" mekanism:gastank:0:{tier:2}
+        ▕█▏ 1,789,554.54 🧮315k ⚙️  1m "Advanced Gas Tank" mekanism:gastank:0:{tier:2}
           [minecraft__crafting] #96860
           ↱ mekanism:gastank:0:{tier:2}
           ⮬ mekanism:gastank:0:{tier:1}, mekanism:tierinstaller:2
@@ -7944,7 +7944,7 @@
         ░ dimension:119, tconstruct:shovel_head:0:{Material:"terrasteel"}
         ⮬ 82.47911521447402x placeholder:exploration
         ▕█▏38,633,100.65 🧮 19m ⚙️ 19m "undefined" dimension:119
-          [custom:advancedrocketry] #36
+          [custom:advancedrocketry] #31
           ↱ dimension:119
           ░ advancedrocketry:warpmonitor:0
           ⮬ 10000x fluid:rocketfuel
@@ -7999,7 +7999,7 @@
                             ░ ?x minecraft:furnace:0
                             ⮬ rats:rat_nugget_ore:22:{OreItem:{id:"netherendingores:ore_end_modded_1",Count:1b,Damage:14s},IngotItem:{id:"libvulpes:ore0",Count:2b,Damage:0s}}
                             ▕█▏462,318.69 🧮 10k ⚙️452k "Dilithium Ore §o"Nugget"" rats:rat_nugget_ore:22:{OreItem:{id:"netherendingores:ore_end_modded_1",Count:1b,Damage:14s},IngotItem:{id:"libvulpes:ore0",Count:2b,Damage:0s}}
-                              [custom:rats] #198
+                              [custom:rats] #195
                               ↱ rats:rat_nugget_ore:*
                               ░ rats:rat_upgrade_ore_doubling:0
                               ⮬ 100000x placeholder:ticks
@@ -8038,7 +8038,7 @@
                         ↱ 1000x fluid:brine, 100x fluid:liquidchlorine, 100x fluid:liquidsodium
                         ░ ?x multiblock:tile.immersivetech.metal_multiblock1.electrolytic_crucible_battery6
                         ▕█▏394,143.82 🧮231k ⚙️163k "undefined" multiblock:tile.immersivetech.metal_multiblock1.electrolytic_crucible_battery6
-                          [custom:immersivetech] #176
+                          [custom:immersivetech] #173
                           ↱ multiblock:tile.immersivetech.metal_multiblock1.electrolytic_crucible_battery6
                           ░ immersiveengineering:tool:0
                           ⮬ 8x immersiveengineering:metal_decoration0:3, 8x immersiveengineering:metal_decoration0:4, 8x immersiveengineering:metal_decoration0:5
@@ -8290,7 +8290,7 @@
                     ░ ?x rustic:crushing_tub:0
                     ⮬ nuclearcraft:ground_cocoa_nibs:0
               ▕█▏ 7,646.31 🧮   0 ⚙️  8k "Milk" fluid:milk
-                [custom:entities] #18
+                [custom:entities] #13
                 ↱ 1000x fluid:milk
                 ░ minecraft:bucket:0, entity:cow
                 ⮬ 2x placeholder:ticks
@@ -8320,7 +8320,7 @@
             ░ ?x forestry:chipsets:3
             ⮬ forestry:thermionic_tubes:9, rustic:chili_pepper_seeds:0 | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeCherry",UID1:"forestry.treeCherry"},{Slot:1b,UID0:"forestry.heightSmaller",UID1:"forestry.heightSmaller"},{Slot:2b,UID0:"forestry.saplingsLow",UID1:"forestry.saplingsLow"},{Slot:3b,UID0:"forestry.fruitCherry",UID1:"forestry.fruitCherry"},{Slot:4b,UID0:"forestry.yieldAverage",UID1:"forestry.yieldAverage"},{Slot:5b,UID0:"forestry.sappinessLow",UID1:"forestry.sappinessLow"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}} | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treePapaya",UID1:"forestry.treePapaya"},{Slot:1b,UID0:"forestry.heightAverage",UID1:"forestry.heightAverage"},{Slot:2b,UID0:"forestry.saplingsLow",UID1:"forestry.saplingsLow"},{Slot:3b,UID0:"forestry.fruitPapaya",UID1:"forestry.fruitPapaya"},{Slot:4b,UID0:"forestry.yieldLowest",UID1:"forestry.yieldLowest"},{Slot:5b,UID0:"forestry.sappinessLower",UID1:"forestry.sappinessLower"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}}, forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeWalnut",UID1:"forestry.treeWalnut"},{Slot:1b,UID0:"forestry.heightAverage",UID1:"forestry.heightAverage"},{Slot:2b,UID0:"forestry.saplingsLower",UID1:"forestry.saplingsLower"},{Slot:3b,UID0:"forestry.fruitWalnut",UID1:"forestry.fruitWalnut"},{Slot:4b,UID0:"forestry.yieldAverage",UID1:"forestry.yieldAverage"},{Slot:5b,UID0:"forestry.sappinessLower",UID1:"forestry.sappinessLower"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i2d",UID1:"forestry.i2d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}} | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treePlum",UID1:"forestry.treePlum"},{Slot:1b,UID0:"forestry.heightSmallest",UID1:"forestry.heightSmallest"},{Slot:2b,UID0:"forestry.saplingsLower",UID1:"forestry.saplingsLower"},{Slot:3b,UID0:"forestry.fruitPlum",UID1:"forestry.fruitPlum"},{Slot:4b,UID0:"forestry.yieldHigh",UID1:"forestry.yieldHigh"},{Slot:5b,UID0:"forestry.sappinessAverage",UID1:"forestry.sappinessAverage"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}}, forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeOak",UID1:"forestry.treeOak"},{Slot:1b,UID0:"forestry.heightSmall",UID1:"forestry.heightSmall"},{Slot:2b,UID0:"forestry.saplingsAverage",UID1:"forestry.saplingsAverage"},{Slot:3b,UID0:"forestry.fruitApple",UID1:"forestry.fruitApple"},{Slot:4b,UID0:"forestry.yieldLowest",UID1:"forestry.yieldLowest"},{Slot:5b,UID0:"forestry.sappinessLowest",UID1:"forestry.sappinessLowest"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationFaster",UID1:"forestry.maturationFaster"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}} | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeLemon",UID1:"forestry.treeLemon"},{Slot:1b,UID0:"forestry.heightSmallest",UID1:"forestry.heightSmallest"},{Slot:2b,UID0:"forestry.saplingsLower",UID1:"forestry.saplingsLower"},{Slot:3b,UID0:"forestry.fruitLemon",UID1:"forestry.fruitLemon"},{Slot:4b,UID0:"forestry.yieldLower",UID1:"forestry.yieldLower"},{Slot:5b,UID0:"forestry.sappinessAverage",UID1:"forestry.sappinessAverage"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}} | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeDate",UID1:"forestry.treeDate"},{Slot:1b,UID0:"forestry.heightAverage",UID1:"forestry.heightAverage"},{Slot:2b,UID0:"forestry.saplingsLow",UID1:"forestry.saplingsLow"},{Slot:3b,UID0:"forestry.fruitDates",UID1:"forestry.fruitDates"},{Slot:4b,UID0:"forestry.yieldLow",UID1:"forestry.yieldLow"},{Slot:5b,UID0:"forestry.sappinessLow",UID1:"forestry.sappinessLow"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}}, rustic:tomato_seeds:0 | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeChestnut",UID1:"forestry.treeChestnut"},{Slot:1b,UID0:"forestry.heightLarge",UID1:"forestry.heightLarge"},{Slot:2b,UID0:"forestry.saplingsLower",UID1:"forestry.saplingsLower"},{Slot:3b,UID0:"forestry.fruitChestnut",UID1:"forestry.fruitChestnut"},{Slot:4b,UID0:"forestry.yieldAverage",UID1:"forestry.yieldAverage"},{Slot:5b,UID0:"forestry.sappinessLower",UID1:"forestry.sappinessLower"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i2d",UID1:"forestry.i2d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}} | forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeJungle",UID1:"forestry.treeJungle"},{Slot:1b,UID0:"forestry.heightLarger",UID1:"forestry.heightLarger"},{Slot:2b,UID0:"forestry.saplingsLower",UID1:"forestry.saplingsLower"},{Slot:3b,UID0:"forestry.fruitCocoa",UID1:"forestry.fruitCocoa"},{Slot:4b,UID0:"forestry.yieldLowest",UID1:"forestry.yieldLowest"},{Slot:5b,UID0:"forestry.sappinessLowest",UID1:"forestry.sappinessLowest"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationFast",UID1:"forestry.maturationFast"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}}
             ▕█▏260,847.43 🧮  9k ⚙️252k "Common Walnut Sapling" forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeWalnut",UID1:"forestry.treeWalnut"},{Slot:1b,UID0:"forestry.heightAverage",UID1:"forestry.heightAverage"},{Slot:2b,UID0:"forestry.saplingsLower",UID1:"forestry.saplingsLower"},{Slot:3b,UID0:"forestry.fruitWalnut",UID1:"forestry.fruitWalnut"},{Slot:4b,UID0:"forestry.yieldAverage",UID1:"forestry.yieldAverage"},{Slot:5b,UID0:"forestry.sappinessLower",UID1:"forestry.sappinessLower"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationAverage",UID1:"forestry.maturationAverage"},{Slot:8b,UID0:"forestry.i2d",UID1:"forestry.i2d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}}
-              [custom:forestry] #156
+              [custom:forestry] #151
               ↱ forestry:sapling:*
               ░ forestry:portable_alyzer:0
               ⮬ minecraft:sapling:*, forestry:honey_drop:0
@@ -8330,7 +8330,7 @@
                 ░ minecraft:crafting_table:0
                 ⮬ 6x ic2:casing:3, 2x ore:paneGlass, minecraft:redstone:0
             ▕█▏260,847.43 🧮  9k ⚙️252k "Apple Oak Sapling" forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.treeOak",UID1:"forestry.treeOak"},{Slot:1b,UID0:"forestry.heightSmall",UID1:"forestry.heightSmall"},{Slot:2b,UID0:"forestry.saplingsAverage",UID1:"forestry.saplingsAverage"},{Slot:3b,UID0:"forestry.fruitApple",UID1:"forestry.fruitApple"},{Slot:4b,UID0:"forestry.yieldLowest",UID1:"forestry.yieldLowest"},{Slot:5b,UID0:"forestry.sappinessLowest",UID1:"forestry.sappinessLowest"},{Slot:6b,UID0:"forestry.leavesNone",UID1:"forestry.leavesNone"},{Slot:7b,UID0:"forestry.maturationFaster",UID1:"forestry.maturationFaster"},{Slot:8b,UID0:"forestry.i1d",UID1:"forestry.i1d"},{Slot:9b,UID0:"forestry.fireproofFalse",UID1:"forestry.fireproofFalse"}]}}
-              [custom:forestry] #156
+              [custom:forestry] #151
               ↱ forestry:sapling:*
               ░ forestry:portable_alyzer:0
               ⮬ minecraft:sapling:*, forestry:honey_drop:0
@@ -8581,55 +8581,55 @@
           ↱ 4x animania:raw_prime_steak:0
           ⮬ 0.001x animania:carving_knife:0, animania:raw_prime_beef:0
         ▕█▏        64.00 🧮  64 ⚙️   0 "Raw Pheasant" betteranimalsplus:pheasantraw:0
-          [custom:betteranimalsplus] #86
+          [custom:betteranimalsplus] #81
           ↱ betteranimalsplus:pheasantraw:0
           ⮬ 630x placeholder:ticks
         ▕█▏        64.00 🧮  64 ⚙️   0 "Raw Turkey Leg" betteranimalsplus:turkey_leg_raw:0
-          [custom:betteranimalsplus] #87
+          [custom:betteranimalsplus] #82
           ↱ betteranimalsplus:turkey_leg_raw:0
           ⮬ 630x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Chevon" animania:raw_chevon:0
-          [custom:animania] #67
+          [custom:animania] #62
           ↱ animania:raw_chevon:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Frog Legs" animania:raw_frog_legs:0
-          [custom:animania] #68
+          [custom:animania] #63
           ↱ animania:raw_frog_legs:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Horse" animania:raw_horse:0
-          [custom:animania] #69
+          [custom:animania] #64
           ↱ animania:raw_horse:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Peacock" animania:raw_peacock:0
-          [custom:animania] #70
+          [custom:animania] #65
           ↱ animania:raw_peacock:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Beef" animania:raw_prime_beef:0
-          [custom:animania] #71
+          [custom:animania] #66
           ↱ animania:raw_prime_beef:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Chevon" animania:raw_prime_chevon:0
-          [custom:animania] #72
+          [custom:animania] #67
           ↱ animania:raw_prime_chevon:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Chicken" animania:raw_prime_chicken:0
-          [custom:animania] #73
+          [custom:animania] #68
           ↱ animania:raw_prime_chicken:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Mutton" animania:raw_prime_mutton:0
-          [custom:animania] #74
+          [custom:animania] #69
           ↱ animania:raw_prime_mutton:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Peacock" animania:raw_prime_peacock:0
-          [custom:animania] #75
+          [custom:animania] #70
           ↱ animania:raw_prime_peacock:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Pork" animania:raw_prime_pork:0
-          [custom:animania] #76
+          [custom:animania] #71
           ↱ animania:raw_prime_pork:0
           ⮬ 550x placeholder:ticks
         ▕█▏        56.00 🧮  56 ⚙️   0 "Raw Prime Rabbit" animania:raw_prime_rabbit:0
-          [custom:animania] #77
+          [custom:animania] #72
           ↱ animania:raw_prime_rabbit:0
           ⮬ 550x placeholder:ticks
       ▕█▏ 10,940,607.15 🧮  7m ⚙️  4m "Emerald Alchemical Ore Dust" jaopca:item_dustalchemerald:0
@@ -8653,7 +8653,7 @@
               ░ ?x minecraft:furnace:0
               ⮬ botania:biomestonea:12
               ▕█▏504,062.00 🧮  54 ⚙️504k "Metamorphic Swamp Cobblestone" botania:biomestonea:12
-                [custom:botania] #103
+                [custom:botania] #98
                 ↱ botania:biomestonea:8, botania:biomestonea:9, botania:biomestonea:10, botania:biomestonea:11, botania:biomestonea:12, botania:biomestonea:13, botania:biomestonea:14, botania:biomestonea:15
                 ░ botania:specialflower:0:{type:"marimorphosis"}
                 ⮬ 7x minecraft:cobblestone:0
@@ -8731,7 +8731,7 @@
               ↱ 8x botania:manaresource:5, botania:recordgaia1:0, thermalfoundation:material:771
               ⮬ 100000x placeholder:fight
           ▕█▏  462,318.69 🧮 10k ⚙️452k "Emerald §o"Nugget"" rats:rat_nugget_ore:13:{OreItem:{id:"minecraft:emerald_ore",Count:1b,Damage:0s},IngotItem:{id:"minecraft:emerald",Count:1b,Damage:0s}}
-            [custom:rats] #198
+            [custom:rats] #195
             ↱ rats:rat_nugget_ore:*
             ░ rats:rat_upgrade_ore_doubling:0
             ⮬ 100000x placeholder:ticks
@@ -8808,7 +8808,7 @@
               ↱ 2x iceandfire:pixie_dust:0, thermalexpansion:morb:0, 60x fluid:experience
               ░ ?x thermalexpansion:augment:416
               ⮬ thermalexpansion:morb:0:{id:"iceandfire:if_pixie"}
-              ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"iceandfire:if_pixie"}
+              ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"iceandfire:if_pixie"}
                 [minecraft__crafting] #91759
                 ↱ 8x thermalexpansion:morb:0
                 ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -8841,7 +8841,7 @@
             ░ ?x tconstruct:smeltery_controller:0
             ⮬ bloodmagic:monster_soul:0:{souls:1.0f} | bloodmagic:soul_gem:0:{souls:1.0d} | bloodmagic:soul_gem:1:{souls:1.0d} | bloodmagic:soul_gem:2:{souls:1.0d} | bloodmagic:soul_gem:3:{souls:1.0d} | bloodmagic:soul_gem:4:{souls:1.0d}
             ▕█▏44,689.23 🧮 17k ⚙️ 28k "Demonic Will" bloodmagic:monster_soul:0:{souls:1.0f}
-              [custom:bloodmagic] #94
+              [custom:bloodmagic] #89
               ↱ bloodmagic:monster_soul:0
               ⮬ bloodmagic:soul_snare:0
       ▕█▏  7,312,898.80 🧮 92k ⚙️  7m "Neutronium Block" avaritia:block_resource:0
@@ -8860,7 +8860,7 @@
           ░ ?x bloodmagic:soul_forge:0
           ⮬ bloodmagic:soul_gem:2 | bloodmagic:soul_gem:3 | bloodmagic:soul_gem:4, bloodmagic:soul_gem:2, bloodmagic:slate:3, bloodmagic:blood_shard:0, bloodmagic:item_demon_crystal:0
           ▕█▏745,935.26 🧮 131 ⚙️746k "Weak Blood Shard" bloodmagic:blood_shard:0
-            [custom:bloodmagic] #93
+            [custom:bloodmagic] #88
             ↱ bloodmagic:blood_shard:0
             ░ bloodmagic:bound_sword:0
             ⮬ 130x placeholder:fight
@@ -8880,7 +8880,7 @@
             ░ ?x bloodmagic:altar:0
             ⮬ bloodmagic:slate:2
         ▕█▏  912,791.49 🧮  4k ⚙️909k "Demon Will Crystal" bloodmagic:item_demon_crystal:0
-          [custom:bloodmagic] #100
+          [custom:bloodmagic] #95
           ↱ bloodmagic:item_demon_crystal:*
           ░ bloodmagic:ritual_controller:0, 20x bloodmagic:ritual_stone:0
           ⮬ 40000x placeholder:ticks
@@ -8899,7 +8899,7 @@
               ↱ bloodmagic:blood_orb:0:{orb:"bloodmagic:apprentice"}
               ░ ?x bloodmagic:altar:0
               ⮬ thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"victus"}]}
-              ▕█▏ 25,166.22 🧮 25k ⚙️   4 "Victus Vis Crystal" thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"victus"}]}
+              ▕█▏ 25,166.22 🧮 25k ⚙️   4 "Aer Vis Crystal" thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"victus"}]}
                 [blockdrops] #13693
                 ↱ thaumcraft:crystal_essence:0
                 ⮬ thaumcraft:crystal_terra:0
@@ -8942,26 +8942,26 @@
               ↱ rats:radius_stick:0
               ⮬ rats:plague_essence:0, ore:stickWood
           ▕█▏       101.00 🧮 101 ⚙️   0 "Charged Creeper Chunk" rats:charged_creeper_chunk:0
-            [custom:rats] #208
+            [custom:rats] #205
             ↱ rats:charged_creeper_chunk:0
             ⮬ 100x placeholder:fight
         ▕█▏620,802.22 🧮100k ⚙️521k "§2Arcane Technology" rats:arcane_technology:0
-          [custom:rats] #212
+          [custom:rats] #209
           ↱ rats:arcane_technology:0
           ░ dimension:-8
           ⮬ 100000x placeholder:fight
         ▕█▏521,802.22 🧮  1k ⚙️521k "Ratlantean Automaton Head" rats:marbled_cheese_rat_head:0
-          [custom:rats] #218
+          [custom:rats] #215
           ↱ rats:marbled_cheese_rat_head:0
           ░ dimension:-8
           ⮬ 1000x placeholder:fight
         ▕█▏521,802.22 🧮  1k ⚙️521k "Feral Rat Claw" rats:feral_rat_claw:0
-          [custom:rats] #211
+          [custom:rats] #208
           ↱ rats:feral_rat_claw:0
           ░ dimension:-8
           ⮬ 1000x placeholder:fight
         ▕█▏520,902.22 🧮 101 ⚙️521k "Rat Toga" rats:rat_toga:0
-          [custom:rats] #210
+          [custom:rats] #207
           ↱ rats:rat_toga:0
           ░ dimension:-8
           ⮬ 100x placeholder:fight
@@ -8971,7 +8971,7 @@
           ░ ?x enderio:item_dark_steel_crook:0
           ⮬ rats:ratglove_flower:0
           ▕█▏520,812.22 🧮  11 ⚙️521k "Ratglove Flower" rats:ratglove_flower:0
-            [custom:rats] #205
+            [custom:rats] #202
             ↱ rats:ratglove_flower:0
             ░ dimension:-8
             ⮬ 100x placeholder:ticks
@@ -8980,7 +8980,7 @@
           ↱ 2x minecraft:arrow:0, 2x minecraft:bone:0, quark:pirate_hat:0, thermalexpansion:morb:0, 100x fluid:experience
           ░ ?x thermalexpansion:augment:416
           ⮬ thermalexpansion:morb:0:{id:"quark:pirate"}
-          ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"quark:pirate"}
+          ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"quark:pirate"}
             [minecraft__crafting] #91759
             ↱ 8x thermalexpansion:morb:0
             ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -9112,7 +9112,7 @@
             ↱ minecraft:ghast_tear:0, minecraft:gunpowder:0, thermalexpansion:morb:0, 100x fluid:experience
             ░ ?x thermalexpansion:augment:416
             ⮬ thermalexpansion:morb:0:{id:"twilightforest:mini_ghast"}
-            ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"twilightforest:mini_ghast"}
+            ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"twilightforest:mini_ghast"}
               [minecraft__crafting] #91759
               ↱ 8x thermalexpansion:morb:0
               ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -9121,7 +9121,7 @@
             ↱ 2x twilightforest:borer_essence:0, thermalexpansion:morb:0, 100x fluid:experience
             ░ ?x thermalexpansion:augment:416
             ⮬ thermalexpansion:morb:0:{id:"twilightforest:tower_termite"}
-            ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"twilightforest:tower_termite"}
+            ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"twilightforest:tower_termite"}
               [minecraft__crafting] #91759
               ↱ 8x thermalexpansion:morb:0
               ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
@@ -9134,12 +9134,12 @@
         ↱ quark:soul_bead:0, thermalexpansion:morb:0, 100x fluid:experience
         ░ ?x thermalexpansion:augment:416
         ⮬ thermalexpansion:morb:0:{id:"quark:wraith"}
-        ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"quark:wraith"}
+        ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"quark:wraith"}
           [minecraft__crafting] #91759
           ↱ 8x thermalexpansion:morb:0
           ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
       ▕█▏      8,888.71 🧮  25 ⚙️  9k "Bottle of Wine" rustic:fluid_bottle:0:{Fluid:{FluidName:"wine",Amount:1000,Tag:{Quality:1.0f}}}
-        [custom:rustic] #222
+        [custom:rustic] #219
         ↱ rustic:fluid_bottle:0:{Fluid:{FluidName:"wine",Amount:1000,Tag:{Quality:1.0f}}}
         ░ rustic:brewing_barrel:0
         ⮬ 1000x fluid:grapejuice
@@ -9154,7 +9154,7 @@
           ░ ?x rustic:crushing_tub:0
           ⮬ rustic:grapes:0
           ▕█▏8,136.29 🧮   5 ⚙️  8k "Grapes" rustic:grapes:0
-            [custom:rustic] #223
+            [custom:rustic] #220
             ↱ rustic:grapes:0
             ░ rustic:grape_stem:0
             ⮬ 40x placeholder:ticks
@@ -9191,7 +9191,7 @@
         [fluid_blocks] #1075
         ↱ 1000x fluid:neutron
         ⮬ nuclearcraft:fluid_neutron:0
-        ▕█▏30,499,612.62 🧮  9k ⚙️ 30m "undefined" nuclearcraft:fluid_neutron:0
+        ▕█▏30,499,612.62 🧮  9k ⚙️ 30m "Neutron Fluid" nuclearcraft:fluid_neutron:0
           [fluid_blocks] #1076
           ↱ nuclearcraft:fluid_neutron:0
           ⮬ 1000x fluid:neutron
@@ -9200,7 +9200,7 @@
     ↱ mekanism:machineblock2:11:{tier:4}
     ░ ?x botania_tweaks:ultimate_extended_crafty_crate:0
     ⮬ 12x industrialforegoing:black_hole_tank:0, 8x mctsmelteryio:upgrade:4, 4x enderio:item_capacitor_stellar:0, 4x thermalexpansion:frame:148, 16x extendedcrafting:material:32, 4x bigreactors:mineralanglesite:0, 8x ic2:te:134, 16x extrautils2:drum:3, 4x draconicevolution:awakened_core:0, draconicevolution:chaotic_core:0, 2x extendedcrafting:material:13, simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyColorGreen:118,TrophyItem:{id:"mekanism:machineblock2",Count:1b,Damage:11s},TrophyColorBlue:151,TrophyName:"Creative Fluid Tank Frame",TrophyColorRed:40}, mekanism:gastank:0:{tier:4}
-    ▕█▏1,806,477,220.23 🧮  2b ⚙️ 14m "Creative Fluid Tank Frame" simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyColorGreen:118,TrophyItem:{id:"mekanism:machineblock2",Count:1b,Damage:11s},TrophyColorBlue:151,TrophyName:"Creative Fluid Tank Frame",TrophyColorRed:40}
+    ▕█▏1,806,477,220.23 🧮  2b ⚙️ 14m "Creative Gas Tank Frame" simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyColorGreen:118,TrophyItem:{id:"mekanism:machineblock2",Count:1b,Damage:11s},TrophyColorBlue:151,TrophyName:"Creative Fluid Tank Frame",TrophyColorRed:40}
       [minecraft__crafting] #96435
       ↱ simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyColorGreen:118,TrophyItem:{id:"mekanism:machineblock2",Count:1b,Damage:11s},TrophyColorBlue:151,TrophyName:"Creative Fluid Tank Frame",TrophyColorRed:40}
       ░ minecraft:crafting_table:0
@@ -9215,18 +9215,18 @@
           ↱ 72x fluid:dark_matter
           ░ ?x tconstruct:smeltery_controller:0
           ⮬ tconstruct:shard:0:{Material:"dark_matter"}
-          ▕█▏8,193,461.45 🧮286k ⚙️  8m "Shard" tconstruct:shard:0:{Material:"dark_matter"}
+          ▕█▏8,193,461.45 🧮286k ⚙️  8m "Fusewood Shard" tconstruct:shard:0:{Material:"dark_matter"}
             [tconstruct__casting_table] #49848
             ↱ tconstruct:shard:0:{Material:"dark_matter"}
             ░ ?x tconstruct:casting:0, ?x tconstruct:casting:1
             ⮬ tconstruct:cast:0:{PartType:"tconstruct:shard"}, 72x fluid:dark_matter
-            ▕█▏   19,563.95 🧮  2k ⚙️ 18k "Shard Cast" tconstruct:cast:0:{PartType:"tconstruct:shard"}
+            ▕█▏   19,563.95 🧮  2k ⚙️ 18k "Sharpening Kit Cast" tconstruct:cast:0:{PartType:"tconstruct:shard"}
               [tconstruct__casting_table] #51301
               ↱ tconstruct:cast:0
               ░ ?x tconstruct:casting:0, ?x tconstruct:casting:1
               ⮬ 144x fluid:alubrass
         ▕█▏  597,595.24 🧮 11k ⚙️587k "Liquid Antimatter" fluid:blockfluidantimatter
-          [custom:bloodmagic] #102
+          [custom:bloodmagic] #97
           ↱ 1000x fluid:blockfluidantimatter
           ░ cyclicmagic:ender_lightning:0
           ⮬ 1000x fluid:lifeessence
@@ -9283,7 +9283,7 @@
                   ░ minecraft:crafting_table:0
                   ⮬ minecraft:clay_ball:0, 3x ore:blockGlass
       ▕█▏2,665,385.51 🧮  44 ⚙️  3m "Corium" fluid:corium
-        [custom:nuclearcraft] #184
+        [custom:nuclearcraft] #181
         ↱ 1000x fluid:corium
         ░ nuclearcraft:fission_controller_new_fixed:0
         ⮬ nuclearcraft:cell_block:0
@@ -9533,7 +9533,7 @@
               ↱ mctsmelteryio:upgrade:0
               ░ minecraft:crafting_table:0
               ⮬ 6x minecraft:dye:4, 2x thermalfoundation:material:132 | immersiveengineering:metal:1 | nuclearcraft:ingot:12 | exnihilocreatio:item_ore_aluminium:3 | thermalfoundation:material:131 | immersiveengineering:metal:2 | exnihilocreatio:item_ore_lead:3, minecraft:paper:0
-  ▕█▏ 3,655,316,395.72 🧮  3b ⚙️269m "Creative Gas Tank" mekanism:gastank:0:{tier:4}
+  ▕█▏ 3,655,316,395.72 🧮  3b ⚙️269m "Advanced Gas Tank" mekanism:gastank:0:{tier:4}
     [extendedcrafting__table_crafting_9x9] #22686
     ↱ mekanism:gastank:0:{tier:4}
     ░ ?x botania_tweaks:ultimate_extended_crafty_crate:0
@@ -9837,7 +9837,7 @@
     ░ ?x botania_tweaks:advanced_extended_crafty_crate:0
     ⮬ 8x mysticalagradditions:storage:0, 8x thaumcraft:ingot:1, 4x ore:essenceTier6, 4x mysticalagriculture:ingot_storage:0, mysticalagradditions:storage:1
     ▕█▏287,275,109.82 🧮 101 ⚙️287m "Dragon Egg Essence" mysticalagradditions:dragon_egg_essence:0
-      [custom:mysticalagradditions] #182
+      [custom:mysticalagradditions] #179
       ↱ mysticalagradditions:dragon_egg_essence:0
       ░ mysticalagradditions:dragon_egg_seeds:0, minecraft:farmland:0, mysticalagradditions:special:1
       ⮬ 1000x placeholder:ticks
@@ -9959,16 +9959,16 @@
                 ↱ 2x minecraft:string:0, minecraft:spider_eye:0, thermalexpansion:morb:0, 100x fluid:experience
                 ░ ?x thermalexpansion:augment:416
                 ⮬ thermalexpansion:morb:0:{id:"minecraft:cave_spider"}
-                ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Empty§r)" thermalexpansion:morb:0:{id:"minecraft:cave_spider"}
+                ▕█▏45,743.21 🧮 639 ⚙️ 45k "Morb (Dread Lich§r)" thermalexpansion:morb:0:{id:"minecraft:cave_spider"}
                   [minecraft__crafting] #91759
                   ↱ 8x thermalexpansion:morb:0
                   ⮬ minecraft:soul_sand:0, ore:crystalSlag, ore:slimeball, minecraft:ender_pearl:0
           ▕█▏  669,377.13 🧮288k ⚙️381k "Celestial Crystal" astralsorcery:itemcelestialcrystal:0
-            [custom:astralsorcery] #82
+            [custom:astralsorcery] #77
             ↱ astralsorcery:itemcelestialcrystal:*
             ⮬ astralsorcery:blockcelestialcrystals:4
             ▕█▏669,375.13 🧮288k ⚙️381k "Celestial Crystal Cluster" astralsorcery:blockcelestialcrystals:4
-              [custom:astralsorcery] #81
+              [custom:astralsorcery] #76
               ↱ astralsorcery:blockcelestialcrystals:4
               ⮬ astralsorcery:itemrockcrystalsimple:*, astralsorcery:itemcraftingcomponent:2, 1000x fluid:astralsorcery.liquidstarlight
           ▕█▏  604,285.17 🧮 14k ⚙️590k "Rune of Capacity" bloodmagic:blood_rune:6
@@ -10235,7 +10235,7 @@
     ░ ?x draconicevolution:fusion_crafting_core:0
     ⮬ draconicevolution:chaos_shard:0, 4x draconicevolution:draconic_ingot:0, 4x draconicevolution:awakened_core:0
     ▕█▏10,050,359.54 🧮 10m ⚙️ 50k "Chaos Shard" draconicevolution:chaos_shard:0
-      [custom:draconicevolution] #143
+      [custom:draconicevolution] #138
       ↱ draconicevolution:chaos_shard:0
       ░ dimension:1
       ⮬ 10000000x placeholder:fight
@@ -10285,7 +10285,7 @@
         ░ ?x enderio:block_soul_binder:0
         ⮬ rf:enderio:energy, enderio:item_soul_vial:1:{entityId:"minecraft:villager"}, minecraft:emerald:0
       ▕█▏18,650,943.00 🧮  3m ⚙️ 16m "Quantum Entangled Singularity" appliedenergistics2:material:48
-        [custom:appliedenergistics2] #78
+        [custom:appliedenergistics2] #73
         ↱ 2x appliedenergistics2:material:48
         ░ minecraft:tnt:0
         ⮬ appliedenergistics2:material:47, appliedenergistics2:material:46

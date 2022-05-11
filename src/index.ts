@@ -14,7 +14,7 @@ import glob from 'glob'
 import applyCustoms from './custom/customs'
 import getTool from './custom/mining_levels'
 import { generateBlockMinings } from './from/blockMinings'
-import append_fluids from './from/fluids'
+import append_fluids, { BlockToFluidMap } from './from/fluids'
 import append_JECgroups from './from/jec'
 import append_JEIExporter from './from/jeie/JEIExporter'
 import getNameMap, { NameMap } from './from/jeie/NameMap'
@@ -68,15 +68,18 @@ export default async function mcGather(
     moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
   })
 
-  await runTask('Add Fluid recipes', {
-    textSource: glob.sync(fromMC('config/tellme/fluids-csv*.csv'))[0],
-    action: (text) => append_fluids(recipesStore, text),
-    moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
-    '⚠️':
-      chalk`Tellme file {green fluids-csv.csv} not found. ` +
-      chalk`Continue without {green fluid} <=> ` +
-      chalk`{green block} recipes.`,
-  })
+  const blockToFluidMap = await runTask<Promise<BlockToFluidMap>>(
+    'Add Fluid recipes',
+    {
+      textSource: glob.sync(fromMC('config/tellme/fluids-csv*.csv'))[0],
+      action: (text) => append_fluids(recipesStore, text),
+      moreInfo: (info) => `Recipes: ${cli.num(info.addedRecs)}`,
+      '⚠️':
+        chalk`Tellme file {green fluids-csv.csv} not found. ` +
+        chalk`Continue without {green fluid} <=> ` +
+        chalk`{green block} recipes.`,
+    }
+  )
 
   const crafttweaker_log = runTask<string>('', {
     textSource: fromMC('/crafttweaker.log'),
@@ -123,27 +126,6 @@ export default async function mcGather(
         ),
     })
 
-  // ------------------------
-  // Visuals
-  // ------------------------
-
-  runTask('Load Spritesheet', {
-    textSource: 'data/spritesheet.json',
-    action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
-  })
-
-  await runTask('Assign visuals', {
-    action: () => definitionStore.assignVisuals(nameMap),
-    moreInfo: (i) =>
-      `noDisp: ${cli.num((i.result as any).noDisplay)}, noVB: ${cli.num(
-        (i.result as any).noViewBox
-      )}`,
-  })
-
-  // ------------------------
-  // Caclulating
-  // ------------------------
-
   const oreDict = runTask<OredictMap>('Creating OreDict', {
     textSource: glob.sync(
       fromMC('config/tellme/oredictionary-by-key-individual-csv*.csv')
@@ -154,6 +136,27 @@ export default async function mcGather(
     '⚠️': chalk`Tellme file {green oredictionary-by-key-individual-csv} not found. All oredict recipes would be unknown.`,
   })
   if (oreDict) definitionStore.addOreDict(oreDict)
+
+  // ------------------------
+  // Visuals
+  // ------------------------
+
+  runTask('Load Spritesheet', {
+    textSource: 'data/spritesheet.json',
+    action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
+  })
+
+  await runTask('Assign visuals', {
+    action: () => definitionStore.assignVisuals(nameMap, blockToFluidMap),
+    moreInfo: (i) =>
+      `noDisp: ${cli.num((i.result as any).noDisplay)}, noVB: ${cli.num(
+        (i.result as any).noViewBox
+      )}`,
+  })
+
+  // ------------------------
+  // Caclulating
+  // ------------------------
 
   await runTask('Calculate each item\n', {
     action: () =>
