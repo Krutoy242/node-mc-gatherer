@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import numeral from 'numeral'
 import { Memoize } from 'typescript-memoize'
 
@@ -15,7 +16,7 @@ const logRecalc = createFileLogger('tmp_recalcOf.log')
 
 export default class Definition extends Calculable {
   static csvHeader =
-    'Display,Tooltips,Purity,Complexity,Cost,Processing,Steps,ViewBox,Recs,MainRec,Recipes,ID'
+    'Display,Tooltips,Purity,Complexity,Cost,Processing,Steps,ViewBox,Recipes,ID'
 
   static actualMeta(meta?: string): string | undefined {
     return meta === undefined
@@ -78,9 +79,10 @@ export default class Definition extends Calculable {
       this.processing,
       this.mainRecipe?.inventory?.steps ?? '',
       this.viewBox,
-      recipes.length,
-      this.mainRecipe?.index ?? '',
-      recipes.map((r) => r.index).join(' '),
+      _.sortBy(
+        recipes.map((r) => r.index),
+        (i) => (i === this.mainRecipe?.index ? -10 : 0) // Main recipe first
+      ).join(' '),
       escapeCsv(this.id),
     ].join(',')
   }
