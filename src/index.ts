@@ -28,6 +28,8 @@ import RecipeStore from './lib/recipes/RecipeStore'
 import exportData, { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
 
+export { default as Definition } from './lib/items/Definition'
+
 /* =============================================
 =
 ============================================= */

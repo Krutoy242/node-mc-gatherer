@@ -7,6 +7,7 @@ import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
 
+import hardReplaceMap from './HardReplace'
 import { NBT, parseSNbt } from './NBT'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
@@ -37,6 +38,18 @@ export default class Definition extends Calculable {
     return `${source}:${entry}${m !== undefined ? ':' + m : ''}${
       sNbt ? ':' + sNbt : ''
     }`
+  }
+
+  static baseFromId(
+    id: string
+  ): [source: string, entry: string, meta?: string, sNbt?: string] {
+    const actualId = hardReplaceMap[id] ?? id
+    const splitted = actualId.split(':')
+    if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
+
+    // Ore can content : in name
+    if (splitted[0] === 'ore') return ['ore', splitted.slice(1).join(':')]
+    return [splitted[0], splitted[1], splitted[2], splitted.slice(3).join(':')]
   }
 
   readonly id: string
@@ -87,7 +100,7 @@ export default class Definition extends Calculable {
     ].join(',')
   }
 
-  toString(options?: { complexityPad?: number; short?: boolean }) {
+  override toString(options?: { complexityPad?: number; short?: boolean }) {
     const display = `"${this.display}" ${this.id}`
     if (options?.short) return display
     const full =

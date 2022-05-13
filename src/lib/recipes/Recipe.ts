@@ -82,7 +82,7 @@ export default class Recipe extends Calculable {
     return true
   }
 
-  toString(options?: { short?: boolean; detailed?: boolean }) {
+  override toString(options?: { short?: boolean; detailed?: boolean }) {
     const recID = `[${this.source}] #${this.index}`
     if (options?.short) return ` ${recID} ${this.listToString('', 'outputs')}`
     const detailed = !options?.detailed ? '' : this.toStringDetailed()

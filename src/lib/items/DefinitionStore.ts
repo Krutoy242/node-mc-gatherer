@@ -11,89 +11,12 @@ import { OredictMap } from '../../from/oredict'
 import { createFileLogger } from '../../log/logger'
 
 import Definition from './Definition'
-import hardReplaceMap from './HardReplace'
+import DefinitionTree from './DefinitionTree'
 import Ingredient from './Ingredient'
 import { NBTMap, nbtMatch } from './NBT'
 
-export default class DefinitionStore {
-  locked = false
-  size = 0
-
-  getById: (id: string) => Definition
-  getBased: (
-    source: string,
-    entry: string,
-    meta?: string,
-    sNbt?: string
-  ) => Definition
-
-  lookById: (id: string) => Definition | undefined
-  lookBased: (
-    source: string,
-    entry: string,
-    meta?: string,
-    sNbt?: string
-  ) => Definition | undefined
-
+export default class DefinitionStore extends DefinitionTree {
   private oreDict?: { [oreName: string]: Definition[] }
-
-  private tree: {
-    [source: string]: {
-      [entry: string]: {
-        [meta: string]: {
-          [sNbt: string]: Definition
-        }
-      }
-    }
-  } = {}
-
-  constructor() {
-    this.lookBased = (source, entry, meta, sNbt) => {
-      return this.tree[source]?.[entry]?.[Definition.actualMeta(meta) ?? '']?.[
-        sNbt ?? ''
-      ]
-    }
-    this.lookById = (id) => this.lookBased(...getBaseFromId(id))
-
-    this.getBased = (source, entry, meta, sNbt) => {
-      const actualMeta = Definition.actualMeta(meta)
-      if (this.locked) {
-        const found = this.lookBased(source, entry, meta, sNbt)
-        if (!found) {
-          throw new Error('Trying to create new item in Locked mode')
-        }
-        return found
-      }
-      return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
-        {})[sNbt ?? ''] ??=
-        (this.size++, new Definition(source, entry, actualMeta, sNbt)))
-    }
-
-    this.getById = (id) => {
-      return this.getBased(...getBaseFromId(id))
-    }
-
-    function getBaseFromId(
-      id: string
-    ): [source: string, entry: string, meta?: string, sNbt?: string] {
-      const actualId = hardReplaceMap[id] ?? id
-      const splitted = actualId.split(':')
-      if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
-
-      // Ore can content : in name
-      if (splitted[0] === 'ore') return ['ore', splitted.slice(1).join(':')]
-      return [
-        splitted[0],
-        splitted[1],
-        splitted[2],
-        splitted.slice(3).join(':'),
-      ]
-    }
-  }
-
-  lock() {
-    this.locked = true
-  }
 
   addOreDict(oreDict: OredictMap) {
     this.oreDict = Object.fromEntries(
@@ -102,26 +25,6 @@ export default class DefinitionStore {
         v.map((id) => this.getById(id)),
       ])
     )
-  }
-
-  *iterate(): IterableIterator<Definition> {
-    for (const o1 of Object.values(this.tree)) {
-      for (const o2 of Object.values(o1)) {
-        for (const o3 of Object.values(o2)) {
-          for (const def of Object.values(o3)) {
-            yield def
-          }
-        }
-      }
-    }
-  }
-
-  toString() {
-    return [...this.iterate()]
-      .filter((def) => def.purity > 0)
-      .sort((a, b) => a.complexity - b.complexity)
-      .map((d) => d.toString())
-      .join('\n')
   }
 
   async assignVisuals(nameMap?: NameMap, blockToFluidMap?: BlockToFluidMap) {
