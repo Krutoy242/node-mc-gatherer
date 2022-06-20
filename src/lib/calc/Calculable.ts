@@ -1,16 +1,23 @@
+import { Pos } from '../../api/decorators'
+
 export default abstract class Calculable {
   private _cost = 0.0
 
+  @Pos(12)
   public get cost() {
     return this._cost
   }
 
   private _processing = 0.0
+
+  @Pos(13)
   public get processing() {
     return this._processing
   }
 
   private _purity = 0.0
+
+  @Pos(10)
   public get purity() {
     return this._purity
   }
@@ -26,6 +33,7 @@ export default abstract class Calculable {
    */
   abstract calculate(): boolean
 
+  @Pos(11)
   public get complexity(): number {
     return this.cost + this.processing
   }

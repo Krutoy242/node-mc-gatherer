@@ -4,6 +4,8 @@
 
 import _ from 'lodash'
 
+import { CSVFile } from '../../api/csv'
+import { getCSVHeaders } from '../../api/decorators'
 import customRender from '../../custom/visual'
 import { BlockToFluidMap } from '../../from/fluids'
 import { NameMap } from '../../from/jeie/NameMap'
@@ -15,8 +17,20 @@ import DefinitionTree from './DefinitionTree'
 import Ingredient from './Ingredient'
 import { NBTMap, nbtMatch } from './NBT'
 
-export default class DefinitionStore extends DefinitionTree {
+export default class DefinitionStore extends DefinitionTree implements CSVFile {
   private oreDict?: { [oreName: string]: Definition[] }
+
+  csv() {
+    const defsCsv = [...this.iterate()]
+    return (
+      getCSVHeaders(defsCsv[0]) +
+      '\n' +
+      defsCsv
+        .sort((a, b) => b.complexity - a.complexity)
+        .map((d) => d.csv())
+        .join('\n')
+    )
+  }
 
   addOreDict(oreDict: OredictMap) {
     this.oreDict = Object.fromEntries(

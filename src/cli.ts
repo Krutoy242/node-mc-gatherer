@@ -68,11 +68,7 @@ else {
 }
 
 function saveData(exportData: ExportData) {
-  const defsCsv = [...exportData.store.iterate()]
-    .sort((a, b) => b.complexity - a.complexity)
-    .map((d) => d.csv())
-    .join('\n')
-  saveText(Definition.csvHeader + '\n' + defsCsv, 'data_items.csv')
+  saveText(exportData.store.csv(), 'data_items.csv')
   saveObjAsJson(exportData.recipes, join(argv.output, 'data_recipes.json'))
 }
 

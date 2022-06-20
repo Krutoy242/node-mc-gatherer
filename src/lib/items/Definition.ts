@@ -1,7 +1,10 @@
+import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 import { Memoize } from 'typescript-memoize'
 
+import { CSVLine } from '../../api/csv'
+import { Format, getCSVLine, Name, Pos } from '../../api/decorators'
 import { createFileLogger } from '../../log/logger'
 import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
@@ -15,10 +18,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 const logRecalc = createFileLogger('tmp_recalcOf.log')
 
-export default class Definition extends Calculable {
-  static csvHeader =
-    'Display,Tooltips,Purity,Complexity,Cost,Processing,Steps,ViewBox,Recipes,ID'
-
+export default class Definition extends Calculable implements CSVLine {
   static actualMeta(meta?: string): string | undefined {
     return meta === undefined
       ? undefined
@@ -52,10 +52,28 @@ export default class Definition extends Calculable {
     return [splitted[0], splitted[1], splitted[2], splitted.slice(3).join(':')]
   }
 
+  /*
+  ███████╗██╗███████╗██╗     ██████╗ ███████╗
+  ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
+  █████╗  ██║█████╗  ██║     ██║  ██║███████╗
+  ██╔══╝  ██║██╔══╝  ██║     ██║  ██║╚════██║
+  ██║     ██║███████╗███████╗██████╔╝███████║
+  ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝
+  */
+
+  @Pos(23)
+  @Format(escapeCsv)
   readonly id: string
 
+  @Pos(21)
   viewBox?: string
+
+  @Pos(0)
+  @Format(escapeCsv)
   display?: string
+
+  @Pos(1)
+  @Format((s?: string[]) => escapeCsv(s?.join('\\n')))
   tooltips?: string[]
 
   /**
@@ -63,7 +81,20 @@ export default class Definition extends Calculable {
    */
   recipes?: Set<Recipe>
 
+  @Pos(22)
+  @Name('recipes')
+  private get recipeCSVList() {
+    return _.sortBy(
+      [...(this.recipes ?? [])].map((r) => r.index),
+      (i) => (i === this.mainRecipe?.index ? -10 : 0) // Main recipe first
+    ).join(' ')
+  }
+
+  @Pos(20)
+  @Name('steps')
+  @Format((v?: Recipe) => v?.inventory?.steps ?? '')
   mainRecipe?: Recipe
+
   mainRecipeAmount?: number
 
   /**
@@ -71,6 +102,14 @@ export default class Definition extends Calculable {
    */
   dependencies?: Set<number>
 
+  /*
+  ███╗   ██╗███████╗██╗    ██╗
+  ████╗  ██║██╔════╝██║    ██║
+  ██╔██╗ ██║█████╗  ██║ █╗ ██║
+  ██║╚██╗██║██╔══╝  ██║███╗██║
+  ██║ ╚████║███████╗╚███╔███╔╝
+  ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝ 
+  */
   constructor(
     public readonly source: string,
     public readonly entry: string,
@@ -82,22 +121,7 @@ export default class Definition extends Calculable {
   }
 
   csv(): string {
-    const recipes = [...(this.recipes ?? [])]
-    return [
-      escapeCsv(this.display),
-      escapeCsv(this.tooltips?.join('\\n')),
-      this.purity,
-      this.complexity,
-      this.cost,
-      this.processing,
-      this.mainRecipe?.inventory?.steps ?? '',
-      this.viewBox,
-      _.sortBy(
-        recipes.map((r) => r.index),
-        (i) => (i === this.mainRecipe?.index ? -10 : 0) // Main recipe first
-      ).join(' '),
-      escapeCsv(this.id),
-    ].join(',')
+    return getCSVLine(this)
   }
 
   override toString(options?: { complexityPad?: number; short?: boolean }) {
