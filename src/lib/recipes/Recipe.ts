@@ -1,5 +1,6 @@
 import numeral from 'numeral'
 
+import { BaseRecipe } from '../../api/BaseRecipe'
 import Calculable from '../calc/Calculable'
 import Definition from '../items/Definition'
 import Inventory from '../items/Inventory'
@@ -24,7 +25,7 @@ export default class Recipe extends Calculable {
     this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
   }
 
-  export() {
+  export(): BaseRecipe {
     return {
       index: this.index,
       source: this.source,

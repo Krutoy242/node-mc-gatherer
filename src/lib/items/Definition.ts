@@ -3,8 +3,8 @@ import _ from 'lodash'
 import numeral from 'numeral'
 import { Memoize } from 'typescript-memoize'
 
-import { CSVLine } from '../../api/csv'
-import { Format, getCSVLine, Name, Pos } from '../../api/decorators'
+import { BaseItemSerializable, CSVLine } from '../../api/csv'
+import { Format, getCSVLine, Pos } from '../../api/decorators'
 import { createFileLogger } from '../../log/logger'
 import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
@@ -18,7 +18,10 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 const logRecalc = createFileLogger('tmp_recalcOf.log')
 
-export default class Definition extends Calculable implements CSVLine {
+export default class Definition
+  extends Calculable
+  implements CSVLine, BaseItemSerializable
+{
   static actualMeta(meta?: string): string | undefined {
     return meta === undefined
       ? undefined
@@ -81,18 +84,6 @@ export default class Definition extends Calculable implements CSVLine {
    */
   recipes?: Set<Recipe>
 
-  @Pos(22)
-  @Name('recipes')
-  private get recipeCSVList() {
-    return _.sortBy(
-      [...(this.recipes ?? [])].map((r) => r.index),
-      (i) => (i === this.mainRecipe?.index ? -10 : 0) // Main recipe first
-    ).join(' ')
-  }
-
-  @Pos(20)
-  @Name('steps')
-  @Format((v?: Recipe) => v?.inventory?.steps ?? '')
   mainRecipe?: Recipe
 
   mainRecipeAmount?: number
@@ -101,6 +92,19 @@ export default class Definition extends Calculable implements CSVLine {
    * Recipes that depends on this item
    */
   dependencies?: Set<number>
+
+  @Pos(22)
+  get recipeIndexes() {
+    return _.sortBy(
+      [...(this.recipes ?? [])].map((r) => r.index),
+      (i) => (i === this.mainRecipe?.index ? -10 : 0) // Main recipe first
+    ).join(' ')
+  }
+
+  @Pos(20)
+  get steps() {
+    return this.mainRecipe?.inventory?.steps ?? ''
+  }
 
   /*
   ███╗   ██╗███████╗██╗    ██╗

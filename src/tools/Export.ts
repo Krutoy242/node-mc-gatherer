@@ -1,5 +1,6 @@
 import open from 'open'
 
+import { BaseRecipe } from '../api/BaseRecipe'
 import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import Playthrough from '../log/Playthrough'
@@ -15,11 +16,7 @@ export interface ExportEntry {
 
 export interface ExportData {
   store: DefinitionStore
-  recipes: {
-    outputs: string[]
-    inputs?: string[]
-    catalysts?: string[]
-  }[]
+  recipes: BaseRecipe[]
   logger: (id: string) => Playthrough | undefined
 }
 
