@@ -26,5 +26,6 @@ export function getCTBlock(
 }
 
 export function escapeCsv(s?: string): string {
-  return s?.replace(/,/g, '،') ?? ''
+  if (s?.includes('"') || s?.includes(',')) return `"${s.replace(/"/g, '""')}"`
+  return s ?? ''
 }

@@ -85,7 +85,7 @@ export default class Definition extends Calculable {
     const recipes = [...(this.recipes ?? [])]
     return [
       escapeCsv(this.display),
-      this.tooltips?.map(escapeCsv).join('\\n'),
+      escapeCsv(this.tooltips?.join('\\n')),
       this.purity,
       this.complexity,
       this.cost,
