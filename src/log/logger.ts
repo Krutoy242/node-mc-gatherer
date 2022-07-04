@@ -5,7 +5,8 @@ import _ from 'lodash'
 
 import Calculable from '../lib/calc/Calculable'
 import Definition from '../lib/items/Definition'
-import Stack, { MicroStack } from '../lib/items/Stack'
+import { DefinitionStack } from '../lib/items/DefinitionStack'
+import IngredientStack from '../lib/items/IngredientStack'
 import Recipe from '../lib/recipes/Recipe'
 
 import Playthrough from './Playthrough'
@@ -61,29 +62,29 @@ export function logTreeTo(def: Definition, write: (str: string) => void) {
       .split('\n')
       .forEach((line) => writeLn(tab + '  ' + line))
 
-    const catalysts = Stack.toMicroStacks(recipe.catalysts)
-    const usages = Stack.toMicroStacks(recipe.inputs)
+    const catalysts = IngredientStack.toDefStacks(recipe.catalysts)
+    const usages = IngredientStack.toDefStacks(recipe.inputs)
 
     playthrough.addCatalysts(catalysts)
     playthrough.addInputs(usages, amount)
 
-    const combined = _.uniqBy([catalysts, usages].flat(), (ms) => ms.def.id)
-    const maxPad = Math.max(...combined.map((ms) => ms.def.complexity_s.length))
+    const combined = _.uniqBy([catalysts, usages].flat(), (ms) => ms.it.id)
+    const maxPad = Math.max(...combined.map((ms) => ms.it.complexity_s.length))
 
     const onHold = new Set<string>()
     combined.forEach((ms) => {
-      if (antiloop.has(ms.def.id)) return
-      onHold.add(ms.def.id)
-      antiloop.add(ms.def.id)
+      if (antiloop.has(ms.it.id)) return
+      onHold.add(ms.it.id)
+      antiloop.add(ms.it.id)
     })
 
-    const further = (ms: MicroStack) => {
-      if (onHold.has(ms.def.id)) {
-        onHold.delete(ms.def.id)
-        antiloop.delete(ms.def.id)
+    const further = (ms: DefinitionStack) => {
+      if (onHold.has(ms.it.id)) {
+        onHold.delete(ms.it.id)
+        antiloop.delete(ms.it.id)
       }
       defToString(
-        ms.def,
+        ms.it,
         amount * (ms.amount ?? 1),
         maxPad,
         antiloop,
@@ -107,11 +108,10 @@ export function logTreeTo(def: Definition, write: (str: string) => void) {
     return puritySumm(a.inputs) + puritySumm(a.catalysts)
   }
 
-  function puritySumm(arr?: Stack[]): number {
+  function puritySumm(arr?: IngredientStack[]): number {
     if (!arr) return 0
     return arr.reduce(
-      (c, d) =>
-        c + Math.max(...[...d.ingredient.matchedBy()].map((o) => o.purity)),
+      (c, d) => c + Math.max(...[...d.it.matchedBy()].map((o) => o.purity)),
       0
     )
   }

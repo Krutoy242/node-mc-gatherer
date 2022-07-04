@@ -1,20 +1,20 @@
 import _ from 'lodash'
 
 import Definition from '../lib/items/Definition'
-import { MicroStack } from '../lib/items/Stack'
+import { DefinitionStack } from '../lib/items/DefinitionStack'
 import { escapeCsv } from '../lib/utils'
 
 export default class Playthrough {
   private catalysts = new Stock<Definition>()
   private usages = new Stock<Definition>()
 
-  addCatalysts(catalysts: MicroStack[]) {
-    catalysts.forEach((ms) => this.catalysts.maxed(ms.def, ms.amount))
+  addCatalysts(catalysts: DefinitionStack[]) {
+    catalysts.forEach((ms) => this.catalysts.maxed(ms.it, ms.amount))
   }
 
-  addInputs(usages: MicroStack[], multiplier: number) {
+  addInputs(usages: DefinitionStack[], multiplier: number) {
     usages.forEach((ms) =>
-      this.usages.add(ms.def, (ms.amount ?? 1) * multiplier)
+      this.usages.add(ms.it, (ms.amount ?? 1) * multiplier)
     )
   }
 

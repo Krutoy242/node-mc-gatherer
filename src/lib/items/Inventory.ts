@@ -1,7 +1,7 @@
 import Recipe from '../recipes/Recipe'
 
 import Definition from './Definition'
-import { MicroStack } from './Stack'
+import { DefinitionStack } from './DefinitionStack'
 
 export default class Inventory {
   processing = 0.0
@@ -32,16 +32,16 @@ export default class Inventory {
     return result
   }
 
-  addCatalysts(microStacks: MicroStack[]) {
+  addCatalysts(microStacks: DefinitionStack[]) {
     if (this.isFutile()) return this
-    microStacks.forEach((ms) => this.mergeSingle(ms.def, ms.amount))
+    microStacks.forEach((ms) => this.mergeSingle(ms.it, ms.amount))
     return this
   }
 
-  addCatalystsOf(microStacks: MicroStack[]) {
+  addCatalystsOf(microStacks: DefinitionStack[]) {
     if (this.isFutile()) return this
     for (const ms of microStacks) {
-      const r = ms.def.mainRecipe
+      const r = ms.it.mainRecipe
       if (!r || !r.inventory) return this
 
       for (const rec of r.inventory.stepsRecipes) {

@@ -3,23 +3,24 @@ import numeral from 'numeral'
 import { BaseRecipe } from '../../api/BaseRecipe'
 import Calculable from '../calc/Calculable'
 import Definition from '../items/Definition'
+import { DefinitionStack } from '../items/DefinitionStack'
+import IngredientStack from '../items/IngredientStack'
 import Inventory from '../items/Inventory'
-import Stack, { MicroStack } from '../items/Stack'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
 export default class Recipe extends Calculable {
   inventory?: Inventory
 
-  readonly requirments: Stack[]
+  readonly requirments: IngredientStack[]
 
   constructor(
     public readonly index: number,
     /** Category name */
     private source: string,
-    public readonly outputs: Stack[],
-    public readonly inputs?: Stack[],
-    public readonly catalysts?: Stack[]
+    public readonly outputs: IngredientStack[],
+    public readonly inputs?: IngredientStack[],
+    public readonly catalysts?: IngredientStack[]
   ) {
     super()
     this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
@@ -30,12 +31,10 @@ export default class Recipe extends Calculable {
       index: this.index,
       source: this.source,
       complexity: this.complexity,
-      outputs: this.outputs.map((o) => o.export()),
-      inputs: this.inputs?.length
-        ? this.inputs?.map((o) => o.export())
-        : undefined,
+      outputs: this.outputs.map(String),
+      inputs: this.inputs?.length ? this.inputs?.map(String) : undefined,
       catalysts: this.catalysts?.length
-        ? this.catalysts.map((o) => o.export())
+        ? this.catalysts.map(String)
         : undefined,
     }
   }
@@ -55,11 +54,11 @@ export default class Recipe extends Calculable {
     if (this.purity > purity) return false
 
     const samePurity = this.purity === purity
-    const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.def.cost, 1.0)
+    const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.it.cost, 1.0)
     if (samePurity && this.complexity <= cost) return false
 
     let catalList: Inventory | undefined
-    if (catDefs.length || inDefs.some((d) => d.def.mainRecipe?.inventory)) {
+    if (catDefs.length || inDefs.some((d) => d.it.mainRecipe?.inventory)) {
       const maxCost = samePurity ? this.complexity - cost : Infinity
       catalList = new Inventory(maxCost, this)
         .addCatalysts(catDefs)
@@ -107,15 +106,17 @@ export default class Recipe extends Calculable {
     }${arr.join(', ')})`
   }
 
-  private getBestDefs(stacks?: Stack[]): [purity: number, defs: MicroStack[]] {
+  private getBestDefs(
+    stacks?: IngredientStack[]
+  ): [purity: number, defs: DefinitionStack[]] {
     if (!stacks) return [1.0, []]
     let purity = 1.0
-    const defs: MicroStack[] = []
+    const defs: DefinitionStack[] = []
     for (const stack of stacks) {
       let minComp = Infinity
       let maxPur = 0.0
-      let bestDef: Definition | undefined
-      for (const def of stack.ingredient.matchedBy()) {
+      let bestDef!: Definition
+      for (const def of stack.it.matchedBy()) {
         if (
           def.purity > maxPur ||
           (def.purity === maxPur && def.complexity < minComp)
@@ -127,7 +128,7 @@ export default class Recipe extends Calculable {
       }
       if (maxPur === 0) return [0, []]
       purity *= maxPur
-      defs.push({ amount: stack.amount, def: bestDef as Definition })
+      defs.push(new DefinitionStack(bestDef, stack.amount))
     }
     return [purity, defs]
   }
@@ -138,7 +139,7 @@ export default class Recipe extends Calculable {
   ): string[] | undefined {
     if (!this[listName]?.length) return undefined
     const p = [...(parenth ?? '')].map((c) => c ?? '')
-    const stackToStr = (o: Stack) => {
+    const stackToStr = (o: IngredientStack) => {
       let s = o.toString()
       if (p[0] === '"') s = s.replace(/"/g, '\\"')
       if (p[0] === "'") s = s.replace(/'/g, "\\'")

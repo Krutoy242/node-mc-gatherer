@@ -5,11 +5,10 @@ import glob from 'glob'
 
 import adapters from '../../custom/adapters'
 import Ingredient from '../../lib/items/Ingredient'
-import Stack from '../../lib/items/Stack'
+import IngredientStack from '../../lib/items/IngredientStack'
 import RecipeStore from '../../lib/recipes/RecipeStore'
 import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'
-import { OredictMap } from '../oredict'
 
 import {
   JEIECategory,
@@ -23,7 +22,7 @@ import { NameMap } from './NameMap'
 export interface RecipeInfo {
   categoryId: string
   category: JEIECategory
-  makeStack: (id: string, amount: number) => Stack
+  makeStack: (id: string, amount: number) => IngredientStack
 }
 
 const adapterEntries = [...adapters.entries()]
@@ -34,7 +33,7 @@ export default async function append_JEIExporter(
   tooltipMap: NameMap,
   toolDurability: { [id: string]: number } | undefined,
   getTool: (blockId: string) => string | undefined,
-  recHelper: RecipeStore,
+  recipeStore: RecipeStore,
   mcDir: string,
   cli: CLIHelper
 ) {
@@ -46,8 +45,11 @@ export default async function append_JEIExporter(
   }
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
-  const getById = recHelper.definitionStore.getById
-  const makeStack = (i: JEIEItem) => new Stack(getById(fullId(i)))
+  const getById = recipeStore.definitionStore.getById
+  const makeStack = (i: JEIEItem) =>
+    new IngredientStack(
+      recipeStore.ingredientStore.fromItems([getById(fullId(i))])
+    )
 
   cli.startProgress("JEIE .json's", jsonList.length)
 
@@ -81,7 +83,7 @@ export default async function append_JEIExporter(
     customRecipes.forEach((rec) => {
       const outputs = convertIngredients(rec.output.items)
       outputs.length &&
-        recHelper.addRecipe(
+        recipeStore.addRecipe(
           fileName,
           outputs,
           convertIngredients(rec.input.items),
@@ -98,13 +100,17 @@ export default async function append_JEIExporter(
     cli.progressIncrement()
   }
 
-  function convertIngredients(items: JEIEIngredient[]): Stack[] {
+  function convertIngredients(items: JEIEIngredient[]): IngredientStack[] {
     return items
       .filter((it) => it.stacks.some((st) => st.name)) // Remove empty stacks
-      .map((item) => new Stack(getFromStacks(item.stacks), item.amount))
+      .map(
+        (item) => new IngredientStack(getFromStacks(item.stacks), item.amount)
+      )
   }
 
-  function getFromStacks(stacks: JEIEItem[]): Ingredient {
-    return Ingredient.fromDefs(stacks.map((s) => getById(fullId(s))))
+  function getFromStacks(stacks: JEIEItem[]) {
+    return recipeStore.ingredientStore.fromItems(
+      stacks.map((s) => getById(fullId(s)))
+    )
   }
 }

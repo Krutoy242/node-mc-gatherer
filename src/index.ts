@@ -24,6 +24,7 @@ import append_viewBoxes from './from/spritesheet'
 import { genToolDurability } from './from/tools'
 import Calculator from './lib/calc/Calculator'
 import DefinitionStore from './lib/items/DefinitionStore'
+import IngredientStore from './lib/items/IngredientStore'
 import RecipeStore from './lib/recipes/RecipeStore'
 import exportData, { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
@@ -46,7 +47,8 @@ export default async function mcGather(
   cli: CLIHelper
 ): Promise<ExportData> {
   const definitionStore = new DefinitionStore()
-  const recipesStore = new RecipeStore(definitionStore)
+  const ingredientStore = new IngredientStore(definitionStore.getById)
+  const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)
   const fromMC = (filePath: string) => join(options.mc, filePath)
 
@@ -162,7 +164,11 @@ export default async function mcGather(
 
   await runTask('Calculate each item\n', {
     action: () =>
-      new Calculator(definitionStore, recipesStore.store).compute(cli),
+      new Calculator(
+        definitionStore,
+        recipesStore.store,
+        ingredientStore
+      ).compute(cli),
     moreInfo: (info) => `\nAdded: ${cli.num(info.result as any)}`,
   })
 

@@ -1,7 +1,6 @@
 // import { writeFileSync } from 'fs'
 
-import DefinitionStore from '../lib/items/DefinitionStore'
-import Stack from '../lib/items/Stack'
+import IngredientStack from '../lib/items/IngredientStack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
@@ -185,13 +184,11 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
 }
 
 function applyToAdditionals(
-  storeHelper: RecipeStore,
+  recipeStore: RecipeStore,
   jec_groups: JEC_RootObject
 ) {
-  const fromJECMap = (raw: JEC_Ingredient) =>
-    fromJEC(storeHelper.definitionStore, raw)
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
-    const rec = storeHelper.addRecipe(
+    const rec = recipeStore.addRecipe(
       'JEC',
       output.map(fromJECMap),
       input.map(fromJECMap),
@@ -199,38 +196,40 @@ function applyToAdditionals(
     )
     logRecipe(rec?.commandString({ noSource: true }) + '\n')
   })
+
+  function fromJECMap(raw: JEC_Ingredient) {
+    type Typle = [string, string, string?]
+
+    const switcher: Record<string, () => Typle> = {
+      itemStack: (): Typle => [
+        ...(raw.content?.item?.split(':') as [string, string]),
+        raw.content.fMeta ? '*' : String(raw.content.meta ?? 0),
+      ],
+      fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
+      oreDict: (): Typle => ['ore', raw.content.name as string],
+      placeholder: (): Typle => [
+        'placeholder',
+        raw.content.name?.toLowerCase() as string,
+      ],
+    }
+
+    const [source, entry, meta] = switcher[raw.type]()
+    const sNbt =
+      raw.content.fNbt && !raw.content.fMeta
+        ? '*'
+        : typeof raw.content.nbt !== 'string'
+        ? ''
+        : raw.content.nbt
+
+    return new IngredientStack(
+      recipeStore.ingredientStore.fromItems([
+        recipeStore.definitionStore.getBased(source, entry, meta, sNbt),
+      ]),
+      amount_jec(raw)
+    )
+  }
 }
 
 function amount_jec(raw: JEC_Ingredient) {
   return ((raw.content.amount ?? 1.0) * (raw.content.percent ?? 100.0)) / 100.0
-}
-
-function fromJEC(storeHelper: DefinitionStore, raw: JEC_Ingredient): Stack {
-  type Typle = [string, string, string?]
-
-  const switcher: Record<string, () => Typle> = {
-    itemStack: (): Typle => [
-      ...(raw.content?.item?.split(':') as [string, string]),
-      raw.content.fMeta ? '*' : String(raw.content.meta ?? 0),
-    ],
-    fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
-    oreDict: (): Typle => ['ore', raw.content.name as string],
-    placeholder: (): Typle => [
-      'placeholder',
-      raw.content.name?.toLowerCase() as string,
-    ],
-  }
-
-  const [source, entry, meta] = switcher[raw.type]()
-  const sNbt =
-    raw.content.fNbt && !raw.content.fMeta
-      ? '*'
-      : typeof raw.content.nbt !== 'string'
-      ? ''
-      : raw.content.nbt
-
-  return new Stack(
-    storeHelper.getBased(source, entry, meta, sNbt),
-    amount_jec(raw)
-  )
 }

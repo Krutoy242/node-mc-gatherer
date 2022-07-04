@@ -1,15 +1,16 @@
 import _ from 'lodash'
 
 import { createFileLogger } from '../../log/logger'
+import Definition from '../items/Definition'
 import DefinitionStore from '../items/DefinitionStore'
-import Ingredient from '../items/Ingredient'
-import Stack from '../items/Stack'
+import IngredientStack from '../items/IngredientStack'
+import IngredientStore from '../items/IngredientStore'
 
 import Recipe from './Recipe'
 
 const noReqLog = createFileLogger('noRequirmentRecipe.log')
 
-type AnyIngredient = Stack | string
+type AnyIngredient = IngredientStack | string
 type AnyIngredients = AnyIngredient | AnyIngredient[] | undefined
 
 type RecipeParams = [
@@ -18,12 +19,19 @@ type RecipeParams = [
   catalysts?: AnyIngredients
 ]
 
-type RecipeLists = [outputs: Stack[], inputs?: Stack[], catalysts?: Stack[]]
+type RecipeLists = [
+  outputs: IngredientStack[],
+  inputs?: IngredientStack[],
+  catalysts?: IngredientStack[]
+]
 
 export default class RecipeStore {
   store: Recipe[] = []
 
-  constructor(public definitionStore: DefinitionStore) {}
+  constructor(
+    public definitionStore: DefinitionStore,
+    public ingredientStore: IngredientStore<Definition>
+  ) {}
 
   size() {
     return this.store.length
@@ -60,9 +68,7 @@ export default class RecipeStore {
     let hadChanges = false
     for (let out_i = outputs.length - 1; out_i >= 0; out_i--) {
       const out = outputs[out_i]
-      const index = inputs.findIndex(
-        (s) => s.ingredient.id === out.ingredient.id
-      )
+      const index = inputs.findIndex((s) => s.it.id === out.it.id)
 
       if (index === -1) continue // No intersection
       const inp = inputs[index]
@@ -88,18 +94,20 @@ export default class RecipeStore {
     return [outputs, inputs, catalList]
   }
 
-  private anyRecipeParam(anyIngrs: AnyIngredient): Stack {
+  private anyRecipeParam(anyIngrs: AnyIngredient): IngredientStack {
     return typeof anyIngrs === 'string'
-      ? Stack.fromString(anyIngrs, this.definitionStore.getById)
+      ? IngredientStack.fromString(anyIngrs, (id) =>
+          this.ingredientStore.get(id)
+        )
       : anyIngrs
   }
 
-  private parseRecipeParams(anyIngrs: AnyIngredients): Stack[] {
+  private parseRecipeParams(anyIngrs: AnyIngredients): IngredientStack[] {
     if (!anyIngrs) return []
-    const map: Stack[] = []
+    const map: IngredientStack[] = []
     const add = (a: AnyIngredient): any => {
       const stack = this.anyRecipeParam(a)
-      const index = map.findIndex((s) => s.ingredient.equals(stack.ingredient))
+      const index = map.findIndex((s) => s.it.equals(stack.it))
       if (index === -1) return map.push(stack)
       map[index] = map[index].withAmount(
         (map[index].amount ?? 1) + (stack.amount ?? 1)

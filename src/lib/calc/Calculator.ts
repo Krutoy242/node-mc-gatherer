@@ -3,9 +3,11 @@ import _ from 'lodash'
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'
+import Definition from '../items/Definition'
 import DefinitionStore from '../items/DefinitionStore'
 import Ingredient from '../items/Ingredient'
-import Stack from '../items/Stack'
+import IngredientStack from '../items/IngredientStack'
+import IngredientStore from '../items/IngredientStore'
 import Recipe from '../recipes/Recipe'
 
 // eslint-disable-next-line no-promise-executor-return
@@ -14,7 +16,8 @@ const sleep = () => new Promise((r) => setTimeout(r, 1))
 export default class Calculator {
   constructor(
     private definitionStore: DefinitionStore,
-    private recipeStore: Recipe[]
+    private recipeStore: Recipe[],
+    private ingredientStore: IngredientStore<Definition>
   ) {}
 
   async compute(cli: CLIHelper) {
@@ -79,13 +82,13 @@ export default class Calculator {
     cli.startProgress('Linking items', this.recipeStore.length)
     this.definitionStore.lock()
     this.recipeStore.forEach((rec, index) => {
-      rec.requirments.forEach(({ ingredient }) => {
+      rec.requirments.forEach(({ it: ingredient }) => {
         for (const def of this.definitionStore.matchedBy(ingredient)) {
           ;(def.dependencies ??= new Set()).add(index)
         }
       })
 
-      rec.outputs.forEach(({ ingredient }) => {
+      rec.outputs.forEach(({ it: ingredient }) => {
         for (const def of this.definitionStore.matchedBy(ingredient)) {
           ;(def.recipes ??= new Set()).add(rec)
         }
@@ -98,13 +101,13 @@ export default class Calculator {
   }
 
   private calcStack(
-    stack: Stack,
+    stack: IngredientStack,
     rec: Recipe,
     dirtyRecipes: Set<number>,
     cli: CLIHelper
   ) {
     let recalcDefs = 0
-    for (const def of stack.ingredient.matchedBy()) {
+    for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
       if (def.suggest(rec, stack.amount ?? 1)) {
         def.dependencies?.forEach((r) => dirtyRecipes.add(r))
@@ -118,7 +121,7 @@ export default class Calculator {
 
   private assignPredefined(dirtyRecipes: Set<number>) {
     Object.entries(predefined).forEach(([id, val]) => {
-      const ingr = Ingredient.fromString(id, this.definitionStore.getById)
+      const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
         def.set({ purity: 1.0, cost: val, processing: 0.0 })
         def.dependencies?.forEach((r) => dirtyRecipes.add(r))
@@ -140,10 +143,11 @@ export default class Calculator {
     )
 
     createFileLogger('needRecipes.log')(
-      [...Ingredient.store]
-        .map(([, g]) => g)
+      [...this.ingredientStore]
         .filter((g) => g.items.every((d) => d.purity <= 0))
-        .map((g) => [g.dependenciesCount(), g] as [number, Ingredient])
+        .map(
+          (g) => [dependenciesCount(g), g] as [number, Ingredient<Definition>]
+        )
         .filter(([a]) => a > 0)
         .sort(([a], [b]) => b - a)
         .map(
@@ -153,4 +157,8 @@ export default class Calculator {
         .join('\n')
     )
   }
+}
+
+function dependenciesCount(ingr: Ingredient<Definition>): number {
+  return ingr.items.reduce((c, d) => Math.max(c, d.dependencies?.size ?? 0), 0)
 }

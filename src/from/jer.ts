@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 import getTool from '../custom/mining_levels'
 import Definition from '../lib/items/Definition'
-import Stack from '../lib/items/Stack'
+import IngredientStack from '../lib/items/IngredientStack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
@@ -79,12 +79,17 @@ export default function append_JER(
   const logDimensions = createFileLogger('jer_dimensions.log')
   const getById = recipesStore.definitionStore.getById
 
-  let ii_exploration = Stack.fromString('placeholder:exploration', getById)
+  let ii_exploration = IngredientStack.fromString(
+    'placeholder:exploration',
+    (id) => recipesStore.ingredientStore.get(id)
+  )
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
     const blockDef = getById(jer_entry.block)
-    const block = new Stack(blockDef)
+    const block = new IngredientStack(
+      recipesStore.ingredientStore.fromItems([blockDef])
+    )
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const tool = getTool(blockMinings, jer_entry.block)
@@ -100,19 +105,25 @@ export default function append_JER(
     // Block drops
     const drops = jer_entry.dropsList
       ?.map((drop) => getDrops(blockDef, drop))
-      .filter((s): s is Stack => !!s)
+      .filter((s): s is IngredientStack => !!s)
 
     if (drops?.length) recipesStore.addRecipe('JER_Drops', drops, block, tool)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 
-  function getDrops(blockDef: Definition, drop: DropsEntry): Stack | undefined {
+  function getDrops(
+    blockDef: Definition,
+    drop: DropsEntry
+  ): IngredientStack | undefined {
     const outAmount = _.mean(Object.values(drop.fortunes)) || 1
 
     // Skip adding if block drop itself
     if (drop.itemStack === blockDef.id && outAmount === 1) return
 
-    return new Stack(getById(drop.itemStack), outAmount)
+    return new IngredientStack(
+      recipesStore.ingredientStore.fromItems([getById(drop.itemStack)]),
+      outAmount
+    )
   }
 
   logExploration(

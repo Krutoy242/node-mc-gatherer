@@ -114,7 +114,7 @@ export default class DefinitionStore extends DefinitionTree implements CSVFile {
     }
   }
 
-  *matchedBy(ingr: Ingredient): IterableIterator<Definition> {
+  *matchedBy(ingr: Ingredient<Definition>): IterableIterator<Definition> {
     if (ingr.hasMatchedCache()) return yield* ingr.matchedBy()
     const arr: Definition[] = []
 
