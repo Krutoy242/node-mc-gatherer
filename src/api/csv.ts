@@ -1,6 +1,6 @@
 import { parse } from 'csv-parse/browser/esm'
 
-import { BaseItem, BaseItemKeys, BaseItemMap, baseItemSetup } from './BaseItem'
+import { BaseItem, BaseItemMap, baseItemSetup } from './BaseItem'
 
 export interface CSVFile {
   csv: () => string
@@ -11,11 +11,11 @@ export interface CSVLine {
 }
 
 export type BaseItemSerializable = {
-  [key in BaseItemKeys]?: any
+  [key in keyof typeof baseItemSetup]?: any
 }
 
 type CSVBaseItem = {
-  [key in BaseItemKeys]-?: string
+  [key in keyof typeof baseItemSetup]-?: string
 }
 
 export function loadDataCSV(csvText: string) {
@@ -42,9 +42,7 @@ function parseOutput(table: CSVBaseItem[]): BaseItem[] {
   table.forEach((o) => {
     let r: any = {}
     ;(Object.keys(o) as unknown as (keyof CSVBaseItem)[]).forEach((k) => {
-      const parse: (s: string) => typeof baseItemSetup[BaseItemKeys]['type'] = (
-        baseItemSetup[k] as any
-      )?.parse
+      const parse = baseItemSetup[k]
       r[k] = parse ? parse(o[k]) : o[k]
     })
     result.push(addAdditionalFields(r))
