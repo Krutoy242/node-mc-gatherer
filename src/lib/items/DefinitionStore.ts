@@ -4,6 +4,7 @@
 
 import _ from 'lodash'
 
+import Tree from '../../api/Tree'
 import { CSVFile } from '../../api/csv'
 import { getCSVHeaders } from '../../api/decorators'
 import customRender from '../../custom/visual'
@@ -13,15 +14,17 @@ import { OredictMap } from '../../from/oredict'
 import { createFileLogger } from '../../log/logger'
 
 import Definition from './Definition'
-import DefinitionTree from './DefinitionTree'
 import Ingredient from './Ingredient'
 import { NBTMap, nbtMatch } from './NBT'
 
-export default class DefinitionStore extends DefinitionTree implements CSVFile {
+export default class DefinitionStore
+  extends Tree<Definition>
+  implements CSVFile
+{
   private oreDict?: { [oreName: string]: Definition[] }
 
   csv() {
-    const defsCsv = [...this.iterate()]
+    const defsCsv = [...this]
     return (
       getCSVHeaders(defsCsv[0]) +
       '\n' +
@@ -51,12 +54,8 @@ export default class DefinitionStore extends DefinitionTree implements CSVFile {
     const self = this
 
     // Assign defined
-    for (const def of this.iterate()) {
-      await assignVisual(def, true)
-    }
-    for (const def of this.iterate()) {
-      await assignVisual(def)
-    }
+    for (const def of this) await assignVisual(def, true)
+    for (const def of this) await assignVisual(def)
 
     return { noViewBox: log.noViewBox.count, noDisplay: log.noDisplay.count }
 

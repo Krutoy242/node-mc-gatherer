@@ -38,7 +38,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   const playthrough = logger('storagedrawers:upgrade_creative:1', true)
   if (playthrough) createFileLogger('data_playthrough.csv')(playthrough.toCSV())
 
-  const mostStepsDef = [...store.iterate()].sort(
+  const mostStepsDef = [...store].sort(
     (a, b) =>
       (b.mainRecipe?.inventory?.steps ?? 0) -
         (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity

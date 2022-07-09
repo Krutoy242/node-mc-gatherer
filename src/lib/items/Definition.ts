@@ -10,7 +10,6 @@ import Calculable from '../calc/Calculable'
 import Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
 
-import hardReplaceMap from './HardReplace'
 import { NBT, parseSNbt } from './NBT'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
@@ -22,39 +21,6 @@ export default class Definition
   extends Calculable
   implements CSVLine, BaseItemSerializable
 {
-  static actualMeta(meta?: string): string | undefined {
-    return meta === undefined
-      ? undefined
-      : // eslint-disable-next-line eqeqeq
-      meta == '32767'
-      ? '*'
-      : meta
-  }
-
-  static baseToId(
-    source: string,
-    entry: string,
-    meta?: string,
-    sNbt?: string
-  ): string {
-    const m = Definition.actualMeta(meta)
-    return `${source}:${entry}${m !== undefined ? ':' + m : ''}${
-      sNbt ? ':' + sNbt : ''
-    }`
-  }
-
-  static baseFromId(
-    id: string
-  ): [source: string, entry: string, meta?: string, sNbt?: string] {
-    const actualId = hardReplaceMap[id] ?? id
-    const splitted = actualId.split(':')
-    if (splitted.length <= 1) throw new Error(`Cannot get id: ${actualId}`)
-
-    // Ore can content : in name
-    if (splitted[0] === 'ore') return ['ore', splitted.slice(1).join(':')]
-    return [splitted[0], splitted[1], splitted[2], splitted.slice(3).join(':')]
-  }
-
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -115,13 +81,14 @@ export default class Definition
   ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝ 
   */
   constructor(
+    id: string,
     public readonly source: string,
     public readonly entry: string,
-    public readonly meta?: string,
-    public readonly sNbt?: string
+    public readonly meta: string | undefined,
+    public readonly sNbt: string | undefined
   ) {
     super()
-    this.id = Definition.baseToId(source, entry, meta, sNbt)
+    this.id = id
   }
 
   csv(): string {

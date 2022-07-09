@@ -23,13 +23,13 @@ import genOreDictionary, { OredictMap } from './from/oredict'
 import append_viewBoxes from './from/spritesheet'
 import { genToolDurability } from './from/tools'
 import Calculator from './lib/calc/Calculator'
+import Definition from './lib/items/Definition'
 import DefinitionStore from './lib/items/DefinitionStore'
+import hardReplaceMap from './lib/items/HardReplace'
 import IngredientStore from './lib/items/IngredientStore'
 import RecipeStore from './lib/recipes/RecipeStore'
 import exportData, { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
-
-export { default as Definition } from './lib/items/Definition'
 
 /* =============================================
 =
@@ -46,7 +46,7 @@ export default async function mcGather(
   options: Options,
   cli: CLIHelper
 ): Promise<ExportData> {
-  const definitionStore = new DefinitionStore()
+  const definitionStore = new DefinitionStore(Definition, hardReplaceMap)
   const ingredientStore = new IngredientStore(definitionStore.getById)
   const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)
