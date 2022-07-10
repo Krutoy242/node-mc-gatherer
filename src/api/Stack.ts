@@ -2,6 +2,18 @@
  * Object with amount
  */
 export default class Stack<T> {
+  static fromString<U>(str: string, getFromId: (id: string) => U) {
+    if (str === undefined || str === '')
+      throw new Error('Stack cannot be empty')
+
+    const g = str.match(/^((?<amount>[^ ]+)x )?(?<id>.+)$/)?.groups
+    if (!g) throw new Error(`Cant parse stack for: ${str}`)
+
+    const amount = g.amount === undefined ? 1 : Number(g.amount)
+
+    return new Stack(getFromId(g.id), g.amount ? amount : 1)
+  }
+
   constructor(
     public readonly it: T,
 

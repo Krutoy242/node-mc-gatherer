@@ -4,7 +4,6 @@ import { join, parse } from 'path'
 import glob from 'glob'
 
 import adapters from '../../custom/adapters'
-import Ingredient from '../../lib/items/Ingredient'
 import IngredientStack from '../../lib/items/IngredientStack'
 import RecipeStore from '../../lib/recipes/RecipeStore'
 import { createFileLogger } from '../../log/logger'
@@ -48,7 +47,7 @@ export default async function append_JEIExporter(
   const getById = recipeStore.definitionStore.getById
   const makeStack = (i: JEIEItem) =>
     new IngredientStack(
-      recipeStore.ingredientStore.fromItems([getById(fullId(i))])
+      recipeStore.ingredientStore.fromItem(getById(fullId(i)))
     )
 
   cli.startProgress("JEIE .json's", jsonList.length)

@@ -1,6 +1,6 @@
 import open from 'open'
 
-import { BaseRecipe } from '../api/BaseRecipe'
+import CsvRecipe from '../api/CsvRecipe'
 import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import Playthrough from '../log/Playthrough'
@@ -16,7 +16,7 @@ export interface ExportEntry {
 
 export interface ExportData {
   store: DefinitionStore
-  recipes: BaseRecipe[]
+  recipes: CsvRecipe[]
   logger: (id: string) => Playthrough | undefined
 }
 

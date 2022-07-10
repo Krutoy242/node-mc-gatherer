@@ -11,6 +11,7 @@ import { join } from 'path'
 import chalk from 'chalk'
 import glob from 'glob'
 
+import IngredientStore from './api/IngredientStore'
 import applyCustoms from './custom/customs'
 import getTool from './custom/mining_levels'
 import { generateBlockMinings } from './from/blockMinings'
@@ -26,7 +27,6 @@ import Calculator from './lib/calc/Calculator'
 import Definition from './lib/items/Definition'
 import DefinitionStore from './lib/items/DefinitionStore'
 import hardReplaceMap from './lib/items/HardReplace'
-import IngredientStore from './lib/items/IngredientStore'
 import RecipeStore from './lib/recipes/RecipeStore'
 import exportData, { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
@@ -46,7 +46,10 @@ export default async function mcGather(
   options: Options,
   cli: CLIHelper
 ): Promise<ExportData> {
-  const definitionStore = new DefinitionStore(Definition, hardReplaceMap)
+  const definitionStore = new DefinitionStore(
+    (...args) => new Definition(...args),
+    hardReplaceMap
+  )
   const ingredientStore = new IngredientStore(definitionStore.getById)
   const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)

@@ -222,9 +222,9 @@ function applyToAdditionals(
         : raw.content.nbt
 
     return new IngredientStack(
-      recipeStore.ingredientStore.fromItems([
-        recipeStore.definitionStore.getBased(source, entry, meta, sNbt),
-      ]),
+      recipeStore.ingredientStore.fromItem(
+        recipeStore.definitionStore.getBased(source, entry, meta, sNbt)
+      ),
       amount_jec(raw)
     )
   }

@@ -1,7 +1,7 @@
 /* =============================================
 =           Additionals Store
 ============================================= */
-type Base = [source: string, entry: string, meta?: string, sNbt?: string]
+export type Base = [source: string, entry: string, meta?: string, sNbt?: string]
 
 export default class Tree<T> {
   static actualMeta(meta?: string): string | undefined {
@@ -38,7 +38,7 @@ export default class Tree<T> {
   private locked = false
 
   constructor(
-    NewItem: new (id: string, ...base: Base) => T,
+    NewItem: (id: string, ...base: Base) => T,
     hardReplaceMap?: Record<string, string>
   ) {
     function baseFromId(id: string): Base {
@@ -75,7 +75,7 @@ export default class Tree<T> {
       return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
         {})[sNbt ?? ''] ??=
         (this.size++,
-        new NewItem(
+        NewItem(
           id ?? Tree.baseToId(source, entry, meta, sNbt),
           source,
           entry,

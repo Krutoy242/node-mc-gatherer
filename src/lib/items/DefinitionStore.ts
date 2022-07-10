@@ -4,6 +4,7 @@
 
 import _ from 'lodash'
 
+import Ingredient from '../../api/Ingredient'
 import Tree from '../../api/Tree'
 import { CSVFile } from '../../api/csv'
 import { getCSVHeaders } from '../../api/decorators'
@@ -14,7 +15,6 @@ import { OredictMap } from '../../from/oredict'
 import { createFileLogger } from '../../log/logger'
 
 import Definition from './Definition'
-import Ingredient from './Ingredient'
 import { NBTMap, nbtMatch } from './NBT'
 
 export default class DefinitionStore

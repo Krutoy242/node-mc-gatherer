@@ -81,14 +81,14 @@ export default function append_JER(
 
   let ii_exploration = IngredientStack.fromString(
     'placeholder:exploration',
-    (id) => recipesStore.ingredientStore.get(id)
+    recipesStore.ingredientStore.get
   )
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
     const blockDef = getById(jer_entry.block)
     const block = new IngredientStack(
-      recipesStore.ingredientStore.fromItems([blockDef])
+      recipesStore.ingredientStore.fromItem(blockDef)
     )
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
@@ -121,7 +121,7 @@ export default function append_JER(
     if (drop.itemStack === blockDef.id && outAmount === 1) return
 
     return new IngredientStack(
-      recipesStore.ingredientStore.fromItems([getById(drop.itemStack)]),
+      recipesStore.ingredientStore.fromItem(getById(drop.itemStack)),
       outAmount
     )
   }
