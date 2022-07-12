@@ -1,8 +1,9 @@
 import { uniqBy } from 'lodash'
 
-import Identified from './Identified'
 import Ingredient from './Ingredient'
 import Store from './Store'
+
+import { Identified } from '.'
 
 export default class IngredientStore<T extends Identified> extends Store<
   Ingredient<T>

@@ -1,7 +1,7 @@
+import { Base } from './'
 /* =============================================
 =           Additionals Store
 ============================================= */
-export type Base = [source: string, entry: string, meta?: string, sNbt?: string]
 
 export default class Tree<T> {
   static actualMeta(meta?: string): string | undefined {

@@ -1,8 +1,9 @@
 import _ from 'lodash'
 
-import { IngredientStack } from '../../api/IngredientStack'
+import { Stack } from '../../api'
 import IngredientStore from '../../api/IngredientStore'
 import { createFileLogger } from '../../log/logger'
+import { DefIngrStack } from '../../types'
 import Definition from '../items/Definition'
 import DefinitionStore from '../items/DefinitionStore'
 
@@ -10,7 +11,7 @@ import Recipe from './Recipe'
 
 const noReqLog = createFileLogger('noRequirmentRecipe.log')
 
-type AnyIngredient = IngredientStack | string
+type AnyIngredient = DefIngrStack | string
 type AnyIngredients = AnyIngredient | AnyIngredient[] | undefined
 
 type RecipeParams = [
@@ -20,9 +21,9 @@ type RecipeParams = [
 ]
 
 type RecipeLists = [
-  outputs: IngredientStack[],
-  inputs?: IngredientStack[],
-  catalysts?: IngredientStack[]
+  outputs: DefIngrStack[],
+  inputs?: DefIngrStack[],
+  catalysts?: DefIngrStack[]
 ]
 
 export default class RecipeStore {
@@ -94,17 +95,15 @@ export default class RecipeStore {
     return [outputs, inputs, catalList]
   }
 
-  private anyRecipeParam(anyIngrs: AnyIngredient): IngredientStack {
+  private anyRecipeParam(anyIngrs: AnyIngredient): DefIngrStack {
     return typeof anyIngrs === 'string'
-      ? IngredientStack.fromString(anyIngrs, (id) =>
-          this.ingredientStore.get(id)
-        )
+      ? Stack.fromString(anyIngrs, (id) => this.ingredientStore.get(id))
       : anyIngrs
   }
 
-  private parseRecipeParams(anyIngrs: AnyIngredients): IngredientStack[] {
+  private parseRecipeParams(anyIngrs: AnyIngredients): DefIngrStack[] {
     if (!anyIngrs) return []
-    const map: IngredientStack[] = []
+    const map: DefIngrStack[] = []
     const add = (a: AnyIngredient): any => {
       const stack = this.anyRecipeParam(a)
       const index = map.findIndex((s) => s.it.equals(stack.it))

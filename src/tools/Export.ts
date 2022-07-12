@@ -1,17 +1,14 @@
-import _ from 'lodash'
+import { sortBy } from 'lodash'
 import open from 'open'
 
-import { Stack } from '../api'
-import CsvRecipe from '../api/CsvRecipe'
+import { CsvRecipe, Stack } from '../api'
 import Playthrough from '../api/Playthrough'
 import solve from '../api/Solver'
-import Stock from '../api/Stock'
 import Definition from '../lib/items/Definition'
 import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { escapeCsv } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
-// import { StackDef } from './lib/Stack'
 
 export interface ExportEntry {
   id: string
@@ -23,13 +20,16 @@ export interface ExportEntry {
 export interface ExportData {
   store: DefinitionStore
   recipes: CsvRecipe[]
-  logger: (id: string) => Playthrough | undefined
+  logger: (id: string) => Playthrough<Definition> | undefined
 }
 
 export default function exportData(recipesStore: RecipeStore): ExportData {
   const store = recipesStore.definitionStore
 
-  function logger(id: string, idPath = false): Playthrough | undefined {
+  function logger(
+    id: string,
+    idPath = false
+  ): Playthrough<Definition> | undefined {
     let def = store.lookById(id)
     if (!def) return
 
@@ -64,16 +64,12 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   }
 }
 
-function PlaythroughToCSV(pl: Playthrough): string {
+function PlaythroughToCSV(pl: Playthrough<Definition>): string {
   const header = 'Usage,Popularity,Name,ID'
-  const uniq = new Stock()
-
-  uniq.maxed(pl.catalysts)
-  uniq.add(pl.usages)
 
   return (
     `${header}\n` +
-    _.sortBy(uniq.toArray(), (o) => -o[1])
+    sortBy(pl.getMerged().toArray(), (o) => -o[1])
       .map(([def, v]) =>
         [
           v,

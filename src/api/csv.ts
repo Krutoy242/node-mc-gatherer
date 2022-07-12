@@ -1,6 +1,6 @@
 import { parse } from 'csv-parse/browser/esm'
 
-import { BaseItem, BaseItemMap, baseItemSetup } from './BaseItem'
+import { BaseItem, BaseItemMap, baseItemSetup } from '.'
 
 export interface CSVFile {
   csv: () => string

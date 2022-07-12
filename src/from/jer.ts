@@ -1,11 +1,11 @@
 import _ from 'lodash'
 
 import { Stack } from '../api'
-import { IngredientStack } from '../api/IngredientStack'
 import getTool from '../custom/mining_levels'
 import Definition from '../lib/items/Definition'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
+import { DefIngrStack } from '../types'
 
 import { BlockMinings } from './blockMinings'
 
@@ -104,7 +104,7 @@ export default function append_JER(
     // Block drops
     const drops = jer_entry.dropsList
       ?.map((drop) => getDrops(blockDef, drop))
-      .filter((s): s is IngredientStack => !!s)
+      .filter((s): s is DefIngrStack => !!s)
 
     if (drops?.length) recipesStore.addRecipe('JER_Drops', drops, block, tool)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
@@ -113,7 +113,7 @@ export default function append_JER(
   function getDrops(
     blockDef: Definition,
     drop: DropsEntry
-  ): IngredientStack | undefined {
+  ): DefIngrStack | undefined {
     const outAmount = _.mean(Object.values(drop.fortunes)) || 1
 
     // Skip adding if block drop itself

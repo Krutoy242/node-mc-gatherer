@@ -4,11 +4,11 @@ import { join, parse } from 'path'
 import glob from 'glob'
 
 import { Stack } from '../../api'
-import { IngredientStack } from '../../api/IngredientStack'
 import adapters from '../../custom/adapters'
 import RecipeStore from '../../lib/recipes/RecipeStore'
 import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'
+import { DefIngrStack } from '../../types'
 
 import {
   JEIECategory,
@@ -22,7 +22,7 @@ import { NameMap } from './NameMap'
 export interface RecipeInfo {
   categoryId: string
   category: JEIECategory
-  makeStack: (id: string, amount: number) => IngredientStack
+  makeStack: (id: string, amount: number) => DefIngrStack
 }
 
 const adapterEntries = [...adapters.entries()]
@@ -98,7 +98,7 @@ export default async function append_JEIExporter(
     cli.progressIncrement()
   }
 
-  function convertIngredients(items: JEIEIngredient[]): IngredientStack[] {
+  function convertIngredients(items: JEIEIngredient[]): DefIngrStack[] {
     return items
       .filter((it) => it.stacks.some((st) => st.name)) // Remove empty stacks
       .map((item) => new Stack(getFromStacks(item.stacks), item.amount))

@@ -1,37 +1,36 @@
 import { uniqBy } from 'lodash'
 
-import Calculable from './Calculable'
-import Identified from './Identified'
 import Ingredient from './Ingredient'
-import { IngredientStack } from './IngredientStack'
 import Playthrough from './Playthrough'
 import Stack from './Stack'
+
+import { Calculable, Identified, IngredientStack } from '.'
 
 interface SolvableRecipe extends Calculable {
   catalysts?: IngredientStack[]
   inputs?: IngredientStack[]
 }
 
-interface Solvable extends Identified {
+interface Solvable extends Identified, Calculable {
   recipes?: Set<SolvableRecipe>
   mainRecipe?: SolvableRecipe
 }
 
-export default function solve(
-  def: Solvable,
+export default function solve<T extends Solvable>(
+  def: T,
   log?: {
     writeLn: (str: string) => void
-    complLength: (stack: Stack<Solvable>) => number
+    complLength: (stack: Stack<T>) => number
   }
-) {
-  const playthrough = new Playthrough()
+): Playthrough<T> {
+  const playthrough = new Playthrough<T>()
 
   defToString(def, 1)
 
   return playthrough
 
   function defToString(
-    def: Solvable,
+    def: T,
     amount: number,
     antiloop = new Set<string>(),
     complexityPad = 1,
@@ -57,8 +56,8 @@ export default function solve(
         .forEach((line) => log.writeLn(tab + '  ' + line))
     }
 
-    const catalysts = toDefStacks(recipe.catalysts)
-    const usages = toDefStacks(recipe.inputs)
+    const catalysts = toDefStacks<T>(recipe.catalysts as any) // Sorry for that dirty type assertion ='(
+    const usages = toDefStacks<T>(recipe.inputs as any)
 
     playthrough.addCatalysts(catalysts)
     playthrough.addInputs(usages, amount)
@@ -78,7 +77,7 @@ export default function solve(
     catalysts.forEach(further)
     usages.forEach(further)
 
-    function further(ms: Stack<Identified>) {
+    function further(ms: Stack<T>) {
       if (onHold.has(ms.it.id)) {
         onHold.delete(ms.it.id)
         antiloop.delete(ms.it.id)

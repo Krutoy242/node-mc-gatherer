@@ -1,4 +1,4 @@
-import Identified from './Identified'
+import { Identified } from '.'
 
 export default class Ingredient<T extends Identified> implements Identified {
   static itemsToID(items: Identified[]): string {

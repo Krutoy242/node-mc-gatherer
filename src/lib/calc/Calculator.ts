@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
+import { Stack } from '../../api'
 import Ingredient from '../../api/Ingredient'
-import { IngredientStack } from '../../api/IngredientStack'
 import IngredientStore from '../../api/IngredientStore'
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
@@ -101,7 +101,7 @@ export default class Calculator {
   }
 
   private calcStack(
-    stack: IngredientStack,
+    stack: Stack<Ingredient<Definition>>,
     rec: Recipe,
     dirtyRecipes: Set<number>,
     cli: CLIHelper

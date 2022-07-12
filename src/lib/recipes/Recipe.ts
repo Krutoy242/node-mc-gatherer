@@ -1,7 +1,7 @@
 import numeral from 'numeral'
 
-import CsvRecipe from '../../api/CsvRecipe'
-import { IngredientStack } from '../../api/IngredientStack'
+import { CsvRecipe } from '../../api'
+import { DefIngrStack } from '../../types'
 import Setable from '../calc/Setable'
 import Definition from '../items/Definition'
 import { DefinitionStack } from '../items/DefinitionStack'
@@ -12,15 +12,15 @@ const numFormat = (n: number) => numeral(n).format('0,0.00')
 export default class Recipe extends Setable {
   inventory?: Inventory
 
-  readonly requirments: IngredientStack[]
+  readonly requirments: DefIngrStack[]
 
   constructor(
     public readonly index: number,
     /** Category name */
     private source: string,
-    public readonly outputs: IngredientStack[],
-    public readonly inputs?: IngredientStack[],
-    public readonly catalysts?: IngredientStack[]
+    public readonly outputs: DefIngrStack[],
+    public readonly inputs?: DefIngrStack[],
+    public readonly catalysts?: DefIngrStack[]
   ) {
     super()
     this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
@@ -107,7 +107,7 @@ export default class Recipe extends Setable {
   }
 
   private getBestDefs(
-    stacks?: IngredientStack[]
+    stacks?: DefIngrStack[]
   ): [purity: number, defs: DefinitionStack[]] {
     if (!stacks) return [1.0, []]
     let purity = 1.0
@@ -139,7 +139,7 @@ export default class Recipe extends Setable {
   ): string[] | undefined {
     if (!this[listName]?.length) return undefined
     const p = [...(parenth ?? '')].map((c) => c ?? '')
-    const stackToStr = (o: IngredientStack) => {
+    const stackToStr = (o: DefIngrStack) => {
       let s = o.toString()
       if (p[0] === '"') s = s.replace(/"/g, '\\"')
       if (p[0] === "'") s = s.replace(/'/g, "\\'")
