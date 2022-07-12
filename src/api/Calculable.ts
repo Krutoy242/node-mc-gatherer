@@ -1,4 +1,4 @@
-import { Pos } from '../../api/decorators'
+import { Pos } from './decorators'
 
 export default abstract class Calculable {
   private _cost = 0.0

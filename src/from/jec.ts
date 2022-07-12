@@ -1,6 +1,6 @@
 // import { writeFileSync } from 'fs'
 
-import IngredientStack from '../lib/items/IngredientStack'
+import IngredientStack from '../api/IngredientStack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 

@@ -1,10 +1,10 @@
 import numeral from 'numeral'
 
+import Calculable from '../../api/Calculable'
 import CsvRecipe from '../../api/CsvRecipe'
-import Calculable from '../calc/Calculable'
+import IngredientStack from '../../api/IngredientStack'
 import Definition from '../items/Definition'
 import { DefinitionStack } from '../items/DefinitionStack'
-import IngredientStack from '../items/IngredientStack'
 import Inventory from '../items/Inventory'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')

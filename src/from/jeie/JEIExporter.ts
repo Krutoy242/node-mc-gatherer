@@ -3,8 +3,8 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
+import IngredientStack from '../../api/IngredientStack'
 import adapters from '../../custom/adapters'
-import IngredientStack from '../../lib/items/IngredientStack'
 import RecipeStore from '../../lib/recipes/RecipeStore'
 import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'

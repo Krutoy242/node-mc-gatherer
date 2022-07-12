@@ -1,8 +1,8 @@
 import _ from 'lodash'
 
+import IngredientStack from '../api/IngredientStack'
 import getTool from '../custom/mining_levels'
 import Definition from '../lib/items/Definition'
-import IngredientStack from '../lib/items/IngredientStack'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
