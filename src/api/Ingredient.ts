@@ -1,6 +1,6 @@
 import { Identified } from '.'
 
-export default class Ingredient<T extends Identified> implements Identified {
+export class Ingredient<T extends Identified> implements Identified {
   static itemsToID(items: Identified[]): string {
     return items.map(({ id }) => id).join('|')
   }

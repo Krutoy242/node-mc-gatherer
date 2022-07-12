@@ -11,7 +11,7 @@ import { join } from 'path'
 import chalk from 'chalk'
 import glob from 'glob'
 
-import IngredientStore from './api/IngredientStore'
+import { IngredientStore } from './api'
 import applyCustoms from './custom/customs'
 import getTool from './custom/mining_levels'
 import { generateBlockMinings } from './from/blockMinings'

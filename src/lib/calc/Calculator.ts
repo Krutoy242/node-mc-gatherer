@@ -1,8 +1,6 @@
 import _ from 'lodash'
 
-import { Stack } from '../../api'
-import Ingredient from '../../api/Ingredient'
-import IngredientStore from '../../api/IngredientStore'
+import { Ingredient, IngredientStore, Stack } from '../../api'
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
 import CLIHelper from '../../tools/cli-tools'

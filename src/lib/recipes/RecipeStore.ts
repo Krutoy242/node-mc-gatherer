@@ -1,7 +1,6 @@
 import _ from 'lodash'
 
-import { Stack } from '../../api'
-import IngredientStore from '../../api/IngredientStore'
+import { IngredientStore, Stack } from '../../api'
 import { createFileLogger } from '../../log/logger'
 import { DefIngrStack } from '../../types'
 import Definition from '../items/Definition'

@@ -1,8 +1,8 @@
 import { uniqBy } from 'lodash'
 
-import Ingredient from './Ingredient'
+import { Ingredient } from './Ingredient'
 import Playthrough from './Playthrough'
-import Stack from './Stack'
+import { Stack } from './Stack'
 
 import { Calculable, Identified, IngredientStack } from '.'
 

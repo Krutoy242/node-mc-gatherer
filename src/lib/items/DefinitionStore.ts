@@ -4,8 +4,7 @@
 
 import _ from 'lodash'
 
-import Ingredient from '../../api/Ingredient'
-import Tree from '../../api/Tree'
+import { Ingredient, Tree } from '../../api'
 import { CSVFile } from '../../api/csv'
 import customRender from '../../custom/visual'
 import { BlockToFluidMap } from '../../from/fluids'

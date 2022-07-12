@@ -3,7 +3,7 @@ import { Base } from './'
 =           Additionals Store
 ============================================= */
 
-export default class Tree<T> {
+export class Tree<T> {
   static actualMeta(meta?: string): string | undefined {
     // eslint-disable-next-line eqeqeq
     return meta == '32767' ? '*' : meta

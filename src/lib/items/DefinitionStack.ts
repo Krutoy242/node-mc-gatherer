@@ -1,4 +1,4 @@
-import Stack from '../../api/Stack'
+import { Stack } from '../../api'
 
 import Definition from './Definition'
 

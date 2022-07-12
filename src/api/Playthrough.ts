@@ -1,4 +1,4 @@
-import Stack from './Stack'
+import { Stack } from './Stack'
 import Stock from './Stock'
 
 export default class Playthrough<T> {

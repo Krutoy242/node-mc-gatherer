@@ -1,7 +1,7 @@
 /**
  * Object with amount
  */
-export default class Stack<T> {
+export class Stack<T> {
   static fromString<U>(str: string, unserialize: (id: string) => U) {
     if (str === undefined || str === '')
       throw new Error('Stack cannot be empty')

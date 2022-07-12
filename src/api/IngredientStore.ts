@@ -1,11 +1,11 @@
 import { uniqBy } from 'lodash'
 
-import Ingredient from './Ingredient'
+import { Ingredient } from './Ingredient'
 import Store from './Store'
 
 import { Identified } from '.'
 
-export default class IngredientStore<T extends Identified> extends Store<
+export class IngredientStore<T extends Identified> extends Store<
   Ingredient<T>
 > {
   constructor(unserialize: (id: string) => T) {

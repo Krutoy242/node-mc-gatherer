@@ -1,11 +1,11 @@
-import Ingredient from './Ingredient'
-import Stack from './Stack'
+import { Ingredient } from './Ingredient'
+import { Stack } from './Stack'
 
-export { loadDataCSV } from './csv'
-export { default as Tree } from './Tree'
-export { default as Ingredient } from './Ingredient'
-export { default as IngredientStore } from './IngredientStore'
-export { default as Stack } from './Stack'
+export * from './csv'
+export * from './Tree'
+export * from './Ingredient'
+export * from './IngredientStore'
+export * from './Stack'
 
 export type IngredientStack = Stack<Ingredient<Calculable & Identified>>
 
