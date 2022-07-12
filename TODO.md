@@ -1,0 +1,1 @@
+- [ ] If recipe have many amount of one item as output, usability of inputs should be at least 1 (not less then 1.0)
