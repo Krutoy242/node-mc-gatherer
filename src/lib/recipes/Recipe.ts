@@ -1,15 +1,15 @@
 import numeral from 'numeral'
 
-import Calculable from '../../api/Calculable'
 import CsvRecipe from '../../api/CsvRecipe'
 import IngredientStack from '../../api/IngredientStack'
+import Setable from '../calc/Setable'
 import Definition from '../items/Definition'
 import { DefinitionStack } from '../items/DefinitionStack'
 import Inventory from '../items/Inventory'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
-export default class Recipe extends Calculable {
+export default class Recipe extends Setable {
   inventory?: Inventory
 
   readonly requirments: IngredientStack[]
@@ -121,7 +121,7 @@ export default class Recipe extends Calculable {
           def.purity > maxPur ||
           (def.purity === maxPur && def.complexity < minComp)
         ) {
-          bestDef = def
+          bestDef = def as Definition
           maxPur = def.purity
           minComp = def.complexity
         }

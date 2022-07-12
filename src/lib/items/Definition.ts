@@ -3,10 +3,10 @@ import _ from 'lodash'
 import numeral from 'numeral'
 import { Memoize } from 'typescript-memoize'
 
-import Calculable from '../../api/Calculable'
 import { BaseItemSerializable, CSVLine } from '../../api/csv'
-import { Format, getCSVLine, Pos } from '../../api/decorators'
 import { createFileLogger } from '../../log/logger'
+import { Format, getCSVLine, Pos } from '../../tools/CsvDecorators'
+import Setable from '../calc/Setable'
 import Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
 
@@ -18,7 +18,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 const logRecalc = createFileLogger('tmp_recalcOf.log')
 
 export default class Definition
-  extends Calculable
+  extends Setable
   implements CSVLine, BaseItemSerializable
 {
   /*
