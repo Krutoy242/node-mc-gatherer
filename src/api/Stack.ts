@@ -2,7 +2,7 @@
  * Object with amount
  */
 export default class Stack<T> {
-  static fromString<U>(str: string, getFromId: (id: string) => U) {
+  static fromString<U>(str: string, unserialize: (id: string) => U) {
     if (str === undefined || str === '')
       throw new Error('Stack cannot be empty')
 
@@ -11,7 +11,7 @@ export default class Stack<T> {
 
     const amount = g.amount === undefined ? 1 : Number(g.amount)
 
-    return new Stack(getFromId(g.id), g.amount ? amount : 1)
+    return new Stack(unserialize(g.id), g.amount ? amount : 1)
   }
 
   constructor(

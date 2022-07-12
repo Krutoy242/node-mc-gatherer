@@ -1,6 +1,6 @@
 // import { writeFileSync } from 'fs'
 
-import IngredientStack from '../api/IngredientStack'
+import { Stack } from '../api'
 import RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
@@ -221,7 +221,7 @@ function applyToAdditionals(
         ? ''
         : raw.content.nbt
 
-    return new IngredientStack(
+    return new Stack(
       recipeStore.ingredientStore.fromItem(
         recipeStore.definitionStore.getBased(source, entry, meta, sNbt)
       ),

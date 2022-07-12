@@ -1,7 +1,7 @@
 import numeral from 'numeral'
 
 import CsvRecipe from '../../api/CsvRecipe'
-import IngredientStack from '../../api/IngredientStack'
+import { IngredientStack } from '../../api/IngredientStack'
 import Setable from '../calc/Setable'
 import Definition from '../items/Definition'
 import { DefinitionStack } from '../items/DefinitionStack'

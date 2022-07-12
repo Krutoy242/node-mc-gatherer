@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
 import Ingredient from '../../api/Ingredient'
-import IngredientStack from '../../api/IngredientStack'
+import { IngredientStack } from '../../api/IngredientStack'
 import IngredientStore from '../../api/IngredientStore'
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'

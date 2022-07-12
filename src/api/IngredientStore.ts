@@ -17,7 +17,10 @@ export default class IngredientStore<T extends Identified> extends Store<
     if (items.length === 0)
       throw new Error('Ingredient must content at least 1 item')
 
-    const _items = uniqBy(items.length > 2000 ? [items[0]] : items, 'id')
+    const _items = uniqBy(
+      items.length > 2000 ? [items[0]] : items,
+      (it) => it.id
+    )
     const remakeID = _items.length !== items.length || !id
     let _id = remakeID ? Ingredient.itemsToID(_items) : id
 

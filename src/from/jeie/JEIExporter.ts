@@ -3,7 +3,8 @@ import { join, parse } from 'path'
 
 import glob from 'glob'
 
-import IngredientStack from '../../api/IngredientStack'
+import { Stack } from '../../api'
+import { IngredientStack } from '../../api/IngredientStack'
 import adapters from '../../custom/adapters'
 import RecipeStore from '../../lib/recipes/RecipeStore'
 import { createFileLogger } from '../../log/logger'
@@ -46,9 +47,7 @@ export default async function append_JEIExporter(
   const jsonList = glob.sync(lookupPath)
   const getById = recipeStore.definitionStore.getById
   const makeStack = (i: JEIEItem) =>
-    new IngredientStack(
-      recipeStore.ingredientStore.fromItem(getById(fullId(i)))
-    )
+    new Stack(recipeStore.ingredientStore.fromItem(getById(fullId(i))))
 
   cli.startProgress("JEIE .json's", jsonList.length)
 
@@ -102,9 +101,7 @@ export default async function append_JEIExporter(
   function convertIngredients(items: JEIEIngredient[]): IngredientStack[] {
     return items
       .filter((it) => it.stacks.some((st) => st.name)) // Remove empty stacks
-      .map(
-        (item) => new IngredientStack(getFromStacks(item.stacks), item.amount)
-      )
+      .map((item) => new Stack(getFromStacks(item.stacks), item.amount))
   }
 
   function getFromStacks(stacks: JEIEItem[]) {

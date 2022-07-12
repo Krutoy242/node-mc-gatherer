@@ -1,8 +1,9 @@
-import _ from 'lodash'
+import { uniqBy } from 'lodash'
 
 import Calculable from './Calculable'
 import Identified from './Identified'
-import IngredientStack from './IngredientStack'
+import Ingredient from './Ingredient'
+import { IngredientStack } from './IngredientStack'
 import Playthrough from './Playthrough'
 import Stack from './Stack'
 
@@ -56,13 +57,13 @@ export default function solve(
         .forEach((line) => log.writeLn(tab + '  ' + line))
     }
 
-    const catalysts = IngredientStack.toDefStacks(recipe.catalysts)
-    const usages = IngredientStack.toDefStacks(recipe.inputs)
+    const catalysts = toDefStacks(recipe.catalysts)
+    const usages = toDefStacks(recipe.inputs)
 
     playthrough.addCatalysts(catalysts)
     playthrough.addInputs(usages, amount)
 
-    const combined = _.uniqBy([catalysts, usages].flat(), (ms) => ms.it.id)
+    const combined = uniqBy([catalysts, usages].flat(), (ms) => ms.it.id)
     const maxPad = log
       ? Math.max(...combined.map((ms) => log.complLength(ms)))
       : 0
@@ -111,4 +112,27 @@ export default function solve(
       0
     )
   }
+}
+
+function toDefStacks<T extends Identified & Calculable>(
+  stacks?: Stack<Ingredient<T>>[]
+): Stack<T>[] {
+  if (!stacks) return []
+  return stacks
+    .map(({ it, amount }) => new Stack<T>(getCheapest(it), amount))
+    .sort(expensiveSort)
+}
+
+function getCheapest<T extends Identified & Calculable>(
+  ingredient: Ingredient<T>
+): T {
+  return [...ingredient.matchedBy()].sort(cheapestSort)[0]
+}
+
+function cheapestSort(a: Calculable, b: Calculable) {
+  return b.purity - a.purity || a.complexity - b.complexity
+}
+
+function expensiveSort(a: Stack<Calculable>, b: Stack<Calculable>) {
+  return b.it.complexity - a.it.complexity
 }

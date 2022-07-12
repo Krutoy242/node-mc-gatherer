@@ -1,6 +1,7 @@
 import _ from 'lodash'
 
-import IngredientStack from '../api/IngredientStack'
+import { Stack } from '../api'
+import { IngredientStack } from '../api/IngredientStack'
 import getTool from '../custom/mining_levels'
 import Definition from '../lib/items/Definition'
 import RecipeStore from '../lib/recipes/RecipeStore'
@@ -79,7 +80,7 @@ export default function append_JER(
   const logDimensions = createFileLogger('jer_dimensions.log')
   const getById = recipesStore.definitionStore.getById
 
-  let ii_exploration = IngredientStack.fromString(
+  let ii_exploration = Stack.fromString(
     'placeholder:exploration',
     recipesStore.ingredientStore.get
   )
@@ -87,9 +88,7 @@ export default function append_JER(
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
     const blockDef = getById(jer_entry.block)
-    const block = new IngredientStack(
-      recipesStore.ingredientStore.fromItem(blockDef)
-    )
+    const block = new Stack(recipesStore.ingredientStore.fromItem(blockDef))
     const exploreAmount = getJERProbability(jer_entry.distrib)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const tool = getTool(blockMinings, jer_entry.block)
@@ -120,7 +119,7 @@ export default function append_JER(
     // Skip adding if block drop itself
     if (drop.itemStack === blockDef.id && outAmount === 1) return
 
-    return new IngredientStack(
+    return new Stack(
       recipesStore.ingredientStore.fromItem(getById(drop.itemStack)),
       outAmount
     )

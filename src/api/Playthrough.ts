@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 import Stack from './Stack'
 import Stock from './Stock'
 
