@@ -1,5 +1,5 @@
 import { Stack } from './Stack'
-import Stock from './Stock'
+import { Stock } from './Stock'
 
 export default class Playthrough<T> {
   readonly catalysts = new Stock<T>()

@@ -9,19 +9,15 @@ import { CSVFile } from '../../api/csv'
 import customRender from '../../custom/visual'
 import { BlockToFluidMap } from '../../from/fluids'
 import { NameMap } from '../../from/jeie/NameMap'
-import { OredictMap } from '../../from/oredict'
 import { createFileLogger } from '../../log/logger'
 import { getCSVHeaders } from '../../tools/CsvDecorators'
 
 import Definition from './Definition'
-import { NBTMap, nbtMatch } from './NBT'
 
 export default class DefinitionStore
   extends Tree<Definition>
   implements CSVFile
 {
-  private oreDict?: { [oreName: string]: Definition[] }
-
   csv() {
     const defsCsv = [...this]
     return (
@@ -31,15 +27,6 @@ export default class DefinitionStore
         .sort((a, b) => b.complexity - a.complexity)
         .map((d) => d.csv())
         .join('\n')
-    )
-  }
-
-  addOreDict(oreDict: OredictMap) {
-    this.oreDict = Object.fromEntries(
-      Object.entries(oreDict).map(([k, v]) => [
-        k,
-        v.map((id) => this.getById(id)),
-      ])
     )
   }
 
@@ -109,88 +96,6 @@ export default class DefinitionStore
         def.viewBox = self.getBased('openblocks', 'dev_null')?.viewBox
         log.noViewBox(def.id + '\n')
       }
-    }
-  }
-
-  *matchedBy(ingr: Ingredient<Definition>): IterableIterator<Definition> {
-    if (ingr.hasMatchedCache()) return yield* ingr.matchedBy()
-    const arr: Definition[] = []
-
-    for (const def of ingr.items) {
-      for (const d of this.matchedByDef(def)) {
-        arr.push(d)
-        yield d
-      }
-    }
-    ingr.setMatchedCache(arr)
-  }
-
-  private *matchedByDef(def?: Definition): IterableIterator<Definition> {
-    if (!def) return
-    if (!this.oreDict)
-      throw new Error('OreDict must be intitialized before iteration')
-
-    if (def.source === 'ore') {
-      const oreList = this.oreDict[def.entry]
-      if (!oreList) {
-        throw new Error(`This ore is empty: ${def.entry}`)
-      }
-
-      for (const oreDef of oreList) {
-        yield* this.matchedByNonOre(oreDef)
-      }
-    } else {
-      yield* this.matchedByNonOre(def)
-    }
-  }
-
-  private *matchedByNonOre(def: Definition): IterableIterator<Definition> {
-    if (def.meta === '32767' || def.meta === '*') {
-      const se = this.tree[def.source][def.entry]
-      for (const meta in se) {
-        if (meta === '32767' || meta === '*') continue
-        yield* Object.values(se[meta])
-      }
-    } else {
-      const sNbtMap = this.tree[def.source][def.entry][def.meta ?? '']
-      if (!def.sNbt) {
-        for (const sNbt in sNbtMap) {
-          yield sNbtMap[sNbt]
-        }
-      } else {
-        if (sNbtMap['*']) yield sNbtMap['*']
-        yield* this.matchedByNbt(def, sNbtMap)
-      }
-    }
-  }
-
-  private *matchedByNbt(
-    def: Definition,
-    sNbtMap: { [sNbt: string]: Definition }
-  ): IterableIterator<Definition> {
-    // Empty nbt, any nbt match
-    if (!def.nbt) return yield* Object.values(sNbtMap)
-
-    // Wildcarded nbt - any except itself match
-    if (def.nbt === '*') {
-      for (const sNbt in sNbtMap) {
-        const d = sNbtMap[sNbt]
-        if (d !== def) yield d
-      }
-    }
-
-    const nbt = def.nbt as NBTMap
-
-    for (const sNbt in sNbtMap) {
-      const d = sNbtMap[sNbt]
-
-      // Wildcarded nbt or same def
-      if (d.nbt === '*' || sNbt === def.sNbt || def === d) {
-        yield d
-        continue
-      }
-
-      if (nbtMatch(nbt, d.nbt)) yield d
     }
   }
 }

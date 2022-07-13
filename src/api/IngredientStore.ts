@@ -10,7 +10,7 @@ export class IngredientStore<T extends Identified> extends Store<
 > {
   constructor(unserialize: (id: string) => T) {
     super((id: string) =>
-      this.fromItems(id.split('|').map(unserialize), id, true)
+      this.fromItems(id.split(/\s*\|\s*/).map(unserialize), id, true)
     )
   }
 

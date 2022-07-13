@@ -1,9 +1,8 @@
 import { sortBy } from 'lodash'
 import open from 'open'
 
-import { CsvRecipe, Stack } from '../api'
+import { CsvRecipe, solve, Stack } from '../api'
 import Playthrough from '../api/Playthrough'
-import solve from '../api/Solver'
 import Definition from '../lib/items/Definition'
 import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'

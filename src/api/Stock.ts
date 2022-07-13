@@ -1,4 +1,4 @@
-export default class Stock<T = unknown> {
+export class Stock<T = unknown> {
   private store = new Map<T, number>()
 
   add(otherStock: Stock<T>): this

@@ -13,8 +13,8 @@ interface NonEmptyArray<T> extends Array<T> {
   slice: (...args: any) => NonEmptyArray<T>
 }
 
-export function parseSNbt(sNbt?: string): NBT | undefined {
-  if (!sNbt || sNbt === '{}') return undefined
+export function parseSNbt(sNbt?: string): NBT | null {
+  if (!sNbt || sNbt === '{}') return null
   if (sNbt === '*') return '*'
   const pure = sNbt
     .replace(
@@ -28,11 +28,11 @@ export function parseSNbt(sNbt?: string): NBT | undefined {
     return JSON.parse(pure)
   } catch (e) {
     console.log('erroring NBT :>> ', pure)
-    return undefined
+    return null
   }
 }
 
-export function nbtMatch(A: NBTMap, B?: NBTMap): boolean {
+export function nbtMatch(A: NBTMap, B?: NBTMap | null): boolean {
   if (!B) return false
 
   for (const k in A) {

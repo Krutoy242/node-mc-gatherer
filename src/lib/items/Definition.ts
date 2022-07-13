@@ -1,25 +1,27 @@
 import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
-import { Memoize } from 'typescript-memoize'
 
-import { BaseItemSerializable, CSVLine } from '../../api/csv'
+import { BaseItemMap } from '../../api'
+import { CSVLine } from '../../api/csv'
 import { createFileLogger } from '../../log/logger'
 import { Format, getCSVLine, Pos } from '../../tools/CsvDecorators'
 import Setable from '../calc/Setable'
 import Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
 
-import { NBT, parseSNbt } from './NBT'
-
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 const logRecalc = createFileLogger('tmp_recalcOf.log')
 
+type NonRequiredBase = {
+  [key in keyof BaseItemMap]?: any
+}
+
 export default class Definition
   extends Setable
-  implements CSVLine, BaseItemSerializable
+  implements CSVLine, NonRequiredBase
 {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
@@ -48,9 +50,9 @@ export default class Definition
   /**
    * Recipes that has this item as output
    */
-  recipes?: Set<Recipe>
+  recipes: Set<Recipe> | undefined
 
-  mainRecipe?: Recipe
+  mainRecipe: Recipe | undefined
 
   mainRecipeAmount?: number
 
@@ -144,11 +146,6 @@ export default class Definition
       processing: main.processing,
     })
     return true
-  }
-
-  @Memoize()
-  public get nbt(): NBT | undefined {
-    return parseSNbt(this.sNbt)
   }
 
   public get complexity_s(): string {

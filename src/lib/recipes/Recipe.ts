@@ -31,6 +31,9 @@ export default class Recipe extends Setable {
       index: this.index,
       source: this.source,
       complexity: this.complexity,
+      purity: this.purity,
+      cost: this.cost,
+      processing: this.processing,
       outputs: this.outputs.map(String),
       inputs: this.inputs?.length ? this.inputs?.map(String) : undefined,
       catalysts: this.catalysts?.length

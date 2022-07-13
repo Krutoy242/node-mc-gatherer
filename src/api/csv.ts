@@ -1,6 +1,6 @@
 import { parse } from 'csv-parse/browser/esm'
 
-import { BaseItem, BaseItemMap, baseItemSetup } from '.'
+import { BaseItem, BaseItemMap, baseItemSetup, Tree } from '.'
 
 export interface CSVFile {
   csv: () => string
@@ -8,10 +8,6 @@ export interface CSVFile {
 
 export interface CSVLine {
   csv: () => string
-}
-
-export type BaseItemSerializable = {
-  [key in keyof typeof baseItemSetup]?: any
 }
 
 type CSVBaseItem = {
@@ -52,16 +48,8 @@ function parseOutput(table: CSVBaseItem[]): BaseItem[] {
 }
 
 function addAdditionalFields(r: BaseItemMap): BaseItem {
-  const [source, entry, meta, ...sNbtArr] = r.id.split(':')
-  const sNbt = sNbtArr.join(':')
-
-  return {
-    ...r,
-    source,
-    entry,
-    meta: Number(meta),
-    sNbt,
-  }
+  const [source, entry, meta, sNbt] = Tree.baseFromId(r.id)
+  return { ...r, source, entry, meta, sNbt }
 }
 // loadDataCSV(fs.readFileSync('data_items.csv', 'utf8')).then((data) =>
 //   console.log(data)
