@@ -6,6 +6,7 @@ export * from './Tree'
 export * from './Ingredient'
 export * from './IngredientStore'
 export * from './Stack'
+export * from './Solver'
 
 export type IngredientStack = Stack<Ingredient<Calculable & Identified>>
 
@@ -46,10 +47,9 @@ export interface BaseItem extends BaseItemMap {
   sNbt?: string
 }
 
-export interface BaseRecipe {
+export interface BaseRecipe extends Calculable {
   index: number
   source: string
-  complexity: number
 }
 
 export interface CsvRecipe extends BaseRecipe {

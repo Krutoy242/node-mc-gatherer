@@ -12,11 +12,11 @@ interface SolvableRecipe extends Calculable {
 }
 
 interface Solvable extends Identified, Calculable {
-  recipes?: Set<SolvableRecipe>
-  mainRecipe?: SolvableRecipe
+  recipes: Set<SolvableRecipe> | undefined
+  mainRecipe: SolvableRecipe | undefined
 }
 
-export default function solve<T extends Solvable>(
+export function solve<T extends Solvable>(
   def: T,
   log?: {
     writeLn: (str: string) => void

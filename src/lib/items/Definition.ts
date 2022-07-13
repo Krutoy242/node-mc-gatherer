@@ -63,7 +63,7 @@ export default class Definition
   get recipeIndexes() {
     return _.sortBy(
       [...(this.recipes ?? [])].map((r) => r.index),
-      (i) => (i === this.mainRecipe?.index ? -10 : 0) // Main recipe first
+      (i) => (i === this.mainRecipe?.index ? -1 : 0) // Main recipe always first
     ).join(' ')
   }
 

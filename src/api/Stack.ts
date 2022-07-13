@@ -6,12 +6,15 @@ export class Stack<T> {
     if (str === undefined || str === '')
       throw new Error('Stack cannot be empty')
 
-    const g = str.match(/^((?<amount>[^ ]+)x )?(?<id>.+)$/)?.groups
+    const g = str.match(
+      /^((?<amount>[\+\-]?\d*\.?\d+(?:[Ee][\+\-]?\d+)?)x )?(?<id>.+)$/
+    )?.groups
     if (!g) throw new Error(`Cant parse stack for: ${str}`)
 
-    const amount = g.amount === undefined ? 1 : Number(g.amount)
+    const amount =
+      g.amount === undefined || g.amount === '?' ? undefined : Number(g.amount)
 
-    return new Stack(unserialize(g.id), g.amount ? amount : 1)
+    return new Stack(unserialize(g.id), amount)
   }
 
   constructor(
