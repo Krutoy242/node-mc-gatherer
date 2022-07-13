@@ -72,7 +72,7 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
       .map(([def, v]) =>
         [
           v,
-          pl.catalysts.get(def),
+          pl.getCatalyst(def),
           escapeCsv(def.display),
           escapeCsv(def.id),
         ].join(',')

@@ -6,7 +6,7 @@ export class Stock<T = unknown> {
   add(arg0: Stock<T> | T, v?: number): this {
     if (arg0 instanceof Stock)
       arg0.store.forEach((amount, def) => this.add(def, amount))
-    else this.store.set(arg0, (this.store.get(arg0) ?? 0) + (v ?? 1))
+    else this.store.set(arg0, this.get(arg0) + (v ?? 1))
     return this
   }
 
@@ -15,7 +15,7 @@ export class Stock<T = unknown> {
   maxed(arg0: Stock<T> | T, v?: number): this {
     if (arg0 instanceof Stock)
       arg0.store.forEach((amount, def) => this.maxed(def, amount))
-    else this.store.set(arg0, Math.max(this.store.get(arg0) ?? 0, v ?? 1))
+    else this.store.set(arg0, Math.max(this.get(arg0), v ?? 1))
     return this
   }
 

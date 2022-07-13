@@ -1,5 +1,3 @@
-import { parse } from 'csv-parse/browser/esm'
-
 import { BaseItem, BaseItemMap, baseItemSetup, Tree } from '.'
 
 export interface CSVFile {
@@ -16,19 +14,24 @@ type CSVBaseItem = {
 
 export function loadDataCSV(csvText: string) {
   return new Promise<BaseItem[]>((resolve, reject) => {
-    const table: CSVBaseItem[] = []
-    const parser = parse(csvText, { columns: true })
+    ;(typeof process === 'object'
+      ? import('csv-parse')
+      : import('csv-parse/browser/esm')
+    ).then(({ default: { parse } }) => {
+      const table: CSVBaseItem[] = []
+      const parser = parse(csvText, { columns: true })
 
-    parser.on('readable', () => {
-      let record
-      while ((record = parser.read()) !== null)
-        table.push(record as CSVBaseItem)
-    })
+      parser.on('readable', () => {
+        let record
+        while ((record = parser.read()) !== null)
+          table.push(record as CSVBaseItem)
+      })
 
-    parser.on('end', () => {
-      resolve(parseOutput(table))
+      parser.on('end', () => {
+        resolve(parseOutput(table))
+      })
+      parser.on('error', reject)
     })
-    parser.on('error', reject)
   })
 }
 
