@@ -12,6 +12,7 @@ const numFormat = (n: number) => numeral(n).format('0,0.00')
 export default class Recipe extends Setable {
   inventory?: Inventory
 
+  /** Both Catalysts and inputs */
   readonly requirments: DefIngrStack[]
 
   constructor(

@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 import { Ingredient, IngredientStore, Stack } from '../../api'
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
@@ -141,22 +139,65 @@ export default class Calculator {
     )
 
     createFileLogger('needRecipes.log')(
-      [...this.ingredientStore]
-        .filter((g) => g.items.every((d) => d.purity <= 0))
-        .map(
-          (g) => [dependenciesCount(g), g] as [number, Ingredient<Definition>]
-        )
-        .filter(([a]) => a > 0)
-        .sort(([a], [b]) => b - a)
-        .map(
-          ([n, ingr]) =>
-            n + ' ' + ingr.toString({ names: true }).substring(0, 220)
-        )
-        .join('\n')
+      this.needRecipes([...this.ingredientStore])
     )
   }
-}
 
-function dependenciesCount(ingr: Ingredient<Definition>): number {
-  return ingr.items.reduce((c, d) => Math.max(c, d.dependencies?.size ?? 0), 0)
+  private needRecipes(allIngredients: Ingredient<Definition>[]): string {
+    const unpureIngredients = allIngredients.filter((g) =>
+      g.items.every((d) => d.purity <= 0)
+    )
+
+    const ingrTuples = unpureIngredients.map(
+      (g) => [this.dependenciesCount(g), g] as const
+    )
+
+    const filtSorted = ingrTuples
+      .filter(([a]) => a > 0)
+      .sort(([a], [b]) => b - a)
+
+    return filtSorted
+      .map(([n, ingr]) => `${n} ${this.needRecSerialize(ingr)}`)
+      .join('\n')
+  }
+
+  private needRecSerialize(ingr: Ingredient<Definition>): string {
+    return ingr.toString({ names: true }).substring(0, 220)
+  }
+
+  private dependenciesCount(ingr: Ingredient<Definition>): number {
+    function recipeWanted(rec: Recipe): boolean {
+      return (
+        rec.purity <= 0 ||
+        rec.outputs.some((s) => s.it.items.every((d) => d.purity <= 0))
+      )
+    }
+
+    // Find all wanted recipes
+    const deps = new Set<number>()
+    ingr.items.forEach((it) => {
+      it.dependencies?.forEach((r) => {
+        if (recipeWanted(this.recipeStore[r])) deps.add(r)
+      })
+    })
+
+    // Iterate over their dependencies
+    const checkList = [...deps]
+    let r: number | undefined
+    while ((r = checkList.pop())) {
+      this.recipeStore[r].outputs.forEach((out) =>
+        out.it.items.forEach((it) => {
+          if (it.purity <= 0)
+            it.dependencies?.forEach((rr) => {
+              if (!deps.has(rr) && recipeWanted(this.recipeStore[rr])) {
+                deps.add(rr)
+                checkList.push(rr)
+              }
+            })
+        })
+      )
+    }
+
+    return deps.size
+  }
 }

@@ -19,6 +19,12 @@ export class Ingredient<T extends Identified> implements Identified {
     return this.matchedCache
   }
 
+  matches(other: this): boolean {
+    return other
+      .matchedBy()
+      .every((b) => this.matchedBy().some((a) => a.id === b.id))
+  }
+
   setMatchedCache(cache: T[]) {
     this.matchedCache = cache
   }
