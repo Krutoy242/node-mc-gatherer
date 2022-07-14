@@ -25,11 +25,11 @@ export function solve<T extends Solvable>(
 ): Playthrough<T> {
   const playthrough = new Playthrough<T>()
 
-  defToString(def, 1)
+  purchase(def, 1)
 
   return playthrough
 
-  function defToString(
+  function purchase(
     def: T,
     amount: number,
     antiloop = new Set<string>(),
@@ -67,28 +67,24 @@ export function solve<T extends Solvable>(
       ? Math.max(...combined.map((ms) => log.complLength(ms)))
       : 0
 
+    // --------------------
+    // Holded items - items that would be purchased later
     const onHold = new Set<string>()
     combined.forEach(({ it: { id } }) => {
       if (antiloop.has(id)) return
       onHold.add(id)
       antiloop.add(id)
     })
+    const unhold = (id: string) =>
+      onHold.has(id) && (onHold.delete(id), antiloop.delete(id))
+    // --------------------
 
-    catalysts.forEach(further)
-    usages.forEach(further)
+    catalysts.forEach((ms) => further(ms, 1))
+    usages.forEach((ms) => further(ms, amount))
 
-    function further(ms: Stack<T>) {
-      if (onHold.has(ms.it.id)) {
-        onHold.delete(ms.it.id)
-        antiloop.delete(ms.it.id)
-      }
-      defToString(
-        ms.it,
-        amount * (ms.amount ?? 1),
-        antiloop,
-        maxPad,
-        tabLevel + 1
-      )
+    function further(ms: Stack<T>, mult: number) {
+      unhold(ms.it.id)
+      purchase(ms.it, mult * (ms.amount ?? 1), antiloop, maxPad, tabLevel + 1)
     }
   }
 
