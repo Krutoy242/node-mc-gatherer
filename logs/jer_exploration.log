@@ -1451,9 +1451,11 @@
 "Mercury (101)": {
   2.542241343677119 minecraft:stone:0
   8.059063184911949 minecraft:air:0
-  14.39753151187573 biomesoplenty:ash_block:0
+  56.811365750137576 thermalfoundation:ore:4
   73.67165678561457 minecraft:bedrock:0
+  96.6602121743775 thermalfoundation:ore:1
   137.93780172338532 minecraft:coal_ore:0
+  269.76485207688336 environmentalmaterials:alabaster:0
   282.8697671621074 minecraft:iron_ore:0
   308.2951322346884 chisel:basalt2:7
   386.59852094290926 chisel:marble2:7
@@ -1465,8 +1467,7 @@
   517.1015663356492 thermalfoundation:ore:0
   559.6826736871526 minecraft:clay:0
   587.9838631540031 chisel:limestone2:7
-  1209.170818619153 thermalfoundation:ore:1
-  1333.7048196580522 thermalfoundation:ore:4
+  730.4071699985624 biomesoplenty:white_sand:0
   1379.7701803709583 minecraft:gold_ore:0
   1497.0922395424375 appliedenergistics2:quartz_ore:0
   1521.0398697245828 immersiveengineering:ore:5
@@ -1475,12 +1476,10 @@
   2270.9117176056516 minecraft:lapis_ore:0
   2326.1182631077527 actuallyadditions:block_misc:3
   2626.9297489716205 minecraft:magma:0
-  2629.4129234960624 minecraft:nether_wart_block:0
   2700.0094095899926 thermalfoundation:ore:5
   2779.1322146561447 thaumcraft:ore_amber:0
   2884.259949942769 forestry:resources:0
   3494.258798823149 thaumcraft:ore_cinnabar:0
-  3500.608591457915 thermalfoundation:fluid_pyrotheum:0
   5710.57520247749 thermalfoundation:ore_fluid:3
   6070.791597621683 nuclearcraft:ore:5
   6984.61779763453 nuclearcraft:ore:3
@@ -1526,6 +1525,7 @@
   73.71583659371164 minecraft:bedrock:0
   76.98233094403689 thermalfoundation:fluid_pyrotheum:0
   93.32186990989229 minecraft:magma:0
+  124.17257458138994 minecraft:gold_ore:0
   143.09106711942724 minecraft:coal_ore:0
   270.84134687617734 minecraft:iron_ore:0
   300.7550728794014 chisel:basalt2:7
@@ -1540,7 +1540,6 @@
   573.2758414425855 chisel:limestone2:7
   1255.580822688267 thermalfoundation:ore:1
   1349.2361957065757 thermalfoundation:ore:4
-  1382.2773675487863 minecraft:gold_ore:0
   1501.3206044304557 immersiveengineering:ore:5
   1545.0881561504077 appliedenergistics2:quartz_ore:0
   1887.7295107963246 minecraft:diamond_ore:0
@@ -1597,12 +1596,12 @@
   1.6629151856852888 minecraft:stone:0
   14.591994831256882 minecraft:end_stone:0
   15.34185845639242 minecraft:air:0
+  37.457704277941225 minecraft:iron_ore:0
   73.66428171109747 minecraft:bedrock:0
   84.97103101876785 minecraft:gravel:0
   119.46302300597553 minecraft:coal_ore:0
   161.75449164611538 draconicevolution:draconium_ore:2
   225.94166474441943 libvulpes:ore0:0
-  282.4587504054331 minecraft:iron_ore:0
   317.18048120101736 chisel:basalt2:7
   399.94819536309 chisel:marble2:7
   410.5662072178463 minecraft:redstone_ore:0
@@ -1682,20 +1681,30 @@
   585.2425369946366 minecraft:clay:0
   599.7760800186146 chisel:limestone2:7
   682.7019125558204 thermalfoundation:ore:0
+  880.630092178714 enderio:block_alloy:9
   907.5830007782298 libvulpes:ore0:8
   1341.1376219977863 thermalfoundation:ore:1
   1418.2119818809072 thermalfoundation:ore:4
   1508.2936453141108 minecraft:gold_ore:0
   1638.029376591604 appliedenergistics2:quartz_ore:0
+  1643.1446141897254 enderio:block_alloy:3
+  1644.277891269631 enderio:block_alloy:0
   1657.0191899300214 immersiveengineering:ore:5
   1804.0382127303603 advancedrocketry:moonturf_dark:0
+  1867.00243287285 enderio:block_alloy:4
   2046.5952065148042 minecraft:diamond_ore:0
   2086.410865357026 thermalfoundation:ore:3
+  2401.6737495243865 enderio:block_alloy:7
   2407.838788901427 actuallyadditions:block_misc:3
+  2434.046228204911 enderio:block_alloy:1
   2510.652101390634 minecraft:lapis_ore:0
+  2528.071402195311 enderio:block_alloy:5
+  2713.4703543608944 enderio:block_alloy:8
   2760.547078060539 thaumcraft:ore_amber:0
   2765.0385289630076 thermalfoundation:ore:5
   3592.9991720914827 thaumcraft:ore_cinnabar:0
+  3810.050627555424 enderio:block_alloy:2
+  4031.412032626308 enderio:block_alloy:6
   5857.026777541157 nuclearcraft:ore:5
   6962.499783332651 nuclearcraft:ore:3
   7337.623082392232 forestry:resources:0
@@ -1711,8 +1720,10 @@
   25759.174936779236 thaumcraft:crystal_aer:0
   26409.250829865658 thermalfoundation:ore:6
   26505.008733820814 thaumcraft:crystal_terra:0
+  30404.984801621347 enderio:block_alloy_endergy:1
   68598.07474330228 biomesoplenty:flower_1:3
   95565.36531391359 draconicevolution:draconium_ore:0
+  136775.22441380346 enderio:block_alloy_endergy:4
   140469.5437853334 minecraft:brown_mushroom:0
   217775.35066842838 thermalfoundation:ore_fluid:1
   236312.3751247531 extrautils2:redorchid:0
@@ -1731,6 +1742,7 @@
   685837.5385594977 botania:mushroom:10
   691428.306307043 botania:mushroom:2
   692846.3531426752 botania:mushroom:1
+  706075.75543257 enderio:block_alloy_endergy:2
   1006715.0843713747 botania:mushroom:0
   1020193.0571632426 botania:mushroom:6
   1163924.8141997685 botania:mushroom:15
@@ -1740,8 +1752,8 @@
   5.186400111553377 minecraft:air:0
   73.67673136066247 minecraft:bedrock:0
   125.98497832609188 minecraft:dirt:0
+  132.57876987083534 thermalfoundation:ore:0
   137.85064536705548 minecraft:gravel:0
-  207.50531688290437 thermalfoundation:ore:0
   249.2491927691758 libvulpes:ore0:0
   278.80684705245613 minecraft:coal_ore:0
   308.20541853222835 chisel:basalt2:7
@@ -1820,19 +1832,21 @@
 "Titan (108)": {
   4.762151664820015 minecraft:stone:0
   17.941819471417343 minecraft:air:0
+  59.148859095748236 immersiveengineering:ore:5
   73.66692900571026 minecraft:bedrock:0
   103.83451457285786 libvulpes:ore0:0
   242.28466586717641 minecraft:gravel:0
   244.3524270605652 minecraft:coal_ore:0
   289.3033530418487 minecraft:iron_ore:0
   310.62285107164837 chisel:basalt2:7
-  361.29841760701464 advancedrocketry:moonturf:0
   363.40558815338704 minecraft:dirt:0
   396.20029852219074 chisel:marble2:7
   421.0019662521364 minecraft:redstone_ore:0
+  476.35071504963537 nuclearcraft:dry_earth:0
   490.84736021083137 minecraft:stone:3
   492.4139068505108 minecraft:stone:1
   513.6024625757906 minecraft:stone:5
+  585.7869852180169 biomesoplenty:dried_sand:0
   589.8667089803363 minecraft:clay:0
   590.9918351307875 chisel:limestone2:7
   692.0309043362247 thermalfoundation:ore:0
@@ -1841,11 +1855,9 @@
   1328.0322833236294 thermalfoundation:ore:4
   1364.3884864365727 minecraft:gold_ore:0
   1511.0039273757443 appliedenergistics2:quartz_ore:0
-  1524.0293017630806 immersiveengineering:ore:5
   1851.2417351770723 thermalfoundation:ore:3
   1921.0257459774807 minecraft:diamond_ore:0
   2283.44315372131 minecraft:lapis_ore:0
-  2324.3292141349043 advancedrocketry:moonturf_dark:0
   2356.7544679971024 actuallyadditions:block_misc:3
   2772.8597346784104 thermalfoundation:ore:5
   2805.823743284601 thaumcraft:ore_amber:0
@@ -1898,14 +1910,14 @@
   74.40470678298995 minecraft:snow:0
   108.11868360639082 minecraft:gravel:0
   149.63354821913785 minecraft:coal_ore:0
+  151.4620201277895 thermalfoundation:ore:5
   207.81119462541574 libvulpes:ore0:0
+  273.1330569214996 ic2:coolant:0
   290.53581313133236 minecraft:iron_ore:0
   324.16381019443816 chisel:basalt2:7
-  338.1440103733972 ic2:hot_coolant:0
   379.2541434969985 astralsorcery:blockcustomore:0
   401.20096117342933 chisel:marble2:7
   421.9939565481155 minecraft:redstone_ore:0
-  442.688077377272 ic2:coolant:0
   478.4611102241198 minecraft:stone:3
   483.1800204331119 minecraft:stone:1
   484.8593461023251 minecraft:stone:5
@@ -1915,6 +1927,7 @@
   624.1203428516989 chisel:limestone2:7
   707.4026967475781 minecraft:snow_layer:0
   809.0522170109307 thermalfoundation:ore:8
+  1060.1510518793282 ic2:hot_coolant:0
   1071.5280591044955 astralsorcery:blockcustomore:1
   1282.9848874305883 thermalfoundation:ore:1
   1458.7874587749006 minecraft:gold_ore:0
@@ -1926,7 +1939,6 @@
   2061.589988280623 thermalfoundation:ore:3
   2407.1911878832234 actuallyadditions:block_misc:3
   2518.844027991905 minecraft:lapis_ore:0
-  2638.582794168749 thermalfoundation:ore:5
   2825.755565969996 thaumcraft:ore_amber:0
   3183.22345913818 forestry:resources:0
   3536.7019806446087 thaumcraft:ore_cinnabar:0
@@ -1975,8 +1987,9 @@
   4.618749792899679 biomesoplenty:hard_ice:0
   9.94132968713967 minecraft:air:0
   10.734809372366614 minecraft:stone:0
+  65.59152827576203 forestry:fluid.ice:0
   73.70202042791948 minecraft:bedrock:0
-  92.508151050933 forestry:fluid.ice:0
+  120.03235050378449 minecraft:lapis_ore:0
   396.5604081139237 libvulpes:ore0:0
   458.42237796049324 chisel:basalt2:7
   494.51735640765605 astralsorcery:blockcustomore:0
@@ -2003,7 +2016,6 @@
   2701.8698285049163 rftools:dimensional_shard_ore:0
   3216.1560901281728 thermalfoundation:ore:3
   4032.7171831144415 actuallyadditions:block_misc:3
-  4202.165486987425 minecraft:lapis_ore:0
   4234.242280139263 thermalfoundation:ore:5
   5574.584903698745 thaumcraft:ore_cinnabar:0
   5834.574982541471 thermalfoundation:ore:4
@@ -2241,12 +2253,13 @@
   5.291911445604382 minecraft:stone:0
   9.160650204977994 minecraft:air:0
   15.447869236409216 biomesoplenty:ash_block:0
+  46.113632688558596 minecraft:coal_ore:0
   73.80959382539805 minecraft:bedrock:0
   193.21880922225498 thermalfoundation:fluid_redstone:0
   270.2565625454039 immersiveengineering:stone_decoration:3
   299.14164142675867 minecraft:iron_ore:0
-  302.77134488138273 minecraft:coal_ore:0
   309.94315450568695 chisel:basalt2:7
+  338.9103084054733 minecraft:diamond_ore:0
   389.6640965547923 chisel:marble2:7
   413.4085378998909 draconicevolution:draconium_ore:1
   426.71937677473665 minecraft:redstone_ore:0
@@ -2261,7 +2274,6 @@
   1479.8844429083988 appliedenergistics2:quartz_ore:0
   1499.3801925593853 immersiveengineering:ore:5
   1585.582504757559 thermalfoundation:ore:4
-  1821.3695669284411 minecraft:diamond_ore:0
   2054.078461214254 thermalfoundation:ore:3
   2287.5854620906416 minecraft:lapis_ore:0
   2301.670988102245 actuallyadditions:block_misc:3
@@ -2945,4 +2957,72 @@
   917156.2228240375 minecraft:stained_hardened_clay:0
   957123.0517395905 biomesoplenty:flesh:0
   1784836.7242647288 minecraft:red_sandstone:0
+  },
+"Philucka (115)": {
+  5.070615616750783 minecraft:stone:0
+  14.604770330643388 minecraft:air:0
+  22.924408101269293 minecraft:end_stone:0
+  59.9274984221046 minecraft:redstone_ore:0
+  74.2173019265991 minecraft:bedrock:0
+  158.28448874018093 minecraft:dirt:0
+  163.00225310441067 draconicevolution:draconium_ore:2
+  238.41716717597453 minecraft:coal_ore:0
+  280.9839953369564 minecraft:gravel:0
+  294.9077282421882 minecraft:iron_ore:0
+  331.0808111205767 chisel:basalt2:7
+  384.4551400749475 chisel:marble2:7
+  410.82119079982147 minecraft:grass:0
+  453.41043458877994 minecraft:stone:3
+  518.6403303832249 minecraft:stone:5
+  538.2055262754016 minecraft:clay:0
+  602.604219199621 minecraft:stone:1
+  617.8795104194028 chisel:limestone2:7
+  639.1940365980522 thermalfoundation:ore:0
+  774.9907790298182 thermalfoundation:ore:4
+  1279.9668235927477 thermalfoundation:ore:1
+  1344.2524253976137 minecraft:gold_ore:0
+  1464.2403708877303 immersiveengineering:ore:5
+  1608.0431063668143 appliedenergistics2:quartz_ore:0
+  1826.0120280664007 minecraft:lapis_ore:0
+  2136.570043429307 thermalfoundation:ore:3
+  2261.065155744792 minecraft:diamond_ore:0
+  2862.5939589282734 thermalfoundation:ore:5
+  2895.263476320015 actuallyadditions:block_misc:3
+  2908.1124049186606 thaumcraft:ore_amber:0
+  3386.4269892563807 thaumcraft:ore_cinnabar:0
+  4199.970353885595 advancedrocketry:charcoallog:0
+  6146.814501120889 thermalfoundation:ore_fluid:4
+  6172.118942452537 forestry:resources:0
+  8752.689717735537 nuclearcraft:ore:3
+  10084.605496234433 nuclearcraft:ore:5
+  12190.392941529504 thaumcraft:crystal_ignis:0
+  13555.92109484751 appliedenergistics2:charged_quartz_ore:0
+  14154.578484543053 thaumcraft:crystal_aqua:0
+  15024.514329044569 thaumcraft:crystal_perditio:0
+  15916.458265231102 biomesoplenty:mushroom:3
+  17370.118482476657 nuclearcraft:ore:6
+  22807.181923220098 thaumcraft:crystal_aer:0
+  23331.20269472475 nuclearcraft:ore:7
+  23774.05064269071 thermalfoundation:ore:6
+  24721.60133402057 thaumcraft:crystal_terra:0
+  30931.879586073617 mekanism:oreblock:0
+  34139.57819977942 thaumcraft:crystal_ordo:0
+  40521.79194462728 advancedrocketry:electricmushroom:0
+  42962.33943123619 extrautils2:redorchid:0
+  117998.510573379 biomesoplenty:flower_1:3
+  273884.7089919277 botania:mushroom:9
+  336624.65968088194 botania:mushroom:0
+  404126.18234125926 botania:flower:13
+  537965.8159161789 botania:mushroom:10
+  537965.8159161789 botania:mushroom:7
+  549364.6616774901 botania:mushroom:3
+  560424.3397474546 botania:mushroom:5
+  610285.0098291239 botania:mushroom:11
+  627600.3904852323 botania:mushroom:1
+  627600.3904852323 botania:mushroom:2
+  627600.3904852323 botania:mushroom:14
+  744091.7026857851 minecraft:red_mushroom:0
+  750518.5873907759 botania:flower:4
+  750518.5873907759 botania:flower:12
+  750916.2715311119 actuallyadditions:item_coffee_seed:0
   }

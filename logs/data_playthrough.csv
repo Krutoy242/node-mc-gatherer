@@ -1,0 +1,2223 @@
+Usage,Popularity,Name,ID
+745139003890465.8,500000,{exploration},placeholder:exploration
+10000000192000,0,Canola,actuallyadditions:item_misc:13
+10000000000000,0,Canola Oil,fluid:canolaoil
+2000000000000,0,Refined Canola Oil,fluid:refinedcanolaoil
+1044028055800,1000,Water,fluid:water
+1001000000000,0,Sulfur Dioxide,fluid:sulfur_dioxide
+1000998000000,0,Hydrogen,fluid:hydrogen
+199800000000,0,Hydrogen,fluid:ic2hydrogen
+146081820000,0,{rf},placeholder:rf
+60000009000,0,Liquifacted Coal,fluid:coal
+47952002304,0,Molten Boron,fluid:boron
+4156632499.5636363,0,,placeholder:ticks
+2664000588,0,Advanced Plating,nuclearcraft:part:1
+2002000000,0,Crystallized Canola Seed,actuallyadditions:item_misc:23
+2000000000,0,Crystallized Oil,fluid:crystaloil
+1581813906.6,0,,placeholder:fight
+1332000202,0,Andesite,minecraft:stone:5
+1332000035,1,Bucket,minecraft:bucket:0
+1332000000,0,Beryllium Ingot,nuclearcraft:ingot:9
+1332000000,0,Beryllium Dust,nuclearcraft:dust:9
+1004000000,0,Heavy Water,fluid:heavywater
+1000022000,0,Life Essence,fluid:lifeessence
+1000000000,0,Sulfur Dioxide,nuclearcraft:fluid_sulfur_dioxide:0
+750360000,0,Crude Oil,fluid:crude_oil
+750000000,0,Crude Oil,thermalfoundation:fluid_crude_oil:0
+746501799,0,Glowstone Dust,minecraft:glowstone_dust:0
+666000000,0,Nitrogen,fluid:nitrogen
+666000000,0,Nitrogen Collector,nuclearcraft:nitrogen_collector:0
+500972000,0,Liquid Oxygen,fluid:liquidoxygen
+500000000,0,Oxygen,gas:oxygen
+333000000,0,Diborane,fluid:diborane
+320767236,0,Lapis Lazuli Ore,minecraft:lapis_ore:0
+320001554,0,Lapis Lazuli Dust,ic2:dust:9
+300000000,0,Naphtha,fluid:refined_oil
+288456192,0,Molten Sugar,fluid:sugar
+188213002,0,Empowered Phosphor,contenttweaker:empowered_phosphor:0
+186624044,0,Glowstone,minecraft:glowstone:0
+186624000,0,Energized Glowstone,fluid:glowstone
+98762500,0,Liquid Glass,fluid:glass
+96001392,1,Sand,minecraft:sand:0
+54000011.32,0,Amber,thaumcraft:amber:0
+48048000,0,Neutron Fluid,fluid:neutron
+40000000,0,IC2 Coolant,fluid:ic2coolant
+20852640,0,Molten Aluminum Brass,fluid:alubrass
+20000000,0,Brine,fluid:brine
+17728004,0,"Rat §o""Nugget""",rats:rat_nugget:0
+16001000,0,Sulfuric Acid,fluid:sulfuric_acid
+12800001,1,Helium Collector,nuclearcraft:helium_collector:0
+12800000,0,Helium,fluid:helium
+12022001,0,Lava,fluid:lava
+11000064,0,Vitium,aspect:Vitium
+10836525,0,Redstone,minecraft:redstone:0
+10512000,0,Dark Liquid,fluid:dark_matter
+10204001,1,Canola Seeds,actuallyadditions:item_canola_seed:0
+10006105,0,Menril Wood,integrateddynamics:menril_log:0
+10000000,0,Syngas,fluid:syngas
+10000000,0,Gasoline,fluid:gasoline
+6291600,0,Molten Enderium,fluid:enderium
+6000001,0,Amber Block,thaumcraft:amber_block:0
+6000000,0,Amber,fluid:amber
+5761152,0,Molten Fluxed Electrum,fluid:fluxed_electrum
+5760800,0,Molten Manyullyn,fluid:manyullyn
+5003000,0,Liquid Sunshine,fluid:liquid_sunshine
+4878000,0,Molten Iron,fluid:iron
+4159567,0,Tin Ingot,thermalfoundation:material:129
+3734784,0,Tin Nugget,"thermalfoundation:material:193:{display:{Lore:[""§d§l32%""]}}"
+3009419,0,Glass,minecraft:glass:0
+2986128,0,Seared Stone,fluid:stone
+2592001,0,Slimy Leaves,tconstruct:slime_leaves:1
+2592000,0,Liquid Purple Slime,fluid:purpleslime
+2183040,0,Essence of Knowledge,fluid:experience
+2000002,0,Empowered Canola Seed,actuallyadditions:item_misc:24
+2000000,0,Liquid D-T Fuel,fluid:liquidfusionfuel
+2000000,0,Refined Fuel,fluid:refined_fuel
+2000000,0,Empowered Oil,fluid:empoweredoil
+2000000,0,D-T Fuel,gas:fusionfuel
+2000000,0,Tritium,gas:tritium
+2000000,0,Deuterium,gas:deuterium
+2000000,0,Lithium,gas:lithium
+2000000,0,Liquid Lithium,fluid:liquidlithium
+2000000,0,Carbon Dioxide,fluid:carbon_dioxide
+1866318,0,Copper Ingot,thermalfoundation:material:128
+1824768,0,Ground Cocoa Nibs,nuclearcraft:ground_cocoa_nibs:0
+1679616,0,Copper Nugget,"thermalfoundation:material:192:{display:{Lore:[""§d§l50%""]}}"
+1536004,0,Weed,ic2:crop_res:5
+1327104,0,Hot Eutectic NaK-Cryotheum Mixture,fluid:cryotheum_nak_hot
+1327104,0,Gelided Fruit,ic2:dust:36
+1244000,0,Destabilized Redstone,fluid:redstone
+1152370,0,Block of Redstone,minecraft:redstone_block:0
+1001117,0,Clay,minecraft:clay_ball:0
+1000144,0,Aqua,aspect:Aqua
+1000067,0,Bronze Ingot,thermalfoundation:material:163
+1000000,0,Sulfur Trioxide,fluid:sulfur_trioxide
+1000000,0,Liquid Antimatter,fluid:blockfluidantimatter
+1000000,0,Flux Goo,fluid:flux_goo
+1000000,0,Bottle of Taint,thaumcraft:bottle_taint:0
+1000000,0,Phial of Vitium Essentia,"thaumcraft:phial:1:{Aspects:[{key:""vitium"",amount:10}]}"
+1000000,0,Glass Phial,thaumcraft:phial:0
+912390,0,Cocoa Beans,minecraft:dye:3
+912384,0,Molten Unsweetened Chocolate,fluid:unsweetened_chocolate
+912384,0,Chocolate Liquor,fluid:chocolate_liquor
+912384,0,Cocoa Butter,fluid:cocoa_butter
+912384,0,Roasted Cocoa Beans,nuclearcraft:roasted_cocoa_beans:0
+792000,0,Milk,fluid:milk
+778788,0,Metallum,aspect:Metallum
+778772,0,Ordo,aspect:Ordo
+767232,0,Molten Lapis,fluid:lapis
+767232,0,Native Lapis Lazuli Cluster,jaopca:item_clusterlapis:0
+747648,0,Molten Refined Obsidian,fluid:refined_obsidian
+746784,0,Molten Osmium,fluid:osmium
+746530,0,Osmium Dust,mekanism:dust:2
+746496,0,Molten Refined Glowstone,fluid:refined_glowstone
+720025,0,Mirion Ingot,plustic:mirioningot:0
+720000,0,Molten Mirion,fluid:mirion
+666000,0,Ammonia,fluid:ammonia
+666000,0,Boric Acid,fluid:boric_acid
+663654,8,Obsidian,minecraft:obsidian:0
+663552,0,Rat Pelt,rats:rat_pelt:0
+584000,0,Liquid Starlight,fluid:astralsorcery.liquidstarlight
+576000,0,Fiery Essence,fluid:fiery_essence
+576000,0,Angry Chicken Soul,"draconicevolution:mob_soul:0:{EntityName:""excompressum:angry_chicken""}"
+499968,0,Molten Clay,fluid:clay
+484704,0,Mundane Belt,thaumcraft:baubles:2
+456324,0,Sugar,minecraft:sugar:0
+456192,0,Molten Brass,fluid:brass
+456192,0,Molten Dark Chocolate,fluid:dark_chocolate
+433520,0,Ender Pearl,minecraft:ender_pearl:0
+432214,0,§cSupremium Ingot,mysticalagriculture:crafting:37
+432000,0,Resonant Ender,fluid:ender
+432000,0,Molten Supremium,fluid:supremium
+432000,0,§cSupremium Nugget,mysticalagriculture:crafting:44
+415872,0,Molten Tin,fluid:tin
+400040,0,Lumium Ingot,thermalfoundation:material:166
+361000,0,Liquid Meat,fluid:meat
+332928,0,Molten End Steel,fluid:end_steel
+272448,0,Molten Copper,fluid:copper
+251436,0,Leather,minecraft:leather:0
+249120,0,Molten Dark Steel,fluid:dark_steel
+224180,0,Blood,fluid:blood
+207755,0,Steel Ingot,thermalfoundation:material:160
+192637,0,Glass Pane,minecraft:glass_pane:0
+192044,0,Carrot,minecraft:carrot:0
+192044,0,Seeds,minecraft:wheat_seeds:0
+192042,1,Dirt,minecraft:dirt:0
+192001,1,Blueberry,harvestcraft:blueberryitem:0
+192001,1,Blackberry,harvestcraft:blackberryitem:0
+192000,0,Bronze Electron Tube,forestry:thermionic_tubes:2
+192000,0,Blueberry Seed,harvestcraft:blueberryseeditem:0
+192000,0,Blackberry Seed,harvestcraft:blackberryseeditem:0
+192000,0,Inferium Seeds,mysticalagriculture:tier1_inferium_seeds:0
+171360,0,Molten Obsidian,fluid:obsidian
+169344,0,Molten Steel,fluid:steel
+166888,0,UU-Matter,fluid:ic2uu_matter
+165904,0,Tungsten Ore,endreborn:block_wolframium_ore:0
+165888,0,Molten Tungsten,fluid:tungsten
+165888,0,Tungsten Ore Dust,contenttweaker:item_ore_tungsten:2
+165888,0,Obsidian Pressure Plate,quark:obsidian_pressure_plate:0
+160000,0,Sulfuric Acid,gas:sulfuricacid
+160000,0,Sulfuric Acid,fluid:sulfuricacid
+150000,150000,,placeholder:trade
+144000,0,Fusewood Shard,"tconstruct:shard:0:{Material:""dark_matter""}"
+144000,0,Sharpening Kit Cast,"tconstruct:cast:0:{PartType:""tconstruct:shard""}"
+121526,0,Ingot Cast,tconstruct:cast_custom:0
+110001,0,Rudimentary Snare,bloodmagic:soul_snare:0
+110000,0,Demonic Will,fluid:raw_will
+110000,0,Demonic Will,bloodmagic:monster_soul:0:{souls:1.0f}
+88320.15526953126,0,Stick,minecraft:stick:0
+82944,0,Bee Smoker,forestry:smoker:0
+82928,0,Graphite Ingot,nuclearcraft:ingot:8
+80032,0,Boron Ingot,nuclearcraft:ingot:5
+77184,0,Rat Diamond,rats:rat_diamond:0
+76032,0,Molten Diamond,fluid:diamond
+75168,0,Molten Aluminum,fluid:aluminum
+72022,0,Demon Ingot,extrautils2:ingredients:11
+69136,0,Nickel Ore,thermalfoundation:ore:5
+64192,0,Uranium Ingot,immersiveengineering:metal:5
+62216,0,Aluminum Ore,thermalfoundation:ore:4
+60000,0,Rocket Fuel,fluid:rocketfuel
+56388,0,Charcoal,minecraft:coal:1
+49248,0,Molten Base Essence,fluid:base_essence
+48000,0,Neutron Fluid,nuclearcraft:fluid_neutron:0
+46160,0,Fluix Crystal,appliedenergistics2:material:7
+45502.40677966102,0,Iron Ingot,minecraft:iron_ingot:0
+45433,0,Coal,minecraft:coal:0
+42852,0,Gold Ingot,minecraft:gold_ingot:0
+42016,0,Pulsating Iron Ingot,enderio:item_alloy_ingot:5
+41488,0,Pulverized Platinum,thermalfoundation:material:70
+41472,0,Molten Pulsating Iron,fluid:pulsating_iron
+41472,0,Molten Platinum,fluid:platinum
+40974,0,Hard Carbon Alloy,nuclearcraft:alloy:2
+40577,0,Ardite Ore,tconstruct:ore:1
+40576,0,Bottle o' Enchanting,minecraft:experience_bottle:0
+40362,0,Lead Ingot,thermalfoundation:material:131
+40326,0,Black Quartz,actuallyadditions:item_misc:5
+40320,0,Molten Lumium,fluid:lumium
+40318,0,Cobalt Ingot,tconstruct:ingots:0
+40306,0,Silver Ingot,thermalfoundation:material:130
+40214,0,Manyullyn Ingot,tconstruct:ingots:2
+40129,0,Magnesium Diboride Alloy,nuclearcraft:alloy:3
+40116,0,Aluminum Ingot,thermalfoundation:material:132
+40089,0,Block of Quartz,minecraft:quartz_block:0
+40080,0,Signalum Ingot,thermalfoundation:material:165
+40070,0,Mana Infused Ingot,thermalfoundation:material:136
+40040,0,Enderium Ingot,thermalfoundation:material:167
+40034,0,Invar Ingot,thermalfoundation:material:162
+40032,0,Magnesium Dust,nuclearcraft:dust:7
+40032,0,Constantan Ingot,thermalfoundation:material:164
+40032,0,Platinum Ingot,thermalfoundation:material:134
+40016,0,Fluxed Electrum Ingot,redstonearsenal:material:32
+40016,0,Thorium Ingot,nuclearcraft:ingot:3
+40016,0,Ardite Ingot,tconstruct:ingots:1
+40013,0,Electrum Ingot,thermalfoundation:material:161
+40008,0,Enriched Lava,fluid:enrichedlava
+40000,0,Thorium Ore,nuclearcraft:ore:3
+40000,0,Block of Lumium,thermalfoundation:storage_alloy:6
+38592,0,Grains of Infinity,enderio:item_material:20
+38001,0,Pahoehoe Lava,fluid:ic2pahoehoe_lava
+36000,0,IC2 Hot Coolant,fluid:ic2hot_coolant
+32000,0,Steam,fluid:steam
+29376,0,Molten Nickel,fluid:nickel
+28536.265625,0,Prosperity Shard,mysticalagriculture:crafting:5
+28533,0,Alchemical Brass Ingot,thaumcraft:ingot:2
+28524,0,Mana Powder,botania:manaresource:23
+28524,0,Stardust,astralsorcery:itemcraftingcomponent:2
+28512,0,Prosperity Ore,mysticalagriculture:prosperity_ore:0
+26601.004,0,Pure Certus Quartz Crystal,appliedenergistics2:material:10
+26432,0,Molten Demon Metal,fluid:xu_demonic_metal
+25417,0,Emerald,minecraft:emerald:0
+24202,0,Honey Comb,forestry:bee_combs:0
+24094.242424242424,0,Beeswax,forestry:beeswax:0
+23808,0,Molten Stellar Alloy,fluid:stellar_alloy
+23421,0,Lapis Lazuli Block,minecraft:lapis_block:0
+23328,0,Lapis Lazuli Plate,ic2:plate:4
+23040,0,Molten Silver,fluid:silver
+23000,0,Crystallized Obsidian,fluid:crystal
+22002,0,Crystallized Obsidian,biomesoplenty:crystal:0
+22000,0,Grape Juice,fluid:grapejuice
+22000,0,Grapes,rustic:grapes:0
+20738,0,Pulverized Silver,thermalfoundation:material:66
+20738,0,Conveyor Belt,"immersiveengineering:conveyor:0:{conveyorType:""immersiveengineering:conveyor""}"
+20736,0,Block of Copper,thermalfoundation:storage:0
+20736,0,Molten Gold,fluid:gold
+20736,0,Molten Knightslime,fluid:knightslime
+20736,0,Molten Conductive Iron,fluid:conductive_iron
+18432,0,Molten Electrum,fluid:electrum
+16000,0,Essence,fluid:essence
+14000,0,Fermented Ore Meat,fluid:if.ore_fluid_fermented
+12824,0,Desert Myrmex Resin Chunk,iceandfire:myrmex_desert_resin:0
+12181,0,Ash,forestry:ash:0
+12044,0,Blackout Powder,randomthings:ingredient:13
+12023,0,Grout,tconstruct:soil:0
+12002,0,Biomass,actuallyadditions:item_misc:21
+12001,1,Sunflower,minecraft:double_plant:0
+12000,0,Flux,fluxnetworks:flux:0
+12000,0,Bio Coal,actuallyadditions:item_misc:22
+12000,0,Tiny Pile of Uranium 235,ic2:nuclear:5
+12000,0,Uranium 235,ic2:nuclear:1
+12000,0,Liquid Concrete,fluid:concrete
+10998,0,Infinity Dust Block,enderio:block_infinity:0
+10476,0,Draconium Nugget,"draconicevolution:nugget:0:{display:{Lore:[""§d§l50%""]}}"
+10018,0,Piston,minecraft:piston:0
+10000,0,Molten Sunnarium,fluid:sunnarium
+9792,0,Molten Osgloglas,fluid:osgloglas
+9260,0,1k ME Storage Component,appliedenergistics2:material:35
+9229,0,"Wool (Dorset, Brown)",animania:wool:0
+9222,0,Cyanite Dust,bigreactors:dustcyanite:0
+9216,0,Eutectic UU-Metal Alloy,fluid:universal_metal
+9216,0,Tiny Pile of Heavy Fuel Dust,mechanics:fuel_dust_tiny:0
+8981,0,Logic Processor,appliedenergistics2:material:22
+8765,0,Cobweb,minecraft:web:0
+8222,0,Wheat,minecraft:wheat:0
+8220,0,Cheese Wedge (Friesian),animania:friesian_cheese_wedge:0
+8005,0,Cheese Wheel (Friesian),animania:friesian_cheese_wheel:0
+8000,0,Molten Cheese,fluid:cheese
+8000,0,Block of Demon Metal,extrautils2:simpledecorative:1
+7781,0,Silicon Plate,libvulpes:productplate:3
+6912,0,Molten Draconium,fluid:draconium
+6912,0,Native Sapphire Cluster,jaopca:item_clustersapphire:0
+6912,0,Sapphire Ore,biomesoplenty:gem_ore:6
+6409,0,Gold Ore,minecraft:gold_ore:0
+6395,0,Steel Plate,thermalfoundation:material:352
+6336,0,Molten Milk Chocolate,fluid:milk_chocolate
+6160,0,Engineer's Wire Cutters,immersiveengineering:tool:1
+6144,0,Steel Wire,immersiveengineering:material:23
+6024,0,Egg,animania:brown_egg:0
+6016,0,Royal Jelly,forestry:royal_jelly:0
+6000,0,Creosote Oil,fluid:creosote
+6000,0,Crystallized Amber,cyclicmagic:crystallized_amber:0
+6000,0,Weather Egg <Sun>,randomthings:weatheregg:0
+5760.001333333334,0,Greatwood Log,thaumcraft:log_greatwood:0
+5002,0,Block of Coal,minecraft:coal_block:0
+4934.610169491525,0,Iron Plate,thermalfoundation:material:32
+4800,0,Lubricant,fluid:lubricant
+4572,0,Cobblestone,minecraft:cobblestone:0
+4311,0,Lapis Lazuli,minecraft:dye:4
+4244,0,Calculation Processor,appliedenergistics2:material:23
+4216,0,Quartz Glass,appliedenergistics2:quartz_glass:0
+4119,0,Oak Wood Planks,minecraft:planks:0
+4091,0,Tough Alloy,nuclearcraft:alloy:1
+4034.1875,0,§aPrudentium Essence,mysticalagriculture:crafting:1
+4001.546875,0,§bSuperium Essence,mysticalagriculture:crafting:3
+4000,0,Pink Slime,fluid:if.pink_slime
+4000,0,Enriched Uranium Nuclear Fuel,ic2:nuclear:0
+4000,0,Can,forestry:can:0
+3976.375,0,§eInferium Essence,mysticalagriculture:crafting:0
+3967.09375,0,§6Intermedium Essence,mysticalagriculture:crafting:2
+3524,0,Litherite Crystal,environmentaltech:litherite_crystal:0
+3456,0,Molten Constantan,fluid:constantan
+3306,0,Lithium Dust,ic2:dust:11
+3072,0,Infinity Reagent,enderio:item_material:75
+3072,0,Dense Fluix Wire Coil,immersivecables:wire_coil:1
+3000,0,Conglomerate Of Sun,contenttweaker:conglomerate_of_sun:0
+3000,0,Totem of Undying,minecraft:totem_of_undying:0
+2935,0,Crushed Endstone,exnihilocreatio:block_endstone_crushed:0
+2918,0,Crushed Netherrack,"exnihilocreatio:block_netherrack_crushed:0:{display:{Lore:[""§e§lWeight: 6000""]}}"
+2916,0,4k ME Storage Component,appliedenergistics2:material:36
+2840,0,Nugget Cast,tconstruct:cast_custom:1
+2830,0,Sky Stone Dust,appliedenergistics2:material:45
+2671,0,Coalescence Matrix,tconevo:material:0
+2600,0,Lead Ore,thermalfoundation:ore:3
+2595,0,Electronic Circuit,ic2:crafting:1
+2592,0,Molten Ferroboron,fluid:ferroboron
+2592,0,Molten Alumite,fluid:alumite
+2592,0,Clear Glass,tconstruct:clear_glass:0
+2592,0,Dense Lapis Lazuli Plate,ic2:plate:13
+2490,0,Gunpowder,minecraft:gunpowder:0
+2377,0,Endorium Nugget,endreborn:item_raw_endorium:0
+2350,0,Heavy Ingot,mechanics:heavy_ingot:0
+2350,0,Pulverized Gold,thermalfoundation:material:1
+2336,0,Uranium Ore,immersiveengineering:ore:5
+2328,0,Enchanted Ingot,extrautils2:ingredients:12
+2320,0,Boron Ore,nuclearcraft:ore:5
+2308,0,Electrum Blend,thermalfoundation:material:97
+2304,0,Molten Tough Alloy,fluid:tough
+2304,0,Molten Lithium,fluid:lithium
+2304,0,Native Uranium Cluster,jaopca:item_clusteruranium:0
+2304,0,Molten Heavy Metal,fluid:heavy_metal
+2304,0,Heavy Nugget,mechanics:heavy_nugget:0
+2304,0,Lumium Nugget,thermalfoundation:material:230
+2304,0,Molten Gelid Enderium,fluid:gelid_enderium
+2304,0,Molten Redstone Alloy,fluid:redstone_alloy
+2304,0,Grains Of Infinity Burst Seed,mechanics:burst_seed_grainsofinfinity:0
+2304,0,Bursting Powder,mechanics:bursting_powder:0
+2304,0,Heavy Fuel Dust,mechanics:fuel_dust:0
+2304,0,Molten Fiery,fluid:fierymetal
+2304,0,Molten Pigiron,fluid:pigiron
+2304,0,Enchanted Metal,fluid:xu_enchanted_metal
+2152,0,Crushed End Stone,nuclearcraft:gem_dust:11
+2136,0,Basic Capacitor,enderio:item_basic_capacitor:0
+2112,0,Native Emerald Cluster,jaopca:item_clusteremerald:0
+2112,0,Emerald Ore,minecraft:emerald_ore:0
+2070,0,Alienis,aspect:Alienis
+2012,0,Apple,minecraft:apple:0
+2008,0,Blank Rune,bloodmagic:blood_rune:0
+2001,1,Chorus Fruit,minecraft:chorus_fruit:0
+2000,0,Liquid Chorus,fluid:liquidchorus
+2000,0,Popped Chorus Fruit,minecraft:chorus_fruit_popped:0
+2000,0,Sensus,aspect:Sensus
+2000,0,Herba,aspect:Herba
+2000,0,Stone Battery Cell,"plustic:battery_cell:0:{Material:""stone""}"
+2000,0,Oak Pressure Plate,minecraft:wooden_pressure_plate:0
+2000,0,Silicon Carbide Vapor,fluid:sic_vapor
+2000,0,Blood-Infused Stone,fluid:rune
+1860,0,Lithium Ion Cell,"nuclearcraft:lithium_ion_cell:0:{capacity:8000000,maxTransfer:400000,energy:0}"
+1814,0,Brick,minecraft:brick:0
+1800,0,Raw Ore Meat,fluid:if.ore_fluid_raw
+1691,0,Enriched Alloy,mekanism:enrichedalloy:0
+1680.008,0,Menril Wood Planks,integrateddynamics:menril_planks:0
+1628,0,Certus Quartz Dust,appliedenergistics2:material:2
+1604,0,Erodium Crystal,environmentaltech:erodium_crystal:0
+1600,0,Clean Draconium Slurry,gas:slurryCleanDraconium
+1600,0,Draconium Slurry,gas:slurryDraconium
+1600,0,Draconium Ore,draconicevolution:draconium_ore:0
+1600,0,Liquid Helium,fluid:liquidhelium
+1584,0,Garbage Pile,rats:garbage_pile:0
+1537,0,Raw Plastic,rats:raw_plastic:0
+1537,0,Energy Upgrade,mekanism:energyupgrade:0
+1536,0,Plastic Waste,rats:plastic_waste:0
+1504,0,Block of Black Quartz,actuallyadditions:block_misc:2
+1486,0,Bone Meal,minecraft:dye:15
+1465,0,Slimeball,minecraft:slime_ball:0
+1456,0,Enderium Plate,thermalfoundation:material:359
+1455,0,Flint,minecraft:flint:0
+1409,0,Moss Stone,minecraft:mossy_cobblestone:0
+1400,0,Blazing Pyrotheum,fluid:pyrotheum
+1374,0,Pulverized Coal,thermalfoundation:material:768
+1366,0,Plague Essence,rats:plague_essence:0
+1320,0,Pulverized Obsidian,thermalfoundation:material:770
+1312,0,Plate Cast,tconstruct:cast_custom:3
+1312,0,Interconnect,environmentaltech:interconnect:0
+1303,0,Iron Ore,minecraft:iron_ore:0
+1300,0,Litherite Solar Cell,environmentaltech:solar_cell_litherite:0
+1297.015,1,Flint and Steel,minecraft:flint_and_steel:0
+1296,0,Photovoltaic Cell,environmentaltech:photovoltaic_cell:0
+1278,0,Soul Sand,minecraft:soul_sand:0
+1249,0,Slag,immersiveengineering:material:7
+1197,0,Osmium Ingot,mekanism:ingot:1
+1189,1,End Stone,minecraft:end_stone:0
+1179,0,Advanced Circuit,ic2:crafting:2
+1174,0,Tungsten Ingot,endreborn:item_ingot_wolframium:0
+1169,0,Ender Ingot,extendedcrafting:material:36
+1152,0,Molten Bronze,fluid:bronze
+1152,0,Tungsten Nugget,endreborn:wolframium_nugget:0
+1152,0,Fusewood Shard,"tconstruct:shard:0:{Material:""dark_steel""}"
+1152,0,Shard Clay Cast,"tconstruct:clay_cast:0:{PartType:""tconstruct:shard""}"
+1152,0,Fusewood Shard,"tconstruct:shard:0:{Material:""plague_metal""}"
+1152,0,Fluxed Electrum Blend,redstonearsenal:material:0
+1150,0,Olive Oil,fluid:oliveoil
+1088,0,Silky Propolis,forestry:propolis:3
+1056.0625,0,§cSupremium Essence,mysticalagriculture:crafting:4
+1050.20439453125,0,Diamond,minecraft:diamond:0
+1038,0,Ferroboron Alloy,nuclearcraft:alloy:6
+1036,0,Photovoltaic Plate,enderio:item_material:3
+1025,0,Queen Bee,harvestcraft:queenbeeitem:0
+1024,0,Solar Panel,ic2:te:8
+1020,0,Electrical Steel Ingot,enderio:item_alloy_ingot:0
+1016,0,Rock Crystal,astralsorcery:itemrockcrystalsimple:0
+1011,0,Stone,minecraft:stone:0
+1002,0,Silky Comb,forestry:bee_combs:6
+1000,0,Honey,fluid:for.honey
+1000,0,Honey,harvestcraft:honeyitem:0
+1000,0,Honeycomb,harvestcraft:honeycombitem:0
+1000,0,Friesian Milk,fluid:milk_friesian
+1000,0,Liquid DNA,fluid:liquiddna
+1000,0,Genetics Labware,gendustry:labware:0
+1000,0,Silver Birch Pollen,"forestry:pollen_fertile:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.treeBirch"",UID1:""forestry.treeBirch""},{Slot:1b,UID0:""forestry.heightSmall"",UID1:""forestry.heightSmall""},{Slot:2b,UID0:""forestry.saplingsAverage"",UID1:""forestry.saplingsAverage""},{Slot:3b,UID0:""forestry.fruitNone"",UID1:""forestry.fruitNone""},{Slot:4b,UID0:""forestry.yieldLowest"",UID1:""forestry.yieldLowest""},{Slot:5b,UID0:""forestry.sappinessLowest"",UID1:""forestry.sappinessLowest""},{Slot:6b,UID0:""forestry.leavesNone"",UID1:""forestry.leavesNone""},{Slot:7b,UID0:""forestry.maturationFaster"",UID1:""forestry.maturationFaster""},{Slot:8b,UID0:""forestry.i1d"",UID1:""forestry.i1d""},{Slot:9b,UID0:""forestry.fireproofFalse"",UID1:""forestry.fireproofFalse""}]}}"
+1000,0,Propolis,forestry:propolis:0
+1000,0,Red Liquid,fluid:red_matter
+1000,0,Perfect Fuel,fluid:perfect_fuel
+1000,0,Corium,fluid:corium
+1000,0,Reactor Cell,nuclearcraft:cell_block:0
+992,0,Block of Cobalt,tconstruct:metal:0
+988,0,Crushed Rhodochrosite,nuclearcraft:gem_dust:1
+972,0,Lithium Manganese Dioxide Alloy,nuclearcraft:alloy:4
+972,0,Manganese Dioxide Dust,nuclearcraft:dust_oxide:3
+972,0,Manganese Oxide Dust,nuclearcraft:dust_oxide:2
+972,0,Electrical Steel Nugget,enderio:item_alloy_nugget:0
+972,0,16k ME Storage Component,appliedenergistics2:material:37
+900,0,Thatch,quark:thatch:0
+878,0,Clay,minecraft:clay:0
+868,0,Weighted Pressure Plate (Heavy),minecraft:heavy_weighted_pressure_plate:0
+864,0,Molten Lead,fluid:lead
+864,0,Molten Cobalt,fluid:cobalt
+864,0,Signalum Nugget,thermalfoundation:material:229
+828,0,Eye of Ender,minecraft:ender_eye:0
+816,0,Flour,harvestcraft:flouritem:0
+792,0,Borer Essence,twilightforest:borer_essence:0
+792,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""twilightforest:tower_termite""}"
+777,0,Lead Plate,thermalfoundation:material:323
+768,0,Stellar Alloy Grinding Ball,enderio:item_alloy_endergy_ball:3
+768,0,Gem Cast,tconstruct:cast_custom:2
+761,0,Steel Casing,mekanism:basicblock:8
+732,0,Energetic Alloy Ingot,enderio:item_alloy_ingot:1
+704,0,Graphite Dust,nuclearcraft:dust:8
+679,0,Copper Solenoid,nuclearcraft:part:4
+666,0,Boron Nitride Solution,fluid:boron_nitride_solution
+664.0013333333334,1,Crafting Table,minecraft:crafting_table:0
+652,0,Ender Dust,appliedenergistics2:material:46
+648,0,Double-Layer Capacitor,enderio:item_basic_capacitor:1
+624,0,Native Titanium Cluster,jaopca:item_clustertitanium:0
+614,0,Clear Laser Lens,environmentaltech:laser_lens:0
+600,0,Basic Plating,nuclearcraft:part:0
+576,0,Molten Invar,fluid:invar
+576,0,Molten Ardite,fluid:ardite
+576,0,Molten Signalum,fluid:signalum
+576,0,Molten Titanium,fluid:titanium
+572.0013333333334,0,Thaumium Ingot,thaumcraft:ingot:0
+561,0,Mysical Flesh,endreborn:food_ender_flesh:0
+548,0,Kyronite Crystal,environmentaltech:kyronite_crystal:0
+546,0,Magnesium Diboride Solenoid,nuclearcraft:part:5
+529,0,Peat,forestry:peat:0
+528,0,Crystallized Emerald,jaopca:item_crystalabyssemerald:0
+520,0,Carbonic Fluix Complex,threng:material:1
+512,0,Speculation Core (1x),threng:material:7
+512,0,Matter Ball,appliedenergistics2:material:6
+510,0,Speed Upgrade,mekanism:speedupgrade:0
+486,0,Thaumium Nugget,thaumcraft:nugget:6
+478,0,Redstone Ore,minecraft:redstone_ore:0
+462,0,Heart Crystal Shard,scalinghealth:crystalshard:0
+462,0,Heart Crystal Ore,scalinghealth:crystalore:0
+459,0,Iron Nugget,"minecraft:iron_nugget:0:{display:{Lore:[""§d§l33%""]}}"
+457.0321590909091,0,String,minecraft:string:0
+457,0,Silicon,appliedenergistics2:material:5
+456,0,Pestle and Mortar,botania:pestleandmortar:0
+452,0,Nether Star,minecraft:nether_star:0
+450,0,Reinforced Alloy,mekanism:reinforcedalloy:0
+449,0,Grass,minecraft:tallgrass:1
+444,0,Honey Drop,forestry:honey_drop:0
+441,1,Oak Sapling,minecraft:sapling:0
+438,1,Mana Pool,botania:pool:0
+436,0,Erodium Solar Cell,environmentaltech:solar_cell_erodium:0
+432,0,Managlass,botania:managlass:0
+432,0,UU-Metal Nugget,tconevo:metal:42
+422,0,Quicksilver,thaumcraft:quicksilver:0
+422,0,Draconium Ingot,draconicevolution:draconium_ingot:0
+400,0,Resin,fluid:resin
+400,0,Desert Myrmex Resin,iceandfire:myrmex_resin:0
+399,1,Pure Daisy,"botania:specialflower:0:{type:""puredaisy""}"
+396,0,Raw Prime Beef,animania:raw_prime_beef:0
+390,0,Redstone Conductance Coil,thermalfoundation:material:515
+386,0,HV Capacitor,immersiveengineering:metal_device0:2
+384,0,Dense Fluix Coil Block,immersivecables:coil_block:1
+384,0,Basic Induction Cell,mekanism:basicblock2:3:{tier:0}
+384,0,Basic Tier Installer,mekanism:tierinstaller:0
+384,0,Basic Induction Provider,mekanism:basicblock2:4:{tier:0}
+357,0,Iron Casing,actuallyadditions:block_misc:9
+354,0,§5Insanium Essence,mysticalagradditions:insanium:0
+352,0,Block of Dilithium,jaopca:block_blockdilithium:0
+352,0,Casing,actuallyadditions:block_misc:7
+352,0,Graham Cracker,nuclearcraft:graham_cracker:0
+352,0,Metamorphic Swamp Stone,botania:biomestonea:4
+352,0,Metamorphic Swamp Cobblestone,botania:biomestonea:12
+352,0,Roast Prime Beef,animania:cooked_prime_beef:0
+348,0,Vibrant Alloy Ingot,enderio:item_alloy_ingot:2
+346,0,Dilithium Ore,libvulpes:ore0:0
+344,0,Block of Gold,minecraft:gold_block:0
+340,0,Lithium Ingot,nuclearcraft:ingot:6
+334,0,Printed Silicon,appliedenergistics2:material:20
+328,0,64k ME Storage Component,appliedenergistics2:material:38
+326,0,Infinity Bimetal Gear,enderio:item_material:11
+325,0,Certus Quartz Block,appliedenergistics2:quartz_block:0
+325,0,Inscriber Calculation Press,appliedenergistics2:material:13
+324,0,Quicksilver Drop,"thaumcraft:nugget:5:{display:{Lore:[""§d§l33%""]}}"
+324,0,Blue Crystal Shard,actuallyadditions:item_crystal_shard:1
+324,0,Indigo Cave Crystal,quark:crystal:6
+324,0,Blue Stained Glass,minecraft:stained_glass:11
+324,0,Basic Lithium Ion Battery,nuclearcraft:lithium_ion_battery_basic:0
+324,0,Simple Photovoltaic Cell,enderio:block_solar_panel:0
+324,0,Printed Calculation Circuit,appliedenergistics2:material:16
+324,0,Compressed Ender Gravel,excompressum:compressed_block:7
+324,0,Compressed Nether Gravel,excompressum:compressed_block:6
+317,0,Terrasteel Ingot,botania:manaresource:4
+312,0,End Steel Ingot,enderio:item_alloy_ingot:8
+310,0,Nether Quartz Dust,appliedenergistics2:material:3
+308,0,Marshmallow,nuclearcraft:marshmallow:0
+308,0,Milk Chocolate,nuclearcraft:milk_chocolate:0
+306,0,Astral Starmetal Nugget,"jaopca:item_nuggetastralstarmetal:0:{display:{Lore:[""§d§l33%""]}}"
+298,0,Elite Control Circuit,mekanism:controlcircuit:2
+296,0,Block of Emerald,minecraft:emerald_block:0
+291,0,Tin Item Casing,ic2:casing:6
+290,0,Osmium Ore,mekanism:oreblock:0
+289,1,Mystical Magenta Petal,botania:petal:2
+288,0,Unfired Clay Bucket,claybucket:unfiredclaybucket:0
+288,0,Lead Nugget,"thermalfoundation:material:195:{display:{Lore:[""§d§l50%""]}}"
+288,0,Minecart,minecraft:minecart:0
+288,0,Molten Starmetal,fluid:starmetal
+288,0,Molten Terrasteel,fluid:terrasteel
+288,0,Magenta Laser Lens,environmentaltech:laser_lens_colored:2
+288,0,Floral Magenta Powder,botania:dye:2
+288,0,Basic Solar Panel,nuclearcraft:solar_panel_basic:0
+280,0,Seared Brick,tconstruct:materials:0
+280,0,Endorium Ingot,endreborn:item_ingot_endorium:0
+278,0,Raw Porkchop,minecraft:porkchop:0
+276,0,Demonic Will,bloodmagic:monster_soul:0:{souls:10.0f}
+260,0,Lead Item Casing,ic2:casing:4
+259,0,Gold Plate,thermalfoundation:material:33
+257,0,Insulated Tin Cable,"ic2:cable:4:{type:4b,insulation:1b}"
+256,0,Photovoltaic Composite,enderio:item_material:38
+256,0,Speculation Core (2x),threng:material:8
+250,0,Olives,rustic:olives:0
+250,0,Neutronium Ingot,avaritia:resource:4
+244,0,Dough,harvestcraft:doughitem:0
+244,0,Ionite Crystal,environmentaltech:ionite_crystal:0
+243,0,Glass Bottle,minecraft:glass_bottle:0
+242,0,Fruit Bait,harvestcraft:fruitbaititem:0
+242,0,Raw Turkey,harvestcraft:turkeyrawitem:0
+230,0,Crystaltine Nugget,extendedcrafting:material:25
+222,0,Tin Can,ic2:crafting:10
+221,1,Pineapple,harvestcraft:pineappleitem:0
+221,0,Starmetal Ingot,astralsorcery:itemcraftingcomponent:1
+220,0,Ham and Pineapple Pizza,harvestcraft:hamandpineapplepizzaitem:0
+220,0,Tomato,rustic:tomato:0
+220,0,Bakeware,harvestcraft:bakewareitem:0
+220,0,Cooked Porkchop,minecraft:cooked_porkchop:0
+220,0,Common Walnut Sapling,"forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.treeWalnut"",UID1:""forestry.treeWalnut""},{Slot:1b,UID0:""forestry.heightAverage"",UID1:""forestry.heightAverage""},{Slot:2b,UID0:""forestry.saplingsLower"",UID1:""forestry.saplingsLower""},{Slot:3b,UID0:""forestry.fruitWalnut"",UID1:""forestry.fruitWalnut""},{Slot:4b,UID0:""forestry.yieldAverage"",UID1:""forestry.yieldAverage""},{Slot:5b,UID0:""forestry.sappinessLower"",UID1:""forestry.sappinessLower""},{Slot:6b,UID0:""forestry.leavesNone"",UID1:""forestry.leavesNone""},{Slot:7b,UID0:""forestry.maturationAverage"",UID1:""forestry.maturationAverage""},{Slot:8b,UID0:""forestry.i2d"",UID1:""forestry.i2d""},{Slot:9b,UID0:""forestry.fireproofFalse"",UID1:""forestry.fireproofFalse""}]}}"
+220,0,Apple Oak Sapling,"forestry:sapling:0:{IsAnalyzed:0b,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.treeOak"",UID1:""forestry.treeOak""},{Slot:1b,UID0:""forestry.heightSmall"",UID1:""forestry.heightSmall""},{Slot:2b,UID0:""forestry.saplingsAverage"",UID1:""forestry.saplingsAverage""},{Slot:3b,UID0:""forestry.fruitApple"",UID1:""forestry.fruitApple""},{Slot:4b,UID0:""forestry.yieldLowest"",UID1:""forestry.yieldLowest""},{Slot:5b,UID0:""forestry.sappinessLowest"",UID1:""forestry.sappinessLowest""},{Slot:6b,UID0:""forestry.leavesNone"",UID1:""forestry.leavesNone""},{Slot:7b,UID0:""forestry.maturationFaster"",UID1:""forestry.maturationFaster""},{Slot:8b,UID0:""forestry.i1d"",UID1:""forestry.i1d""},{Slot:9b,UID0:""forestry.fireproofFalse"",UID1:""forestry.fireproofFalse""}]}}"
+220,0,Emerald Electron Tube,forestry:thermionic_tubes:9
+220,0,Chili Pepper Seeds,rustic:chili_pepper_seeds:0
+220,0,Tomato Seeds,rustic:tomato_seeds:0
+220,0,Octadic Capacitor,enderio:item_basic_capacitor:2
+218,0,§bGlitch Infused Ingot§r,deepmoblearning:glitch_infused_ingot:0
+214,0,Bound Ingot,tconevo:metal:25
+214,0,Enhanced Ender Ingot,extendedcrafting:material:48
+212,0,Zirconium Ingot,nuclearcraft:ingot:10
+206,0,§bSuperium Ingot,mysticalagriculture:crafting:36
+206,0,Carminite,twilightforest:carminite:0
+204,0,Raw Duck,harvestcraft:duckrawitem:0
+204,0,Charged Draconium Block,draconicevolution:draconium_block:1
+202,0,Dilithium Crystal,libvulpes:productgem:0
+201,0,Ghast Tear,minecraft:ghast_tear:0
+200,0,Empowered Diamatine Crystal,actuallyadditions:item_crystal_empowered:2
+200,0,Ender Amethyst,biomesoplenty:gem:0
+198,0,Pladium Crystal,environmentaltech:pladium_crystal:0
+198,0,§6Intermedium Ingot,mysticalagriculture:crafting:35
+198,0,§aPrudentium Ingot,mysticalagriculture:crafting:34
+198,0,§eInferium Ingot,mysticalagriculture:crafting:33
+198,0,Base Essence Ingot,mysticalagriculture:crafting:32
+198,0,Ender Star,extendedcrafting:material:40
+198,0,§bUnstable Glitch Fragment§r,deepmoblearning:glitch_fragment:0
+198,0,§bCorrupted Glitch Heart§r,deepmoblearning:glitch_heart:0
+198,0,§bTrial Key§r,"deepmoblearning:trial_key:0:{attuned:1b,mobKey:""zombie"",tier:4}"
+198,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""twilightforest:mini_ghast""}"
+198,0,Compressed Infinity Dust Block,enderio:block_infinity:1
+197,0,Pulverized Tin,thermalfoundation:material:65
+192,0,Block of Iron,minecraft:iron_block:0
+192,0,DU Plating,nuclearcraft:part:2
+192,0,Coke Dust,immersiveengineering:material:17
+192,0,Coal Coke,immersiveengineering:material:6
+191,0,Magician Blood Orb,"bloodmagic:blood_orb:0:{orb:""bloodmagic:magician""}"
+185,0,Nether Quartz,minecraft:quartz:0
+184,0,,bloodmagic:soul_gem:0
+181,0,Ectoplasm,randomthings:ingredient:2
+180,0,The Ultimate Ingot,extendedcrafting:material:32
+179,0,String Mesh,exnihilocreatio:item_mesh:1
+177,0,Bean Pod,randomthings:beanpod:0
+177,0,Ball of Moss,tconstruct:materials:18
+177,0,,bloodmagic:soul_gem:1
+177,0,Engineering Processor,appliedenergistics2:material:24
+176,0,Crushed Emerald,actuallyadditions:item_dust:3
+176,0,S'more S'mingot,nuclearcraft:smore:0
+176,0,Firm Tofu,harvestcraft:firmtofuitem:0
+176,0,Cutting Board,harvestcraft:cuttingboarditem:0
+176,0,Emerald Rocky Chunk,jaopca:item_rockychunkemerald:0
+176,0,"Emerald §o""Nugget""","rats:rat_nugget_ore:13:{OreItem:{id:""minecraft:emerald_ore"",Count:1b,Damage:0s},IngotItem:{id:""minecraft:emerald"",Count:1b,Damage:0s}}"
+176,0,Lunar Reactive Dust,extrautils2:ingredients:3
+173.0379746835443,0,Forge Hammer,ic2:forge_hammer:0
+173,0,Copper Plate,thermalfoundation:material:320
+171,0,Reinforced Slate,bloodmagic:slate:1
+167,0,Omnivoir,enderio:block_omni_reservoir:0
+166,0,Diorite,minecraft:stone:3
+164,0,Prismarine Shard,minecraft:prismarine_shard:0
+160,0,Pulsating Crystal,enderio:item_material:14
+154,0,Mana Dust,thermalfoundation:material:1028
+154,0,Cooking Oil,harvestcraft:oliveoilitem:0
+154,0,Heart Dust,scalinghealth:heartdust:0
+152,0,Mending Moss,tconstruct:materials:19
+149,0,Awakened Draconium Ingot,draconicevolution:draconic_ingot:0
+148,0,Kyronite Solar Cell,environmentaltech:solar_cell_kyronite:0
+146.00133333333332,0,Terra,aspect:Terra
+146,0,Raw Fish,minecraft:fish:0
+144,0,Thatch Stairs,quark:thatch_stairs:0
+144,0,Dimensional Shard Nugget,"jaopca:item_nuggetdimensionalshard:0:{display:{Lore:[""§d§l50%""]}}"
+144,0,Native Dilithium Cluster,jaopca:item_clusterdilithium:0
+144,0,"Dilithium Ore §o""Nugget""","rats:rat_nugget_ore:22:{OreItem:{id:""netherendingores:ore_end_modded_1"",Count:1b,Damage:14s},IngotItem:{id:""libvulpes:ore0"",Count:2b,Damage:0s}}"
+144,0,Topaz,biomesoplenty:gem:3
+144,0,Armor Shard,twilightforest:armor_shard:0
+144,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""twilightforest:goblin_knight_lower""}"
+144,0,Oak Boat,minecraft:boat:0
+144,0,Obsidian Plate,ic2:plate:6
+140,0,Mica,environmentaltech:mica:0
+139,0,Fused Quartz,enderio:block_fused_quartz:0
+135,0,Coil,ic2:crafting:5
+133,0,,bloodmagic:soul_gem:2
+131,0,Tin Gear,thermalfoundation:material:257
+129,0,§dPink Plastic Block,mekanism:plasticblock:9
+128,0,Endervoir,enderio:block_reservoir:0
+128,0,Empowered Palis Crystal,actuallyadditions:item_crystal_empowered:1
+128,0,Ebony Substance,psi:material:5
+128,0,Ivory Substance,psi:material:6
+128,0,Low Voltage Solar Array,compactsolars:compact_solar_block:0
+128,0,LV-Transformer,ic2:te:77
+128,0,Speculation Core (4x),threng:material:9
+121,0,Ignis,aspect:Ignis
+120,0,Empowered Void Crystal,actuallyadditions:item_crystal_empowered:3
+120,0,Potentia,aspect:Potentia
+119,95,Reactor Pressure Vessel,ic2:resource:14
+116,0,Advanced Tier Installer,mekanism:tierinstaller:1
+114,0,Brass Plate,thaumcraft:plate:0
+114,0,Imbued Slate,bloodmagic:slate:2
+113,0,Scented Hive,exnihilocreatio:hive:1
+112,0,Empowered Restonia Crystal,actuallyadditions:item_crystal_empowered:0
+112,0,Empowered Emeradic Crystal,actuallyadditions:item_crystal_empowered:4
+112,0,Empowered Enori Crystal,actuallyadditions:item_crystal_empowered:5
+110,0,Elite Plating,nuclearcraft:part:3
+110,0,(Filled) Tin Can,ic2:filled_tin_can:0
+110,0,Demon Will Crystal,bloodmagic:item_demon_crystal:0
+110,0,Pulsating Propolis,forestry:propolis:2
+110,0,Mysterious Comb,forestry:bee_combs:8
+110,0,Ender Hive,forestry:beehives:4
+109,1,Jute,harvestcraft:juteitem:0
+109,0,Gold Nugget,minecraft:gold_nugget:0
+108,0,Rubber,ic2:crafting:0
+108,0,Heart of Diamond,quark:diamond_heart:0
+108,0,Advanced Lithium Ion Battery,nuclearcraft:lithium_ion_battery_advanced:0
+108,0,Photovoltaic Cell,enderio:block_solar_panel:1
+108,0,256k ME Storage Component,aeadditions:storage.component:0
+104,0,Gaia Spirit,botania:manaresource:5
+100,0,Ender Casing,actuallyadditions:block_misc:8
+99,0,Black Iron Slate,extendedcrafting:material:2
+99,0,White Nitor,thaumcraft:nitor_white:0
+98,0,Aethium Crystal,environmentaltech:aethium_crystal:0
+96,0,Sandstone,minecraft:sandstone:0
+96,0,HDPE Pellet,mekanism:polyethene:0
+96,0,Alumentum,thaumcraft:alumentum:0
+96,0,Perditio,aspect:Perditio
+96,0,Advanced Solar Panel,nuclearcraft:solar_panel_advanced:0
+96,0,Advanced Induction Cell,mekanism:basicblock2:3:{tier:1}
+96,0,Crystalline Alloy Ingot,enderio:item_alloy_endergy_ingot:1
+96,0,Sentient Ingot,tconevo:metal:30
+96,0,Grains of Piezallity,enderio:item_material:36
+96,0,Advanced Induction Provider,mekanism:basicblock2:4:{tier:1}
+96,0,Dense Iron Plate,ic2:plate:12
+94,0,Gravel,minecraft:gravel:0
+92,0,Dragon's Breath,minecraft:dragon_breath:0
+92,0,Archmage Blood Orb,"bloodmagic:blood_orb:0:{orb:""bloodmagic:archmage""}"
+91,0,Luminessence,extendedcrafting:material:7
+91,0,Pink Slime,industrialforegoing:pink_slime:0
+90,0,Atomic Alloy,mekanism:atomicalloy:0
+90,0,Charged Creeper Chunk,rats:charged_creeper_chunk:0
+90,0,Stoneburnt,extrautils2:decorativesolid:3
+89.12890625,0,Mana Quartz,botania:quartz:1
+89,0,Binding Reagent,bloodmagic:component:8
+89,0,Plant Oil,bloodmagic:component:22
+88,0,Stone Slab,minecraft:stone_slab:0
+88,0,Experience Pylon,cyclicmagic:exp_pylon:0
+88,0,MoreS'more DoubleS'mingot,nuclearcraft:moresmore:0
+88,0,Emerald Chunk,jaopca:item_chunkemerald:0
+88,0,Basic Cutting Fluid,bloodmagic:cutting_fluid:0
+88,0,Water Bottle,"minecraft:potion:0:{Potion:""minecraft:water""}"
+88,0,Dragon Meal,iceandfire:dragon_meal:0
+88,0,Bituminous Peat,forestry:bituminous_peat:0
+88,0,Lavawood,tconstruct:firewood:0
+84,0,"16,200 µI",rf:enderio:energy
+83,0,Block of Black Iron,extendedcrafting:storage:0
+83,0,Manasteel Ingot,botania:manaresource:0
+81,0,Wyvern Energy Core,draconicevolution:wyvern_energy_core:0
+80,0,Veggie Bait,harvestcraft:veggiebaititem:0
+80,0,Medium Voltage Solar Array,compactsolars:compact_solar_block:1
+80,0,Soul Dust,mysticalagriculture:crafting:28
+80,0,Soulstone,mysticalagriculture:soulstone:0
+80,0,Limestone,chisel:limestone:0
+80,0,Limestone,chisel:limestone2:7
+78,0,Crystaltine Ingot,extendedcrafting:material:24
+76,0,Wyvern Core,draconicevolution:wyvern_core:0
+76,0,Reactor Frame,mekanismgenerators:reactor:1
+73,0,Carbon Brick,advancedrocketry:misc:1
+73,0,Draconic Core,draconicevolution:draconic_core:0
+72,0,Osmiridium Ingot,plustic:osmiridiumingot:0
+72,0,Managlass Pane,botania:managlasspane:0
+72,0,Compressed Crafting Table,avaritia:compressed_crafting_table:0
+72,0,Melodic Alloy Ingot,enderio:item_alloy_endergy_ingot:2
+70.00133333333333,0,Rare Earths,"thaumcraft:nugget:10:{display:{Lore:[""§d§l1%""]}}"
+70,0,Iridium Ingot,thermalfoundation:material:135
+67,0,Pulverized Iron,thermalfoundation:material:0
+66,0,Ultimate Control Circuit,mekanism:controlcircuit:3
+66,0,Bottle of Wine,"rustic:fluid_bottle:0:{Fluid:{FluidName:""wine"",Amount:1000,Tag:{Quality:1.0f}}}"
+66,0,Raw Venison,harvestcraft:venisonrawitem:0
+65,0,Metal Press Mold: Plate,immersiveengineering:mold:0
+65,0,Block of Diamond,minecraft:diamond_block:0
+65,0,Elementium Ingot,botania:manaresource:7
+64,0,Black Iron Ingot,extendedcrafting:material:0
+64,0,Copper Cable,"ic2:cable:0:{type:0b,insulation:1b}"
+64,0,Infinite Water Source,nuclearcraft:water_source:0
+64,0,Empty Frame,nuclearcraft:part:11
+64,0,Mysterious Token Fragment,rats:token_fragment:0
+64,0,Aquamarine,astralsorcery:itemcraftingcomponent:0
+64,0,Pulsating Iron Nugget,enderio:item_alloy_nugget:5
+64,0,Titanium Iridium Alloy Ingot,advancedrocketry:productingot:1
+64,0,Ionite Solar Cell,environmentaltech:solar_cell_ionite:0
+64,0,Solar Panel,mekanismgenerators:solarpanel:0
+64,0,The Ultimate Component,extendedcrafting:material:19
+64,0,Speculation Core (8x),threng:material:10
+63,0,Iridium Reinforced Plate,ic2:crafting:4
+62,0,Salt,harvestcraft:saltitem:0
+62,0,Aurora Block,twilightforest:aurora_block:0
+62,0,Titanium Dust,libvulpes:productdust:7
+60,0,Steel Rod,immersiveengineering:material:2
+58,0,Ground Fish,harvestcraft:groundfishitem:0
+58,0,Raw Beef,minecraft:beef:0
+58,0,Grain Bait,harvestcraft:grainbaititem:0
+58,0,Raw Chicken,minecraft:chicken:0
+58,0,§5Insanium Ingot,mysticalagradditions:insanium:2
+57,0,Energium Dust,ic2:dust:6
+56,0,Crystal Matrix Ingot,avaritia:resource:1
+56,0,Pladium Solar Cell,environmentaltech:solar_cell_pladium:0
+56,0,Demonically Gargantuan Drum,extrautils2:drum:3
+56,0,Steel Sheet,libvulpes:productsheet:6
+55,0,Blutonium Ingot,bigreactors:ingotblutonium:0
+54,0,White Crystal Shard,actuallyadditions:item_crystal_shard:5
+54,0,White Cave Crystal,quark:crystal:0
+54,0,White Stained Glass,minecraft:stained_glass:0
+54,0,Dragon Egg,iceandfire:dragonegg_blue:0
+54,0,,enderio:item_soul_vial:1:*
+54,0,Compressed Sand,extrautils2:compressedsand:0
+52,0,Gear Cast,tconstruct:cast_custom:4
+52,0,Infused Wood,astralsorcery:blockinfusedwood:0
+52,0,Iceball,mctsmelteryio:iceball:0
+52,0,Biome Essence,biomesoplenty:biome_essence:0:{biomeID:6}
+51,0,Psimetal Ingot,psi:material:1
+50,0,Stone Bricks,minecraft:stonebrick:0
+50,0,Bronze Item Casing,ic2:casing:0
+49,1,TNT,minecraft:tnt:0
+49,0,Wither Dust,darkutils:material:0
+49,0,Elite Tier Installer,mekanism:tierinstaller:2
+49,0,HDPE Sheet,mekanism:polyethene:2
+49,0,Arcane Stone,thaumcraft:stone_arcane:0
+48,0,Evil Infused Iron Ingot,extrautils2:ingredients:17
+48,0,Rock Crystal Essence,mysticalagriculture:rock_crystal_essence:0
+48,0,Infused Wood Planks,astralsorcery:blockinfusedwood:1
+48,0,Neutron Reflector,ic2:neutron_reflector:0:{advDmg:0}
+48,0,Draconium Block,draconicevolution:draconium_block:0
+48,0,Dimensional Blend,nuclearcraft:compound:8
+48,0,Rutile Ore,libvulpes:ore0:8
+48,0,Void Metal Ingot,thaumcraft:ingot:1
+48,0,Knightslime Ingot,tconstruct:ingots:3
+48,0,Nether Wart,minecraft:nether_wart:0
+48,0,Causality Collapser,thaumcraft:causality_collapser:0
+48,0,Morphic Resonator,thaumcraft:morphic_resonator:0
+48,0,Vis Resonator,thaumcraft:vis_resonator:0
+48,0,Stellar Alloy Nugget,enderio:item_alloy_endergy_nugget:3
+48,0,Crystalline Capacitor,enderio:item_capacitor_crystalline:0
+48,0,Prismarine Crystals,minecraft:prismarine_crystals:0
+48,0,Block of Steel,thermalfoundation:storage_alloy:0
+48,0,Gold Sheetmetal,immersiveengineering:sheetmetal:10
+46,0,Large Plate Clay Cast,"tconstruct:clay_cast:0:{PartType:""tconstruct:large_plate""}"
+46,0,Paper,minecraft:paper:0
+46,0,Sky Stone,appliedenergistics2:sky_stone_block:0
+46,0,Turf Block,quark:turf:0
+45,1,Raw Rat,rats:raw_rat:0
+45,1,Soybean,harvestcraft:soybeanitem:0
+45,0,Magical Planks,extrautils2:decorativesolidwood:0
+44,0,Diamond Dust,ic2:dust:5
+44,0,Printed Engineering Circuit,appliedenergistics2:material:17
+44,0,Cosmic Meatballs,avaritia:cosmic_meatballs:0
+44,0,FourS'more QuadS'mingot,nuclearcraft:foursmore:0
+44,0,Powdery Comb,forestry:bee_combs:10
+44,0,White Mushroom,harvestcraft:whitemushroomitem:0
+44,0,Soy Sauce,harvestcraft:soysauceitem:0
+44,0,Juicer,harvestcraft:juiceritem:0
+44,0,Spice Leaf,harvestcraft:spiceleafitem:0
+44,0,Baguette,actuallyadditions:item_food:15
+44,0,Pixie Dust,iceandfire:pixie_dust:0
+44,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""iceandfire:if_pixie""}"
+44,0,Ratglove Petals,rats:ratglove_petals:0
+43,0,Treated Wood Planks,immersiveengineering:treated_wood:0
+43,0,Salis Mundus,thaumcraft:salis_mundus:0
+40,0,Dragon Scales,iceandfire:dragonscales_bronze:0
+40,0,Clay Dust,ic2:dust:1
+40,0,Snowball,minecraft:snowball:0
+40,0,Marble,astralsorcery:blockmarble:0
+39,0,Netherrack,minecraft:netherrack:0
+38,0,Anglesite,bigreactors:mineralanglesite:0
+38,0,Hopper,minecraft:hopper:0
+38,0,Mana Diamond,botania:manaresource:2
+37,0,Oak Chest,minecraft:chest:0
+37,0,Fish Trap Bait,harvestcraft:fishtrapbaititem:0
+37,0,Universal Fluid Cell,"ic2:fluid_cell:0:{Fluid:{FluidName:""lava"",Amount:1000}}"
+36,0,Pumpkin,minecraft:pumpkin:0
+36,0,Black Quartz Nugget,"jaopca:item_nuggetquartzblack:0:{display:{Lore:[""§d§l33%""]}}"
+36,0,Copper Cable,"ic2:cable:0:{type:0b,insulation:0b}"
+36,0,Elite Component,extendedcrafting:material:16
+36,0,Black Quartz Slab,actuallyadditions:block_quartz_slab:0
+36,0,Palis Crystal,actuallyadditions:item_crystal:1
+36,0,Basic Lens,advancedrocketry:lens:0
+36,0,DU Lithium Ion Battery,nuclearcraft:lithium_ion_battery_du:0
+36,0,Stone Drum,extrautils2:drum:0
+36,0,Advanced Photovoltaic Cell,enderio:block_solar_panel:2
+36,0,Enlightened Fused Quartz,enderio:block_enlightened_fused_quartz:0
+36,0,§5Block of Insanium Essence,mysticalagradditions:storage:0
+36,0,1024k ME Storage Component,aeadditions:storage.component:1
+36,0,Double Compressed Ender Gravel,additionalcompression:gravelend_compressed:1
+36,0,Double Compressed Nether Gravel,additionalcompression:gravelnether_compressed:1
+35,0,Ludicrite Block,bigreactors:blockludicrite:0
+34,0,Wither Dust Block,darkutils:wither_block:0
+34,0,Osgloglas Block,plustic:osgloglasblock:0
+34,0,Terrestrial Artifact Block,contenttweaker:terrestrial_artifact_block:0
+34,0,Moon Stone,extrautils2:ingredients:5
+34,0,Demonic Slate,bloodmagic:slate:3
+34,0,Pulsating Mesh,forestry:crafting_material:1
+34,0,Titanium Rod,libvulpes:productrod:7
+33,1,Beans,harvestcraft:beanitem:0
+33,0,Aethium,environmentaltech:aethium:0
+33,0,Copper Wire,immersiveengineering:material:20
+33,0,Awakened Core,draconicevolution:awakened_core:0
+32,0,Compressed Diamond,mekanism:compresseddiamond:0
+32,0,Pulverized Nickel,thermalfoundation:material:69
+32,0,Enori Crystal,actuallyadditions:item_crystal:5
+32,0,Tanzanite,biomesoplenty:gem:4
+32,0,Magic Bean,randomthings:beans:2
+32,0,Lesser Magic Bean,randomthings:beans:1
+32,0,Ludicrite Ingot,bigreactors:ingotludicrite:0
+32,0,Block of Tin,thermalfoundation:storage:1
+32,0,DU Solar Panel,nuclearcraft:solar_panel_du:0
+32,0,Soularium Ingot,enderio:item_alloy_ingot:7
+32,0,Vibrant Crystal,enderio:item_material:15
+32,0,Melodic Capacitor,enderio:item_capacitor_melodic:0
+32,0,Block of Silver,thermalfoundation:storage:2
+32,0,Supercold Ice,nuclearcraft:block_ice:0
+32,0,Ice,minecraft:ice:0
+32,0,Manyullyn Nugget,tconstruct:nuggets:2
+32,0,Knightslime Nugget,tconstruct:nuggets:3
+32,0,Enderium Turbine Blade,advgenerators:turbine_blade_enderium:0
+32,0,Speculation Core (16x),threng:material:11
+31,0,Resonant Cell Frame (Full),thermalexpansion:frame:148
+31,0,Mirion Block,plustic:mirionblock:0
+31,0,Basic Machine Casing,ic2:resource:12
+30,0,Benitoite,bigreactors:mineralbenitoite:0
+30,0,Fresh Water,harvestcraft:freshwateritem:0
+30,0,Heavy Engineering Block,immersiveengineering:metal_decoration0:5
+30,0,Block of Cheese,rats:block_of_cheese:0
+29,0,Coal Ore,minecraft:coal_ore:0
+29,0,Bronze Plate,thermalfoundation:material:355
+29,0,Redstone Engineering Block,immersiveengineering:metal_decoration0:3
+29,0,Empowered Void Crystal Block,actuallyadditions:block_crystal_empowered:3
+28,0,Signalum Cell Frame (Full),thermalexpansion:frame:147
+28,0,Pulverized Copper,thermalfoundation:material:64
+28,0,Hardened Desert Myrmex Resin,iceandfire:myrmex_desert_resin_block:0
+28,0,Iron Sheetmetal,immersiveengineering:sheetmetal:9
+28,0,Light Engineering Block,immersiveengineering:metal_decoration0:4
+28,0,Iron Frame,advgenerators:iron_frame:0
+28,0,Iron Rod,immersiveengineering:material:1
+28,0,Dense Lead Plate,ic2:plate:14
+27,0,Marble,chisel:marble2:7
+27,0,Weak Blood Shard,bloodmagic:blood_shard:0
+26,0,The Ultimate Catalyst,extendedcrafting:material:13
+26,0,Crystal Matrix,avaritia:block_resource:2
+26,0,Aluminum Plate,thermalfoundation:material:324
+26,0,Aluminum Brass Ingot,tconstruct:ingots:5
+26,0,Pink Slime Crystal,tconevo:material:1
+26,0,Crystallized Obsidian,cyclicmagic:crystallized_obsidian:0
+26,0,Blood Stone,randomthings:rezstone:0
+26,0,Gem of Ratlantis,rats:gem_of_ratlantis:0
+26,0,Quartzburnt,extrautils2:decorativesolid:7
+25,1,Seaweed,harvestcraft:seaweeditem:0
+25,0,Block of Enderium,thermalfoundation:storage_alloy:7
+25,0,Rotten Flesh,minecraft:rotten_flesh:0
+25,0,Sulfur,thermalfoundation:material:771
+25,0,Inscriber Engineering Press,appliedenergistics2:material:14
+24,20,Ritual Stone,bloodmagic:ritual_stone:0
+24,0,Bone,minecraft:bone:0
+24,0,Brimstone Slab,quark:fire_stone_slab:0
+24,0,Basic Component,extendedcrafting:material:14
+24,0,Refined Obsidian Ingot,mekanism:ingot:0
+24,0,Blue Quartz,extrautils2:decorativesolid:6
+24,0,Wyvern Metal Ingot,tconevo:metal:0
+24,0,MV-Transformer,ic2:te:78
+24,0,Elite Induction Cell,mekanism:basicblock2:3:{tier:2}
+24,0,Elite Induction Provider,mekanism:basicblock2:4:{tier:2}
+24,0,§8Grey Plastic Block,mekanism:plasticblock:8
+24,0,Gray Dye,minecraft:dye:8
+24,0,Pile of Ashes,biomesoplenty:ash:0
+24,0,Ash Block,biomesoplenty:ash_block:0
+24,0,Hardened Enderium Glass,thermalfoundation:glass_alloy:7
+24,0,Enderium Blend,thermalfoundation:material:103
+23,0,Shulker Pearl,darkutils:shulker_pearl:0
+23,0,Fluix Block,appliedenergistics2:fluix_block:0
+23,0,Raw Meat Ingot,tconevo:edible:0
+23,0,Block of Coal Coke,immersiveengineering:stone_decoration:3
+23,0,Chunky Cheese Token,rats:chunky_cheese_token:0
+22,0,Crushed Black Quartz,actuallyadditions:item_dust:7
+22,0,Infinity Catalyst,avaritia:resource:5
+22,0,§cBlock of Supremium,mysticalagriculture:ingot_storage:5
+22,0,Oxidized Ferric Sand,advancedrocketry:hotturf:0
+22,0,Endest Pearl,avaritia:endest_pearl:0
+22,0,Ultimate Stew,avaritia:ultimate_stew:0
+22,0,Emerald Alchemical Ore Dust,jaopca:item_dustalchemerald:0
+22,0,Heart Container,scalinghealth:heartcontainer:0
+22,0,Neutronium Block,avaritia:block_resource:0
+22,0,Demon Will Crystal Cluster,bloodmagic:demon_crystal:0
+22,0,§aAvatar of Ratlantis,rats:idol_of_ratlantis:0
+22,0,Bound Metal Block,tconevo:metal_block:5
+22,0,Firewood,tconstruct:firewood:1
+22,0,Block of Astral Starmetal,jaopca:block_blockastralstarmetal:0
+22,0,Block of Amethyst,biomesoplenty:gem_block:0
+22,0,Block of Enhanced Ender,extendedcrafting:storage:7
+22,0,Block of Evil Infused Iron,extrautils2:simpledecorative:2
+22,0,Honey Comb Block,forestry:bee_combs_0:0
+22,0,Glitch Infused Block,deepmoblearning:infused_ingot_block:0
+22,0,Block of Carminite,twilightforest:block_storage:4
+22,0,Soul Bead,quark:soul_bead:0
+22,0,Double Compressed Infinity Dust Block,enderio:block_infinity:2
+22,0,Spectre Illuminator,randomthings:spectreilluminator:0
+22,0,Pristine Enderman Matter,deepmoblearning:pristine_matter_enderman:0
+22,0,§bTrial Key§r,"deepmoblearning:trial_key:0:{attuned:1b,mobKey:""enderman"",tier:0}"
+22,0,Raw Tofeak,harvestcraft:rawtofeakitem:0
+22,0,Raw Tofabbit,harvestcraft:rawtofabbititem:0
+22,0,Raw Toficken,harvestcraft:rawtofickenitem:0
+22,0,Raw Tofuduck,harvestcraft:rawtofuduckitem:0
+22,0,Raw Tofutton,harvestcraft:rawtofuttonitem:0
+22,0,Bee Grub,harvestcraft:grubitem:0
+22,0,Raw Tofenison,harvestcraft:rawtofenisonitem:0
+22,0,Raw Tofacon,harvestcraft:rawtofaconitem:0
+22,0,Raw Tofurkey,harvestcraft:rawtofurkeyitem:0
+22,0,Ground Turkey,harvestcraft:groundturkeyitem:0
+22,0,Raw Turkey,betteranimalsplus:turkey_raw:0
+22,0,Ground Venison,harvestcraft:groundvenisonitem:0
+22,0,Raw Venison,betteranimalsplus:venisonraw:0
+22,0,Raw Mutton,minecraft:mutton:0
+22,0,Ground Duck,harvestcraft:groundduckitem:0
+22,0,Raw Rabbit,minecraft:rabbit:0
+22,0,Ground Beef,harvestcraft:groundbeefitem:0
+22,0,Ground Chicken,harvestcraft:groundchickenitem:0
+22,0,Ground Mutton,harvestcraft:groundmuttonitem:0
+22,0,Ground Pork,harvestcraft:groundporkitem:0
+22,0,Ground Rabbit,harvestcraft:groundrabbititem:0
+22,0,Raw Prime Steak,animania:raw_prime_steak:0
+22,0,Raw Pheasant,betteranimalsplus:pheasantraw:0
+22,0,Raw Turkey Leg,betteranimalsplus:turkey_leg_raw:0
+22,0,Raw Chevon,animania:raw_chevon:0
+22,0,Raw Frog Legs,animania:raw_frog_legs:0
+22,0,Raw Horse,animania:raw_horse:0
+22,0,Raw Peacock,animania:raw_peacock:0
+22,0,Raw Prime Chevon,animania:raw_prime_chevon:0
+22,0,Raw Prime Chicken,animania:raw_prime_chicken:0
+22,0,Raw Prime Mutton,animania:raw_prime_mutton:0
+22,0,Raw Prime Peacock,animania:raw_prime_peacock:0
+22,0,Raw Prime Pork,animania:raw_prime_pork:0
+22,0,Raw Prime Rabbit,animania:raw_prime_rabbit:0
+22,0,Black Pepper,harvestcraft:blackpepperitem:0
+22,0,Peppercorn,harvestcraft:peppercornitem:0
+22,0,Mortar and Pestle,harvestcraft:mortarandpestleitem:0
+22,0,Shaded Garden,harvestcraft:shadedgarden:0
+22,0,Stone Pressure Plate,minecraft:stone_pressure_plate:0
+22,0,Silken Tofu,harvestcraft:silkentofuitem:0
+22,0,Soggy Garden,harvestcraft:soggygarden:0
+22,0,Dough,actuallyadditions:item_misc:4
+22,0,Potato,minecraft:potato:0
+22,0,Overworldian Matter,deepmoblearning:living_matter_overworldian:0
+22,0,Almond,harvestcraft:almonditem:0
+22,0,Volatus,aspect:Volatus
+22,0,Bow,minecraft:bow:0
+22,0,Wooden Lantern,rustic:lantern_wood:0
+22,0,Empty Heart Container,cyclicmagic:heart_toxic:0
+22,0,Conglomerate Of Life,contenttweaker:conglomerate_of_life:0
+22,0,Siren Tear,iceandfire:siren_tear:0
+22,0,Weather Egg <Rain>,randomthings:weatheregg:1
+22,0,Unstable Ingot,extrautils2:unstableingots:0
+22,0,Greater Tartaric Gem,"bloodmagic:soul_gem:3:{souls:0.0d,demonWillType:""steadfast""}"
+22,0,§bPsionic Rat Brain,rats:psionic_rat_brain:0
+22,0,§2Arcane Technology,rats:arcane_technology:0
+22,0,Ratlantean Automaton Head,rats:marbled_cheese_rat_head:0
+22,0,Feral Rat Claw,rats:feral_rat_claw:0
+22,0,Rat Toga,rats:rat_toga:0
+22,0,Pirate Hat,quark:pirate_hat:0
+22,0,Ratlantean Spirit Flame,rats:ratlantean_flame:0
+22,0,Zombie Brain,thaumcraft:brain:0
+22,0,Cognitio,aspect:Cognitio
+22,0,Rattus,aspect:Rattus
+22,0,Plague Doctorate,rats:plague_doctorate:0
+22,0,Rat Radius Staff,rats:radius_stick:0
+22,0,Ratglove Flower,rats:ratglove_flower:0
+22,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""quark:pirate""}"
+22,0,String Cheese,rats:string_cheese:0
+22,0,Cheese,rats:cheese:0
+22,0,Block of Mana Quartz,botania:quartztypemana:0
+22,0,Pink Slimy Mud,tconevo:earth_material_block:0
+22,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""quark:wraith""}"
+22,0,Ultimate Tier Installer,mekanism:tierinstaller:3
+21,1,Mystical Pink Petal,botania:petal:6
+21,0,Chaotic Core,draconicevolution:chaotic_core:0
+21,0,Blaze Powder,minecraft:blaze_powder:0
+21,0,Sky Stone Block,appliedenergistics2:smooth_sky_stone_block:0
+21,0,Iron Bars,minecraft:iron_bars:0
+21,0,Energy Cell Frame,thermalexpansion:frame:128
+21,0,Glass Lens,astralsorcery:itemcraftingcomponent:3
+21,0,Fluix Dust,appliedenergistics2:material:8
+21,0,Water Bucket,minecraft:water_bucket:0
+20.002666666666666,0,Earth Crystal,thaumcraft:crystal_terra:0
+20,0,Iron Large Plate,"tconstruct:large_plate:0:{Material:""iron""}"
+20,0,Nickel Ingot,thermalfoundation:material:133
+20,0,Resonating Redstone Crystal,extrautils2:ingredients:0
+20,0,Gold Cable,"ic2:cable:2:{type:2b,insulation:0b}"
+20,0,Genetics Processor,gendustry:genetics_processor:0
+20,0,Runed Marble,astralsorcery:blockmarble:6
+20,0,Chiseled Marble,astralsorcery:blockmarble:4
+20,0,Litherite,environmentaltech:litherite:0
+20,0,Ultimate Component,extendedcrafting:material:17
+20,0,Advanced Component,extendedcrafting:material:15
+20,0,Apprentice Blood Orb,"bloodmagic:blood_orb:0:{orb:""bloodmagic:apprentice""}"
+20,0,Aer Vis Crystal,"thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:""victus""}]}"
+20,0,Magnesium Ingot,nuclearcraft:ingot:7
+20,0,Awakened Draconium Block,draconicevolution:draconic_block:0
+20,0,Dragonstone,botania:manaresource:9
+20,0,Ender Crystal,enderio:item_material:16
+20,0,Extraterrestrial Matter,deepmoblearning:living_matter_extraterrestrial:0
+20,0,Blood Tank Tier 1,bloodmagic:blood_tank:0
+19,0,Mana Pearl,botania:manaresource:1
+18,1,Empty Rod,mechanics:empty_rod:0
+18,0,Iridium Neutron Reflector,ic2:iridium_reflector:0
+18,0,Copper Ore,thermalfoundation:ore:0
+18,0,Crushed Diorite,exnihilocreatio:block_diorite_crushed:0
+18,0,Compressed Diorite,contenttweaker:compressed_diorite:0
+18,0,Crushed Andesite,exnihilocreatio:block_andesite_crushed:0
+18,0,Compressed Andesite,contenttweaker:compressed_andesite:0
+18,0,Osmiridium Nugget,plustic:osmiridiumnugget:0
+18,0,Nickel Nugget,"thermalfoundation:material:197:{display:{Lore:[""§d§l50%""]}}"
+18,0,Machine Structure,libvulpes:structuremachine:0
+18,0,Block of Charcoal,thermalfoundation:storage_resource:0
+18,0,Copper Item Casing,ic2:casing:1
+18,0,Iridium Nugget,"thermalfoundation:material:199:{display:{Lore:[""§d§l50%""]}}"
+18,0,Osmium Nugget,mekanism:nugget:1
+18,0,Tiny Dry Rubber,industrialforegoing:tinydryrubber:0
+18,0,Pladium,environmentaltech:pladium:0
+18,0,Mirrored Glass,thaumcraft:mirrored_glass:0
+18,0,Livingrock,botania:livingrock:0
+18,0,White Laser Lens,environmentaltech:laser_lens_colored:0
+18,0,Alumite Ingot,plustic:alumiteingot:0
+18,0,Dense Copper Plate,ic2:plate:10
+18,0,Granite,minecraft:stone:1
+18,0,Dark Steel Ingot,enderio:item_alloy_ingot:6
+18,0,Lormyte Crystal,endreborn:item_lormyte_crystal:0
+18,0,Soul Powder,enderio:item_material:74
+17,0,Compressed End Stone,excompressum:compressed_block:10
+17,0,Uranium-238 Block,nuclearcraft:block_depleted_uranium:0
+17,0,Hardened Cell Frame,thermalexpansion:frame:129
+17,0,Blitz Powder,thermalfoundation:material:2051
+17,0,Basalz Powder,thermalfoundation:material:2053
+17,0,Advanced Gas Tank,mekanism:gastank:0:{tier:1}
+16,0,Oak Wood Slab,minecraft:wooden_slab:0
+16,0,Pulverized Lead,thermalfoundation:material:67
+16,0,Compressed Flint,excompressum:compressed_block:5
+16,0,Diamond Lattice,avaritia:resource:0
+16,0,Crystal Binder,nuclearcraft:compound:1
+16,0,Calcium Sulfate,nuclearcraft:compound:0
+16,0,Blue Castle Rune Brick,twilightforest:castle_rune_brick:1
+16,0,Rhodochrosite,nuclearcraft:gem:0
+16,0,Ruby,biomesoplenty:gem:1
+16,0,Ruby Ore,biomesoplenty:gem_ore:1
+16,0,Uranium Plate,immersiveengineering:metal:35
+16,0,Constantan Blend,thermalfoundation:material:100
+16,0,Native Apatite Cluster,jaopca:item_clusterapatite:0
+16,0,Apatite Ore,forestry:resources:0
+16,0,Spiral Stone Bricks,twilightforest:spiral_bricks:0
+16,0,Survivalist's Shovel,forestry:bronze_shovel:0
+16,0,Uranium-238,nuclearcraft:uranium:8
+16,0,Block of Uranium,immersiveengineering:storage:5
+16,0,Machine Case,teslacorelib:machine_case:0
+16,0,Machine Frame,thermalexpansion:frame:0
+16,0,Fluxed Electrum Plate,redstonearsenal:material:128
+16,0,Bioplastic,nuclearcraft:part:6
+16,0,Invar Blend,thermalfoundation:material:98
+16,0,Aurora Slab,twilightforest:aurora_slab:0
+16,0,Blitz Rod,thermalfoundation:material:2050
+16,0,Basalz Rod,thermalfoundation:material:2052
+16,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""thermalfoundation:basalz""}"
+16,0,Blizz Powder,thermalfoundation:material:2049
+16,0,Permafrost,quark:biome_cobblestone:1
+16,0,Machine Circuitry,modularmachinery:blockcasing:5
+16,0,Reinforced Cell Frame (Full),thermalexpansion:frame:146
+16,0,Signalum Plate,thermalfoundation:material:357
+16,0,Electrum Large Plate,"tconstruct:large_plate:0:{Material:""electrum""}"
+16,0,Terrasteel Nugget,botania:manaresource:18
+16,0,Dimensional Shard,rftools:dimensional_shard:0
+16,0,Dynamic Tank,mekanism:basicblock:9
+16,0,Soot-covered Redstone,deepmoblearning:soot_covered_redstone:0
+16,0,Ionite,environmentaltech:ionite:0
+16,0,The Ultimate Nugget,extendedcrafting:material:33
+16,0,UU-Metal Ingot,tconevo:metal:40
+16,0,Fire Dragonsteel Ingot,iceandfire:dragonsteel_fire_ingot:0
+16,0,Gelid Enderium Ingot,redstonerepository:material:1
+16,0,Essence-Infused Ingot,tconevo:metal:15
+16,0,Osgloglas Ingot,plustic:osgloglasingot:0
+16,0,Redstone Alloy Ingot,enderio:item_alloy_ingot:3
+16,0,Ebony Psimetal Ingot,psi:material:3
+16,0,Ivory Psimetal Ingot,psi:material:4
+16,0,Manganese Ingot,nuclearcraft:ingot:11
+16,0,Glowstone Ingot,mekanism:ingot:3
+16,0,Energium Ingot,tconevo:metal:35
+16,0,Fiery Ingot,twilightforest:fiery_ingot:0
+16,0,Knightmetal Ingot,twilightforest:knightmetal_ingot:0
+16,0,§dSoulium Ingot,mysticalagriculture:crafting:38
+16,0,Pigiron Ingot,tconstruct:ingots:4
+16,0,Conductive Iron Ingot,enderio:item_alloy_ingot:4
+16,0,Ironwood Ingot,twilightforest:ironwood_ingot:0
+16,0,Grains of the End,enderio:item_material:37
+16,0,Block of Topaz,biomesoplenty:gem_block:3
+16,0,Dragon Heart,draconicevolution:dragon_heart:0
+16,0,Ice Dragon Heart,iceandfire:ice_dragon_heart:0
+16,0,Melodic Alloy Block,enderio:block_alloy_endergy:2
+16,0,Fire Dragon Blood,iceandfire:fire_dragon_blood:0
+16,0,Manganese Dust,nuclearcraft:dust:11
+16,0,Void Seed,thaumcraft:void_seed:0
+16,0,Armor Shard Cluster,twilightforest:armor_shard_cluster:0
+16,0,§dSoulium Dust,mysticalagriculture:crafting:29
+16,0,Block of Knightslime,tconstruct:metal:3
+16,0,Conductive Iron Block,enderio:block_alloy:4
+16,0,Raw Ironwood Materials,twilightforest:ironwood_raw:0
+16,0,Liveroot,twilightforest:liveroot:0
+16,0,Liveroots,twilightforest:root:1
+16,0,Advanced Solar Generator,mekanismgenerators:generator:5
+16,0,Superconducting Electromagnet,nuclearcraft:accelerator_electromagnet_idle:0
+16,0,3D Print,opencomputers:print:0
+16,0,Chamelium,opencomputers:material:28
+16,0,Reactor Port,mekanismgenerators:reactor:2
+16,0,2x Ins. Gold Cable,"ic2:cable:2:{type:2b,insulation:2b}"
+16,0,Californium RTG,nuclearcraft:rtg_californium:0
+16,0,Californium-250,nuclearcraft:californium:4
+16,0,Demonic Large Plate,"tconstruct:large_plate:0:{Material:""xu_demonic_metal""}"
+16,0,Dense Obsidian Plate,ic2:plate:15
+16,0,Aethium Solar Cell,environmentaltech:solar_cell_aethium:0
+16,0,Chaotic Metal Nugget,tconevo:metal:12
+16,0,Chaotic Metal Ingot,tconevo:metal:10
+16,0,Draconic Energy Core,draconicevolution:draconic_energy_core:0
+16,0,Dragon Egg Essence,mysticalagradditions:dragon_egg_essence:0
+16,0,Block of Base Essence,mysticalagriculture:ingot_storage:0
+16,0,Speculation Core (32x),threng:material:12
+15,1,Furnace,minecraft:furnace:0
+15,1,Mystical White Petal,botania:petal:0
+15,0,Iron Item Casing,ic2:casing:3
+15,0,Nether Brick,minecraft:netherbrick:0
+15,0,Ender Electron Tube,forestry:thermionic_tubes:12
+15,0,Flopper,flopper:flopper:0
+14,0,Invar Gear,thermalfoundation:material:290
+14,0,Nether Brick,minecraft:nether_brick:0
+14,0,Oak Leaves,minecraft:leaves:0
+14,0,Aluminium Rod,immersiveengineering:material:3
+14,0,Livingwood,botania:livingwood:0
+14,0,Infused Diamond,rftools:infused_diamond:0
+13,0,Bricks,minecraft:brick_block:0
+13,0,Black Dye,biomesoplenty:black_dye:0
+13,0,Cubic Boron Nitride,nuclearcraft:gem:1
+13,0,,ic2:energy_crystal:0
+13,0,Tracking Circuit,advancedrocketry:ic:1
+13,0,Data Storage Unit,advancedrocketry:dataunit:0
+12,1,Wood Pile,forestry:wood_pile:0
+12,0,Brimstone,quark:biome_cobblestone:0
+12,0,User Interface,advancedrocketry:misc:0
+12,0,Iron Mechanical Component,immersiveengineering:material:8
+12,0,Steel Sheetmetal,immersiveengineering:sheetmetal:8
+12,0,Printed Logic Circuit,appliedenergistics2:material:18
+12,0,Aluminium Wire,immersiveengineering:material:22
+12,0,Rich Slag,thermalfoundation:material:865
+12,0,Niter,thermalfoundation:material:772
+12,0,Redstone Gear,extrautils2:ingredients:1
+12,0,Draconium Gear,jaopca:item_geardraconium:0
+12,0,Engraved Infused Wood,astralsorcery:blockinfusedwood:4
+12,0,"Mana Infused §o""Nugget""","rats:rat_nugget_ore:53:{OreItem:{id:""thermalfoundation:ore"",Count:1b,Damage:8s},IngotItem:{id:""thermalfoundation:material"",Count:1b,Damage:136s}}"
+12,0,Pure Nether Quartz Crystal,appliedenergistics2:material:11
+12,0,Nether Quartz Seed,appliedenergistics2:crystal_seed:600:{progress:600}
+12,0,Empowered Restonia Crystal Block,actuallyadditions:block_crystal_empowered:0
+12,0,Empowered Palis Crystal Block,actuallyadditions:block_crystal_empowered:1
+12,0,Empowered Diamatine Crystal Block,actuallyadditions:block_crystal_empowered:2
+12,0,Empowered Emeradic Crystal Block,actuallyadditions:block_crystal_empowered:4
+12,0,Empowered Enori Crystal Block,actuallyadditions:block_crystal_empowered:5
+12,0,Thick Neutron Reflector,ic2:thick_neutron_reflector:0:{advDmg:0}
+12,0,Resonating Gem,astralsorcery:itemcraftingcomponent:4
+12,0,Pure Fluix Crystal,appliedenergistics2:material:12
+12,0,High Voltage Solar Array,compactsolars:compact_solar_block:2
+12,0,Pellets of RTG Fuel,ic2:nuclear:10
+12,0,Lens,advancedrocketry:blocklens:0
+12,0,Elite Lithium Ion Battery,nuclearcraft:lithium_ion_battery_elite:0
+12,0,Black Hole Tank,"industrialforegoing:black_hole_tank:0:{FluidName:""water"",Amount:2147483647}"
+12,0,Prescient Crystal,enderio:item_material:19
+12,0,,botania:blackholetalisman:0
+12,0,Ender Air Bottle,botania:manaresource:15
+12,0,§bEnderman Data Model§r,deepmoblearning:data_model_enderman:0:{tier:1}
+12,0,Polymer Clay,deepmoblearning:polymer_clay:0
+12,0,Blank Data Model,deepmoblearning:data_model_blank:0
+12,0,Iron Drum,extrautils2:drum:1
+12,0,Xorcite Shard,endreborn:death_essence:0
+12,0,Vibrant Photovoltaic Cell,enderio:block_solar_panel:3
+12,0,Dark Fused Quartz,enderio:block_dark_fused_quartz:0
+12,0,Dragon Scale,mysticalagradditions:stuff:3
+12,0,4096k ME Storage Component,aeadditions:storage.component:2
+12,0,Resonant Cell Frame (Empty),thermalexpansion:frame:132
+12,0,Enderium Gear,thermalfoundation:material:295
+12,0,Structure Frame Tier 1,environmentaltech:structure_frame_1:0
+12,0,Dense Steel Plate,ic2:plate:16
+11,1,Runic Altar,botania:runealtar:0
+11,0,Crystaltine Component,extendedcrafting:material:18
+11,0,Copper Gear,thermalfoundation:material:256
+11,0,Snow,minecraft:snow:0
+11,0,Magical Apple,extrautils2:magicapple:0
+11,0,Control Circuit Board,advancedrocketry:ic:3
+11,0,Impregnated Stick,forestry:oak_stick:0
+11,0,Blue Peacock Feather,animania:blue_peacock_feather:0
+11,0,Blaze Rod,minecraft:blaze_rod:0
+10,1,Mystical Light Gray Petal,botania:petal:8
+10,1,Mystical Lime Petal,botania:petal:5
+10,0,Bronze Gear,thermalfoundation:material:291
+10,0,Compressed Cobblestone,extrautils2:compressedcobblestone:0
+10,0,Polished Stone,extrautils2:decorativesolid:2
+10,0,Redstone-Iron Wiring,advgenerators:iron_wiring:0
+10,0,Iron Tubing,advgenerators:iron_tubing:0
+10,0,Diamond Nugget,"thermalfoundation:material:16:{display:{Lore:[""§d§l50%""]}}"
+10,0,HSLA Steel Ingot,nuclearcraft:alloy:15
+10,0,Polished Andesite,minecraft:stone:6
+10,0,Invar Plate,thermalfoundation:material:354
+10,0,Fluix Steel Ingot,threng:material:0
+10,0,Marble Pillar,astralsorcery:blockmarble:2
+10,0,Modularium Alloy,modularmachinery:itemmodularium:0
+10,0,Rosin,thermalfoundation:material:832
+9,1,Chemical Reactor,nuclearcraft:chemical_reactor_idle:0
+9,1,Advanced Crafting Table,extendedcrafting:table_advanced:0
+9,1,Nuclear Reactor,ic2:te:22
+9,6,Reactor Chamber,ic2:te:24
+9,0,Double Compressed Crafting Table,avaritia:double_compressed_crafting_table:0
+9,0,Diamond Ore,minecraft:diamond_ore:0
+9,0,Bowl,minecraft:bowl:0
+9,0,Oak Wood,minecraft:log:0
+9,0,Basic Catalyst,extendedcrafting:material:8
+9,0,Red Crystal Shard,actuallyadditions:item_crystal_shard:0
+9,0,Red Cave Crystal,quark:crystal:1
+9,0,Red Stained Glass,minecraft:stained_glass:14
+9,0,Rose Red,minecraft:dye:1
+9,0,Bromeliad,biomesoplenty:flower_0:11
+9,0,Advanced Gas Tank,"mekanism:gastank:0:{tier:0,mekData:{stored:{gasName:""liquidosmium"",amount:64000}}}"
+9,0,Pyrotheum Dust,thermalfoundation:material:1024
+9,0,Rat Upgrade Fragment,rats:rat_upgrade_fragment:0
+9,0,Rune of Water,botania:rune:0
+9,0,Nethercotta,enderio:item_material:72
+9,0,Draconic Metal Ingot,tconevo:metal:5
+8.022,0,Carving Knife,animania:carving_knife:0
+8,1,Mystical Yellow Petal,botania:petal:4
+8,0,Speculative Processor,threng:material:14
+8,0,Black Hole Unit,industrialforegoing:black_hole_unit:0
+8,0,Draconium Crystal,jaopca:item_crystaldraconium:0
+8,0,Block of Black Iron,extendedcrafting:trimmed:4
+8,0,Pickaxe Head Clay Cast,"tconstruct:clay_cast:0:{PartType:""tconstruct:pick_head""}"
+8,0,Certus Quartz Seed,appliedenergistics2:crystal_seed:0:{progress:0}
+8,0,Certus Quartz Ore,appliedenergistics2:quartz_ore:0
+8,0,Black Quartz Ore,actuallyadditions:block_misc:3
+8,0,Dried Brick,tconstruct:materials:2
+8,0,Scorched Brick,tcomplement:materials:1
+8,0,Dragonforge Fire Brick,iceandfire:dragonforge_fire_brick:0
+8,0,LV Wire Coil,immersiveengineering:wirecoil:0
+8,0,Grass Block,minecraft:grass:0
+8,0,Kiln Brick,immersiveengineering:stone_decoration:10
+8,0,Tin Plate,thermalfoundation:material:321
+8,0,Reinforced Stone,ic2:resource:11
+8,0,Redstone Reception Coil,thermalfoundation:material:513
+8,0,Plastic,industrialforegoing:plastic:0
+8,0,Refined Obsidian Dust,mekanism:otherdust:5
+8,0,Compact Infinite Water Source,nuclearcraft:water_source_compact:0
+8,0,Mysterious Token Chunk,rats:token_piece:0
+8,0,Rich Phyto-Gro,thermalfoundation:fertilizer:1
+8,0,Sawdust,thermalfoundation:material:800
+8,0,Arrow,minecraft:arrow:0
+8,0,Aerotheum Dust,thermalfoundation:material:1026
+8,0,Petrotheum Dust,thermalfoundation:material:1027
+8,0,Cryotheum Dust,thermalfoundation:material:1025
+8,0,Drop of Evil,extrautils2:ingredients:10
+8,0,Shulker Shell,minecraft:shulker_shell:0
+8,0,Connector,environmentaltech:connector:0
+8,0,Biome Essence Ore,biomesoplenty:biome_block:0
+8,0,Tool Casing,thermalfoundation:material:640
+8,0,Silver Gear,thermalfoundation:material:258
+8,0,Blank Slate,bloodmagic:slate:0
+8,0,Celestial Crystal Shard,biomesoplenty:crystal_shard:0
+8,0,Fluix Seed,appliedenergistics2:crystal_seed:1200:{progress:1200}
+8,0,Draconium Infused Obsidian,draconicevolution:infused_obsidian:0
+8,0,Fusion Core,nuclearcraft:fusion_core:0
+8,0,Terrestrial Artifact,biomesoplenty:terrestrial_artifact:0
+8,0,Advanced Gas Tank,mekanism:gastank:0:{tier:3}
+8,0,Superconducting Supercooler,nuclearcraft:electromagnet_supercooler_idle:0
+8,0,Gas Intake,advancedrocketry:intake:0
+8,0,Advanced Gas Tank,mekanism:gastank:0:{tier:2}
+8,0,HV-Transformer,ic2:te:79
+8,0,Advanced RE-Battery,ic2:advanced_re_battery:0:{charge:100000.0d}
+8,0,Iridium Tank,ic2:te:134
+8,0,Slot Size Upgrade 4,mctsmelteryio:upgrade:4
+8,0,Stellar Alloy Ingot,enderio:item_alloy_endergy_ingot:3
+8,0,Grains of Prescience,enderio:item_material:34
+8,0,Cobalt Nugget,"tconstruct:nuggets:0:{display:{Lore:[""§d§l33%""]}}"
+8,0,Slot Size Upgrade 3,mctsmelteryio:upgrade:3
+8,0,Slot Size Upgrade 2,mctsmelteryio:upgrade:2
+8,0,Slot Size Upgrade 1,mctsmelteryio:upgrade:1
+8,0,Base Upgrade,mctsmelteryio:upgrade:0
+8,0,Universal Fluid Cell,"ic2:fluid_cell:0:{Fluid:{FluidName:""vapor_of_levity"",Amount:1000}}"
+8,0,Resonant Clathrate,thermalfoundation:material:895
+8,0,Monopropellant Fuel Tank,advancedrocketry:fueltank:0
+8,0,Steel Fan,libvulpes:productfan:6
+8,0,Klein Bottle,extrautils2:klein:0
+8,0,Lumium Plate,thermalfoundation:material:358
+8,0,Reinforcement,tconstruct:materials:14
+8,0,Xorcite Cluster,endreborn:dragon_essence:0
+8,0,Gold Item Casing,ic2:casing:2
+8,0,Speculation Core (64x),threng:material:13
+8,0,Massively Parallel Processor,threng:material:6
+8,0,Resonating Crystal,threng:material:5
+8,0,Simple Arcane Mechanism,thaumcraft:mechanism_simple:0
+8,0,Thaumium Plate,thaumcraft:plate:2
+8,0,Ultimate Bin,mekanism:basicblock:6:{tier:3}
+7,0,Advanced Circuit,advancedrocketry:ic:2
+7,0,Sturdy Casing,forestry:sturdy_machine:0
+7,0,Aer Vis Crystal,"thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:""perditio""}]}"
+7,0,Black Quartz Large Plate,"tconstruct:large_plate:0:{Material:""black_quartz""}"
+7,0,Gold Gear,thermalfoundation:material:25
+7,0,Advanced Alloy,ic2:crafting:3
+7,0,Inscriber Logic Press,appliedenergistics2:material:15
+7,0,Machine Chassis,nuclearcraft:part:10
+7,0,Thaumium Block,thaumcraft:metal_thaumium:0
+7,0,Inscriber Silicon Press,appliedenergistics2:material:19
+6,0,Stone Gear,thermalfoundation:material:23
+6,0,Sticky Resin,ic2:misc_resource:4
+6,0,Reinforced Dirt Brick,sonarcore:reinforceddirtbrick:0
+6,0,Yellow Stained Glass,minecraft:stained_glass:4
+6,0,Floral Yellow Powder,botania:dye:4
+6,0,Sky Stone Block Slabs,appliedenergistics2:smooth_sky_stone_slab:0
+6,0,Desert Myrmex Resin Glass,iceandfire:myrmex_desert_resin_glass:0
+6,0,Item IO Circuit Board,advancedrocketry:ic:4
+6,0,Golden Electron Tube,forestry:thermionic_tubes:4
+6,0,Steel Scaffolding,immersiveengineering:metal_decoration1:1
+6,0,Carbon Plate,ic2:crafting:15
+6,0,Dense Gold Plate,ic2:plate:11
+6,0,Flux Crystal,redstonearsenal:material:160
+6,0,Quartz Slab,minecraft:stone_slab:7
+6,0,Chocolate Cake,actuallyadditions:item_food:8
+6,0,Fresh Milk,harvestcraft:freshmilkitem:0
+6,0,Brown Carpet,minecraft:carpet:12
+6,0,Milk,minecraft:milk_bucket:0
+6,0,Basic Energy Relay Crystal,draconicevolution:energy_crystal:0
+6,0,Lens,astralsorcery:blocklens:0
+6,0,Cyanite Ingot,bigreactors:ingotcyanite:0
+6,0,Rock Crystal Ore,astralsorcery:blockcustomore:0
+6,0,Fluix-Plated Iron Ingot,threng:material:2
+6,0,Nether Quartz Ore,minecraft:quartz_ore:0
+6,0,Pulverized Mana Infused Metal,thermalfoundation:material:72
+6,0,Enderium Nugget,thermalfoundation:material:231
+6,0,Manasteel Nugget,botania:manaresource:17
+6,0,Rune of Earth,botania:rune:2
+6,0,Arcane Stone Slab,thaumcraft:slab_arcane_stone:0
+6,0,Dreamwood Planks,botania:dreamwood:1
+6,0,Dreamwood,botania:dreamwood:0
+6,0,Ultimate Induction Cell,mekanism:basicblock2:3:{tier:3}
+6,0,Ultimate Induction Provider,mekanism:basicblock2:4:{tier:3}
+6,0,Cobalt Ore Dust,exnihilocreatio:item_ore_cobalt:2
+6,0,1k ME Fluid Storage Component,appliedenergistics2:material:54
+6,0,Double Compressed Sand,extrautils2:compressedsand:1
+6,0,Illumination Powder,astralsorcery:itemusabledust:0
+6,0,Chaos Shard,draconicevolution:chaos_shard:0
+5,1,Crafting Core,extendedcrafting:crafting_core:0
+5,1,,forestry:chipsets:3
+5,1,Empowerer,actuallyadditions:block_empowerer:0
+5,1,Basic Crafting Table,extendedcrafting:table_basic:0
+5,1,Fusion Crafting Core,draconicevolution:fusion_crafting_core:0
+5,1,Farmland,minecraft:farmland:0
+5,0,Book,minecraft:book:0
+5,0,Flint Stiffened Mesh,exnihilocreatio:item_mesh:2
+5,0,Copper Coil Block,immersiveengineering:metal_decoration0:0
+5,0,Steel Gear,thermalfoundation:material:288
+5,0,Silicon Wafer,advancedrocketry:wafer:0
+5,0,Constantan Gear,thermalfoundation:material:292
+5,0,Silver Singularity,extendedcrafting:singularity:22
+5,0,Aluminum Singularity,extendedcrafting:singularity:16
+5,0,Black Quartz Singularity,extendedcrafting:singularity_custom:102
+5,0,Gold Singularity,extendedcrafting:singularity:5
+5,0,Thermal Evaporation Block,mekanism:basicblock2:0
+5,0,Soot-covered Plate,deepmoblearning:soot_covered_plate:0
+5,0,Solar Array Controller Tier 5,environmentaltech:solar_cont_5:0
+5,0,Enderman Head,enderio:block_enderman_skull:0
+5,0,Colored Lens,astralsorcery:itemcoloredlens:6
+5,0,Draft of Angelus,bloodmagic:points_upgrade:0
+4.001818181818182,0,White Wool,minecraft:wool:0
+4,1,Carpenter,forestry:carpenter:0
+4,1,Petal Apothecary,botania:altar:0
+4,1,Mystical Light Blue Petal,botania:petal:3
+4,0,Creative Essence,mysticalagradditions:stuff:69
+4,0,16384k ME Storage Component,aeadditions:storage.component:3
+4,0,Crafty Crate,botania:opencrate:1
+4,0,Pedestal,extendedcrafting:pedestal:0
+4,0,Plague Metal Large Plate,"tconstruct:large_plate:0:{Material:""plague_metal""}"
+4,0,Certus Quartz Crystal,appliedenergistics2:material:0
+4,0,Bronze Blend,thermalfoundation:material:99
+4,0,Tin Ore,thermalfoundation:ore:1
+4,0,Redstone Servo,thermalfoundation:material:512
+4,0,Heavy Mix Lump,mechanics:heavy_mesh:0
+4,0,Bitumen,thermalfoundation:material:892
+4,0,Oil Shale,thermalfoundation:ore_fluid:1
+4,0,Tough Tool Rod,"tconstruct:tough_tool_rod:0:{Material:""wood""}"
+4,0,Halitosis Generator,"extrautils2:machine:0:{Type:""extrautils2:generator_survival""}"
+4,0,Wildberries,rustic:wildberries:0
+4,0,Consecrated Soil,tconstruct:soil:4
+4,0,Graveyard Soil,tconstruct:soil:3
+4,0,Block of Flesh,thaumcraft:flesh_block:0
+4,0,Single Compressed Fish,additionalcompression:meatfish_compressed:0
+4,0,Single Compressed Beef,additionalcompression:meatbeef_compressed:0
+4,0,Single Compressed Porkchop,additionalcompression:meatporkchop_compressed:0
+4,0,Single Compressed Chicken,additionalcompression:meatchicken_compressed:0
+4,0,Magical Wood,extrautils2:decorativesolidwood:1
+4,0,Sky Stone Slabs,appliedenergistics2:sky_stone_slab:0
+4,0,Cultivated Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCultivated"",UID1:""forestry.speciesCultivated""},{Slot:1b,UID0:""forestry.speedFast"",UID1:""forestry.speedFast""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+4,0,Meadows Hive,forestry:beehives:1
+4,0,Vacuum Tube,immersiveengineering:material:26
+4,0,Engineer's Blueprint,"immersiveengineering:blueprint:0:{blueprint:""components""}"
+4,0,Grass Path,minecraft:grass_path:0
+4,0,Shaft (Iron),ic2:crafting:29
+4,0,Double Compressed Charcoal,additionalcompression:charcoal_compressed:1
+4,0,Tin Electron Tube,forestry:thermionic_tubes:1
+4,0,Aluminium Scaffolding,immersiveengineering:metal_decoration1:5
+4,0,Advanced Machine Casing,ic2:resource:13
+4,0,Raw Carbon Fibre,ic2:crafting:13
+4,0,Charged Certus Quartz Crystal,appliedenergistics2:material:1
+4,0,Charged Certus Quartz Ore,appliedenergistics2:charged_quartz_ore:0
+4,0,Dry Rubber,industrialforegoing:dryrubber:0
+4,0,Block of Lead,thermalfoundation:storage:3
+4,0,Iron Gear,thermalfoundation:material:24
+4,0,Electric Motor,ic2:crafting:6
+4,0,Basic Coil,actuallyadditions:item_misc:7
+4,0,Sugar Canes,minecraft:reeds:0
+4,0,Floral Pink Powder,botania:dye:6
+4,0,Linear Actuator,nuclearcraft:part:9
+4,0,Zirconium Dust,nuclearcraft:dust:10
+4,0,Fluxed Phyto-Gro,thermalfoundation:fertilizer:2
+4,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""thermalfoundation:blitz""}"
+4,0,Precious Emerald,randomthings:ingredient:9
+4,0,Upgrade Speed (Magical),extrautils2:ingredients:15
+4,0,Upgrade Speed,extrautils2:ingredients:6
+4,0,Instrumentum,aspect:Instrumentum
+4,0,Wooden Shovel,minecraft:wooden_shovel:0
+4,0,Enchanted Fabric,thaumcraft:fabric:0
+4,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""minecraft:shulker""}"
+4,0,Block of Manasteel,botania:storage:0
+4,0,Advanced Circuit Plate,advancedrocketry:itemcircuitplate:1
+4,0,Silicon Boule,libvulpes:productboule:3
+4,0,Ultimate Catalyst,extendedcrafting:material:11
+4,0,Advanced Catalyst,extendedcrafting:material:9
+4,0,Elite Catalyst,extendedcrafting:material:10
+4,0,Signalum Cell Frame (Empty),thermalexpansion:frame:131
+4,0,Electrum Gear,thermalfoundation:material:289
+4,0,Cinnabar,thermalfoundation:material:866
+4,0,Reinforced Cell Frame (Empty),thermalexpansion:frame:130
+4,0,Mana Infused String,botania:manaresource:16
+4,0,Glimmering Livingwood,botania:livingwood:5
+4,0,The Ultimate Singularity,extendedcrafting:singularity_ultimate:0
+4,0,Enderium Singularity,extendedcrafting:singularity:50
+4,0,Manyullyn Singularity,extendedcrafting:singularity:66
+4,0,Fluxed Electrum Singularity,extendedcrafting:singularity_custom:106
+4,0,Magnesium Diboride Alloy Singularity,extendedcrafting:singularity_custom:104
+4,0,Thorium Singularity,extendedcrafting:singularity_custom:105
+4,0,Mithril Singularity,extendedcrafting:singularity:29
+4,0,Fluix Singularity,extendedcrafting:singularity_custom:107
+4,0,Lumium Singularity,extendedcrafting:singularity:49
+4,0,Ardite Singularity,extendedcrafting:singularity:64
+4,0,Platinum Singularity,extendedcrafting:singularity:34
+4,0,Lead Singularity,extendedcrafting:singularity:23
+4,0,Uranium Singularity,extendedcrafting:singularity:32
+4,0,Experience Singularity,extendedcrafting:singularity_custom:101
+4,0,Electrum Singularity,extendedcrafting:singularity:27
+4,0,Constantan Singularity,extendedcrafting:singularity:26
+4,0,Invar Singularity,extendedcrafting:singularity:28
+4,0,Steel Singularity,extendedcrafting:singularity:24
+4,0,Bronze Singularity,extendedcrafting:singularity:19
+4,0,Hard Carbon Alloy Singularity,extendedcrafting:singularity_custom:103
+4,0,Cobalt Singularity,extendedcrafting:singularity:65
+4,0,Signalum Singularity,extendedcrafting:singularity:48
+4,0,Quartz Singularity,extendedcrafting:singularity_custom:100
+4,0,Dynamic Valve,mekanism:basicblock:11
+4,0,Arcane Stone Brick,thaumcraft:stone_arcane_brick:0
+4,0,Reactor Controller,mekanismgenerators:reactor:0
+4,0,Solar Array Controller Tier 4,environmentaltech:solar_cont_4:0
+4,0,Titanium Aluminide Plate,advancedrocketry:productplate:0
+4,0,Titanium Aluminide Ingot,advancedrocketry:productingot:0
+4,0,Dilithium Dust,libvulpes:productdust:0
+4,0,Native Platinum Cluster,jaopca:item_clusterplatinum:0
+4,0,Platinum Ore,thermalfoundation:ore:6
+4,0,Nether Platinum Ore,netherendingores:ore_nether_modded_1:6
+4,0,Solar Array Controller Tier 3,environmentaltech:solar_cont_3:0
+4,0,Solar Array Controller Tier 2,environmentaltech:solar_cont_2:0
+4,0,Solar Array Controller Tier 1,environmentaltech:solar_cont_1:0
+4,0,Palis Crystal Block,actuallyadditions:block_crystal:1
+4,0,Golden Apple,minecraft:golden_apple:0
+4,0,Block of Crystaltine,extendedcrafting:storage:3
+4,0,Ender Star,actuallyadditions:item_misc:19
+4,0,Osmiridium Block,plustic:osmiridiumblock:0
+4,0,Elite Voltaic Pile,nuclearcraft:voltaic_pile_elite:0
+4,0,DU Voltaic Pile,nuclearcraft:voltaic_pile_du:0
+4,0,Advanced Voltaic Pile,nuclearcraft:voltaic_pile_advanced:0
+4,0,Basic Voltaic Pile,nuclearcraft:voltaic_pile_basic:0
+4,0,Stellar Capacitor,enderio:item_capacitor_stellar:0
+4,0,§fWhite Glow Panel,mekanism:glowpanel:15
+4,0,Enderium Turbine,advgenerators:turbine_enderium:0
+4,0,Gas Charge Pad,advancedrocketry:oxygencharger:0
+4,0,Reinforced Large Drum,extrautils2:drum:2
+4,0,Blood Tank Tier 10,bloodmagic:blood_tank:9
+4,0,Enderium Turbine Rotor,advgenerators:turbine_rotor_enderium:0
+4,0,Resonant End Stone,"thermalfoundation:ore_fluid:4:{display:{Lore:[""§8Chance: §b100""]}}"
+4,0,Asteroid Chip,"advancedrocketry:asteroidchip:0:{display:{Lore:[""§8Distance: §b64.0"",""§8Mass: §b75.0"",""§8Mass variability: §b0.7"",""§8Probability: §b5.0"",""§8Richness: §b1.0"",""§8Richness variability: §b0.5""],Name:""§6Resonant End Stone asteroid""}}"
+4,0,Enderium Large Plate,"tconstruct:large_plate:0:{Material:""enderium""}"
+4,0,Blood Tank Tier 9,bloodmagic:blood_tank:8
+4,0,Blood Tank Tier 8,bloodmagic:blood_tank:7
+4,0,Blood Tank Tier 7,bloodmagic:blood_tank:6
+4,0,Blood Tank Tier 6,bloodmagic:blood_tank:5
+4,0,Blood Tank Tier 5,bloodmagic:blood_tank:4
+4,0,Blood Tank Tier 4,bloodmagic:blood_tank:3
+4,0,Blood Tank Tier 3,bloodmagic:blood_tank:2
+4,0,Blood Tank Tier 2,bloodmagic:blood_tank:1
+4,0,§5Block of Insanium,mysticalagradditions:storage:1
+4,0,Emerald Essence,mysticalagriculture:emerald_essence:0
+4,0,Rune of Capacity,bloodmagic:blood_rune:6
+4,0,§bBlock of Superium Essence,mysticalagriculture:storage:3
+4,0,Astral Starmetal Essence,mysticalcreations:astral_starmetal_essence:0
+4,0,Simple Lengthening Catalyst,bloodmagic:component:28
+4,0,Pink Coral,biomesoplenty:coral:0
+4,0,Prismarine,minecraft:prismarine:0
+4,0,Rune of Winter,botania:rune:7
+4,0,Salt Block,mekanism:saltblock:0
+4,0,Crushed Sky Stone,exnihilocreatio:block_skystone_crushed:0
+4,0,Compressed Skystone,contenttweaker:compressed_skystone:0
+4,0,Anglesite Ore,bigreactors:oreanglesite:0
+4,0,Sentient Ender,enderio:item_material:44
+4,0,Weather Crystal,enderio:item_material:18
+4,0,Enticing Crystal,enderio:item_material:17
+4,0,Quantum Entangled Singularity,appliedenergistics2:material:48
+4,0,Destabilized Clathrate,thermalfoundation:material:893
+4,0,Energized Clathrate,thermalfoundation:material:894
+4,0,Triple Compressed Ender Gravel,additionalcompression:gravelend_compressed:2
+4,0,Ender Resonator,enderio:item_material:43
+4,0,Singularity,appliedenergistics2:material:47
+4,0,Destabilized Redstone Ore,"thermalfoundation:ore_fluid:2:{display:{Lore:[""§8Chance: §b100""]}}"
+4,0,Asteroid Chip,"advancedrocketry:asteroidchip:0:{display:{Lore:[""§8Distance: §b64.0"",""§8Mass: §b75.0"",""§8Mass variability: §b0.7"",""§8Probability: §b5.0"",""§8Richness: §b1.0"",""§8Richness variability: §b0.5""],Name:""§6Destabilized Redstone asteroid""}}"
+4,0,Energized Netherrack,"thermalfoundation:ore_fluid:3:{display:{Lore:[""§8Chance: §b100""]}}"
+4,0,Asteroid Chip,"advancedrocketry:asteroidchip:0:{display:{Lore:[""§8Distance: §b64.0"",""§8Mass: §b75.0"",""§8Mass variability: §b0.7"",""§8Probability: §b5.0"",""§8Richness: §b1.0"",""§8Richness variability: §b0.5""],Name:""§6Energized Netherrack asteroid""}}"
+4,0,Benitoite Ore,bigreactors:orebenitoite:0
+4,0,Ilium Gem,astralsorcery:itemperkgem:1
+4,0,Pixie Dust,botania:manaresource:8
+4,0,Natura Pylon,botania:pylon:1
+4,0,Soulstone,cyclicmagic:soulstone:0
+4,0,Acceleration Rune,bloodmagic:blood_rune:9
+4,0,Charging Rune,bloodmagic:blood_rune:10
+4,0,Ethereal Slate,bloodmagic:slate:4
+4,0,Triple Compressed Nether Gravel,additionalcompression:gravelnether_compressed:2
+4,0,Complex Arcane Mechanism,thaumcraft:mechanism_complex:0
+4,0,Gem Crystal Cluster,astralsorcery:blockgemcrystals:3
+4,0,Mana Pylon,botania:pylon:0
+4,0,Ender Orb Translocator,cyclicmagic:ender_pearl_mounted:0
+4,0,Master Blood Orb,"bloodmagic:blood_orb:0:{orb:""bloodmagic:master""}"
+4,0,Drill Speed Augment II,actuallyadditions:item_drill_upgrade_speed_ii:0
+3.09979248046875,0,§eInferium Infusion Crystal,matc:inferiumcrystal:0
+3,1,Elite Crafting Table,extendedcrafting:table_elite:0
+3,1,Mystical Green Petal,botania:petal:13
+3,1,Crystaltine Catalyst,extendedcrafting:material:12
+3,1,Barley,harvestcraft:barleyitem:0
+3,0,Wooden Gear,thermalfoundation:material:22
+3,0,Heat Conductor,ic2:crafting:7
+3,0,Giant Log,twilightforest:giant_log:0
+3,0,Entropy Crystal,thaumcraft:crystal_perditio:0
+3,0,Treated Stick,immersiveengineering:material:0
+3,0,Refined Circuit Board,forestry:chipsets:2
+3,0,Enhanced Circuit Board,forestry:chipsets:1
+3,0,Common Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCommon"",UID1:""forestry.speciesCommon""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+3,0,Item Frame,minecraft:item_frame:0
+3,0,Nickel Plate,thermalfoundation:material:325
+3,0,Redstone Repeater,minecraft:repeater:0
+3,0,Circuit Board,immersiveengineering:material:27
+3,0,Oak Door,minecraft:wooden_door:0
+3,0,Engineer's Blueprint,"immersiveengineering:blueprint:0:{blueprint:""molds""}"
+3,0,Ethetic Green Block,actuallyadditions:block_testifi_bucks_green_wall:0
+3,0,Ethetic Quartz,actuallyadditions:block_testifi_bucks_white_wall:0
+3,0,Advanced Coil,actuallyadditions:item_misc:8
+3,0,Chiseled Quartz Block,minecraft:quartz_block:1
+3,0,Servomechanism,nuclearcraft:part:7
+3,0,Electric Motor,nuclearcraft:part:8
+3,0,Rat Upgrade: Basic,rats:rat_upgrade_basic:0
+3,0,Pressed Wax,harvestcraft:beeswaxitem:0
+3,0,Waxcomb,harvestcraft:waxcombitem:0
+3,0,Floral Light Blue Powder,botania:dye:3
+3,0,Slimeball,tconstruct:edible:4
+3,0,Essence,endreborn:item_end_essence:0
+3,0,Titanium Gear,libvulpes:productgear:7
+2,1,Smeltery Controller,tconstruct:smeltery_controller:0
+2,1,Inscriber,appliedenergistics2:inscriber:0
+2,1,Crystallizer,advancedrocketry:crystallizer:0
+2,1,Mystical Gray Petal,botania:petal:7
+2,1,Mystical Red Petal,botania:petal:14
+2,1,Matter Condenser,appliedenergistics2:condenser:0
+2,0,Infinity Ingot,avaritia:resource:6
+2,0,Advanced Gas Tank,mekanism:gastank:0:{tier:4}
+2,0,Draconic Reactor Core,draconicevolution:reactor_core:0
+2,0,Woven Cotton,harvestcraft:wovencottonitem:0
+2,0,Reinforced Dirt,sonarcore:reinforceddirtblock:0
+2,0,Bricks Slab,minecraft:stone_slab:4
+2,0,Chorus Glass,integratedterminals:chorus_glass:0
+2,0,Cauldron,minecraft:cauldron:0
+2,0,White Sand,biomesoplenty:white_sand:0
+2,0,Compressed Crushed Diorite,contenttweaker:compressed_crushed_diorite:0
+2,0,Shovel Head Clay Cast,"tconstruct:clay_cast:0:{PartType:""tconstruct:shovel_head""}"
+2,0,Oak Trapdoor,minecraft:trapdoor:0
+2,0,Fluid Storage Tank,cyclicmagic:block_storeempty:0
+2,0,Cobblestone Slab,minecraft:stone_slab:3
+2,0,Darkwood Planks,twilightforest:dark_planks:0
+2,0,Darkwood,twilightforest:twilight_log:3
+2,0,Stone Rod,exnihilocreatio:item_material:6
+2,0,Voidstone,chisel:voidstone:1
+2,0,Witherbone,iceandfire:witherbone:0
+2,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""iceandfire:if_cockatrice""}"
+2,0,Dried Sand,biomesoplenty:dried_sand:0
+2,0,Compressed Crushed Andesite,contenttweaker:compressed_crushed_andesite:0
+2,0,Congealed Slime Block,tconstruct:slime_congealed:0
+2,0,Voidstone,chisel:voidstone:0
+2,0,Basic Circuit Board,forestry:chipsets:0
+2,0,Hardened Casing,forestry:hardened_machine:0
+2,0,Noble Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesNoble"",UID1:""forestry.speciesNoble""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Noble Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesNoble"",UID1:""forestry.speciesNoble""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesNoble"",UID1:""forestry.speciesNoble""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Common Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCommon"",UID1:""forestry.speciesCommon""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCommon"",UID1:""forestry.speciesCommon""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Bee,rustic:bee:0
+2,0,Cultivated Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCultivated"",UID1:""forestry.speciesCultivated""},{Slot:1b,UID0:""forestry.speedFast"",UID1:""forestry.speedFast""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCultivated"",UID1:""forestry.speciesCultivated""},{Slot:1b,UID0:""forestry.speedFast"",UID1:""forestry.speedFast""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Steel Mechanical Component,immersiveengineering:material:9
+2,0,Blast Brick,immersiveengineering:stone_decoration:1
+2,0,Block of Aluminum Brass,tconstruct:metal:5
+2,0,Heavy Block,mechanics:heavy_block:0
+2,0,Aluminium Sheetmetal,immersiveengineering:sheetmetal:1
+2,0,Tool Box,ic2:tool_box:0
+2,0,Sticky Piston,minecraft:sticky_piston:0
+2,0,Raw Carbon Mesh,ic2:crafting:14
+2,0,Machine Frame,rftools:machine_frame:0
+2,0,Void Crystal Block,actuallyadditions:block_crystal:3
+2,0,Osmium Block,mekanism:basicblock:0
+2,0,Heat Vent,ic2:heat_vent:0:{advDmg:0}
+2,0,Fluxed Armor Plating,redstonearsenal:material:224
+2,0,MV Capacitor,immersiveengineering:metal_device0:1
+2,0,LV Capacitor,immersiveengineering:metal_device0:0
+2,0,Control Circuit,advgenerators:controller:0
+2,0,Floral Green Powder,botania:dye:13
+2,0,Microchip (Tier 3),opencomputers:material:9
+2,0,Golden Shovel,minecraft:golden_shovel:0
+2,0,Restonia Crystal,actuallyadditions:item_crystal:0
+2,0,Dried Clay,tconstruct:dried_clay:0
+2,0,Crafter Tier 3,rftools:crafter3:0
+2,0,Redstone Transmission Coil,thermalfoundation:material:514
+2,0,Little Black Squash Balls,rats:little_black_squash_balls:0
+2,0,Emerald Apple,cyclicmagic:apple_emerald:0
+2,0,Beet,harvestcraft:beetitem:0
+2,0,Frost Garden,harvestcraft:frostgarden:0
+2,0,Mixing Bowl,harvestcraft:mixingbowlitem:0
+2,0,Upgrade Speed (Ultimate),extrautils2:ingredients:16
+2,0,Crafter Tier 2,rftools:crafter2:0
+2,0,Upgrade Base,extrautils2:ingredients:9
+2,0,Crafter Tier 1,rftools:crafter1:0
+2,0,Sponge,minecraft:sponge:0
+2,0,Redstone Root,botania:manaresource:6
+2,0,Diode,environmentaltech:diode:0
+2,0,Mana Infused Gear,thermalfoundation:material:264
+2,0,Pink Slime Ingot,industrialforegoing:pink_slime_ingot:0
+2,0,White§r Conveyor Belt,industrialforegoing:conveyor:0
+2,0,Iron Furnace,ic2:te:46
+2,0,Wet Sponge,minecraft:sponge:1
+2,0,"Ender Amethyst §o""Nugget""","rats:rat_nugget_ore:44:{OreItem:{id:""biomesoplenty:gem_ore"",Count:1b,Damage:0s},IngotItem:{id:""biomesoplenty:gem"",Count:1b,Damage:0s}}"
+2,0,Alumite Block,plustic:alumiteblock:0
+2,0,Heavy Large Plate,"tconstruct:large_plate:0:{Material:""heavy""}"
+2,0,Electric Furnace,ic2:te:44
+2,0,Bowl of Water,actuallyadditions:item_water_bowl:0
+2,0,Magma Cream,minecraft:magma_cream:0
+2,0,Compressed Netherrack,extrautils2:compressednetherrack:0
+2,0,Rune of Fire,botania:rune:1
+2,0,Engraved Marble,astralsorcery:blockmarble:5
+2,0,Red Sand,minecraft:sand:1
+2,0,Crushed Granite,exnihilocreatio:block_granite_crushed:0
+2,0,Compressed Granite,contenttweaker:compressed_granite:0
+2,0,Modest Princess,"forestry:bee_princess_ge:0:{MaxH:30,NA:0b,Health:30,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesModest"",UID0:""forestry.speciesModest"",Slot:0b},{UID1:""forestry.speedSlower"",UID0:""forestry.speedSlower"",Slot:1b},{UID1:""forestry.lifespanShort"",UID0:""forestry.lifespanShort"",Slot:2b},{UID1:""forestry.fertilityNormal"",UID0:""forestry.fertilityNormal"",Slot:3b},{UID1:""forestry.toleranceBoth1"",UID0:""forestry.toleranceBoth1"",Slot:4b},{UID1:""forestry.boolTrue"",UID0:""forestry.boolTrue"",Slot:5b},{UID1:""forestry.toleranceDown1"",UID0:""forestry.toleranceDown1"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersCacti"",UID0:""forestry.flowersCacti"",Slot:9b},{UID1:""forestry.floweringSlowest"",UID0:""forestry.floweringSlowest"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+2,0,Modest Hive,forestry:beehives:2
+2,0,Sinister Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesSinister"",UID1:""forestry.speciesSinister""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersNether"",UID1:""forestry.flowersNether""},{Slot:10b,UID0:""forestry.floweringAverage"",UID1:""forestry.floweringAverage""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectAggressive"",UID1:""forestry.effectAggressive""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesSinister"",UID1:""forestry.speciesSinister""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersNether"",UID1:""forestry.flowersNether""},{Slot:10b,UID0:""forestry.floweringAverage"",UID1:""forestry.floweringAverage""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectAggressive"",UID1:""forestry.effectAggressive""}]}}"
+2,0,Quartz Sliver,"thaumcraft:nugget:9:{display:{Lore:[""§d§l33%""]}}"
+2,0,Hydrated Coal Dust,ic2:dust:3
+2,0,Water Bucket,"minecraft:water_bucket:0:{display:{Name:""Any container with Water * 1000 mB""}}"
+2,0,Draconic Flux Capacitor,"draconicevolution:draconium_capacitor:1:{Energy:64000000,DEUpgrades:{rfCap:1b}}"
+2,0,Compact Californium RTG,notenoughrtgs:rtg_californium_compact:0
+2,0,Rainbow Stone,extrautils2:decorativesolid:8
+2,0,Soul Machine Chassis,enderio:item_material:53
+2,0,Simple Machine Chassis,enderio:item_material:0
+2,0,Lormyte Block,endreborn:block_decorative_lormyte:0
+2,0,Organic Brown Dye,enderio:item_material:49
+2,0,Refractory Wax,forestry:refractory_wax:0
+2,0,Mulch,forestry:mulch:0
+2,0,Scrappy Comb,gendustry:honey_comb:7
+2,0,Unweary Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:35,MaxH:35,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesUnweary"",UID1:""forestry.speciesUnweary""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanShortened"",UID1:""forestry.lifespanShortened""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Diligent Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesDiligent"",UID1:""forestry.speciesDiligent""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesDiligent"",UID1:""forestry.speciesDiligent""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Diligent Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesDiligent"",UID1:""forestry.speciesDiligent""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+2,0,Marshy Princess,"forestry:bee_princess_ge:0:{MaxH:20,NA:0b,Health:20,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesMarshy"",UID0:""forestry.speciesMarshy"",Slot:0b},{UID1:""forestry.speedSlowest"",UID0:""forestry.speedSlowest"",Slot:1b},{UID1:""forestry.lifespanShorter"",UID0:""forestry.lifespanShorter"",Slot:2b},{UID1:""forestry.fertilityNormal"",UID0:""forestry.fertilityNormal"",Slot:3b},{UID1:""forestry.toleranceBoth1"",UID0:""forestry.toleranceBoth1"",Slot:4b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:5b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersMushrooms"",UID0:""forestry.flowersMushrooms"",Slot:9b},{UID1:""forestry.floweringSlower"",UID0:""forestry.floweringSlower"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+2,0,Decaying Wheat,forestry:decaying_wheat:0
+2,0,Mouldy Wheat,forestry:mouldy_wheat:0
+2,0,Underbrick,twilightforest:underbrick:0
+2,0,Titanium Ingot,libvulpes:productingot:7
+2,0,Metal Press Mold: Rod,immersiveengineering:mold:2
+2,0,Constantan Large Plate,"tconstruct:large_plate:0:{Material:""constantan""}"
+2,0,Shovel of the Wyvern,"draconicevolution:wyvern_shovel:0:{Energy:2000000,DEUpgrades:{rfCap:0b}}"
+2,0,Upgrade Key (RF Capacity),draconicevolution:tool_upgrade:0
+2,0,Nuclear Furnace,nuclearcraft:nuclear_furnace_idle:0
+2,0,Emerald Gear,thermalfoundation:material:27
+2,0,Cobalt Item Frame,tconstruct:fancy_frame:2
+2,0,Basic Circuit Plate,advancedrocketry:itemcircuitplate:0
+2,0,Yellow Nitor,thaumcraft:nitor_yellow:0
+2,0,Lux,aspect:Lux
+2,0,Torch,minecraft:torch:0
+2,0,Mushroom,minecraft:brown_mushroom:0
+2,0,Tier 4 Crafting Seed,mysticalagriculture:crafting:20
+2,0,Rune of Envy,botania:rune:14
+2,0,Osgloglas Large Plate,"tconstruct:large_plate:0:{Material:""osgloglas""}"
+2,0,Rich Biomass,thermalfoundation:material:817
+2,0,Energized Bimetal Gear,enderio:item_material:12
+2,0,Fluix Logic Unit,threng:material:4
+1.5483856201171875,0,§2Prudentium Infusion Crystal,matc:prudentiumcrystal:0
+1.1,0,Diamond Sword,minecraft:diamond_sword:0
+1.002562459961563,1,Compressed Diamond Hammer,excompressum:compressed_hammer_diamond:0
+1,1,Ultimate Extended Crafty Crate,botania_tweaks:ultimate_extended_crafty_crate:0
+1,1,Ultimate Crafting Table,extendedcrafting:table_ultimate:0
+1,1,Elven Gateway Core,botania:alfheimportal:0
+1,1,Elite Extended Crafty Crate,botania_tweaks:elite_extended_crafty_crate:0
+1,1,Casting Table,tconstruct:casting:0
+1,1,Casting Basin,tconstruct:casting:1
+1,1,Flint Pickaxe Head,"tconstruct:pick_head:0:{Material:""flint""}"
+1,1,Tool Station,tconstruct:tooltables:3
+1,1,,dimension:0
+1,1,Copper Pickaxe Head,"tconstruct:pick_head:0:{Material:""copper""}"
+1,1,Blast Furnace,ic2:te:50
+1,1,Rubber Tree Sapling,ic2:sapling:0
+1,1,,dimension:7
+1,1,Squeezer,integrateddynamics:squeezer:0
+1,1,Lead Pickaxe Head,"tconstruct:pick_head:0:{Material:""lead""}"
+1,1,Iron Pickaxe Head,"tconstruct:pick_head:0:{Material:""iron""}"
+1,1,Certus Quartz Pickaxe Head,"tconstruct:pick_head:0:{Material:""certus_quartz""}"
+1,1,Grindstone,astralsorcery:blockmachine:1
+1,1,Luminous Crafting Table,astralsorcery:blockaltar:0
+1,1,Water Filter,harvestcraft:waterfilter:0
+1,1,Augment: Pyrolytic Conversion,thermalexpansion:augment:258
+1,1,Osmium Pickaxe Head,"tconstruct:pick_head:0:{Material:""osmium""}"
+1,1,Drying Basin,integrateddynamics:drying_basin:0
+1,1,Sieve,exnihilocreatio:block_sieve:0
+1,1,Amplifying Tube,mechanics:amplifying_tube:0
+1,1,Crucible,thaumcraft:crucible:0
+1,1,Copper Shovel Head,"tconstruct:shovel_head:0:{Material:""copper""}"
+1,1,Ground Trap,harvestcraft:groundtrap:0
+1,1,Presser,harvestcraft:presser:0
+1,1,Drying Rack,"tconstruct:rack:1:{textureBlock:{id:""minecraft:wooden_slab"",Count:1b,Damage:0s}}"
+1,1,Solidifier,cyclicmagic:solidifier:0
+1,1,Blue Fire,biomesoplenty:blue_fire:0
+1,1,,dimension:1
+1,1,Darkwood Sapling,twilightforest:twilight_sapling:3
+1,1,Halitosis Generator,"extrautils2:machine:0:{Type:""extrautils2:crusher""}"
+1,1,Duskflame Hex,cyclicmagic:ender_blaze:0:{}
+1,1,Packager,cyclicmagic:auto_packager:0
+1,1,Wildberry Bush,rustic:wildberry_bush:0
+1,1,Market,farmingforblockheads:market:0
+1,1,Shipping Bin,harvestcraft:shippingbin:0
+1,1,Water Trap,harvestcraft:watertrap:0
+1,1,Grinder,harvestcraft:grinder:0
+1,1,Pumpkin Seeds,minecraft:pumpkin_seeds:0
+1,1,Miniaturization Field Projector,compactmachines3:fieldprojector:0
+1,1,High Oven Controller,tcomplement:high_oven_controller:0
+1,1,Quartz Grindstone,appliedenergistics2:grindstone:0
+1,1,Bedrock,minecraft:bedrock:0
+1,1,Augment: Enstabulation Apparatus,thermalexpansion:augment:416
+1,1,Chisel,chisel:chisel_iron:0
+1,1,Centrifuge,forestry:centrifuge:0
+1,1,Thermionic Fabricator,forestry:fabricator:0
+1,1,Crushing Tub,rustic:crushing_tub:0
+1,1,Olive Sapling,rustic:sapling:0
+1,1,Weeding Trowel,ic2:weeding_trowel:0
+1,1,Compost,actuallyadditions:block_compost:0
+1,1,Imperial Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesImperial"",UID1:""forestry.speciesImperial""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectBeatific"",UID1:""forestry.effectBeatific""}]}}"
+1,1,Artificial Hive,exnihilocreatio:hive:0
+1,1,Wooden Barrel,exnihilocreatio:block_barrel0:0
+1,1,Squeezer,forestry:squeezer:0
+1,1,Apiary,harvestcraft:apiary:0
+1,1,Dragonforge Fire Core,iceandfire:dragonforge_fire_core_disabled:0
+1,1,Halitosis Generator,"extrautils2:machine:0:{Type:""extrautils2:generator_lava""}"
+1,1,Engineer's Workbench,immersiveengineering:wooden_device0:2
+1,1,Enrichment Chamber,mekanism:machineblock:0:{mekData:{energyStored:20000.0d}}
+1,1,Metallurgic Infuser,mekanism:machineblock:8
+1,1,Hydrator,cyclicmagic:block_hydrator:0
+1,1,Chemical Crystallizer,mekanism:machineblock2:8
+1,1,Crushing Block,mechanics:crushing_block:0
+1,1,Enderium Pickaxe Head,"tconstruct:pick_head:0:{Material:""enderium""}"
+1,1,,immersiveengineering:stone_device:7
+1,1,Engineer's Hammer,immersiveengineering:tool:0
+1,1,Manufactory,nuclearcraft:manufactory_idle:0
+1,1,Compressor,ic2:te:43
+1,1,Small Plate Presser,advancedrocketry:platepress:0
+1,1,Atomic Reconstructor,actuallyadditions:block_atomic_reconstructor:0
+1,1,,immersiveengineering:metal_multiblock:11
+1,1,Obsidian Pickaxe Head,"tconstruct:pick_head:0:{Material:""obsidian""}"
+1,1,Cobalt Pickaxe Head,"tconstruct:pick_head:0:{Material:""cobalt""}"
+1,1,Decay Generator,nuclearcraft:decay_generator:0
+1,1,Metal Former,ic2:te:55
+1,1,Compactor (Basic),"thermalexpansion:machine:5:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Fluid Sieving Machine,industrialforegoing:ore_sieve:0
+1,1,Mob Slaughter Factory,industrialforegoing:mob_slaughter_factory:0
+1,1,Latex Processing Unit,industrialforegoing:latex_processing_unit:0
+1,1,Heat Exchanger Controller,advgenerators:exchanger_controller:0
+1,1,Resonator,extrautils2:resonator:0
+1,1,Liquid Heat Exchanger,ic2:te:31
+1,1,,immersiveengineering:metal_multiblock:0
+1,1,Chemical Washer,mekanism:machineblock2:7
+1,1,Fluid Infuser,nuclearcraft:infuser_idle:0
+1,1,Pressurizer,nuclearcraft:pressurizer_idle:0
+1,1,Crystallizer,nuclearcraft:crystallizer_idle:0
+1,1,Rock Crusher,nuclearcraft:rock_crusher_idle:0
+1,1,Fluid Dictionary Converter,industrialforegoing:fluiddictionary_converter:0
+1,1,Electrolyzer,ic2:te:76
+1,1,Chemical Dissolution Chamber,mekanism:machineblock2:6:{mekData:{energyStored:160000.0d}}
+1,1,Rotary Condensentrator,mekanism:machineblock2:0
+1,1,Electrolytic Separator,mekanism:machineblock2:4
+1,1,Electric Pump,mekanism:machineblock:12:{mekData:{energyStored:800000.0d}}
+1,1,Filter Upgrade,mekanism:filterupgrade:0
+1,1,,dimension:-8
+1,1,Manyullyn Pickaxe Head,"tconstruct:pick_head:0:{Material:""manyullyn""}"
+1,1,Cheese Mold,animania:cheese_mold:0
+1,1,,dimension:-1
+1,1,Advanced Extended Crafty Crate,botania_tweaks:advanced_extended_crafty_crate:0
+1,1,Energetic Infuser (Basic),"thermalexpansion:machine:9:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Augment: Pyro-Concentrator,thermalexpansion:augment:304
+1,1,Rat Upgrade: Chef,rats:rat_upgrade_chef:0
+1,1,Rat Upgrade: Gemcutter,rats:rat_upgrade_gemcutter:0
+1,1,,entity:cow
+1,1,Fluid/Solid Canning Machine,ic2:te:42
+1,1,Halitosis Generator,"extrautils2:machine:0:{Type:""extrautils2:enchanter""}"
+1,1,Alchemy Table,bloodmagic:alchemy_table:0
+1,1,Starlight Crafting Altar,astralsorcery:blockaltar:1
+1,1,Lightwell,astralsorcery:blockwell:0
+1,1,Arcane Workbench,thaumcraft:arcane_workbench:0
+1,1,Blood Altar,bloodmagic:altar:0
+1,1,Rat Upgrade: Ore Doubling,rats:rat_upgrade_ore_doubling:0
+1,1,,thaumcraft:infernal_furnace:0
+1,1,XP Bottler,openblocks:xp_bottler:0
+1,1,Augment: Resin Funnel,thermalexpansion:augment:288
+1,1,Greatwood Sapling,thaumcraft:sapling_greatwood:0
+1,1,Void Resource Miner Controller Tier 1,environmentaltech:void_res_miner_cont_1:0
+1,1,Augment: Gearworking Die,thermalexpansion:augment:337
+1,1,Fermentation Station,industrialforegoing:ore_fermenter:0
+1,1,Washing Factory,industrialforegoing:ore_washer:0
+1,1,Reactor Fluid Port,ic2:te:25
+1,1,Reactor Redstone Port,ic2:te:26
+1,1,Reactor Access Hatch,ic2:te:23
+1,1,DNA Extractor,gendustry:extractor:0
+1,1,Cutting Machine,advancedrocketry:cuttingmachine:0
+1,1,Precision Assembler,advancedrocketry:precisionassemblingmachine:0
+1,1,,immersiveengineering:metal_multiblock:13
+1,1,Basic Extended Crafty Crate,botania_tweaks:basic_extended_crafty_crate:0
+1,1,Induction Smelter (Basic),"thermalexpansion:machine:3:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Fractionating Still (Basic),"thermalexpansion:machine:7:{Facing:3b,SideCache:[B;1B,2B,3B,3B,3B,3B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Fluid Transposer (Basic),"thermalexpansion:machine:8:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,,immersiveengineering:metal_multiblock:1
+1,1,Electric Arc Furnace,advancedrocketry:arcfurnace:0
+1,1,Terrestrial Agglomeration Plate,botania:terraplate:0
+1,1,Celestial Altar,astralsorcery:blockaltar:2
+1,1,Starlight Infuser,astralsorcery:blockstarlightinfuser:0
+1,1,Alloy Furnace,nuclearcraft:alloy_furnace_idle:0
+1,1,,dimension:119
+1,1,Terrasteel Shovel Head,"tconstruct:shovel_head:0:{Material:""terrasteel""}"
+1,1,Warp Controller,advancedrocketry:warpmonitor:0
+1,1,Chemical Infuser,mekanism:machineblock2:2
+1,1,Solar Neutron Activator,mekanism:machineblock3:1
+1,1,Thermal Evaporation Controller,mekanism:basicblock:14
+1,1,,multiblock:tile.immersivetech.metal_multiblock1.electrolytic_crucible_battery6
+1,1,Syngas Producer Controller,advgenerators:syngas_controller:0
+1,1,Augment: Reflux Column,thermalexpansion:augment:368
+1,1,Still,forestry:still:0
+1,1,Arcane Ensorcellator (Basic),"thermalexpansion:machine:13:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Trial Keystone,deepmoblearning:trial_keystone:0
+1,1,Austere Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesAustere"",UID1:""forestry.speciesAustere""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanLonger"",UID1:""forestry.lifespanLonger""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceDown1"",UID1:""forestry.toleranceDown1""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersCacti"",UID1:""forestry.flowersCacti""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectCreeper"",UID1:""forestry.effectCreeper""}]}}"
+1,1,Solid Canning Machine,ic2:te:49
+1,1,Portable Analyzer,forestry:portable_alyzer:0
+1,1,Peppercorn Sapling,harvestcraft:peppercorn_sapling:0
+1,1,Almond Sapling,harvestcraft:almond_sapling:0
+1,1,Runic Matrix,thaumcraft:infusion_matrix:0
+1,1,Marimorphosis,"botania:specialflower:0:{type:""marimorphosis""}"
+1,1,Hellfire Forge,bloodmagic:soul_forge:0
+1,1,Bound Blade,bloodmagic:bound_sword:0:{Unbreakable:1b}
+1,1,Arcane Ashes,bloodmagic:arcane_ashes:0
+1,1,Master Ritual Stone,bloodmagic:ritual_controller:0
+1,1,Dark Crook,enderio:item_dark_steel_crook:0
+1,1,Imbuing Station,randomthings:imbuingstation:0
+1,1,Macerator,ic2:te:47
+1,1,Ender Crafter,extendedcrafting:ender_crafter:0
+1,1,Ender Alternator,extendedcrafting:ender_alternator:0
+1,1,Brewing Barrel,rustic:brewing_barrel:0
+1,1,Grape Seeds,rustic:grape_stem:0
+1,1,Matter Fabricator,ic2:te:61
+1,1,Soul Binder,enderio:block_soul_binder:0
+1,1,Scrappy Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:""gendustry.bee.scrappy"",UID1:""gendustry.bee.scrappy""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceUp4"",UID1:""forestry.toleranceUp4""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceDown4"",UID1:""forestry.toleranceDown4""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,1,Moistener,forestry:moistener:0
+1,1,Tricky Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesTricky"",UID1:""forestry.speciesTricky""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth2"",UID1:""forestry.toleranceBoth2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersGourd"",UID1:""forestry.flowersGourd""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,1,Lava Heat Exchanger,enderio:block_lava_generator:0
+1,1,,dimension:105
+1,1,Space Station Assembler,advancedrocketry:stationbuilder:0
+1,1,Psimetal CAD Assembly,psi:cad_assembly:2
+1,1,Osmium Compressor,mekanism:machineblock:1
+1,1,Green Slimy Grass,tconstruct:slime_grass:1
+1,1,Purple Slime Sapling,tconstruct:slime_sapling:1
+1,1,Iron CAD Assembly,psi:cad_assembly:0
+1,1,Magma Crucible (Basic),"thermalexpansion:machine:6:{Facing:3b,SideCache:[B;1B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Void Ore Miner Controller Tier 1,environmentaltech:void_ore_miner_cont_1:0
+1,1,,multiblock:tile.immersivetech.metal_multiblock.solar_tower1
+1,1,3D Printer,opencomputers:printer:0
+1,1,Supercooler,nuclearcraft:supercooler_idle:0
+1,1,Engraved Thunder,cyclicmagic:ender_lightning:0
+1,1,Fission Controller,nuclearcraft:fission_controller_new_fixed:0
+1,1,Rolling Machine,advancedrocketry:rollingmachine:0
+1,1,Simulation Chamber,deepmoblearning:simulation_chamber:0
+1,1,Asteroid Chip,advancedrocketry:asteroidchip:0
+1,1,Simple Alloy Smelter,enderio:block_simple_alloy_smelter:0
+1,1,Dragon Egg Seeds,mysticalagradditions:dragon_egg_seeds:0
+1,1,Dragon Egg Crux,mysticalagradditions:special:1
+1,1,Iridescent Altar,astralsorcery:blockaltar:3
+1,1,Emerald Seeds,mysticalagriculture:emerald_seeds:0
+1,1,Phytogenic Insolator (Basic),"thermalexpansion:machine:4:{Facing:3b,SideCache:[B;3B,1B,2B,2B,2B,2B],RSControl:0b,Energy:0,Level:0b}"
+1,1,Advanced Carpenter Controller,modularcontroller:advanced_carpenter_controller:0
+1,1,Animal Sewer,industrialforegoing:animal_byproduct_recolector:0
+1,1,Slice'N'Splice,enderio:block_slice_and_splice:0
+1,1,Double Compressed Diamond Hammer,excompressum:double_compressed_diamond_hammer:0
+1,1,ME Circuit Etcher,threng:machine:2
+1,1,Fluix Aggregator,threng:machine:0
+1,1,Anvil,minecraft:anvil:0
+1,0,Creative Energy Cube,"mekanism:energycube:0:{tier:4,mekData:{energyStored:1.7976931348623157E308d}}"
+1,0,Creative Fluid Tank,mekanism:machineblock2:11:{tier:4}
+1,0,Solar Array Controller Tier 6,environmentaltech:solar_cont_6:0
+1,0,Lamp of Cinders,twilightforest:lamp_of_cinders:0
+1,0,Extreme Crafting Table,avaritia:extreme_crafting_table:0
+1,0,Blank Pattern,tconstruct:pattern:0
+1,0,Plague Metal Pickaxe Head,"tconstruct:pick_head:0:{Material:""plague_metal""}"
+1,0,Rubber Tree Leaves,ic2:leaves:0
+1,0,Sooty Marble,astralsorcery:blockblackmarble:0
+1,0,Deathbloom,biomesoplenty:flower_0:2
+1,0,Yellow§r Laser Lens (Inverted),industrialforegoing:laser_lens_inverted:4
+1,0,Plague Metal Shovel Head,"tconstruct:shovel_head:0:{Material:""plague_metal""}"
+1,0,Yellow Stained Glass Pane,minecraft:stained_glass_pane:4
+1,0,Button,minecraft:stone_button:0
+1,0,Pearled Ender Hopper,darkutils:ender_pearl_hopper:0
+1,0,Ender Lilly,extrautils2:enderlilly:0
+1,0,Dark Fire,cyclicmagic:fire_dark:0
+1,0,Mystical Light Gray Flower,botania:flower:8
+1,0,Clover,biomesoplenty:flower_0:0
+1,0,Snow,minecraft:snow_layer:0
+1,0,Bluebells,biomesoplenty:flower_1:2
+1,0,Tenebrae,aspect:Tenebrae
+1,0,Darkwood Gate,twilightforest:dark_gate:0
+1,0,Darkwood Leaves,twilightforest:dark_leaves:0
+1,0,Single Compressed Mossy Cobblestone,additionalcompression:cobblestonemossy_compressed:0
+1,0,Oak Bookshelf,minecraft:bookshelf:0
+1,0,Ender Hopper,darkutils:ender_hopper:0
+1,0,Personal Shrinking Device,compactmachines3:psd:0
+1,0,Redstone Torch,minecraft:redstone_torch:0
+1,0,Iron Chisel Head,"tcomplement:chisel_head:0:{Material:""iron""}"
+1,0,Chisel Head Clay Cast,"tconstruct:clay_cast:0:{PartType:""tcomplement:chisel_head""}"
+1,0,Plague Metal Chisel Head,"tcomplement:chisel_head:0:{Material:""plague_metal""}"
+1,0,Impregnated Casing,forestry:impregnated_casing:0
+1,0,Imperial Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesImperial"",UID1:""forestry.speciesImperial""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectBeatific"",UID1:""forestry.effectBeatific""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesImperial"",UID1:""forestry.speciesImperial""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectBeatific"",UID1:""forestry.effectBeatific""}]}}"
+1,0,Majestic Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:35,MaxH:35,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesMajestic"",UID1:""forestry.speciesMajestic""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanShortened"",UID1:""forestry.lifespanShortened""},{Slot:3b,UID0:""forestry.fertilityMaximum"",UID1:""forestry.fertilityMaximum""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Meadows Drone,"forestry:bee_drone_ge:0:{MaxH:20,Health:20,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesMeadows"",UID0:""forestry.speciesMeadows"",Slot:0b},{UID1:""forestry.speedSlowest"",UID0:""forestry.speedSlowest"",Slot:1b},{UID1:""forestry.lifespanShorter"",UID0:""forestry.lifespanShorter"",Slot:2b},{UID1:""forestry.fertilityNormal"",UID0:""forestry.fertilityNormal"",Slot:3b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:4b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:5b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersVanilla"",UID0:""forestry.flowersVanilla"",Slot:9b},{UID1:""forestry.floweringSlower"",UID0:""forestry.floweringSlower"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+1,0,Forest Princess,"forestry:bee_princess_ge:0:{MaxH:20,NA:0b,Health:20,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesForest"",UID0:""forestry.speciesForest"",Slot:0b},{UID1:""forestry.speedSlowest"",UID0:""forestry.speedSlowest"",Slot:1b},{UID1:""forestry.lifespanShorter"",UID0:""forestry.lifespanShorter"",Slot:2b},{UID1:""forestry.fertilityHigh"",UID0:""forestry.fertilityHigh"",Slot:3b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:4b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:5b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersVanilla"",UID0:""forestry.flowersVanilla"",Slot:9b},{UID1:""forestry.floweringSlower"",UID0:""forestry.floweringSlower"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+1,0,Hay Bale,minecraft:hay_block:0
+1,0,Forest Drone,"forestry:bee_drone_ge:0:{MaxH:20,Health:20,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesForest"",UID0:""forestry.speciesForest"",Slot:0b},{UID1:""forestry.speedSlowest"",UID0:""forestry.speedSlowest"",Slot:1b},{UID1:""forestry.lifespanShorter"",UID0:""forestry.lifespanShorter"",Slot:2b},{UID1:""forestry.fertilityHigh"",UID0:""forestry.fertilityHigh"",Slot:3b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:4b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:5b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersVanilla"",UID0:""forestry.flowersVanilla"",Slot:9b},{UID1:""forestry.floweringSlower"",UID0:""forestry.floweringSlower"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+1,0,Majestic Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:35,MaxH:35,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesMajestic"",UID1:""forestry.speciesMajestic""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanShortened"",UID1:""forestry.lifespanShortened""},{Slot:3b,UID0:""forestry.fertilityMaximum"",UID1:""forestry.fertilityMaximum""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesMajestic"",UID1:""forestry.speciesMajestic""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanShortened"",UID1:""forestry.lifespanShortened""},{Slot:3b,UID0:""forestry.fertilityMaximum"",UID1:""forestry.fertilityMaximum""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Fire Dragon Heart,iceandfire:fire_dragon_heart:0
+1,0,Blazing Pyrotheum,thermalfoundation:fluid_pyrotheum:0
+1,0,Treated Wood Fence,immersiveengineering:wooden_decoration:0
+1,0,External Heater,immersiveengineering:metal_device1:1
+1,0,Iron Hammer Head,"tconstruct:hammer_head:0:{Material:""iron""}"
+1,0,Hammer Head Clay Cast,"tconstruct:clay_cast:0:{PartType:""tconstruct:hammer_head""}"
+1,0,Plague Metal Hammer Head,"tconstruct:hammer_head:0:{Material:""plague_metal""}"
+1,0,Mixed Metal Ingot,ic2:ingot:0
+1,0,Basalt Sediment,advancedrocketry:basalt:0
+1,0,Device Frame,thermalexpansion:frame:64
+1,0,Cooked Meat Ingot,tconevo:edible:1
+1,0,Tesla Coil,immersiveengineering:metal_device1:8
+1,0,Iridium Plate,thermalfoundation:material:327
+1,0,Glass,chisel:glass:1
+1,0,Red Coal,extrautils2:ingredients:4
+1,0,Insulating Glass,immersiveengineering:stone_decoration:8
+1,0,Screen (Tier 3),opencomputers:screen3:0
+1,0,Transistor,opencomputers:material:6
+1,0,Display Stand,actuallyadditions:block_display_stand:0
+1,0,,actuallyadditions:item_battery_double:0:*
+1,0,Single Battery,actuallyadditions:item_battery:0:{Energy:200000}
+1,0,Dense Infinite Water Source,nuclearcraft:water_source_dense:0
+1,0,Ore Washing Plant,ic2:te:56
+1,0,Hexagonal Boron Nitride,nuclearcraft:gem_dust:4
+1,0,Thorium-230 Block,nuclearcraft:block_depleted_thorium:0
+1,0,Energy Tablet,mekanism:energytablet:0:{mekData:{energyStored:1000000.0d}}
+1,0,Basic Fluid Tank,mekanism:machineblock2:11:{tier:0}
+1,0,Electrolytic Core,mekanism:electrolyticcore:0
+1,0,Lead Gear,thermalfoundation:material:259
+1,0,Signalum Gear,thermalfoundation:material:293
+1,0,Honey Pot,forestry:honey_pot:0
+1,0,Wax Capsule,forestry:capsule:0
+1,0,Diluted Mana Pool,botania:pool:2
+1,0,Light Gray Petal Block,botania:petalblock:8
+1,0,White Petal Block,botania:petalblock:0
+1,0,Golden Egg,randomthings:ingredient:11
+1,0,Greatwood Leaves,thaumcraft:leaves_greatwood:0
+1,0,Meat Feeder,industrialforegoing:meat_feeder:0
+1,0,Diamond Gear,thermalfoundation:material:26
+1,0,Generator,ic2:te:3
+1,0,RE-Battery,ic2:re_battery:0:{charge:10000.0d}
+1,0,Tin Cable,"ic2:cable:4:{type:4b,insulation:0b}"
+1,0,Block of Elementium,botania:storage:2
+1,0,Blutonium Block,bigreactors:blockblutonium:0
+1,0,Blaze Mesh,botania:blazeblock:0
+1,0,Power Module,gendustry:power_module:0
+1,0,Ardite Ore Dust,exnihilocreatio:item_ore_ardite:2
+1,0,Dropper,minecraft:dropper:0
+1,0,Induction Furnace,ic2:te:54
+1,0,Nickel Gear,thermalfoundation:material:261
+1,0,HeatProof Brick,advancedrocketry:blastbrick:0
+1,0,Reinforced Blast Brick,immersiveengineering:stone_decoration:2
+1,0,Magma Slime Crystal,tconstruct:materials:11
+1,0,Slimy Magma Mud,tconstruct:soil:5
+1,0,Rune of Mana,botania:rune:8
+1,0,Rune of Air,botania:rune:3
+1,0,Manaweave Cloth,botania:manaresource:22
+1,0,Dragon Bone,iceandfire:dragonbone:0
+1,0,Podzol,minecraft:dirt:2
+1,0,Obsidian Electron Tube,forestry:thermionic_tubes:6
+1,0,Bog Earth,forestry:bog_earth:0
+1,0,Lime Petal Block,botania:petalblock:5
+1,0,Arcane Pedestal,thaumcraft:pedestal_arcane:0
+1,0,Shaft (Bronze),ic2:crafting:42
+1,0,Block of Bronze,thermalfoundation:storage_alloy:3
+1,0,Pressure Valve,advgenerators:pressure_valve:0
+1,0,Hardened Fluiduct (Opaque),thermaldynamics:duct_16:3
+1,0,Network Cable,"xnet:netcable:0:{display:{LocName:""tile.xnet.netcable_blue.name""}}"
+1,0,Enchantment Table,minecraft:enchanting_table:0
+1,0,§bTrial Key§r,"deepmoblearning:trial_key:0:{attuned:1b,mobKey:""zombie"",tier:0}"
+1,0,Austere Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesAustere"",UID1:""forestry.speciesAustere""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanLonger"",UID1:""forestry.lifespanLonger""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceDown1"",UID1:""forestry.toleranceDown1""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersCacti"",UID1:""forestry.flowersCacti""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectCreeper"",UID1:""forestry.effectCreeper""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesAustere"",UID1:""forestry.speciesAustere""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanLonger"",UID1:""forestry.lifespanLonger""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceDown1"",UID1:""forestry.toleranceDown1""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersCacti"",UID1:""forestry.flowersCacti""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectCreeper"",UID1:""forestry.effectCreeper""}]}}"
+1,0,Frugal Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesFrugal"",UID1:""forestry.speciesFrugal""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanLong"",UID1:""forestry.lifespanLong""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceDown1"",UID1:""forestry.toleranceDown1""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersCacti"",UID1:""forestry.flowersCacti""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Frugal Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:50,MaxH:50,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesFrugal"",UID1:""forestry.speciesFrugal""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanLong"",UID1:""forestry.lifespanLong""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceDown1"",UID1:""forestry.toleranceDown1""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersCacti"",UID1:""forestry.flowersCacti""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesFrugal"",UID1:""forestry.speciesFrugal""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanLong"",UID1:""forestry.lifespanLong""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceDown1"",UID1:""forestry.toleranceDown1""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersCacti"",UID1:""forestry.flowersCacti""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Sinister Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesSinister"",UID1:""forestry.speciesSinister""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersNether"",UID1:""forestry.flowersNether""},{Slot:10b,UID0:""forestry.floweringAverage"",UID1:""forestry.floweringAverage""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectAggressive"",UID1:""forestry.effectAggressive""}]}}"
+1,0,Cultivated Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCultivated"",UID1:""forestry.speciesCultivated""},{Slot:1b,UID0:""forestry.speedFast"",UID1:""forestry.speedFast""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Modest Drone,"forestry:bee_drone_ge:0:{MaxH:30,Health:30,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesModest"",UID0:""forestry.speciesModest"",Slot:0b},{UID1:""forestry.speedSlower"",UID0:""forestry.speedSlower"",Slot:1b},{UID1:""forestry.lifespanShort"",UID0:""forestry.lifespanShort"",Slot:2b},{UID1:""forestry.fertilityNormal"",UID0:""forestry.fertilityNormal"",Slot:3b},{UID1:""forestry.toleranceBoth1"",UID0:""forestry.toleranceBoth1"",Slot:4b},{UID1:""forestry.boolTrue"",UID0:""forestry.boolTrue"",Slot:5b},{UID1:""forestry.toleranceDown1"",UID0:""forestry.toleranceDown1"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersCacti"",UID0:""forestry.flowersCacti"",Slot:9b},{UID1:""forestry.floweringSlowest"",UID0:""forestry.floweringSlowest"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+1,0,Vines,minecraft:vine:0
+1,0,Draconic Metal Block,tconevo:metal_block:1
+1,0,Lapotron Crystal,ic2:lapotron_crystal:0:{charge:1.0E7d}
+1,0,Skeleton Skull,minecraft:skull:0
+1,0,Creeper Head,minecraft:skull:4
+1,0,Zombie Head,minecraft:skull:2
+1,0,Soul Attuned Dye Blend,enderio:item_material:52
+1,0,Organic Black Dye,enderio:item_material:50
+1,0,Scrappy Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:""gendustry.bee.scrappy"",UID1:""gendustry.bee.scrappy""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceUp4"",UID1:""forestry.toleranceUp4""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceDown4"",UID1:""forestry.toleranceDown4""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""gendustry.bee.scrappy"",UID1:""gendustry.bee.scrappy""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShortest"",UID1:""forestry.lifespanShortest""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceUp4"",UID1:""forestry.toleranceUp4""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceDown4"",UID1:""forestry.toleranceDown4""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Agrarian Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesAgrarian"",UID1:""forestry.speciesAgrarian""},{Slot:1b,UID0:""forestry.speedSlow"",UID1:""forestry.speedSlow""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceBoth2"",UID1:""forestry.toleranceBoth2""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryLarge"",UID1:""forestry.territoryLarge""},{Slot:12b,UID0:""forestry.effectFertile"",UID1:""forestry.effectFertile""}]}}"
+1,0,Boggy Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesBoggy"",UID1:""forestry.speciesBoggy""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersMushrooms"",UID1:""forestry.flowersMushrooms""},{Slot:10b,UID0:""forestry.floweringSlower"",UID1:""forestry.floweringSlower""},{Slot:11b,UID0:""forestry.territoryLarger"",UID1:""forestry.territoryLarger""},{Slot:12b,UID0:""forestry.effectMycophilic"",UID1:""forestry.effectMycophilic""}]}}"
+1,0,Agrarian Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesAgrarian"",UID1:""forestry.speciesAgrarian""},{Slot:1b,UID0:""forestry.speedSlow"",UID1:""forestry.speedSlow""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceBoth2"",UID1:""forestry.toleranceBoth2""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryLarge"",UID1:""forestry.territoryLarge""},{Slot:12b,UID0:""forestry.effectFertile"",UID1:""forestry.effectFertile""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesAgrarian"",UID1:""forestry.speciesAgrarian""},{Slot:1b,UID0:""forestry.speedSlow"",UID1:""forestry.speedSlow""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceBoth2"",UID1:""forestry.toleranceBoth2""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryLarge"",UID1:""forestry.territoryLarge""},{Slot:12b,UID0:""forestry.effectFertile"",UID1:""forestry.effectFertile""}]}}"
+1,0,Farmerly Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesFarmerly"",UID1:""forestry.speciesFarmerly""},{Slot:1b,UID0:""forestry.speedSlow"",UID1:""forestry.speedSlow""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryLarge"",UID1:""forestry.territoryLarge""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Industrious Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesIndustrious"",UID1:""forestry.speciesIndustrious""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringFast"",UID1:""forestry.floweringFast""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Farmerly Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesFarmerly"",UID1:""forestry.speciesFarmerly""},{Slot:1b,UID0:""forestry.speedSlow"",UID1:""forestry.speedSlow""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryLarge"",UID1:""forestry.territoryLarge""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesFarmerly"",UID1:""forestry.speciesFarmerly""},{Slot:1b,UID0:""forestry.speedSlow"",UID1:""forestry.speedSlow""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryLarge"",UID1:""forestry.territoryLarge""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Rural Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesRural"",UID1:""forestry.speciesRural""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Rural Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesRural"",UID1:""forestry.speciesRural""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesRural"",UID1:""forestry.speciesRural""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersWheat"",UID1:""forestry.flowersWheat""},{Slot:10b,UID0:""forestry.floweringFaster"",UID1:""forestry.floweringFaster""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Meadows Princess,"forestry:bee_princess_ge:0:{MaxH:20,NA:0b,Health:20,IsAnalyzed:0b,Genome:{Chromosomes:[{UID1:""forestry.speciesMeadows"",UID0:""forestry.speciesMeadows"",Slot:0b},{UID1:""forestry.speedSlowest"",UID0:""forestry.speedSlowest"",Slot:1b},{UID1:""forestry.lifespanShorter"",UID0:""forestry.lifespanShorter"",Slot:2b},{UID1:""forestry.fertilityNormal"",UID0:""forestry.fertilityNormal"",Slot:3b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:4b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:5b},{UID1:""forestry.toleranceNone"",UID0:""forestry.toleranceNone"",Slot:6b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:7b},{UID1:""forestry.boolFalse"",UID0:""forestry.boolFalse"",Slot:8b},{UID1:""forestry.flowersVanilla"",UID0:""forestry.flowersVanilla"",Slot:9b},{UID1:""forestry.floweringSlower"",UID0:""forestry.floweringSlower"",Slot:10b},{UID1:""forestry.territoryAverage"",UID0:""forestry.territoryAverage"",Slot:11b},{UID1:""forestry.effectNone"",UID0:""forestry.effectNone"",Slot:12b}]}}"
+1,0,Diligent Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesDiligent"",UID1:""forestry.speciesDiligent""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Unweary Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:35,MaxH:35,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesUnweary"",UID1:""forestry.speciesUnweary""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanShortened"",UID1:""forestry.lifespanShortened""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesUnweary"",UID1:""forestry.speciesUnweary""},{Slot:1b,UID0:""forestry.speedNormal"",UID1:""forestry.speedNormal""},{Slot:2b,UID0:""forestry.lifespanShortened"",UID1:""forestry.lifespanShortened""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Industrious Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesIndustrious"",UID1:""forestry.speciesIndustrious""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringFast"",UID1:""forestry.floweringFast""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesIndustrious"",UID1:""forestry.speciesIndustrious""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringFast"",UID1:""forestry.floweringFast""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Boggy Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesBoggy"",UID1:""forestry.speciesBoggy""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersMushrooms"",UID1:""forestry.flowersMushrooms""},{Slot:10b,UID0:""forestry.floweringSlower"",UID1:""forestry.floweringSlower""},{Slot:11b,UID0:""forestry.territoryLarger"",UID1:""forestry.territoryLarger""},{Slot:12b,UID0:""forestry.effectMycophilic"",UID1:""forestry.effectMycophilic""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesBoggy"",UID1:""forestry.speciesBoggy""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersMushrooms"",UID1:""forestry.flowersMushrooms""},{Slot:10b,UID0:""forestry.floweringSlower"",UID1:""forestry.floweringSlower""},{Slot:11b,UID0:""forestry.territoryLarger"",UID1:""forestry.territoryLarger""},{Slot:12b,UID0:""forestry.effectMycophilic"",UID1:""forestry.effectMycophilic""}]}}"
+1,0,Miry Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesMiry"",UID1:""forestry.speciesMiry""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityMaximum"",UID1:""forestry.fertilityMaximum""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersMushrooms"",UID1:""forestry.flowersMushrooms""},{Slot:10b,UID0:""forestry.floweringSlower"",UID1:""forestry.floweringSlower""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Marshy Hive,forestry:beehives:6
+1,0,Miry Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesMiry"",UID1:""forestry.speciesMiry""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityMaximum"",UID1:""forestry.fertilityMaximum""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersMushrooms"",UID1:""forestry.flowersMushrooms""},{Slot:10b,UID0:""forestry.floweringSlower"",UID1:""forestry.floweringSlower""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesMiry"",UID1:""forestry.speciesMiry""},{Slot:1b,UID0:""forestry.speedSlowest"",UID1:""forestry.speedSlowest""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityMaximum"",UID1:""forestry.fertilityMaximum""},{Slot:4b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersMushrooms"",UID1:""forestry.flowersMushrooms""},{Slot:10b,UID0:""forestry.floweringSlower"",UID1:""forestry.floweringSlower""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Noble Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:30,MaxH:30,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesNoble"",UID1:""forestry.speciesNoble""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShort"",UID1:""forestry.lifespanShort""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlow"",UID1:""forestry.floweringSlow""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Peafowl Egg,animania:peacock_egg_white:0
+1,0,Tricky Queen,"forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesTricky"",UID1:""forestry.speciesTricky""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth2"",UID1:""forestry.toleranceBoth2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersGourd"",UID1:""forestry.flowersGourd""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]},Mate:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesTricky"",UID1:""forestry.speciesTricky""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceBoth2"",UID1:""forestry.toleranceBoth2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceBoth1"",UID1:""forestry.toleranceBoth1""},{Slot:7b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersGourd"",UID1:""forestry.flowersGourd""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Sinister Princess,"forestry:bee_princess_ge:0:{IsAnalyzed:1b,Health:40,MaxH:40,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesSinister"",UID1:""forestry.speciesSinister""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanNormal"",UID1:""forestry.lifespanNormal""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceDown2"",UID1:""forestry.toleranceDown2""},{Slot:5b,UID0:""forestry.boolTrue"",UID1:""forestry.boolTrue""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersNether"",UID1:""forestry.flowersNether""},{Slot:10b,UID0:""forestry.floweringAverage"",UID1:""forestry.floweringAverage""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectAggressive"",UID1:""forestry.effectAggressive""}]}}"
+1,0,Common Drone,"forestry:bee_drone_ge:0:{IsAnalyzed:1b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:""forestry.speciesCommon"",UID1:""forestry.speciesCommon""},{Slot:1b,UID0:""forestry.speedSlower"",UID1:""forestry.speedSlower""},{Slot:2b,UID0:""forestry.lifespanShorter"",UID1:""forestry.lifespanShorter""},{Slot:3b,UID0:""forestry.fertilityNormal"",UID1:""forestry.fertilityNormal""},{Slot:4b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:5b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:6b,UID0:""forestry.toleranceNone"",UID1:""forestry.toleranceNone""},{Slot:7b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:8b,UID0:""forestry.boolFalse"",UID1:""forestry.boolFalse""},{Slot:9b,UID0:""forestry.flowersVanilla"",UID1:""forestry.flowersVanilla""},{Slot:10b,UID0:""forestry.floweringSlowest"",UID1:""forestry.floweringSlowest""},{Slot:11b,UID0:""forestry.territoryAverage"",UID1:""forestry.territoryAverage""},{Slot:12b,UID0:""forestry.effectNone"",UID1:""forestry.effectNone""}]}}"
+1,0,Fluid Tank (Configured),"enderio:block_tank:0:{""enderio:data"":{tank:{FluidName:""water"",Amount:16000,Capacity:16000}}}"
+1,0,Rocket Assembling Machine,advancedrocketry:rocketbuilder:0
+1,0,Concrete,advancedrocketry:concrete:0
+1,0,Dirty Platinum,jaopca:item_dirtygemplatinum:0
+1,0,Crystallized Platinum,jaopca:item_crystalabyssplatinum:0
+1,0,Mud,biomesoplenty:mud:0
+1,0,Printed Circuit Board (PCB),opencomputers:material:4
+1,0,Raw Circuit Board,opencomputers:material:2
+1,0,Creative Gas Tank Frame,"simple_trophies:trophy:0:{TrophyVariant:""gold"",TrophyColorGreen:118,TrophyItem:{id:""mekanism:machineblock2"",Count:1b,Damage:11s},TrophyColorBlue:151,TrophyName:""Creative Fluid Tank Frame"",TrophyColorRed:40}"
+1,0,Advanced Fluid Tank,"mekanism:machineblock2:11:{tier:1,mekData:{fluidTank:{FluidName:""cloud_seed_concentrated"",Amount:400000}}}"
+1,0,Advanced Fluid Tank,"mekanism:machineblock2:11:{tier:1,mekData:{fluidTank:{FluidName:""essence"",Amount:400000}}}"
+1,0,Advanced Fluid Tank,"mekanism:machineblock2:11:{tier:1,mekData:{fluidTank:{FluidName:""witchwater"",Amount:400000}}}"
+1,0,Advanced Fluid Tank,"mekanism:machineblock2:11:{tier:1,mekData:{fluidTank:{FluidName:""plasma"",Amount:400000}}}"
+1,0,Battery,cyclicmagic:battery:0
+1,0,Liquid IO Circuit Board,advancedrocketry:ic:5
+1,0,Soot-covered Machine Casing,deepmoblearning:machine_casing:0
+1,0,§3Cyan Glow Panel,mekanism:glowpanel:6
+1,0,Block of Black Iron,extendedcrafting:trimmed:2
+1,0,Cyan Dye,minecraft:dye:6
+1,0,Swampflower,biomesoplenty:flower_0:1
+1,0,Creative Gas Tank Frame,"simple_trophies:trophy:0:{TrophyVariant:""gold"",TrophyColorGreen:230,TrophyItem:{id:""mekanism:gastank"",Count:1b,Damage:0s},TrophyColorBlue:0,TrophyName:""Creative Gas Tank Frame"",TrophyColorRed:255,display:{Lore:[""Craft with 9 DIFFERENT gases""]}}"
+1,0,Universal Fluid Cell,"ic2:fluid_cell:0:{Fluid:{FluidName:""helium3"",Amount:1000}}"
+1,0,Universal Fluid Cell,"ic2:fluid_cell:0:{Fluid:{FluidName:""tritium"",Amount:1000}}"
+1,0,Universal Fluid Cell,"ic2:fluid_cell:0:{Fluid:{FluidName:""exhauststeam"",Amount:1000}}"
+1,0,Universal Fluid Cell,"ic2:fluid_cell:0:{Fluid:{FluidName:""aerotheum"",Amount:1000}}"
+1,0,Basic Circuit,advancedrocketry:ic:0
+1,0,Tier 6 Crafting Seed,mysticalagradditions:insanium:1
+1,0,Block of Nether Stars,extendedcrafting:storage:2
+1,0,Colored Lens,astralsorcery:itemcoloredlens:4
+1,0,Elemental Affinity Reagent,bloodmagic:component:6
+1,0,Celestial Crystal,astralsorcery:itemcelestialcrystal:0
+1,0,Air Sigil,bloodmagic:sigil_air:0
+1,0,Water Sigil,bloodmagic:sigil_water:0
+1,0,Lava Sigil,bloodmagic:sigil_lava:0
+1,0,Air Reagent,bloodmagic:component:2
+1,0,Water Reagent,bloodmagic:component:0
+1,0,Lava Reagent,bloodmagic:component:1
+1,0,Lava Bucket,minecraft:lava_bucket:0
+1,0,Antiseptic,bloodmagic:component:26
+1,0,Neuro Toxin,bloodmagic:component:25
+1,0,Fermented Spider Eye,minecraft:fermented_spider_eye:0
+1,0,Mushroom,minecraft:red_mushroom:0
+1,0,Pufferfish,minecraft:fish:3
+1,0,Spider Eye,minecraft:spider_eye:0
+1,0,Morb (Dread Lich§r),"thermalexpansion:morb:0:{id:""minecraft:cave_spider""}"
+1,0,Celestial Crystal Cluster,astralsorcery:blockcelestialcrystals:4
+1,0,Tier 3 Crafting Seed,mysticalagriculture:crafting:19
+1,0,Tier 2 Crafting Seed,mysticalagriculture:crafting:18
+1,0,Tier 1 Crafting Seed,mysticalagriculture:crafting:17
+1,0,Base Crafting Seed,mysticalagriculture:crafting:16
+1,0,Arboretum (Managed),forestry:arboretum:0
+1,0,Flexible Casing,forestry:flexible_casing:0
+1,0,Tier 5 Crafting Seed,mysticalagriculture:crafting:21
+1,0,Sewage,fluid:sewage
+1,0,Super-Laminar Fluiduct,thermaldynamics:duct_16:6
+1,0,Hardened Fluiduct,thermaldynamics:duct_16:2
+1,0,Head,"minecraft:skull:3:{SkullOwner:""Vazkii""}"
+1,0,Formation Core,appliedenergistics2:material:43
+0.7738151550292969,0,§6Intermedium Infusion Crystal,matc:intermediumcrystal:0
+0.38672637939453125,0,§9Superium Infusion Crystal,matc:superiumcrystal:0
+0.288135593220339,0,Cutter,ic2:cutter:0
+0.28800000000000003,0,Amber Nugget,jaopca:item_nuggetamber:0
+0.12890625,0,Infusion Crystal,mysticalagriculture:infusion_crystal:0
+0.096,0,Sun Crystal,extrautils2:suncrystal:0
+0.05333333333333334,0,Troll's Frosted Col,iceandfire:troll_weapon.column_frost:0
+0.030303030303030304,0,Wax Cast,forestry:wax_cast:0
+0.015625,0,Fishing Rod,minecraft:fishing_rod:0
+0.015625,0,§cSupremium Infusion Crystal,matc:supremiumcrystal:0
+0.013333333333333334,0,Troll's Frosted Tree Trunk,iceandfire:troll_weapon.trunk_frost:0
+0.01,0,Troll's Tree Trunk,iceandfire:troll_weapon.trunk:0
+0.004,0,Sun Crystal (Empty),extrautils2:suncrystal:250
+0.0033333333333333335,0,Troll's Mossy Column,iceandfire:troll_weapon.column_forest:0
+0.0026666666666666666,0,Aer Vis Crystal,"thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:""terra""}]}"
+0.002197265625,0,Diamond Hammer,exnihilocreatio:hammer_diamond:0
+0.0018181818181818182,0,Wool (Jacob),animania:wool:3
+0.0013333333333333333,0,Shovel of the Earthmover,"thaumcraft:elemental_shovel:0:{infench:[{id:1s,lvl:1s}]}"
+0.0013333333333333333,0,Fabrico,aspect:Fabrico
+0.0013333333333333333,0,Thaumium Shovel,thaumcraft:thaumium_shovel:0
+0.0013333333333333333,0,Greatwood Planks,thaumcraft:plank_greatwood:0
+0.0013333333333333333,0,Crafting Table On A Stick,actuallyadditions:item_crafter_on_a_stick:0
+0.0013333333333333333,0,Sign,minecraft:sign:0
+0.0006666666666666666,0,Black Death Scythe,rats:plague_scythe:0
+0.00045454545454545455,0,Chef Toque,rats:chef_toque:0
