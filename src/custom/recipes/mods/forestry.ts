@@ -11,4 +11,9 @@ export default function addRecipes(
     ['minecraft:sapling:*', 'forestry:honey_drop:0'],
     'forestry:portable_alyzer:0'
   )
+  addRecipe(
+    'forestry:butterfly_ge:*',
+    '10000x placeholder:ticks',
+    'forestry:sapling:*'
+  )
 }

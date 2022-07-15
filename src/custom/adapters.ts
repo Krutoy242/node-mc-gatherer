@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import _, { groupBy } from 'lodash'
 
 import {
   JEIECategory,
@@ -7,6 +7,7 @@ import {
   JEIEItem,
   JEIESlot,
 } from '../from/jeie/JEIECategory'
+
 const { max, min } = Math
 
 export interface Tools {
@@ -34,6 +35,7 @@ function getBucketFluid(
     if (stack.name.startsWith('minecraft:water_bucket:0')) return 'water'
     if (stack.name.startsWith('minecraft:lava_bucket:0')) return 'lava'
     if (stack.name.startsWith('minecraft:milk:0')) return 'milk'
+    if (stack.name.startsWith('minecraft:milk_bucket:0')) return 'milk'
   }
 
   if (!stack.name.startsWith('forge:bucketfilled:0:')) return
@@ -42,17 +44,24 @@ function getBucketFluid(
   )?.[1]
 }
 
+function stackBucketToFluid(
+  stack: JEIEItem,
+  getFullID: (ingr: JEIEItem) => string
+): boolean {
+  if (!stack.name.startsWith('forge:bucketfilled:0:')) return false
+  const f = getBucketFluid(stack, getFullID)
+  if (!f) return false
+  stack.type = 'fluid'
+  stack.name = f
+  return true
+}
+
 function bucketToFluid(
   ingr: JEIEIngredient,
   getFullID: (ingr: JEIEItem) => string
 ): void {
   ingr.stacks.forEach((stack) => {
-    if (!stack.name.startsWith('forge:bucketfilled:0:')) return
-    const f = getBucketFluid(stack, getFullID)
-    if (!f) return
-    stack.type = 'fluid'
-    stack.name = f
-    ingr.amount = 1000
+    if (stackBucketToFluid(stack, getFullID)) ingr.amount = 1000
   })
 }
 
@@ -122,22 +131,20 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
 
   cat.recipes.forEach((rec) => {
     rec.input.items.forEach((slot) => {
-      if (slot.stacks[0]?.name === 'minecraft:milk_bucket:0') {
-        // Items that give back
-        rec.output.items.push(getSlot('minecraft:bucket:0'))
-      } else {
-        // Change amount of tool ingredients
-        slot.stacks.some((stack) => {
-          if (stack.type !== 'item') return false
-          const def = stack.name.split(':').slice(0, 2).join(':')
-          const durab = tools.toolDurability[def]
-          if (!durab) return false
-          slot.amount = 1 / durab
-          slot.stacks = [stack]
-          return true
-        })
-      }
+      // Change amount of tool ingredients
+      slot.stacks.some((stack) => {
+        if (stack.type !== 'item') return false
+        const def = stack.name.split(':').slice(0, 2).join(':')
+        const durab = tools.toolDurability[def]
+        if (!durab) return false
+        slot.amount = 1 / durab
+        slot.stacks = [stack]
+        return true
+      })
     })
+
+    // Convert buckets in output to liquids (inputs converted later)
+    rec.output.items.forEach((ingr) => bucketToFluid(ingr, tools.getFullID))
   })
 })
 
@@ -580,47 +587,81 @@ adapters.set(/jeresources__plant/, (cat) => {
   })
 })
 
-const beeOnlySpecie = (item: JEIEItem, tools: Tools) => {
+function getSpecie(item: JEIEItem, tools: Tools) {
   const specieGenes = tools
     .getFullID(item)
     .match(/(\{Slot:0b,UID0:"[^"]+")/)?.[1]
   if (!specieGenes) throw new Error('Cant parse bee genes')
+  return specieGenes
+}
 
+function getItemWithSpecie(id: string, specieGenes: string): JEIEItem {
   return {
-    ...item,
-    name: item.name.replace(
-      /(forestry:bee_[^:]+:\d+:).+/,
-      `$1{Genome:{Chromosomes:[${specieGenes}}]}}`
-    ),
+    type: 'item',
+    name: `${id}:{Genome:{Chromosomes:[${specieGenes}}]}}`,
   }
 }
 
+function getBeeWithSpecie(name: string, specieGenes: string): JEIEItem {
+  return getItemWithSpecie(
+    name.match(/^(forestry:bee_[^:]+:\d+):.+/)?.[1] ?? '',
+    specieGenes
+  )
+}
+const beeOnlySpecie = (item: JEIEItem, tools: Tools) => {
+  return getBeeWithSpecie(item.name, getSpecie(item, tools))
+}
+
 adapters.set(/bdew__jeibees__mutation__rootBees/, (cat, tools) => {
+  // Add bee mutations
+
+  const uniqSpecies = new Set<string>()
   cat.recipes
+    // Iterate only recipes with queens in output
     .filter((rec) =>
       rec.output.items.some((slot) =>
         slot.stacks.some((st) => st.name.startsWith('forestry:bee_queen_ge:0:'))
       )
     )
     .forEach((rec) => {
-      rec.input.items.forEach((slot) => {
-        slot.stacks = [beeOnlySpecie(slot.stacks[0], tools)]
+      const species = rec.input.items.map((slot) =>
+        getSpecie(slot.stacks[0], tools)
+      )
+      rec.input.items.forEach((slot, i) => {
+        uniqSpecies.add(species[i])
+        slot.stacks = [getBeeWithSpecie(slot.stacks[0].name, species[i])]
       })
       const fullId = tools.getFullID(rec.output.items[0].stacks[0])
       const queenGenes = fullId.substring(24).replace(/,\s*Mate:.+/, '}')
+
+      // Add Queen => Princess + Drone
+      const queenItems = rec.output.items.map((slot) => ({
+        ...slot,
+        stacks: slot.stacks.map((s) => beeOnlySpecie(s, tools)),
+      }))
       cat.recipes.push({
-        input: {
-          items: rec.output.items.map((slot) => ({
-            ...slot,
-            stacks: slot.stacks.map((s) => beeOnlySpecie(s, tools)),
-          })),
-        },
+        input: { items: queenItems },
         output: {
           items: [
             getSlot('forestry:bee_princess_ge:0:' + queenGenes, 1),
             getSlot('forestry:bee_drone_ge:0:' + queenGenes, 4),
           ],
         },
+      })
+
+      // Duplicate recipe by swapping Drone + Princess genes in inputs
+      cat.recipes.push({
+        input: {
+          items: [
+            getSlot(
+              getItemWithSpecie('forestry:bee_princess_ge:0', species[1]).name
+            ),
+            getSlot(
+              getItemWithSpecie('forestry:bee_drone_ge:0', species[0]).name
+            ),
+          ],
+        },
+        output: { items: queenItems },
       })
     })
 })
@@ -649,9 +690,26 @@ adapters.set(/rustic__brewing/, (cat) => {
   })
 })
 
+adapters.set(/GENDUSTRY_/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items.forEach((slot) => {
+      // Replace wildcarded bees
+      if (slot.stacks.length < 20) return
+      const splitted = slot.stacks.map((s) => s.name.split(':', 4))
+      if (splitted.some((s) => s.length < 4)) return
+      const uniqNoNbt = new Set(splitted.map((s) => `${s[0]}:${s[1]}:*`))
+      slot.stacks = [...uniqNoNbt].map((name) => ({
+        type: slot.stacks[0].type,
+        name,
+      }))
+    })
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, tools) => {
   const convertBucket = (ingr: JEIESlot) => bucketToFluid(ingr, tools.getFullID)
+  cat.catalysts.forEach((it) => stackBucketToFluid(it, tools.getFullID))
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach(convertBucket)
   })

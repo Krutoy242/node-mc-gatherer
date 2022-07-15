@@ -1,11 +1,7 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
-  addRecipe(
-    '2x tconstruct:shard:0:{Material:"fusewood"}',
-    'botania:shimmerwoodplanks:0',
-    'tconstruct:tooltables:2'
-  )
+  addRecipe('tconstruct:tooltables:2', ['tconstruct:pattern:*', 'ore:logWood'])
   addRecipe(
     '2x tconstruct:shard:0:{Material:"xu_magical_wood"}',
     'extrautils2:decorativesolidwood:1',

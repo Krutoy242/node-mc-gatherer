@@ -1,3 +1,6 @@
-addRecipe('simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyColorGreen:230,TrophyItem:{id:"mekanism:gastank",Count:1b,Damage:0s},TrophyColorBlue:0,TrophyName:"Creative Gas Tank Frame",TrophyColorRed:255,display:{Lore:["Craft with 9 DIFFERENT gases"]}}', '9x mekanism:gastank:0:{tier:1}', 'minecraft:crafting_table:0')
-addRecipe('simple_trophies:trophy:0:{TrophyVariant:"gold",TrophyColorGreen:118,TrophyItem:{id:"mekanism:machineblock2",Count:1b,Damage:11s},TrophyColorBlue:151,TrophyName:"Creative Fluid Tank Frame",TrophyColorRed:40}', ['400000x fluid:cloud_seed_concentrated', '1000x fluid:corium', '400000x fluid:essence', '1000x fluid:red_matter', '1000x fluid:perfect_fuel', '1000x fluid:ic2uu_matter', '400000x fluid:witchwater', '1000x fluid:crystal', '400000x fluid:plasma'], 'minecraft:crafting_table:0')
 addRecipe('10x fluid:electronics', '20x placeholder:ticks', ['exnihilocreatio:block_barrel0:0', 'mekanism:robit:0'])
+addRecipe('excompressum:iron_mesh:0', 'exnihilocreatio:item_mesh:3')
+addRecipe('2x tconstruct:shard:0:{Material:"fusewood"}', 'botania:shimmerwoodplanks:0', 'tconstruct:tooltables:2:*')
+addRecipe('2x tconstruct:shard:0:{Material:"bloodwood"}', 'animus:blockbloodwood:0', 'tconstruct:tooltables:2:*')
+addRecipe('rftools:shape_card:0', 'fluid:ic2uu_matter', ['ic2:crystal_memory:0:{Pattern:{id:"rftools:shape_card",Count:1b,Damage:0s}}', 'ic2:te:63'])
+addRecipe('teslacorelib:base_addon:0', 'fluid:ic2uu_matter', ['ic2:crystal_memory:0:{Pattern:{id:"teslacorelib:base_addon",Count:1b,Damage:0s}}', 'ic2:te:63'])

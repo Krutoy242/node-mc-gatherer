@@ -492,6 +492,7 @@
   10523133.127177434 minecraft:wool:13
   10594776.535493115 minecraft:anvil:0
   11090339.505495606 biomesoplenty:plant_1:6
+  11090339.505495606 thaumcraft:cinderpearl:0
   11195928.710011858 forestry:slabs.fireproof.0:5
   11890981.711947018 minecraft:lever:0
   12305016.874162953 forestry:logs.fireproof.1:1
@@ -2943,21 +2944,6 @@
   1287734.0747535303 minecraft:red_mushroom:0
   14555932.949083725 botania:mushroom:14
   },
-"Emptiness (14676)": {
-  38.25246788258211 minecraft:air:0
-  54.9560805211622 thaumicaugmentation:stone:0
-  1202.9620748303153 thaumicaugmentation:stone:2
-  3039.648269125941 thaumicaugmentation:stone:1
-  11345.752242957467 thaumicaugmentation:taint_flower:0
-  100825.02819654996 minecraft:netherrack:0
-  109176.86999329929 minecraft:dirt:0
-  194700.4093099494 minecraft:grass:0
-  291712.34892821126 minecraft:end_stone:0
-  664986.1761243489 minecraft:sandstone:0
-  917156.2228240375 minecraft:stained_hardened_clay:0
-  957123.0517395905 biomesoplenty:flesh:0
-  1784836.7242647288 minecraft:red_sandstone:0
-  },
 "Philucka (115)": {
   5.070615616750783 minecraft:stone:0
   14.604770330643388 minecraft:air:0
@@ -3025,4 +3011,69 @@
   750518.5873907759 botania:flower:4
   750518.5873907759 botania:flower:12
   750916.2715311119 actuallyadditions:item_coffee_seed:0
+  },
+"Emptiness (14676)": {
+  16.22370321515723 minecraft:air:0
+  41.124142291676215 thaumicaugmentation:stone:0
+  437.7221633763979 thaumcraft:stone_ancient:0
+  1183.3538172303645 thaumicaugmentation:stone:2
+  1320.8580100904173 thaumcraft:stone_eldritch_tile:0
+  1523.8832089088785 thaumicaugmentation:stone:10
+  2051.892416714145 thaumicaugmentation:stone:3
+  2664.189582872558 thaumicaugmentation:stone:8
+  3096.477723756966 thaumicaugmentation:stone:1
+  3423.8709777203467 thaumcraft:stone_ancient_tile:0
+  3427.9079047342816 thaumicaugmentation:stairs_ancient:0
+  4691.302626356231 thaumicaugmentation:stairs_eldritch_tile:0
+  5373.280366991101 thaumcraft:slab_ancient:0
+  10071.21199154672 thaumicaugmentation:stone:6
+  10437.256653445214 thaumcraft:slab_eldritch:0
+  12086.38048633246 thaumicaugmentation:taint_flower:0
+  16039.176573150076 thaumcraft:stone_ancient_glyphed:0
+  22358.958863667358 thaumicaugmentation:stone:9
+  28287.482105015562 thaumicaugmentation:bars:0
+  67476.25069116906 thaumcraft:stone_ancient_doorway:0
+  83186.70404357446 thaumicaugmentation:strange_crystal:0
+  83704.56919343835 minecraft:dirt:0
+  84882.12965119268 thaumicaugmentation:stone:5
+  96357.53177679243 thaumicaugmentation:urn:0
+  128426.6719816618 thaumicaugmentation:stone:7
+  140723.9232111365 minecraft:grass:0
+  147170.67389525808 thaumcraft:stairs_ancient:0
+  156124.2101192894 thaumicaugmentation:slab:0
+  184709.05352226083 thaumicaugmentation:urn:1
+  230165.4121856098 minecraft:netherrack:0
+  238169.05142748327 minecraft:web:0
+  249521.44275432642 minecraft:end_stone:0
+  347321.3738917907 thaumicaugmentation:obelisk_placer:1
+  354861.48361328436 thaumcraft:stone_porous:0
+  366472.90808030067 minecraft:obsidian:0
+  426019.36055201665 minecraft:soul_sand:0
+  567122.0727802183 thaumicaugmentation:stone:4
+  607068.9953090422 thaumicaugmentation:stone:11
+  703900.1425504208 thaumicaugmentation:crab_vent:0
+  821172.6797249274 minecraft:sandstone:0
+  877215.9431889225 minecraft:cobblestone:0
+  977290.3244908547 biomesoplenty:flesh:0
+  996033.646217158 thaumcraft:pedestal_ancient:0
+  1008260.631473484 biomesoplenty:dirt:2
+  1055515.121383581 biomesoplenty:ash_block:0
+  1244406.9472391123 thaumicaugmentation:urn:2
+  1393250.8588589092 thaumicaugmentation:capstone:1
+  1754809.6720378567 biomesoplenty:dirt:0
+  1945012.6901985204 thaumicaugmentation:capstone:0
+  2202551.749790113 biomesoplenty:grass:4
+  2250148.068810234 minecraft:stained_hardened_clay:0
+  2279286.840897107 minecraft:stone:0
+  2371934.636213895 thaumicaugmentation:eldritch_lock_impetus:0
+  3087881.6941805957 thaumicaugmentation:obelisk_placer:0
+  3802408.548398728 biomesoplenty:grass:2
+  4014858.0244405437 thaumcraft:pedestal_eldritch:0
+  5232183.642469978 minecraft:red_sandstone:0
+  7002136.927148481 biomesoplenty:grass:6
+  10329182.246989805 thaumicaugmentation:eldritch_lock:3
+  11096033.384690665 thaumicaugmentation:eldritch_lock:2
+  11403101.803625228 thaumicaugmentation:eldritch_lock:0
+  11891012.494373249 thaumicaugmentation:eldritch_lock:1
+  12218972.25878263 thaumicaugmentation:capstone:2
   }

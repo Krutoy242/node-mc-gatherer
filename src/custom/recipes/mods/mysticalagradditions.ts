@@ -10,4 +10,5 @@ export default function addRecipes(
       'mysticalagradditions:special:1',
     ]
   )
+  addRecipe('0.35x mysticalagradditions:stuff:1', '100000x placeholder:fight')
 }
