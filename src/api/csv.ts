@@ -12,27 +12,23 @@ type CSVBaseItem = {
   [key in keyof typeof baseItemSetup]-?: string
 }
 
-export function loadDataCSV(csvText: string) {
+export function loadDataCSVEx(csvText: string, parserer: any) {
   return new Promise<BaseItem[]>((resolve, reject) => {
-    ;(typeof process === 'object'
-      ? import('csv-parse')
-      : import('csv-parse/browser/esm')
-    ).then(({ default: { parse } }) => {
-      const table: CSVBaseItem[] = []
-      const parser = parse(csvText, { columns: true })
+    const table: CSVBaseItem[] = []
+    const parser = parserer(csvText, { columns: true })
 
-      parser.on('readable', () => {
-        let record
-        while ((record = parser.read()) !== null)
-          table.push(record as CSVBaseItem)
-      })
-
-      parser.on('end', () => {
-        resolve(parseOutput(table))
-      })
-      parser.on('error', reject)
+    parser.on('readable', () => {
+      let record
+      while ((record = parser.read()) !== null)
+        table.push(record as CSVBaseItem)
     })
+
+    parser.on('end', () => {
+      resolve(parseOutput(table))
+    })
+    parser.on('error', reject)
   })
+  // })
 }
 
 function parseOutput(table: CSVBaseItem[]): BaseItem[] {

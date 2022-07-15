@@ -3,6 +3,7 @@ import open from 'open'
 
 import { CsvRecipe, solve, Stack } from '../api'
 import Playthrough from '../api/Playthrough'
+import { getVolume } from '../api/volume'
 import Definition from '../lib/items/Definition'
 import DefinitionStore from '../lib/items/DefinitionStore'
 import RecipeStore from '../lib/recipes/RecipeStore'
@@ -68,10 +69,19 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
 
   return (
     `${header}\n` +
-    sortBy(pl.getMerged().toArray(), (o) => -o[1])
-      .map(([def, v]) =>
+    sortBy(
+      pl
+        .getMerged()
+        .toArray()
+        .map(([def, v]) => {
+          const [vol, unit] = getVolume(def)
+          return [def, v / vol, unit] as const
+        }),
+      (o) => -o[1]
+    )
+      .map(([def, v, unit]) =>
         [
-          v,
+          `${v}${unit ?? ''}`,
           pl.getCatalyst(def),
           escapeCsv(def.display),
           escapeCsv(def.id),

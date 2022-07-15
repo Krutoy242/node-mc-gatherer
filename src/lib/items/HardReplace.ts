@@ -32,6 +32,8 @@ const hardReplaceMap: Record<string, string> = {
   'forestry:chipsets:1:{T:1s}': 'forestry:chipsets:1',
   'forestry:chipsets:2:{T:2s}': 'forestry:chipsets:2',
   'forestry:chipsets:3:{T:3s}': 'forestry:chipsets:3',
+  'rf:energy': 'placeholder:rf',
+  'rf:enderio:energy': 'placeholder:rf',
 }
 
 export default hardReplaceMap

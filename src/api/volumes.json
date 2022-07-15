@@ -1,0 +1,11 @@
+{
+  "__": "# How much volume of this entry count as one",
+  "placeholder": {
+    "ticks"       : {"_vol": 1200,    "_unit": "min"},
+    "mana"        : {"_vol": 1000,    "_unit": "Kmana"},
+    "exploration" : {"_vol": 1000,    "_unit": "Kexpl"},
+    "grid_power"  : {"_vol": 100,     "_unit": ""},
+    "rf"          : {"_vol": 1000000, "_unit": "Mrf"}
+  },
+  "fluid": {"_vol": 1000, "_unit": "b"}
+}
