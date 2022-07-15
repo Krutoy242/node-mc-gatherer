@@ -23,16 +23,13 @@ function logMore(text: string) {
 /* =============================================
 =
 ============================================= */
-interface TaskOptionsBased<T> {
+interface TaskOptionsFiled<T> {
   moreInfo?: (info: {
     addedDefs: number
     addedRecs: number
     result: T
   }) => string
   action?: (text: string) => T
-}
-
-interface TaskOptionsFiled<T> extends TaskOptionsBased<T> {
   textSource?: string
   '🛑'?: string
   '⚠️'?: string

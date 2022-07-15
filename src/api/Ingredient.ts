@@ -20,9 +20,12 @@ export class Ingredient<T extends Identified> implements Identified {
   }
 
   matches(other: this): boolean {
-    return other
-      .matchedBy()
-      .every((b) => this.matchedBy().some((a) => a.id === b.id))
+    return (
+      this.id === other.id ||
+      other
+        .matchedBy()
+        .every((b) => this.matchedBy().some((a) => a.id === b.id))
+    )
   }
 
   setMatchedCache(cache: T[]) {

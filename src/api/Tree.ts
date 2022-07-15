@@ -12,6 +12,9 @@ function getNbt(sNbt?: string) {
 
 /* =============================================
 ============================================= */
+interface OreDict<T> {
+  [oreName: string]: T[] | string[]
+}
 
 export class Tree<T extends Identified & Based> {
   static actualMeta(meta?: string): string | undefined {
@@ -55,7 +58,13 @@ export class Tree<T extends Identified & Based> {
     }
   } = {}
 
-  private oreDict?: { [oreName: string]: T[] }
+  private _oreDict?: OreDict<T>
+  public get oreDict(): OreDict<T> {
+    if (!this._oreDict) {
+      throw new Error('OreDict must be intitialized')
+    }
+    return this._oreDict
+  }
 
   /** Is tree locked and no new entryes could be added */
   private locked = false
@@ -69,10 +78,11 @@ export class Tree<T extends Identified & Based> {
         sNbt ?? ''
       ]
     }
+
     this.lookById = (id) =>
       this.lookBased(...Tree.baseFromId(id, hardReplaceMap))
 
-    this.getBased = (source, entry, meta, sNbt, id) => {
+    const getItemBased: this['getBased'] = (source, entry, meta, sNbt, id) => {
       if (this.locked) {
         const found = this.lookBased(source, entry, meta, sNbt)
         if (!found) throw new Error('Trying to create new item in Locked mode')
@@ -93,16 +103,23 @@ export class Tree<T extends Identified & Based> {
         )))
     }
 
+    // Always return straight item if oredict content only one item
+    const getOreBased: this['getBased'] = (source, entry, ...args) => {
+      const ores = this.getOre(entry)
+      if (ores.length === 1) return ores[0]
+      return getItemBased(source, entry, ...args)
+    }
+
+    this.getBased = (source, ...args) =>
+      source === 'ore'
+        ? getOreBased(source, ...args)
+        : getItemBased(source, ...args)
+
     this.getById = (id) => this.getBased(...Tree.baseFromId(id, hardReplaceMap))
   }
 
   addOreDict(oreDict: { [oreName: string]: string[] }) {
-    this.oreDict = Object.fromEntries(
-      Object.entries(oreDict).map(([k, v]) => [
-        k,
-        v.map((id) => this.getById(id)),
-      ])
-    )
+    this._oreDict = oreDict
   }
 
   /**
@@ -139,16 +156,10 @@ export class Tree<T extends Identified & Based> {
 
   protected *matchedByDef(def?: T): IterableIterator<T> {
     if (!def) return
-    if (!this.oreDict)
-      throw new Error('OreDict must be intitialized before iteration')
 
     if (def.source === 'ore') {
-      const oreList = this.oreDict[def.entry]
-      if (!oreList) {
-        console.warn(`This ore is empty: ${def.entry}`)
-        return yield def
-      }
-
+      const oreList = this.getOre(def.entry)
+      if (!oreList.length) return yield def
       for (const oreDef of oreList) {
         yield* this.matchedByNonOre(oreDef)
       }
@@ -209,6 +220,17 @@ export class Tree<T extends Identified & Based> {
 
       if (nbtMatch(defNbt, dNbt)) yield d
     }
+  }
+
+  /**  */
+  private getOre(entry: string): T[] | [] {
+    const oreList = this.oreDict[entry]
+    if (!oreList) {
+      console.warn(`This ore is empty: ${entry}`)
+      return []
+    }
+    if (typeof oreList[0] !== 'string') return oreList as T[]
+    return (this.oreDict[entry] = (oreList as string[]).map(this.getById))
   }
 }
 

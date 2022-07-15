@@ -70,6 +70,7 @@ else {
 function saveData(exportData: ExportData) {
   saveText(exportData.store.csv(), 'data_items.csv')
   saveObjAsJson(exportData.recipes, join(argv.output, 'data_recipes.json'))
+  saveObjAsJson(exportData.oreDict, join(argv.output, 'data_oredict.json'))
 }
 
 async function prompt(exportData: ExportData) {

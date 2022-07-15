@@ -1,4 +1,4 @@
-import { sortBy } from 'lodash'
+import _, { sortBy } from 'lodash'
 import open from 'open'
 
 import { CsvRecipe, solve, Stack } from '../api'
@@ -20,6 +20,7 @@ export interface ExportEntry {
 export interface ExportData {
   store: DefinitionStore
   recipes: CsvRecipe[]
+  oreDict: { [entry: string]: string[] }
   logger: (id: string) => Playthrough<Definition> | undefined
 }
 
@@ -60,6 +61,10 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   return {
     store,
     recipes: recipesStore.export(),
+    oreDict: _(store.oreDict)
+      .pickBy((l) => typeof l[0] !== 'string' && l.length > 1)
+      .mapValues((defs) => defs.map((d) => (d as Definition).id))
+      .value(),
     logger,
   }
 }

@@ -62,6 +62,17 @@ export default async function mcGather(
   // Recipes
   // ------------------------
 
+  const oreDict = runTask<OredictMap>('Creating OreDict', {
+    textSource: glob.sync(
+      fromMC('config/tellme/oredictionary-by-key-individual-csv*.csv')
+    )[0],
+    action: (text) => genOreDictionary(text),
+    moreInfo: (info) =>
+      `OreDict size: ${cli.num(Object.keys(info.result).length)}`,
+    '⚠️': chalk`Tellme file {green oredictionary-by-key-individual-csv} not found. All oredict recipes would be unknown.`,
+  })
+  if (oreDict) definitionStore.addOreDict(oreDict)
+
   if (options['jec'])
     runTask<number>('Addding JEC recipes', {
       textSource: fromMC('/config/JustEnoughCalculation/data/groups.json'),
@@ -132,17 +143,6 @@ export default async function mcGather(
           cli
         ),
     })
-
-  const oreDict = runTask<OredictMap>('Creating OreDict', {
-    textSource: glob.sync(
-      fromMC('config/tellme/oredictionary-by-key-individual-csv*.csv')
-    )[0],
-    action: (text) => genOreDictionary(text),
-    moreInfo: (info) =>
-      `OreDict size: ${cli.num(Object.keys(info.result).length)}`,
-    '⚠️': chalk`Tellme file {green oredictionary-by-key-individual-csv} not found. All oredict recipes would be unknown.`,
-  })
-  if (oreDict) definitionStore.addOreDict(oreDict)
 
   // ------------------------
   // Visuals

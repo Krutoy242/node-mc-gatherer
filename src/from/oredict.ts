@@ -1,14 +1,12 @@
 import { parse as csvParseSync } from 'csv-parse/sync'
 
 import { naturalSort } from '../lib/utils'
-import { createFileLogger } from '../log/logger'
 
 import { prefferedModSort } from './mod_sort'
 
 export interface OredictMap {
   [oreName: string]: string[]
 }
-const log = createFileLogger('oreDict.log')
 
 export default function genOreDictionary(csvText: string) {
   const dict: OredictMap = {}
@@ -37,13 +35,6 @@ export default function genOreDictionary(csvText: string) {
         prefferedModSort(getItemSource(a), getItemSource(b)) ||
         naturalSort(a, b)
     )
-  )
-
-  log(
-    Object.entries(dict)
-      .sort(([a], [b]) => naturalSort(a, b))
-      .map(([oreName, item]) => `${oreName} = ${item.join(' ')}`)
-      .join('\n')
   )
 
   return dict

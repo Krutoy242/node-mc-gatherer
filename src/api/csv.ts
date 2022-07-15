@@ -50,6 +50,3 @@ function addAdditionalFields(r: BaseItemMap): BaseItem {
   const [source, entry, meta, sNbt] = Tree.baseFromId(r.id)
   return { ...r, source, entry, meta, sNbt }
 }
-// loadDataCSV(fs.readFileSync('data_items.csv', 'utf8')).then((data) =>
-//   console.log(data)
-// )
