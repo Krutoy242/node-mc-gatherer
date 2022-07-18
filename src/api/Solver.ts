@@ -6,17 +6,19 @@ import { Stack } from './Stack'
 
 import { Calculable, Identified, IngredientStack } from '.'
 
-interface SolvableRecipe extends Calculable {
-  catalysts?: IngredientStack[]
-  inputs?: IngredientStack[]
+interface SolvableRecipe<T extends Identified> extends Calculable {
+  catalysts?: Stack<Ingredient<T>>[]
+  inputs?: Stack<Ingredient<T>>[]
+  catalystsDef?: Stack<T>[]
+  inputsDef?: Stack<T>[]
 }
 
-interface Solvable extends Identified, Calculable {
-  recipes: Set<SolvableRecipe> | undefined
-  mainRecipe: SolvableRecipe | undefined
+interface Solvable<T extends Identified> extends Identified, Calculable {
+  recipes: Set<SolvableRecipe<T>> | undefined
+  mainRecipe: SolvableRecipe<T> | undefined
 }
 
-export function solve<T extends Solvable>(
+export function solve<T extends Solvable<T>>(
   def: T,
   log?: {
     writeLn: (str: string) => void
@@ -56,13 +58,16 @@ export function solve<T extends Solvable>(
         .forEach((line) => log.writeLn(tab + '  ' + line))
     }
 
-    const catalysts = toDefStacks<T>(recipe.catalysts as any) // Sorry for that dirty type assertion ='(
-    const usages = toDefStacks<T>(recipe.inputs as any)
+    recipe.catalystsDef = toDefStacks(recipe.catalysts)
+    recipe.inputsDef = toDefStacks(recipe.inputs)
 
-    playthrough.addCatalysts(catalysts)
-    playthrough.addInputs(usages, amount)
+    playthrough.addCatalysts(recipe.catalystsDef)
+    playthrough.addInputs(recipe.inputsDef, amount)
 
-    const combined = uniqBy([catalysts, usages].flat(), (ms) => ms.it.id)
+    const combined = uniqBy(
+      [recipe.catalystsDef, recipe.inputsDef].flat(),
+      (ms) => ms.it.id
+    )
     const maxPad = log
       ? Math.max(...combined.map((ms) => log.complLength(ms)))
       : 0
@@ -79,8 +84,8 @@ export function solve<T extends Solvable>(
       onHold.has(id) && (onHold.delete(id), antiloop.delete(id))
     // --------------------
 
-    catalysts.forEach((ms) => further(ms, 1))
-    usages.forEach((ms) => further(ms, amount))
+    recipe.catalystsDef.forEach((ms) => further(ms, 1))
+    recipe.inputsDef.forEach((ms) => further(ms, amount))
 
     function further(ms: Stack<T>, mult: number) {
       unhold(ms.it.id)
@@ -88,7 +93,7 @@ export function solve<T extends Solvable>(
     }
   }
 
-  function recipeSorter(a: SolvableRecipe, b: SolvableRecipe): number {
+  function recipeSorter(a: SolvableRecipe<T>, b: SolvableRecipe<T>): number {
     return sortCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a)
   }
 
@@ -96,11 +101,11 @@ export function solve<T extends Solvable>(
     return b.purity - a.purity || a.complexity - b.complexity
   }
 
-  function reqPuritySumm(a: SolvableRecipe): number {
+  function reqPuritySumm(a: SolvableRecipe<T>): number {
     return puritySumm(a.inputs) + puritySumm(a.catalysts)
   }
 
-  function puritySumm(arr?: IngredientStack[]): number {
+  function puritySumm(arr?: Stack<Ingredient<T>>[]): number {
     if (!arr) return 0
     return arr.reduce(
       (c, d) => c + Math.max(...[...d.it.matchedBy()].map((o) => o.purity)),
