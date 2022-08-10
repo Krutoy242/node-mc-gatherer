@@ -16,6 +16,7 @@ interface SolvableRecipe<T extends Identified> extends Calculable {
 interface Solvable<T extends Identified> extends Identified, Calculable {
   recipes: Set<SolvableRecipe<T>> | undefined
   mainRecipe: SolvableRecipe<T> | undefined
+  mainRecipeAmount?: number | undefined
 }
 
 export function solve<T extends Solvable<T>>(
@@ -85,7 +86,9 @@ export function solve<T extends Solvable<T>>(
     // --------------------
 
     recipe.catalystsDef.forEach((ms) => further(ms, 1))
-    recipe.inputsDef.forEach((ms) => further(ms, amount))
+    recipe.inputsDef.forEach((ms) =>
+      further(ms, amount / (ms.it.mainRecipeAmount ?? 1))
+    )
 
     function further(ms: Stack<T>, mult: number) {
       unhold(ms.it.id)

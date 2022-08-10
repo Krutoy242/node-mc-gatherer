@@ -436,7 +436,7 @@ adapters.set(/jeresources__villager/, (cat) => {
               },
             ],
           },
-          catalyst: [getIngr('placeholder:trade', 100000 + y_i * 10000)],
+          catalyst: [getIngr('placeholder:trade', 10 + y_i)],
         })
       })
     })

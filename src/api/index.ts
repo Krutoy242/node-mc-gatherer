@@ -8,6 +8,7 @@ export * from './IngredientStore'
 export * from './Stack'
 export * from './Solver'
 export * from './NBT'
+export * from './volume'
 
 export type IngredientStack = Stack<Ingredient<Calculable & Identified>>
 
