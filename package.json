@@ -1,6 +1,6 @@
 {
   "name": "mc-gatherer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Gather recipes from different Minecraft sources",
   "main": "build/main/index.js",
   "types": "build/main/index.d.js",
