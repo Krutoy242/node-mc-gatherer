@@ -10,13 +10,6 @@ import RecipeStore from '../lib/recipes/RecipeStore'
 import { escapeCsv } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
 
-export interface ExportEntry {
-  id: string
-  viewBox?: string
-  display?: string
-  recipes?: Set<number>
-}
-
 export interface ExportData {
   store: DefinitionStore
   recipes: CsvRecipe[]

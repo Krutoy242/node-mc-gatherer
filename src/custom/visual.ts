@@ -1,9 +1,7 @@
+import { BaseVisible } from '../api'
 import Definition from '../lib/items/Definition'
 
-type VisFunc = () => {
-  viewBox?: string
-  display?: string
-}
+type VisFunc = () => Partial<BaseVisible>
 type Pointer =
   | VisFunc
   | {
@@ -16,21 +14,18 @@ export default function customRender(
   meta: string | undefined,
   sNbt: string | undefined,
   get: (id: string) => Definition
-): {
-  viewBox?: string
-  display?: string
-} {
+): Partial<BaseVisible> {
   const root: Pointer = {
     placeholder: {
       rf: {
         __: () => ({
-          viewBox: get('thermalfoundation:meter:0').viewBox,
+          imgsrc: get('thermalfoundation:meter:0').imgsrc,
           display: `{${entry}}`,
         }),
       },
       exploration: {
         __: () => ({
-          viewBox: get('botania:tinyplanet:0').viewBox,
+          imgsrc: get('botania:tinyplanet:0').imgsrc,
           display: `{${entry}}`,
         }),
       },
@@ -38,7 +33,7 @@ export default function customRender(
 
     thaumcraft: {
       infernal_furnace: {
-        __: () => ({ viewBox: get('minecraft:nether_brick:0').viewBox }),
+        __: () => ({ imgsrc: get('minecraft:nether_brick:0').imgsrc }),
       },
     },
   }

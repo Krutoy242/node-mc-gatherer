@@ -37,7 +37,7 @@ export default class Definition
   readonly id: string
 
   @Pos(21)
-  viewBox?: string
+  imgsrc?: string
 
   @Pos(0)
   @Format(escapeCsv)

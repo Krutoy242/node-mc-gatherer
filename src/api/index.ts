@@ -29,15 +29,23 @@ export interface Based {
   sNbt?: string
 }
 
-export const baseItemSetup = {
+const baseVisibleSetup = {
   display: String,
+  imgsrc: String,
+}
+
+export type BaseVisible = {
+  [P in keyof typeof baseVisibleSetup]: ReturnType<typeof baseVisibleSetup[P]>
+}
+
+export const baseItemSetup = {
+  ...baseVisibleSetup,
   tooltips: (s: string) => s.split('\\n'),
   purity: Number,
   complexity: Number,
   cost: Number,
   processing: Number,
   steps: Number,
-  viewBox: String,
   recipeIndexes: (s: string) => s.split(' ').map(Number),
   id: String,
 }

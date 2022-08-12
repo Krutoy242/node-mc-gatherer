@@ -4,7 +4,7 @@
 
 import _ from 'lodash'
 
-import { Ingredient, Tree } from '../../api'
+import { BaseVisible, Tree } from '../../api'
 import { CSVFile } from '../../api/csv'
 import customRender from '../../custom/visual'
 import { BlockToFluidMap } from '../../from/fluids'
@@ -46,7 +46,7 @@ export default class DefinitionStore
     return { noViewBox: log.noViewBox.count, noDisplay: log.noDisplay.count }
 
     async function assignVisual(def: Definition, firstRun = false) {
-      const fine = () => def.viewBox && def.display
+      const fine = () => def.imgsrc && def.display
       if (fine()) return
 
       const { source, entry, meta, sNbt } = def
@@ -58,42 +58,37 @@ export default class DefinitionStore
 
       if (firstRun || fine()) return
 
-      const attempts: () => IterableIterator<
-        | {
-            display?: string
-            viewBox?: string
+      const attempts: () => IterableIterator<Partial<BaseVisible> | undefined> =
+        function* () {
+          if (sNbt)
+            yield* self.matchedByDef(self.lookBased(source, entry, meta))
+          if (meta === '*' || entry === 'ore') yield* self.matchedByDef(def)
+          if (meta !== undefined && meta !== '0')
+            yield self.lookBased(source, entry)
+          if (blockToFluidMap && meta === '0' && !sNbt) {
+            const id = blockToFluidMap[def.id]
+            if (id) yield self.lookById(id)
           }
-        | undefined
-      > = function* () {
-        if (sNbt) yield* self.matchedByDef(self.lookBased(source, entry, meta))
-        if (meta === '*' || entry === 'ore') yield* self.matchedByDef(def)
-        if (meta !== undefined && meta !== '0')
-          yield self.lookBased(source, entry)
-        if (blockToFluidMap && meta === '0' && !sNbt) {
-          const id = blockToFluidMap[def.id]
-          if (id) yield self.lookById(id)
+          yield {
+            display: jeieEntry?.name,
+          }
+          yield customRender(source, entry, meta, sNbt, self.getById)
+          yield* self.matchedByDef(def)
         }
-        yield {
-          display: jeieEntry?.name,
-        }
-        yield customRender(source, entry, meta, sNbt, self.getById)
-        yield* self.matchedByDef(def)
-      }
 
       for (const defOther of attempts()) {
         if (fine()) return
         if (!defOther || defOther === def) continue
-        def.viewBox ??= defOther.viewBox
+        def.imgsrc ??= defOther.imgsrc
         def.display ??= defOther.display
       }
 
       if (!def.display) {
-        // def.display = `[${def.id}]`
         log.noDisplay(def.id + '\n')
       }
 
-      if (!def.viewBox) {
-        def.viewBox = self.getBased('openblocks', 'dev_null')?.viewBox
+      if (!def.imgsrc) {
+        def.imgsrc = self.getBased('openblocks', 'dev_null')?.imgsrc
         log.noViewBox(def.id + '\n')
       }
     }
