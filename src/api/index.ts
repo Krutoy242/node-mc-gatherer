@@ -46,7 +46,7 @@ export const baseItemSetup = {
   cost: Number,
   processing: Number,
   steps: Number,
-  recipeIndexes: (s: string) => s.split(' ').map(Number),
+  recipeIndexes: (s: string) => (s === '' ? [] : s.split(' ').map(Number)),
   id: String,
 }
 
