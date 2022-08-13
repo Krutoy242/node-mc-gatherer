@@ -1,0 +1,61 @@
+export default function addRecipes(
+  addRecipe: import('../../customs').AddRecipeFn
+) {
+  const aspects = [
+    'aer',
+    'alienis',
+    'alkimia',
+    'aqua',
+    'auram',
+    'aversio',
+    'bestia',
+    'caeles',
+    'cognitio',
+    'desiderium',
+    'draco',
+    'exanimis',
+    'exitium',
+    'fabrico',
+    'fluctus',
+    'gelum',
+    'herba',
+    'humanus',
+    'ignis',
+    'imperium',
+    'infernum',
+    'instrumentum',
+    'lux',
+    'machina',
+    'metallum',
+    'mortuus',
+    'motus',
+    'mythus',
+    'ordo',
+    'perditio',
+    'permutatio',
+    'potentia',
+    'praecantatio',
+    'praemunio',
+    'rattus',
+    'sensus',
+    'sonus',
+    'spiritus',
+    'tenebrae',
+    'terra',
+    'vacuos',
+    'ventus',
+    'victus',
+    'vinculum',
+    'visum',
+    'vitium',
+    'vitreus',
+    'volatus',
+  ]
+
+  aspects.forEach((aspect) => {
+    addRecipe(
+      `thaumadditions:salt_essence:0:{Aspects:[{key:"${aspect}",amount:1}]}`,
+      `2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"${aspect}"}]}`
+    )
+  })
+}

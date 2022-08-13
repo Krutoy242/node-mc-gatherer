@@ -5,7 +5,7 @@ export default function addRecipes(
   addRecipe('rftoolsdim:dimlet_parcel:*', '1000x placeholder:fight')
 
   addRecipe('dimension:RFTools_Dimension', '1000x placeholder:exploration', [
-    'rftdimtweak:dimension_enscriber:0',
+    'rftoolsdim:dimension_enscriber:0',
     'rftoolsdim:dimension_builder:0',
     'rftoolsdim:dimension_editor:0',
   ])

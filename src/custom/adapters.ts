@@ -89,8 +89,6 @@ adapters.set(
       '|jei__information' +
       '|jeresources__worldgen' +
       '|petrified__burn__time' +
-      '|thermalexpansion__transposer__extract' +
-      '|thermalexpansion__transposer__fill' +
       '|ftbquests__lootcrates' +
       '|ftbquests__quests' +
       '|xu2__machine__extrautils2__generator__culinary'
@@ -287,6 +285,22 @@ adapters.set(/forestry__fabricator/, (cat) => {
     const slot = rec.input.items.find((slot) => slot.x === 118 && slot.y === 0)
     if (slot) slot.amount = rec.output.items[0].amount / 33 // TODO max durability
   })
+})
+
+adapters.set(/forestry__squeezer/, (cat) => {
+  const blacklistInputs = [
+    'forestry:can:1:',
+    'forestry:capsule:1:',
+    'forestry:refractory:1:',
+  ]
+  cat.recipes = cat.recipes.filter(
+    (rec) =>
+      !rec.input.items.some((slot) =>
+        slot.stacks.some((stack) =>
+          blacklistInputs.some((ignore) => stack.name.startsWith(ignore))
+        )
+      )
+  )
 })
 
 adapters.set(/thermalexpansion__transposer_(extract|fill)/, (cat) => {
