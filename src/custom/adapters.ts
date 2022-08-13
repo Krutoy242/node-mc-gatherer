@@ -153,25 +153,27 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
   ]
   cat.catalysts = catalyst.map((g) => g.stacks[0])
 
+  const notConsumed = [
+    'tcomplement:cast:',
+    'tconstruct:cast:',
+    'tconstruct:cast_custom:',
+  ]
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    rec.input.items.splice(1, 1) // Remove Duplicate of input liquid
+    rec.input.items.splice(2, 1) // Remove Duplicate of input liquid
 
-    // Table with 0 or 1 cast on table
-    const slot = rec.input.items[1]
-    if (slot.stacks.length <= 1) {
-      const castOnTable = slot.stacks[0]
+    rec.input.items.forEach((slot, i) => {
+      // Cast is reusable, move it to catalysts
+      const cast = slot.stacks[0]
       if (
-        castOnTable &&
-        (castOnTable.name.startsWith('tcomplement:cast:') ||
-          castOnTable.name.startsWith('tconstruct:cast:') ||
-          castOnTable.name.startsWith('tconstruct:cast_custom:'))
+        cast &&
+        cast.type === 'item' &&
+        notConsumed.some((c) => cast.name.startsWith(c))
       ) {
-        // Cast is reusable, move it to catalysts
-        rec.input.items.splice(1, 1)
-        rec.catalyst = [...catalyst, getIngr(castOnTable.name)]
+        rec.input.items.splice(i, 1)
+        rec.catalyst = [...catalyst, getIngr(cast.name)]
       }
       return
-    }
+    })
   })
 })
 
@@ -726,6 +728,15 @@ adapters.set(/.*/, (cat, tools) => {
   cat.catalysts.forEach((it) => stackBucketToFluid(it, tools.getFullID))
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach(convertBucket)
+
+    rec.output.items.forEach((slot) => {
+      for (const stack of slot.stacks) {
+        if (stack.name.startsWith('minecraft:air')) {
+          slot.stacks = []
+          break
+        }
+      }
+    })
   })
 })
 

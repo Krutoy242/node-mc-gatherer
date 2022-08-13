@@ -4,3 +4,8 @@ addRecipe('2x tconstruct:shard:0:{Material:"fusewood"}', 'botania:shimmerwoodpla
 addRecipe('2x tconstruct:shard:0:{Material:"bloodwood"}', 'animus:blockbloodwood:0', 'tconstruct:tooltables:2:*')
 addRecipe('rftools:shape_card:0', 'fluid:ic2uu_matter', ['ic2:crystal_memory:0:{Pattern:{id:"rftools:shape_card",Count:1b,Damage:0s}}', 'ic2:te:63'])
 addRecipe('teslacorelib:base_addon:0', 'fluid:ic2uu_matter', ['ic2:crystal_memory:0:{Pattern:{id:"teslacorelib:base_addon",Count:1b,Damage:0s}}', 'ic2:te:63'])
+addRecipe('cyclicmagic:soulstone:0', ['cyclicmagic:ender_pearl_mounted:0', 'cyclicmagic:crystallized_obsidian:0', '4020x placeholder:xp'], 'minecraft:anvil:0')
+addRecipe('conarm:boots_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_boots_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
+addRecipe('conarm:leggings_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_leggings_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
+addRecipe('conarm:chest_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_chest_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
+addRecipe('conarm:helmet_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_helmet_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
