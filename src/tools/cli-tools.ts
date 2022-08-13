@@ -27,7 +27,7 @@ interface TaskOptionsFiled<T> {
   moreInfo?: (info: {
     addedDefs: number
     addedRecs: number
-    result: T
+    result: T extends Promise<any> ? Awaited<T> : T
   }) => string
   action?: (text: string) => T
   textSource?: string

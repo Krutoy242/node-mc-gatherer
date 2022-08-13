@@ -3,6 +3,7 @@
 ============================================= */
 
 import _ from 'lodash'
+import { getIcon } from 'mc-icons'
 
 import { BaseVisible, Tree } from '../../api'
 import { CSVFile } from '../../api/csv'
@@ -32,7 +33,7 @@ export default class DefinitionStore
 
   async assignVisuals(nameMap?: NameMap, blockToFluidMap?: BlockToFluidMap) {
     const log = {
-      noViewBox: createFileLogger('noViewBox.log'),
+      noImgsrc: createFileLogger('noImgsrc.log'),
       noDisplay: createFileLogger('noDisplay.log'),
     }
 
@@ -43,44 +44,43 @@ export default class DefinitionStore
     for (const def of this) await assignVisual(def, true)
     for (const def of this) await assignVisual(def)
 
-    return { noViewBox: log.noViewBox.count, noDisplay: log.noDisplay.count }
+    return { noImgsrc: log.noImgsrc.count, noDisplay: log.noDisplay.count }
 
     async function assignVisual(def: Definition, firstRun = false) {
       const fine = () => def.imgsrc && def.display
       if (fine()) return
 
       const { source, entry, meta, sNbt } = def
+
+      // Find tooltips
       const jeieId = sNbt
         ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
         : def.id
       const jeieEntry = nameMap?.[jeieId]
       if (jeieEntry) def.tooltips = jeieEntry.tooltips
 
-      if (firstRun || fine()) return
-
-      const attempts: () => IterableIterator<Partial<BaseVisible> | undefined> =
-        function* () {
-          if (sNbt)
-            yield* self.matchedByDef(self.lookBased(source, entry, meta))
-          if (meta === '*' || entry === 'ore') yield* self.matchedByDef(def)
-          if (meta !== undefined && meta !== '0')
-            yield self.lookBased(source, entry)
-          if (blockToFluidMap && meta === '0' && !sNbt) {
-            const id = blockToFluidMap[def.id]
-            if (id) yield self.lookById(id)
-          }
-          yield {
-            display: jeieEntry?.name,
-          }
-          yield customRender(source, entry, meta, sNbt, self.getById)
-          yield* self.matchedByDef(def)
+      function* attempts(): IterableIterator<Partial<BaseVisible> | undefined> {
+        yield {
+          imgsrc: getIcon([source, entry, Number(meta), sNbt]),
+          display: jeieEntry?.name,
         }
+        if (sNbt) yield* self.matchedByDef(self.lookBased(source, entry, meta))
+        if (meta === '*' || entry === 'ore') yield* self.matchedByDef(def)
+        if (meta !== undefined && meta !== '0')
+          yield self.lookBased(source, entry)
+        if (blockToFluidMap && meta === '0' && !sNbt) {
+          const id = blockToFluidMap[def.id]
+          if (id) yield self.lookById(id)
+        }
+        yield customRender(source, entry, meta, sNbt, self.getById)
+        yield* self.matchedByDef(def)
+      }
 
       for (const defOther of attempts()) {
-        if (fine()) return
         if (!defOther || defOther === def) continue
         def.imgsrc ??= defOther.imgsrc
         def.display ??= defOther.display
+        if (firstRun || fine()) return
       }
 
       if (!def.display) {
@@ -89,7 +89,7 @@ export default class DefinitionStore
 
       if (!def.imgsrc) {
         def.imgsrc = self.getBased('openblocks', 'dev_null')?.imgsrc
-        log.noViewBox(def.id + '\n')
+        log.noImgsrc(def.id + '\n')
       }
     }
   }

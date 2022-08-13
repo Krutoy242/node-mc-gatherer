@@ -17,7 +17,6 @@
   "scripts": {
     "build": "tsc",
     "show-unused-exports": "npx ts-prune",
-    "update-sprite": "ts-node src/cli.ts --icons=\"D:/CODING/mc-icons/x32\" --output=\"data/\"",
     "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\"",
     "run:herodotus": "ts-node src/cli.ts --mc=\"E:/mc_client/GDLuncher/instances/Herodotus\""
   },
@@ -30,6 +29,7 @@
     "csv-parse": "^5.0.4",
     "glob": "^7.2.0",
     "lodash": "^4.17.21",
+    "mc-icons": "^1.1.4",
     "mc-iexporter-iterator": "^1.0.0",
     "numeral": "^2.0.6",
     "open": "^8.4.0",

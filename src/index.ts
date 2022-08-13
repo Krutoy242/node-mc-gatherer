@@ -21,7 +21,6 @@ import append_JEIExporter from './from/jeie/JEIExporter'
 import getNameMap, { NameMap } from './from/jeie/NameMap'
 import append_JER from './from/jer'
 import genOreDictionary, { OredictMap } from './from/oredict'
-import append_viewBoxes from './from/spritesheet'
 import { genToolDurability } from './from/tools'
 import Calculator from './lib/calc/Calculator'
 import Definition from './lib/items/Definition'
@@ -147,17 +146,11 @@ export default async function mcGather(
   // ------------------------
   // Visuals
   // ------------------------
-
-  runTask('Load Spritesheet', {
-    textSource: 'data/spritesheet.json',
-    action: (text) => append_viewBoxes(definitionStore, JSON.parse(text)),
-  })
-
   await runTask('Assign visuals', {
     action: () => definitionStore.assignVisuals(nameMap, blockToFluidMap),
     moreInfo: (i) =>
-      `noDisp: ${cli.num((i.result as any).noDisplay)}, noVB: ${cli.num(
-        (i.result as any).noViewBox
+      `noDisp: ${cli.num(i.result.noDisplay)}, noVB: ${cli.num(
+        i.result.noImgsrc
       )}`,
   })
 

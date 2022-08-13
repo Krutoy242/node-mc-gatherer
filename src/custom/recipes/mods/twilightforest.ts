@@ -4,7 +4,7 @@ export default function addRecipes(
   addRecipe('dimension:7', 'minecraft:diamond:0')
   addRecipe(
     'twilightforest:lamp_of_cinders:0',
-    ['13000x placeholder:fight', '130000x placeholder:ticks'],
+    ['130000x placeholder:fight', '1300000x placeholder:ticks'],
     'dimension:7'
   )
 

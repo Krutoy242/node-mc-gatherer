@@ -6,10 +6,8 @@ import { join } from 'path'
 import { terminal as term } from 'terminal-kit'
 import yargs from 'yargs'
 
-import Definition from './lib/items/Definition'
 import { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
-import make_sprite from './tools/make_sprite'
 
 import mcGather from '.'
 
@@ -25,11 +23,6 @@ const argv = yargs(process.argv.slice(2))
       type: 'string',
       describe: 'Output dir path',
       default: '.',
-    },
-    icons: {
-      alias: 'i',
-      type: 'string',
-      describe: 'If specified, generate spritesheet .png and .json',
     },
     jeie: {
       type: 'boolean',
@@ -55,17 +48,14 @@ function saveObjAsJson(obj: any, filename: string) {
   saveText(JSON.stringify(obj, null, 2), filename)
 }
 
-if (argv.icons) make_sprite(argv.icons, argv.output)
-else {
-  if (!argv.mc) throw new Error('Arguments must include --mc')
-  ;(async () => {
-    const cli = new CLIHelper()
-    const exportData = await mcGather(argv as any, cli)
-    saveData(exportData)
-    await prompt(exportData)
-    term.processExit(0)
-  })()
-}
+if (!argv.mc) throw new Error('Arguments must include --mc')
+;(async () => {
+  const cli = new CLIHelper()
+  const exportData = await mcGather(argv as any, cli)
+  saveData(exportData)
+  await prompt(exportData)
+  term.processExit(0)
+})()
 
 function saveData(exportData: ExportData) {
   saveText(exportData.store.csv(), 'data_items.csv')
