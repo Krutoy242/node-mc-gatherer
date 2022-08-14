@@ -1,8 +1,8 @@
 import _, { sortBy } from 'lodash'
-import open from 'open'
 
-import type { CsvRecipe, Stack } from '../api'
-import { solve } from '../api'
+import type { CsvRecipe } from '../api'
+import { solveLog } from '../api'
+
 import type Playthrough from '../api/Playthrough'
 import { getVolume } from '../api/volume'
 import type Definition from '../lib/items/Definition'
@@ -31,12 +31,22 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
     const filePath = `tree/${fileName}.log`
     const write = createFileLogger(filePath)
-    const playthrough = solve(def, {
-      writeLn    : (s: string) => write(`${s}\n`),
-      complLength: (ms: any) =>
-        (ms as Stack<Definition>).it.complexity_s.length,
+    const writeLn = (s: string) => write(`${s}\n`)
+
+    const playthrough = solveLog(def, [0, 1], (def, combined, _a, tab, complexityPad) => {
+      writeLn('  '.repeat(tab) + def.toString({ complexityPad }))
+      if (!combined) return
+
+      (!def.mainRecipe && def.purity < 1
+        ? [...def.recipes ?? []]
+        : [def.mainRecipe]
+      )
+        .forEach(rec => rec
+          ?.toString().split('\n')
+          .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`)))
+
+      return [tab + 1, Math.max(...combined.map(it => it[0].complexity_s.length))]
     })
-    open(filePath, { wait: true })
     return playthrough
   }
 

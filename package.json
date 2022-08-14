@@ -32,7 +32,6 @@
     "lodash": "^4.17.21",
     "mc-icons": "^1.1.4",
     "numeral": "^2.0.6",
-    "open": "^8.4.0",
     "reflect-metadata": "^0.1.13",
     "terminal-kit": "^2.4.0",
     "typescript-memoize": "^1.1.0",

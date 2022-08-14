@@ -57,17 +57,6 @@ export type BaseItemMap = {
 
 export interface BaseItem extends BaseItemMap, Based {}
 
-export interface BaseRecipe extends Calculable {
-  index: number
-  source: string
-}
-
-export interface CsvRecipe extends BaseRecipe {
-  outputs: string[]
-  inputs?: string[]
-  catalysts?: string[]
-}
-
 /*
  ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ██████╗ ██╗     ███████╗
 ██╔════╝██╔══██╗██║     ██╔════╝██║   ██║██║     ██╔══██╗██╔══██╗██║     ██╔════╝
@@ -86,4 +75,38 @@ export interface Calculable {
   readonly cost: number
   readonly processing: number
   readonly complexity: number
+}
+
+/*
+██████╗ ███████╗ ██████╗██╗██████╗ ███████╗███████╗
+██╔══██╗██╔════╝██╔════╝██║██╔══██╗██╔════╝██╔════╝
+██████╔╝█████╗  ██║     ██║██████╔╝█████╗  ███████╗
+██╔══██╗██╔══╝  ██║     ██║██╔═══╝ ██╔══╝  ╚════██║
+██║  ██║███████╗╚██████╗██║██║     ███████╗███████║
+╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝     ╚══════╝╚══════╝
+*/
+
+export interface BaseRecipe extends Calculable {
+  index: number
+  source: string
+}
+
+export interface CsvRecipe extends BaseRecipe {
+  outputs: string[]
+  inputs?: string[]
+  catalysts?: string[]
+}
+
+export interface SolvableRecipe<T extends Identified> extends Calculable {
+  catalysts?: Stack<Ingredient<T>>[]
+  inputs?: Stack<Ingredient<T>>[]
+
+  catalystsDef?: Stack<T>[]
+  inputsDef?: Stack<T>[]
+}
+
+export interface Solvable<T extends Identified> extends Identified, Calculable {
+  recipes: Set<SolvableRecipe<T>> | undefined
+  mainRecipe: SolvableRecipe<T> | undefined
+  mainRecipeAmount?: number | undefined
 }
