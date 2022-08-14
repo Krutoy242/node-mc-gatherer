@@ -1,4 +1,4 @@
-import { AddRecipeFn } from '../../customs'
+import type { AddRecipeFn } from '../../customs'
 
 export default function addRecipes(addRecipe: AddRecipeFn) {
   addRecipe('1000x fluid:heavywater', '1000x fluid:water', [

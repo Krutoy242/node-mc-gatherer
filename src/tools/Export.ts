@@ -1,12 +1,13 @@
 import _, { sortBy } from 'lodash'
 import open from 'open'
 
-import { CsvRecipe, solve, Stack } from '../api'
-import Playthrough from '../api/Playthrough'
+import type { CsvRecipe, Stack } from '../api'
+import { solve } from '../api'
+import type Playthrough from '../api/Playthrough'
 import { getVolume } from '../api/volume'
-import Definition from '../lib/items/Definition'
-import DefinitionStore from '../lib/items/DefinitionStore'
-import RecipeStore from '../lib/recipes/RecipeStore'
+import type Definition from '../lib/items/Definition'
+import type DefinitionStore from '../lib/items/DefinitionStore'
+import type RecipeStore from '../lib/recipes/RecipeStore'
 import { escapeCsv } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
 
@@ -24,14 +25,14 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     id: string,
     idPath = false
   ): Playthrough<Definition> | undefined {
-    let def = store.lookById(id)
+    const def = store.lookById(id)
     if (!def) return
 
     const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
     const filePath = `tree/${fileName}.log`
     const write = createFileLogger(filePath)
     const playthrough = solve(def, {
-      writeLn: (s: string) => write(s + '\n'),
+      writeLn    : (s: string) => write(`${s}\n`),
       complLength: (ms: any) =>
         (ms as Stack<Definition>).it.complexity_s.length,
     })
@@ -40,13 +41,12 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   }
 
   const playthrough = logger('storagedrawers:upgrade_creative:1', true)
-  if (playthrough)
-    createFileLogger('data_playthrough.csv')(PlaythroughToCSV(playthrough))
+  if (playthrough) createFileLogger('data_playthrough.csv')(PlaythroughToCSV(playthrough))
 
   const mostStepsDef = [...store].sort(
     (a, b) =>
-      (b.mainRecipe?.inventory?.steps ?? 0) -
-        (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity
+      (b.mainRecipe?.inventory?.steps ?? 0)
+        - (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity
   )[0]
 
   logger(mostStepsDef.id)
@@ -55,8 +55,8 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     store,
     recipes: recipesStore.export(),
     oreDict: _(store.oreDict)
-      .pickBy((l) => typeof l[0] !== 'string' && l.length > 1)
-      .mapValues((defs) => defs.map((d) => (d as Definition).id))
+      .pickBy(l => typeof l[0] !== 'string' && l.length > 1)
+      .mapValues(defs => defs.map(d => (d as Definition).id))
       .value(),
     logger,
   }
@@ -66,7 +66,7 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
   const header = 'Usage,Popularity,Name,ID'
 
   return (
-    `${header}\n` +
+    `${header}\n${
     sortBy(
       pl
         .getMerged()
@@ -75,7 +75,7 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
           const [vol, unit] = getVolume(def)
           return [def, v / vol, unit] as const
         }),
-      (o) => -o[1]
+      o => -o[1]
     )
       .map(([def, v, unit]) =>
         [
@@ -85,6 +85,6 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
           escapeCsv(def.id),
         ].join(',')
       )
-      .join('\n')
+      .join('\n')}`
   )
 }

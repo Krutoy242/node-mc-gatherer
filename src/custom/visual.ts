@@ -1,12 +1,12 @@
-import { BaseVisible } from '../api'
-import Definition from '../lib/items/Definition'
+import type { BaseVisible } from '../api'
+import type Definition from '../lib/items/Definition'
 
 type VisFunc = () => Partial<BaseVisible>
 type Pointer =
   | VisFunc
   | {
-      [key: string]: VisFunc | Pointer
-    }
+    [key: string]: VisFunc | Pointer
+  }
 
 export default function customRender(
   source: string,
@@ -19,13 +19,13 @@ export default function customRender(
     placeholder: {
       rf: {
         __: () => ({
-          imgsrc: get('thermalfoundation:meter:0').imgsrc,
+          imgsrc : get('thermalfoundation:meter:0').imgsrc,
           display: `{${entry}}`,
         }),
       },
       exploration: {
         __: () => ({
-          imgsrc: get('botania:tinyplanet:0').imgsrc,
+          imgsrc : get('botania:tinyplanet:0').imgsrc,
           display: `{${entry}}`,
         }),
       },

@@ -1,10 +1,10 @@
-import { BlockMinings } from '../from/blockMinings'
+import type { BlockMinings } from '../from/blockMinings'
 
 const appropriateTools: { [toolClass: string]: string } = {
   pickaxe: 'tconstruct:pick_head:0',
-  axe: 'tconstruct:axe_head:0',
-  shears: 'tconstruct:kama_head:0',
-  shovel: 'tconstruct:shovel_head:0',
+  axe    : 'tconstruct:axe_head:0',
+  shears : 'tconstruct:kama_head:0',
+  shovel : 'tconstruct:shovel_head:0',
 }
 
 const materialsByLevel = [
@@ -33,10 +33,10 @@ function getTconTool(toolClass: string, level: number): string | undefined {
   const tool = appropriateTools[toolClass]
   if (!tool) return
 
-  const mat =
-    materialsByLevel[level] ?? materialsByLevel[materialsByLevel.length - 1]
+  const mat
+    = materialsByLevel[level] ?? materialsByLevel[materialsByLevel.length - 1]
 
-  return tool + `:{Material:"${mat}"}`
+  return `${tool}:{Material:"${mat}"}`
 }
 
 export default function getTool(

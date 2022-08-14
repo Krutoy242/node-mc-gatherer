@@ -1,4 +1,4 @@
-import { IType } from './IType'
+import type { IType } from './IType'
 
 export interface JEIECategory {
   width: number

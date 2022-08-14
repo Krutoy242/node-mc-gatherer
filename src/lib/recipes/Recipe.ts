@@ -1,9 +1,9 @@
 import numeral from 'numeral'
 
-import { CsvRecipe } from '../../api'
-import { DefIngrStack } from '../../types'
+import type { CsvRecipe } from '../../api'
+import type { DefIngrStack } from '../../types'
 import Setable from '../calc/Setable'
-import Definition from '../items/Definition'
+import type Definition from '../items/Definition'
 import { DefinitionStack } from '../items/DefinitionStack'
 import Inventory from '../items/Inventory'
 
@@ -29,15 +29,15 @@ export default class Recipe extends Setable {
 
   export(): CsvRecipe {
     return {
-      index: this.index,
-      source: this.source,
+      index     : this.index,
+      source    : this.source,
       complexity: this.complexity,
-      purity: this.purity,
-      cost: this.cost,
+      purity    : this.purity,
+      cost      : this.cost,
       processing: this.processing,
-      outputs: this.outputs.map(String),
-      inputs: this.inputs?.length ? this.inputs?.map(String) : undefined,
-      catalysts: this.catalysts?.length
+      outputs   : this.outputs.map(String),
+      inputs    : this.inputs?.length ? this.inputs?.map(String) : undefined,
+      catalysts : this.catalysts?.length
         ? this.catalysts.map(String)
         : undefined,
     }
@@ -62,7 +62,7 @@ export default class Recipe extends Setable {
     if (samePurity && this.complexity <= cost) return false
 
     let catalList: Inventory | undefined
-    if (catDefs.length || inDefs.some((d) => d.it.mainRecipe?.inventory)) {
+    if (catDefs.length || inDefs.some(d => d.it.mainRecipe?.inventory)) {
       const maxCost = samePurity ? this.complexity - cost : Infinity
       catalList = new Inventory(maxCost, this)
         .addCatalysts(catDefs)
@@ -91,20 +91,20 @@ export default class Recipe extends Setable {
     if (options?.short) return ` ${recID} ${this.listToString('', 'outputs')}`
     const detailed = !options?.detailed ? '' : this.toStringDetailed()
     return (
-      `${recID}` +
-      detailed +
-      this.listToString('\n↱ ', 'outputs') +
-      this.listToString('\n░ ', 'catalysts') +
-      this.listToString('\n⮬ ', 'inputs')
+      `${recID}${
+      detailed
+      }${this.listToString('\n↱ ', 'outputs')
+      }${this.listToString('\n░ ', 'catalysts')
+      }${this.listToString('\n⮬ ', 'inputs')}`
     )
   }
 
   commandString(options?: { noSource?: boolean }) {
     const arr = (['outputs', 'inputs', 'catalysts'] as const)
-      .map((k) => this.listToArr(k, "''"))
-      .map((s) => (!s ? undefined : s.length > 1 ? `[${s.join(', ')}]` : s))
+      .map(k => this.listToArr(k, '\'\''))
+      .map(s => (!s ? undefined : s.length > 1 ? `[${s.join(', ')}]` : s))
     if (!arr[2]) arr.splice(2, 1)
-    if (!arr[1]) arr[1] = "''"
+    if (!arr[1]) arr[1] = '\'\''
     return `addRecipe(${
       options?.noSource ? '' : `"${this.source}", `
     }${arr.join(', ')})`
@@ -122,8 +122,8 @@ export default class Recipe extends Setable {
       let bestDef!: Definition
       for (const def of stack.it.matchedBy()) {
         if (
-          def.purity > maxPur ||
-          (def.purity === maxPur && def.complexity < minComp)
+          def.purity > maxPur
+          || (def.purity === maxPur && def.complexity < minComp)
         ) {
           bestDef = def as Definition
           maxPur = def.purity
@@ -142,11 +142,11 @@ export default class Recipe extends Setable {
     parenth?: string
   ): string[] | undefined {
     if (!this[listName]?.length) return undefined
-    const p = [...(parenth ?? '')].map((c) => c ?? '')
+    const p = [...(parenth ?? '')].map(c => c ?? '')
     const stackToStr = (o: DefIngrStack) => {
       let s = o.toString()
       if (p[0] === '"') s = s.replace(/"/g, '\\"')
-      if (p[0] === "'") s = s.replace(/'/g, "\\'")
+      if (p[0] === '\'') s = s.replace(/'/g, '\\\'')
       return (p[0] ?? '') + s + (p[1] ?? '')
     }
     return this[listName]?.map(stackToStr)

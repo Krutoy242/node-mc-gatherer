@@ -1,13 +1,12 @@
-import { Ingredient, IngredientStore, Stack } from '../../api'
+import type { Ingredient, IngredientStore, Stack } from '../../api'
 import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
-import CLIHelper from '../../tools/cli-tools'
-import Definition from '../items/Definition'
-import DefinitionStore from '../items/DefinitionStore'
-import Recipe from '../recipes/Recipe'
+import type CLIHelper from '../../tools/cli-tools'
+import type Definition from '../items/Definition'
+import type DefinitionStore from '../items/DefinitionStore'
+import type Recipe from '../recipes/Recipe'
 
-// eslint-disable-next-line no-promise-executor-return
-const sleep = () => new Promise((r) => setTimeout(r, 1))
+const sleep = () => new Promise(resolve => setTimeout(resolve, 1))
 
 export default class Calculator {
   constructor(
@@ -19,12 +18,12 @@ export default class Calculator {
   async compute(cli: CLIHelper) {
     this.createLinks(cli)
 
-    let dirtyRecipes = new Set<number>()
+    const dirtyRecipes = new Set<number>()
     this.assignPredefined(dirtyRecipes)
 
     const cliBars = {
       Recipes: this.recipeStore.length,
-      Items: this.definitionStore.size,
+      Items  : this.definitionStore.size,
     }
     cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
     await sleep()
@@ -69,7 +68,7 @@ export default class Calculator {
     cli.write('Writing computed in file...')
     const allDefs = [...this.definitionStore]
     this.logInfo(recalculated)
-    const totalWithPurity = allDefs.filter((def) => def.purity > 0).length
+    const totalWithPurity = allDefs.filter(def => def.purity > 0).length
 
     return totalWithPurity
   }
@@ -79,19 +78,14 @@ export default class Calculator {
     this.definitionStore.lock()
     this.recipeStore.forEach((rec, index) => {
       rec.requirments.forEach(({ it: ingredient }) => {
-        for (const def of this.definitionStore.matchedBy(ingredient)) {
-          ;(def.dependencies ??= new Set()).add(index)
-        }
+        for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(index)
       })
 
       rec.outputs.forEach(({ it: ingredient }) => {
-        for (const def of this.definitionStore.matchedBy(ingredient)) {
-          ;(def.recipes ??= new Set()).add(rec)
-        }
+        for (const def of this.definitionStore.matchedBy(ingredient)) (def.recipes ??= new Set()).add(rec)
       })
 
-      if (index % 100 === 0 || index === this.recipeStore.length - 1)
-        cli.bar?.update(index + 1)
+      if (index % 100 === 0 || index === this.recipeStore.length - 1) cli.bar?.update(index + 1)
     })
     cli.bar?.update(this.recipeStore.length, { task: 'done' })
   }
@@ -106,7 +100,7 @@ export default class Calculator {
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
       if (def.suggest(rec, stack.amount ?? 1)) {
-        def.dependencies?.forEach((r) => dirtyRecipes.add(r))
+        def.dependencies?.forEach(r => dirtyRecipes.add(r))
         if (isFirtCalc) cli.bars?.[1].increment()
         recalcDefs++
       }
@@ -120,7 +114,7 @@ export default class Calculator {
       const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
         def.set({ purity: 1.0, cost: val, processing: 0.0 })
-        def.dependencies?.forEach((r) => dirtyRecipes.add(r))
+        def.dependencies?.forEach(r => dirtyRecipes.add(r))
       }
     })
   }
@@ -144,12 +138,12 @@ export default class Calculator {
   }
 
   private needRecipes(allIngredients: Ingredient<Definition>[]): string {
-    const unpureIngredients = allIngredients.filter((g) =>
-      g.items.every((d) => d.purity <= 0)
+    const unpureIngredients = allIngredients.filter(g =>
+      g.items.every(d => d.purity <= 0)
     )
 
     const ingrTuples = unpureIngredients.map(
-      (g) => [this.dependenciesCount(g), g] as const
+      g => [this.dependenciesCount(g), g] as const
     )
 
     const filtSorted = ingrTuples
@@ -168,8 +162,8 @@ export default class Calculator {
   private dependenciesCount(ingr: Ingredient<Definition>): number {
     function recipeWanted(rec: Recipe): boolean {
       return (
-        rec.purity <= 0 ||
-        rec.outputs.some((s) => s.it.items.every((d) => d.purity <= 0))
+        rec.purity <= 0
+        || rec.outputs.some(s => s.it.items.every(d => d.purity <= 0))
       )
     }
 
@@ -185,15 +179,16 @@ export default class Calculator {
     const checkList = [...deps]
     let r: number | undefined
     while ((r = checkList.pop())) {
-      this.recipeStore[r].outputs.forEach((out) =>
+      this.recipeStore[r].outputs.forEach(out =>
         out.it.items.forEach((it) => {
-          if (it.purity <= 0)
+          if (it.purity <= 0) {
             it.dependencies?.forEach((rr) => {
               if (!deps.has(rr) && recipeWanted(this.recipeStore[rr])) {
                 deps.add(rr)
                 checkList.push(rr)
               }
             })
+          }
         })
       )
     }

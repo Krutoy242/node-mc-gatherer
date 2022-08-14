@@ -2,38 +2,37 @@
 =           Additionals Store
 ============================================= */
 
-import _ from 'lodash'
 import { getIcon } from 'mc-icons'
 
-import { BaseVisible, Tree } from '../../api'
-import { CSVFile } from '../../api/csv'
+import type { BaseVisible } from '../../api'
+import { Tree } from '../../api'
+import type { CSVFile } from '../../api/csv'
 import customRender from '../../custom/visual'
-import { BlockToFluidMap } from '../../from/fluids'
-import { NameMap } from '../../from/jeie/NameMap'
+import type { BlockToFluidMap } from '../../from/fluids'
+import type { NameMap } from '../../from/jeie/NameMap'
 import { createFileLogger } from '../../log/logger'
 import { getCSVHeaders } from '../../tools/CsvDecorators'
 
-import Definition from './Definition'
+import type Definition from './Definition'
 
 export default class DefinitionStore
   extends Tree<Definition>
-  implements CSVFile
-{
+  implements CSVFile {
   csv() {
     const defsCsv = [...this]
     return (
-      getCSVHeaders(defsCsv[0]) +
-      '\n' +
-      defsCsv
-        .sort((a, b) => b.complexity - a.complexity)
-        .map((d) => d.csv())
-        .join('\n')
+      `${getCSVHeaders(defsCsv[0])
+      }\n${
+        defsCsv
+          .sort((a, b) => b.complexity - a.complexity)
+          .map(d => d.csv())
+          .join('\n')}`
     )
   }
 
   async assignVisuals(nameMap?: NameMap, blockToFluidMap?: BlockToFluidMap) {
     const log = {
-      noImgsrc: createFileLogger('noImgsrc.log'),
+      noImgsrc : createFileLogger('noImgsrc.log'),
       noDisplay: createFileLogger('noDisplay.log'),
     }
 
@@ -61,19 +60,18 @@ export default class DefinitionStore
 
       function* attempts(): IterableIterator<Partial<BaseVisible> | undefined> {
         yield {
-          imgsrc: getIcon([source, entry, Number(meta), sNbt]),
+          imgsrc : getIcon([source, entry, Number(meta), sNbt]),
           display: jeieEntry?.name,
         }
-        if (sNbt) yield* self.matchedByDef(self.lookBased(source, entry, meta))
-        if (meta === '*' || entry === 'ore') yield* self.matchedByDef(def)
-        if (meta !== undefined && meta !== '0')
-          yield self.lookBased(source, entry)
+        if (sNbt) yield * self.matchedByDef(self.lookBased(source, entry, meta))
+        if (meta === '*' || entry === 'ore') yield * self.matchedByDef(def)
+        if (meta !== undefined && meta !== '0') yield self.lookBased(source, entry)
         if (blockToFluidMap && meta === '0' && !sNbt) {
           const id = blockToFluidMap[def.id]
           if (id) yield self.lookById(id)
         }
         yield customRender(source, entry, meta, sNbt, self.getById)
-        yield* self.matchedByDef(def)
+        yield * self.matchedByDef(def)
       }
 
       for (const defOther of attempts()) {
@@ -83,19 +81,17 @@ export default class DefinitionStore
         if (firstRun || fine()) return
       }
 
-      if (!def.display) {
-        log.noDisplay(def.id + '\n')
-      }
+      if (!def.display) log.noDisplay(`${def.id}\n`)
 
       if (!def.imgsrc) {
         def.imgsrc = self.getBased('openblocks', 'dev_null')?.imgsrc
-        log.noImgsrc(def.id + '\n')
+        log.noImgsrc(`${def.id}\n`)
       }
     }
   }
 }
 
-;(String.prototype as any).hashCode = function () {
+(String.prototype as any).hashCode = function () {
   let hash = 0
   let i
   let chr
@@ -110,9 +106,7 @@ export default class DefinitionStore
 
 function unsignedHash(str: string) {
   let number = (str as any).hashCode()
-  if (number < 0) {
-    number = 0xffffffff + number + 1
-  }
+  if (number < 0) number = 0xFFFFFFFF + number + 1
 
   return number.toString(16)
 }

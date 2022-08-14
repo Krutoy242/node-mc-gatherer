@@ -2,7 +2,7 @@ import { parse, resolve } from 'path'
 
 import glob from 'glob'
 
-import RecipeStore from '../lib/recipes/RecipeStore'
+import type RecipeStore from '../lib/recipes/RecipeStore'
 
 type ModuleType = typeof import('./recipes/entities')
 
@@ -15,14 +15,14 @@ export type AddRecipeFn = (
 export default async function applyCustoms(recipesStore: RecipeStore) {
   const fileList = glob.sync(resolve(__dirname, './recipes/**/*.ts'))
   const modules = await Promise.all(
-    fileList.map((filePath) => import(filePath) as unknown as ModuleType)
+    fileList.map(filePath => import(filePath) as unknown as ModuleType)
   )
 
   modules.forEach((modModule, i) => {
     const fn = modModule.default
     fn((outputs, inputs, catalysts) =>
       recipesStore.addRecipe(
-        'custom:' + parse(fileList[i]).name,
+        `custom:${parse(fileList[i]).name}`,
         outputs,
         inputs,
         catalysts

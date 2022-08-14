@@ -1,4 +1,5 @@
-import { IType, iTypePrefix } from './IType'
+import type { IType } from './IType'
+import { iTypePrefix } from './IType'
 
 type NameMapJson = Record<IType, RawVisible>
 type RawVisible = Record<string, RawNameData>
@@ -30,15 +31,14 @@ export default function getNameMap(nameMapJsonTxt: string): NameMap {
 
   Object.entries(nameMapJson).forEach(([itype, vis]) => {
     let prefix: string = iTypePrefix[itype as IType]
-    if (prefix === undefined)
-      throw new Error('Could not find iType in name map: ' + itype)
-    prefix = prefix ? prefix + ':' : ''
+    if (prefix === undefined) throw new Error(`Could not find iType in name map: ${itype}`)
+    prefix = prefix ? `${prefix}:` : ''
 
     Object.entries(vis).forEach(([id, o]) => {
       nameMap[prefix + id] = {
-        name: o.en_us,
+        name    : o.en_us,
         tooltips: parseTooltips(id, o.en_us_tooltip),
-        tag: o.tag,
+        tag     : o.tag,
       }
     })
   })
@@ -55,26 +55,24 @@ function parseTooltips(id: string, rawTooltip?: string): string[] | undefined {
     if (!l) return false
 
     if (
-      id.startsWith(l) || // item ID
-      l.startsWith('§9§o') || // Mod name
-      l.startsWith('Durability:') ||
-      l.startsWith('§6Bauble ') ||
-      l.startsWith('§bRad Resistance: ') ||
-      l.startsWith('Nutrients: ') ||
-      l.startsWith('§o Burn time ') ||
-      l.startsWith('Fuel Details') ||
-      l === 'Mining control is §r§cDisabled§r'
-    )
-      return false
+      id.startsWith(l) // item ID
+      || l.startsWith('§9§o') // Mod name
+      || l.startsWith('Durability:')
+      || l.startsWith('§6Bauble ')
+      || l.startsWith('§bRad Resistance: ')
+      || l.startsWith('Nutrients: ')
+      || l.startsWith('§o Burn time ')
+      || l.startsWith('Fuel Details')
+      || l === 'Mining control is §r§cDisabled§r'
+    ) return false
 
     const noColors = l.replace(/§./g, '')
 
     if (
-      /(Hold|Press) .?(Shift|CTRL|Control)/i.test(noColors) ||
-      /Empty.?/i.test(noColors) ||
-      /~.+ mB UU/i.test(noColors)
-    )
-      return false
+      /(Hold|Press) .?(Shift|CTRL|Control)/i.test(noColors)
+      || /Empty.?/i.test(noColors)
+      || /~.+ mB UU/i.test(noColors)
+    ) return false
 
     return true
   })

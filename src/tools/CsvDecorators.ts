@@ -21,14 +21,14 @@ export function getCSVFields(target: any) {
   return getPossibleKeys(target)
     .filter((k) => {
       const keys = Reflect.getMetadataKeys(target, k)
-      return ['name', 'pos', 'format'].some((f) => keys.includes(f))
+      return ['name', 'pos', 'format'].some(f => keys.includes(f))
     })
     .sort((a, b) => sortBy(a) - sortBy(b))
 }
 
 export function getCSVHeaders(target: any): string {
   return getCSVFields(target)
-    .map((k) => Reflect.getMetadata('name', target, k) ?? k)
+    .map(k => Reflect.getMetadata('name', target, k) ?? k)
     .join(',')
 }
 

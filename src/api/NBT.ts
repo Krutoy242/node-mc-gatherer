@@ -26,9 +26,9 @@ export function parseSNbt(sNbt?: string): NBT | null {
 
   try {
     return JSON.parse(pure)
-  } catch (e) {
-    console.log('erroring NBT :>> ', pure)
-    return null
+  }
+  catch (e) {
+    throw new Error(`erroring NBT :>> ${pure}`)
   }
 }
 
@@ -51,7 +51,8 @@ export function nbtMatch(A: NBTMap, B?: NBTMap | null): boolean {
     if (Array.isArray(a)) {
       // Both arrays
       if (!compareArrays(a, b as typeof a)) return false
-    } else {
+    }
+    else {
       // Maps
       if (typeof a === 'object') return nbtMatch(a, b as NBTMap)
 
@@ -83,14 +84,14 @@ function compareObjectArrays(
   const B_ = B.slice(0)
   do {
     const a = A_.pop()
-    const i = B_.findIndex((b) => nbtMatch(a, b))
+    const i = B_.findIndex(b => nbtMatch(a, b))
     if (i === -1) return false
     delete B_[i]
   } while (A_.length)
   return true
 }
 
-/* 
+/*
 // Tests
 const test = (s: string) => {
   // eslint-disable-next-line no-eval

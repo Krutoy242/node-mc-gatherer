@@ -5,19 +5,19 @@ import glob from 'glob'
 
 import { Stack } from '../../api'
 import adapters from '../../custom/adapters'
-import RecipeStore from '../../lib/recipes/RecipeStore'
+import type RecipeStore from '../../lib/recipes/RecipeStore'
 import { createFileLogger } from '../../log/logger'
-import CLIHelper from '../../tools/cli-tools'
-import { DefIngrStack } from '../../types'
+import type CLIHelper from '../../tools/cli-tools'
+import type { DefIngrStack } from '../../types'
 
-import {
+import type {
   JEIECategory,
   JEIECustomRecipe,
   JEIEIngredient,
   JEIEItem,
 } from './JEIECategory'
 import getFullId from './JEIEItem'
-import { NameMap } from './NameMap'
+import type { NameMap } from './NameMap'
 
 export interface RecipeInfo {
   categoryId: string
@@ -31,7 +31,7 @@ const relPath = 'exports/recipes'
 
 export default async function append_JEIExporter(
   tooltipMap: NameMap,
-  toolDurability: { [id: string]: number } | undefined,
+  toolDurability: Record<string, number> | undefined,
   getTool: (blockId: string) => string | undefined,
   recipeStore: RecipeStore,
   mcDir: string,
@@ -39,7 +39,7 @@ export default async function append_JEIExporter(
 ) {
   const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
   const tools = {
-    getFullID: fullId,
+    getFullID     : fullId,
     toolDurability: toolDurability ?? {},
     getTool,
   }
@@ -49,10 +49,10 @@ export default async function append_JEIExporter(
   const makeStack = (i: JEIEItem) =>
     new Stack(recipeStore.ingredientStore.fromItem(getById(fullId(i))))
 
-  cli.startProgress("JEIE .json's", jsonList.length)
+  cli.startProgress('JEIE .json\'s', jsonList.length)
 
   const sorted = jsonList
-    .map((filePath) => [statSync(filePath).size, filePath] as const)
+    .map(filePath => [statSync(filePath).size, filePath] as const)
     .sort(([a], [b]) => a - b)
     .map(([, v]) => v)
 
@@ -68,7 +68,7 @@ export default async function append_JEIExporter(
     const fileName = parse(filePath).name
     cli.startItem(fileName)
 
-    let category: JEIECategory = JSON.parse(readFileSync(filePath, 'utf8'))
+    const category: JEIECategory = JSON.parse(readFileSync(filePath, 'utf8'))
 
     const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
     adapterList.forEach(([, adapter]) => adapter(category, tools))
@@ -80,33 +80,31 @@ export default async function append_JEIExporter(
     let recipesLength = customRecipes.length
     customRecipes.forEach((rec) => {
       const outputs = convertIngredients(rec.output.items)
-      outputs.length &&
-        recipeStore.addRecipe(
+      outputs.length
+        && recipeStore.addRecipe(
           fileName,
           outputs,
           convertIngredients(rec.input.items),
           rec.catalyst ? convertIngredients(rec.catalyst) : defaultCatalysts
-        ) &&
-        recipesLength--
+        )
+        && recipesLength--
     })
 
-    if (recipesLength === customRecipes.length)
-      noRecipes(`⭕ Recipes not added in ${fileName}\n`)
-    else if (recipesLength > 0)
-      noRecipes(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
+    if (recipesLength === customRecipes.length) noRecipes(`⭕ Recipes not added in ${fileName}\n`)
+    else if (recipesLength > 0) noRecipes(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
 
     cli.progressIncrement()
   }
 
   function convertIngredients(items: JEIEIngredient[]): DefIngrStack[] {
     return items
-      .filter((it) => it.stacks.some((st) => st.name)) // Remove empty stacks
-      .map((item) => new Stack(getFromStacks(item.stacks), item.amount))
+      .filter(it => it.stacks.some(st => st.name)) // Remove empty stacks
+      .map(item => new Stack(getFromStacks(item.stacks), item.amount))
   }
 
   function getFromStacks(stacks: JEIEItem[]) {
     return recipeStore.ingredientStore.fromItems(
-      stacks.map((s) => getById(fullId(s)))
+      stacks.map(s => getById(fullId(s)))
     )
   }
 }

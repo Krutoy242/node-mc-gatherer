@@ -21,14 +21,14 @@ export function genToolDurability(
   _crafttweakerLogTxt?: string
 ): { [id: string]: number } | undefined {
   return {
-    'animania:carving_knife': 1000,
+    'animania:carving_knife'                         : 1000,
     'appliedenergistics2:certus_quartz_cutting_knife': 50,
     'appliedenergistics2:nether_quartz_cutting_knife': 50,
-    'ic2:forge_hammer': 79,
-    'matc:inferiumcrystal': 256,
-    'matc:intermediumcrystal': 1024,
-    'matc:prudentiumcrystal': 512,
-    'matc:superiumcrystal': 2048,
-    'matc:supremiumcrystal': 4096,
+    'ic2:forge_hammer'                               : 79,
+    'matc:inferiumcrystal'                           : 256,
+    'matc:intermediumcrystal'                        : 1024,
+    'matc:prudentiumcrystal'                         : 512,
+    'matc:superiumcrystal'                           : 2048,
+    'matc:supremiumcrystal'                          : 4096,
   }
 }

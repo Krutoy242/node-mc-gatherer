@@ -1,10 +1,9 @@
-import _ from 'lodash'
-
-import { IngredientStore, Stack } from '../../api'
+import type { IngredientStore } from '../../api'
+import { Stack } from '../../api'
 import { createFileLogger } from '../../log/logger'
-import { DefIngrStack } from '../../types'
-import Definition from '../items/Definition'
-import DefinitionStore from '../items/DefinitionStore'
+import type { DefIngrStack } from '../../types'
+import type Definition from '../items/Definition'
+import type DefinitionStore from '../items/DefinitionStore'
 
 import Recipe from './Recipe'
 
@@ -38,17 +37,17 @@ export default class RecipeStore {
   }
 
   export() {
-    return this.store.map((r) => r.export())
+    return this.store.map(r => r.export())
   }
 
   addRecipe(categoryName: string, ...params: RecipeParams): Recipe | undefined {
-    const [outputs, inputs, catalysts] = params.map((p) =>
+    const [outputs, inputs, catalysts] = params.map(p =>
       this.parseRecipeParams(p)
     )
 
     if (!outputs.length) return
     if (!inputs.length && !catalysts?.length) {
-      noReqLog(categoryName, ...outputs.map((o) => o.toString()), '\n')
+      noReqLog(categoryName, ...outputs.map(o => o.toString()), '\n')
       return
     }
 
@@ -68,7 +67,7 @@ export default class RecipeStore {
     let hadChanges = false
     for (let out_i = outputs.length - 1; out_i >= 0; out_i--) {
       const out = outputs[out_i]
-      const index = inputs.findIndex((s) => s.it.id === out.it.id)
+      const index = inputs.findIndex(s => s.it.id === out.it.id)
 
       if (index === -1) continue // No intersection
       const inp = inputs[index]
@@ -79,7 +78,8 @@ export default class RecipeStore {
 
       if (out_amount > inp_amount) {
         outputs[out_i] = out.withAmount(out_amount - inp_amount)
-      } else {
+      }
+      else {
         // amounts equals
         outputs.splice(out_i, 1)
       }
@@ -96,7 +96,7 @@ export default class RecipeStore {
 
   private anyRecipeParam(anyIngrs: AnyIngredient): DefIngrStack {
     return typeof anyIngrs === 'string'
-      ? Stack.fromString(anyIngrs, (id) => this.ingredientStore.get(id))
+      ? Stack.fromString(anyIngrs, id => this.ingredientStore.get(id))
       : anyIngrs
   }
 
@@ -105,7 +105,7 @@ export default class RecipeStore {
     const map: DefIngrStack[] = []
     const add = (a: AnyIngredient): any => {
       const stack = this.anyRecipeParam(a)
-      const index = map.findIndex((s) => s.it.equals(stack.it))
+      const index = map.findIndex(s => s.it.equals(stack.it))
       if (index === -1) return map.push(stack)
       map[index] = map[index].withAmount(
         (map[index].amount ?? 1) + (stack.amount ?? 1)

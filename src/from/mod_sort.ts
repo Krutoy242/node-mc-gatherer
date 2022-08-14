@@ -22,11 +22,10 @@ exnihilocreatio
 `
   .trim()
   .split('\n')
-  .map((l) => l.trim())
+  .map(l => l.trim())
   .reverse()
   .reduce(
-    (map, v, i) => ((map[v] = i), map),
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    (map, v, i) => (((map[v] = i), map)),
     {} as { [modName: string]: number }
   )
 

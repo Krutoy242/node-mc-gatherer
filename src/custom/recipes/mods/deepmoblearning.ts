@@ -17,7 +17,7 @@ export default function addRecipes(
       ['witherskeleton', 1000],
     ] as const
   ).forEach(([entity, cost]) => {
-    ;[0, 1, 2, 3, 4].forEach((tier) => {
+    [0, 1, 2, 3, 4].forEach((tier) => {
       addRecipe(
         `deepmoblearning:trial_key:0:{attuned:1b,mobKey:"${entity}",tier:${tier}}`,
         [

@@ -21,8 +21,8 @@ export function getCTBlock(
   if (!txtBlock) return
 
   return [...txtBlock.matchAll(/^\[SERVER_STARTED\]\[SERVER\]\[INFO\] (.*)$/gm)]
-    .map((m) => m[1])
-    .filter((s) => s)
+    .map(m => m[1])
+    .filter(s => s)
 }
 
 export function escapeCsv(s?: string): string {

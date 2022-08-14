@@ -22,18 +22,18 @@ export default function genOreDictionary(csvText: string) {
   })
 
   for (const line of fluids) {
-    const id =
-      `${line['Registry name']}:${line['Meta/dmg']}` +
-      (line.NBT ? ':' + line.NBT : '')
+    const id
+      = `${line['Registry name']}:${line['Meta/dmg']}${
+       line.NBT ? `:${line.NBT}` : ''}`
 
     ;(dict[line['OreDict Key']] ??= []).push(id)
   }
 
-  Object.values(dict).forEach((arr) =>
+  Object.values(dict).forEach(arr =>
     arr.sort(
       (a, b) =>
-        prefferedModSort(getItemSource(a), getItemSource(b)) ||
-        naturalSort(a, b)
+        prefferedModSort(getItemSource(a), getItemSource(b))
+        || naturalSort(a, b)
     )
   )
 

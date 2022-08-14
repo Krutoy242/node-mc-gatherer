@@ -1,6 +1,6 @@
 import { parse as csvParseSync } from 'csv-parse/sync'
 
-import RecipeStore from '../lib/recipes/RecipeStore'
+import type RecipeStore from '../lib/recipes/RecipeStore'
 
 export interface BlockToFluidMap {
   [blockId: string]: string

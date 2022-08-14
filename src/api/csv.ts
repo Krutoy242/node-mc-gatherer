@@ -1,4 +1,5 @@
-import { BaseItem, BaseItemMap, baseItemSetup, Tree } from '.'
+import type { BaseItem, BaseItemMap } from '.'
+import { Tree, baseItemSetup } from '.'
 
 export interface CSVFile {
   csv: () => string
@@ -19,8 +20,7 @@ export function loadDataCSVEx(csvText: string, parserer: any) {
 
     parser.on('readable', () => {
       let record
-      while ((record = parser.read()) !== null)
-        table.push(record as CSVBaseItem)
+      while ((record = parser.read()) !== null) table.push(record as CSVBaseItem)
     })
 
     parser.on('end', () => {
@@ -35,7 +35,7 @@ function parseOutput(table: CSVBaseItem[]): BaseItem[] {
   const result: BaseItem[] = []
 
   table.forEach((o) => {
-    let r: any = {}
+    const r: any = {}
     ;(Object.keys(o) as unknown as (keyof CSVBaseItem)[]).forEach((k) => {
       const parse = baseItemSetup[k]
       r[k] = parse ? parse(o[k]) : o[k]

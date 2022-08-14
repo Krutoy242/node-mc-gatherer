@@ -3,10 +3,10 @@ import fs from 'fs'
 import chalk from 'chalk'
 import cliProgress from 'cli-progress'
 import numeral from 'numeral'
-import { terminal as term, Terminal } from 'terminal-kit'
+import { terminal as term } from 'terminal-kit'
 
-import DefinitionStore from '../lib/items/DefinitionStore'
-import RecipeStore from '../lib/recipes/RecipeStore'
+import type DefinitionStore from '../lib/items/DefinitionStore'
+import type RecipeStore from '../lib/recipes/RecipeStore'
 
 /* =============================================
 =                   Helpers                   =
@@ -15,7 +15,7 @@ function loadText(filename: string): string {
   return fs.readFileSync(filename, 'utf8')
 }
 function logTask(text: string) {
-  process.stdout.write('-- ' + text.padEnd(22))
+  process.stdout.write(`-- ${text.padEnd(22)}`)
 }
 function logMore(text: string) {
   process.stdout.write(chalk.gray(text))
@@ -67,9 +67,9 @@ export default class CLIHelper {
       format: `${chalk.bold('{title}')} [${chalk.cyan('{bar}')}] ${chalk.gray(
         '{value}/{total}'
       )} | {task}`,
-      hideCursor: true,
+      hideCursor    : true,
       stopOnComplete: true,
-      linewrap: false,
+      linewrap      : false,
     }
 
     if (Array.isArray(title) && Array.isArray(total)) {
@@ -83,13 +83,14 @@ export default class CLIHelper {
         bar.start(total[i], 0, { task: '', title: t.padStart(15) })
         return bar
       })
-    } else {
+    }
+    else {
       this.bar = new cliProgress.SingleBar(
         commonOpts,
         cliProgress.Presets.shades_classic
       )
       this.bar.start(total as number, 0, {
-        task: '',
+        task : '',
         title: String(title).padStart(15),
       })
     }
@@ -111,17 +112,19 @@ export default class CLIHelper {
     ): T | undefined {
       if (description) logTask(description)
       let text = ''
-      if (opts.textSource)
+      if (opts.textSource) {
         try {
           text = loadText(opts.textSource)
-        } catch (err: unknown) {
+        }
+        catch (err: unknown) {
           if (!opts['⚠️']) {
             console.error(`🛑  Error at task: ${opts['🛑']}`)
             throw new Error('Unable to complete task')
           }
-          console.log(`⚠️  ${opts['⚠️']}`)
+          console.warn(`⚠️  ${opts['⚠️']}`)
           return undefined
         }
+      }
 
       const oldDefs = definitionStore.size
       const oldRecs = recipesStore.size()
@@ -129,15 +132,15 @@ export default class CLIHelper {
       const isPromise = typeof (result as any)?.then === 'function'
 
       if (opts.moreInfo) {
-        if (isPromise)
-          (result as unknown as Promise<any>).then((data) => logMoreInfo(data))
+        if (isPromise) (result as unknown as Promise<any>).then(data => logMoreInfo(data))
         else logMoreInfo()
       }
 
-      if (description)
-        if (isPromise) {
-          ;(result as any).then(() => process.stdout.write('\n'))
-        } else process.stdout.write('\n')
+      if (description) {
+        if (isPromise) (result as any).then(() => process.stdout.write('\n'))
+
+        else process.stdout.write('\n')
+      }
 
       return result
 
@@ -145,7 +148,7 @@ export default class CLIHelper {
         const info = {
           addedDefs: definitionStore.size - oldDefs,
           addedRecs: recipesStore.size() - oldRecs,
-          result: data ?? result,
+          result   : data ?? result,
         }
         logMore(opts.moreInfo!(info))
       }

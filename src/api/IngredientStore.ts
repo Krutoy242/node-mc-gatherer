@@ -3,7 +3,7 @@ import { uniqBy } from 'lodash'
 import { Ingredient } from './Ingredient'
 import Store from './Store'
 
-import { Identified } from '.'
+import type { Identified } from '.'
 
 export class IngredientStore<T extends Identified> extends Store<
   Ingredient<T>
@@ -15,15 +15,14 @@ export class IngredientStore<T extends Identified> extends Store<
   }
 
   fromItems(items: T[], id?: string, skipCache = false): Ingredient<T> {
-    if (items.length === 0)
-      throw new Error('Ingredient must content at least 1 item')
+    if (items.length === 0) throw new Error('Ingredient must content at least 1 item')
 
     const _items = uniqBy(
       items.length > 2000 ? [items[0]] : items,
-      (it) => it.id
+      it => it.id
     )
     const remakeID = _items.length !== items.length || !id
-    let _id = remakeID ? Ingredient.itemsToID(_items) : id
+    const _id = remakeID ? Ingredient.itemsToID(_items) : id
 
     return this.fromStore(_items, _id, skipCache)
   }
@@ -34,8 +33,8 @@ export class IngredientStore<T extends Identified> extends Store<
 
   private fromStore(items: T[], id: string, skipCache: boolean): Ingredient<T> {
     return (
-      (!skipCache && this.getUnsafe(id)) ||
-      this.set(id, new Ingredient(items, id))
+      (!skipCache && this.getUnsafe(id))
+      || this.set(id, new Ingredient(items, id))
     )
   }
 }

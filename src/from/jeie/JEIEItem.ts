@@ -1,6 +1,6 @@
 import { iTypePrefix } from './IType'
-import { JEIEItem } from './JEIECategory'
-import { NameMap } from './NameMap'
+import type { JEIEItem } from './JEIECategory'
+import type { NameMap } from './NameMap'
 
 export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
   const splitted = ingr.name.split(':')
@@ -9,18 +9,18 @@ export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
   if (splitted.length > 3 && splitted[3][0] !== '{') {
     base = splitted.slice(0, 3).join(':')
     // f62 is hash of "{}" - empty nbt. Just ignore it
-    if (splitted[3] !== 'f62') {
-      sNbt = filterTag(tooltipMap[ingr.name]?.tag)
-    }
-  } else base = ingr.name
+    if (splitted[3] !== 'f62') sNbt = filterTag(tooltipMap[ingr.name]?.tag)
+  }
+  else { base = ingr.name }
 
   let prefix: string = iTypePrefix[ingr.type]
   if (prefix === undefined) {
-    console.log('⚠️  Unregistered JEIExporter type:', ingr.type)
+    // eslint-disable-next-line no-console
+    console.log('\n\n\n⚠️  Unregistered JEIExporter type:', ingr.type, '\n\n\n')
     prefix = 'unknown'
   }
 
-  return (prefix ? prefix + ':' : '') + base + (sNbt ? ':' + sNbt : '')
+  return (prefix ? `${prefix}:` : '') + base + (sNbt ? `:${sNbt}` : '')
 }
 
 function filterTag(tag?: string): string {

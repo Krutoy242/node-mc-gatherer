@@ -1,10 +1,10 @@
 import { uniqBy } from 'lodash'
 
-import { Ingredient } from './Ingredient'
+import type { Ingredient } from './Ingredient'
 import Playthrough from './Playthrough'
 import { Stack } from './Stack'
 
-import { Calculable, Identified, IngredientStack } from '.'
+import type { Calculable, Identified } from '.'
 
 interface SolvableRecipe<T extends Identified> extends Calculable {
   catalysts?: Stack<Ingredient<T>>[]
@@ -56,7 +56,7 @@ export function solve<T extends Solvable<T>>(
       recipe
         .toString()
         .split('\n')
-        .forEach((line) => log.writeLn(tab + '  ' + line))
+        .forEach(line => log.writeLn(`${tab}  ${line}`))
     }
 
     recipe.catalystsDef = toDefStacks(recipe.catalysts)
@@ -67,10 +67,10 @@ export function solve<T extends Solvable<T>>(
 
     const combined = uniqBy(
       [recipe.catalystsDef, recipe.inputsDef].flat(),
-      (ms) => ms.it.id
+      ms => ms.it.id
     )
     const maxPad = log
-      ? Math.max(...combined.map((ms) => log.complLength(ms)))
+      ? Math.max(...combined.map(ms => log.complLength(ms)))
       : 0
 
     // --------------------
@@ -85,8 +85,8 @@ export function solve<T extends Solvable<T>>(
       onHold.has(id) && (onHold.delete(id), antiloop.delete(id))
     // --------------------
 
-    recipe.catalystsDef.forEach((ms) => further(ms, 1))
-    recipe.inputsDef.forEach((ms) =>
+    recipe.catalystsDef.forEach(ms => further(ms, 1))
+    recipe.inputsDef.forEach(ms =>
       further(ms, amount / (ms.it.mainRecipeAmount ?? 1))
     )
 
@@ -111,7 +111,7 @@ export function solve<T extends Solvable<T>>(
   function puritySumm(arr?: Stack<Ingredient<T>>[]): number {
     if (!arr) return 0
     return arr.reduce(
-      (c, d) => c + Math.max(...[...d.it.matchedBy()].map((o) => o.purity)),
+      (c, d) => c + Math.max(...[...d.it.matchedBy()].map(o => o.purity)),
       0
     )
   }

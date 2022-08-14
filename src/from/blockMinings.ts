@@ -29,9 +29,9 @@ export function generateBlockMinings(
     if (!groups) return
 
     result[groups.id] = {
-      hardness: Number(groups.hardness),
+      hardness : Number(groups.hardness),
       toolClass: groups.toolClass,
-      level: Number(groups.level),
+      level    : Number(groups.level),
     }
   })
   return result

@@ -1,5 +1,5 @@
-import { Ingredient } from './Ingredient'
-import { Stack } from './Stack'
+import type { Ingredient } from './Ingredient'
+import type { Stack } from './Stack'
 
 export * from './csv'
 export * from './Tree'
@@ -15,8 +15,8 @@ export type IngredientStack = Stack<Ingredient<Calculable & Identified>>
 /*
 ██████╗  █████╗ ███████╗███████╗
 ██╔══██╗██╔══██╗██╔════╝██╔════╝
-██████╔╝███████║███████╗█████╗  
-██╔══██╗██╔══██║╚════██║██╔══╝  
+██████╔╝███████║███████╗█████╗
+██╔══██╗██╔══██║╚════██║██╔══╝
 ██████╔╝██║  ██║███████║███████╗
 ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 */
@@ -31,7 +31,7 @@ export interface Based {
 
 const baseVisibleSetup = {
   display: String,
-  imgsrc: String,
+  imgsrc : String,
 }
 
 export type BaseVisible = {
@@ -40,14 +40,14 @@ export type BaseVisible = {
 
 export const baseItemSetup = {
   ...baseVisibleSetup,
-  tooltips: (s: string) => s.split('\\n'),
-  purity: Number,
-  complexity: Number,
-  cost: Number,
-  processing: Number,
-  steps: Number,
+  tooltips     : (s: string) => s.split('\\n'),
+  purity       : Number,
+  complexity   : Number,
+  cost         : Number,
+  processing   : Number,
+  steps        : Number,
   recipeIndexes: (s: string) => (s === '' ? [] : s.split(' ').map(Number)),
-  id: String,
+  id           : String,
 }
 
 type BaseItemKeys = keyof typeof baseItemSetup
@@ -71,8 +71,8 @@ export interface CsvRecipe extends BaseRecipe {
 /*
  ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ██████╗ ██╗     ███████╗
 ██╔════╝██╔══██╗██║     ██╔════╝██║   ██║██║     ██╔══██╗██╔══██╗██║     ██╔════╝
-██║     ███████║██║     ██║     ██║   ██║██║     ███████║██████╔╝██║     █████╗  
-██║     ██╔══██║██║     ██║     ██║   ██║██║     ██╔══██║██╔══██╗██║     ██╔══╝  
+██║     ███████║██║     ██║     ██║   ██║██║     ███████║██████╔╝██║     █████╗
+██║     ██╔══██║██║     ██║     ██║   ██║██║     ██╔══██║██╔══██╗██║     ██╔══╝
 ╚██████╗██║  ██║███████╗╚██████╗╚██████╔╝███████╗██║  ██║██████╔╝███████╗███████╗
  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝
 */

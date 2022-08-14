@@ -23,7 +23,7 @@ export default function addRecipes(
       ['rats:ratglove_flower', 100, 'dimension:-8'],
     ] as const
   ).forEach(([id, value, catl]) => {
-    addRecipe(id + ':0', value + 'x placeholder:ticks', catl)
+    addRecipe(`${id}:0`, `${value}x placeholder:ticks`, catl)
   })
   ;(
     [
@@ -42,6 +42,6 @@ export default function addRecipes(
       ['rats:marbled_cheese_rat_head', 1000, 'dimension:-8'],
     ] as const
   ).forEach(([id, value, catl]) => {
-    addRecipe(id + ':0', value + 'x placeholder:fight', catl)
+    addRecipe(`${id}:0`, `${value}x placeholder:fight`, catl)
   })
 }

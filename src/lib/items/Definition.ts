@@ -1,13 +1,13 @@
+/* eslint-disable @typescript-eslint/indent */
 import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import { BaseItemMap } from '../../api'
-import { CSVLine } from '../../api/csv'
-import { createFileLogger } from '../../log/logger'
-import { Format, getCSVLine, Pos } from '../../tools/CsvDecorators'
+import type { BaseItemMap } from '../../api'
+import type { CSVLine } from '../../api/csv'
+import { Format, Pos, getCSVLine } from '../../tools/CsvDecorators'
 import Setable from '../calc/Setable'
-import Recipe from '../recipes/Recipe'
+import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
@@ -21,8 +21,7 @@ type NonRequiredBase = {
 
 export default class Definition
   extends Setable
-  implements CSVLine, NonRequiredBase
-{
+  implements CSVLine, NonRequiredBase {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -64,8 +63,8 @@ export default class Definition
   @Pos(22)
   get recipeIndexes() {
     return _.sortBy(
-      [...(this.recipes ?? [])].map((r) => r.index),
-      (i) => (i === this.mainRecipe?.index ? -1 : 0) // Main recipe always first
+      [...(this.recipes ?? [])].map(r => r.index),
+      i => (i === this.mainRecipe?.index ? -1 : 0) // Main recipe always first
     ).join(' ')
   }
 
@@ -80,7 +79,7 @@ export default class Definition
   ██╔██╗ ██║█████╗  ██║ █╗ ██║
   ██║╚██╗██║██╔══╝  ██║███╗██║
   ██║ ╚████║███████╗╚███╔███╔╝
-  ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝ 
+  ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝
   */
   constructor(
     id: string,
@@ -100,11 +99,11 @@ export default class Definition
   override toString(options?: { complexityPad?: number; short?: boolean }) {
     const display = `"${this.display}" ${this.id}`
     if (options?.short) return display
-    const full =
-      getPurity(this.purity) +
-      this.complexity_s.padStart(options?.complexityPad ?? 0) +
-      ` 🧮${siFormat(this.cost)}` +
-      ` ⚙️${siFormat(this.processing)}`
+    const full
+      = `${getPurity(this.purity)
+      + this.complexity_s.padStart(options?.complexityPad ?? 0)
+      } 🧮${siFormat(this.cost)}`
+      + ` ⚙️${siFormat(this.processing)}`
     return `${full} ${display}`
   }
 
@@ -122,9 +121,7 @@ export default class Definition
     }
 
     // Recalculate old recipe
-    if (this.mainRecipe !== rec) {
-      if (this.mainRecipe?.calculate()) this.calculate()
-    }
+    if (this.mainRecipe !== rec) if (this.mainRecipe?.calculate()) this.calculate()
 
     if (this.complexity <= rec.complexity) return false
 
@@ -137,12 +134,11 @@ export default class Definition
     if (!main) return false
 
     const newCost = main.cost / (this.mainRecipeAmount ?? 1)
-    if (this.processing === main.processing && this.cost === newCost)
-      return false
+    if (this.processing === main.processing && this.cost === newCost) return false
 
     this.set({
-      purity: main.purity,
-      cost: newCost,
+      purity    : main.purity,
+      cost      : newCost,
       processing: main.processing,
     })
     return true

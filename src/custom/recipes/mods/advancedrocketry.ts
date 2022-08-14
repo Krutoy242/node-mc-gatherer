@@ -1,7 +1,7 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
-  ;(
+  (
     [
       [['advancedrocketry:rocketbuilder:0'], [100]],
       [
@@ -13,8 +13,8 @@ export default function addRecipes(
       ],
     ] as [string[], number[]][]
   ).forEach(([catl, arr]) =>
-    arr.forEach((dim) =>
-      addRecipe('dimension:' + dim, '10000x fluid:rocketfuel', catl)
+    arr.forEach(dim =>
+      addRecipe(`dimension:${dim}`, '10000x fluid:rocketfuel', catl)
     )
   )
 }

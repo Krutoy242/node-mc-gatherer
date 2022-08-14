@@ -1,6 +1,6 @@
 import { Stack } from '../../api'
 
-import Definition from './Definition'
+import type Definition from './Definition'
 
 /**
  * Definition with amount

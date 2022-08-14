@@ -1,4 +1,4 @@
-import { Stack } from './Stack'
+import type { Stack } from './Stack'
 import { Stock } from './Stock'
 
 export default class Playthrough<T> {
@@ -6,7 +6,7 @@ export default class Playthrough<T> {
   private readonly usages = new Stock<T>()
 
   addCatalysts(catalysts: Stack<T>[]) {
-    catalysts.forEach((ms) => this.catalysts.maxed(ms.it, ms.amount))
+    catalysts.forEach(ms => this.catalysts.maxed(ms.it, ms.amount))
   }
 
   addInputs(usages: Stack<T>[], multiplier: number) {

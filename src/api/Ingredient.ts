@@ -1,4 +1,4 @@
-import { Identified } from '.'
+import type { Identified } from '.'
 
 export class Ingredient<T extends Identified> implements Identified {
   static itemsToID(items: Identified[]): string {
@@ -14,17 +14,16 @@ export class Ingredient<T extends Identified> implements Identified {
   }
 
   matchedBy() {
-    if (!this.matchedCache)
-      throw new Error('Trying to acces ingredient matcher before cache')
+    if (!this.matchedCache) throw new Error('Trying to acces ingredient matcher before cache')
     return this.matchedCache
   }
 
   matches(other: this): boolean {
     return (
-      this.id === other.id ||
-      other
+      this.id === other.id
+      || other
         .matchedBy()
-        .every((b) => this.matchedBy().some((a) => a.id === b.id))
+        .every(b => this.matchedBy().some(a => a.id === b.id))
     )
   }
 
@@ -34,12 +33,12 @@ export class Ingredient<T extends Identified> implements Identified {
 
   equals(other: Ingredient<T>): boolean {
     if (this.items.length !== other.items.length) return false
-    return this.items.every((it) => other.items.includes(it))
+    return this.items.every(it => other.items.includes(it))
   }
 
   toString(options?: { names?: boolean }): string {
     return this.items
-      .map((d) =>
+      .map(d =>
         options?.names ? (d as any).toString({ short: true }) : d.id
       )
       .join(' | ')

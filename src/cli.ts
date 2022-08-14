@@ -6,7 +6,7 @@ import { join } from 'path'
 import { terminal as term } from 'terminal-kit'
 import yargs from 'yargs'
 
-import { ExportData } from './tools/Export'
+import type { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
 
 import mcGather from '.'
@@ -14,25 +14,25 @@ import mcGather from '.'
 const argv = yargs(process.argv.slice(2))
   .options({
     mc: {
-      alias: 'm',
-      type: 'string',
+      alias   : 'm',
+      type    : 'string',
       describe: 'Path to minecraft folder',
     },
     output: {
-      alias: 'o',
-      type: 'string',
+      alias   : 'o',
+      type    : 'string',
       describe: 'Output dir path',
-      default: '.',
+      default : '.',
     },
     jeie: {
-      type: 'boolean',
+      type    : 'boolean',
       describe: 'Do load JEIExporter files',
-      default: true,
+      default : true,
     },
     jec: {
-      type: 'boolean',
+      type    : 'boolean',
       describe: 'Do load Just Enough Calculation files',
-      default: true,
+      default : true,
     },
   })
   .version(false)
@@ -73,12 +73,12 @@ async function prompt(exportData: ExportData) {
   do {
     id = await term.inputField({
       autoComplete: async (input: string) =>
-        !input ? '' : keys.find((k) => k.startsWith(input)) ?? input,
+        !input ? '' : keys.find(k => k.startsWith(input)) ?? input,
       autoCompleteHint: true,
     }).promise
     term('\n')
     if (id) {
-      if (!exportData.logger(id)) term.red("This id doesn't exist")('\n')
+      if (!exportData.logger(id)) term.red('This id doesn\'t exist')('\n')
       else term.green('Succes!')('\n')
     }
   } while (id)

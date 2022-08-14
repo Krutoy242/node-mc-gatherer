@@ -2,12 +2,12 @@ import _ from 'lodash'
 
 import { Stack } from '../api'
 import getTool from '../custom/mining_levels'
-import Definition from '../lib/items/Definition'
-import RecipeStore from '../lib/recipes/RecipeStore'
+import type Definition from '../lib/items/Definition'
+import type RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
-import { DefIngrStack } from '../types'
+import type { DefIngrStack } from '../types'
 
-import { BlockMinings } from './blockMinings'
+import type { BlockMinings } from './blockMinings'
 
 interface JER_Entry {
   block: string
@@ -52,11 +52,11 @@ function getProbAcces(lvl: number, prob: number): number {
 
 function getJERProbability(rawStrData: string) {
   return (
-    1 /
-    rawStrData
+    1
+    / rawStrData
       .split(';')
-      .map((s) => s.split(',').map(parseFloat))
-      .filter((o) => !isNaN(o[0]))
+      .map(s => s.split(',').map(parseFloat))
+      .filter(o => !isNaN(o[0]))
       .map(([lvl, prob]) => getProbAcces(lvl, prob))
       .reduce((a, b) => a + b, 0)
   )
@@ -68,7 +68,7 @@ function jerDimToPlaceholder(jerDimText: string): string {
   const dimId = match?.[1] ?? match?.[2] ?? jerDimText
   const dim = dimId.replace(/[:\s]/g, '_')
   registeredDims.add(dim)
-  return 'dimension:' + dim
+  return `dimension:${dim}`
 }
 
 export default function append_JER(
@@ -80,7 +80,7 @@ export default function append_JER(
   const logDimensions = createFileLogger('jer_dimensions.log')
   const getById = recipesStore.definitionStore.getById
 
-  let ii_exploration = Stack.fromString(
+  const ii_exploration = Stack.fromString(
     'placeholder:exploration',
     recipesStore.ingredientStore.get
   )
@@ -103,7 +103,7 @@ export default function append_JER(
 
     // Block drops
     const drops = jer_entry.dropsList
-      ?.map((drop) => getDrops(blockDef, drop))
+      ?.map(drop => getDrops(blockDef, drop))
       .filter((s): s is DefIngrStack => !!s)
 
     if (drops?.length) recipesStore.addRecipe('JER_Drops', drops, block, tool)

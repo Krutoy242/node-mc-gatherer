@@ -1,6 +1,7 @@
-import { NBT, nbtMatch, parseSNbt } from './NBT'
+import type { NBT } from './NBT'
+import { nbtMatch, parseSNbt } from './NBT'
 
-import { Base, Based, Identified, Ingredient } from './'
+import type { Base, Based, Identified, Ingredient } from './'
 /* =============================================
 ============================================= */
 
@@ -24,8 +25,8 @@ export class Tree<T extends Identified & Based> {
 
   static baseToId: (...base: Base) => string = (source, entry, meta, sNbt) => {
     const m = Tree.actualMeta(meta)
-    return `${source}:${entry}${m !== undefined ? ':' + m : ''}${
-      sNbt ? ':' + sNbt : ''
+    return `${source}:${entry}${m !== undefined ? `:${m}` : ''}${
+      sNbt ? `:${sNbt}` : ''
     }`
   }
 
@@ -60,9 +61,8 @@ export class Tree<T extends Identified & Based> {
 
   private _oreDict?: OreDict<T>
   public get oreDict(): OreDict<T> {
-    if (!this._oreDict) {
-      throw new Error('OreDict must be intitialized')
-    }
+    if (!this._oreDict) throw new Error('OreDict must be intitialized')
+
     return this._oreDict
   }
 
@@ -79,7 +79,7 @@ export class Tree<T extends Identified & Based> {
       ]
     }
 
-    this.lookById = (id) =>
+    this.lookById = id =>
       this.lookBased(...Tree.baseFromId(id, hardReplaceMap))
 
     const getItemBased: this['getBased'] = (source, entry, meta, sNbt, id) => {
@@ -91,9 +91,9 @@ export class Tree<T extends Identified & Based> {
 
       const actualMeta = Tree.actualMeta(meta)
 
-      return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? ''] ??=
-        {})[sNbt ?? ''] ??=
-        (this.size++,
+      return ((((this.tree[source] ??= {})[entry] ??= {})[actualMeta ?? '']
+        ??= {})[sNbt ?? '']
+        ??= (this.size++,
         NewItem(
           id ?? Tree.baseToId(source, entry, meta, sNbt),
           source,
@@ -115,7 +115,7 @@ export class Tree<T extends Identified & Based> {
         ? getOreBased(source, ...args)
         : getItemBased(source, ...args)
 
-    this.getById = (id) => this.getBased(...Tree.baseFromId(id, hardReplaceMap))
+    this.getById = id => this.getBased(...Tree.baseFromId(id, hardReplaceMap))
   }
 
   addOreDict(oreDict: { [oreName: string]: string[] }) {
@@ -133,16 +133,15 @@ export class Tree<T extends Identified & Based> {
     for (const o1 of Object.values(this.tree)) {
       for (const o2 of Object.values(o1)) {
         for (const o3 of Object.values(o2)) {
-          for (const def of Object.values(o3)) {
+          for (const def of Object.values(o3))
             yield def
-          }
         }
       }
     }
   }
 
   *matchedBy(ingr: Ingredient<T>): IterableIterator<T> {
-    if (ingr.hasMatchedCache()) return yield* ingr.matchedBy()
+    if (ingr.hasMatchedCache()) return yield * ingr.matchedBy()
     const arr: T[] = []
     ingr.setMatchedCache(arr)
 
@@ -160,11 +159,10 @@ export class Tree<T extends Identified & Based> {
     if (def.source === 'ore') {
       const oreList = this.getOre(def.entry)
       if (!oreList.length) return yield def
-      for (const oreDef of oreList) {
-        yield* this.matchedByNonOre(oreDef)
-      }
-    } else {
-      yield* this.matchedByNonOre(def)
+      for (const oreDef of oreList) yield * this.matchedByNonOre(oreDef)
+    }
+    else {
+      yield * this.matchedByNonOre(def)
     }
   }
 
@@ -173,20 +171,19 @@ export class Tree<T extends Identified & Based> {
       const se = this.tree[def.source][def.entry]
       for (const meta in se) {
         if (isWildcard(meta)) continue
-        yield* Object.values(se[meta])
+        yield * Object.values(se[meta])
       }
-    } else {
-      if (def.source === undefined || def.entry === undefined) {
-        throw new Error('Item parser malfunction for: ' + def.id)
-      }
+    }
+    else {
+      if (def.source === undefined || def.entry === undefined) throw new Error(`Item parser malfunction for: ${def.id}`)
+
       const sNbtMap = this.tree[def.source][def.entry][def.meta ?? '']
       if (!def.sNbt) {
-        for (const sNbt in sNbtMap) {
-          yield sNbtMap[sNbt]
-        }
-      } else {
+        for (const sNbt in sNbtMap) yield sNbtMap[sNbt]
+      }
+      else {
         if (sNbtMap['*']) yield sNbtMap['*']
-        yield* this.matchedByNbt(def, sNbtMap)
+        yield * this.matchedByNbt(def, sNbtMap)
       }
     }
   }
@@ -197,7 +194,7 @@ export class Tree<T extends Identified & Based> {
   ): IterableIterator<T> {
     const defNbt = getNbt(def.sNbt)
     // Empty nbt, any nbt match
-    if (!defNbt) return yield* Object.values(sNbtMap)
+    if (!defNbt) return yield * Object.values(sNbtMap)
 
     // Wildcarded nbt - any except itself match
     if (defNbt === '*') {

@@ -1,7 +1,7 @@
 // import { writeFileSync } from 'fs'
 
 import { Stack } from '../api'
-import RecipeStore from '../lib/recipes/RecipeStore'
+import type RecipeStore from '../lib/recipes/RecipeStore'
 import { createFileLogger } from '../log/logger'
 
 export type JEC_Types =
@@ -59,8 +59,8 @@ export default function append_JECgroups(
   // Try to remove placeholders that created only to extend ingredient count
   const remIndexes = new Set<number>()
   jec_groups.Default.forEach((jec_recipe, recipe_index) => {
-    jec_recipe.input = jec_recipe.input.filter((raw) => prepareEntry(raw, true))
-    jec_recipe.catalyst = jec_recipe.catalyst.filter((raw) =>
+    jec_recipe.input = jec_recipe.input.filter(raw => prepareEntry(raw, true))
+    jec_recipe.catalyst = jec_recipe.catalyst.filter(raw =>
       prepareEntry(raw, true)
     )
 
@@ -71,7 +71,7 @@ export default function append_JECgroups(
       phRaw: JEC_Ingredient
     ) {
       const pos = craft[listName]
-        .map((e) => e.content?.name)
+        .map(e => e.content?.name)
         .indexOf(phRaw.content.name)
 
       if (pos !== -1 && craft[listName][pos].type === 'placeholder') {
@@ -88,7 +88,8 @@ export default function append_JECgroups(
       const raw = jec_recipe.output[i]
       if (!prepareEntry(raw)) {
         jec_recipe.output.splice(i, 1)
-      } else {
+      }
+      else {
         if (raw.type === 'placeholder') {
           jec_groups.Default.forEach((craft) => {
             replaceInList(craft, 'input', raw)
@@ -98,15 +99,13 @@ export default function append_JECgroups(
       }
     }
 
-    if (wasRemoved) {
-      remIndexes.add(recipe_index)
-    }
+    if (wasRemoved) remIndexes.add(recipe_index)
   })
 
   // Make indexes unique and remove
   Array.from(remIndexes)
     .reverse()
-    .forEach((index) => jec_groups.Default.splice(index, 1))
+    .forEach(index => jec_groups.Default.splice(index, 1))
 
   // -------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------
@@ -133,14 +132,14 @@ function shortandNbt(str: string) {
     if (parenth <= 0) break
   }
   return (
-    '"' +
-    str
-      .substring(0, i)
-      .replace(/[\s\n]*"([^"]+)"[\s\n]*:[\s\n]*/gi, '$1:')
-      .replace(/"/g, '\\"')
-      .replace(/[\s\n]*\n+[\s\n]*/g, '') +
-    '"' +
-    str.substring(i)
+    `"${
+      str
+        .substring(0, i)
+        .replace(/[\s\n]*"([^"]+)"[\s\n]*:[\s\n]*/gi, '$1:')
+        .replace(/"/g, '\\"')
+        .replace(/[\s\n]*\n+[\s\n]*/g, '')
+    }"${
+      str.substring(i)}`
   )
 }
 
@@ -168,15 +167,12 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
     // Replace bucket with liquid to actual liquid
     if (raw.content?.item === 'forge:bucketfilled') {
       const fluidName = nbt?.match(/FluidName:\s*\\?"([^"]+)\\?"/)?.[1]
-      if (!fluidName) {
-        console.log('raw :>> ', raw)
-        throw new Error('Cant parse fluid name')
-      }
+      if (!fluidName) throw new Error('Cant parse fluid name')
 
       raw.type = 'fluidStack'
       raw.content = {
         amount: 1000,
-        fluid: fluidName,
+        fluid : fluidName,
       }
     }
   }
@@ -194,7 +190,7 @@ function applyToAdditionals(
       input.map(fromJECMap),
       catalyst.map(fromJECMap)
     )
-    logRecipe(rec?.commandString({ noSource: true }) + '\n')
+    logRecipe(`${rec?.commandString({ noSource: true })}\n`)
   })
 
   function fromJECMap(raw: JEC_Ingredient) {
@@ -205,8 +201,8 @@ function applyToAdditionals(
         ...(raw.content?.item?.split(':') as [string, string]),
         raw.content.fMeta ? '*' : String(raw.content.meta ?? 0),
       ],
-      fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
-      oreDict: (): Typle => ['ore', raw.content.name as string],
+      fluidStack : (): Typle => ['fluid', raw.content.fluid as string],
+      oreDict    : (): Typle => ['ore', raw.content.name as string],
       placeholder: (): Typle => [
         'placeholder',
         raw.content.name?.toLowerCase() as string,
@@ -214,12 +210,12 @@ function applyToAdditionals(
     }
 
     const [source, entry, meta] = switcher[raw.type]()
-    const sNbt =
-      raw.content.fNbt && !raw.content.fMeta
+    const sNbt
+      = raw.content.fNbt && !raw.content.fMeta
         ? '*'
         : typeof raw.content.nbt !== 'string'
-        ? ''
-        : raw.content.nbt
+          ? ''
+          : raw.content.nbt
 
     return new Stack(
       recipeStore.ingredientStore.fromItem(

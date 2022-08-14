@@ -1,4 +1,4 @@
-import { Calculable } from '../../api'
+import type { Calculable } from '../../api'
 import { Pos } from '../../tools/CsvDecorators'
 
 export default abstract class Setable implements Calculable {
