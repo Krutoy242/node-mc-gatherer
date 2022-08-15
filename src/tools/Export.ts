@@ -25,33 +25,44 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     id: string,
     idPath = false
   ): Playthrough<Definition> | undefined {
+    let isAscend = false
+    if (id.startsWith('from ')) {
+      id = id.replace(/^from /, '')
+      isAscend = true
+    }
+
     const def = store.lookById(id)
     if (!def) return
 
     const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
-    const filePath = `tree/${fileName}.log`
-    const write = createFileLogger(filePath)
+    const write = createFileLogger(`tree/${fileName}.log`)
     const writeLn = (s: string) => write(`${s}\n`)
 
-    const playthrough = solveLog(def, [0, 1], (def, combined, _a, tab, complexityPad) => {
+    const playthrough = solveLog<Definition, [number, number]>(def, [0, 1], (def, combined, _a, tab, complexityPad) => {
       writeLn('  '.repeat(tab) + def.toString({ complexityPad }))
       if (!combined) return
 
-      (!def.mainRecipe && def.purity < 1
-        ? [...def.recipes ?? []]
-        : [def.mainRecipe]
-      )
-        .forEach(rec => rec
-          ?.toString().split('\n')
-          .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`)))
+      if (!isAscend) {
+        (!def.mainRecipe && def.purity < 1
+          ? [...def.recipes ?? []]
+          : [def.mainRecipe]
+        )
+          .forEach(rec => rec
+            ?.toString().split('\n')
+            .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`)))
+      }
 
       return [tab + 1, Math.max(...combined.map(it => it[0].complexity_s.length))]
-    })
+    }, isAscend)
     return playthrough
   }
 
+  // Output tree to creative vending
   const playthrough = logger('storagedrawers:upgrade_creative:1', true)
   if (playthrough) createFileLogger('data_playthrough.csv')(PlaythroughToCSV(playthrough))
+
+  // Output tree from diamond
+  logger('from minecraft:diamond:0', true)
 
   const mostStepsDef = [...store].sort(
     (a, b) =>

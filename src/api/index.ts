@@ -34,25 +34,28 @@ const baseVisibleSetup = {
   imgsrc : String,
 }
 
+const calculableSetup = {
+  purity    : Number,
+  cost      : Number,
+  processing: Number,
+  complexity: Number,
+}
+
 export type BaseVisible = {
-  [P in keyof typeof baseVisibleSetup]: ReturnType<typeof baseVisibleSetup[P]>
+  [P in keyof typeof baseVisibleSetup]?: ReturnType<typeof baseVisibleSetup[P]>
 }
 
 export const baseItemSetup = {
   ...baseVisibleSetup,
-  tooltips     : (s: string) => s.split('\\n'),
-  purity       : Number,
-  complexity   : Number,
-  cost         : Number,
-  processing   : Number,
-  steps        : Number,
-  recipeIndexes: (s: string) => (s === '' ? [] : s.split(' ').map(Number)),
+  ...calculableSetup,
   id           : String,
+  steps        : Number,
+  tooltips     : (s: string) => s.split('\\n'),
+  recipeIndexes: (s: string) => (s === '' ? [] : s.split(' ').map(Number)),
 }
 
-type BaseItemKeys = keyof typeof baseItemSetup
 export type BaseItemMap = {
-  [P in BaseItemKeys]: ReturnType<typeof baseItemSetup[P]>
+  [P in keyof typeof baseItemSetup]: ReturnType<typeof baseItemSetup[P]>
 }
 
 export interface BaseItem extends BaseItemMap, Based {}
@@ -70,11 +73,8 @@ export interface Identified {
   id: string
 }
 
-export interface Calculable {
-  readonly purity: number
-  readonly cost: number
-  readonly processing: number
-  readonly complexity: number
+export type Calculable = {
+  readonly [P in keyof typeof calculableSetup]: ReturnType<typeof calculableSetup[P]>
 }
 
 /*
@@ -98,8 +98,10 @@ export interface CsvRecipe extends BaseRecipe {
 }
 
 export interface SolvableRecipe<T extends Identified> extends Calculable {
+  outputs: Stack<Ingredient<T>>[]
   catalysts?: Stack<Ingredient<T>>[]
   inputs?: Stack<Ingredient<T>>[]
+  requirments: Stack<Ingredient<T>>[]
 
   catalystsDef?: Stack<T>[]
   inputsDef?: Stack<T>[]
@@ -108,5 +110,10 @@ export interface SolvableRecipe<T extends Identified> extends Calculable {
 export interface Solvable<T extends Identified> extends Identified, Calculable {
   recipes: Set<SolvableRecipe<T>> | undefined
   mainRecipe: SolvableRecipe<T> | undefined
-  mainRecipeAmount?: number | undefined
+  mainRecipeAmount: number | undefined
+
+  /**
+   * Recipes that depends on this item
+   */
+  dependencies: Set<SolvableRecipe<T>> | undefined
 }

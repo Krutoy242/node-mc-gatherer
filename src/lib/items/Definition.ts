@@ -3,7 +3,7 @@ import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseItemMap } from '../../api'
+import type { BaseVisible, Based, Solvable } from '../../api'
 import type { CSVLine } from '../../api/csv'
 import { Format, Pos, getCSVLine } from '../../tools/CsvDecorators'
 import Setable from '../calc/Setable'
@@ -15,13 +15,9 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
-type NonRequiredBase = {
-  [key in keyof BaseItemMap]?: any
-}
-
 export default class Definition
   extends Setable
-  implements CSVLine, NonRequiredBase {
+  implements CSVLine, Based, BaseVisible, Solvable<Definition> {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -53,12 +49,9 @@ export default class Definition
 
   mainRecipe: Recipe | undefined
 
-  mainRecipeAmount?: number
+  mainRecipeAmount: number | undefined
 
-  /**
-   * Recipes that depends on this item
-   */
-  dependencies?: Set<number>
+  dependencies: Set<Recipe> | undefined
 
   @Pos(22)
   get recipeIndexes() {

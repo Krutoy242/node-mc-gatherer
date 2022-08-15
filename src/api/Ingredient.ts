@@ -5,7 +5,7 @@ export class Ingredient<T extends Identified> implements Identified {
     return items.map(({ id }) => id).join('|')
   }
 
-  private matchedCache?: T[]
+  private matchedCache?: T[] | []
 
   constructor(public readonly items: T[], public id: string) {}
 
@@ -13,7 +13,7 @@ export class Ingredient<T extends Identified> implements Identified {
     return !!this.matchedCache
   }
 
-  matchedBy() {
+  matchedBy(): T[] | [] {
     if (!this.matchedCache) throw new Error('Trying to acces ingredient matcher before cache')
     return this.matchedCache
   }

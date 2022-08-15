@@ -78,7 +78,7 @@ export default class Calculator {
     this.definitionStore.lock()
     this.recipeStore.forEach((rec, index) => {
       rec.requirments.forEach(({ it: ingredient }) => {
-        for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(index)
+        for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(rec)
       })
 
       rec.outputs.forEach(({ it: ingredient }) => {
@@ -100,7 +100,7 @@ export default class Calculator {
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
       if (def.suggest(rec, stack.amount ?? 1)) {
-        def.dependencies?.forEach(r => dirtyRecipes.add(r))
+        def.dependencies?.forEach(r => dirtyRecipes.add(r.index))
         if (isFirtCalc) cli.bars?.[1].increment()
         recalcDefs++
       }
@@ -114,7 +114,7 @@ export default class Calculator {
       const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
         def.set({ purity: 1.0, cost: val, processing: 0.0 })
-        def.dependencies?.forEach(r => dirtyRecipes.add(r))
+        def.dependencies?.forEach(r => dirtyRecipes.add(r.index))
       }
     })
   }
@@ -168,22 +168,22 @@ export default class Calculator {
     }
 
     // Find all wanted recipes
-    const deps = new Set<number>()
+    const deps = new Set<Recipe>()
     ingr.items.forEach((it) => {
       it.dependencies?.forEach((r) => {
-        if (recipeWanted(this.recipeStore[r])) deps.add(r)
+        if (recipeWanted(r)) deps.add(r)
       })
     })
 
     // Iterate over their dependencies
     const checkList = [...deps]
-    let r: number | undefined
+    let r: Recipe | undefined
     while ((r = checkList.pop())) {
-      this.recipeStore[r].outputs.forEach(out =>
+      r.outputs.forEach(out =>
         out.it.items.forEach((it) => {
           if (it.purity <= 0) {
             it.dependencies?.forEach((rr) => {
-              if (!deps.has(rr) && recipeWanted(this.recipeStore[rr])) {
+              if (!deps.has(rr) && recipeWanted(rr)) {
                 deps.add(rr)
                 checkList.push(rr)
               }

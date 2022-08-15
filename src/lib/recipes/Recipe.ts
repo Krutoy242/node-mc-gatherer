@@ -1,6 +1,6 @@
 import numeral from 'numeral'
 
-import type { CsvRecipe } from '../../api'
+import type { CsvRecipe, SolvableRecipe } from '../../api'
 import type { DefIngrStack } from '../../types'
 import Setable from '../calc/Setable'
 import type Definition from '../items/Definition'
@@ -9,7 +9,7 @@ import Inventory from '../items/Inventory'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
-export default class Recipe extends Setable {
+export default class Recipe extends Setable implements SolvableRecipe<Definition> {
   inventory?: Inventory
 
   /** Both Catalysts and inputs */

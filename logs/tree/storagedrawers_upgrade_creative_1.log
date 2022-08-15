@@ -28,9 +28,6 @@
             ░ minecraft:crafting_table:0
             ⮬ 5x ore:logWood, ore:dyeBlack, 2x minecraft:iron_ingot:0
             ▕█▏   50.00 🧮  50 ⚙️   0 "Crafting Table" minecraft:crafting_table:0
-              [minecraft__crafting] #86747
-              ↱ 9x minecraft:crafting_table:0
-              ⮬ avaritia:compressed_crafting_table:0
               ▕█▏502.00 🧮 451 ⚙️  51 "Compressed Crafting Table" avaritia:compressed_crafting_table:0
                 [minecraft__crafting] #86748
                 ↱ avaritia:compressed_crafting_table:0
@@ -2520,10 +2517,6 @@
                             ░ 13x placeholder:trade
                             ⮬ iceandfire:myrmex_desert_resin:0
                     ▕█▏        1.00 🧮   1 ⚙️   0 "{rf}" placeholder:rf
-                      [requious__ic2_semifluid] #5350
-                      ↱ placeholder:rf
-                      ░ ?x ic2:te:7
-                      ⮬ fluid:biomass
                       ▕█▏161,800.09 🧮138k ⚙️ 23k "Semifluid Generator" ic2:te:7
                         [minecraft__crafting] #82043
                         ↱ ic2:te:7
