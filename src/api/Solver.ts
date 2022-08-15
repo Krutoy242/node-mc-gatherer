@@ -24,6 +24,7 @@ export function solveLog<
 ) {
   const playthrough = new Playthrough<T>()
   const further = (isAscend ? ascending : descending)(playthrough)
+  playthrough.addInputs([new Stack(topDef)], 1)
 
   solverLoop(
     (def: T, ...args) => {
@@ -44,6 +45,7 @@ export function solve<T extends Solvable<T>>(
 ) {
   const playthrough = new Playthrough<T>()
   const further = (isAscend ? ascending : descending)(playthrough)
+  playthrough.addInputs([new Stack(topDef)], 1)
 
   solverLoop<T, any[]>(further)(topDef)
 
