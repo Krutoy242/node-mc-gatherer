@@ -81,7 +81,10 @@ export default class DefinitionStore
         if (firstRun || fine()) return
       }
 
-      if (!def.display) log.noDisplay(`${def.id}\n`)
+      if (!def.display) {
+        def.display = '[...]'
+        log.noDisplay(`${def.id}\n`)
+      }
 
       if (!def.imgsrc) {
         def.imgsrc = self.getBased('openblocks', 'dev_null')?.imgsrc

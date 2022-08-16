@@ -2,7 +2,6 @@ import type { AddRecipeFn } from '../customs'
 
 export default function addRecipes(addRecipe: AddRecipeFn) {
   addRecipe('dimension:0', 'placeholder:exploration')
-  addRecipe('dimension:overworld', 'placeholder:exploration')
 
   addRecipe(
     'dimension:-1',

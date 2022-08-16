@@ -1,3 +1,4 @@
+import { capitalize } from 'lodash'
 import type { BaseVisible } from '../api'
 import type Definition from '../lib/items/Definition'
 
@@ -15,26 +16,32 @@ export default function customRender(
   sNbt: string | undefined,
   get: (id: string) => Definition
 ): Partial<BaseVisible> {
+  const alias = (id: string) => ({
+    imgsrc : get(id)?.imgsrc,
+    display: `{${capitalize(entry)}}`,
+  })
+
   const root: Pointer = {
     placeholder: {
-      rf: {
-        __: () => ({
-          imgsrc : get('thermalfoundation:meter:0').imgsrc,
-          display: `{${entry}}`,
-        }),
-      },
-      exploration: {
-        __: () => ({
-          imgsrc : get('botania:tinyplanet:0').imgsrc,
-          display: `{${entry}}`,
-        }),
-      },
+      ticks      : { __: () => alias('botania:cosmetic:17') },
+      rf         : { __: () => alias('thermalfoundation:meter:0') },
+      exploration: { __: () => alias('botania:tinyplanet:0') },
+      xp         : { __: () => alias('mysticalagriculture:experience_essence:0') },
+      fight      : { __: () => alias('endreborn:tool_sword_wolframium:0') },
+      trade      : { __: () => alias('openblocks:trophy:9:{entity_id:"minecraft:villager"}') },
     },
 
     thaumcraft: {
       infernal_furnace: {
         __: () => ({ imgsrc: get('minecraft:nether_brick:0').imgsrc }),
       },
+    },
+
+    dimension: {
+      __: () => ({
+        imgsrc : get('botania:tinyplanet:0').imgsrc,
+        display: `{Dimension ${entry}}`,
+      }),
     },
   }
 
