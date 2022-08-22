@@ -8,5 +8,6 @@
     "rf"          : {"_vol": 1000000, "_unit": "Mrf"},
     "fight"       : {"_vol": 1000,    "_unit": "Damage"}
   },
-  "fluid": {"_vol": 1000, "_unit": "b"}
+  "fluid": {"_vol": 1000, "_unit": "b"},
+  "gas"  : {"_vol": 1000, "_unit": "b"}
 }

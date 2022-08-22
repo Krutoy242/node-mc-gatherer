@@ -401,7 +401,10 @@ adapters.set(/jeresources__dungeon/, (cat) => {
     stacks: [{ type: 'placeholder', name: 'exploration' }],
     amount: 500000,
   }
-  cat.recipes.forEach((rec: JEIECustomRecipe) => (rec.catalyst = [catal]))
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.catalyst = [catal]
+    rec.input = { items: [{ x: 0, y: 0, ...getIngr('placeholder:exploration', 20000) }] }
+  })
 })
 
 adapters.set(/jeresources__villager/, (cat) => {
@@ -578,7 +581,7 @@ adapters.set(/requious__scented_hive/, (cat) => {
 
 adapters.set(/jeresources__mob/, (cat) => {
   cat.recipes.forEach((rec) => {
-    rec.input.items = [{ x: 0, y: 0, ...getIngr('placeholder:fight', 100000) }]
+    rec.input.items = [{ x: 0, y: 0, ...getIngr('placeholder:fight', 200000) }]
   })
 })
 
