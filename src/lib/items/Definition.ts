@@ -63,7 +63,9 @@ export default class Definition
 
   @Pos(20)
   get steps() {
-    return this.mainRecipe?.inventory?.steps ?? ''
+    return this.mainRecipe?.inventory?.steps
+      ? this.mainRecipe.inventory.steps + 1
+      : ''
   }
 
   /*
