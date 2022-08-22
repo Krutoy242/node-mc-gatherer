@@ -47,19 +47,19 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
    * Calculate recipe
    * @returns `true` if new value calculated, `false` if not changed or unable to
    */
-  calculate(): boolean {
+  calculate() {
     const [catPurity, catDefs] = this.getBestDefs(this.catalysts)
-    if (catPurity <= 0) return false
+    if (catPurity <= 0) return
 
     const [inPurity, inDefs] = this.getBestDefs(this.inputs)
-    if (inPurity <= 0) return false
+    if (inPurity <= 0) return
 
     const purity = catPurity * inPurity
-    if (this.purity > purity) return false
+    if (this.purity > purity) return
 
     const samePurity = this.purity === purity
     const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.it.cost, 1.0)
-    if (samePurity && this.complexity <= cost) return false
+    if (samePurity && this.complexity <= cost) return // Old recipe better
 
     let catalList: Inventory | undefined
     if (catDefs.length || inDefs.some(d => d.it.mainRecipe?.inventory)) {
@@ -68,17 +68,17 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
         .addCatalysts(catDefs)
         .addCatalystsOf(catDefs)
         .addCatalystsOf(inDefs)
-      if (catalList.isFutile()) return false
+      if (catalList.isFutile()) return
     }
     const processing = catalList?.processing ?? 0
 
     const complexity = cost + processing
-    if (this.complexity === complexity) return false
-    if (samePurity && this.complexity < complexity) return false
+    if (this.complexity === complexity) return
+    if (samePurity && this.complexity < complexity) return
 
     // Unsignificant difference, probably loop
     const diffFactor = (this.complexity - complexity) / complexity
-    if (samePurity && diffFactor < 0.0001) return false
+    if (samePurity && diffFactor < 0.0001) return
 
     this.set({ purity, cost, processing })
     this.inventory = catalList

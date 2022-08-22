@@ -18,7 +18,7 @@ export default class Calculator {
   async compute(cli: CLIHelper) {
     this.createLinks(cli)
 
-    const dirtyRecipes = new Set<number>()
+    let dirtyRecipes = new Set<Recipe>()
     this.assignPredefined(dirtyRecipes)
 
     const cliBars = {
@@ -34,33 +34,27 @@ export default class Calculator {
     let iters = 0
     let recalcDefs = 0
     while (dirtyRecipes.size) {
-      iters++
+      const newDirtyRecipes = new Set<Recipe>()
+      for (const rec of dirtyRecipes) {
+        if (++iters % 1000 === 0) {
+          cli.bars?.[0].update(totalCalculated, { task: `In queue: ${cli.num(dirtyRecipes.size)}` })
+          cli.bars?.[1].update({ task: `Recalculated: ${cli.num(recalcDefs)}` })
+          recalcDefs = 0
+          await sleep()
+        }
 
-      const [r] = dirtyRecipes
-      dirtyRecipes.delete(r)
+        const oldPurity = rec.purity
 
-      const rec = this.recipeStore[r]
-      const oldPurity = rec.purity
+        if (!rec.calculate()) continue
 
-      if (!rec.calculate()) continue
+        recalculated[rec.index]++
+        if (oldPurity <= 0) totalCalculated++
 
-      recalculated[r]++
-      if (oldPurity <= 0) totalCalculated++
-
-      rec.outputs.forEach((stack) => {
-        recalcDefs += this.calcStack(stack, rec, dirtyRecipes, cli)
-      })
-
-      if (iters % 10000 === 0) {
-        cli.bars?.[0].update(totalCalculated, {
-          task: `In queue: ${cli.num(dirtyRecipes.size)}`,
+        rec.outputs.forEach((stack) => {
+          recalcDefs += this.calcStack(stack, rec, newDirtyRecipes, cli)
         })
-        cli.bars?.[1].update({
-          task: `Recalculated: ${cli.num(recalcDefs)}`,
-        })
-        recalcDefs = 0
-        await sleep()
       }
+      dirtyRecipes = newDirtyRecipes
     }
     cli.multBarStop?.()
     await sleep()
@@ -76,7 +70,7 @@ export default class Calculator {
   private createLinks(cli: CLIHelper) {
     cli.startProgress('Linking items', this.recipeStore.length)
     this.definitionStore.lock()
-    this.recipeStore.forEach((rec, index) => {
+    this.recipeStore.forEach((rec, i) => {
       rec.requirments.forEach(({ it: ingredient }) => {
         for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(rec)
       })
@@ -85,7 +79,7 @@ export default class Calculator {
         for (const def of this.definitionStore.matchedBy(ingredient)) (def.recipes ??= new Set()).add(rec)
       })
 
-      if (index % 100 === 0 || index === this.recipeStore.length - 1) cli.bar?.update(index + 1)
+      if (i % 20 === 0 || i === this.recipeStore.length - 1) cli.bar?.update(i + 1)
     })
     cli.bar?.update(this.recipeStore.length, { task: 'done' })
   }
@@ -93,14 +87,14 @@ export default class Calculator {
   private calcStack(
     stack: Stack<Ingredient<Definition>>,
     rec: Recipe,
-    dirtyRecipes: Set<number>,
+    dirtyRecipes: Set<Recipe>,
     cli: CLIHelper
   ) {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
       if (def.suggest(rec, stack.amount ?? 1)) {
-        def.dependencies?.forEach(r => dirtyRecipes.add(r.index))
+        def.dependencies?.forEach(r => dirtyRecipes.add(r))
         if (isFirtCalc) cli.bars?.[1].increment()
         recalcDefs++
       }
@@ -109,12 +103,12 @@ export default class Calculator {
     return recalcDefs
   }
 
-  private assignPredefined(dirtyRecipes: Set<number>) {
+  private assignPredefined(dirtyRecipes: Set<Recipe>) {
     Object.entries(predefined).forEach(([id, val]) => {
       const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
         def.set({ purity: 1.0, cost: val, processing: 0.0 })
-        def.dependencies?.forEach(r => dirtyRecipes.add(r.index))
+        def.dependencies?.forEach(r => dirtyRecipes.add(r))
       }
     })
   }

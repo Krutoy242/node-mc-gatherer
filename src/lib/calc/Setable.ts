@@ -32,7 +32,7 @@ export default abstract class Setable implements Calculable {
   /**
    * @returns `true` if recipe was calculated for the first time
    */
-  abstract calculate(): boolean
+  abstract calculate(): true | undefined
 
   @Pos(11)
   public get complexity(): number {

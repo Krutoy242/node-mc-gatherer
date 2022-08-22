@@ -122,12 +122,12 @@ export default class Definition
     return true
   }
 
-  calculate(): boolean {
+  calculate() {
     const main = this.mainRecipe
-    if (!main) return false
+    if (!main) return
 
     const newCost = main.cost / (this.mainRecipeAmount ?? 1)
-    if (this.processing === main.processing && this.cost === newCost) return false
+    if (this.processing === main.processing && this.cost === newCost) return
 
     this.set({
       purity    : main.purity,
