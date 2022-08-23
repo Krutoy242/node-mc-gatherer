@@ -60,8 +60,8 @@ export default class Calculator {
     await sleep()
 
     cli.write('Writing computed in file...')
-    const allDefs = [...this.definitionStore]
     this.logInfo(recalculated)
+    const allDefs = [...this.definitionStore]
     const totalWithPurity = allDefs.filter(def => def.purity > 0).length
 
     return totalWithPurity

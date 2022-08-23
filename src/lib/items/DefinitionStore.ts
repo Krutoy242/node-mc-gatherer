@@ -82,7 +82,7 @@ export default class DefinitionStore
       }
 
       if (!def.display) {
-        def.display = '[...]'
+        def.display = `<${def.id}>`
         log.noDisplay(`${def.id}\n`)
       }
 

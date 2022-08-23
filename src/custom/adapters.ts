@@ -711,6 +711,24 @@ adapters.set(/GENDUSTRY_/, (cat) => {
   })
 })
 
+adapters.set(/jetif/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    // If we have no fluid output - this recipe not consume fluid
+    if (!rec.output.items.some(slot => slot.stacks.some(s => s.type === 'fluid'))) {
+      const isFluid = (slot: JEIESlot) => slot.stacks.some(s => s.type === 'fluid')
+      rec.catalyst = rec.input.items.filter(s => isFluid(s))
+      rec.input.items = rec.input.items.filter(s => !isFluid(s))
+    }
+  })
+})
+
+adapters.set(/nuclearcraft_collector/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.catalyst = rec.input.items
+    rec.input.items = [getSlot('placeholder:ticks', 1000)]
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, tools) => {
   const convertBucket = (ingr: JEIESlot) => bucketToFluid(ingr, tools.getFullID)

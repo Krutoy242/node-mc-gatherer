@@ -8,7 +8,7 @@ export default function addRecipes(
     'tconstruct:tooltables:2'
   )
   addRecipe(
-    'tconstruct:rack:*',
+    'tconstruct:rack:0',
     '3x ore:slabWood',
     'minecraft:crafting_table:0'
   )
