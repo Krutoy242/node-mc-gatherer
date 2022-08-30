@@ -1,6 +1,6 @@
 import numeral from 'numeral'
 
-import type { CsvRecipe, SolvableRecipe } from '../../api'
+import type { CsvRecipe, Labeled, SolvableRecipe } from '../../api'
 import type { DefIngrStack } from '../../types'
 import Setable from '../calc/Setable'
 import type Definition from '../items/Definition'
@@ -9,8 +9,9 @@ import Inventory from '../items/Inventory'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 
-export default class Recipe extends Setable implements SolvableRecipe<Definition> {
+export default class Recipe extends Setable implements SolvableRecipe<Definition>, Labeled {
   inventory?: Inventory
+  labels = ''
 
   /** Both Catalysts and inputs */
   readonly requirments: DefIngrStack[]
@@ -31,6 +32,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     return {
       index     : this.index,
       source    : this.source,
+      labels    : this.labels !== '' ? this.labels : undefined,
       complexity: this.complexity,
       purity    : this.purity,
       cost      : this.cost,
@@ -97,6 +99,10 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
       }${this.listToString('\n░ ', 'catalysts')
       }${this.listToString('\n⮬ ', 'inputs')}`
     )
+  }
+
+  finalize() {
+    this.labels = ''
   }
 
   commandString(options?: { noSource?: boolean }) {

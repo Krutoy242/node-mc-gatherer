@@ -34,6 +34,11 @@ export default abstract class Setable implements Calculable {
    */
   abstract calculate(): true | undefined
 
+  /**
+   * Calls after all calculations
+   */
+  abstract finalize(): void
+
   @Pos(11)
   public get complexity(): number {
     return this.cost + this.processing

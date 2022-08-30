@@ -78,14 +78,16 @@ function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
 
 function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   return (def: T, behind = new Set<Stack<T>>()) => {
-    if (!def.dependencies?.size) return undefined
+    if (!def?.dependencies?.size) return undefined
     const defStack = new Stack(def)
 
     const result = [...def.dependencies].map((r) => {
+      r.outputsDef ??= toDefStacks(r.outputs)
+
       // List of outputs of this recipe
       // Filter only recipes that have item as requirment in main recipe
-      const ds = toDefStacks(r.outputs).filter(s => s.it.mainRecipe?.requirments
-        .some(st => st.it.items.includes(def))
+      const ds = r.outputsDef.filter(s => toDefStacks(s.it.mainRecipe?.requirments)
+        ?.some(st => st.it === def)
       )
 
       if (!ds.length) return []
@@ -131,7 +133,7 @@ function puritySumm<T extends Solvable<T>>(arr?: Stack<Ingredient<T>>[]): number
   )
 }
 
-function toDefStacks<T extends Identified & Calculable>(
+export function toDefStacks<T extends Identified & Calculable>(
   stacks?: Stack<Ingredient<T>>[]
 ): Stack<T>[] | [] {
   if (!stacks) return []

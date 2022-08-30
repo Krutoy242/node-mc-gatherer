@@ -3,7 +3,8 @@ import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseVisible, Based, Solvable } from '../../api'
+import type { BaseVisible, Based, Labeled, Solvable } from '../../api'
+import { Label } from '../../api'
 import type { CSVLine } from '../../api/csv'
 import { Format, Pos, getCSVLine } from '../../tools/CsvDecorators'
 import Setable from '../calc/Setable'
@@ -17,7 +18,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 export default class Definition
   extends Setable
-  implements CSVLine, Based, BaseVisible, Solvable<Definition> {
+  implements CSVLine, Based, BaseVisible, Labeled, Solvable<Definition> {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -33,6 +34,9 @@ export default class Definition
 
   @Pos(21)
   imgsrc?: string
+
+  @Pos(21.5)
+  labels = ''
 
   @Pos(0)
   @Format(escapeCsv)
@@ -59,6 +63,11 @@ export default class Definition
       [...(this.recipes ?? [])].map(r => r.index),
       i => (i === this.mainRecipe?.index ? -1 : 0) // Main recipe always first
     ).join(' ')
+  }
+
+  @Pos(22.5)
+  get depIndexes(): string {
+    return [...(this.dependencies ?? [])].map(r => r.index).join(' ')
   }
 
   @Pos(20)
@@ -137,6 +146,18 @@ export default class Definition
       processing: main.processing,
     })
     return true
+  }
+
+  finalize() {
+    const labelFns: {
+      [P in keyof typeof Label]: () => boolean | undefined
+    } = {
+      Bottleneck: () => [...this.recipes ?? []].filter(r => r.purity > 0).length === 1,
+    }
+
+    Object.entries(labelFns).forEach(([k, f]) => {
+      if (f()) this.labels += Label[k as keyof typeof Label]
+    })
   }
 
   public get complexity_s(): string {

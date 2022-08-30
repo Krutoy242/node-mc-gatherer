@@ -32,26 +32,31 @@ export interface Based {
 const baseVisibleSetup = {
   display: String,
   imgsrc : String,
-}
+} as const
 
 const calculableSetup = {
   purity    : Number,
   cost      : Number,
   processing: Number,
   complexity: Number,
-}
+} as const
 
-export type BaseVisible = {
-  [P in keyof typeof baseVisibleSetup]?: ReturnType<typeof baseVisibleSetup[P]>
-}
+const stringArr = (splitter: string) => (s: string) => (s === '' ? [] : s.split(splitter))
+const numberArr = (splitter: string) => (s: string) => stringArr(splitter)(s).map(Number)
 
 export const baseItemSetup = {
   ...baseVisibleSetup,
   ...calculableSetup,
   id           : String,
+  labels       : String,
   steps        : Number,
-  tooltips     : (s: string) => s.split('\\n'),
-  recipeIndexes: (s: string) => (s === '' ? [] : s.split(' ').map(Number)),
+  tooltips     : stringArr('\\n'),
+  recipeIndexes: numberArr(' '),
+  depIndexes   : numberArr(' '),
+} as const
+
+export type BaseVisible = {
+  [P in keyof typeof baseVisibleSetup]?: ReturnType<typeof baseVisibleSetup[P]>
 }
 
 export type BaseItemMap = {
@@ -59,6 +64,23 @@ export type BaseItemMap = {
 }
 
 export interface BaseItem extends BaseItemMap, Based {}
+
+/*
+██╗      █████╗ ██████╗ ███████╗██╗     ███████╗
+██║     ██╔══██╗██╔══██╗██╔════╝██║     ██╔════╝
+██║     ███████║██████╔╝█████╗  ██║     ███████╗
+██║     ██╔══██║██╔══██╗██╔══╝  ██║     ╚════██║
+███████╗██║  ██║██████╔╝███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
+*/
+
+export interface Labeled {
+  labels: string
+}
+
+export const Label = {
+  Bottleneck: '🍾', // Item that have only one recipe
+} as const
 
 /*
  ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ██████╗ ██╗     ███████╗
@@ -89,6 +111,7 @@ export type Calculable = {
 export interface BaseRecipe extends Calculable {
   index: number
   source: string
+  labels?: string
 }
 
 export interface CsvRecipe extends BaseRecipe {
@@ -103,6 +126,7 @@ export interface SolvableRecipe<T extends Identified> extends Calculable {
   inputs?: Stack<Ingredient<T>>[]
   requirments: Stack<Ingredient<T>>[]
 
+  outputsDef?: Stack<T>[]
   catalystsDef?: Stack<T>[]
   inputsDef?: Stack<T>[]
 }

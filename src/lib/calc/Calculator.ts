@@ -59,6 +59,10 @@ export default class Calculator {
     cli.multBarStop?.()
     await sleep()
 
+    cli.write('Finalize Calculation...')
+    for (const def of this.definitionStore) def.finalize()
+    for (const rec of this.recipeStore) rec.finalize()
+
     cli.write('Writing computed in file...')
     this.logInfo(recalculated)
     const allDefs = [...this.definitionStore]
