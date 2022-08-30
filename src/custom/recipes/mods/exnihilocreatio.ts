@@ -10,4 +10,9 @@ export default function addRecipes(
     'ore:treeLeaves',
     'exnihilocreatio:item_material:2'
   )
+  addRecipe(
+    'exnihilocreatio:crook_tconstruct:0',
+    '4x tconstruct:tool_rod:0:{Material:"wood"}',
+    'tconstruct:tooltables:3'
+  )
 }

@@ -7,7 +7,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     'randomthings:spectrekey'
   )
 
-  addRecipe('randomthings:ingredient:2', '400x placeholder:ticks')
+  addRecipe('randomthings:ingredient:2', '40000x placeholder:ticks')
 
   addRecipe('randomthings:beanpod:0', 'randomthings:beans:2')
   addRecipe(

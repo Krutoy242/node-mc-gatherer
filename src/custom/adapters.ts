@@ -6,6 +6,7 @@ import type {
   JEIEIngredient,
   JEIEItem,
   JEIESlot,
+  List,
 } from '../from/jeie/JEIECategory'
 
 const { max, min } = Math
@@ -63,6 +64,11 @@ function bucketToFluid(
   ingr.stacks.forEach((stack) => {
     if (stackBucketToFluid(stack, getFullID)) ingr.amount = 1000
   })
+}
+
+function moveToCatalyst(rec: JEIECustomRecipe, predicate: (s: JEIESlot) => boolean) {
+  (rec.catalyst ??= []).push(...rec.input.items.filter(s => predicate(s)))
+  rec.input.items = rec.input.items.filter(s => !predicate(s))
 }
 
 // Clear recipes for this entries
@@ -240,6 +246,46 @@ adapters.set(
     })
   }
 )
+
+adapters.set(/thermalexpansion__charger/, (cat) => {
+  // Filter all recipes that output same item (only NBT changed)
+  cat.recipes = cat.recipes.filter((rec: JEIECustomRecipe) => {
+    const defMeta = (l: List) => l.items.map(s => s.stacks.map(d => d.name.split(':').slice(0, 3).join(':'))).flat()
+    const outs = defMeta(rec.output)
+    return !defMeta(rec.input).some(a => outs.includes(a))
+  })
+})
+
+adapters.set(/thermalexpansion__insolator$/, (cat) => {
+  // All recipes added by insolator should be duplicated as natural growing
+  const clearRecipes: JEIECustomRecipe[] = []
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    // This recipe with t1 fertilizer
+    if (!rec.input.items.some(s => s.stacks.some(i => i.name === 'thermalfoundation:fertilizer:0'))) return
+
+    // This recipe have same item in input and output
+    let name: string | undefined
+    rec.input.items.some(s => s.amount === 1 && s.stacks.some(i => rec.output.items.some(t => t.amount === 1 && t.stacks.some(j => (
+      i.name === j.name && (name = i.name, true)
+    )))))
+    if (!name) return
+
+    clearRecipes.push({
+      input: {
+        items: rec.input.items.filter(s => !s.stacks.some(i =>
+          i.name === name
+        || i.name === 'thermalfoundation:fertilizer:0'
+        || i.name === 'water'
+        )).concat([
+          getSlot('placeholder:ticks', 500),
+        ]),
+      },
+      output  : { items: rec.output.items.filter(s => !s.stacks.some(i => i.name === name)) },
+      catalyst: [getIngr(name)],
+    })
+  })
+  cat.recipes.push(...clearRecipes)
+})
 
 adapters.set(/blockdrops/, (cat, tools) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
@@ -494,6 +540,12 @@ adapters.set(/mekanism__osmiumcompressor/, (cat) => {
   })
 })
 
+adapters.set(/exnihilocreatio__sieve/, (cat) => {
+  cat.recipes.forEach(rec =>
+    moveToCatalyst(rec, s => s.stacks.some(i => i.name.startsWith('exnihilocreatio:item_mesh')))
+  )
+})
+
 adapters.set(/exnihilocreatio__compost/, (cat) => {
   cat.recipes.forEach(
     rec => (rec.output.items = [getSlot('minecraft:dirt:0')])
@@ -716,8 +768,7 @@ adapters.set(/jetif/, (cat) => {
     // If we have no fluid output - this recipe not consume fluid
     if (!rec.output.items.some(slot => slot.stacks.some(s => s.type === 'fluid'))) {
       const isFluid = (slot: JEIESlot) => slot.stacks.some(s => s.type === 'fluid')
-      rec.catalyst = rec.input.items.filter(s => isFluid(s))
-      rec.input.items = rec.input.items.filter(s => !isFluid(s))
+      moveToCatalyst(rec, isFluid)
     }
   })
 })
