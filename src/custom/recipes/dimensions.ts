@@ -1,8 +1,6 @@
 import type { AddRecipeFn } from '../customs'
 
 export default function addRecipes(addRecipe: AddRecipeFn) {
-  addRecipe('dimension:0', 'placeholder:exploration')
-
   addRecipe(
     'dimension:-1',
     '0.015x minecraft:flint_and_steel:0',

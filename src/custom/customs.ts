@@ -29,4 +29,5 @@ export default async function applyCustoms(recipesStore: RecipeStore) {
       )
     )
   })
+  return true
 }

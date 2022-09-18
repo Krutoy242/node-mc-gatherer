@@ -26,4 +26,7 @@ export default function addRecipes(
       'ic2:te:22',
     ]
   )
+
+  addRecipe('fluid:ic2pahoehoe_lava', 'fluid:lava', ['ic2:te:31', 'ic2:crafting:7'])
+  addRecipe('fluid:ic2coolant', 'fluid:ic2hot_coolant', ['ic2:te:31', 'ic2:crafting:7'])
 }

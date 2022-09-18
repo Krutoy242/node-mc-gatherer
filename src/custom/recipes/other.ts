@@ -11,4 +11,5 @@ export default function addRecipes(
     'minecraft:quartz_ore:0'
   )
   addRecipe('5x placeholder:xp', '10x placeholder:fight')
+  addRecipe('minecraft:leaves:0', '100x placeholder:ticks')
 }

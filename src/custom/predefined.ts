@@ -12,6 +12,10 @@ const predefined: Record<string, number> = {
   'placeholder:rf'         : 1,
   'placeholder:mana'       : 1, // Botania Mana
 
+  // Dimensions
+  'dimension:0'        : 1,
+  'dimension:overworld': 1,
+
   // Predefined items
   'minecraft:crafting_table:0': 50,
 }
