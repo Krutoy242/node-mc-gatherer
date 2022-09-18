@@ -58,7 +58,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
 
   // Output tree to creative vending
   const playthrough = logger('storagedrawers:upgrade_creative:1', true)
-  if (playthrough) createFileLogger('data_playthrough.csv')(PlaythroughToCSV(playthrough))
+  if (playthrough) createFileLogger('playthrough.csv')(PlaythroughToCSV(playthrough))
 
   // Output tree from diamond
   logger('from minecraft:diamond:0', true)
@@ -69,7 +69,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
         - (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity
   )[0]
 
-  logger(mostStepsDef.id)
+  logger(mostStepsDef.id, true)
 
   return {
     store,

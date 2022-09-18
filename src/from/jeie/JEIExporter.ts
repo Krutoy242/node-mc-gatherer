@@ -10,6 +10,7 @@ import { createFileLogger } from '../../log/logger'
 import type CLIHelper from '../../tools/cli-tools'
 import type { DefIngrStack } from '../../types'
 
+import { naturalSort } from '../../lib/utils'
 import type {
   JEIECategory,
   JEIECustomRecipe,
@@ -56,11 +57,13 @@ export default async function append_JEIExporter(
     .sort(([a], [b]) => a - b)
     .map(([, v]) => v)
 
-  const noRecipes = createFileLogger('noRecipesCategory.log')
-
+  const noRecipeCategories: string[] = []
   const all = Promise.all(sorted.map(handleJEIE))
 
-  all.then(() => cli.bar?.update(cli.bar?.getTotal(), { task: 'done' }))
+  all.then(() => {
+    cli.bar?.update(cli.bar?.getTotal(), { task: 'done' })
+    createFileLogger('noRecipeCategories.log')(noRecipeCategories.sort(naturalSort).join('\n'))
+  })
 
   return all
 
@@ -90,8 +93,8 @@ export default async function append_JEIExporter(
         && recipesLength--
     })
 
-    if (recipesLength === customRecipes.length) noRecipes(`⭕ Recipes not added in ${fileName}\n`)
-    else if (recipesLength > 0) noRecipes(`⚠️ ${recipesLength} Recipes not added in ${fileName}\n`)
+    if (recipesLength === customRecipes.length) noRecipeCategories.push(`⭕ Recipes not added in ${fileName}`)
+    else if (recipesLength > 0) noRecipeCategories.push(`⚠️ ${recipesLength} Recipes not added in ${fileName}`)
 
     cli.progressIncrement()
   }
