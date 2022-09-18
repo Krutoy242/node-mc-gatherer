@@ -15,14 +15,11 @@ import { IngredientStore } from './api'
 import applyCustoms from './custom/customs'
 import getTool from './custom/mining_levels'
 import { generateBlockMinings } from './from/blockMinings'
-import type { BlockToFluidMap } from './from/fluids'
 import append_fluids from './from/fluids'
 import append_JECgroups from './from/jec'
 import append_JEIExporter from './from/jeie/JEIExporter'
-import type { NameMap } from './from/jeie/NameMap'
 import getNameMap from './from/jeie/NameMap'
 import append_JER from './from/jer'
-import type { OredictMap } from './from/oredict'
 import genOreDictionary from './from/oredict'
 import { genToolDurability } from './from/tools'
 import Calculator from './lib/calc/Calculator'
@@ -56,7 +53,8 @@ export default async function mcGather(
   const ingredientStore = new IngredientStore(definitionStore.getById)
   const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)
-  const fromMC = (filePath: string) => join(options.mc, filePath)
+  const fromMC = (f: string) => join(options.mc, f)
+  const fromTellme = (f: string): string | null => glob.sync(fromMC(`config/tellme/${f}*.csv`))[0] ?? null
 
   // Init Crafting Table as first item
   definitionStore.getById('minecraft:crafting_table:0')
@@ -65,19 +63,16 @@ export default async function mcGather(
   // Recipes
   // ------------------------
 
-  const oreDict = runTask<OredictMap>('Creating OreDict', {
-    'textSource': glob.sync(
-      fromMC('config/tellme/oredictionary-by-key-individual-csv*.csv')
-    )[0],
-    'action'  : text => genOreDictionary(text),
-    'moreInfo': info =>
-      `OreDict size: ${cli.num(Object.keys(info.result).length)}`,
-    '⚠️': chalk`Tellme file {green oredictionary-by-key-individual-csv} not found. All oredict recipes would be unknown.`,
+  const oreDict = runTask('Creating OreDict', {
+    'textSource': fromTellme('oredictionary-by-key-individual-csv'),
+    'action'    : text => genOreDictionary(text),
+    'moreInfo'  : info => info.result ? `OreDict size: ${cli.num(Object.keys(info.result).length)}` : '',
+    '⚠️'         : chalk`Tellme file {green oredictionary-by-key-individual-csv} not found. All oredict recipes would be unknown.`,
   })
   if (oreDict) definitionStore.addOreDict(oreDict)
 
   if (options.jec) {
-    runTask<number>('Addding JEC recipes', {
+    runTask('Addding JEC recipes', {
       'textSource': fromMC('/config/JustEnoughCalculation/data/groups.json'),
       'action'    : text => append_JECgroups(recipesStore, text),
       'moreInfo'  : info => `Recipes: ${cli.num(info.result)}`,
@@ -90,18 +85,15 @@ export default async function mcGather(
     moreInfo: info => `Recipes: ${cli.num(info.addedRecs)}`,
   })
 
-  const blockToFluidMap = await runTask<Promise<BlockToFluidMap>>(
-    'Add Fluid recipes',
-    {
-      'textSource': glob.sync(fromMC('config/tellme/fluids-csv*.csv'))[0],
-      'action'    : text => append_fluids(recipesStore, text),
-      'moreInfo'  : info => `Recipes: ${cli.num(info.addedRecs)}`,
-      '⚠️'         :
+  const blockToFluidMap = await runTask('Add Fluid recipes', {
+    'textSource': fromTellme('fluids-csv'),
+    'action'    : text => append_fluids(recipesStore, text),
+    'moreInfo'  : info => `Recipes: ${cli.num(info.addedRecs)}`,
+    '⚠️'         :
         chalk`Tellme file {green fluids-csv.csv} not found. `
         + chalk`Continue without {green fluid} <=> `
         + chalk`{green block} recipes.`,
-    }
-  )
+  })
 
   const crafttweaker_log = runTask<string>('', {
     'textSource': fromMC('/crafttweaker.log'),
@@ -110,9 +102,9 @@ export default async function mcGather(
 
   const blockMinings = runTask('Generate mining levels', {
     'action'  : () => generateBlockMinings(crafttweaker_log),
-    'moreInfo': info =>
-      `Added: ${cli.num(Object.keys(info.result ?? {}).length)}`,
-    '⚠️': chalk`Block mining levels is unavaliable.`,
+    'moreInfo': info => `Added: ${cli.num(Object.keys(info.result ?? {}).length)}`,
+    '⚠️'       : chalk`Block mining levels is unavaliable. Inject {bold .zs} files by run `
+      + chalk`{bgGray mc-gatherer --inject --mc="path/to/modpack"}`,
   })
 
   runTask('Append JER recipes', {
@@ -122,15 +114,15 @@ export default async function mcGather(
     '⚠️'         : chalk`Unable to open Just Enough Resources world file {green world-gen.json}. Install mod JER and run world scan.`,
   })
 
-  const nameMap: NameMap | undefined = runTask('Loading Tooltip map', {
+  const nameMap = runTask('Loading Tooltip map', {
     'textSource': fromMC('exports/nameMap.json'),
     'action'    : text => getNameMap(text),
     'moreInfo'  : i => `Loaded: ${cli.num(i.result.info.total)}`,
     '⚠️'         : chalk`tooltipMap.json cant be opened. This file should be created by JEIExporter. Program would continue anyway`,
   })
 
-  const toolDurability = runTask('Loading Tool durabilities', {
-    'action'  : () => genToolDurability(crafttweaker_log),
+  const toolDurability = runTask('Loading Tool durabs', {
+    'action'  : genToolDurability,
     'moreInfo': i => `Tools: ${cli.num(Object.keys(i.result ?? {}).length)}`,
     '⚠️'       : chalk`Cant find dumped tools. All tools would be consumed entirely.`,
   })

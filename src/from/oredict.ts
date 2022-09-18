@@ -8,10 +8,11 @@ export interface OredictMap {
   [oreName: string]: string[]
 }
 
-export default function genOreDictionary(csvText: string) {
+export default function genOreDictionary(csvText?: string) {
+  if (!csvText) return
   const dict: OredictMap = {}
 
-  const fluids: {
+  const entries: {
     'OreDict Key': string
     'Registry name': string
     'Meta/dmg': string
@@ -21,7 +22,7 @@ export default function genOreDictionary(csvText: string) {
     columns: true,
   })
 
-  for (const line of fluids) {
+  for (const line of entries) {
     const id
       = `${line['Registry name']}:${line['Meta/dmg']}${
        line.NBT ? `:${line.NBT}` : ''}`

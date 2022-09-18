@@ -20,7 +20,7 @@ export function getCTBlock(
   // if (!txtBlock) throw new Error('Cant read data from crafttweaker.log')
   if (!txtBlock) return
 
-  return [...txtBlock.matchAll(/^\[SERVER_STARTED\]\[SERVER\]\[INFO\] (.*)$/gm)]
+  return [...txtBlock.matchAll(/^\[\w+\]\[\w+\]\[INFO\] (.*)$/gm)]
     .map(m => m[1])
     .filter(s => s)
 }

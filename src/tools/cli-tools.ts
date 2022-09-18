@@ -29,8 +29,8 @@ interface TaskOptionsFiled<T> {
     addedRecs: number
     result: T extends Promise<any> ? Awaited<T> : T
   }) => string
+  textSource?: string | null
   action?: (text: string) => T
-  textSource?: string
   '🛑'?: string
   '⚠️'?: string
 }
@@ -111,44 +111,48 @@ export default class CLIHelper {
       opts: TaskOptionsFiled<T>
     ): T | undefined {
       if (description) logTask(description)
-      let text = ''
-      if (opts.textSource) {
-        try {
-          text = loadText(opts.textSource)
+
+      const showWarn = (): any => {
+        if (!opts['⚠️']) {
+          console.error(`🛑  Error at task: ${opts['🛑']}`)
+          throw new Error('Unable to complete task')
         }
-        catch (err: unknown) {
-          if (!opts['⚠️']) {
-            console.error(`🛑  Error at task: ${opts['🛑']}`)
-            throw new Error('Unable to complete task')
-          }
-          console.warn(`⚠️  ${opts['⚠️']}`)
-          return undefined
-        }
+        console.warn(`⚠️  ${opts['⚠️']}`)
       }
+
+      let text
+      if (opts.textSource) {
+        try { text = loadText(opts.textSource) }
+        catch (err: unknown) {}
+      }
+      if (opts.textSource === null || (opts.textSource && !text))
+        return showWarn()
 
       const oldDefs = definitionStore.size
       const oldRecs = recipesStore.size()
-      const result = (opts.action ?? ((t: any) => t as T))(text)
+      const result = (opts.action ?? ((t: any) => t as T))(text as string)
       const isPromise = typeof (result as any)?.then === 'function'
 
-      if (opts.moreInfo) {
-        if (isPromise) (result as unknown as Promise<any>).then(data => logMoreInfo(data))
-        else logMoreInfo()
-      }
-
-      if (description) {
-        if (isPromise) (result as any).then(() => process.stdout.write('\n'))
-
-        else process.stdout.write('\n')
-      }
+      if (isPromise) (result as unknown as Promise<any>).then(r => finalize(r))
+      else finalize()
 
       return result
 
-      function logMoreInfo(data?: any) {
+      function finalize(promiseResult?: T) {
+        // We have no result, show warn if result expected
+        if ((isPromise && !promiseResult) || (!result))
+          return showWarn()
+
+        if (opts.moreInfo) logMoreInfo(promiseResult)
+
+        if (description) process.stdout.write('\n')
+      }
+
+      function logMoreInfo(promiseResult?: any) {
         const info = {
           addedDefs: definitionStore.size - oldDefs,
           addedRecs: recipesStore.size() - oldRecs,
-          result   : data ?? result,
+          result   : promiseResult ?? result,
         }
         logMore(opts.moreInfo!(info))
       }

@@ -10,7 +10,16 @@ export default async function append_fluids(
   recipeStore: RecipeStore,
   csvText: string
 ): Promise<BlockToFluidMap> {
-  const fluids: Record<string, string>[] = csvParseSync(csvText, {
+  const fluids: {
+    Name: string
+    Density: string
+    Temperature: string
+    Viscosity: string
+    Luminosity: string
+    Rarity: string
+    isGaseous: string
+    Block: string
+  }[] = csvParseSync(csvText, {
     columns: true,
   })
 

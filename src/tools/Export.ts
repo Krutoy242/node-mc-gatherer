@@ -1,7 +1,7 @@
 import _, { sortBy } from 'lodash'
 
 import type { CsvRecipe } from '../api'
-import { solveLog } from '../api'
+import { recipeSorter, solveLog } from '../api'
 
 import type Playthrough from '../api/Playthrough'
 import { getVolume } from '../api/volume'
@@ -44,12 +44,11 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
 
       if (!isAscend) {
         (!def.mainRecipe && def.purity < 1
-          ? [...def.recipes ?? []]
-          : [def.mainRecipe]
-        )
-          .forEach(rec => rec
-            ?.toString().split('\n')
-            .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`)))
+          // ? [...def.recipes ?? []]
+          ? [...def.recipes ?? []].sort(recipeSorter)[0]
+          : def.mainRecipe
+        )?.toString().split('\n')
+          .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`))
       }
 
       return [tab + 1, Math.max(...combined.map(it => it[0].complexity_s.length))]

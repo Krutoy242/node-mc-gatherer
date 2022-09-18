@@ -138,4 +138,6 @@ ${Object.entries(o)
   )
 
   logDimensions([...registeredDims].sort().join('\n'))
+
+  return true
 }
