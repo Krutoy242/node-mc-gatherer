@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import type { NBT } from './NBT'
 import { nbtMatch, parseSNbt } from './NBT'
 
@@ -61,13 +62,12 @@ export class Tree<T extends Identified & Based> {
 
   private _oreDict?: OreDict<T>
   public get oreDict(): OreDict<T> {
-    if (!this._oreDict) throw new Error('OreDict must be intitialized')
-
+    if (!this._oreDict) return {}
     return this._oreDict
   }
 
   /** Is tree locked and no new entryes could be added */
-  private locked = false
+  locked = false
 
   constructor(
     NewItem: (id: string, ...base: Base) => T,
@@ -85,7 +85,12 @@ export class Tree<T extends Identified & Based> {
     const getItemBased: this['getBased'] = (source, entry, meta, sNbt, id) => {
       if (this.locked) {
         const found = this.lookBased(source, entry, meta, sNbt)
-        if (!found) throw new Error('Trying to create new item in Locked mode')
+        if (!found) {
+          throw new Error(
+            'Trying to create new item in Locked mode'
+          + `\nItem: ${chalk.yellow(`${source}:${entry}${meta ? `:${meta}` : ''}${sNbt ? `:${sNbt}` : ''}`)}`
+          )
+        }
         return found
       }
 
@@ -120,13 +125,6 @@ export class Tree<T extends Identified & Based> {
 
   addOreDict(oreDict: { [oreName: string]: string[] }) {
     this._oreDict = oreDict
-  }
-
-  /**
-   * Lock tree - no more items could be added
-   */
-  lock() {
-    this.locked = true
   }
 
   *[Symbol.iterator](): IterableIterator<T> {
@@ -219,11 +217,20 @@ export class Tree<T extends Identified & Based> {
     }
   }
 
+  private alreadyLoggedOredicts = new Set<string>()
+
   /**  */
   private getOre(entry: string): T[] | [] {
     const oreList = this.oreDict[entry]
     if (!oreList) {
-      console.warn(`This ore is empty: ${entry}`)
+      if (this.alreadyLoggedOredicts.size === 0) {
+        console.warn(chalk.gray('\nItems Tree want to acces Oredict, but can\'t find entry.\n'
+          + 'This may happen if OreDict was not loaded at all, or not all entries was listed in it.'))
+      }
+      if (!this.alreadyLoggedOredicts.has(entry)) {
+        this.alreadyLoggedOredicts.add(entry)
+        console.warn(chalk`{gray This ore is empty:} ${entry}`)
+      }
       return []
     }
     if (typeof oreList[0] !== 'string') return oreList as T[]
