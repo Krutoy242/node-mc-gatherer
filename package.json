@@ -18,8 +18,8 @@
   "scripts": {
     "build": "tsc",
     "show-unused-exports": "npx ts-prune",
-    "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\"",
-    "run:herodotus": "ts-node src/cli.ts --mc=\"E:/mc_client/GDLuncher/instances/Herodotus\""
+    "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\" --output=\"../src/assets\"",
+    "run:herodotus": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Herodotus\" --output=\"../src/assets\""
   },
   "engines": {
     "node": ">=10"
@@ -52,7 +52,8 @@
     "!**/*.spec.*",
     "CHANGELOG.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "src/assets/scripts/*"
   ],
   "eslintConfig": {
     "extends": "@antfu",
