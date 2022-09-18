@@ -20,6 +20,7 @@ export default class Calculator {
 
     let dirtyRecipes = new Set<Recipe>()
     this.assignPredefined(dirtyRecipes)
+    this.definitionStore.locked = true
 
     const cliBars = {
       Recipes: this.recipeStore.length,
@@ -73,7 +74,6 @@ export default class Calculator {
 
   private createLinks(cli: CLIHelper) {
     cli.startProgress('Linking items', this.recipeStore.length)
-    this.definitionStore.lock()
     this.recipeStore.forEach((rec, i) => {
       rec.requirments.forEach(({ it: ingredient }) => {
         for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(rec)
@@ -174,21 +174,23 @@ export default class Calculator {
     })
 
     // Iterate over their dependencies
+    if (deps.size > 1000) return 1000
     const checkList = [...deps]
     let r: Recipe | undefined
     while ((r = checkList.pop())) {
-      r.outputs.forEach(out =>
-        out.it.items.forEach((it) => {
+      for (const out of r.outputs) {
+        for (const it of out.it.items) {
           if (it.purity <= 0) {
-            it.dependencies?.forEach((rr) => {
+            for (const rr of it.dependencies ?? []) {
               if (!deps.has(rr) && recipeWanted(rr)) {
                 deps.add(rr)
                 checkList.push(rr)
+                if (deps.size > 1000) return 1000 // Deps too big, most likely problem with calc
               }
-            })
+            }
           }
-        })
-      )
+        }
+      }
     }
 
     return deps.size
