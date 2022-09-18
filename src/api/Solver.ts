@@ -1,4 +1,4 @@
-import { sortBy } from 'lodash'
+import { sortBy, sum } from 'lodash'
 import type { Ingredient } from './Ingredient'
 import Playthrough from './Playthrough'
 import { Stack } from './Stack'
@@ -113,8 +113,8 @@ function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   }
 }
 
-function recipeSorter<T extends Solvable<T>>(a: SolvableRecipe<T>, b: SolvableRecipe<T>): number {
-  return sortCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a)
+export function recipeSorter<T extends Solvable<T>>(a: SolvableRecipe<T>, b: SolvableRecipe<T>): number {
+  return sortCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a) || niceRecipe(b) - niceRecipe(a)
 }
 
 function sortCheapest(a: Calculable, b: Calculable): number {
@@ -156,4 +156,14 @@ function cheapestSort(a: Calculable, b: Calculable) {
 
 function expensiveSort(a: Stack<Calculable>, b: Stack<Calculable>) {
   return b.it.complexity - a.it.complexity
+}
+
+function niceRecipe<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
+  return sum([
+    1 - 1 / (sum(a.requirments.map(s => s.it.items.length)) + 1),
+    a.catalystsDef?.length === 1 ? 0.25 : 0,
+    Number(a.catalystsDef?.[0]?.it.id !== 'minecraft:crafting_table:0'),
+    (sum(a.outputs.map(s => s.amount ?? 0)) + 1) / 10,
+    Number(a.inputs?.every(s => s.it.items.every(i => i.id.startsWith('minecraft')))),
+  ])
 }
