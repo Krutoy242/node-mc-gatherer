@@ -34,6 +34,11 @@ const argv = yargs(process.argv.slice(2))
       describe: 'Do load Just Enough Calculation files',
       default : true,
     },
+    inject: {
+      alias   : 'j',
+      type    : 'boolean',
+      describe: 'Inject .zs script files into minecraft folder',
+    },
   })
   .version(false)
   .help('h')
