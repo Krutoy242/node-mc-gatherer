@@ -131,6 +131,19 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
         slot.stacks = [stack]
         return true
       })
+
+      // Unify fluid containers and NBTed items
+      if (slot.stacks.length > 20) {
+        const splitted = slot.stacks.map((item) => {
+          const split = item.name.split(':')
+          return { item, id_meta: split.slice(0, 3).join(':'), nbtHash: split.slice(3).join(':') }
+        })
+        for (const [id_meta, g] of Object.entries(_.groupBy(splitted, s => s.id_meta))) {
+          if (g.length < 20 || g.filter(i => i.nbtHash).length < 19) continue
+          slot.stacks = slot.stacks.filter(s => !s.name.startsWith(id_meta))
+          slot.stacks.push({ name: id_meta, type: 'item' })
+        }
+      }
     })
 
     // Convert buckets in output to liquids (inputs converted later)
@@ -367,16 +380,19 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
 
   // Items that should not be used as aspect sources
   const inputBlacklist = [
-    'minecraft:spawn_egg:0',
+    'astralsorcery:itemtunedrockcrystal:0',
     'conarm:boots:0',
+    'conarm:chestplate:0',
+    'conarm:chestplate:0',
     'conarm:helmet:0',
     'conarm:leggings:0',
-    'conarm:chestplate:0',
-    'conarm:chestplate:0',
-    'tcomplement:sledge_hammer:0',
-    'minecraft:potion:0',
+    'forestry:can:1:',
+    'forestry:capsule:1:',
+    'forestry:refractory:1:',
     'mekanism:gastank:0',
-    'astralsorcery:itemtunedrockcrystal:0',
+    'minecraft:potion:0',
+    'minecraft:spawn_egg:0',
+    'tcomplement:sledge_hammer:0',
   ]
 
   /**
@@ -628,6 +644,32 @@ adapters.set(/requious__scented_hive/, (cat) => {
         )
     )
     rec.input.items = [getSlot('exnihilocreatio:hive:1')]
+  })
+})
+
+adapters.set(/requious__ic2_crops/, (cat, tools) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items.forEach((slot) => {
+      // Remove glyphs
+      slot.stacks = slot.stacks.filter(stack => !stack.name.startsWith('openblocks:glyph'))
+      slot.stacks.forEach((stack) => {
+        if (stack.name.split(':').length <= 3) return
+        // Remove Display tags
+        stack.name = tools.getFullID(stack).replace(/,display:\{[^}]+\}/, '')
+      })
+    })
+  })
+})
+
+adapters.set(/^requious__.*/, (cat, tools) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items.forEach((slot) => {
+      slot.stacks.forEach((stack) => {
+        if (!stack.name.startsWith('draconicevolution:mob_soul:0:')) return
+        const entityName = tools.getFullID(stack).match(/EntityName:"([^"]+)"/)![1]
+        stack.name = `entity:${entityName}`
+      })
+    })
   })
 })
 

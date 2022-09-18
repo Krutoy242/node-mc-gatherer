@@ -26,7 +26,7 @@ export function solveLog<
   const further = (isAscend ? ascending : descending)(playthrough)
   playthrough.addInputs([new Stack(topDef)], 1)
 
-  solverLoop(
+  solverLoop<T, any[]>(
     (def: T, ...args) => {
       const combined = further(def, ...args)
       // @ts-expect-error TS cant in rest

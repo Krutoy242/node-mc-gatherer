@@ -10,6 +10,10 @@ export default function addRecipes(
     'astralsorcery:itemcelestialcrystal:*',
     'astralsorcery:blockcelestialcrystals:4'
   )
+  addRecipe(
+    'astralsorcery:itemcrystalsword:0:{astralsorcery:{size:1800,purity:100,collect:100,fract:0,sizeOverride:-1}}',
+    'astralsorcery:itemcrystalsword:*'
+  )
 
   addRecipe(
     'astralsorcery:itemtunedcelestialcrystal:*',

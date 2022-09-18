@@ -12,9 +12,6 @@ export default function addRecipes(
     'extrautils2:decorativesolidwood:1',
     'tconstruct:tooltables:2'
   )
-  addRecipe(
-    'tconstruct:rack:0',
-    '3x ore:slabWood',
-    'minecraft:crafting_table:0'
-  )
+  addRecipe('tconstruct:rack:0', '3x ore:slabWood', 'minecraft:crafting_table:0')
+  addRecipe('tconstruct:rack:1', '3x ore:slabWood', 'minecraft:crafting_table:0')
 }
