@@ -9,6 +9,7 @@ import type { Calculable, Identified, Solvable, SolvableRecipe } from '.'
 type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 
 type ScendTail = Tail<Required<Parameters<ReturnType<(typeof descending | typeof ascending)>>>>
+
 export function solveLog<
   T extends Solvable<T>,
   U extends readonly any[]
@@ -20,11 +21,11 @@ export function solveLog<
     combined: (readonly [T, ...ScendTail])[] | undefined,
     ...args: [...ScendTail, ...U]
   ) => U | undefined,
-  isAscend?: boolean
+  isAscend?: boolean,
+  playthrough = new Playthrough<T>()
 ) {
-  const playthrough = new Playthrough<T>()
   const further = (isAscend ? ascending : descending)(playthrough)
-  playthrough.addInputs([new Stack(topDef)], 1)
+  playthrough.addCatalysts([new Stack(topDef)])
 
   solverLoop<T, any[]>(
     (def: T, ...args) => {
@@ -41,11 +42,11 @@ export function solveLog<
 
 export function solve<T extends Solvable<T>>(
   topDef: T,
-  isAscend?: boolean
+  isAscend?: boolean,
+  playthrough = new Playthrough<T>()
 ) {
-  const playthrough = new Playthrough<T>()
   const further = (isAscend ? ascending : descending)(playthrough)
-  playthrough.addInputs([new Stack(topDef)], 1)
+  playthrough.addCatalysts([new Stack(topDef)])
 
   solverLoop<T, any[]>(further)(topDef)
 
