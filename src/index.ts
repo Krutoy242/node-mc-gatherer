@@ -13,7 +13,7 @@ import glob from 'glob'
 
 import { IngredientStore } from './api'
 import applyCustoms from './custom/customs'
-import getTool from './custom/mining_levels'
+import getMiningPlaceholder from './custom/mining_levels'
 import { generateBlockMinings } from './from/blockMinings'
 import append_fluids from './from/fluids'
 import append_JECgroups from './from/jec'
@@ -133,7 +133,7 @@ export default async function mcGather(
         append_JEIExporter(
           nameMap,
           toolDurability,
-          s => getTool(blockMinings, s),
+          s => getMiningPlaceholder(blockMinings, s),
           recipesStore,
           options.mc,
           cli
