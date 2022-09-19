@@ -868,6 +868,27 @@ adapters.set(/nuclearcraft_collector/, (cat) => {
   })
 })
 
+adapters.set(/astralsorcery__lightTransmutation/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => rec.catalyst = [
+    {
+      amount: 1,
+      stacks: [
+        { type: 'item', name: 'astralsorcery:blocklens:*' },
+        { type: 'item', name: 'astralsorcery:blockcollectorcrystal:*' },
+      ],
+    },
+    { amount: 1, stacks: [{ type: 'item', name: 'astralsorcery:itemlinkingtool:*' }] },
+  ])
+})
+
+adapters.set(/embers__melter|embers__geologic_separator/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    const predicate = (s: JEIESlot) => s.stacks.some(i => i.type === 'fluid')
+    rec.output.items = rec.input.items.filter(predicate)
+    rec.input.items = rec.input.items.filter(s => !predicate(s))
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, tools) => {
   const convertBucket = (ingr: JEIESlot) => bucketToFluid(ingr, tools.getFullID)

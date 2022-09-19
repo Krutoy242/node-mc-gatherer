@@ -4,7 +4,7 @@ export default function addRecipes(
   addRecipe('thaumcraft:salis_mundus:0', ['thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}', 'thaumcraft:crystal_essence:0:{Aspects:[{key:"ignis",amount:1}]}', 'thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}', 'minecraft:redstone:0'], ['minecraft:flint:0', 'minecraft:bowl:0', 'minecraft:crafting_table:0'])
 
   addRecipe('thaumcraft:arcane_workbench:0', [
-    'minecraft:crafting_table:0',
+    'ore:workbench',
     'thaumcraft:salis_mundus:0',
   ])
   addRecipe('thaumcraft:crucible:0', [
@@ -29,4 +29,12 @@ export default function addRecipes(
     'thaumcraft:void_siphon:0'
   )
   addRecipe('1000x fluid:flux_goo', 'thaumcraft:bottle_taint:0')
+
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"aer"}]}', 'thaumcraft:crystal_aer:0')
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"ignis"}]}', 'thaumcraft:crystal_ignis:0')
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"aqua"}]}', 'thaumcraft:crystal_aqua:0')
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}', 'thaumcraft:crystal_terra:0')
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"ordo"}]}', 'thaumcraft:crystal_ordo:0')
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}', 'thaumcraft:crystal_perditio:0')
+  addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"vitium"}]}', 'thaumcraft:crystal_vitium:0')
 }
