@@ -1,6 +1,8 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
+  addRecipe('thaumcraft:salis_mundus:0', ['thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}', 'thaumcraft:crystal_essence:0:{Aspects:[{key:"ignis",amount:1}]}', 'thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}', 'minecraft:redstone:0'], ['minecraft:flint:0', 'minecraft:bowl:0', 'minecraft:crafting_table:0'])
+
   addRecipe('thaumcraft:arcane_workbench:0', [
     'minecraft:crafting_table:0',
     'thaumcraft:salis_mundus:0',

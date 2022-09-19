@@ -1,5 +1,6 @@
 16 "Nether Mithril Ore" netherendingores:ore_nether_modded_1:4
 16 "Biome Crystal" randomthings:biomecrystal:0
+15 "Witchwater Bucket" forge:bucketfilled:0:{FluidName:"witchwater",Amount:1000}
 15 "Nether Yellorite Ore" netherendingores:ore_nether_modded_1:13
 15 "Nether Iridium Ore" netherendingores:ore_nether_modded_1:2
 14 "Nether Ruby Ore" netherendingores:ore_nether_modded_2:1
@@ -7,12 +8,12 @@
 14 "Nether Peridot Ore" netherendingores:ore_nether_modded_2:3
 14 "Nether Sapphire Ore" netherendingores:ore_nether_modded_2:2
 14 "End Iridium Ore" netherendingores:ore_end_modded_1:2
-13 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"coffee",resistance:1b,gain:1b}
+13 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"coffee",resistance:1b,gain:1b}
 13 "End Yellorite Ore" netherendingores:ore_end_modded_1:13
 12 "Manyullyn-Iron Lumberaxe" tconstruct:lumberaxe:0:{TinkerData:{Materials:["wood","manyullyn","iron","paper"],Modifiers:[]},Stats:{Durability:828,HarvestLevel:8,Attack:6.77f,MiningSpeed:4.8824997f,AttackSpeedMultiplier:1.
 12 "End Charged Certus Quartz Ore" netherendingores:ore_end_modded_1:10
 12 "End Peridot Ore" netherendingores:ore_end_modded_2:3
-11 "ic2.crop_res.coffee_beans" ic2:crop_res:0
+11 "Arabica" ic2:crop_res:0
 11 "Ethereal Wood" biomesoplenty:log_1:4
 10 "Molten Crude Steel" fluid:crude_steel
 10 "Molten Crude Steel" enderio:block_fluid_crude_steel:0
@@ -20,27 +21,25 @@
 10 "Molten Energetic Silver" enderio:block_fluid_energetic_silver:0
 10 "Molten Vivid Alloy" fluid:vivid_alloy
 10 "Molten Vivid Alloy" enderio:block_fluid_vivid_alloy:0
-9 "<entity:minecraft:cow>" entity:minecraft:cow
-9 "<entity:excompressum:angry_chicken>" entity:excompressum:angry_chicken
+10 "Blazing Pyrotheum Bucket" forge:bucketfilled:0:{FluidName:"pyrotheum",Amount:1000} | "Gelid Cryotheum Bucket" forge:bucketfilled:0:{FluidName:"cryotheum",Amount:1000}
+9 "Primal Mana Bucket" forge:bucketfilled:0:{FluidName:"mana",Amount:1000}
 9 "Engineer's Blueprint" immersiveengineering:blueprint:0:{blueprint:"specialBullet"}
 9 "Tin Ore Dust" exnihilocreatio:item_ore_tin:2
 9 "Flux-Infused Boots" redstonearsenal:armor.boots_flux:0:{Energy:0} | "Flux-Infused Boots" redstonearsenal:armor.boots_flux:0:{Energy:800000}
 9 "Flux-Infused Leggings" redstonearsenal:armor.legs_flux:0:{Energy:0} | "Flux-Infused Leggings" redstonearsenal:armor.legs_flux:0:{Energy:800000}
 9 "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:0} | "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:800000}
-8 "Fiery Essence" fluid:fiery_essence
-8 "Fiery Essence" twilightforest:fiery_essence:0
 8 "<entity:minecraft:slime>" entity:minecraft:slime
 8 "Copper Ingot" mekanism:ingot:5
 8 "Copper Ingot" immersiveengineering:metal:0
 8 "Copper Ingot" exnihilocreatio:item_ore_copper:3
-8 "ic2.ingot.copper" ic2:ingot:2
+8 "Copper Ingot" ic2:ingot:2
 8 "Copper Ingot" forestry:ingot_copper:0
-8 "<entity:minecraft:creeper>" entity:minecraft:creeper | "<entity:minecraft:zombie>" entity:minecraft:zombie
 8 "Giant Flower Stem" biomesoplenty:log_4:4
 8 "Flux-Infused Leggings" redstonearsenal:armor.legs_flux:0:{Energy:0}
 8 "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:0}
 8 "Flux-Infused Boots" redstonearsenal:armor.boots_flux:0:{Energy:0}
-7 "§6A book written by a Cow" minecraft:written_book:0:{pages:["Moo?","Moam?"],author:"Cow",display:{Name:"§6A book written by a Cow"}}
+7 "Liquid Starlight Bucket" forge:bucketfilled:0:{FluidName:"astralsorcery.liquidstarlight",Amount:1000}
+7 "Tectonic Petrotheum Bucket" forge:bucketfilled:0:{FluidName:"petrotheum",Amount:1000}
 7 "End Arkenium Ore" netherendingores:ore_end_modded_2:8
 7 "End Icestone Ore" netherendingores:ore_end_modded_2:9
 7 "Nether Zanite Ore" netherendingores:ore_nether_modded_2:7
@@ -52,16 +51,18 @@
 7 "End Zanite Ore" netherendingores:ore_end_modded_2:7
 7 "Nether Arkenium Ore" netherendingores:ore_nether_modded_2:8
 7 "Coal Coke" thermalfoundation:material:802
-7 "ic2.crop_res.coffee_powder" ic2:crop_res:1
+7 "Coffee Powder" ic2:crop_res:1
 7 "Golden Minotaur Axe" twilightforest:minotaur_axe_gold:0
-7 "<entity:minecraft:zombie>" entity:minecraft:zombie | "<entity:minecraft:villager>" entity:minecraft:villager
-6 "<entity:minecraft:zombie>" entity:minecraft:zombie
-6 "Iron Leggings" minecraft:iron_leggings:0
 6 "Iron Boots" minecraft:iron_boots:0
+6 "<entity:excompressum:angry_chicken>" entity:excompressum:angry_chicken
 6 "Blubber" betteranimalsplus:blubber:0
-6 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"milk_wart",resistance:1b,gain:1b}
-6 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"oil_berries",resistance:1b,gain:1b}
-6 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"bobs_yer_uncle_ranks_berries",resistance:1b,gain:1b}
+6 "Gelid Cryotheum Bucket" forge:bucketfilled:0:{FluidName:"cryotheum",Amount:1000}
+6 "Plasma Bucket" forge:bucketfilled:0:{FluidName:"plasma",Amount:1000}
+6 "UU-Matter Bucket" forge:bucketfilled:0:{FluidName:"ic2uu_matter",Amount:1000}
+6 "Concentrated Cloud Seed Bucket" forge:bucketfilled:0:{FluidName:"cloud_seed_concentrated",Amount:1000}
+6 "Milk Wart Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"milk_wart",resistance:1b,gain:1b}
+6 "Oil Berries Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"oil_berries",resistance:1b,gain:1b}
+6 "Bobs-Yer-Uncle-Ranks Berries Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"bobs_yer_uncle_ranks_berries",resistance:1b,gain:1b}
 6 "Dimlet Advanced Memory Unit" rftoolsdim:dimlet_memory_unit:2
 6 "Dimlet Special Type Controller" rftoolsdim:dimlet_type_controller:11
 6 "Compressed Sand" excompressum:compressed_block:3
@@ -69,20 +70,22 @@
 6 "Brown Bear Skin" betteranimalsplus:bear_skin_brown:0
 6 "Black Bear Skin" betteranimalsplus:bear_skin_black:0
 6 "Kermode Bear Skin" betteranimalsplus:bear_skin_kermode:0
-6 "ic2.nano_chestplate" ic2:nano_chestplate:0:{charge:1000000.0d}
-6 "ic2.quantum_chestplate" ic2:quantum_chestplate:0:{charge:1.0E7d}
+6 "NanoSuit Bodyarmor" ic2:nano_chestplate:0:{charge:1000000.0d}
+6 "QuantumSuit Bodyarmor" ic2:quantum_chestplate:0:{charge:1.0E7d}
 6 "Flux-Infused Chestplate" redstonearsenal:armor.plate_flux:0:{Energy:0}
-6 "ic2.nano_leggings" ic2:nano_leggings:0:{charge:1000000.0d}
+6 "NanoSuit Leggings" ic2:nano_leggings:0:{charge:1000000.0d}
 6 "Flux-Infused Leggings" redstonearsenal:armor.legs_flux:0:{Energy:800000}
 6 "Flux-Infused Helm" redstonearsenal:armor.helmet_flux:0:{Energy:800000}
-6 "ic2.nano_boots" ic2:nano_boots:0:{charge:1000000.0d}
-6 "ic2.nano_helmet" ic2:nano_helmet:0:{charge:1000000.0d}
+6 "NanoSuit Boots" ic2:nano_boots:0:{charge:1000000.0d}
+6 "NanoSuit Helmet" ic2:nano_helmet:0:{charge:1000000.0d}
 6 "Flux-Infused Boots" redstonearsenal:armor.boots_flux:0:{Energy:800000}
+5 "Fiery Essence" fluid:fiery_essence
+5 "Fiery Essence" twilightforest:fiery_essence:0
 5 "<modularmachinery:blockcontroller:0>" modularmachinery:blockcontroller:0
-5 "<entity:minecraft:creeper>" entity:minecraft:creeper
 5 "Valiant Princess" forestry:bee_princess_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesMonastic"}]}}
-5 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"hops",resistance:1b,gain:1b}
-5 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"terra_wart",resistance:1b,gain:1b}
+5 "Blazing Pyrotheum Bucket" forge:bucketfilled:0:{FluidName:"pyrotheum",Amount:1000}
+5 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"hops",resistance:1b,gain:1b}
+5 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"terra_wart",resistance:1b,gain:1b}
 5 "Copper Ore" immersiveengineering:ore:0
 5 "Bauxite Ore" immersiveengineering:ore:1
 5 "Lead Ore" immersiveengineering:ore:2
@@ -94,19 +97,19 @@
 5 "Copper Ore" mekanism:oreblock:1
 5 "Tin Ore" mekanism:oreblock:2
 5 "Tin Ore" nuclearcraft:ore:1
-5 "ic2.resource.copper_ore" ic2:resource:1
+5 "Copper Ore" ic2:resource:1
 5 "Copper Ore" nuclearcraft:ore:0
-5 "ic2.resource.lead_ore" ic2:resource:2
-5 "ic2.resource.tin_ore" ic2:resource:3
+5 "Lead Ore" ic2:resource:2
+5 "Tin Ore" ic2:resource:3
 5 "Lead Ore" nuclearcraft:ore:2
-5 "ic2.quantum_chestplate" ic2:quantum_chestplate:0
+5 "QuantumSuit Bodyarmor" ic2:quantum_chestplate:0
 5 "Eldritch Iron Cluster" thaumicwonders:eldritch_cluster:0
 5 "Nether Prosperity Ore" mysticalagriculture:nether_prosperity_ore:0
 5 "§eNether Inferium Ore" mysticalagriculture:nether_inferium_ore:0
 5 "End Prosperity Ore" mysticalagriculture:end_prosperity_ore:0
 5 "§eInferium Ore" mysticalagriculture:inferium_ore:0
 5 "§eEnd Inferium Ore" mysticalagriculture:end_inferium_ore:0
-5 "ic2.mug.cold_coffee" ic2:mug:1
+5 "Cold Coffee" ic2:mug:1
 5 "Ethereal Wood Stairs" biomesoplenty:ethereal_stairs:0
 5 "Ethereal Fence" biomesoplenty:ethereal_fence:0
 5 "Ethereal Fence Gate" biomesoplenty:ethereal_fence_gate:0
@@ -134,44 +137,40 @@
 5 "Arctic Wolf Pelt" betteranimalsplus:wolf_pelt_arctic:0
 5 "Brown Wolf Pelt" betteranimalsplus:wolf_pelt_brown:0
 5 "Red Wolf Pelt" betteranimalsplus:wolf_pelt_red:0
-5 "ic2.quantum_leggings" ic2:quantum_leggings:0:{charge:1.0E7d}
-5 "ic2.quantum_boots" ic2:quantum_boots:0:{charge:1.0E7d}
-5 "ic2.quantum_helmet" ic2:quantum_helmet:0:{charge:1.0E7d}
+5 "QuantumSuit Leggings" ic2:quantum_leggings:0:{charge:1.0E7d}
+5 "QuantumSuit Boots" ic2:quantum_boots:0:{charge:1.0E7d}
+5 "QuantumSuit Helmet" ic2:quantum_helmet:0:{charge:1.0E7d}
 5 "Ender Fragment" enderio:item_material:62
-5 "ic2.nano_boots" ic2:nano_boots:0
-5 "ic2.nano_chestplate" ic2:nano_chestplate:0
-5 "ic2.nano_helmet" ic2:nano_helmet:0
-5 "ic2.nano_leggings" ic2:nano_leggings:0
+5 "NanoSuit Boots" ic2:nano_boots:0
+5 "NanoSuit Bodyarmor" ic2:nano_chestplate:0
+5 "NanoSuit Helmet" ic2:nano_helmet:0
+5 "NanoSuit Leggings" ic2:nano_leggings:0
 5 "Solid Ender Eye" cyclicmagic:ender_eye_orb:0
 5 "Tainted Rock" thaumcraft:taint_rock:0 | "Tainted Soil" thaumcraft:taint_soil:0 | "Crusted Taint" thaumcraft:taint_crust:0
 4 "<randomthings:spectrekey>" randomthings:spectrekey
-4 "ic2.superheated_steam" fluid:ic2superheated_steam
-4 "ic2.superheated_steam" ic2:superheated_steam:0
+4 "Superheated Steam" fluid:ic2superheated_steam
+4 "Superheated Steam" ic2:superheated_steam:0
 4 "Molten Infinity" fluid:infinity
 4 "Molten Infinity" plustic:plustic.molten_infinity:0
 4 "Refined Glowstone" fluid:refinedglowstone
 4 "Refined Glowstone" plustic:plustic.molten_refinedglowstone:0
 4 "Molten Refined Obsidian" fluid:refinedobsidian
 4 "Molten Refined Obsidian" plustic:plustic.molten_refinedobsidian:0
-4 "<entity:minecraft:pig>" entity:minecraft:pig
-4 "<entity:minecraft:enderman>" entity:minecraft:enderman
-4 "<entity:minecraft:wolf>" entity:minecraft:wolf
-4 "Bacon" tconstruct:edible:0
-4 "Paper Shovel" tconstruct:shovel:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:6,HarvestLevel:0,Attack:0.0375f,MiningSpeed:0.3825f,AttackSpeedMultiplier:1.0f,FreeModifiers:3},
-4 "Paper Chisel" tcomplement:chisel:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:11,HarvestLevel:0,Attack:0.0375f,MiningSpeed:0.3825f,AttackSpeedMultiplier:1.0f,FreeModifiers:3
-4 "Manyullyn Shovel" tconstruct:shovel:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:860,HarvestLevel:8,Attack:6.54f,MiningSpeed:5.265f,AttackSpeedMultiplier:1.0f
-4 "Manyullyn Chisel" tcomplement:chisel:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:1761,HarvestLevel:8,Attack:6.54f,MiningSpeed:5.265f,AttackSpeedMultiplier:1.
-4 "Draconic Shovel" tconstruct:shovel:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:6448,HarvestLevel:13,Attack:26.25f,MiningSpeed:13.5f,AttackSpeedM
-4 "Draconic Chisel" tcomplement:chisel:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:13765,HarvestLevel:13,Attack:26.25f,MiningSpeed:13.5f,AttackSpee
-4 "Paper Shovel" tconstruct:shovel:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.3825f,FreeModifiers:3,Durability:6,HarvestLevel:0,Attack:0.0375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:7.8825f,FreeModi
-4 "Paper Chisel" tcomplement:chisel:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.3825f,FreeModifiers:3,Durability:11,HarvestLevel:0,Attack:0.0375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:7.8825f,FreeMo
-4 "Manyullyn Shovel" tconstruct:shovel:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:5.265f,FreeModifiers:3,Durability:860,HarvestLevel:8,Attack:6.54f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.764999f,Fr
-4 "Manyullyn Chisel" tcomplement:chisel:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:5.265f,FreeModifiers:3,Durability:1761,HarvestLevel:8,Attack:6.54f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.764999f,
-4 "Draconic Shovel" tconstruct:shovel:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:13.5f,FreeModifiers:3,Durability:6448,HarvestLevel:13,Attack:26.25f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:21.0f,FreeMo
-4 "Draconic Chisel" tcomplement:chisel:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:13.5f,FreeModifiers:3,Durability:13765,HarvestLevel:13,Attack:26.25f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:21.0f,Free
-4 "ic2.crop_res.oil_berry" ic2:crop_res:7
-4 "ic2.crop_res.bobs_yer_uncle_ranks_berry" ic2:crop_res:8
-4 "ic2.crop_res.milk_wart" ic2:crop_res:6
+4 "Paper Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:6,HarvestLevel:0,Attack:0.5375f,MiningSpeed:0.3825f,AttackSpeedMultiplier:1.0f,FreeModifiers:3
+4 "Paper Pickaxe" tconstruct:pickaxe:0:{TinkerData:{Materials:["paper","paper","stone","flint"],Modifiers:[]},Stats:{Durability:6,HarvestLevel:0,Attack:0.0375f,MiningSpeed:0.3825f,AttackSpeedMultiplier:1.0f,FreeModifiers:3
+4 "Manyullyn Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:860,HarvestLevel:8,Attack:7.04f,MiningSpeed:5.265f,AttackSpeedMultiplier:1.
+4 "Manyullyn Pickaxe" tconstruct:pickaxe:0:{TinkerData:{Materials:["knightslime","manyullyn","pigiron","endstone"],Modifiers:[]},Stats:{Durability:860,HarvestLevel:8,Attack:6.54f,MiningSpeed:5.265f,AttackSpeedMultiplier:1.
+4 "Draconic Hatchet" tconstruct:hatchet:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:6448,HarvestLevel:13,Attack:26.75f,MiningSpeed:13.5f,AttackSpee
+4 "Draconic Pickaxe" tconstruct:pickaxe:0:{TinkerData:{Materials:["chaotic_metal","draconic_metal","wyvern_metal","draconium"],Modifiers:[]},Stats:{Durability:6448,HarvestLevel:13,Attack:26.25f,MiningSpeed:13.5f,AttackSpee
+4 "Paper Hatchet" tconstruct:hatchet:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.3825f,FreeModifiers:3,Durability:6,HarvestLevel:0,Attack:0.5375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:7.8825f,FreeMo
+4 "Paper Pickaxe" tconstruct:pickaxe:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:0.3825f,FreeModifiers:3,Durability:6,HarvestLevel:0,Attack:0.0375f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:7.8825f,FreeMo
+4 "Manyullyn Hatchet" tconstruct:hatchet:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:5.265f,FreeModifiers:3,Durability:860,HarvestLevel:8,Attack:7.04f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.764999f,
+4 "Manyullyn Pickaxe" tconstruct:pickaxe:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:5.265f,FreeModifiers:3,Durability:860,HarvestLevel:8,Attack:6.54f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:12.764999f,
+4 "Draconic Hatchet" tconstruct:hatchet:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:13.5f,FreeModifiers:3,Durability:6448,HarvestLevel:13,Attack:26.75f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:21.0f,Free
+4 "Draconic Pickaxe" tconstruct:pickaxe:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:13.5f,FreeModifiers:3,Durability:6448,HarvestLevel:13,Attack:26.25f},Stats:{AttackSpeedMultiplier:1.2f,MiningSpeed:21.0f,Free
+4 "Oil Berry" ic2:crop_res:7
+4 "Bobs-Yer-Uncle-Ranks Berry" ic2:crop_res:8
+4 "Milk Wart" ic2:crop_res:6
 4 "Copper Ingot" libvulpes:productingot:4
 4 "Copper Ingot" nuclearcraft:ingot:0
 4 "Lead Ore Chunk" exnihilocreatio:item_ore_lead:1
@@ -181,9 +180,9 @@
 4 "Iron Ore Chunk" exnihilocreatio:item_ore_iron:1
 4 "Copper Ore Chunk" exnihilocreatio:item_ore_copper:1
 4 "Gold Ore Chunk" exnihilocreatio:item_ore_gold:1
-4 "ic2.quantum_helmet" ic2:quantum_helmet:0
-4 "ic2.quantum_leggings" ic2:quantum_leggings:0
-4 "ic2.quantum_boots" ic2:quantum_boots:0
+4 "QuantumSuit Helmet" ic2:quantum_helmet:0
+4 "QuantumSuit Leggings" ic2:quantum_leggings:0
+4 "QuantumSuit Boots" ic2:quantum_boots:0
 4 "Sakanade Spores" randomthings:ingredient:0
 4 "Eldritch Gold Cluster" thaumicwonders:eldritch_cluster:1
 4 "Eldritch Copper Cluster" thaumicwonders:eldritch_cluster:2
@@ -193,6 +192,7 @@
 4 "Spectral Moss" biomesoplenty:grass:0
 4 "Frozen Grass Path" iceandfire:frozen_grass_path:0
 4 "Ethereal Wood Planks" biomesoplenty:planks_0:4
+4 "<entity:minecraft:zombie>" entity:minecraft:zombie | "<entity:minecraft:villager>" entity:minecraft:villager
 4 "Ethereal Wood Slab" biomesoplenty:wood_slab_0:4
 4 "Exhausting Netherrack" scalingfeast:exhaustingore:1
 4 "Exhausting Stone" scalingfeast:exhaustingore:0
@@ -215,10 +215,10 @@
 3 "Crystal Water" thaumadditions:crystal_water:0
 3 "High Pressure Steam" fluid:highpressuresteam
 3 "High Pressure Steam" immersivetech:fluidhighpressuresteam:0
-3 "ic2.air" fluid:ic2air
-3 "ic2.air" ic2:air:0
-3 "ic2.weed_ex" fluid:ic2weed_ex
-3 "ic2.weed_ex" ic2:weed_ex:0
+3 "Air" fluid:ic2air
+3 "Air" ic2:air:0
+3 "Weed-Ex" fluid:ic2weed_ex
+3 "Weed-Ex" ic2:weed_ex:0
 3 "Liquid Death" fluid:liquid_death
 3 "Liquid Death" thaumcraft:liquid_death:0
 3 "Seed" fluid:seed
@@ -226,24 +226,25 @@
 3 "Molten Zinc" fluid:zinc
 3 "Molten Zinc" tconstruct:molten_zinc:0
 3 "Encoded Pattern" appliedenergistics2:encoded_pattern:0:{in:[{id:"minecraft:diamond",Count:1b,Damage:0s},{id:"minecraft:diamond",Count:1b,Damage:0s},{id:"minecraft:diamond",Count:1b,Damage:0s},{},{id:"minecraft:stick",Co
+3 "<entity:minecraft:creeper>" entity:minecraft:creeper
 3 "Nether Star Crop" mysticalagradditions:nether_star_crop:0
-3 "<entity:minecraft:ocelot>" entity:minecraft:ocelot
-3 "<entity:minecraft:sheep>" entity:minecraft:sheep
-3 "<entity:minecraft:chicken>" entity:minecraft:chicken
+3 "<entity:minecraft:zombie>" entity:minecraft:zombie
+3 "Bacon" tconstruct:edible:0
 3 "Worm" actuallyadditions:item_worm:0
-3 "ic2.crop_res.hops" ic2:crop_res:4
-3 "ic2.terra_wart" ic2:terra_wart:0
+3 "Hops" ic2:crop_res:4
+3 "Terra Wart" ic2:terra_wart:0
 3 "Gold Ore Dust" exnihilocreatio:item_ore_gold:2
+3 "Fiery Essence Bucket" forge:bucketfilled:0:{FluidName:"fiery_essence",Amount:1000}
 3 "Triple Meat Treat" thaumcraft:triple_meat_treat:0
 3 "Orange Tip Caterpillar" forestry:caterpillar_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry
-3 "Block of Charcoal" forestry:charcoal:0
 3 "Tallow" quark:tallow:0
+3 "Block of Charcoal" forestry:charcoal:0
 3 "Tin Ingot" libvulpes:productingot:5
 3 "Aluminum Ingot" libvulpes:productingot:9
 3 "Lead Ingot" nuclearcraft:ingot:2
 3 "Tin Ingot" nuclearcraft:ingot:1
 3 "Lead Ingot" immersiveengineering:metal:2
-3 "ic2.ingot.lead" ic2:ingot:3
+3 "Lead Ingot" ic2:ingot:3
 3 "Lead Ingot" exnihilocreatio:item_ore_lead:3
 3 "Bronze Ingot" mekanism:ingot:2
 3 "Sapphire Ore" iceandfire:sapphire_ore:0
@@ -253,7 +254,7 @@
 3 "Flux-Infused Leggings" redstonearsenal:armor.legs_flux:0
 3 "Flux-Infused Boots" redstonearsenal:armor.boots_flux:0
 3 "Yellorium Block" bigreactors:blockyellorium:0
-3 "Tree Sample - Species: Dark Oak" gendustry:gene_sample:0:{species:"rootTrees",chromosome:0,allele:"forestry.treeDarkOak"} | "Tree Sample - Height: Small" gendustry:gene_sample:0:{species:"rootTrees",chromosome:1,allele:
+3 "Bee Sample - Species: Avenging" gendustry:gene_sample:0:{species:"rootBees",chromosome:0,allele:"forestry.speciesAvenging"} | "Bee Sample - Speed: Slowest" gendustry:gene_sample:0:{species:"rootBees",chromosome:1,allele
 3 "Fire Dragonsteel Chestplate" iceandfire:dragonsteel_fire_chestplate:0
 3 "Silver Pickaxe" iceandfire:silver_pickaxe:0
 3 "Ice Dragonsteel Leggings" iceandfire:dragonsteel_ice_leggings:0
@@ -270,7 +271,7 @@
 3 "Fire Dragonsteel Helmet" iceandfire:dragonsteel_fire_helmet:0
 3 "Fire Dragonsteel Boots" iceandfire:dragonsteel_fire_boots:0
 3 "Silver Hoe" iceandfire:silver_hoe:0
-3 "INVALID Sample - ERROR" gendustry:gene_sample:0 | "Tree Sample - Fruits: Papaya" gendustry:gene_sample:0:{species:"rootTrees",chromosome:3,allele:"forestry.fruitPapaya"} | "Butterfly Sample - Lifespan: Normal" gendustry
+3 "INVALID Sample - ERROR" gendustry:gene_sample:0 | "Tree Sample - Fertility: Average" gendustry:gene_sample:0:{species:"rootTrees",chromosome:2,allele:"forestry.saplingsAverage"} | "Tree Sample - Maturation: Slow" gendus
 3 "Celestial Notes" thaumcraft:celestial_notes:5
 3 "Celestial Notes" thaumcraft:celestial_notes:6
 3 "Celestial Notes" thaumcraft:celestial_notes:7
@@ -310,11 +311,11 @@
 3 "Boots" conarm:boots:0
 3 "Boots" conarm:boots:0:{ncRadiationResistance:0.3d}
 3 "Boots" conarm:boots:0:{ncRadiationResistance:3.0d}
-2 "Cow in a Jar" cookingforblockheads:cow_jar:0
 2 "<entity:minecraft:villager>" entity:minecraft:villager
 2 "Nether Star Essence" mysticalagradditions:nether_star_essence:0
 2 "Awakened Draconium Crop" mysticalagradditions:awakened_draconium_crop:0
 2 "Neutronium Crop" mysticalagradditions:neutronium_crop:0
+2 "<entity:minecraft:enderman>" entity:minecraft:enderman
 2 "<entity:iceandfire:if_cockatrice>" entity:iceandfire:if_cockatrice
 2 "Sulfur" nuclearcraft:gem_dust:6
 2 "Sulfur Dust" mekanism:otherdust:3
@@ -322,65 +323,57 @@
 2 "Sulfur Dust" immersiveengineering:material:25
 2 "Nature Chest" randomthings:specialchest:0
 2 "Water Chest" randomthings:specialchest:1
-2 "§6A book written by a Enderman" minecraft:written_book:0:{pages:["Darkness?","Shhhh?"],author:"Enderman",display:{Name:"§6A book written by a Enderman"}}
-2 "§6A book written by a Zombie" minecraft:written_book:0:{pages:["Brains?","Eeehhhahhh?"],author:"Zombie",display:{Name:"§6A book written by a Zombie"}}
-2 "§6A book written by a Creeper" minecraft:written_book:0:{pages:["Sssss?","Hsssss?"],author:"Creeper",display:{Name:"§6A book written by a Creeper"}}
-2 "§6A book written by a Cat" minecraft:written_book:0:{pages:["Meeeoow?","Rreraow?"],author:"Cat",display:{Name:"§6A book written by a Cat"}}
-2 "§6A book written by a Sheep" minecraft:written_book:0:{pages:["Baa?","Maaaa?"],author:"Sheep",display:{Name:"§6A book written by a Sheep"}}
-2 "§6A book written by a Chicken" minecraft:written_book:0:{pages:["Cock A Doodle?","Cluck?"],author:"Chicken",display:{Name:"§6A book written by a Chicken"}}
-2 "§6A book written by a Dog" minecraft:written_book:0:{pages:["Wooof?","Ruff?"],author:"Dog",display:{Name:"§6A book written by a Dog"}}
-2 "§6A book written by a Pig" minecraft:written_book:0:{pages:["Oink?","Weeeet?"],author:"Pig",display:{Name:"§6A book written by a Pig"}}
 2 "Orange Tip Serum" forestry:serum_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.sizeSmaller
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"beetroots",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"pumpkin",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"wheat",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blackthorn",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"brown_mushroom",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"carrots",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyazint",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"dandelion",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"flax",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"melon",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"potato",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"red_mushroom",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"reed",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"rose",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tulip",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cocoa",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"venomilia",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stickreed",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corpse_plant",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"nether_wart",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"aurelia",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blazereed",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corium",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stagnium",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyprium",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"eatingplant",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"egg_plant",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ferru",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"plumbiscus",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"redwheat",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"shining",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"slime_plant",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"spidernip",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"creeper_weed",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"meat_rose",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tearstalks",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"withereed",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ender_blossom",resistance:1b,gain:1b}
-2 "ic2.crop.seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"diareed",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"weed",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"beetroots",resistance:1b,gain:1b}
+2 "Pumpkin Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"pumpkin",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"wheat",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blackthorn",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"brown_mushroom",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"carrots",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyazint",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"dandelion",resistance:1b,gain:1b}
+2 "Flax Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"flax",resistance:1b,gain:1b}
+2 "Melon Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"melon",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"potato",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"red_mushroom",resistance:1b,gain:1b}
+2 "Reed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"reed",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"rose",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tulip",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cocoa",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"venomilia",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stickreed",resistance:1b,gain:1b}
+2 "Corpse Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corpse_plant",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"nether_wart",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"aurelia",resistance:1b,gain:1b}
+2 "Blazereed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"blazereed",resistance:1b,gain:1b}
+2 "Corium Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"corium",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"stagnium",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"cyprium",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"eatingplant",resistance:1b,gain:1b}
+2 "Egg Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"egg_plant",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ferru",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"plumbiscus",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"redwheat",resistance:1b,gain:1b}
+2 "Beetroots Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"shining",resistance:1b,gain:1b}
+2 "Slime Plant Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"slime_plant",resistance:1b,gain:1b}
+2 "Spidernip Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"spidernip",resistance:1b,gain:1b}
+2 "Creeper Weed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"creeper_weed",resistance:1b,gain:1b}
+2 "Meat Rose Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"meat_rose",resistance:1b,gain:1b}
+2 "Tearstalks Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"tearstalks",resistance:1b,gain:1b}
+2 "Withereed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"withereed",resistance:1b,gain:1b}
+2 "Ender Blossom Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"ender_blossom",resistance:1b,gain:1b}
+2 "Diareed Seeds" ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"diareed",resistance:1b,gain:1b}
 2 "Giant Red Flower Petal" biomesoplenty:leaves_6:8
 2 "Giant Yellow Flower Petal" biomesoplenty:leaves_6:9
+2 "Magma Slimy Grass" tconstruct:slime_grass:4
+2 "Green Slimy Grass" tconstruct:slime_grass:11
+2 "Purple Slimy Grass" tconstruct:slime_grass:13
+2 "Blue Slimy Grass" tconstruct:slime_grass:12
+2 "Green Slimy Grass" tconstruct:slime_grass:6
+2 "Blue Slimy Grass" tconstruct:slime_grass:7
 2 "Magma Slimy Grass" tconstruct:slime_grass:9
 2 "Purple Slimy Grass" tconstruct:slime_grass:3
-2 "Blue Slimy Grass" tconstruct:slime_grass:7
-2 "Blue Slimy Grass" tconstruct:slime_grass:12
-2 "Magma Slimy Grass" tconstruct:slime_grass:4
-2 "Purple Slimy Grass" tconstruct:slime_grass:13
-2 "Green Slimy Grass" tconstruct:slime_grass:6
-2 "Green Slimy Grass" tconstruct:slime_grass:11
 2 "Wide Guard" tconstruct:wide_guard:0
 2 "Fiery Cleaver" tconstruct:cleaver:0:{StatsOriginal:{AttackSpeedMultiplier:1.0f,MiningSpeed:7.2f,FreeModifiers:3,Durability:2088,HarvestLevel:3,Attack:11.58f},Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:7.2f,FreeModifi
 2 "Tough Tool Rod" tconstruct:tough_tool_rod:0
@@ -394,7 +387,7 @@
 2 "Steel Ingot" immersiveengineering:metal:8
 2 "Aluminium Ingot" immersiveengineering:metal:1
 2 "Jungle Myrmex Bioluminescence" iceandfire:myrmex_jungle_biolight:0
-2 "ic2.ingot.steel" ic2:ingot:5
+2 "Steel Ingot" ic2:ingot:5
 2 "Steel Ingot" mekanism:ingot:4
 2 "Desert Myrmex Bioluminescence" iceandfire:myrmex_desert_biolight:0
 2 "Enchanted Soil" botania:enchantedsoil:0
@@ -404,18 +397,19 @@
 2 "Minewood Core" twilightforest:magic_log_core:2
 2 "Sortingwood Engine" twilightforest:magic_log_core:3
 2 "Trollber" twilightforest:trollber:0
+2 "Industrial Grafter" gendustry:industrial_grafter:100:{charge:0}
+2 "Scooporator MX200 Turbo" gendustry:industrial_scoop:100:{charge:0}
 2 "Nickel Ore" immersiveengineering:ore:4
 2 "Sawdust" mekanism:sawdust:0
 2 "Aluminum Ore" libvulpes:ore0:9
 2 "Wood Chippings" excompressum:wood_chippings:0
 2 "Compressed Dirt" excompressum:compressed_block:4
 2 "Tungsten Ore Chunk" contenttweaker:item_ore_tungsten:1 | "Tungsten Ore Chunk" jaopca:item_hunktungsten:0
-2 "Written Book" minecraft:written_book:0
 2 "tile.rats.rat_cage_breeding_lantern.name" rats:rat_cage_breeding_lantern:0
+2 "Bronze Ingot" ic2:ingot:1
 2 "Bronze Ingot" forestry:ingot_bronze:0
-2 "ic2.ingot.bronze" ic2:ingot:1
 2 "Block of Tungsten" jaopca:block_blocktungsten:0
-2 "ic2.mug.dark_coffee" ic2:mug:2
+2 "Dark Coffee" ic2:mug:2
 2 "Block of Charcoal" actuallyadditions:block_misc:5
 2 "Forest Troll Leather Leggings" iceandfire:forest_troll_leather_leggings:0
 2 "Hardened Leather Helm" harvestcraft:hardenedleatherhelmitem:0
@@ -441,15 +435,14 @@
 2 "Red Death Worm Chitin Boots" iceandfire:deathworm_red_boots:0
 2 "Jungle Myrmex Chitin Boots" iceandfire:myrmex_jungle_boots:0
 2 "Desert Myrmex Chitin Helmet" iceandfire:myrmex_desert_helmet:0
-2 "Jungle Myrmex Chitin Pickaxe" iceandfire:myrmex_jungle_pickaxe:0
 2 "Diamond Helmet" minecraft:diamond_helmet:0
+2 "Jungle Myrmex Chitin Pickaxe" iceandfire:myrmex_jungle_pickaxe:0
 2 "Desert Myrmex Chitin Shovel" iceandfire:myrmex_desert_shovel:0
 2 "Black Lotus" actuallyadditions:block_black_lotus:0
 2 "White Death Worm Chitin Helmet" iceandfire:deathworm_white_helmet:0
 2 "Desert Myrmex Chitin Leggings" iceandfire:myrmex_desert_leggings:0
 2 "Jungle Myrmex Chitin Helmet" iceandfire:myrmex_jungle_helmet:0
 2 "Jungle Myrmex Chitin Hoe" iceandfire:myrmex_jungle_hoe:0
-2 "Diamond Leggings" minecraft:diamond_leggings:0
 2 "Desert Myrmex Chitin Axe" iceandfire:myrmex_desert_axe:0
 2 "White Death Worm Chitin Leggings" iceandfire:deathworm_white_leggings:0
 2 "Jungle Myrmex Chitin Leggings" iceandfire:myrmex_jungle_leggings:0
@@ -584,8 +577,8 @@
 1 "Spectre Block" randomthings:spectreblock:0
 1 "Ultimate Crop" mysticalcreations:ultimate_crop:0
 1 "<entity:minecraft:skeleton>" entity:minecraft:skeleton
+1 "Creeper Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:creeper"}
 1 "<entity:minecraft:spider>" entity:minecraft:spider
-1 "<entity:minecraft:squid>" entity:minecraft:squid
 1 "Dragon Egg Crop" mysticalagradditions:dragon_egg_crop:0
 1 "Awakened Draconium Essence" mysticalagradditions:awakened_draconium_essence:0
 1 "Neutronium Essence" mysticalagradditions:neutronium_essence:0
@@ -603,28 +596,29 @@
 1 "<entity:industrialforegoing:pink_slime>" entity:industrialforegoing:pink_slime
 1 "<entity:rats:neo_ratlantean>" entity:rats:neo_ratlantean
 1 "<entity:openblocks:mini_me>" entity:openblocks:mini_me
-1 "ic2.fluid_cell" ic2:fluid_cell:5
+1 "Universal Fluid Cell" ic2:fluid_cell:5
 1 "Bottle of Wildberry Juice" rustic:fluid_bottle:0:{Fluid:{FluidName:"wildberryjuice",Amount:1000}}
-1 "ic2.nuclear.mox_pellet" ic2:nuclear:9
+1 "Bottle of Ale" rustic:fluid_bottle:0:{Fluid:{FluidName:"ale",Amount:1000,Tag:{Quality:1.0f}}}
+1 "Pellets of MOX Nuclear Fuel" ic2:nuclear:9
 1 "Gold Dust" libvulpes:productdust:2
 1 "Crushed Gold" actuallyadditions:item_dust:1
+1 "Creeper Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:creeper"} | "Zombie Soul" draconicevolution:mob_soul:0:{EntityName:"minecraft:zombie"}
+1 "Pahoehoe Lava Bucket" forge:bucketfilled:0:{FluidName:"ic2pahoehoe_lava",Amount:1000}
 1 "Orange Tip Cocoon" forestry:cocoon_ge:0:{IsAnalyzed:0b,Health:20,MaxH:20,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.lepiAurora",UID1:"forestry.lepiAurora"},{Slot:1b,UID0:"forestry.sizeSmaller",UID1:"forestry.sizeSmall
 1 "Homing Cartridge" immersiveengineering:bullet:2:{bullet:"terrasteel"} | "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"}
-1 "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"}
 1 "Homing Cartridge" immersiveengineering:bullet:2:{bullet:"terrasteel"}
+1 "Crystalized Will Cartridge" immersiveengineering:bullet:2:{bullet:"crystalwill"}
 1 "Valiant Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesDemonic"}]}}
 1 "Valiant Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesVindictive"}]}}
 1 "Valiant Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesAustere"}]}}
 1 "Valiant Drone" forestry:bee_drone_ge:0:{Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesSecluded"}]}}
-1 "ic2.nuclear.depleted_mox" ic2:nuclear:14
-1 "ic2.nuclear.depleted_quad_mox" ic2:nuclear:16
-1 "ic2.nuclear.depleted_dual_uranium" ic2:nuclear:12
-1 "ic2.nuclear.depleted_uranium" ic2:nuclear:11
-1 "ic2.nuclear.depleted_quad_uranium" ic2:nuclear:13
-1 "ic2.nuclear.depleted_dual_mox" ic2:nuclear:15
+1 "Fuel Rod (Depleted MOX)" ic2:nuclear:14
+1 "Fuel Rod (Depleted Uranium)" ic2:nuclear:11
+1 "Dual Fuel Rod (Depleted Uranium)" ic2:nuclear:12
+1 "Dual Fuel Rod (Depleted MOX)" ic2:nuclear:15
+1 "Quad Fuel Rod (Depleted MOX)" ic2:nuclear:16
+1 "Quad Fuel Rod (Depleted Uranium)" ic2:nuclear:13
 1 "Skullfire Sword" avaritia:skullfire_sword:0
-1 "Random Cow" animania:entity_egg_cow_random:0
-1 "Random Pig" animania:entity_egg_pig_random:0
 1 "Iridium Block" libvulpes:metal0:10
 1 "Withering Dust" enderio:item_material:63
 1 "Creative Cheese" rats:creative_cheese:0
@@ -658,9 +652,9 @@
 1 "Fertilized Farmland" farmingforblockheads:fertilized_farmland_rich:0
 1 "Fertilized Farmland" farmingforblockheads:fertilized_farmland_stable:0
 1 "Ash Block" forestry:ash_block_2:0
-1 "ic2.foam.reinforced" ic2:foam:1
-1 "ic2.scaffold.reinforced_wood" ic2:scaffold:1
-1 "ic2.scaffold.reinforced_iron" ic2:scaffold:3
+1 "Reinforced Construction Foam" ic2:foam:1
+1 "Reinforced Scaffold" ic2:scaffold:1
+1 "Reinforced Iron Scaffold" ic2:scaffold:3
 1 "Burnt Out Torch" iceandfire:burnt_torch:0
 1 "Loot Chest" lootr:lootr_chest:0
 1 "Loot Chest" lootr:lootr_trapped_chest:0
@@ -701,7 +695,7 @@
 1 "Catalyzation Chamber" thaumicwonders:placeholder_obsidian:0
 1 "Primordial Accretion Chamber" thaumicwonders:placeholder_thaumium_block:0
 1 "Primordial Accretion Chamber" thaumicwonders:placeholder_void_metal_block:0
-1 "ic2.crop.seeds" ic2:crop_seed_bag:0
+1 "Invalid Seeds" ic2:crop_seed_bag:0
 1 "invalid.name" gendustry:honey_comb:17
 1 "invalid.name" gendustry:honey_comb:18
 1 "invalid.name" gendustry:honey_comb:21
@@ -738,11 +732,11 @@
 1 "Broken Shovel" forestry:broken_bronze_shovel:0
 1 "Very Damaged Anvil" minecraft:anvil:2
 1 "Crab Leg" quark:crab_leg:0
-1 "Flour" enderio:item_material:21
 1 "Steel Dust" bigreactors:duststeel:0
 1 "Steel Dust" mekanism:otherdust:1
+1 "Flour" enderio:item_material:21
 1 "Timewinder" thaumicwonders:timewinder:0
-1 "ic2.te.recycler" ic2:te:48
+1 "Recycler" ic2:te:48
 1 "Pipe Piece" plustic:pipe_piece:0:{Material:"integrationforegoing.reinforced_pink_slime"}
 1 "Excavator Head" tconstruct:excavator_head:0:{Material:"integrationforegoing.reinforced_pink_slime"}
 1 "Axe Head" tconstruct:axe_head:0:{Material:"integrationforegoing.reinforced_pink_slime"}
@@ -798,7 +792,7 @@
 1 "Endorium Sword" endreborn:tool_sword_endorium:0
 1 "Crimson Blade" thaumcraft:crimson_blade:0
 1 "Ice Sword" twilightforest:ice_sword:0
-1 "ic2.bronze_sword" ic2:bronze_sword:0
+1 "Bronze Sword" ic2:bronze_sword:0
 1 "Tungsten Sword" endreborn:tool_sword_wolframium:0
 1 "Will of Dharok" botania:ancientwill:1
 1 "Will of Guthan" botania:ancientwill:2
@@ -846,12 +840,10 @@
 1 "Insulated Copper Wire Coil" industrialwires:ic2_wire_coil:6:{wireLength:1024}
 1 "Insulated Gold Wire Coil" industrialwires:ic2_wire_coil:7:{wireLength:1024}
 1 "Elite Sawing Factory" mekanism:machineblock:7:{recipeType:8}
-1 "ic2.quantum_boots" ic2:quantum_boots:26
+1 "QuantumSuit Boots" ic2:quantum_boots:26
 1 "Tin Wire Coil" industrialwires:ic2_wire_coil:0:{wireLength:1024}
 1 "Copper Wire Coil" industrialwires:ic2_wire_coil:1:{wireLength:1024}
 1 "Gold Wire Coil" industrialwires:ic2_wire_coil:2:{wireLength:1024}
-1 "Enchantment Extractor" industrialforegoing:enchantment_extractor:0
-1 "Enchantment Factory" industrialforegoing:enchantment_invoker:0
 1 "Network Visualisation Tool" ae2stuff:visualiser:0
 1 "Destructive Stabilization Ring" redstonerepository:ring_mining:0:{Energy:4000000}
 1 "Motus Vis Pod" thaumadditions:vis_pod:0:{Aspect:"motus"}
@@ -1292,7 +1284,7 @@
 1 "Void Fruit" thaumadditions:void_fruit:0
 1 "Huge Mushgloom" twilightforest:huge_mushgloom:0
 1 "Portable Drill" portabledrill:portable_drill:0
-1 "ic2.mug.coffee" ic2:mug:3
+1 "Coffee" ic2:mug:3
 1 "Dry Grass" botania:altgrass:0
 1 "Golden Grass" botania:altgrass:1
 1 "Vivid Grass" botania:altgrass:2
@@ -1332,7 +1324,7 @@
 1 "Endorium Pickaxe" endreborn:tool_pickaxe_endorium:0
 1 "Endorium Axe" endreborn:tool_axe_endorium:0
 1 "Endorium Shovel" endreborn:tool_shovel_endorium:0
-1 "ic2.bronze_hoe" ic2:bronze_hoe:0
+1 "Bronze Hoe" ic2:bronze_hoe:0
 1 "Mana Hammer" excompressum:hammer_mana:0
 1 "Endorium Hoe" endreborn:tool_hoe_endorium:0
 1 "Tungsten Pickaxe" endreborn:tool_pickaxe_wolframium:0
@@ -1343,15 +1335,15 @@
 1 "Crystal Axe" astralsorcery:itemcrystalaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}}
 1 "Infused Crystal Axe" astralsorcery:itemchargedcrystalaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}}
 1 "Infused Crystal Pickaxe" astralsorcery:itemchargedcrystalpickaxe:0:{astralsorcery:{size:2700,purity:100,collect:100,fract:0,sizeOverride:-1}}
-1 "ic2.bronze_axe" ic2:bronze_axe:0
-1 "ic2.bronze_pickaxe" ic2:bronze_pickaxe:0
-1 "ic2.bronze_shovel" ic2:bronze_shovel:0
+1 "Bronze Axe" ic2:bronze_axe:0
+1 "Bronze Pickaxe" ic2:bronze_pickaxe:0
+1 "Bronze Shovel" ic2:bronze_shovel:0
 1 "Manasteel Shears" botania:manasteelshears:0
 1 "Elementium Shears" botania:elementiumshears:0
 1 "Compressed Iron Hammer" excompressum:compressed_hammer_iron:0
 1 "Stone Hammer" exnihilocreatio:hammer_stone:0
 1 "Compressed Stone Hammer" excompressum:compressed_hammer_stone:0
-1 "ic2.dust.bronze" ic2:dust:0
+1 "Bronze Dust" ic2:dust:0
 1 "Instrumentum Vis Pod" thaumadditions:vis_pod:0:{Aspect:"instrumentum"}
 1 "Wooden Hammer" exnihilocreatio:hammer_wood:0
 1 "Wooden Crook" exnihilocreatio:crook_wood:0
@@ -1489,7 +1481,7 @@
 1 "Cooked Crab Meat" betteranimalsplus:crab_meat_cooked:0
 1 "Music Disc" betteranimalsplus:record_crab_rave:0
 1 "Crimson Praetor Chestplate" thaumcraft:crimson_praetor_chest:0
-1 "ic2.alloy_chestplate" ic2:alloy_chestplate:0
+1 "Composite Vest" ic2:alloy_chestplate:0
 1 "Dragon Scale Chestplate" iceandfire:armor_red_chestplate:0
 1 "Dragon Scale Chestplate" iceandfire:armor_bronze_chestplate:0
 1 "Dragon Scale Chestplate" iceandfire:armor_green_chestplate:0
@@ -1498,8 +1490,8 @@
 1 "Dragon Scale Chestplate" iceandfire:armor_white_chestplate:0
 1 "Dragon Scale Chestplate" iceandfire:armor_sapphire_chestplate:0
 1 "Dragon Scale Chestplate" iceandfire:armor_silver_chestplate:0
-1 "ic2.cf_pack" ic2:cf_pack:1:{Fluid:{FluidName:"ic2construction_foam",Amount:80000}}
-1 "ic2.jetpack" ic2:jetpack:1:{Fluid:{FluidName:"ic2biogas",Amount:30000}}
+1 "CF Backpack" ic2:cf_pack:1:{Fluid:{FluidName:"ic2construction_foam",Amount:80000}}
+1 "Jetpack" ic2:jetpack:1:{Fluid:{FluidName:"ic2biogas",Amount:30000}}
 1 "Enderium Flux Chestplate" redstonerepository:armor.plate_gelid:0:{Energy:0}
 1 "Enderium Flux Chestplate" redstonerepository:armor.plate_gelid:0:{Energy:4000000}
 1 "Crimson Praetor Helm" thaumcraft:crimson_praetor_helm:0
@@ -1528,12 +1520,12 @@
 1 "Tide Guardian Chestplate" iceandfire:tide_red_chestplate:0
 1 "Tide Guardian Chestplate" iceandfire:tide_teal_chestplate:0
 1 "Obsidian Leggins" endreborn:armour_leggings_obsidian:0
-1 "ic2.bronze_chestplate" ic2:bronze_chestplate:0
-1 "ic2.quantum_leggings" ic2:quantum_leggings:26
+1 "Bronze Chestplate" ic2:bronze_chestplate:0
+1 "QuantumSuit Leggings" ic2:quantum_leggings:26
 1 "Enderium Flux Leggings" redstonerepository:armor.legs_gelid:0:{Energy:0}
 1 "Enderium Flux Leggings" redstonerepository:armor.legs_gelid:0:{Energy:4000000}
 1 "Sentient Chestplate" bloodmagic:sentient_armour_chest:0
-1 "ic2.bronze_leggings" ic2:bronze_leggings:0
+1 "Bronze Leggings" ic2:bronze_leggings:0
 1 "<bloodmagic:sentient_armour_leggings:0>" bloodmagic:sentient_armour_leggings:0
 1 "Dragon Scale Helmet" iceandfire:armor_red_helmet:0
 1 "Dragon Scale Boots" iceandfire:armor_red_boots:0
@@ -1567,15 +1559,15 @@
 1 "Tide Guardian Boots" iceandfire:tide_teal_boots:0
 1 "Obsidian Boots" endreborn:armour_boots_obsidian:0
 1 "Obsidian Helmet" endreborn:armour_helmet_helmet:0
-1 "ic2.quantum_helmet" ic2:quantum_helmet:26
-1 "ic2.static_boots" ic2:static_boots:0
+1 "QuantumSuit Helmet" ic2:quantum_helmet:26
+1 "Static Boots" ic2:static_boots:0
 1 "Enderium Flux Helmet" redstonerepository:armor.helmet_gelid:0:{Energy:0}
 1 "Enderium Flux Helmet" redstonerepository:armor.helmet_gelid:0:{Energy:4000000}
 1 "Enderium Flux Boots" redstonerepository:armor.boots_gelid:0:{Energy:0}
 1 "Enderium Flux Boots" redstonerepository:armor.boots_gelid:0:{Energy:4000000}
 1 "Rat Cage" rats:rat_cage_decorated:0
-1 "ic2.bronze_boots" ic2:bronze_boots:0
-1 "ic2.bronze_helmet" ic2:bronze_helmet:0
+1 "Bronze Boots" ic2:bronze_boots:0
+1 "Bronze Helmet" ic2:bronze_helmet:0
 1 "Magic Hood" randomthings:magichood:0
 1 "Badass Glasses" openblocks:serious_glasses:0
 1 "<bloodmagic:sentient_armour_helmet:0>" bloodmagic:sentient_armour_helmet:0
@@ -1642,8 +1634,8 @@
 1 "Vitreus Vis Pod" thaumadditions:vis_pod:0:{Aspect:"vitreus"}
 1 "Biome Glass" randomthings:biomeglass:0
 1 "Metallum Vis Pod" thaumadditions:vis_pod:0:{Aspect:"metallum"}
-1 "ic2.te.tank" ic2:te:81
-1 "ic2.boat.broken_rubber" ic2:boat:0
+1 "Tank" ic2:te:81
+1 "Damaged Rubber Dinghy" ic2:boat:0
 1 "Creative Drum" extrautils2:drum:4
 1 "Slimeball" tconstruct:edible:5
 1 "Slime Block" tconstruct:slime:0
@@ -1676,12 +1668,19 @@
 1 "Creative chat recorder" plethora:module:7
 1 "Warding Aura" minecraft:barrier:0
 1 "Unbreakable Wand" betterbuilderswands:wandunbreakable:13
-1 "ic2.resource.copper_block" ic2:resource:6
-1 "ic2.resource.tin_block" ic2:resource:9
-1 "ic2.resource.lead_block" ic2:resource:7
-1 "ic2.resource.silver_block" ic2:resource:15
+1 "Copper Block" ic2:resource:6
+1 "Tin Block" ic2:resource:9
+1 "Lead Block" ic2:resource:7
+1 "Silver Block" ic2:resource:15
 1 "Fission Controller (Old)" nuclearcraft:fission_controller_idle:0
 1 "Survivalist's Pickaxe" forestry:bronze_pickaxe:0
+1 "Reddened Comb" forestry:bee_combs:11
+1 "Darkened Comb" forestry:bee_combs:12
+1 "Omega Comb" forestry:bee_combs:13
+1 "Lit Candle" forestry:candle:1
+1 "Milk Can" forestry:can:1:{Fluid:{FluidName:"milk",Amount:1000}}
+1 "Milk Capsule" forestry:capsule:1:{Fluid:{FluidName:"milk",Amount:1000}}
+1 "Milk Capsule" forestry:refractory:1:{Fluid:{FluidName:"milk",Amount:1000}}
 1 "Greenhouse Control" forestry:greenhouse:4
 1 "Greenhouse Heater" forestry:climatiser:1
 1 "Greenhouse Fan" forestry:climatiser:2
@@ -1690,42 +1689,34 @@
 1 "Greenhouse Window" forestry:greenhouse.window:0
 1 "Greenhouse Roof Window" forestry:greenhouse.window_up:0
 1 "Letter" forestry:letters:3
-1 "Milk Can" forestry:can:1:{Fluid:{FluidName:"milk",Amount:1000}}
-1 "Milk Capsule" forestry:capsule:1:{Fluid:{FluidName:"milk",Amount:1000}}
-1 "Milk Capsule" forestry:refractory:1:{Fluid:{FluidName:"milk",Amount:1000}}
-1 "Reddened Comb" forestry:bee_combs:11
-1 "Darkened Comb" forestry:bee_combs:12
-1 "Omega Comb" forestry:bee_combs:13
-1 "Lit Candle" forestry:candle:1
 1 "Microcontroller" opencomputers:microcontroller:0
 1 "Wooden Pressure Plate" enderio:block_painted_pressure_plate:0
 1 "Stone Pressure Plate" enderio:block_painted_pressure_plate:2
 1 "Weighted Pressure Plate (Heavy)" enderio:block_painted_pressure_plate:4
 1 "Weighted Pressure Plate (Light)" enderio:block_painted_pressure_plate:6
-1 "Silver Nugget" immersiveengineering:metal:23
-1 "Iron Nugget" immersiveengineering:metal:29
-1 "ic2.crafting.coin" ic2:crafting:38
-1 "Electrum Nugget" immersiveengineering:metal:27
-1 "ic2.ingot.uranium" ic2:ingot:8
-1 "Greenhouse Energy Distributor" forestry:greenhouse:3
-1 "Iron Nugget" thaumcraft:nugget:0
-1 "Lead Nugget" immersiveengineering:metal:22
-1 "Steel Nugget" immersiveengineering:metal:28
-1 "Copper Nugget" immersiveengineering:metal:20
 1 "Constantan Nugget" immersiveengineering:metal:26
+1 "Greenhouse Energy Distributor" forestry:greenhouse:3
 1 "Nickel Nugget" immersiveengineering:metal:24
+1 "Steel Nugget" immersiveengineering:metal:28
+1 "Refined Uranium" ic2:ingot:8
+1 "Silver Nugget" immersiveengineering:metal:23
+1 "Electrum Nugget" immersiveengineering:metal:27
+1 "Iron Nugget" immersiveengineering:metal:29
+1 "Industrial Credit" ic2:crafting:38
+1 "Copper Nugget" immersiveengineering:metal:20
 1 "Aluminium Nugget" immersiveengineering:metal:21
+1 "Lead Nugget" immersiveengineering:metal:22
+1 "Iron Nugget" thaumcraft:nugget:0
 1 "Dragonforge Ice Core" iceandfire:dragonforge_ice_core:0
 1 "Dragonforge Fire Core" iceandfire:dragonforge_fire_core:0
-1 "ic2.dust.small_lapis" ic2:dust:22
-1 "ic2.dust.small_obsidian" ic2:dust:25
-1 "ic2.dust.small_emerald" ic2:dust:35
-1 "ic2.dust.small_bronze" ic2:dust:18
-1 "ic2.dust.small_sulfur" ic2:dust:27
-1 "ic2.misc_resource.ashes" ic2:misc_resource:0
+1 "Tiny Pile of Lapis Dust" ic2:dust:22
+1 "Tiny Pile of Obsidian Dust" ic2:dust:25
+1 "Tiny Pile of Emerald Dust" ic2:dust:35
+1 "Tiny Pile of Bronze Dust" ic2:dust:18
+1 "Tiny Pile of Sulfur Dust" ic2:dust:27
+1 "Ashes" ic2:misc_resource:0
 1 "§k--§r Any §eDIFFERENT§r item §k--§r" contenttweaker:any_different_item:0:{display:{Lore:["§6Affect output amount§r"]}}
 1 "Alchemist's Stone" thaumicwonders:alchemist_stone:49150
 1 "Transmuter's Stone" thaumicwonders:transmuter_stone:49150
 1 "Alienist's Stone" thaumicwonders:alienist_stone:49150
 1 "Death Inventory List" tombmanygraves:death_list:0
-1 "§aLong Elixir" rustic:elixir:0:{enchantmentColor:2720000,ench:[{lvl:1s,id:36s}],display:{Name:"§aLong Elixir",Lore:["Increase duration of potion x10"]},PotionLong:1,ElixirEffects:[{Effect:"minecraft:speed",Duration:1728

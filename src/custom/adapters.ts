@@ -66,7 +66,12 @@ function bucketToFluid(
   })
 }
 
-function moveToCatalyst(rec: JEIECustomRecipe, predicate: (s: JEIESlot) => boolean) {
+function moveToCatalyst(rec: JEIECustomRecipe, predicate?: (s: JEIESlot) => boolean) {
+  if (!predicate) {
+    rec.catalyst = rec.input.items
+    rec.input.items = []
+    return
+  }
   (rec.catalyst ??= []).push(...rec.input.items.filter(s => predicate(s)))
   rec.input.items = rec.input.items.filter(s => !predicate(s))
 }
@@ -527,6 +532,12 @@ adapters.set(
   }
 )
 
+adapters.set(/botania__manaPool/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items = rec.input.items.filter(s => !s.stacks.some(i => i.name.startsWith('botania:pool')))
+  })
+})
+
 adapters.set(
   /inworldcrafting__(burn_item|exploding_blocks|itemtransform|fluid_to_fluid)/,
   (cat) => {
@@ -563,9 +574,17 @@ adapters.set(/exnihilocreatio__sieve/, (cat) => {
 })
 
 adapters.set(/exnihilocreatio__compost/, (cat) => {
-  cat.recipes.forEach(
-    rec => (rec.output.items = [getSlot('minecraft:dirt:0')])
+  const newRecipes: JEIECustomRecipe[] = []
+  cat.recipes.forEach((rec) => {
+    rec.input.items.forEach((slot) => {
+      newRecipes.push({
+        output: { items: [getSlot('minecraft:dirt:0')] },
+        input : { items: [slot] },
+      })
+    })
+  }
   )
+  cat.recipes = newRecipes
 })
 
 adapters.set(/exnihilocreatio__hammer/, (cat) => {
@@ -658,6 +677,27 @@ adapters.set(/requious__ic2_crops/, (cat, tools) => {
         stack.name = tools.getFullID(stack).replace(/,display:\{[^}]+\}/, '')
       })
     })
+  })
+})
+
+adapters.set(/requious__liquid_interaction/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    moveToCatalyst(rec)
+    rec.input.items = [getSlot('placeholder:ticks', 10)]
+  })
+})
+
+adapters.set(/requious__expire_in_block/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    moveToCatalyst(rec, s => s.x === 18)
+  })
+})
+
+adapters.set(/requious__nether_portal_spread/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    const single = rec.input.items[0]
+    single.stacks.push(...rec.input.items.slice(1).map(s => s.stacks).flat())
+    rec.input.items = [single]
   })
 })
 
@@ -812,6 +852,12 @@ adapters.set(/jetif/, (cat) => {
       const isFluid = (slot: JEIESlot) => slot.stacks.some(s => s.type === 'fluid')
       moveToCatalyst(rec, isFluid)
     }
+  })
+})
+
+adapters.set(/mysticalagradditions__tier_6_crop_jei/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items = rec.input.items.filter(slot => !slot.stacks.some(stack => stack.name.endsWith('_crop')))
   })
 })
 

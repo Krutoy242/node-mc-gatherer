@@ -4,22 +4,25 @@ export default function addRecipes(
   addRecipe('animania:wool:*', '9000x placeholder:ticks')
 
   Object.entries({
-    sheep_cheese_wheel   : 'milk_sheep',
-    goat_cheese_wheel    : 'milk_goat',
-    jersey_cheese_wheel  : 'milk_jersey',
-    holstein_cheese_wheel: 'milk_holstein',
-    friesian_cheese_wheel: 'milk_friesian',
-  }).forEach(([wheel, milk]) => {
+    sheep_cheese_wheel   : 'sheep',
+    goat_cheese_wheel    : 'goat',
+    jersey_cheese_wheel  : 'jersey',
+    holstein_cheese_wheel: 'holstein',
+    friesian_cheese_wheel: 'friesian',
+  }).forEach(([wheel, name]) => {
     addRecipe(
       `animania:${wheel}:0`,
-      `1000x fluid:${milk}`,
+      `1000x fluid:milk_${name}`,
       'animania:cheese_mold:0'
     )
+    const animal = `entity:animania:${(name === 'goat' ? '' : 'cow_') + name}`
     addRecipe(
-      `1000x fluid:${milk}`,
+      `1000x fluid:milk_${name}`,
       '300x placeholder:ticks',
-      '30000x placeholder:exploration'
+      animal
     )
+    addRecipe(animal, '30000x placeholder:exploration')
+    addRecipe(animal, 'animania:entity_egg_cow_random:0')
   })
   ;[
     'animania:blue_peacock_feather:0',

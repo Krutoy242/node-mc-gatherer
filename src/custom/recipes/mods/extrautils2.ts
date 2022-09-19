@@ -3,7 +3,7 @@ export default function addRecipes(
 ) {
   addRecipe(
     'dimension:-11325',
-    'placeholder:exploration',
+    'placeholder:ticks',
     'extrautils2:teleporter:1'
   )
   addRecipe('extrautils2:decorativesolid:8', 'extrautils2:decorativesolid:3', [

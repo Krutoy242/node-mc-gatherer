@@ -8,11 +8,12 @@ export interface CountableFunction {
 
 export function createFileLogger(logFileName: string): CountableFunction {
   let firstCall = true
-  const filePath = join('logs/', logFileName)
+  const clearFileName = logFileName.replace(/[/\\?%*:|"<>]/g, '_').substring(0, 60)
+  const filePath = join('logs/', clearFileName)
   const fnc = function (...args: unknown[]) {
     if (firstCall) {
       firstCall = false
-      mkdirSync(parse(`logs/${logFileName}`).dir, { recursive: true })
+      mkdirSync(parse(filePath).dir, { recursive: true })
       writeFileSync(filePath, '')
     }
 

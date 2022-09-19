@@ -9,3 +9,8 @@ addRecipe('conarm:boots_core:0:{Material:"ma.supremium"}', ['contenttweaker:supr
 addRecipe('conarm:leggings_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_leggings_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
 addRecipe('conarm:chest_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_chest_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
 addRecipe('conarm:helmet_core:0:{Material:"ma.supremium"}', ['contenttweaker:supremium_helmet_base:0', '496595x placeholder:xp'], ['minecraft:anvil:0', 'mysticalagriculture:master_infusion_crystal:0'])
+addRecipe('rats:feral_rat_claw:0', '300x actuallyadditions:item_hairy_ball:0')
+addRecipe('quark:soul_bead:0', '1000x actuallyadditions:item_hairy_ball:0')
+addRecipe('rats:marbled_cheese_rat_head:0', '1300x actuallyadditions:item_hairy_ball:0')
+addRecipe('64x botania:tinypotato:0', 'minecraft:potato:0', ['botania:pool:2', '63x placeholder:mana'])
+addRecipe('64x contenttweaker:compressed_garbage_pile:0', ['rats:contaminated_food:0', 'minecraft:coal:1', 'thermalfoundation:storage_resource:0', 'additionalcompression:charcoal_compressed:1', 'additionalcompression:charcoal_compressed:2', 'minecraft:coal_block:0', 'additionalcompression:logwood_compressed:0', 'additionalcompression:logwood_compressed:1', 'additionalcompression:logwood_compressed:2'], 'minecraft:crafting_table:0')

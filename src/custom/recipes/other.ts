@@ -28,4 +28,6 @@ export default function addRecipes(
   addRecipe('minecraft:silver_shulker_box:0', 'ore:shulkerBox')
   addRecipe('minecraft:white_shulker_box:0', 'ore:shulkerBox')
   addRecipe('minecraft:yellow_shulker_box:0', 'ore:shulkerBox')
+
+  addRecipe('minecraft:cobblestone:0', '10x placeholder:ticks', ['1000x fluid:lava', '1000x fluid:water'])
 }

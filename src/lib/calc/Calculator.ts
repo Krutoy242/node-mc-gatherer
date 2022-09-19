@@ -123,6 +123,7 @@ export default class Calculator {
         .map((r, i) => [i, r])
         .filter(([, r]) => r > 1)
         .sort(([, a], [, b]) => b - a)
+        .slice(0, 200)
         .map(
           ([i, r]) =>
             `${r}`.padEnd(6) + this.recipeStore[i].toString({ short: true })
