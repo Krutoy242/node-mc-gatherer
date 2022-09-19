@@ -49,7 +49,7 @@ export default function getNameMap(nameMapJsonTxt: string): NameMap {
 function parseTooltips(id: string, rawTooltip?: string): string[] | undefined {
   if (!rawTooltip) return
 
-  const lines = rawTooltip.split('\\n').filter((line) => {
+  const lines = rawTooltip.split(/\\n|\n/gm).filter((line) => {
     if (!line) return false
     const l = line.trim()
     if (!l) return false
