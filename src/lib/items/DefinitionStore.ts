@@ -58,7 +58,7 @@ export default class DefinitionStore
       const jeieEntry = nameMap?.[jeieId]
       if (jeieEntry) def.tooltips = jeieEntry.tooltips
 
-      function* attempts(): IterableIterator<Partial<BaseVisible> | undefined> {
+      function* attempts(): IterableIterator<BaseVisible | undefined> {
         yield {
           imgsrc : getIcon([source, entry, Number(meta), sNbt]),
           display: jeieEntry?.name,

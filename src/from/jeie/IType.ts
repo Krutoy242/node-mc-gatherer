@@ -7,6 +7,7 @@ export const iTypesMap: Record<string, IType> = {
   energy     : 'crazypants.enderio.base.integration.jei.energy.EnergyIngredient',
   fluid      : 'fluid',
   gas        : 'mekanism.api.gas.GasStack',
+  particle   : 'lach_01298.qmd.particle.ParticleStack',
   item       : 'item',
   liquid     : 'fluid',
   ore        : 'oredict',
