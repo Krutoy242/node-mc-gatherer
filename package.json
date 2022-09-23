@@ -30,7 +30,7 @@
     "csv-parse": "^5.3.0",
     "glob": "^7.2.3",
     "lodash": "^4.17.21",
-    "mc-icons": "^1.1.6",
+    "mc-icons": "^1.2.1",
     "numeral": "^2.0.6",
     "reflect-metadata": "^0.1.13",
     "terminal-kit": "^2.11.6",
