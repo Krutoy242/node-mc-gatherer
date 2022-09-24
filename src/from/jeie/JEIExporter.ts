@@ -47,8 +47,8 @@ export default async function append_JEIExporter(
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = glob.sync(lookupPath)
   const getById = recipeStore.definitionStore.getById
-  const makeStack = (i: JEIEItem) =>
-    new Stack(recipeStore.ingredientStore.fromItem(getById(fullId(i))))
+  const makeStack = (items: JEIEItem[]) =>
+    new Stack(recipeStore.ingredientStore.fromItems(items.map(i => getById(fullId(i)))))
 
   cli.startProgress('JEIE .json\'s', jsonList.length)
 
@@ -78,7 +78,7 @@ export default async function append_JEIExporter(
     if (!category.recipes.length) return
 
     const customRecipes: JEIECustomRecipe[] = category.recipes
-    const defaultCatalysts = category.catalysts.map(makeStack)
+    const defaultCatalysts = category.catalysts.length ? makeStack(category.catalysts) : []
 
     let recipesLength = customRecipes.length
     customRecipes.forEach((rec) => {

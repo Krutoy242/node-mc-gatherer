@@ -93,18 +93,6 @@ adapters.set(
   cat => (cat.recipes = [])
 )
 
-// Take only first item as catalyst blacklist
-adapters.set(
-  /^(?!.*(extendedcrafting__ender_crafting|iceandfire__(fire|ice)_dragon_forge))/,
-  (cat) => {
-    cat.catalysts = cat.catalysts.slice(0, 1)
-  }
-)
-
-adapters.set(/iceandfire__(fire|ice)_dragon_forge/, (cat) => {
-  cat.catalysts = [cat.catalysts[1]]
-})
-
 adapters.set(/minecraft__crafting/, (cat, tools) => {
   // Remove useless jetpack recipes
   cat.recipes = cat.recipes.filter(
@@ -187,15 +175,9 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
 })
 
 adapters.set(/tconstruct__smeltery/, (cat) => {
-  cat.catalysts = getIngr('tconstruct:smeltery_controller:0').stacks
-
   cat.recipes.forEach((rec) => {
     rec.output.items = [rec.output.items[0]]
   })
-})
-
-adapters.set(/tconstruct__alloy/, (cat) => {
-  cat.catalysts = getIngr('tconstruct:smeltery_controller:0').stacks
 })
 
 adapters.set(/minecraft__brewing/, (cat) => {
@@ -456,7 +438,6 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
 })
 
 adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
-  cat.catalysts = [getIngr('thaumcraft:arcane_workbench:0').stacks[0]]
   cat.recipes.forEach((rec) => {
     rec.input.items.concat(rec.output.items.slice(1))
     rec.output.items = [rec.output.items[0]]

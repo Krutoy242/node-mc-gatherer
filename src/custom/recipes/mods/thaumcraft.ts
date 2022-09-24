@@ -37,4 +37,20 @@ export default function addRecipes(
   addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"ordo"}]}', 'thaumcraft:crystal_ordo:0')
   addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}', 'thaumcraft:crystal_perditio:0')
   addRecipe('2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"vitium"}]}', 'thaumcraft:crystal_vitium:0')
+
+  addRecipe('thaumcraft:crystal_essence:*', ['thaumcraft:nugget:9'], 'thaumcraft:crucible:0')
+
+  addRecipe([
+    '10x thaumcraft:crystal_essence:*',
+    '1x thaumcraft:cluster:6',
+    '1x thaumcraft:cluster:5',
+    '1x thaumcraft:cluster:4',
+    '1x thaumcraft:cluster:3',
+    '1x thaumcraft:cluster:2',
+    '1x thaumcraft:cluster:1',
+    '1x thaumcraft:cluster:0',
+  ], '100x thaumcraft:stone_porous:0'
+  )
+
+  addRecipe('thaumcraft:stone_porous:0', ['minecraft:stone:*', '6000x placeholder:ticks'], 'thaumcraft:crucible:0')
 }
