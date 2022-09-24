@@ -11,6 +11,7 @@ import { join } from 'path'
 import chalk from 'chalk'
 import glob from 'glob'
 
+import { parse as csvParseSync } from 'csv-parse/sync'
 import { IngredientStore } from './api'
 import applyCustoms from './custom/customs'
 import getMiningPlaceholder from './custom/mining_levels'
@@ -80,8 +81,18 @@ export default async function mcGather(
     })
   }
 
+  const modMap = runTask('Loading mod list', {
+    'textSource': fromTellme('mod-list-csv'),
+    'action'    : text => Object.fromEntries(
+      (csvParseSync(text, { columns: !0 }) as { ModID: string }[])
+        .map(l => [l.ModID, true])
+    ),
+    'moreInfo': info => info.result ? `Mods: ${cli.num(Object.keys(info.result).length)}` : '',
+    '⚠️'       : chalk`Tellme file {green mod-list-csv} not found. Custom recipes for ALL MODS would be added.`,
+  })
+
   await runTask('Add custom recipes', {
-    action  : () => applyCustoms(recipesStore),
+    action  : () => applyCustoms(recipesStore, modMap),
     moreInfo: info => `Recipes: ${cli.num(info.addedRecs)}`,
   })
 

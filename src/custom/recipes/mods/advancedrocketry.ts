@@ -1,7 +1,9 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
-  (
+  addRecipe('placeholder:jackhammer:2', 'advancedrocketry:jackhammer:0')
+
+  ;(
     [
       [['advancedrocketry:rocketbuilder:0'], [100]],
       [
