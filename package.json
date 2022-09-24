@@ -18,8 +18,8 @@
   "scripts": {
     "build": "tsc",
     "show-unused-exports": "npx ts-prune",
-    "run": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\" --output=\"../src/assets\"",
-    "run:herodotus": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Herodotus\" --output=\"../src/assets\""
+    "run:e2ee": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Enigmatica2Expert - Extended\" --output=\"../src/assets/data/e2ee\"",
+    "run:herodotus": "ts-node src/cli.ts --mc=\"D:/mc_client/Instances/Herodotus\" --output=\"../src/assets/data/herodotus\""
   },
   "engines": {
     "node": ">=10"

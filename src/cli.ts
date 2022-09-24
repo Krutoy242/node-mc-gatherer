@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
-import fs from 'fs'
-import { join } from 'path'
+import { join, parse } from 'path'
+import { mkdirSync, writeFileSync } from 'fs'
 
 import { terminal as term } from 'terminal-kit'
 import yargs from 'yargs'
@@ -14,15 +14,16 @@ import mcGather from '.'
 const argv = yargs(process.argv.slice(2))
   .options({
     mc: {
-      alias   : 'm',
-      type    : 'string',
-      describe: 'Path to minecraft folder',
+      alias       : 'm',
+      type        : 'string',
+      describe    : 'Path to minecraft folder',
+      demandOption: true,
     },
     output: {
-      alias   : 'o',
-      type    : 'string',
-      describe: 'Output dir path',
-      default : '.',
+      alias       : 'o',
+      type        : 'string',
+      describe    : 'Output dir path',
+      demandOption: true,
     },
     jeie: {
       type    : 'boolean',
@@ -46,7 +47,8 @@ const argv = yargs(process.argv.slice(2))
   .parseSync()
 
 function saveText(txt: string, filename: string) {
-  fs.writeFileSync(filename, txt)
+  mkdirSync(parse(filename).dir, { recursive: true })
+  writeFileSync(filename, txt)
 }
 
 function saveObjAsJson(obj: any, filename: string) {
@@ -56,16 +58,16 @@ function saveObjAsJson(obj: any, filename: string) {
 if (!argv.mc) throw new Error('Arguments must include --mc')
 ;(async () => {
   const cli = new CLIHelper()
-  const exportData = await mcGather(argv as any, cli)
+  const exportData = await mcGather(argv, cli)
   saveData(exportData)
   await prompt(exportData)
   term.processExit(0)
 })()
 
 function saveData(exportData: ExportData) {
-  saveText(exportData.store.csv(), join(argv.output, 'data_items.csv'))
-  saveObjAsJson(exportData.recipes, join(argv.output, 'data_recipes.json'))
-  saveObjAsJson(exportData.oreDict, join(argv.output, 'data_oredict.json'))
+  saveText(exportData.store.csv(), join(argv.output, 'items.csv'))
+  saveObjAsJson(exportData.recipes, join(argv.output, 'recipes.json'))
+  saveObjAsJson(exportData.oreDict, join(argv.output, 'oredict.json'))
 }
 
 async function prompt(exportData: ExportData) {
