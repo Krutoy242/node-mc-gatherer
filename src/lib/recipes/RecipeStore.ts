@@ -8,6 +8,7 @@ import type DefinitionStore from '../items/DefinitionStore'
 import Recipe from './Recipe'
 
 const noReqLog = createFileLogger('noRequirmentRecipe.log')
+const noInpLog = createFileLogger('noInputs.log')
 
 type AnyIngredient = DefIngrStack | string
 type AnyIngredients = AnyIngredient | AnyIngredient[] | undefined
@@ -46,8 +47,9 @@ export default class RecipeStore {
     )
 
     if (!outputs.length) return
-    if (!inputs.length && !catalysts?.length) {
-      noReqLog(categoryName, ...outputs.map(o => o.toString()), '\n')
+    if (!inputs.length) {
+      if (!catalysts?.length) noReqLog(categoryName, ...outputs, '\n')
+      else noInpLog(categoryName, ...outputs, '\n')
       return
     }
 

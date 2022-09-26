@@ -14,4 +14,5 @@ export default function addRecipes(
   )
   addRecipe('tconstruct:rack:0', '3x ore:slabWood', 'minecraft:crafting_table:0')
   addRecipe('tconstruct:rack:1', '3x ore:slabWood', 'minecraft:crafting_table:0')
+  addRecipe('tconstruct:materials:19', ['tconstruct:materials:18', '160x placeholder:xp'], 'minecraft:bookshelf:0')
 }

@@ -106,7 +106,8 @@ export default function append_JER(
       ?.map(drop => getDrops(blockDef, drop))
       .filter((s): s is DefIngrStack => !!s)
 
-    if (drops?.length) recipesStore.addRecipe('JER_Drops', drops, block, miningPH)
+    const isQuarkPot = drops?.some(i => i.it.id.includes('minecraft:flower_pot'))
+    if (drops?.length && !isQuarkPot) recipesStore.addRecipe('JER_Drops', drops, block, miningPH)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 

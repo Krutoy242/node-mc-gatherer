@@ -7,7 +7,7 @@ export default function getMiningPlaceholder(
   if (!blockMinings) return
 
   const bMining = blockMinings[blockId]
-  if (!bMining) return
+  if (!bMining || bMining.hardness < 0) return
 
   const toolClass = bMining.toolClass === 'null' ? 'pickaxe' : bMining.toolClass
   return `placeholder:${toolClass}:${Math.max(0, bMining.level)}`

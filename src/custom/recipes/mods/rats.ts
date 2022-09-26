@@ -1,6 +1,7 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
+  addRecipe('8x rats:tiny_coin:0', ['rats:rat_upgrade_aristocrat:0', '1000x placeholder:ticks'])
   addRecipe('dimension:-8', 'rats:chunky_cheese_token:0')
   addRecipe(
     'rats:tiny_coin:0',
@@ -9,7 +10,7 @@ export default function addRecipes(
   )
   addRecipe(
     'rats:rat_nugget_ore:*',
-    '100000x placeholder:ticks',
+    '1000000x placeholder:ticks',
     'rats:rat_upgrade_ore_doubling:0'
   )
   addRecipe('rats:rat_nugget:0', '730x placeholder:ticks', 'rats:raw_rat:0')

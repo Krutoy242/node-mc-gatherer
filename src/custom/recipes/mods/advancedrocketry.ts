@@ -16,7 +16,7 @@ export default function addRecipes(
     ] as [string[], number[]][]
   ).forEach(([catl, arr]) =>
     arr.forEach(dim =>
-      addRecipe(`dimension:${dim}`, '10000x fluid:rocketfuel', catl)
+      addRecipe(`dimension:${dim}`, '10000x fluid:astralsorcery.liquidstarlight', catl)
     )
   )
 }

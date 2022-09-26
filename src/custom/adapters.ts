@@ -66,14 +66,43 @@ function bucketToFluid(
   })
 }
 
-function moveToCatalyst(rec: JEIECustomRecipe, predicate?: (s: JEIESlot) => boolean) {
+type MovePredicate = (s: JEIESlot) => boolean
+function moveFromToList(
+  rec: JEIECustomRecipe,
+  fromName: keyof Omit<JEIECustomRecipe, 'catalyst'>,
+  toName: keyof JEIECustomRecipe,
+  predicate?: MovePredicate
+) {
+  const isToCatal = toName === 'catalyst'
+
   if (!predicate) {
-    rec.catalyst = rec.input.items
-    rec.input.items = []
+    if (isToCatal) rec[toName] = rec[fromName].items
+    else rec[toName].items = rec[fromName].items
+    rec[fromName].items = []
     return
   }
-  (rec.catalyst ??= []).push(...rec.input.items.filter(s => predicate(s)))
-  rec.input.items = rec.input.items.filter(s => !predicate(s))
+
+  if (isToCatal) rec[toName] ??= []
+  else rec[toName].items ??= []
+
+  const list = isToCatal ? rec[toName] : rec[toName].items
+  list!.push(...rec[fromName].items.filter(s => predicate(s)))
+  rec[fromName].items = rec[fromName].items.filter(s => !predicate(s))
+}
+
+const move = {
+  input: {
+    to: {
+      output  : (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'input', 'output', p),
+      catalyst: (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'input', 'catalyst', p),
+    },
+  },
+  output: {
+    to: {
+      input   : (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'input', 'input', p),
+      catalyst: (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'input', 'catalyst', p),
+    },
+  },
 }
 
 // Clear recipes for this entries
@@ -88,7 +117,8 @@ adapters.set(
       + '|petrified__burn__time'
       + '|ftbquests__lootcrates'
       + '|ftbquests__quests'
-      + '|xu2__machine__extrautils2__generator__culinary'
+      + '|xu2__machine__extrautils2__generator__.*'
+      + '|flux'
   ),
   cat => (cat.recipes = [])
 )
@@ -145,11 +175,10 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
 })
 
 adapters.set(/tconstruct__casting_table/, (cat) => {
-  const catalyst = [
+  cat.catalysts = [
     getIngr('tconstruct:casting:0'),
     getIngr('tconstruct:casting:1'),
-  ]
-  cat.catalysts = catalyst.map(g => g.stacks[0])
+  ].map(g => g.stacks[0])
 
   const notConsumed = [
     'tcomplement:cast:',
@@ -157,7 +186,8 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
     'tconstruct:cast_custom:',
   ]
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    rec.input.items.splice(2, 1) // Remove Duplicate of input liquid
+    // Remove Duplicate of input liquid
+    rec.input.items.some((s, i) => s.stacks.some(item => item.type === 'fluid') && rec.input.items.splice(i, 1))
 
     rec.input.items.forEach((slot, i) => {
       // Cast is reusable, move it to catalysts
@@ -168,7 +198,7 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
         && notConsumed.some(c => cast.name.startsWith(c))
       ) {
         rec.input.items.splice(i, 1)
-        rec.catalyst = [...catalyst, getIngr(cast.name)]
+        rec.catalyst = [{ amount: 1, stacks: cat.catalysts }, getIngr(cast.name)]
       }
     })
   })
@@ -317,6 +347,12 @@ adapters.set(/forestry__fabricator/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     const slot = rec.input.items.find(slot => slot.x === 118 && slot.y === 0)
     if (slot) slot.amount = rec.output.items[0].amount / 33 // TODO max durability
+    rec.input.items.forEach((s) => {
+      if (s.stacks.some(i => i.name === 'glass')) {
+        s.stacks = [{ type: 'item', name: 'minecraft:sand:0' }]
+        s.amount = s.amount / 1000
+      }
+    })
   })
 })
 
@@ -550,7 +586,7 @@ adapters.set(/mekanism__osmiumcompressor/, (cat) => {
 
 adapters.set(/exnihilocreatio__sieve/, (cat) => {
   cat.recipes.forEach(rec =>
-    moveToCatalyst(rec, s => s.stacks.some(i => i.name.startsWith('exnihilocreatio:item_mesh')))
+    move.input.to.catalyst(rec, s => s.stacks.some(i => i.name.startsWith('exnihilocreatio:item_mesh')))
   )
 })
 
@@ -611,26 +647,19 @@ adapters.set(/minecraft__anvil/, (cat) => {
 })
 
 adapters.set(/chisel__chiseling/, (cat) => {
-  const catalyst = [getIngr('chisel:chisel_iron:0')]
-
-  const newRecipes: JEIECustomRecipe[] = []
   cat.recipes.forEach((rec) => {
-    const inp = rec.input.items[0]
-    rec.output.items.forEach((out) => {
-      newRecipes.push({
-        input : { items: [inp] },
-        output: { items: [out] },
-        catalyst,
-      })
-      newRecipes.push({
-        input : { items: [out] },
-        output: { items: [inp] },
-        catalyst,
-      })
-    })
-  })
+    const ids = [...new Set(([
+      ...rec.output.items,
+      ...rec.input.items,
+    ]).map(s => s.stacks.map(i => `${i.type}::${i.name}`)).flat())]
 
-  cat.recipes = newRecipes
+    const stacks = ids.map((tuple) => {
+      const o = tuple.split('::')
+      return ({ type: o[0] as JEIEItem['type'], name: o[1] })
+    })
+    rec.input.items = [{ x: 0, y: 0, amount: 1, stacks }]
+    rec.output.items = [{ x: 20, y: 0, amount: 1, stacks }]
+  })
 })
 
 adapters.set(/requious__scented_hive/, (cat) => {
@@ -663,14 +692,14 @@ adapters.set(/requious__ic2_crops/, (cat, tools) => {
 
 adapters.set(/requious__liquid_interaction/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    moveToCatalyst(rec)
+    move.input.to.catalyst(rec)
     rec.input.items = [getSlot('placeholder:ticks', 10)]
   })
 })
 
 adapters.set(/requious__expire_in_block/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    moveToCatalyst(rec, s => s.x === 18)
+    move.input.to.catalyst(rec, s => s.x === 18)
   })
 })
 
@@ -684,13 +713,22 @@ adapters.set(/requious__nether_portal_spread/, (cat) => {
 
 adapters.set(/^requious__.*/, (cat, tools) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    rec.input.items.forEach((slot) => {
+    [...rec.input.items, ...rec.output.items, ...rec.catalyst ?? []].forEach((slot) => {
       slot.stacks.forEach((stack) => {
         if (!stack.name.startsWith('draconicevolution:mob_soul:0:')) return
         const entityName = tools.getFullID(stack).match(/EntityName:"([^"]+)"/)![1]
         stack.name = `entity:${entityName}`
       })
     })
+
+    if (!rec.input.items.length) rec.input.items = [getSlot('placeholder:ticks', 2000)]
+  })
+})
+
+adapters.set(/requious__barrel_milking/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    move.input.to.catalyst(rec)
+    rec.input.items = [getSlot('placeholder:ticks', 20)]
   })
 })
 
@@ -831,7 +869,7 @@ adapters.set(/jetif/, (cat) => {
     // If we have no fluid output - this recipe not consume fluid
     if (!rec.output.items.some(slot => slot.stacks.some(s => s.type === 'fluid'))) {
       const isFluid = (slot: JEIESlot) => slot.stacks.some(s => s.type === 'fluid')
-      moveToCatalyst(rec, isFluid)
+      move.input.to.catalyst(rec, isFluid)
     }
   })
 })
@@ -867,6 +905,31 @@ adapters.set(/embers__melter|embers__geologic_separator/, (cat) => {
     const predicate = (s: JEIESlot) => s.stacks.some(i => i.type === 'fluid')
     rec.output.items = rec.input.items.filter(predicate)
     rec.input.items = rec.input.items.filter(s => !predicate(s))
+  })
+})
+
+adapters.set(/^electrolyzer$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    move.input.to.output(rec, s => s.y < 10)
+  })
+})
+
+adapters.set(/^infinityPowder$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items = [getSlot('placeholder:ticks', 400)]
+  })
+})
+
+adapters.set(/^it__electrolyticCrucibleBattery$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    move.input.to.output(rec, s => s.x < 20)
+  })
+})
+
+adapters.set(/^tweakedpetrol.+__pumpjack$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.output.items.forEach(s => s.amount = 1000)
+    rec.input.items = [getSlot('placeholder:ticks', 200)]
   })
 })
 

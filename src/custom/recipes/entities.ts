@@ -11,8 +11,8 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
   ])
 
   addRecipe(
-    'draconicevolution:mob_soul:0:{EntityName:"excompressum:angry_chicken"}',
-    '2000x placeholder:ticks'
+    'entity:excompressum:angry_chicken',
+    ['entity:minecraft:chicken', 'minecraft:stick:0']
   )
 
   addRecipe(
