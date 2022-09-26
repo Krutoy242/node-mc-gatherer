@@ -1,0 +1,38 @@
+xu2_machine_extrautils2__generator_lava 50x fluid:lava 
+xu2_machine_extrautils2__generator_lava 50x fluid:pyrotheum 
+electrolyzer 40x fluid:water 26x fluid:ic2hydrogen 13x fluid:ic2oxygen 
+modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:starlight_crafting_engine"} 
+modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:hydroponics"} 
+modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:advanced_thermionic_fabricator"} 
+modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:advanced_scrap_factory"} 
+modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:advanced_carpenter"} 
+it__electrolyticCrucibleBattery 1000x fluid:moltensalt 1000x fluid:chlorine 1000x fluid:moltensodium 
+it__electrolyticCrucibleBattery 500x fluid:water 1000x fluid:hydrogen 500x fluid:oxygen 50x fluid:deuterium 
+it__electrolyticCrucibleBattery 37500x fluid:brine 3750x fluid:liquidchlorine 3750x fluid:liquidsodium 
+jehc__presser harvestcraft:carrotjuiceitem:0 harvestcraft:veggiebaititem:0 
+jehc__presser harvestcraft:applejuiceitem:0 harvestcraft:fruitbaititem:0 
+jehc__grinder 2x harvestcraft:flouritem:0 
+jehc__grinder 2x harvestcraft:groundbeefitem:0 
+jehc__grinder 2x harvestcraft:groundmuttonitem:0 
+jehc__grinder 2x harvestcraft:groundfishitem:0 
+jehc__grinder 2x harvestcraft:groundfishitem:0 
+jehc__grinder 2x harvestcraft:groundporkitem:0 
+jehc__grinder 2x harvestcraft:flouritem:0 
+jehc__grinder 2x harvestcraft:groundchickenitem:0 
+jehc__grinder 2x harvestcraft:groundrabbititem:0 
+jehc__grinder 2x harvestcraft:groundfishitem:0 
+jehc__grinder 2x harvestcraft:groundfishitem:0 
+ie__arcFurnace appliedenergistics2:material:5 
+ie__crusher thermalfoundation:material:770 
+bioreactor_accepted_items 100x fluid:biofuel 
+thermalexpansion__pulverizer 4x thermalfoundation:material:800 
+thermalexpansion__pulverizer 3x minecraft:diamond:0 
+thermalexpansion__pulverizer minecraft:diamond:0 
+thermalexpansion__pulverizer minecraft:diamond:0 
+thermalexpansion__pulverizer minecraft:diamond:0 
+thermalexpansion__pulverizer 2x thermalfoundation:material:800 
+thermalexpansion__pulverizer minecraft:diamond:0 
+thermalexpansion__pulverizer 2x thermalfoundation:material:800 
+thermalexpansion__pulverizer minecraft:diamond:0 
+thermalexpansion__pulverizer 2x thermalfoundation:material:800 
+thermalexpansion__pulverizer 2x minecraft:diamond:0 
