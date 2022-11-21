@@ -7,7 +7,7 @@ import type {
   JEIEItem,
   JEIESlot,
   List,
-} from '../from/jeie/JEIECategory'
+} from '../../from/jeie/JEIECategory'
 
 const { max, min } = Math
 

@@ -26,8 +26,6 @@ export interface RecipeInfo {
   makeStack: (id: string, amount: number) => DefIngrStack
 }
 
-const adapterEntries = [...adapters.entries()]
-
 const relPath = 'exports/recipes'
 
 export default async function append_JEIExporter(
@@ -38,6 +36,7 @@ export default async function append_JEIExporter(
   mcDir: string,
   cli: CLIHelper
 ) {
+  const adapterEntries = [...adapters.entries()]
   const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
   const tools = {
     getFullID     : fullId,
