@@ -108,17 +108,16 @@ const move = {
 // Clear recipes for this entries
 adapters.set(
   new RegExp(
-    'EIOTank'
-      + '|GENDUSTRY_SAMPLER'
-      + '|GENDUSTRY_MUTATRON'
-      + '|GENDUSTRY_REPLICATOR'
-      + '|jei__information'
-      + '|jeresources__worldgen'
-      + '|petrified__burn__time'
-      + '|ftbquests__lootcrates'
-      + '|ftbquests__quests'
-      + '|xu2__machine__extrautils2__generator__.*'
-      + '|flux'
+    'GENDUSTRY_SAMPLER'
+      + '|^GENDUSTRY_MUTATRON$'
+      + '|^GENDUSTRY_REPLICATOR$'
+      + '|^jei__information$'
+      + '|^jeresources__worldgen$'
+      + '|^petrified__burn__time$'
+      + '|^ftbquests__lootcrates$'
+      + '|^ftbquests__quests$'
+      + '|^xu2__machine__extrautils2__generator__.*'
+      + '|^flux$'
   ),
   cat => (cat.recipes = [])
 )
@@ -146,7 +145,7 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
     rec.input.items.forEach((slot) => {
       // Change amount of tool ingredients
       slot.stacks.some((stack) => {
-        if (stack.type !== 'item') return false
+        if (stack.type !== 'item' && stack.type !== 'oredict') return false
         const def = stack.name.split(':').slice(0, 2).join(':')
         const durab = tools.toolDurability[def]
         if (!durab) return false

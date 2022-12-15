@@ -12,5 +12,6 @@ export function genToolDurability(): { [id: string]: number } {
     'matc:superiumcrystal'                           : 2048,
     'matc:supremiumcrystal'                          : 4096,
     'immersiveengineering:tool'                      : 100,
+    'ore:craftingToolForgeHammer'                    : 80, // TODO: There shouldnt be oredict
   }
 }

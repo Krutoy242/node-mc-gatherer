@@ -2,6 +2,10 @@ export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
   addRecipe(
+    '2x minecraft:string:0',
+    'exnihilocreatio:block_infested_leaves:0'
+  )
+  addRecipe(
     'exnihilocreatio:block_infested_leaves:0',
     'exnihilocreatio:block_infesting_leaves:0'
   )
