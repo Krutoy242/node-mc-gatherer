@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/indent */
 import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseVisible, Based, Labeled, Solvable } from '../../api'
-import { Label } from '../../api'
+import type { BaseVisible, Based, LabelSetup, Labeled, Solvable } from '../../api'
+
 import type { CSVLine } from '../../api/csv'
 import { Format, Pos, getCSVLine } from '../../tools/CsvDecorators'
-import Setable from '../calc/Setable'
 import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
+import Labelable from '../calc/Labelable'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 const siFormat = (n: number) => numeral(n).format('a').padStart(4)
@@ -17,7 +16,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
 export default class Definition
-  extends Setable
+  extends Labelable
   implements CSVLine, Based, BaseVisible, Labeled, Solvable<Definition> {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
@@ -36,7 +35,7 @@ export default class Definition
   imgsrc?: string
 
   @Pos(21.5)
-  labels = ''
+  override labels = ''
 
   @Pos(0)
   @Format(escapeCsv)
@@ -65,6 +64,7 @@ export default class Definition
     ).join(' ')
   }
 
+  /** Indexes of recipes that depends on this item */
   @Pos(22.5)
   get depIndexes(): string {
     return [...(this.dependencies ?? [])].map(r => r.index).join(' ')
@@ -148,16 +148,11 @@ export default class Definition
     return true
   }
 
-  finalize() {
-    const labelFns: {
-      [P in keyof typeof Label]: () => boolean | undefined
-    } = {
+  protected isLabeled(label: keyof typeof LabelSetup) {
+    return {
       Bottleneck: () => [...this.recipes ?? []].filter(r => r.purity > 0).length === 1,
-    }
-
-    Object.entries(labelFns).forEach(([k, f]) => {
-      if (f()) this.labels += Label[k as keyof typeof Label]
-    })
+      Alone     : () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
+    }[label]()
   }
 
   public get complexity_s(): string {

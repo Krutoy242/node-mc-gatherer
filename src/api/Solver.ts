@@ -11,8 +11,7 @@ type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 type ScendTail = Tail<Required<Parameters<ReturnType<(typeof descending | typeof ascending)>>>>
 
 export function solveLog<
-  T extends Solvable<T>,
-  U extends readonly any[]
+  T extends Solvable<T>, U extends readonly any[]
 >(
   topDef: T,
   logDefaultArgs: U,
