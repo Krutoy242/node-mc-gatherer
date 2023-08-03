@@ -3,31 +3,31 @@ lockfileVersion: 5.4
 specifiers:
   '@types/cli-progress': ^3.11.0
   '@types/glob': ^8.0.0
-  '@types/lodash': ^4.14.189
+  '@types/lodash': ^4.14.191
   '@types/numeral': ^2.0.2
-  '@types/terminal-kit': ^2.5.0
-  '@types/yargs': ^17.0.13
+  '@types/terminal-kit': ^2.5.1
+  '@types/yargs': ^17.0.17
   canvas: ^2.10.2
   cli-progress: ^3.11.2
-  csv-parse: ^5.3.2
-  eslint: ^8.28.0
+  csv-parse: ^5.3.3
+  eslint: ^8.29.0
   glob: ^7.2.3
   lodash: ^4.17.21
-  mc-icons: ^1.2.1
+  mc-icons: ^1.3.0
   numeral: ^2.0.6
   reflect-metadata: ^0.1.13
   terminal-kit: ^2.11.7
-  typescript: ^4.9.3
+  typescript: ^4.9.4
   typescript-memoize: ^1.1.1
   yargs: ^17.6.2
 
 dependencies:
   canvas: 2.10.2
   cli-progress: 3.11.2
-  csv-parse: 5.3.2
+  csv-parse: 5.3.3
   glob: 7.2.3
   lodash: 4.17.21
-  mc-icons: 1.2.1
+  mc-icons: 1.3.0
   numeral: 2.0.6
   reflect-metadata: 0.1.13
   terminal-kit: 2.11.7
@@ -37,12 +37,12 @@ dependencies:
 devDependencies:
   '@types/cli-progress': 3.11.0
   '@types/glob': 8.0.0
-  '@types/lodash': 4.14.189
+  '@types/lodash': 4.14.191
   '@types/numeral': 2.0.2
-  '@types/terminal-kit': 2.5.0
-  '@types/yargs': 17.0.13
-  eslint: 8.28.0
-  typescript: 4.9.3
+  '@types/terminal-kit': 2.5.1
+  '@types/yargs': 17.0.17
+  eslint: 8.29.0
+  typescript: 4.9.4
 
 packages:
 
@@ -154,8 +154,8 @@ packages:
       '@types/node': 18.7.3
     dev: true
 
-  /@types/lodash/4.14.189:
-    resolution: {integrity: sha512-kb9/98N6X8gyME9Cf7YaqIMvYGnBSWqEci6tiettE6iJWH1XdJz/PO8LB0GtLCG7x8dU3KWhZT+lA1a35127tA==}
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
   /@types/minimatch/3.0.5:
@@ -174,8 +174,8 @@ packages:
     resolution: {integrity: sha512-A8F30k2gYJ/6e07spSCPpkuZu79LCnkPTvqmIWQzNGcrzwFKpVOydG41lNt5wZXjSI149qjyzC2L1+F2PD/NUA==}
     dev: true
 
-  /@types/terminal-kit/2.5.0:
-    resolution: {integrity: sha512-wqVSMb+ndx6XJt7gCkxdPZC8EPJpyjJo9kLhXcmidVuXWVTsOwwe/wGC/7Lxx1NUmAgZHqnS6s+oedGa4EXsGQ==}
+  /@types/terminal-kit/2.5.1:
+    resolution: {integrity: sha512-u1zB3PcH7HWDwZDc5CaH+EfrpArzvTkEtioGhsu/FMOeOxq3wJxPRzoXTAP2UpRpPnpvc2+RQvYmaT7k1reS+Q==}
     dependencies:
       '@types/nextgen-events': 1.1.1
     dev: true
@@ -184,8 +184,8 @@ packages:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
     dev: true
 
-  /@types/yargs/17.0.13:
-    resolution: {integrity: sha512-9sWaruZk2JGxIQU+IhI1fhPYRcQ0UuTNuKuCW9bR5fp7qi2Llf7WDzNa17Cy7TKnh3cdxDOiyTu6gaLS0eDatg==}
+  /@types/yargs/17.0.17:
+    resolution: {integrity: sha512-72bWxFKTK6uwWJAVT+3rF6Jo6RTojiJ27FQo8Rf60AL+VZbzoVPnMFhKsUnbjR8A3BTCYQ7Mv3hnl8T0A+CX9g==}
     dependencies:
       '@types/yargs-parser': 21.0.0
     dev: true
@@ -341,8 +341,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /csv-parse/5.3.2:
-    resolution: {integrity: sha512-3jQ/JMs+voKxr4vwpmElS1d37J0o6rQdQyEKoPyA9HG8fYczpLaBJnmp5ykvkXL8ZeEGVP0qwLU645BZVykXKw==}
+  /csv-parse/5.3.3:
+    resolution: {integrity: sha512-kEWkAPleNEdhFNkHQpFHu9RYPogsFj3dx6bCxL847fsiLgidzWg0z/O0B1kVWMJUc5ky64zGp18LX2T3DQrOfw==}
     dev: false
 
   /cwise-compiler/1.1.3:
@@ -411,13 +411,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.28.0:
+  /eslint-utils/3.0.0_eslint@8.29.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.28.0
+      eslint: 8.29.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -431,8 +431,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.28.0:
-    resolution: {integrity: sha512-S27Di+EVyMxcHiwDrFzk8dJYAaD+/5SoWKxL1ri/71CRHsnJnRDPNt2Kzj24+MT9FDupf4aqqyqPrvI8MvQ4VQ==}
+  /eslint/8.29.0:
+    resolution: {integrity: sha512-isQ4EEiyUjZFbEKvEGJKKGBwXtvXX+zJbkVKCgTuB9t/+jUBcy8avhkEwWJecI15BkRkOYmvIM5ynbhRjEkoeg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -447,7 +447,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.28.0
+      eslint-utils: 3.0.0_eslint@8.29.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
       esquery: 1.4.0
@@ -806,8 +806,8 @@ packages:
       semver: 6.3.0
     dev: false
 
-  /mc-icons/1.2.1:
-    resolution: {integrity: sha512-R8gYVYYZzQFGgy9hYGNLI/uFeD8/G7YfMTKxCA67G5VnLkCI+hV3mm3aOqQier9hh2OhlRjeL0mmVmgPR0hacw==}
+  /mc-icons/1.3.0:
+    resolution: {integrity: sha512-8sxFguU9wMOqXSewDzW6pscd4h1tmgmg81XnzLjxUvWSDduD1UNdk1kA8clCdzooNs23ezatoPpBZvnZ3Q1R5Q==}
     engines: {node: '>=14.16'}
     hasBin: true
     dependencies:
@@ -1196,8 +1196,8 @@ packages:
     resolution: {integrity: sha512-GQ90TcKpIH4XxYTI2F98yEQYZgjNMOGPpOgdjIBhaLaWji5HPWlRnZ4AeA1hfBxtY7bCGDJsqDDHk/KaHOl5bA==}
     dev: false
 
-  /typescript/4.9.3:
-    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
