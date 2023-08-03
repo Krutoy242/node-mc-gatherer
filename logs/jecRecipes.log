@@ -12,7 +12,6 @@ addRecipe('conarm:helmet_core:0:{Material:"ma.supremium"}', ['contenttweaker:sup
 addRecipe('rats:feral_rat_claw:0', '300x actuallyadditions:item_hairy_ball:0')
 addRecipe('quark:soul_bead:0', '1000x actuallyadditions:item_hairy_ball:0')
 addRecipe('rats:marbled_cheese_rat_head:0', '1300x actuallyadditions:item_hairy_ball:0')
-addRecipe('64x botania:tinypotato:0', 'minecraft:potato:0', ['botania:pool:2', '63x placeholder:mana'])
 addRecipe('64x contenttweaker:compressed_garbage_pile:0', ['rats:contaminated_food:0', 'minecraft:coal:1', 'thermalfoundation:storage_resource:0', 'additionalcompression:charcoal_compressed:1', 'additionalcompression:charcoal_compressed:2', 'minecraft:coal_block:0', 'additionalcompression:logwood_compressed:0', 'additionalcompression:logwood_compressed:1', 'additionalcompression:logwood_compressed:2'], 'minecraft:crafting_table:0')
 addRecipe('placeholder:pickaxe:0', 'tconstruct:pick_head:0:{Material:"flint"}')
 addRecipe('placeholder:pickaxe:1', 'tconstruct:pick_head:0:{Material:"copper"}')
@@ -79,3 +78,4 @@ addRecipe('placeholder:shovel:13', 'tconstruct:shovel_head:0:{Material:"draconic
 addRecipe('placeholder:shovel:14', 'tconstruct:shovel_head:0:{Material:"chaotic_metal"}')
 addRecipe('placeholder:shovel:15', 'tconstruct:shovel_head:0:{Material:"infinity_metal"}')
 addRecipe('mysticalagriculture:crafting:0', ['8x ic2:crop_res:5', 'ore:seed', '1000x placeholder:ticks'])
+addRecipe('botania_tweaks:compressed_tiny_potato_8:0', ['43046721x placeholder:mana', 'minecraft:potato:0'], 'botania:pool:0')

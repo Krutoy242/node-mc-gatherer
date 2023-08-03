@@ -1,28 +1,48 @@
 xu2_machine_extrautils2__generator_lava 50x fluid:lava 
 xu2_machine_extrautils2__generator_lava 50x fluid:pyrotheum 
 electrolyzer 40x fluid:water 26x fluid:ic2hydrogen 13x fluid:ic2oxygen 
-modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:starlight_crafting_engine"} 
-modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:hydroponics"} 
-modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:advanced_thermionic_fabricator"} 
-modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:advanced_scrap_factory"} 
-modularmachinery__preview modularmachinery:itemblueprint:0:{dynamicmachine:"modularmachinery:advanced_carpenter"} 
+modularmachinery__preview modularmachinery:itemblueprint:0 
+modularmachinery__preview modularmachinery:itemblueprint:0 
+modularmachinery__preview modularmachinery:itemblueprint:0 
+modularmachinery__preview modularmachinery:itemblueprint:0 
+modularmachinery__preview modularmachinery:itemblueprint:0 
 it__electrolyticCrucibleBattery 1000x fluid:moltensalt 1000x fluid:chlorine 1000x fluid:moltensodium 
 it__electrolyticCrucibleBattery 500x fluid:water 1000x fluid:hydrogen 500x fluid:oxygen 50x fluid:deuterium 
 it__electrolyticCrucibleBattery 37500x fluid:brine 3750x fluid:liquidchlorine 3750x fluid:liquidsodium 
+tweakedexcavation__excavator minecraft:iron_ore:0 thermalfoundation:ore:5 thermalfoundation:ore:1 
+tweakedexcavation__excavator minecraft:iron_ore:0 minecraft:gold_ore:0 
+tweakedexcavation__excavator minecraft:iron_ore:0 thermalfoundation:material:771 
+tweakedexcavation__excavator thermalfoundation:ore:4 libvulpes:ore0:8 
+tweakedexcavation__excavator thermalfoundation:ore:0 minecraft:gold_ore:0 thermalfoundation:ore:5 
+tweakedexcavation__excavator thermalfoundation:ore:1 
+tweakedexcavation__excavator minecraft:gold_ore:0 thermalfoundation:ore:0 thermalfoundation:ore:5 
+tweakedexcavation__excavator thermalfoundation:ore:5 thermalfoundation:ore:6 minecraft:iron_ore:0 
+tweakedexcavation__excavator thermalfoundation:ore:6 thermalfoundation:ore:5 
+tweakedexcavation__excavator immersiveengineering:ore:5 thermalfoundation:ore:3 
+tweakedexcavation__excavator minecraft:quartz_ore:0 appliedenergistics2:quartz_ore:0 
+tweakedexcavation__excavator thermalfoundation:ore:3 thermalfoundation:ore:2 
+tweakedexcavation__excavator thermalfoundation:ore:3 thermalfoundation:ore:2 
+tweakedexcavation__excavator thermalfoundation:ore:2 thermalfoundation:ore:3 
+tweakedexcavation__excavator minecraft:lapis_ore:0 minecraft:iron_ore:0 thermalfoundation:material:771 
+tweakedexcavation__excavator minecraft:redstone_ore:0 biomesoplenty:gem_ore:1 thaumcraft:ore_cinnabar:0 thermalfoundation:material:771 
+tweakedexcavation__excavator minecraft:coal_ore:0 minecraft:diamond_ore:0 minecraft:emerald_ore:0 
+tweakedexcavation__excavator minecraft:clay:0 minecraft:sand:0 minecraft:gravel:0 
+tweakedexcavation__excavator thermalfoundation:ore:1 mekanism:oreblock:0 thermalfoundation:ore:2 
+tweakedexcavation__excavator nuclearcraft:ore:5 nuclearcraft:ore:3 
+tweakedexcavation__excavator actuallyadditions:block_misc:3 minecraft:coal_ore:0 
 jehc__presser harvestcraft:carrotjuiceitem:0 harvestcraft:veggiebaititem:0 
 jehc__presser harvestcraft:applejuiceitem:0 harvestcraft:fruitbaititem:0 
-jehc__grinder 2x harvestcraft:flouritem:0 
 jehc__grinder 2x harvestcraft:groundbeefitem:0 
-jehc__grinder 2x harvestcraft:groundmuttonitem:0 
 jehc__grinder 2x harvestcraft:groundfishitem:0 
-jehc__grinder 2x harvestcraft:groundfishitem:0 
-jehc__grinder 2x harvestcraft:groundporkitem:0 
 jehc__grinder 2x harvestcraft:flouritem:0 
-jehc__grinder 2x harvestcraft:groundchickenitem:0 
+jehc__grinder 2x harvestcraft:groundporkitem:0 
 jehc__grinder 2x harvestcraft:groundrabbititem:0 
 jehc__grinder 2x harvestcraft:groundfishitem:0 
 jehc__grinder 2x harvestcraft:groundfishitem:0 
-ie__arcFurnace appliedenergistics2:material:5 
+jehc__grinder 2x harvestcraft:groundfishitem:0 
+jehc__grinder 2x harvestcraft:groundmuttonitem:0 
+jehc__grinder 2x harvestcraft:flouritem:0 
+jehc__grinder 2x harvestcraft:groundchickenitem:0 
 ie__crusher thermalfoundation:material:770 
 bioreactor_accepted_items 100x fluid:biofuel 
 thermalexpansion__pulverizer 4x thermalfoundation:material:800 

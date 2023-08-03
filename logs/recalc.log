@@ -1,200 +1,200 @@
-12     [minecraft__crafting] #88076 8x enderio:block_fused_quartz:12
-12     [minecraft__crafting] #88077 8x enderio:block_fused_quartz:12
-11     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #52492 12x aspect:Motus, 3x aspect:Potentia, 6x aspect:Herba, 12x aspect:Machina, aspect:Bestia, 3x aspect:Sensus, 46x aspect:Metallum
-11     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53645 33x aspect:Potentia, 23x aspect:Herba, 9x aspect:Machina, 8x aspect:Sensus, 5x aspect:Ventus, 76x aspect:Desiderium, 97x aspect:Metallum
-11     [minecraft__crafting] #79509 computercraft:turtle_advanced:0
-11     [minecraft__crafting] #85055 thermaldynamics:filter:1
-11     [minecraft__crafting] #86605 opencomputers:hologram2:0
-11     [minecraft__crafting] #86653 opencomputers:component:0
-11     [minecraft__crafting] #86671 opencomputers:component:20
-11     [minecraft__crafting] #86705 opencomputers:upgrade:21
-11     [minecraft__crafting] #86707 opencomputers:upgrade:23
-10     [ie__workbench] #9504 immersiveengineering:mold:0
-10     [ie__workbench] #9505 immersiveengineering:mold:1
-10     [ie__workbench] #9506 immersiveengineering:mold:2
-10     [ie__workbench] #9507 immersiveengineering:mold:3
-10     [ie__workbench] #9508 immersiveengineering:mold:4
-10     [ie__workbench] #9509 immersiveengineering:mold:5
-10     [ie__workbench] #9510 immersiveengineering:mold:6
-10     [ie__workbench] #9511 immersiveengineering:mold:7
-10     [integrateddynamicscompat__squeezer] #10696 4x minecraft:dye:9
-10     [THAUMCRAFT_INFUSION] #26197 thaumadditions:puriflower:0
-10     [THAUMCRAFT_INFUSION] #26253 thaumadditions:wormhole_mirror:0
-10     [THAUMCRAFT_INFUSION] #26271 thaumcraft:curio:6
-10     [THAUMCRAFT_INFUSION] #26347 thaumicaugmentation:gauntlet:1
-10     [minecraft__brewing] #30839 3x minecraft:splash_potion:0:{Potion:"minecraft:mundane"}
-10     [minecraft__brewing] #31217 3x minecraft:splash_potion:0:{Potion:"cofhcore:resistance2"}
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50883 15x aspect:Fluctus, 18x aspect:Motus, 34x aspect:Potentia, 15x aspect:Machina, 15x aspect:Ventus, 15x aspect:Desiderium, 15x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #51514 9x aspect:Aversio, 6x aspect:Herba, 7x aspect:Ordo, 39x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #52082 35x aspect:Motus, 3x aspect:Potentia, 2x aspect:Herba, 12x aspect:Machina, 15x aspect:Alienis, 46x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53846 27x aspect:Potentia, 5x aspect:Machina, 18x aspect:Desiderium, 39x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53854 26x aspect:Potentia, 15x aspect:Herba, 32x aspect:Praemunio, 22x aspect:Tenebrae, 22x aspect:Terra, 14x aspect:Desiderium, 93x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53855 26x aspect:Potentia, 15x aspect:Herba, 32x aspect:Praemunio, 22x aspect:Tenebrae, 22x aspect:Terra, 14x aspect:Desiderium, 93x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54088 15x aspect:Potentia, 12x aspect:Herba, aspect:Mortuus, 13x aspect:Permutatio, 55x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54326 8x aspect:Potentia, 24x aspect:Herba, 11x aspect:Alkimia, 11x aspect:Machina, 19x aspect:Terra, 7x aspect:Ventus, 90x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #61050 5x aspect:Herba, 5x aspect:Machina, 15x aspect:Tenebrae, 15x aspect:Ignis, 15x aspect:Terra, 5x aspect:Ventus, 40x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #64001 232x aspect:Draco, 294x aspect:Bestia, 298x aspect:Praemunio, 226x aspect:Ignis, 500x aspect:Desiderium, 74x aspect:Vitreus, 83x aspect:Metallum
-10     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #69241 aspect:Vitreus, 12x aspect:Metallum
-10     [minecraft__crafting] #77031 8x botania:quartz:3
-10     [minecraft__crafting] #78858 immersiveengineering:wooden_device0:6
-10     [minecraft__crafting] #79000 immersiveengineering:metal_device1:5
-10     [minecraft__crafting] #80257 bibliocraft:lanterniron:5
-10     [minecraft__crafting] #80258 bibliocraft:lanterngold:5
-10     [minecraft__crafting] #80291 bibliocraft:lanterniron:13
-10     [minecraft__crafting] #80292 bibliocraft:lanterngold:13
-10     [minecraft__crafting] #81770 rftools:redstone_module:0
-10     [minecraft__crafting] #82287 rats:rat_upgrade_elite_energy:0
-10     [minecraft__crafting] #82288 rats:rat_upgrade_dragon:0
-10     [minecraft__crafting] #83705 4x darkutils:filter:9
-10     [minecraft__crafting] #85053 2x thermaldynamics:filter:0
-10     [minecraft__crafting] #86601 opencomputers:disassembler:0
-10     [minecraft__crafting] #86651 opencomputers:hoverboots:0
-10     [minecraft__crafting] #86654 opencomputers:component:1
-10     [minecraft__crafting] #86684 opencomputers:upgrade:0
-10     [minecraft__crafting] #86696 opencomputers:upgrade:12
-10     [minecraft__crafting] #86697 opencomputers:upgrade:13
-10     [minecraft__crafting] #86698 opencomputers:upgrade:14
-10     [minecraft__crafting] #87052 enderio:item_extract_speed_upgrade:0
-10     [minecraft__crafting] #87992 8x enderio:block_fused_quartz:11
-10     [minecraft__crafting] #90037 contenttweaker:bee_diversity:0:{reward:1200,enchantmentColor:39423,ench:[{lvl:1s,id:38s}],total:13,last:1200,penalty:0,hashes:{}}
-10     [minecraft__crafting] #91120 computercraft:computer:0
-10     [minecraft__crafting] #91121 computercraft:computer:16384
-10     [minecraft__crafting] #91272 enderio:block_electric_light:0
-9      [jehc__shippingbin] #6901 minecraft:emerald:0
-9      [requious__scented_hive] #7614 forestry:beehives:0
-9      [hydrator] #9846 minecraft:mycelium:0
-9      [bdew__jeibees__mutation__rootBees] #9901 forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated",UID1:"forestry.speciesCultivated"},{Slot:1b,UID0:"forestry.speedFast",UID1:"forestry.speedFast"},{Slot:2b,UID0:"forestry.lifespanShortest",UID1:"forestry.lifespanShortest"},{Slot:3b,UID0:"forestry.fertilityNormal",UID1:"forestry.fertilityNormal"},{Slot:4b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:5b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:6b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:7b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:8b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:9b,UID0:"forestry.flowersVanilla",UID1:"forestry.flowersVanilla"},{Slot:10b,UID0:"forestry.floweringSlowest",UID1:"forestry.floweringSlowest"},{Slot:11b,UID0:"forestry.territoryAverage",UID1:"forestry.territoryAverage"},{Slot:12b,UID0:"forestry.effectNone",UID1:"forestry.effectNone"}]},Mate:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated",UID1:"forestry.speciesCultivated"},{Slot:1b,UID0:"forestry.speedFast",UID1:"forestry.speedFast"},{Slot:2b,UID0:"forestry.lifespanShortest",UID1:"forestry.lifespanShortest"},{Slot:3b,UID0:"forestry.fertilityNormal",UID1:"forestry.fertilityNormal"},{Slot:4b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:5b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:6b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:7b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:8b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:9b,UID0:"forestry.flowersVanilla",UID1:"forestry.flowersVanilla"},{Slot:10b,UID0:"forestry.floweringSlowest",UID1:"forestry.floweringSlowest"},{Slot:11b,UID0:"forestry.territoryAverage",UID1:"forestry.territoryAverage"},{Slot:12b,UID0:"forestry.effectNone",UID1:"forestry.effectNone"}]}}
-9      [integrateddynamicscompat__squeezer] #10698 4x minecraft:dye:14
-9      [integrateddynamicscompat__squeezer] #10699 4x minecraft:dye:1
-9      [integrateddynamicscompat__squeezer] #10700 4x minecraft:dye:7
-9      [integrateddynamicscompat__squeezer] #10701 4x minecraft:dye:13
-9      [integrateddynamicscompat__mechanicalSqueezer] #10926 6x minecraft:dye:14
-9      [integrateddynamicscompat__mechanicalSqueezer] #10927 6x minecraft:dye:1
-9      [botania__manaPool] #14483 4x botania:quartz:3
-9      [botania__manaPool] #14530 4x minecraft:brick:0
-9      [actuallyadditions__crushing] #15827 3x minecraft:dye:7
-9      [xu2_machine_extrautils2__crusher] #17264 2x minecraft:dye:9
-9      [xu2_machine_extrautils2__crusher] #17359 thermalfoundation:material:864, minecraft:dye:13
-9      [xu2_machine_extrautils2__crusher] #17437 3x thermalfoundation:material:66, thermalfoundation:material:67
-9      [THAUMCRAFT_CRUCIBLE] #19166 thaumcraft:alumentum:0
-9      [THAUMCRAFT_CRUCIBLE] #19172 thaumcraft:seal:13
-9      [THAUMCRAFT_CRUCIBLE] #19243 thaumcraft:seal:1
-9      [THAUMCRAFT_CRUCIBLE] #19267 thaumcraft:seal:5
-9      [THAUMCRAFT_CRUCIBLE] #19320 thaumcraft:seal:15
-9      [THAUMCRAFT_CRUCIBLE] #19321 thaumictinkerer:energetic_nitor:0
-9      [minecraft__smelting] #25111 minecraft:gold_ingot:0
-9      [minecraft__smelting] #25112 minecraft:iron_ingot:0
-9      [minecraft__smelting] #25233 minecraft:gold_ingot:0
-9      [minecraft__smelting] #25234 minecraft:iron_ingot:0
-9      [minecraft__smelting] #25585 minecraft:gold_ingot:0
-9      [minecraft__smelting] #25586 minecraft:iron_ingot:0
-9      [minecraft__smelting] #25589 minecraft:iron_ingot:0
-9      [minecraft__smelting] #25590 minecraft:gold_ingot:0
-9      [THAUMCRAFT_INFUSION] #26193 thaumadditions:seal_symbol:0:{Aspect:"motus"}
-9      [THAUMCRAFT_INFUSION] #26199 thaumcraft:hand_mirror:0
-9      [THAUMCRAFT_INFUSION] #26234 thaumicaugmentation:impetus_mirror:0
-9      [THAUMCRAFT_INFUSION] #26241 thaumadditions:seal_symbol:0:{Aspect:"sensus"}
-9      [THAUMCRAFT_INFUSION] #26243 thaumadditions:seal_symbol:0:{Aspect:"exitium"}
-9      [THAUMCRAFT_INFUSION] #26248 thaumadditions:seal_symbol:0:{Aspect:"ignis"}
-9      [THAUMCRAFT_INFUSION] #26267 thaumadditions:seal_symbol:0:{Aspect:"instrumentum"}
-9      [THAUMCRAFT_INFUSION] #26290 thaumicwonders:everburning_urn:0
-9      [THAUMCRAFT_INFUSION] #26321 thaumadditions:void_thaumometer:0
-9      [THAUMCRAFT_INFUSION] #26358 thaumcraft:causality_collapser:0
-9      [THAUMCRAFT_INFUSION] #26371 thaumcraft:mirror:0
-9      [THAUMCRAFT_INFUSION] #26378 thaumadditions:seal_symbol:0:{Aspect:"desiderium"}
-9      [THAUMCRAFT_INFUSION] #26384 thaumicaugmentation:rift_seed:1
-9      [THAUMCRAFT_INFUSION] #26410 thaumadditions:seal_symbol:0:{Aspect:"perditio"}
-9      [THAUMCRAFT_INFUSION] #26414 thaumcraft:mirror_essentia:0
-9      [THAUMCRAFT_ARCANE_WORKBENCH] #26425 thaumicaugmentation:void_recharge_pedestal:0
-9      [THAUMCRAFT_ARCANE_WORKBENCH] #26450 thaumicaugmentation:impetus_generator:0
-9      [THAUMCRAFT_ARCANE_WORKBENCH] #26557 thaumictinkerer:transvector_dislocator:0
-9      [minecraft__brewing] #30797 3x minecraft:potion:0:{Potion:"minecraft:mundane"}
-9      [minecraft__brewing] #30801 3x minecraft:potion:0:{Potion:"minecraft:mundane"}
-9      [minecraft__brewing] #30840 3x minecraft:splash_potion:0:{Potion:"minecraft:weakness"}
-9      [minecraft__brewing] #30865 3x minecraft:splash_potion:0:{Potion:"minecraft:mundane"}
-9      [minecraft__brewing] #30870 3x minecraft:splash_potion:0:{Potion:"minecraft:thick"}
-9      [minecraft__brewing] #30871 3x minecraft:potion:0:{Potion:"minecraft:leaping"}
-9      [minecraft__brewing] #30896 3x minecraft:splash_potion:0:{Potion:"minecraft:leaping"}
-9      [minecraft__brewing] #31034 3x minecraft:splash_potion:0:{Potion:"cofhcore:haste2"}
-9      [minecraft__brewing] #31098 3x minecraft:splash_potion:0:{Potion:"quark:strong_resistance"}
-9      [minecraft__brewing] #31448 3x minecraft:lingering_potion:0:{Potion:"potioncore:strong_weight"}
-9      [minecraft__brewing] #31614 3x minecraft:splash_potion:0:{Potion:"potioncore:strong_klutz"}
-9      [minecraft__brewing] #31618 3x minecraft:lingering_potion:0:{Potion:"potioncore:long_klutz"}
-9      [minecraft__brewing] #31654 3x minecraft:lingering_potion:0:{Potion:"potioncore:long_magic_inhibition"}
-9      [minecraft__brewing] #31785 3x minecraft:splash_potion:0:{Potion:"potioncore:strong_broken_armor"}
-9      [minecraft__brewing] #31788 3x minecraft:splash_potion:0:{Potion:"potioncore:long_broken_armor"}
-9      [minecraft__brewing] #32104 3x minecraft:splash_potion:0:{Potion:"potioncore:long_health_boost"}
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50852 2x aspect:Auram, 30x aspect:Herba, 28x aspect:Praecantatio, 7x aspect:Victus, 3x aspect:Terra, 22x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50909 7x aspect:Fluctus, 7x aspect:Motus, 4x aspect:Vacuos, 31x aspect:Herba, 7x aspect:Machina, 7x aspect:Ventus, 48x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50912 7x aspect:Fluctus, 7x aspect:Motus, 4x aspect:Vacuos, 31x aspect:Herba, 7x aspect:Machina, 7x aspect:Ventus, 45x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50913 7x aspect:Fluctus, 7x aspect:Motus, 4x aspect:Vacuos, 31x aspect:Herba, 7x aspect:Machina, 7x aspect:Ventus, 45x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50914 7x aspect:Fluctus, 7x aspect:Motus, 31x aspect:Herba, 7x aspect:Machina, 7x aspect:Ventus, 30x aspect:Desiderium, 30x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50937 7x aspect:Fluctus, 7x aspect:Motus, 37x aspect:Potentia, 7x aspect:Machina, 33x aspect:Ignis, 7x aspect:Ventus, 45x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50964 5x aspect:Fluctus, 33x aspect:Potentia, 5x aspect:Herba, 9x aspect:Machina, 5x aspect:Ventus, 18x aspect:Desiderium, 67x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50965 5x aspect:Fluctus, 5x aspect:Motus, 8x aspect:Potentia, 3x aspect:Herba, 5x aspect:Machina, 5x aspect:Ventus, 72x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50966 5x aspect:Fluctus, 5x aspect:Motus, 13x aspect:Potentia, 5x aspect:Machina, 5x aspect:Ventus, 14x aspect:Desiderium, 66x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50967 5x aspect:Fluctus, 24x aspect:Potentia, 5x aspect:Machina, 5x aspect:Ventus, 22x aspect:Desiderium, 21x aspect:Vitreus, 55x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #50972 5x aspect:Fluctus, 40x aspect:Potentia, 22x aspect:Herba, 9x aspect:Machina, 5x aspect:Ventus, 13x aspect:Desiderium, 125x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #51459 16x aspect:Aversio, 15x aspect:Potentia, 3x aspect:Herba, 7x aspect:Tenebrae, 22x aspect:Ignis, 7x aspect:Terra, 22x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #51460 16x aspect:Aversio, 15x aspect:Potentia, 3x aspect:Herba, 7x aspect:Tenebrae, 22x aspect:Ignis, 7x aspect:Terra, 22x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53577 45x aspect:Potentia, 7x aspect:Machina, 33x aspect:Desiderium, 65x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53623 36x aspect:Potentia, 5x aspect:Machina, 24x aspect:Desiderium, 6x aspect:Vitreus, 36x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53628 36x aspect:Potentia, 3x aspect:Herba, 11x aspect:Machina, aspect:Bestia, 8x aspect:Terra, 3x aspect:Sensus, 11x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53662 30x aspect:Potentia, 5x aspect:Machina, 23x aspect:Desiderium, 39x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53921 22x aspect:Potentia, 7x aspect:Herba, 20x aspect:Instrumentum, 11x aspect:Tenebrae, 33x aspect:Ignis, 11x aspect:Terra, 33x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53922 22x aspect:Potentia, 7x aspect:Herba, 20x aspect:Instrumentum, 11x aspect:Tenebrae, 33x aspect:Ignis, 11x aspect:Terra, 33x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #53923 22x aspect:Potentia, 7x aspect:Herba, 20x aspect:Instrumentum, 11x aspect:Tenebrae, 33x aspect:Ignis, 11x aspect:Terra, 33x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54013 18x aspect:Potentia, 3x aspect:Machina, 7x aspect:Tenebrae, 7x aspect:Ignis, 7x aspect:Terra, 13x aspect:Desiderium, 47x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54025 17x aspect:Potentia, 7x aspect:Machina, 7x aspect:Praecantatio, 18x aspect:Ordo, 15x aspect:Alienis, 22x aspect:Terra, 7x aspect:Ventus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54084 15x aspect:Potentia, 11x aspect:Herba, 20x aspect:Instrumentum, 7x aspect:Tenebrae, 22x aspect:Ignis, 7x aspect:Terra, 22x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54085 15x aspect:Potentia, 11x aspect:Herba, 20x aspect:Instrumentum, 7x aspect:Tenebrae, 22x aspect:Ignis, 7x aspect:Terra, 22x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54239 10x aspect:Potentia, 12x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54301 9x aspect:Potentia, 31x aspect:Herba, 11x aspect:Machina, 20x aspect:Terra, 30x aspect:Desiderium, 22x aspect:Vitreus, 15x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55077 7x aspect:Potentia, 7x aspect:Herba, 12x aspect:Praemunio, aspect:Mortuus, 3x aspect:Ordo, 7x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55484 5x aspect:Potentia, 47x aspect:Herba, 9x aspect:Cognitio, 4x aspect:Bestia, 4x aspect:Praemunio, 15x aspect:Fabrico, 16x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55509 5x aspect:Potentia, 2x aspect:Herba, 2x aspect:Ordo, 2x aspect:Ignis, 5x aspect:Lux, 4x aspect:Sensus, 9x aspect:Vitreus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55544 5x aspect:Potentia, aspect:Aqua, 3x aspect:Ignis, 5x aspect:Lux, 3x aspect:Sensus, 3x aspect:Aer
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #56327 aspect:Humanus, aspect:Praecantatio, aspect:Victus, aspect:Terra, aspect:Perditio, 2x aspect:Sensus, 3x aspect:Desiderium
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #56329 aspect:Humanus, 3x aspect:Vacuos, aspect:Praecantatio, aspect:Victus, aspect:Terra, aspect:Perditio, 2x aspect:Sensus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #59041 30x aspect:Herba, 15x aspect:Praemunio, aspect:Mortuus, 31x aspect:Ordo, 107x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #59242 21x aspect:Herba
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #59678 18x aspect:Herba, 3x aspect:Bestia, 3x aspect:Mortuus, 3x aspect:Sensus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #59811 15x aspect:Herba, 16x aspect:Instrumentum, 4x aspect:Praecantatio, 9x aspect:Ordo, 6x aspect:Terra, 5x aspect:Perditio, 20x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #60082 12x aspect:Herba, 8x aspect:Aqua, aspect:Mortuus, 13x aspect:Permutatio, 8x aspect:Terra, 11x aspect:Vitreus, 72x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #60181 10x aspect:Herba, 16x aspect:Instrumentum, 5x aspect:Praecantatio, 6x aspect:Ignis, 6x aspect:Terra, 5x aspect:Sensus, 33x aspect:Metallum
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #60773 7x aspect:Herba, 7x aspect:Cognitio, aspect:Praecantatio, 11x aspect:Praemunio
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #61608 3x aspect:Herba, 7x aspect:Cognitio, aspect:Praecantatio, 11x aspect:Praemunio
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #63511 3x aspect:Aqua, 15x aspect:Praecantatio, 9x aspect:Terra, 9x aspect:Sensus, 30x aspect:Desiderium, 30x aspect:Vitreus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #68094 6x aspect:Sensus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #68104 6x aspect:Sensus
-9      [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #69242 aspect:Vitreus
-9      [minecraft__crafting] #75170 minecraft:bed:6
-9      [minecraft__crafting] #75943 extrautils2:terraformer:3
-9      [minecraft__crafting] #76283 botania:dye:1
-9      [minecraft__crafting] #76773 botania:dye:9
-9      [minecraft__crafting] #76784 botania:dye:6
-9      [minecraft__crafting] #76812 botania:dye:12
-9      [minecraft__crafting] #76945 minecraft:mushroom_stew:0
-9      [minecraft__crafting] #76955 botania:dye:13
-9      [minecraft__crafting] #77084 botania:dye:3
-9      [minecraft__crafting] #77154 harvestcraft:vegetablesoupitem:0
-9      [minecraft__crafting] #77175 harvestcraft:tortillachipsitem:0
-9      [minecraft__crafting] #77232 harvestcraft:sundayhighteaitem:0
-9      [minecraft__crafting] #77319 harvestcraft:smoresitem:0
-9      [minecraft__crafting] #77321 harvestcraft:slimepieitem:0
-9      [minecraft__crafting] #77469 harvestcraft:pizzasoupitem:0
-9      [minecraft__crafting] #77539 harvestcraft:peachjellyitem:0
-9      [minecraft__crafting] #77605 harvestcraft:nachoesitem:0
-9      [minecraft__crafting] #77631 harvestcraft:mintchocolatechipicecreamitem:0
-9      [minecraft__crafting] #77647 harvestcraft:merveilleuxitem:0
-9      [minecraft__crafting] #77652 harvestcraft:meringuebombeitem:0
-9      [minecraft__crafting] #77674 harvestcraft:marshmellowchicksitem:0
-9      [minecraft__crafting] #77705 harvestcraft:lemonmeringueitem:0
-9      [minecraft__crafting] #77710 harvestcraft:lemoncupcakeitem:0
-9      [minecraft__crafting] #77722 harvestcraft:lamingtonitem:0
-9      [minecraft__crafting] #77898 harvestcraft:froglegstirfryitem:0
-9      [minecraft__crafting] #77942 harvestcraft:fishtacoitem:0
-9      [minecraft__crafting] #77959 harvestcraft:etonmessitem:0
-9      [minecraft__crafting] #78011 harvestcraft:cucumbersaladitem:0
-9      [minecraft__crafting] #78022 harvestcraft:crawfishetoufeeitem:0
-9      [minecraft__crafting] #78096 harvestcraft:chocolatebaconitem:0
+14     [minecraft__crafting] #90177 colossalchests:colossal_chest:6
+13     [THAUMCRAFT_INFUSION] #26449 thaumicwonders:everburning_urn:0
+13     [THAUMCRAFT_INFUSION] #26529 thaumadditions:void_elemental_pickaxe:0:{infench:[{id:4s,lvl:1s},{id:3s,lvl:2s}]}
+13     [THAUMCRAFT_ARCANE_WORKBENCH] #26738 thaumadditions:jar_eldritch:0
+13     [minecraft__crafting] #90171 colossalchests:colossal_chest:4
+13     [minecraft__crafting] #90174 colossalchests:colossal_chest:5
+13     [minecraft__crafting] #91016 colossalchests:chest_wall:6
+12     [inworldcrafting__exploding_blocks] #5606 2x contenttweaker:blasted_coal:0
+12     [xu2_machine_extrautils2__enchanter] #6473 extrautils2:decorativesolidwood:1
+12     [bdew__jeibees__mutation__rootBees] #10040 forestry:bee_queen_ge:0:{IsAnalyzed:1b,Health:10,MaxH:10,Genome:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated",UID1:"forestry.speciesCultivated"},{Slot:1b,UID0:"forestry.speedFast",UID1:"forestry.speedFast"},{Slot:2b,UID0:"forestry.lifespanShortest",UID1:"forestry.lifespanShortest"},{Slot:3b,UID0:"forestry.fertilityNormal",UID1:"forestry.fertilityNormal"},{Slot:4b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:5b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:6b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:7b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:8b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:9b,UID0:"forestry.flowersVanilla",UID1:"forestry.flowersVanilla"},{Slot:10b,UID0:"forestry.floweringSlowest",UID1:"forestry.floweringSlowest"},{Slot:11b,UID0:"forestry.territoryAverage",UID1:"forestry.territoryAverage"},{Slot:12b,UID0:"forestry.effectNone",UID1:"forestry.effectNone"}]},Mate:{Chromosomes:[{Slot:0b,UID0:"forestry.speciesCultivated",UID1:"forestry.speciesCultivated"},{Slot:1b,UID0:"forestry.speedFast",UID1:"forestry.speedFast"},{Slot:2b,UID0:"forestry.lifespanShortest",UID1:"forestry.lifespanShortest"},{Slot:3b,UID0:"forestry.fertilityNormal",UID1:"forestry.fertilityNormal"},{Slot:4b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:5b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:6b,UID0:"forestry.toleranceNone",UID1:"forestry.toleranceNone"},{Slot:7b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:8b,UID0:"forestry.boolFalse",UID1:"forestry.boolFalse"},{Slot:9b,UID0:"forestry.flowersVanilla",UID1:"forestry.flowersVanilla"},{Slot:10b,UID0:"forestry.floweringSlowest",UID1:"forestry.floweringSlowest"},{Slot:11b,UID0:"forestry.territoryAverage",UID1:"forestry.territoryAverage"},{Slot:12b,UID0:"forestry.effectNone",UID1:"forestry.effectNone"}]}}
+12     [thermalexpansion__pulverizer_petrotheum] #14174 4x thermalfoundation:material:68, minecraft:netherrack:0
+12     [thermalexpansion__pulverizer_petrotheum] #14226 4x minecraft:quartz:0, thermalfoundation:material:771
+12     [tcomplement__high_oven_mix] #15373 144x fluid:soularium
+12     [THAUMCRAFT_CRUCIBLE] #19473 jaopca:item_clusteraquamarine:0
+12     [forestry__fabricator] #21523 forestry:logs.vanilla.fireproof.0:2
+12     [forestry__fabricator] #21525 forestry:logs.fireproof.4:1
+12     [forestry__fabricator] #21526 forestry:logs.fireproof.4:0
+12     [forestry__fabricator] #21531 forestry:logs.fireproof.5:2
+12     [forestry__fabricator] #21537 forestry:logs.fireproof.0:1
+12     [forestry__fabricator] #21539 forestry:logs.fireproof.3:2
+12     [forestry__fabricator] #21541 forestry:logs.fireproof.2:2
+12     [forestry__fabricator] #21542 forestry:logs.fireproof.2:3
+12     [forestry__fabricator] #21543 forestry:logs.fireproof.4:3
+12     [forestry__fabricator] #21544 forestry:logs.vanilla.fireproof.0:1
+12     [forestry__fabricator] #21545 forestry:logs.fireproof.5:0
+12     [forestry__fabricator] #21546 forestry:logs.fireproof.5:3
+12     [forestry__fabricator] #21550 forestry:logs.vanilla.fireproof.0:3
+12     [forestry__fabricator] #21551 5x forestry:planks.vanilla.fireproof.0:4
+12     [forestry__fabricator] #21553 forestry:logs.fireproof.1:1
+12     [forestry__fabricator] #21557 forestry:logs.fireproof.0:3
+12     [forestry__fabricator] #21558 forestry:logs.fireproof.5:1
+12     [forestry__fabricator] #21566 5x forestry:planks.fireproof.0:2
+12     [forestry__fabricator] #21568 forestry:logs.fireproof.6:1
+12     [forestry__fabricator] #21569 forestry:logs.fireproof.0:2
+12     [forestry__fabricator] #21570 forestry:logs.vanilla.fireproof.1:1
+12     [forestry__fabricator] #21571 forestry:logs.fireproof.3:0
+12     [forestry__fabricator] #21576 forestry:logs.fireproof.1:2
+12     [forestry__fabricator] #21578 forestry:logs.fireproof.6:2
+12     [forestry__fabricator] #21583 forestry:logs.fireproof.1:0
+12     [forestry__fabricator] #21587 forestry:logs.fireproof.6:0
+12     [forestry__fabricator] #21589 forestry:logs.fireproof.2:0
+12     [forestry__fabricator] #21593 forestry:logs.fireproof.4:2
+12     [forestry__fabricator] #21598 forestry:logs.fireproof.1:3
+12     [forestry__fabricator] #21602 forestry:logs.fireproof.7:0
+12     [forestry__fabricator] #21605 forestry:logs.fireproof.6:3
+12     [forestry__fabricator] #21610 forestry:logs.vanilla.fireproof.1:0
+12     [forestry__fabricator] #21611 forestry:logs.fireproof.3:3
+12     [forestry__fabricator] #21620 forestry:logs.vanilla.fireproof.0:0
+12     [forestry__fabricator] #21622 forestry:logs.fireproof.0:0
+12     [forestry__fabricator] #21623 forestry:logs.fireproof.3:1
+12     [forestry__fabricator] #21625 forestry:logs.fireproof.2:1
+12     [mekanism__precisionsawmill] #21855 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21856 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21857 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21858 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21859 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21860 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21861 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21862 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21864 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21865 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21866 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21867 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21868 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21869 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21870 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #21871 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22165 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22167 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22169 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22171 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22176 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22178 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22211 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22212 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22213 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22214 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22215 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22216 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22217 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22218 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22219 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22223 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22225 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22227 6x minecraft:stick:0, thermalfoundation:material:800
+12     [mekanism__precisionsawmill] #22229 6x minecraft:stick:0, thermalfoundation:material:800
+12     [minecraft__smelting] #25029 bhc:red_heart:0
+12     [minecraft__smelting] #25435 7x astralsorcery:itemcraftingcomponent:0
+12     [minecraft__smelting] #25480 harvestcraft:calamaricookeditem:0
+12     [THAUMCRAFT_INFUSION] #26355 thaumadditions:void_elemental_hoe:0
+12     [THAUMCRAFT_INFUSION] #26412 thaumadditions:wormhole_mirror:0
+12     [THAUMCRAFT_INFUSION] #26516 thaumadditions:void_elemental_axe:0:{infench:[{id:2s,lvl:1s},{id:0s,lvl:1s}]}
+12     [THAUMCRAFT_ARCANE_WORKBENCH] #26692 thaumcraft:smelter_void:0
+12     [THAUMCRAFT_ARCANE_WORKBENCH] #26732 thaumadditions:mithrillium_smelter:0
+12     [minecraft__brewing] #32229 3x minecraft:lingering_potion:0:{Potion:"potioncore:launch"}
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54895 3x aspect:Lux, 157x aspect:Potentia, 42x aspect:Metallum, 56x aspect:Vitreus, 2x aspect:Victus, 72x aspect:Desiderium, 2x aspect:Bestia
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #54896 3x aspect:Lux, 157x aspect:Potentia, 42x aspect:Metallum, 56x aspect:Vitreus, 2x aspect:Victus, 72x aspect:Desiderium, 2x aspect:Bestia
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55476 20x aspect:Motus, 6x aspect:Ordo, 64x aspect:Instrumentum, 292x aspect:Metallum, 15x aspect:Herba
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55477 20x aspect:Motus, 6x aspect:Ordo, 64x aspect:Instrumentum, 292x aspect:Metallum, 15x aspect:Herba
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #55601 12x aspect:Motus, 3x aspect:Potentia, 46x aspect:Metallum, 3x aspect:Sensus, 12x aspect:Machina, aspect:Bestia, 6x aspect:Herba
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #56296 30x aspect:Ignis, 5x aspect:Fabrico, 36x aspect:Metallum, 3x aspect:Tenebrae, 33x aspect:Terra, 12x aspect:Aqua, 7x aspect:Vacuos
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #57706 2x aspect:Ordo, 2x aspect:Metallum
+12     [THAUMCRAFT_ASPECT_FROM_ITEMSTACK] #61259 500x aspect:Metallum, 99x aspect:Vitreus, 45x aspect:Tenebrae, 66x aspect:Machina, 81x aspect:Praecantatio, 403x aspect:Desiderium, 192x aspect:Herba
+12     [tconstruct__smeltery] #71649 144x fluid:void_metal
+12     [tconstruct__smeltery] #71995 576x fluid:signalum
+12     [tconstruct__smeltery] #74505 576x fluid:signalum
+12     [tconstruct__smeltery] #75582 1296x fluid:thaumium
+12     [minecraft__crafting] #76126 ic2:te:73
+12     [minecraft__crafting] #76209 ic2:jetpack_electric:0
+12     [minecraft__crafting] #76779 biomesoplenty:terrarium:11
+12     [minecraft__crafting] #76781 biomesoplenty:terrarium:10
+12     [minecraft__crafting] #76825 biomesoplenty:terrarium:4
+12     [minecraft__crafting] #78618 harvestcraft:fishdinneritem:0
+12     [minecraft__crafting] #81855 environmentaltech:structure_panel_clear:0
+12     [minecraft__crafting] #82331 randomthings:diviningrod:7
+12     [minecraft__crafting] #85251 cyclicmagic:tool_spawn_inspect:0
+12     [minecraft__crafting] #85299 cyclicmagic:moon_sensor:0
+12     [minecraft__crafting] #85890 thermalinnovation:quiver:3
+12     [minecraft__crafting] #90165 colossalchests:colossal_chest:2
+12     [minecraft__crafting] #90667 contenttweaker:conglomerate_of_coal:0
+12     [minecraft__crafting] #90669 minecraft:potion:0:{enchantmentColor:327880,ench:[{lvl:1s,id:40s}],CustomPotionColor:327691,CustomPotionEffects:[{Duration:600,Id:1,Amplifier:0},{Duration:600,Id:2,Amplifier:0}],display:{Name:"§dCombo Potion",Lore:["Combination of 2 potions with same effects and durations"]},PotionCombined:1}
+12     [minecraft__crafting] #91015 colossalchests:chest_wall:5
+12     [minecraft__crafting] #91456 industrialforegoing:fluiddictionary_converter:0
+12     [minecraft__crafting] #91492 industrialforegoing:pitiful_fuel_generator:0
+12     [minecraft__crafting] #91668 mechanics:burst_seed_black_iron:0
+12     [minecraft__crafting] #91772 16x mysticalagriculture:witherproof_glass:0
+11     [bursting] #5369 extendedcrafting:material:1
+11     [astralsorcery__lightTransmutation] #5626 minecraft:obsidian:0
+11     [astralsorcery__lightTransmutation] #5627 minecraft:clay:0
+11     [astralsorcery__lightTransmutation] #5628 minecraft:emerald_ore:0
+11     [astralsorcery__lightTransmutation] #5629 minecraft:soul_sand:0
+11     [astralsorcery__lightTransmutation] #5630 minecraft:lapis_block:0
+11     [astralsorcery__lightTransmutation] #5631 minecraft:end_stone:0
+11     [astralsorcery__lightTransmutation] #5632 minecraft:nether_brick:0
+11     [astralsorcery__lightTransmutation] #5634 minecraft:cake:0
+11     [requious__beacon_effects] #6343 minecraft:potion:0:{Potion:"potioncore:reach"}
+11     [rats__chef_rat] #6378 randomthings:beans:2
+11     [canner_BottleSolid] #6520 12x ic2:filled_tin_can:0
+11     [ie__alloysmelter] #6652 forestry:phosphor:0, contenttweaker:empowered_phosphor:0
+11     [fluid_dictionary] #7363 100x fluid:xpjuice
+11     [fluid_dictionary] #7365 100x fluid:experience
+11     [fluid_dictionary] #7366 100x fluid:essence
+11     [fluid_dictionary] #7368 100x fluid:xpjuice
+11     [centrifuge] #10300 112x ic2:nuclear:2, 7x ic2:nuclear:1
+11     [mekanism__crusher] #13897 36x appliedenergistics2:material:2
+11     [thermalexpansion__pulverizer_petrotheum] #14172 4x mekanism:dust:2, minecraft:netherrack:0
+11     [thermalexpansion__pulverizer_petrotheum] #14193 4x appliedenergistics2:material:0, minecraft:netherrack:0
+11     [thermalexpansion__pulverizer_petrotheum] #14203 3x thermalfoundation:material:68, thermalfoundation:material:0
+11     [thermalexpansion__pulverizer_petrotheum] #14302 4x appliedenergistics2:material:1, minecraft:netherrack:0
+11     [thermalexpansion__pulverizer_petrotheum] #14308 4x minecraft:coal:0, minecraft:netherrack:0
+11     [thermalexpansion__pulverizer_petrotheum] #14311 4x jaopca:item_dustaquamarine:0, thermalfoundation:material:68
+11     [tcomplement__high_oven_mix] #15377 144x fluid:redstone_alloy
+11     [xu2_machine_extrautils2__crusher] #17406 4x minecraft:glowstone_dust:0
+11     [THAUMCRAFT_CRUCIBLE] #19501 thaumicwonders:transmuter_stone:65406
+11     [forestry__fabricator] #21524 10x appliedenergistics2:quartz_glass:0
+11     [forestry__fabricator] #21527 5x forestry:planks.fireproof.1:2
+11     [forestry__fabricator] #21529 4x minecraft:stained_glass:7
+11     [forestry__fabricator] #21530 5x forestry:planks.fireproof.1:0
+11     [forestry__fabricator] #21534 5x forestry:planks.vanilla.fireproof.0:1
+11     [forestry__fabricator] #21535 5x forestry:planks.fireproof.1:6
+11     [forestry__fabricator] #21536 4x minecraft:stained_glass:2
+11     [forestry__fabricator] #21538 5x forestry:planks.fireproof.0:9
+11     [forestry__fabricator] #21540 4x forestry:thermionic_tubes:10
+11     [forestry__fabricator] #21547 forestry:flexible_casing:0
+11     [forestry__fabricator] #21548 5x forestry:planks.fireproof.1:5
+11     [forestry__fabricator] #21549 4x minecraft:stained_glass:1
+11     [forestry__fabricator] #21552 4x minecraft:stained_glass:4
+11     [forestry__fabricator] #21554 5x forestry:planks.vanilla.fireproof.0:2
+11     [forestry__fabricator] #21555 5x forestry:planks.fireproof.0:1
+11     [forestry__fabricator] #21556 5x forestry:planks.fireproof.0:12
+11     [forestry__fabricator] #21560 5x forestry:planks.fireproof.0:7
+11     [forestry__fabricator] #21561 5x forestry:planks.fireproof.0:0
+11     [forestry__fabricator] #21562 4x minecraft:stained_glass:14
+11     [forestry__fabricator] #21565 5x forestry:planks.fireproof.0:15
+11     [forestry__fabricator] #21567 5x forestry:planks.fireproof.0:13
+11     [forestry__fabricator] #21572 4x minecraft:stained_glass:9
+11     [forestry__fabricator] #21573 5x forestry:planks.fireproof.1:12
+11     [forestry__fabricator] #21574 5x forestry:planks.vanilla.fireproof.0:3
+11     [forestry__fabricator] #21575 4x minecraft:stained_glass:6
+11     [forestry__fabricator] #21581 4x minecraft:stained_glass:15
+11     [forestry__fabricator] #21582 5x forestry:planks.fireproof.0:14
+11     [forestry__fabricator] #21584 4x minecraft:stained_glass:13
+11     [forestry__fabricator] #21585 5x forestry:planks.fireproof.1:3
+11     [forestry__fabricator] #21586 5x forestry:planks.fireproof.0:11
+11     [forestry__fabricator] #21588 5x forestry:planks.fireproof.0:6
+11     [forestry__fabricator] #21590 5x forestry:planks.fireproof.0:8
+11     [forestry__fabricator] #21591 4x minecraft:stained_glass:8
+11     [forestry__fabricator] #21592 4x minecraft:stained_glass:10
+11     [forestry__fabricator] #21595 5x forestry:planks.fireproof.1:9
+11     [forestry__fabricator] #21596 4x minecraft:stained_glass:11
+11     [forestry__fabricator] #21599 5x forestry:planks.fireproof.1:11
+11     [forestry__fabricator] #21600 4x minecraft:stained_glass:12
+11     [forestry__fabricator] #21603 5x forestry:planks.fireproof.0:5
+11     [forestry__fabricator] #21604 4x minecraft:stained_glass:0
+11     [forestry__fabricator] #21606 5x forestry:planks.fireproof.1:4
+11     [forestry__fabricator] #21607 5x forestry:planks.fireproof.1:10
+11     [forestry__fabricator] #21609 5x forestry:planks.vanilla.fireproof.0:5
+11     [forestry__fabricator] #21612 4x forestry:thermionic_tubes:2
+11     [forestry__fabricator] #21613 5x forestry:planks.fireproof.0:4
+11     [forestry__fabricator] #21615 4x minecraft:stained_glass:3
