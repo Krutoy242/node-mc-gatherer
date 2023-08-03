@@ -30,6 +30,6 @@ export default function addRecipes(
   addRecipe('minecraft:yellow_shulker_box:0', 'ore:shulkerBox')
 
   addRecipe('minecraft:cobblestone:0', '10x placeholder:ticks', ['1000x fluid:lava', '1000x fluid:water'])
-  addRecipe(['8x minecraft:tallgrass:1', '2x minecraft:yellow_flower:0', '2x minecraft:red_flower:0'], 'ore:fertilizer', ['minecraft:grass'])
+  addRecipe(['8x minecraft:tallgrass:1', '2x minecraft:yellow_flower:0', '2x minecraft:red_flower:0'], 'ore:fertilizer', ['minecraft:grass:0'])
   addRecipe('minecraft:potion:0:{Potion:"minecraft:water"}', 'minecraft:glass_bottle:0', '1000x fluid:water')
 }
