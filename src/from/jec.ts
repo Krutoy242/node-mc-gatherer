@@ -205,7 +205,7 @@ function applyToAdditionals(
       oreDict    : (): Typle => ['ore', raw.content.name as string],
       placeholder: (): Typle => [
         'placeholder',
-        raw.content.name?.toLowerCase() as string,
+        ...raw.content.name?.toLowerCase().split(':') as [string, string?],
       ],
     }
 
