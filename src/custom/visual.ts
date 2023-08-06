@@ -29,17 +29,23 @@ export default function customRender(
       xp         : { __: () => alias('mysticalagriculture:experience_essence:0') },
       fight      : { __: () => alias('endreborn:tool_sword_wolframium:0') },
       trade      : { __: () => alias('openblocks:trophy:9:{entity_id:"minecraft:villager"}') },
+      entity     : {
+        __: () => {
+          const id = `draconicevolution:mob_soul:0:{EntityName:"${entry}"}`
+          return { imgsrc: get(id)?.imgsrc, display: `Entity - ${entry}}` }
+        },
+      },
     },
 
     thaumcraft: {
       infernal_furnace: {
-        __: () => ({ imgsrc: get('minecraft:nether_brick:0').imgsrc }),
+        __: () => ({ imgsrc: get('minecraft:nether_brick:0')?.imgsrc }),
       },
     },
 
     dimension: {
       __: () => ({
-        imgsrc : get('botania:tinyplanet:0').imgsrc,
+        imgsrc : get('botania:tinyplanet:0')?.imgsrc,
         display: `{Dimension ${entry}}`,
       }),
     },

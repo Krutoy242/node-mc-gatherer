@@ -18,4 +18,9 @@ export default function addRecipes(
   }).forEach(([id, n]) => {
     addRecipe(id, `${n}x placeholder:exploration`, 'dimension:14676')
   })
+  addRecipe(
+    'thaumcraft:banner_crimson_cult:0',
+    '100000x placeholder:exploration',
+    'dimension:14676'
+  )
 }

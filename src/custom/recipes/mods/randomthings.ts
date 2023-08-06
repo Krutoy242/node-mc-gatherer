@@ -52,4 +52,10 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     'randomthings:waterwalkingboots:0',
     '100000x placeholder:exploration'
   )
+
+  addRecipe(
+    'dimension:-343800852',
+    '60x placeholder:ticks',
+    'randomthings:spectrekey'
+  )
 }

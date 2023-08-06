@@ -19,4 +19,5 @@ export default function addRecipes(
   addRecipe('5x botania:flower:*', 'botania:fertilizer:0', '5x minecraft:grass:0')
   addRecipe('botania:doubleflower2:*', 'botania:petal:*', 'minecraft:dye:15')
   addRecipe('botania:doubleflower1:*', 'botania:petal:*', 'minecraft:dye:15')
+  addRecipe('botania:manaresource:15', 'minecraft:glass_bottle:0', 'dimension:1')
 }

@@ -10,5 +10,9 @@ export default function getMiningPlaceholder(
   if (!bMining || bMining.hardness < 0) return
 
   const toolClass = bMining.toolClass === 'null' ? 'pickaxe' : bMining.toolClass
+
+  // Level 0 shovel can be mined with hand
+  if (bMining.level === 0 && toolClass === 'shovel') return
+
   return `placeholder:${toolClass}:${Math.max(0, bMining.level)}`
 }

@@ -99,8 +99,8 @@ const move = {
   },
   output: {
     to: {
-      input   : (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'input', 'input', p),
-      catalyst: (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'input', 'catalyst', p),
+      input   : (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'output', 'input', p),
+      catalyst: (rec: JEIECustomRecipe, p?: MovePredicate) => moveFromToList(rec, 'output', 'catalyst', p),
     },
   },
 }
@@ -126,9 +126,9 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
   // Remove useless jetpack recipes
   cat.recipes = cat.recipes.filter(
     rec =>
-      !rec.input.items.some(item =>
-        item.stacks.some(stack => stack.name === 'ic2:jetpack_electric:0')
-      )
+      // TODO: Remove this temporary recipe avoiding
+      !rec.output.items.some(item => item.stacks.some(stack => stack.name === 'tconstruct:shard:0'))
+      && !rec.input.items.some(item => item.stacks.some(stack => stack.name === 'ic2:jetpack_electric:0'))
   )
 
   // Set empty catalyst if crafting table not necessary
@@ -146,7 +146,9 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
       // Change amount of tool ingredients
       slot.stacks.some((stack) => {
         if (stack.type !== 'item' && stack.type !== 'oredict') return false
-        const def = stack.name.split(':').slice(0, 2).join(':')
+        const def = stack.type === 'oredict'
+          ? `ore:${stack.name}`
+          : stack.name.split(':').slice(0, 2).join(':')
         const durab = tools.toolDurability[def]
         if (!durab) return false
         slot.amount = 1 / durab
@@ -647,10 +649,12 @@ adapters.set(/minecraft__anvil/, (cat) => {
 
 adapters.set(/chisel__chiseling/, (cat) => {
   cat.recipes.forEach((rec) => {
-    const ids = [...new Set(([
-      ...rec.output.items,
-      ...rec.input.items,
-    ]).map(s => s.stacks.map(i => `${i.type}::${i.name}`)).flat())]
+    const ids = [
+      ...new Set([rec.output.items, rec.input.items]
+        .flat()
+        .map(s => s.stacks.map(i => `${i.type}::${i.name}`))
+        .flat()
+      )]
 
     const stacks = ids.map((tuple) => {
       const o = tuple.split('::')
@@ -687,6 +691,13 @@ adapters.set(/requious__ic2_crops/, (cat, tools) => {
       })
     })
   })
+})
+
+adapters.set(/^ic2__scrapbox$/, (cat) => {
+  cat.recipes = [{
+    input : { items: [{ amount: cat.recipes.length, x: 0, y: 0, stacks: [{ name: 'ic2:crafting:24', type: 'item' }] }] },
+    output: { items: cat.recipes.map(r => r.input.items[1]) },
+  }]
 })
 
 adapters.set(/requious__liquid_interaction/, (cat) => {
@@ -875,7 +886,7 @@ adapters.set(/jetif/, (cat) => {
 
 adapters.set(/mysticalagradditions__tier_6_crop_jei/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    rec.input.items = rec.input.items.filter(slot => !slot.stacks.some(stack => stack.name.endsWith('_crop')))
+    rec.input.items = rec.input.items.filter(slot => !slot.stacks.some(stack => stack.name.endsWith('_crop:0')))
   })
 })
 
@@ -884,6 +895,13 @@ adapters.set(/nuclearcraft_collector/, (cat) => {
     rec.catalyst = rec.input.items
     rec.input.items = [getSlot('placeholder:ticks', 1000)]
   })
+})
+
+adapters.set(/^qmd__atmosphere_collector$/, (cat) => {
+  cat.recipes = [{
+    input : { items: [getSlot('placeholder:ticks', 40)] },
+    output: { items: cat.recipes[0].output.items },
+  }]
 })
 
 adapters.set(/astralsorcery__lightTransmutation/, (cat) => {
@@ -921,7 +939,14 @@ adapters.set(/^infinityPowder$/, (cat) => {
 
 adapters.set(/^it__electrolyticCrucibleBattery$/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    move.input.to.output(rec, s => s.x < 20)
+    move.output.to.input(rec, s => s.x < 20)
+  })
+})
+
+adapters.set(/^EIOTank$/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    if (rec.output.items.some(s => s.x >= 100 && s.stacks.length))
+      move.output.to.input(rec, s => s.stacks.some(i => i.type === 'fluid'))
   })
 })
 
@@ -930,6 +955,11 @@ adapters.set(/^tweakedpetrol.+__pumpjack$/, (cat) => {
     rec.output.items.forEach(s => s.amount = 1000)
     rec.input.items = [getSlot('placeholder:ticks', 200)]
   })
+})
+
+adapters.set(/^tweakedexcavation__excavator$/, (cat) => {
+  cat.catalysts.push({ name: 'dimension:0', type: 'item' })
+  cat.recipes.forEach(r => r.input.items = [getSlot('placeholder:ticks', 80), getSlot('placeholder:rf', 1280000)])
 })
 
 // Everything
@@ -948,6 +978,17 @@ adapters.set(/.*/, (cat, tools) => {
       }
     })
   })
+
+  // Replace all soul ingredients with entity
+  const mobCap = 'draconicevolution:mob_soul:0:'
+  ;[cat.catalysts, cat.recipes.flatMap(r => [r.input.items, r.output.items].flat().flatMap(s => s.stacks))]
+    .flat()
+    .forEach((it) => {
+      if (it.name.startsWith(mobCap)) {
+        const full = tools.getFullID(it)
+        it.name = `entity:${full.substring(mobCap.length + 13, full.length - 2)}`
+      }
+    })
 })
 
 export default adapters

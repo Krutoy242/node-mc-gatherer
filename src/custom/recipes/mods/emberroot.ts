@@ -1,0 +1,26 @@
+export default function addRecipes(
+  addRecipe: import('../../customs').AddRecipeFn
+) {
+  addRecipe('entity:emberroot:creeper', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:deers', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:dire_wolf', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:enderminy', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:fairies', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:fallenmount', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:hero', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:knight_fallen', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:owl', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rainbow_golem', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rainbowslime', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rootsonesprite', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rootsonespriteboss', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rootsonespritegreater', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rootsonespriteling', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:rootsonespriteprojectile', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:skeleton_frozen', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:slime', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:sprouts', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:timberwolf', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:withercat', '50000x placeholder:exploration')
+  addRecipe('entity:emberroot:witherwitch', '50000x placeholder:exploration')
+}
