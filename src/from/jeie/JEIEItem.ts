@@ -23,16 +23,17 @@ export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
   return (prefix ? `${prefix}:` : '') + base + (sNbt ? `:${sNbt}` : '')
 }
 
+const displayRgx = /display:\{(,?(Name:"[^"]*"|Lore:\["[^"]*"(,"[^"]*")*\])){0,2}\}/
+
 function filterTag(tag?: string): string {
   if (tag === undefined) return ''
 
-  return tag
-  // const noDisplay = tag.replace(
-  //   /,?display:\{(,?(Name:"[^"]*"|Lore:\["[^"]*"(,"[^"]*")*\])){0,2}\}/,
-  //   ''
-  // )
+  const noDisplay = tag.replace(
+    new RegExp(`${displayRgx.source},?|,${displayRgx.source}`),
+    ''
+  )
 
-  // return noDisplay === '{}' ? '' : noDisplay
+  return noDisplay === '{}' ? '' : noDisplay
 }
 
 // console.log(
