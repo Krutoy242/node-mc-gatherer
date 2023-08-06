@@ -4,7 +4,7 @@ import type Definition from './Definition'
 import type { DefinitionStack } from './DefinitionStack'
 
 export default class Inventory {
-  processing = 0.0
+  processing = 1.0
 
   private stepsRecipes = new Set<Recipe>()
   private storage = new Map<Definition, number>()
@@ -16,7 +16,6 @@ export default class Inventory {
 
   constructor(private treshold: number, private recipe: Recipe) {
     this.stepsRecipes.add(recipe)
-    this.processing += 1.0
   }
 
   difference(other?: Inventory) {
