@@ -5,6 +5,7 @@ import type CLIHelper from '../../tools/cli-tools'
 import type Definition from '../items/Definition'
 import type DefinitionStore from '../items/DefinitionStore'
 import type Recipe from '../recipes/Recipe'
+import { naturalSort } from '../utils'
 
 const sleep = () => new Promise(resolve => setTimeout(resolve, 1))
 
@@ -142,15 +143,23 @@ export default class Calculator {
     )
 
     const ingrTuples = unpureIngredients.map(
-      g => [this.dependenciesCount(g), g] as const
+      ingr => [
+        this.dependenciesCount(ingr),
+        ingr,
+        ingr.items.some(it =>
+          [...it.dependencies?.values() ?? []].some(r =>
+            r.outputs.some(di => di.it.items.every(d => d.purity <= 0))
+          )
+        ),
+      ] as const
     )
-
-    const filtSorted = ingrTuples
       .filter(([a]) => a > 0)
-      .sort(([a], [b]) => b - a)
+      .sort(([a,,ai], [b,,bi]) => (Number(bi) - Number(ai)) || (b - a))
 
-    return filtSorted
-      .map(([n, ingr]) => `${n} ${this.needRecSerialize(ingr)}`)
+    return ingrTuples.map(([n, ingr, isImportant]) =>
+      `${isImportant ? '! ' : ''}${n} ${this.needRecSerialize(ingr)}`
+    )
+      .sort((a, b) => naturalSort(b, a))
       .join('\n')
   }
 
