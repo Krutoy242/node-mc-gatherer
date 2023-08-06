@@ -85,8 +85,13 @@ async function prompt(exportData: ExportData) {
     }).promise
     term('\n')
     if (id) {
-      if (!exportData.logger(id)) term.red('This id doesn\'t exist')('\n')
-      else term.green('Succes!')('\n')
+      try {
+        exportData.logger(id)
+        term.green('Succes!')('\n')
+      }
+      catch (error) {
+        term.red('This id doesn\'t exist')('\n')
+      }
     }
   } while (id)
 }
