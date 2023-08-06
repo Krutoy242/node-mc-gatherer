@@ -29,9 +29,12 @@ interface Fortunes {
   '3'?: number
 }
 
-// Get maximim difficulty when mining
+// Max world height
 const maxHeight = 255
+
+// Surface level
 const MID = 70
+
 function difficulty_from_level(x: number) {
   const b = 7.13
   const c = 44
@@ -44,10 +47,16 @@ const maxHeightDiff = new Array(maxHeight)
   .map((_a, i) => difficulty_from_level(i))
   .reduce((a, b) => a + b)
 
+// Exponent of probability
+// Increase cost of items with high probabilities
+// but make low-prob items not so costy
 const probFactor = 0.9
 
+// Globally Discrease cost of
+const globalCostMultiplicator = 1 / 5
+
 function getProbAcces(lvl: number, prob: number): number {
-  return (difficulty_from_level(lvl) * prob ** probFactor) / maxHeightDiff
+  return (difficulty_from_level(lvl) * prob ** probFactor) / maxHeightDiff / globalCostMultiplicator
 }
 
 function getJERProbability(rawStrData: string) {
@@ -89,17 +98,13 @@ export default function append_JER(
   for (const jer_entry of jer) {
     const blockDef = getById(jer_entry.block)
     const block = new Stack(recipesStore.ingredientStore.fromItem(blockDef))
-    const exploreAmount = getJERProbability(jer_entry.distrib)
+    const exploreAmount = Math.max(0, Math.round(getJERProbability(jer_entry.distrib)))
+    const exploreIngr = ii_exploration.withAmount(exploreAmount)
     const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const miningPH = getMiningPlaceholder(blockMinings, jer_entry.block)
     if (miningPH) catalysts.push(miningPH)
 
-    recipesStore.addRecipe(
-      'JER',
-      block,
-      ii_exploration.withAmount(exploreAmount),
-      catalysts
-    )
+    recipesStore.addRecipe('JER', block, exploreIngr, catalysts)
 
     // Block drops
     const drops = jer_entry.dropsList
@@ -107,7 +112,7 @@ export default function append_JER(
       .filter((s): s is DefIngrStack => !!s)
 
     const isQuarkPot = drops?.some(i => i.it.id.includes('minecraft:flower_pot'))
-    if (drops?.length && !isQuarkPot) recipesStore.addRecipe('JER_Drops', drops, block, miningPH)
+    if (drops?.length && !isQuarkPot) recipesStore.addRecipe('JER_Drops', drops, exploreIngr, catalysts)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 
