@@ -100,7 +100,7 @@ export default async function mcGather(
     'textSource': fromTellme('fluids-csv'),
     'action'    : text => append_fluids(recipesStore, text),
     'moreInfo'  : info => `Recipes: ${cli.num(info.addedRecs)}`,
-    '⚠️'         :
+    '⚠️':
         chalk`Tellme file {green fluids-csv.csv} not found. `
         + chalk`Continue without {green fluid} <=> `
         + chalk`{green block} recipes.`,
