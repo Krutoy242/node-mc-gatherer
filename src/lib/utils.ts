@@ -29,3 +29,17 @@ export function escapeCsv(s?: string): string {
   if (s?.includes('"') || s?.includes(',')) return `"${s.replace(/"/g, '""')}"`
   return s ?? ''
 }
+
+/**
+ * Makes method always return `this`
+ */
+export function fluent(_target: any, _propertyKey: string | symbol, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value
+
+  descriptor.value = function (...args: any[]) {
+    originalMethod.apply(this, args)
+    return this
+  }
+
+  return descriptor
+}

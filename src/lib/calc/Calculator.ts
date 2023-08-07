@@ -98,11 +98,11 @@ export default class Calculator {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
-      if (def.suggest(rec, stack.amount ?? 1)) {
-        def.dependencies?.forEach(r => dirtyRecipes.add(r))
-        if (isFirtCalc) cli.bars?.[1].increment()
-        recalcDefs++
-      }
+      if (!def.suggest(rec, stack.amount ?? 1)) continue
+
+      def.dependencies?.forEach(r => dirtyRecipes.add(r))
+      if (isFirtCalc) cli.bars?.[1].increment()
+      recalcDefs++
     }
 
     return recalcDefs

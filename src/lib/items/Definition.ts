@@ -125,7 +125,7 @@ export default class Definition
     }
 
     // Recalculate old recipe
-    if (this.mainRecipe !== rec) if (this.mainRecipe?.calculate()) this.calculate()
+    if (this.mainRecipe !== rec && this.mainRecipe?.calculate()) this.calculate()
 
     if (this.complexity <= rec.complexity) return false
 
@@ -169,24 +169,39 @@ export default class Definition
     this.calculate()
   }
 
-  // private logRecalculation(rec: Recipe) {
-  //   if (this.mainRecipe) {
-  //     const diff = this.mainRecipe.inventory?.difference(rec?.inventory)
-  //     const filds = [
-  //       ['➖', 'removed'],
-  //       ['➕', 'added'],
-  //     ] as const
-  //     filds.forEach(([symbol, key]) => {
-  //       if (!diff?.[key].length) return
-  //       const list = diff?.[key].map((r) =>
-  //         r.toString({ detailed: true }).split('\n').join('\n      ')
-  //       )
-  //       logRecalc(`${symbol}\n    ${list.join('\n    ')}\n`)
-  //     })
-  //   }
-  //   logRecalc(this.toString() + '\n')
-  //   logRecalc(rec?.toString({ detailed: true }) + '\n')
-  // }
+  /*
+  difference(other?: Inventory) {
+    const result = { added: [] as Recipe[], removed: [] as Recipe[] }
+    if (!other) return result
+
+    this.stepsRecipes.forEach((rec) => {
+      if (!other.stepsRecipes.has(rec)) result.removed.push(rec)
+    })
+    other.stepsRecipes.forEach((rec) => {
+      if (!this.stepsRecipes.has(rec)) result.added.push(rec)
+    })
+    return result
+  }
+
+  private logRecalculation(rec: Recipe) {
+    if (this.mainRecipe) {
+      const diff = this.mainRecipe.inventory?.difference(rec?.inventory)
+      const filds = [
+        ['➖', 'removed'],
+        ['➕', 'added'],
+      ] as const
+      filds.forEach(([symbol, key]) => {
+        if (!diff?.[key].length) return
+        const list = diff?.[key].map(r =>
+          r.toString({ detailed: true }).split('\n').join('\n      ')
+        )
+        logRecalc(`${symbol}\n    ${list.join('\n    ')}\n`)
+      })
+    }
+    logRecalc(`${this.toString()}\n`)
+    logRecalc(`${rec?.toString({ detailed: true })}\n`)
+  }
+  */
 }
 
 function getPurity(n: number): string {

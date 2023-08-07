@@ -64,12 +64,11 @@ export default class Recipe extends Labelable implements SolvableRecipe<Definiti
 
     let catalList: Inventory | undefined
     if (catDefs.length || inDefs.some(d => d.it.mainRecipe?.inventory)) {
-      const maxCost = samePurity ? this.complexity - cost : Infinity
-      catalList = new Inventory(maxCost, this)
+      const treshold = samePurity ? this.complexity - cost : Infinity
+      catalList = new Inventory(treshold, this)
         .addCatalysts(catDefs)
-        .addCatalystsOf(catDefs)
         .addCatalystsOf(inDefs)
-      if (catalList.isFutile()) return
+      if (catalList.futile) return
     }
     const processing = catalList?.processing ?? 0
 
