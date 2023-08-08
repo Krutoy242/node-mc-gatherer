@@ -39,6 +39,23 @@ export default class Definition
   @Csv(1, (s?: string[]) => escapeCsv(s?.join('\\n')))
   tooltips?: string[]
 
+  isNatural = false
+
+  @Csv(12) public override get cost() {
+    if (this.isNatural) return this._cost
+    return (this.mainRecipe?.cost ?? Infinity) / (this.mainRecipeAmount ?? 1.0)
+  }
+
+  @Csv(13) public override get processing() {
+    if (this.isNatural) return this._processing
+    return this.mainRecipe?.processing ?? Infinity
+  }
+
+  @Csv(10) public override get purity() {
+    if (this.isNatural) return this._purity
+    return this.mainRecipe?.purity ?? 0.0
+  }
+
   /**
    * Recipes that has this item as output
    */
@@ -116,51 +133,33 @@ export default class Definition
     return `${full} ${display}`
   }
 
+  get complexity_s(): string {
+    return numFormat(this.complexity)
+  }
+
   /**
    * Suggest recipe to be chosen as main
    * @returns `true` if calculable values was changed
    */
   suggest(rec: Recipe, amount: number): boolean {
     if (this.purity > rec.purity) return false
-
-    // Just set recipe values, because they are purest
-    if (this.purity < rec.purity) {
-      this.setRecipe(rec, amount)
-      return true
-    }
-
-    // Recalculate old recipe
-    if (this.mainRecipe !== rec && this.mainRecipe?.calculate()) this.calculate()
-
+    if (this.purity < rec.purity) return this.setRecipe(rec, amount)
     if (this.complexity <= rec.complexity) return false
-
-    this.setRecipe(rec, amount)
-    return true
-  }
-
-  calculate() {
-    const main = this.mainRecipe
-    if (!main) return
-
-    const newCost = main.cost / (this.mainRecipeAmount ?? 1)
-    if (this.processing === main.processing && this.cost === newCost) return
-
-    this.set({
-      purity    : main.purity,
-      cost      : newCost,
-      processing: main.processing,
-    })
-    return true
-  }
-
-  public get complexity_s(): string {
-    return numFormat(this.complexity)
+    return this.setRecipe(rec, amount)
   }
 
   private setRecipe(rec: Recipe, amount: number) {
     this.mainRecipe = rec
     this.mainRecipeAmount = amount
-    this.calculate()
+    return true
+  }
+
+  /**
+   * Player naturally have acces to this item, predefined
+   */
+  natural(cost: number) {
+    this.isNatural = true
+    this.set({ purity: 1.0, cost, processing: 0.0 })
   }
 
   /*

@@ -94,9 +94,8 @@ export default class Calculator {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
-      if (!def.suggest(rec, stack.amount ?? 1)) continue
-
       def.dependencies?.forEach(r => dirtyRecipes.add(r))
+      if (!def.suggest(rec, stack.amount ?? 1)) continue
       if (isFirtCalc) cli.bars?.[1].increment()
       recalcDefs++
     }
@@ -105,10 +104,10 @@ export default class Calculator {
   }
 
   private assignPredefined(dirtyRecipes: Set<Recipe>) {
-    Object.entries(predefined).forEach(([id, val]) => {
+    Object.entries(predefined).forEach(([id, cost]) => {
       const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
-        def.set({ purity: 1.0, cost: val, processing: 0.0 })
+        def.natural(cost)
         def.dependencies?.forEach(r => dirtyRecipes.add(r))
       }
     })
