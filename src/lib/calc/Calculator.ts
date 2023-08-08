@@ -20,7 +20,12 @@ export default class Calculator {
     this.createLinks(cli)
 
     let dirtyRecipes = new Set<Recipe>()
-    this.assignPredefined(dirtyRecipes)
+
+    function addDirty(r: Recipe) {
+      dirtyRecipes.add(r)
+    }
+
+    this.assignPredefined(addDirty)
     this.definitionStore.locked = true
 
     const cliBars = {
@@ -53,7 +58,7 @@ export default class Calculator {
         if (oldPurity <= 0) totalCalculated++
 
         rec.outputs.forEach(stack =>
-          recalcDefs += this.calcStack(stack, rec, newDirtyRecipes, cli)
+          recalcDefs += this.calcStack(stack, rec, addDirty, cli)
         )
       }
       dirtyRecipes = newDirtyRecipes
@@ -88,13 +93,13 @@ export default class Calculator {
   private calcStack(
     stack: Stack<Ingredient<Definition>>,
     rec: Recipe,
-    dirtyRecipes: Set<Recipe>,
+    addDirty: (r: Recipe) => void,
     cli: CLIHelper
   ) {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
-      def.dependencies?.forEach(r => dirtyRecipes.add(r))
+      def.dependencies?.forEach(addDirty)
       if (!def.suggest(rec, stack.amount ?? 1)) continue
       if (isFirtCalc) cli.bars?.[1].increment()
       recalcDefs++
@@ -103,12 +108,12 @@ export default class Calculator {
     return recalcDefs
   }
 
-  private assignPredefined(dirtyRecipes: Set<Recipe>) {
+  private assignPredefined(addDirty: (r: Recipe) => void) {
     Object.entries(predefined).forEach(([id, cost]) => {
       const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
         def.natural(cost)
-        def.dependencies?.forEach(r => dirtyRecipes.add(r))
+        def.dependencies?.forEach(addDirty)
       }
     })
   }
