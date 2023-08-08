@@ -6,26 +6,23 @@ import { getIcon } from 'mc-icons'
 
 import type { BaseVisible } from '../../api'
 import { Tree } from '../../api'
-import type { CSVFile } from '../../api/csv'
 import customRender from '../../custom/visual'
 import type { BlockToFluidMap } from '../../from/fluids'
 import type { NameMap } from '../../from/jeie/NameMap'
 import { createFileLogger } from '../../log/logger'
-import { getCSVHeaders } from '../../tools/CsvDecorators'
 
-import type Definition from './Definition'
+import { getCsvLine, getHeaders } from '../../tools/CsvDecorators'
+import Definition from './Definition'
 
 export default class DefinitionStore
-  extends Tree<Definition>
-  implements CSVFile {
+  extends Tree<Definition> {
   csv() {
-    const defsCsv = [...this]
     return (
-      `${getCSVHeaders(defsCsv[0])
+      `${getHeaders(Definition)
       }\n${
-        defsCsv
+        [...this]
           .sort((a, b) => b.complexity - a.complexity)
-          .map(d => d.csv())
+          .map(d => getCsvLine(d))
           .join('\n')}`
     )
   }

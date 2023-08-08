@@ -4,8 +4,7 @@ import numeral from 'numeral'
 
 import type { BaseVisible, Based, LabelSetup, Labeled, Solvable } from '../../api'
 
-import type { CSVLine } from '../../api/csv'
-import { Format, Pos, getCSVLine } from '../../tools/CsvDecorators'
+import { Csv } from '../../tools/CsvDecorators'
 import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
 import Labelable from '../calc/Labelable'
@@ -17,7 +16,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 
 export default class Definition
   extends Labelable
-  implements CSVLine, Based, BaseVisible, Labeled, Solvable<Definition> {
+  implements Based, BaseVisible, Labeled, Solvable<Definition> {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -27,22 +26,19 @@ export default class Definition
   ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝
   */
 
-  @Pos(23)
-  @Format(escapeCsv)
+  @Csv(23, escapeCsv)
   readonly id: string
 
-  @Pos(21)
+  @Csv(21)
   imgsrc?: string
 
-  @Pos(21.5)
+  @Csv(21.5)
   override labels = ''
 
-  @Pos(0)
-  @Format(escapeCsv)
+  @Csv(0, escapeCsv)
   display?: string
 
-  @Pos(1)
-  @Format((s?: string[]) => escapeCsv(s?.join('\\n')))
+  @Csv(1, (s?: string[]) => escapeCsv(s?.join('\\n')))
   tooltips?: string[]
 
   /**
@@ -56,7 +52,7 @@ export default class Definition
 
   dependencies: Set<Recipe> | undefined
 
-  @Pos(22)
+  @Csv(22)
   get recipeIndexes() {
     return _.sortBy(
       [...(this.recipes ?? [])].map(r => r.index),
@@ -65,12 +61,12 @@ export default class Definition
   }
 
   /** Indexes of recipes that depends on this item */
-  @Pos(22.5)
+  @Csv(22.5)
   get depIndexes(): string {
     return [...(this.dependencies ?? [])].map(r => r.index).join(' ')
   }
 
-  @Pos(20)
+  @Csv(20)
   get steps() {
     return this.mainRecipe?.inventory?.steps
       ? this.mainRecipe.inventory.steps + 1
@@ -94,10 +90,6 @@ export default class Definition
   ) {
     super()
     this.id = id
-  }
-
-  csv(): string {
-    return getCSVLine(this)
   }
 
   override toString(options?: { complexityPad?: number; short?: boolean }) {
@@ -160,10 +152,6 @@ export default class Definition
   }
 
   private setRecipe(rec: Recipe, amount: number) {
-    // if (this.id === 'mekanism:energycube:0:{tier:4}') {
-    //   this.logRecalculation(rec)
-    // }
-
     this.mainRecipe = rec
     this.mainRecipeAmount = amount
     this.calculate()

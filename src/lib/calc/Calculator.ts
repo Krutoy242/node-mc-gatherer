@@ -52,9 +52,9 @@ export default class Calculator {
         recalculated[rec.index]++
         if (oldPurity <= 0) totalCalculated++
 
-        rec.outputs.forEach((stack) => {
+        rec.outputs.forEach(stack =>
           recalcDefs += this.calcStack(stack, rec, newDirtyRecipes, cli)
-        })
+        )
       }
       dirtyRecipes = newDirtyRecipes
     }

@@ -1,14 +1,6 @@
 import type { BaseItem, BaseItemMap } from '.'
 import { Tree, baseItemSetup } from '.'
 
-export interface CSVFile {
-  csv: () => string
-}
-
-export interface CSVLine {
-  csv: () => string
-}
-
 type CSVBaseItem = {
   [key in keyof typeof baseItemSetup]-?: string
 }

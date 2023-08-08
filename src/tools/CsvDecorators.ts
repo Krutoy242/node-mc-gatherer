@@ -1,81 +1,81 @@
 import 'reflect-metadata'
 
-const RMset = Reflect.metadata
+type FormatFunction = (value: any) => string
 
-export function Name(name: string) {
-  return RMset('name', name)
-}
+type CsvOptions = Map<string, {
+  position: number
+  format?: FormatFunction
+}>
 
-export function Pos(pos: number) {
-  return RMset('pos', pos)
-}
+const csvMetadataKey = Symbol('csv')
 
-export function Format(format: (v?: any) => any) {
-  return RMset('format', format)
-}
+export function Csv(position: number, format?: FormatFunction) {
+  return function (target: any, key: string) {
+    const properties: CsvOptions | undefined = Reflect.getMetadata(csvMetadataKey, target)
 
-export function getCSVFields(target: any) {
-  const sortBy = (k: string) =>
-    (Reflect.getMetadata('pos', target, k) as number) ?? 0
-
-  return getPossibleKeys(target)
-    .filter((k) => {
-      const keys = Reflect.getMetadataKeys(target, k)
-      return ['name', 'pos', 'format'].some(f => keys.includes(f))
-    })
-    .sort((a, b) => sortBy(a) - sortBy(b))
-}
-
-export function getCSVHeaders(target: any): string {
-  return getCSVFields(target)
-    .map(k => Reflect.getMetadata('name', target, k) ?? k)
-    .join(',')
-}
-
-export function getCSVLine(target: any): string {
-  return getCSVFields(target)
-    .map((k) => {
-      const fn = Reflect.getMetadata('format', target, k)
-      return fn ? fn(target[k]) : target[k]
-    })
-    .join(',')
-}
-
-function getAllProperties(obj: Object): any {
-  if (!obj) return Object.create(null)
-
-  return {
-    ...getAllProperties(Object.getPrototypeOf(obj)),
-    ...Object.getOwnPropertyDescriptors(obj),
+    Reflect.defineMetadata(
+      csvMetadataKey,
+      new Map([...(properties as any ?? [])]).set(key, { position, format }),
+      target
+    )
   }
 }
 
-function getPossibleKeys(obj: Object) {
-  const arr = Reflect.ownKeys(obj).concat(
-    Object.keys(getAllProperties(obj))
-  ) as string[]
-  return [...new Set(arr)]
+function getSortedMetadata(obj: any) {
+  const properties = [
+    ...(Reflect.getMetadata(csvMetadataKey, obj.prototype) as CsvOptions ?? []),
+  ]
+  properties.sort(([,a], [,b]) => a.position - b.position)
+  return properties
 }
 
-// class B {
-//   @Pos(0)
-//   get c(): string {
-//     return 1 + 'ccc'
-//   }
+export function getHeaders<T>(clazz: new (...args: any) => T): string[] {
+  return getSortedMetadata(clazz).map(([key]) => key)
+}
 
-//   @Pos(3)
-//   d = 9
-// }
+export function getCsvLine<T extends object>(obj: T): string {
+  return getSortedMetadata(obj.constructor)
+    .map(([key, { format }]) => {
+      const value = obj[key as keyof T]
+      return format ? format(value) : value
+    })
+    .join(',')
+}
 
-// class A extends B {
-//   @Pos(2)
-//   a = 3
+/*
+class Item {
+  @Csv(2, v => v.toUpperCase())
+  public name: string
 
-//   @Pos(1)
-//   b?: string
-// }
+  @Csv(1)
+  public price: number
 
-// console.log('Object.keys(target) :>> ', getPossibleKeys(A))
-// console.log('Object.keys(target) :>> ', getPossibleKeys(new A()))
+  constructor(name: string, price: number) {
+    this.name = name
+    this.price = price
+  }
+}
 
-// console.log('TEST :>> ', getCSVHeaders(new A()))
+class PackedItem extends Item {
+  @Csv(3)
+  public pack: string
+
+  constructor(name: string, price: number, pack: string) {
+    super(name, price)
+    this.pack = pack
+  }
+}
+
+const item = new Item('Apple', 1.99)
+
+console.log(getHeaders(Item)) // Output: price,name
+console.log(getCsvLine(item)) // Output: 1.99,APPLE
+
+const packedItem = new PackedItem('Orange', 2.05, 'cardbox')
+
+console.log(getHeaders(Item)) // Output: price,name
+console.log(getCsvLine(item)) // Output: 1.99,APPLE
+
+console.log(getHeaders(PackedItem)) // Output: price,name,pack
+console.log(getCsvLine(packedItem)) // Output: 2.05,ORANGE,cardbox
+ */
