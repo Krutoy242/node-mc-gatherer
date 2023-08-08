@@ -2,12 +2,13 @@ import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseVisible, Based, LabelSetup, Labeled, Solvable } from '../../api'
+import type { BaseVisible, Based, Labeled, Solvable } from '../../api'
+import { LabelSetup } from '../../api'
 
 import { Csv } from '../../tools/CsvDecorators'
 import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
-import Labelable from '../calc/Labelable'
+import Setable from '../calc/Setable'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 const siFormat = (n: number) => numeral(n).format('a').padStart(4)
@@ -15,7 +16,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
 export default class Definition
-  extends Labelable
+  extends Setable
   implements Based, BaseVisible, Labeled, Solvable<Definition> {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
@@ -31,9 +32,6 @@ export default class Definition
 
   @Csv(21)
   imgsrc?: string
-
-  @Csv(21.5)
-  override labels = ''
 
   @Csv(0, escapeCsv)
   display?: string
@@ -51,6 +49,21 @@ export default class Definition
   mainRecipeAmount: number | undefined
 
   dependencies: Set<Recipe> | undefined
+
+  @Csv(21.5)
+  get labels() {
+    const isLabeled: Record<keyof typeof LabelSetup, () => boolean> = {
+      Bottleneck: () => [...this.recipes ?? []].filter(r => r.purity > 0).length === 1,
+      Alone     : () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
+    }
+
+    // Compute and apply all labels
+    type LabKey = keyof typeof LabelSetup
+    const entries = Object.entries(LabelSetup) as [LabKey, typeof LabelSetup[LabKey]][]
+    return entries
+      .map(([label, { char }]) => isLabeled[label]() ? char : '')
+      .join('')
+  }
 
   @Csv(22)
   get recipeIndexes() {
@@ -138,13 +151,6 @@ export default class Definition
       processing: main.processing,
     })
     return true
-  }
-
-  protected isLabeled(label: keyof typeof LabelSetup) {
-    return {
-      Bottleneck: () => [...this.recipes ?? []].filter(r => r.purity > 0).length === 1,
-      Alone     : () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
-    }[label]()
   }
 
   public get complexity_s(): string {
