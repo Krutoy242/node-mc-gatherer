@@ -54,7 +54,7 @@ export default class Inventory {
   addCatalystsOf(microStacks: DefinitionStack[]): this {
     for (const ms of microStacks) {
       const r = ms.it.mainRecipe
-      if (!r || !r.inventory) break
+      if (!r || !r.inventory) continue
 
       for (const rec of r.inventory.stepsRecipes) this.mergeRecipe(rec)
       for (const [def, amount] of r.inventory.storage) this.mergeSingle(def, amount)
