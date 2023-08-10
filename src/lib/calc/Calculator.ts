@@ -21,11 +21,7 @@ export default class Calculator {
 
     let dirtyRecipes = new Set<Recipe>()
 
-    function addDirty(r: Recipe) {
-      dirtyRecipes.add(r)
-    }
-
-    this.assignPredefined(addDirty)
+    this.assignPredefined((r: Recipe) => dirtyRecipes.add(r))
     this.definitionStore.locked = true
 
     const cliBars = {
@@ -58,7 +54,7 @@ export default class Calculator {
         if (oldPurity <= 0) totalCalculated++
 
         rec.outputs.forEach(stack =>
-          recalcDefs += this.calcStack(stack, rec, addDirty, cli)
+          recalcDefs += this.calcStack(stack, rec, (r: Recipe) => newDirtyRecipes.add(r), cli)
         )
       }
       dirtyRecipes = newDirtyRecipes
