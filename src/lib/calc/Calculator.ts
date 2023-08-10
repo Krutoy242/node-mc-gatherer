@@ -35,7 +35,7 @@ export default class Calculator {
     cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
     await sleep()
 
-    const recalculated = new Array<number>(this.recipeStore.length).fill(0)
+    const recalculated = Array.from({ length: this.recipeStore.length }).fill(0) as number[]
     let totalCalculated = 0
 
     let iters = 0
@@ -112,7 +112,7 @@ export default class Calculator {
     Object.entries(predefined).forEach(([id, cost]) => {
       const ingr = this.ingredientStore.get(id)
       for (const def of this.definitionStore.matchedBy(ingr)) {
-        def.natural(cost)
+        def.naturalCost = cost
         def.dependencies?.forEach(addDirty)
       }
     })

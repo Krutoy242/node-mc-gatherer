@@ -7,7 +7,7 @@ export class Ingredient<T extends Identified> implements Identified {
 
   private matchedCache?: T[] | []
 
-  constructor(public readonly items: T[], public id: string) {}
+  constructor(readonly items: T[], public id: string) {}
 
   hasMatchedCache() {
     return !!this.matchedCache

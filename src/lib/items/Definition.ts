@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseVisible, Based, Labeled, Solvable } from '../../api'
+import type { BaseVisible, Based, Calculable, Labeled, Solvable } from '../../api'
 import { LabelSetup } from '../../api'
 
 import { Csv } from '../../tools/CsvDecorators'
@@ -16,8 +16,7 @@ const siFormat = (n: number) => numeral(n).format('a').padStart(4)
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
 export default class Definition
-  extends Setable
-  implements Based, BaseVisible, Labeled, Solvable<Definition> {
+implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -39,21 +38,23 @@ export default class Definition
   @Csv(1, (s?: string[]) => escapeCsv(s?.join('\\n')))
   tooltips?: string[]
 
-  isNatural = false
+  naturalCost?: number
 
-  @Csv(12) public override get cost() {
-    if (this.isNatural) return this._cost
-    return (this.mainRecipe?.cost ?? Infinity) / (this.mainRecipeAmount ?? 1.0)
+  @Csv(12) get cost() {
+    if (this.naturalCost) return this.naturalCost
+    return (this.mainRecipe?.cost ?? Number.POSITIVE_INFINITY) / (this.mainRecipeAmount ?? 1.0)
   }
 
-  @Csv(13) public override get processing() {
-    if (this.isNatural) return this._processing
-    return this.mainRecipe?.processing ?? Infinity
+  @Csv(13) get processing() {
+    return this.naturalCost ? 0.0 : this.mainRecipe?.processing ?? Number.POSITIVE_INFINITY
   }
 
-  @Csv(10) public override get purity() {
-    if (this.isNatural) return this._purity
-    return this.mainRecipe?.purity ?? 0.0
+  @Csv(10) get purity() {
+    return this.naturalCost ? 1.0 : this.mainRecipe?.purity ?? 0.0
+  }
+
+  @Csv(11) get complexity() {
+    return this.cost + this.processing
   }
 
   /**
@@ -118,11 +119,10 @@ export default class Definition
     public readonly meta: string | undefined,
     public readonly sNbt: string | undefined
   ) {
-    super()
     this.id = id
   }
 
-  override toString(options?: { complexityPad?: number; short?: boolean }) {
+  toString(options?: { complexityPad?: number; short?: boolean }) {
     const display = `"${this.display}" ${this.id}`
     if (options?.short) return display
     const full
@@ -152,14 +152,6 @@ export default class Definition
     this.mainRecipe = rec
     this.mainRecipeAmount = amount
     return true
-  }
-
-  /**
-   * Player naturally have acces to this item, predefined
-   */
-  natural(cost: number) {
-    this.isNatural = true
-    this.set({ purity: 1.0, cost, processing: 0.0 })
   }
 
   /*

@@ -66,7 +66,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
 
     let catalList: Inventory | undefined
     if (catDefs.length || inDefs.some(d => d.it.mainRecipe?.inventory)) {
-      const treshold = samePurity ? this.complexity - cost : Infinity
+      const treshold = samePurity ? this.complexity - cost : Number.POSITIVE_INFINITY
       catalList = new Inventory(treshold, this)
         .addCatalysts(catDefs)
         .addCatalystsOf(inDefs)
@@ -119,7 +119,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     let purity = 1.0
     const defs: DefinitionStack[] = []
     for (const stack of stacks) {
-      let minComp = Infinity
+      let minComp = Number.POSITIVE_INFINITY
       let maxPur = 0.0
       let bestDef!: Definition
       for (const def of stack.it.matchedBy()) {
@@ -127,7 +127,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
           def.purity > maxPur
           || (def.purity === maxPur && def.complexity < minComp)
         ) {
-          bestDef = def as Definition
+          bestDef = def
           maxPur = def.purity
           minComp = def.complexity
         }
