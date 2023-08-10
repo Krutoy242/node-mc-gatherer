@@ -1,6 +1,7 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn
 ) {
+  addRecipe('rats:contaminated_food:0', 'minecraft:apple:0', 'entity:rats:rat')
   addRecipe('8x rats:tiny_coin:0', ['rats:rat_upgrade_aristocrat:0', '1000x placeholder:ticks'])
   addRecipe('dimension:-8', 'rats:chunky_cheese_token:0')
   addRecipe(

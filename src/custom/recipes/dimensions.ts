@@ -18,5 +18,5 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
   )
 
   addRecipe('minecraft:obsidian:0', '1000x fluid:lava', '1000x fluid:water')
-  addRecipe('1000x fluid:lava', '100000x placeholder:exploration', 'minecraft:bucket:0')
+  addRecipe('1000x fluid:lava', '100x placeholder:exploration', 'minecraft:bucket:0')
 }

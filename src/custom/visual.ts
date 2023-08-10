@@ -49,6 +49,13 @@ export default function customRender(
         display: `{Dimension ${entry}}`,
       }),
     },
+
+    multiblock: {
+      __: () => ({
+        imgsrc : get('immersivepetroleum:schematic:0')?.imgsrc,
+        display: `Multiblock {${entry}}`,
+      }),
+    },
   }
 
   const stairs = [source, entry, meta, sNbt]

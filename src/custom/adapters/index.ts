@@ -175,7 +175,7 @@ adapters.set(/minecraft__crafting/, (cat, tools) => {
   })
 })
 
-adapters.set(/tconstruct__casting_table/, (cat) => {
+adapters.set(/tconstruct__casting_table/, (cat, tools) => {
   cat.catalysts = [
     getIngr('tconstruct:casting:0'),
     getIngr('tconstruct:casting:1'),
@@ -186,6 +186,10 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
     'tconstruct:cast:',
     'tconstruct:cast_custom:',
   ]
+  const anyCast = notConsumed.concat('tconstruct:clay_cast')
+
+  const nameCache = new Map<string, string>()
+
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     // Remove Duplicate of input liquid
     rec.input.items.some((s, i) => s.stacks.some(item => item.type === 'fluid') && rec.input.items.splice(i, 1))
@@ -202,6 +206,30 @@ adapters.set(/tconstruct__casting_table/, (cat) => {
         rec.catalyst = [{ amount: 1, stacks: cat.catalysts }, getIngr(cast.name)]
       }
     })
+
+    // Instead of iterating all possible tool parts, use only wooden/string
+    if (rec.output.items.some(s => s.stacks.some(i => anyCast.some(c => i.name.startsWith(c))))) {
+      rec.input.items.forEach((inp) => {
+        if (inp.stacks.length <= 1) return
+
+        // Find all possible materials
+        const materials = new Map<string, string>()
+        inp.stacks.forEach((s) => {
+          if (nameCache.has(s.name)) return
+          const full = tools.getFullID(s)
+          nameCache.set(s.name, full)
+          const m = full.match(/Material:"(.+?)"/)?.[0]
+          if (m) materials.set(m, s.name)
+        })
+
+        // Replace with only one item ingredient
+        for (const mat of ['wood', 'string', 'stone']) {
+          if (!materials.has(mat)) continue
+          inp.stacks = [{ type: inp.stacks[0].type, name: materials.get(mat) as string }]
+          return
+        }
+      })
+    }
   })
 })
 
@@ -339,7 +367,8 @@ adapters.set(/^recycler$/, (cat) => {
 
 adapters.set(/extendedcrafting__compressor/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    if (rec.input.items.length >= 2) rec.catalyst = [rec.input.items.pop() as JEIESlot]
+    if (rec.input.items.length >= 2)
+      rec.catalyst = [{ amount: 1, stacks: cat.catalysts }, rec.input.items.pop() as JEIESlot]
     rec.input.items[0].amount = 10000
   })
 })
@@ -526,7 +555,7 @@ adapters.set(/jeresources__villager/, (cat) => {
               },
             ],
           },
-          catalyst: [getIngr('placeholder:trade', 10 + y_i)],
+          catalyst: [getIngr('placeholder:trade', 10 + y_i ** 2)],
         })
       })
     })
@@ -776,7 +805,7 @@ function getBeeWithSpecie(name: string, specieGenes: string): JEIEItem {
     specieGenes
   )
 }
-const beeOnlySpecie = (item: JEIEItem, tools: Tools) => {
+function beeOnlySpecie(item: JEIEItem, tools: Tools) {
   return getBeeWithSpecie(item.name, getSpecie(item, tools))
 }
 
@@ -904,6 +933,12 @@ adapters.set(/^qmd__atmosphere_collector$/, (cat) => {
   }]
 })
 
+adapters.set(/^qmd__accelerator_source$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items.forEach(s => s.amount = 0.001)
+  })
+})
+
 adapters.set(/astralsorcery__lightTransmutation/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => rec.catalyst = [
     {
@@ -951,6 +986,7 @@ adapters.set(/^EIOTank$/, (cat) => {
 })
 
 adapters.set(/^tweakedpetrol.+__pumpjack$/, (cat) => {
+  cat.recipes = cat.recipes.filter(r => r.input.items.some(s => s.stacks.some(i => i.name.match(/oil|lava|water/))))
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.output.items.forEach(s => s.amount = 1000)
     rec.input.items = [getSlot('placeholder:ticks', 200)]
@@ -960,6 +996,23 @@ adapters.set(/^tweakedpetrol.+__pumpjack$/, (cat) => {
 adapters.set(/^tweakedexcavation__excavator$/, (cat) => {
   cat.catalysts.push({ name: 'dimension:0', type: 'item' })
   cat.recipes.forEach(r => r.input.items = [getSlot('placeholder:ticks', 80), getSlot('placeholder:rf', 1280000)])
+})
+
+adapters.set(/^tweakedexcavation__excavator$/, (cat) => {
+  cat.recipes.forEach(r => r.input.items.forEach((s) => {
+    if (s.stacks.some(i => i.name === ('harvestcraft:queenbeeitem:0')))
+      s.amount = 1 / 38
+  }))
+})
+
+adapters.set(/^appliedenergistics2__inscriber$/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    move.input.to.catalyst(rec, s => s.stacks.some(i => i.name.match(/appliedenergistics2:material:(13|14|15|19|21).*/)))
+  })
+})
+
+adapters.set(/^ie__workbench$/, (cat) => {
+  cat.recipes.forEach(r => move.input.to.catalyst(r, s => s.stacks.some(i => i.name.startsWith('immersiveengineering:blueprint'))))
 })
 
 // Everything

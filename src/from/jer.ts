@@ -42,7 +42,7 @@ function difficulty_from_level(x: number) {
   return 1 + Math.min(Math.max(0, r), 1)
 }
 
-const maxHeightDiff = new Array(maxHeight)
+const maxHeightDiff = Array.from({ length: maxHeight })
   .fill(0)
   .map((_a, i) => difficulty_from_level(i))
   .reduce((a, b) => a + b)
@@ -55,6 +55,11 @@ const probFactor = 0.9
 // Globally Discrease cost of
 const globalCostMultiplicator = 1 / 5
 
+// Dimension discount
+const dimMultiplier: Record<string, number> = {
+  'dimension:1': 0.1,
+}
+
 function getProbAcces(lvl: number, prob: number): number {
   return (difficulty_from_level(lvl) * prob ** probFactor) / maxHeightDiff / globalCostMultiplicator
 }
@@ -64,8 +69,8 @@ function getJERProbability(rawStrData: string) {
     1
     / rawStrData
       .split(';')
-      .map(s => s.split(',').map(parseFloat))
-      .filter(o => !isNaN(o[0]))
+      .map(s => s.split(',').map(Number.parseFloat))
+      .filter(o => !Number.isNaN(o[0]))
       .map(([lvl, prob]) => getProbAcces(lvl, prob))
       .reduce((a, b) => a + b, 0)
   )
@@ -98,10 +103,11 @@ export default function append_JER(
   for (const jer_entry of jer) {
     const blockDef = getById(jer_entry.block)
     const block = new Stack(recipesStore.ingredientStore.fromItem(blockDef))
-    const exploreAmount = Math.max(0, Math.round(getJERProbability(jer_entry.distrib)))
+    const dimPlaceholder = jerDimToPlaceholder(jer_entry.dim)
+    const exploreAmount = Math.max(0, Math.round(getJERProbability(jer_entry.distrib) * (dimMultiplier[dimPlaceholder] ?? 1)))
     const exploreIngr = ii_exploration.withAmount(exploreAmount)
-    const catalysts = [jerDimToPlaceholder(jer_entry.dim)]
     const miningPH = getMiningPlaceholder(blockMinings, jer_entry.block)
+    const catalysts = [dimPlaceholder]
     if (miningPH) catalysts.push(miningPH)
 
     recipesStore.addRecipe('JER', block, exploreIngr, catalysts)
