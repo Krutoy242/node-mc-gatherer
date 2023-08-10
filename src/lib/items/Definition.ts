@@ -8,10 +8,10 @@ import { LabelSetup } from '../../api'
 import { Csv } from '../../tools/CsvDecorators'
 import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
-import Setable from '../calc/Setable'
 
-const numFormat = (n: number) => numeral(n).format('0,0.00')
-const siFormat = (n: number) => numeral(n).format('a').padStart(4)
+const infin = (n: number) => n === Number.POSITIVE_INFINITY ? 'Infinity' : undefined
+const numFormat = (n: number) => infin(n) ?? numeral(n).format('0,0.00')
+const siFormat = (n: number) => infin(n) ?? numeral(n).format('a').padStart(4)
 
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
