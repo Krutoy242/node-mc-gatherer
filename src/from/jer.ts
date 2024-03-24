@@ -36,10 +36,9 @@ const maxHeight = 255
 const MID = 70
 
 function difficulty_from_level(x: number) {
-  const b = 7.13
-  const c = 44
-  const r = (2 ** (b - x / (MID / b)) + x ** 2 / c ** 2) / (MID * 2) - 0.025
-  return 1 + Math.min(Math.max(0, r), 1)
+  return 1 + (x > MID
+    ? (x - MID) / 300
+    : (MID - x) ** 1.6 / MID)
 }
 
 const maxHeightDiff = Array.from({ length: maxHeight })
