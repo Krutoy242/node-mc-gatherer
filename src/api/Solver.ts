@@ -47,13 +47,10 @@ function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
     if (!def.recipes?.size)
       return // No recipes
 
-    const recipe = def.mainRecipe ?? [...def.recipes].sort(recipeSorter)[0]
+    const recipe = bestRecipe(def.recipes, amount)
 
-    recipe.catalystsDef ??= toDefStacks(recipe.catalysts)
-    recipe.inputsDef ??= toDefStacks(recipe.inputs)
-
-    playthrough.addCatalysts(recipe.catalystsDef)
-    playthrough.addInputs(recipe.inputsDef, amount)
+    playthrough.addCatalysts(recipe.catalystsDef ??= toDefStacks(recipe.catalysts))
+    playthrough.addInputs(recipe.inputsDef ??= toDefStacks(recipe.inputs), amount)
 
     return [
       recipe.catalystsDef,
@@ -106,12 +103,18 @@ function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   }
 }
 
-export function recipeSorter<T extends Solvable<T>>(a: SolvableRecipe<T>, b: SolvableRecipe<T>): number {
-  return sortCheapest(a, b) || reqPuritySumm(b) - reqPuritySumm(a) || niceRecipe(b) - niceRecipe(a)
-}
+export function bestRecipe<T extends Solvable<T>>(
+  recipes: Set<SolvableRecipe<T>>,
+  amount: number,
+): SolvableRecipe<T> {
+  const recipesArr = [...recipes].sort((a, b) => {
+    return b.purity - a.purity // Purest
+      || (a.cost * amount + a.processing) - (b.cost * amount + b.processing) // Cheapest including count
+      || reqPuritySumm(b) - reqPuritySumm(a) // Purity or requirments
+      || niceRecipe(b) - niceRecipe(a)
+  })
 
-function sortCheapest(a: Calculable, b: Calculable): number {
-  return b.purity - a.purity || a.complexity - b.complexity
+  return recipesArr[0]
 }
 
 function reqPuritySumm<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
@@ -127,6 +130,7 @@ function puritySumm<T extends Solvable<T>>(arr?: Stack<Ingredient<T>>[]): number
   )
 }
 
+// TODO: needed amount
 export function toDefStacks<T extends Identified & Calculable>(
   stacks?: Stack<Ingredient<T>>[],
 ): Stack<T>[] | [] {
