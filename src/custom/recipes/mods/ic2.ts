@@ -85,5 +85,5 @@ export default function addRecipes(
   }
 
   Object.entries(seedTiers).forEach(([name, tier]) =>
-    addRecipe(`ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"${name}",resistance:1b,gain:1b}`, `${(tier + 1) ** 2 * 100}x placeholder:ticks`))
+    addRecipe(`ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"${name}",resistance:1b,gain:1b}`, `${(tier + 1) ** 3 * 100}x placeholder:ticks`))
 }
