@@ -55,7 +55,7 @@ export default async function mcGather(
   const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)
   const fromMC = (f: string) => join(options.mc, f)
-  const fromTellme = (f: string) => globSync(fromMC(`config/tellme/${f}*.csv`).replace(/\\/g, '/'))[0] ?? null
+  const fromTellme = (f: string) => globSync(fromMC(`config/tellme/${f}*.csv`).replace(/\\/g, '/')).pop() ?? null
 
   // Init Crafting Table as first item
   definitionStore.getById('minecraft:crafting_table:0')
