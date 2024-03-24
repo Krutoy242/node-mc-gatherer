@@ -1,4 +1,4 @@
-import _, { sortBy } from 'lodash'
+import _ from 'lodash'
 
 import type { CsvRecipe } from '../api'
 import { recipeSorter, solve } from '../api'
@@ -10,6 +10,8 @@ import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
 import { escapeCsv } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
+
+const { sortBy } = _
 
 export interface ExportData {
   store: DefinitionStore

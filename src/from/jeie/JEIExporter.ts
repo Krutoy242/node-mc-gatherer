@@ -1,7 +1,6 @@
-import { readFileSync, statSync } from 'fs'
-import { join, parse } from 'path'
-
-import glob from 'glob'
+import { readFileSync, statSync } from 'node:fs'
+import { join, parse } from 'node:path'
+import { globSync } from 'glob'
 
 import { Stack } from '../../api'
 import adapters from '../../custom/adapters'
@@ -44,7 +43,7 @@ export default async function append_JEIExporter(
     getTool,
   }
   const lookupPath = join(mcDir, relPath, '*.json')
-  const jsonList = glob.sync(lookupPath)
+  const jsonList = globSync(lookupPath.replace(/\\/g, '/'))
   const getById = recipeStore.definitionStore.getById
   const makeStack = (items: JEIEItem[]) =>
     new Stack(recipeStore.ingredientStore.fromItems(items.map(i => getById(fullId(i)))))

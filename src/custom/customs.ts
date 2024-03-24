@@ -1,8 +1,13 @@
-import { parse, resolve } from 'path'
+import { dirname, parse, resolve } from 'node:path'
 
-import glob from 'glob'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import { globSync } from 'glob'
 
 import type RecipeStore from '../lib/recipes/RecipeStore'
+
+// Convert the URL to a file path and get the directory name
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 type ModuleType = typeof import('./recipes/entities')
 
@@ -17,19 +22,20 @@ export default async function applyCustoms(recipesStore: RecipeStore, modList?: 
   await applyList('./recipes/mods/*.ts', true)
 
   async function applyList(globStr: string, useFilter: boolean) {
-    let fileList = glob.sync(resolve(__dirname, globStr))
-    if (useFilter && modList) fileList = fileList.filter(f => modList[parse(f).name])
+    const fullPath = resolve(__dirname, globStr).replace(/\\/g, '/')
+    let fileList = globSync(fullPath)
+    if (useFilter && modList)
+      fileList = fileList.filter(f => modList[parse(f).name])
     const modules = await Promise.all(
-      fileList.map(filePath => import(filePath) as unknown as ModuleType)
+      fileList.map(filePath => import(pathToFileURL(filePath).href) as unknown as ModuleType),
     )
 
     modules.forEach((modModule, i) => {
       const source = parse(fileList[i]).name // Mod name or category
       modModule.default((outputs, inputs, catalysts) =>
-        recipesStore.addRecipe(`custom:${source}`, outputs, inputs, catalysts)
+        recipesStore.addRecipe(`custom:${source}`, outputs, inputs, catalysts),
       )
     })
   }
   return true
 }
-

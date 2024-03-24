@@ -1,10 +1,12 @@
-import { sortBy, sum } from 'lodash'
+import lodash from 'lodash'
 import type { Ingredient } from './Ingredient'
 import Playthrough from './Playthrough'
 import { Stack } from './Stack'
 
 import { solverLoop } from './SolverLoop'
 import type { Calculable, Identified, Solvable, SolvableRecipe } from '.'
+
+const { sortBy, sum } = lodash
 
 type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 

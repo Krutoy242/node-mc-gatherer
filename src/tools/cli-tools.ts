@@ -3,10 +3,12 @@ import fs from 'fs'
 import chalk from 'chalk'
 import cliProgress from 'cli-progress'
 import numeral from 'numeral'
-import { terminal as term } from 'terminal-kit'
+import Terminal from 'terminal-kit'
 
 import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
+
+const { terminal: term } = Terminal
 
 /* =============================================
 =                   Helpers                   =

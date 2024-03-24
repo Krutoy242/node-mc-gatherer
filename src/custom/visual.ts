@@ -1,6 +1,8 @@
-import { capitalize } from 'lodash'
+import lodash from 'lodash'
 import type { BaseVisible } from '../api'
 import type Definition from '../lib/items/Definition'
+
+const { capitalize } = lodash
 
 type VisFunc = () => Partial<BaseVisible>
 type Pointer =

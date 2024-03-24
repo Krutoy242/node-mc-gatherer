@@ -3,13 +3,15 @@
 import { join, parse } from 'path'
 import { mkdirSync, writeFileSync } from 'fs'
 
-import { terminal as term } from 'terminal-kit'
+import Terminal from 'terminal-kit'
 import yargs from 'yargs'
 
 import type { ExportData } from './tools/Export'
 import CLIHelper from './tools/cli-tools'
 
 import mcGather from '.'
+
+const { terminal: term } = Terminal
 
 const argv = yargs(process.argv.slice(2))
   .options({

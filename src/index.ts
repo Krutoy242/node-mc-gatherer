@@ -6,10 +6,10 @@ Lunch with NodeJS
 /* =============================================
 =                Variables                    =
 ============================================= */
-import { join } from 'path'
+import { join } from 'node:path'
 
 import chalk from 'chalk'
-import glob from 'glob'
+import { globSync } from 'glob'
 
 import { parse as csvParseSync } from 'csv-parse/sync'
 import { IngredientStore } from './api'
@@ -55,15 +55,14 @@ export default async function mcGather(
   const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)
   const fromMC = (f: string) => join(options.mc, f)
-  const fromTellme = (f: string): string | null => glob.sync(fromMC(`config/tellme/${f}*.csv`))[0] ?? null
+  const fromTellme = (f: string) => globSync(fromMC(`config/tellme/${f}*.csv`).replace(/\\/g, '/'))[0] ?? null
 
   // Init Crafting Table as first item
   definitionStore.getById('minecraft:crafting_table:0')
 
   // ------------------------
   // Recipes
-  // ------------------------
-
+  // ------------------------  
   const oreDict = runTask('Creating OreDict', {
     'textSource': fromTellme('oredictionary-by-key-individual-csv'),
     'action'    : text => genOreDictionary(text),

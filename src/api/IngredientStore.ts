@@ -1,9 +1,11 @@
-import { uniqBy } from 'lodash'
+import lodash from 'lodash'
 
 import { Ingredient } from './Ingredient'
 import Store from './Store'
 
 import type { Identified } from '.'
+
+const { uniqBy } = lodash
 
 export class IngredientStore<T extends Identified> extends Store<
   Ingredient<T>
