@@ -1,7 +1,7 @@
 import _, { sortBy } from 'lodash'
 
 import type { CsvRecipe } from '../api'
-import { recipeSorter, solveLog } from '../api'
+import { recipeSorter, solve } from '../api'
 
 import type Playthrough from '../api/Playthrough'
 import { getVolume } from '../api/volume'
@@ -38,7 +38,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     const write = createFileLogger(`tree/${fileName}.log`)
     const writeLn = (s: string) => write(`${s}\n`)
 
-    const playthrough = solveLog<Definition, [number, number]>(def, [0, 1], (def, combined, _a, tab, complexityPad) => {
+    const playthrough = solve<Definition, [number, number]>(def, isAscend, [0, 1], (def, combined, _a, tab, complexityPad) => {
       writeLn('  '.repeat(tab) + def.toString({ complexityPad }))
       if (!combined) return
 
@@ -52,7 +52,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
       }
 
       return [tab + 1, Math.max(...combined.map(it => it[0].complexity_s.length))]
-    }, isAscend)
+    })
     return playthrough
   }
 

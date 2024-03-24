@@ -10,17 +10,17 @@ type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 
 type ScendTail = Tail<Required<Parameters<ReturnType<(typeof descending | typeof ascending)>>>>
 
-export function solveLog<
+export function solve<
   T extends Solvable<T>, U extends readonly any[]
 >(
   topDef: T,
-  logDefaultArgs: U,
-  log: (
+  isAscend: boolean,
+  logDefaultArgs?: U,
+  log?: (
     def: T,
     combined: (readonly [T, ...ScendTail])[] | undefined,
     ...args: [...ScendTail, ...U]
   ) => U | undefined,
-  isAscend?: boolean,
   playthrough = new Playthrough<T>()
 ) {
   const further = (isAscend ? ascending : descending)(playthrough)
@@ -30,24 +30,11 @@ export function solveLog<
     (def: T, ...args) => {
       const combined = further(def, ...args)
       // @ts-expect-error TS cant in rest
-      const logArgs = log(def, combined, ...args)
+      const logArgs = log ? log(def, combined, ...args) : []
 
-      return combined?.map(ms => [...ms, ...logArgs as U] as const)
+      return combined?.map(ms => [...ms, ...(logArgs ?? [])] as const)
     }
-  )(topDef, undefined, ...logDefaultArgs)
-
-  return playthrough
-}
-
-export function solve<T extends Solvable<T>>(
-  topDef: T,
-  isAscend?: boolean,
-  playthrough = new Playthrough<T>()
-) {
-  const further = (isAscend ? ascending : descending)(playthrough)
-  playthrough.addCatalysts([new Stack(topDef)])
-
-  solverLoop<T, any[]>(further)(topDef)
+  )(topDef, undefined, ...(logDefaultArgs ?? []))
 
   return playthrough
 }
