@@ -2,34 +2,34 @@ export function solverLoop<T, U extends any[]>(
   action: (def: T, ...args: U) => ((readonly[T, ...U])[] | undefined)
 ) {
   function safeLoop(
-    antiloop: Set<T>,
-    def: T,
-    ...args: U
+    visited: Set<T>,
+    currentDef: T,
+    ...currentArgs: U
   ) {
-    if (antiloop.has(def)) return
-    antiloop.add(def)
+    if (visited.has(currentDef)) return
+    visited.add(currentDef)
 
-    const combined = action(def, ...args)
-    if (!combined) return
+    const nextSteps = action(currentDef, ...currentArgs)
+    if (!nextSteps) return
 
     // --------------------
     // Holded items - items that would be looped later
     const onHold = new Set<T>()
-    combined.forEach(([def]) => {
-      if (antiloop.has(def)) return
-      onHold?.add(def)
-      antiloop.add(def)
+    nextSteps.forEach(([def]) => {
+      if (visited.has(def)) return
+      onHold.add(def)
+      visited.add(def)
     })
     // --------------------
 
-    for (const [def, ...newArgs] of combined) {
+    for (const [def, ...newArgs] of nextSteps) {
       if (onHold.has(def)) {
         onHold.delete(def)
-        antiloop.delete(def)
+        visited.delete(def)
       }
-      safeLoop(antiloop, def, ...newArgs)
+      safeLoop(visited, def, ...newArgs)
     }
   }
 
-  return (def: T, ...args: U) => safeLoop(new Set<T>(), def, ...args)
+  return (initialDef: T, ...args: U) => safeLoop(new Set<T>(), initialDef, ...args)
 }
