@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('iceandfire:fire_dragon_blood:0', [
     '40000x placeholder:fight',
@@ -24,7 +24,7 @@ export default function addRecipes(
       'iceandfire:myrmex_desert_egg:3',
     ],
     '1000000x placeholder:ticks',
-    'iceandfire:myrmex_desert_egg:4'
+    'iceandfire:myrmex_desert_egg:4',
   )
 
   addRecipe(
@@ -35,7 +35,7 @@ export default function addRecipes(
       'iceandfire:myrmex_jungle_egg:2',
     ],
     '1000000x placeholder:ticks',
-    'iceandfire:myrmex_jungle_egg:4'
+    'iceandfire:myrmex_jungle_egg:4',
   )
 
   addRecipe('entity:iceandfire:amphithere', '5000x placeholder:exploration')

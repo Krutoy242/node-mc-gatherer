@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('endreborn:sword_shard:0', [
     '10000x placeholder:fight',

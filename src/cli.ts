@@ -1,7 +1,8 @@
 #! /usr/bin/env node
 
-import { join, parse } from 'path'
-import { mkdirSync, writeFileSync } from 'fs'
+import { join, parse } from 'node:path'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import process from 'node:process'
 
 import Terminal from 'terminal-kit'
 import yargs from 'yargs'
@@ -16,30 +17,30 @@ const { terminal: term } = Terminal
 const argv = yargs(process.argv.slice(2))
   .options({
     mc: {
-      alias       : 'm',
-      type        : 'string',
-      describe    : 'Path to minecraft folder',
+      alias: 'm',
+      type: 'string',
+      describe: 'Path to minecraft folder',
       demandOption: true,
     },
     output: {
-      alias       : 'o',
-      type        : 'string',
-      describe    : 'Output dir path',
+      alias: 'o',
+      type: 'string',
+      describe: 'Output dir path',
       demandOption: true,
     },
     jeie: {
-      type    : 'boolean',
+      type: 'boolean',
       describe: 'Do load JEIExporter files',
-      default : true,
+      default: true,
     },
     jec: {
-      type    : 'boolean',
+      type: 'boolean',
       describe: 'Do load Just Enough Calculation files',
-      default : true,
+      default: true,
     },
     inject: {
-      alias   : 'j',
-      type    : 'boolean',
+      alias: 'j',
+      type: 'boolean',
       describe: 'Inject .zs script files into minecraft folder',
     },
   })
@@ -57,7 +58,8 @@ function saveObjAsJson(obj: any, filename: string) {
   saveText(JSON.stringify(obj, null, 2), filename)
 }
 
-if (!argv.mc) throw new Error('Arguments must include --mc')
+if (!argv.mc)
+  throw new Error('Arguments must include --mc')
 ;(async () => {
   const cli = new CLIHelper()
   const exportData = await mcGather(argv, cli)

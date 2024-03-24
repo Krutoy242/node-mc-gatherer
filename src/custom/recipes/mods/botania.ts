@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe(
     [
@@ -13,7 +13,7 @@ export default function addRecipes(
       'botania:biomestonea:15',
     ],
     '7x minecraft:cobblestone:0',
-    'botania:specialflower:0:{type:"marimorphosis"}'
+    'botania:specialflower:0:{type:"marimorphosis"}',
   )
 
   addRecipe('5x botania:flower:*', 'botania:fertilizer:0', '5x minecraft:grass:0')

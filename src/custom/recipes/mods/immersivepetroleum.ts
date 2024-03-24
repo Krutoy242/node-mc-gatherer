@@ -13,7 +13,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
       '4x immersiveengineering:metal_device1:6',
       '11x immersiveengineering:metal_decoration1:1',
     ],
-    'immersiveengineering:tool:0'
+    'immersiveengineering:tool:0',
   )
   addRecipe(
     'immersivepetroleum:metal_multiblock:3',
@@ -27,6 +27,6 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
       '4x immersiveengineering:metal_device1:6',
       '11x immersiveengineering:metal_decoration1:1',
     ],
-    'immersiveengineering:tool:0'
+    'immersiveengineering:tool:0',
   )
 }

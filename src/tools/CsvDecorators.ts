@@ -16,7 +16,7 @@ export function Csv(position: number, format?: FormatFunction) {
     Reflect.defineMetadata(
       csvMetadataKey,
       new Map([...(properties as any ?? [])]).set(key, { position, format }),
-      target
+      target,
     )
   }
 }

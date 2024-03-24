@@ -1,4 +1,5 @@
-import fs from 'fs'
+import fs from 'node:fs'
+import process from 'node:process'
 
 import chalk from 'chalk'
 import cliProgress from 'cli-progress'
@@ -26,13 +27,13 @@ function logMore(text: string) {
 =
 ============================================= */
 interface TaskOptionsFiled<T> {
-  moreInfo?: (info: {
+  'moreInfo'?: (info: {
     addedDefs: number
     addedRecs: number
     result: T extends Promise<any> ? Awaited<T> : T
   }) => string
-  textSource?: string | null
-  action?: (text: string) => T
+  'textSource'?: string | null
+  'action'?: (text: string) => T
   '🛑'?: string
   '⚠️'?: string
 }
@@ -67,17 +68,17 @@ export default class CLIHelper {
   startProgress(title: string | string[], total: number | number[]) {
     const commonOpts = {
       format: `${chalk.bold('{title}')} [${chalk.cyan('{bar}')}] ${chalk.gray(
-        '{value}/{total}'
+        '{value}/{total}',
       )} | {task}`,
-      hideCursor    : true,
+      hideCursor: true,
       stopOnComplete: true,
-      linewrap      : false,
+      linewrap: false,
     }
 
     if (Array.isArray(title) && Array.isArray(total)) {
       const multibar = new cliProgress.MultiBar(
         commonOpts,
-        cliProgress.Presets.shades_classic
+        cliProgress.Presets.shades_classic,
       )
       this.multBarStop = () => multibar.stop()
       this.bars = title.map((t, i) => {
@@ -89,10 +90,10 @@ export default class CLIHelper {
     else {
       this.bar = new cliProgress.SingleBar(
         commonOpts,
-        cliProgress.Presets.shades_classic
+        cliProgress.Presets.shades_classic,
       )
       this.bar.start(total as number, 0, {
-        task : '',
+        task: '',
         title: String(title).padStart(15),
       })
     }
@@ -103,16 +104,18 @@ export default class CLIHelper {
   }
 
   progressIncrement(n?: number) {
-    if (n) this.bar?.update(n)
+    if (n)
+      this.bar?.update(n)
     else this.bar?.increment()
   }
 
   createRunTask(definitionStore: DefinitionStore, recipesStore: RecipeStore) {
     return function runTask<T>(
       description: string,
-      opts: TaskOptionsFiled<T>
+      opts: TaskOptionsFiled<T>,
     ): T | undefined {
-      if (description) logTask(description)
+      if (description)
+        logTask(description)
 
       const showWarn = (): any => {
         if (!opts['⚠️']) {
@@ -135,7 +138,8 @@ export default class CLIHelper {
       const result = (opts.action ?? ((t: any) => t as T))(text as string)
       const isPromise = typeof (result as any)?.then === 'function'
 
-      if (isPromise) (result as unknown as Promise<any>).then(r => finalize(r))
+      if (isPromise)
+        (result as unknown as Promise<any>).then(r => finalize(r))
       else finalize()
 
       return result
@@ -145,16 +149,18 @@ export default class CLIHelper {
         if ((isPromise && !promiseResult) || (!result))
           return showWarn()
 
-        if (opts.moreInfo) logMoreInfo(promiseResult)
+        if (opts.moreInfo)
+          logMoreInfo(promiseResult)
 
-        if (description) process.stdout.write('\n')
+        if (description)
+          process.stdout.write('\n')
       }
 
       function logMoreInfo(promiseResult?: any) {
         const info = {
           addedDefs: definitionStore.size - oldDefs,
           addedRecs: recipesStore.size() - oldRecs,
-          result   : promiseResult ?? result,
+          result: promiseResult ?? result,
         }
         logMore(opts.moreInfo!(info))
       }

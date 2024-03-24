@@ -26,10 +26,10 @@ exnihilocreatio
   .reverse()
   .reduce(
     (map, v, i) => (((map[v] = i), map)),
-    {} as { [modName: string]: number }
+    {} as { [modName: string]: number },
   )
 
-export const prefferedModSort = (a: string, b: string) => {
+export function prefferedModSort(a: string, b: string) {
   const va = modWeights[b] ?? -1
   const vb = modWeights[a] ?? -1
   return va > vb ? 1 : va < vb ? -1 : 0

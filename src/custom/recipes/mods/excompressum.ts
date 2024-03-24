@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('entity:minecraft:wolf', 'excompressum:bait:0')
   addRecipe('entity:minecraft:ocelot', 'excompressum:bait:1')

@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('rftoolsdim:dimlet_energy_module:*', 'rftoolsdim:dimlet_parcel:0')
   addRecipe('rftoolsdim:dimlet_parcel:*', '1000x placeholder:fight')
@@ -13,6 +13,6 @@ export default function addRecipes(
   addRecipe(
     'rftoolsdim:dimensional_blank_block:*',
     '1000x placeholder:exploration',
-    'dimension:RFTools_Dimension'
+    'dimension:RFTools_Dimension',
   )
 }

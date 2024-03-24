@@ -9,29 +9,32 @@ export interface BlockMinings {
 }
 
 export function generateBlockMinings(
-  crafttweakerLogTxt?: string
+  crafttweakerLogTxt?: string,
 ): BlockMinings | undefined {
-  if (!crafttweakerLogTxt) return
+  if (!crafttweakerLogTxt)
+    return
 
   const txtBlock = getCTBlock(
     crafttweakerLogTxt,
     '#          Harvest tool and level                #',
-    '##################################################'
+    '##################################################',
   )
-  if (!txtBlock?.length) return
+  if (!txtBlock?.length)
+    return
 
   const result: BlockMinings = {}
 
   txtBlock.forEach((l) => {
     const groups = l.match(
-      /<(?<id>[^>]+)> = (?<hardness>[^:]+):(?<toolClass>[^:]+):(?<level>.+)/
+      /<(?<id>[^>]+)> = (?<hardness>[^:]+):(?<toolClass>[^:]+):(?<level>.+)/,
     )?.groups
-    if (!groups) return
+    if (!groups)
+      return
 
     result[groups.id] = {
-      hardness : Number(groups.hardness),
+      hardness: Number(groups.hardness),
       toolClass: groups.toolClass,
-      level    : Number(groups.level),
+      level: Number(groups.level),
     }
   })
   return result

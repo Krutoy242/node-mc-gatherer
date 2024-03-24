@@ -12,6 +12,7 @@ export function loadDataCSVEx(csvText: string, parserer: any) {
 
     parser.on('readable', () => {
       let record
+      // eslint-disable-next-line no-cond-assign
       while ((record = parser.read()) !== null) table.push(record as CSVBaseItem)
     })
 

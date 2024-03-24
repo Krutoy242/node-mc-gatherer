@@ -31,12 +31,12 @@ export interface Based {
 
 const baseVisibleSetup = {
   display: String,
-  imgsrc : String,
+  imgsrc: String,
 } as const
 
 const calculableSetup = {
-  purity    : Number,
-  cost      : Number,
+  purity: Number,
+  cost: Number,
   processing: Number,
   complexity: Number,
 } as const
@@ -47,12 +47,12 @@ const numberArr = (splitter: string) => (s: string) => stringArr(splitter)(s).ma
 export const baseItemSetup = {
   ...baseVisibleSetup,
   ...calculableSetup,
-  id           : String,
-  labels       : String,
-  steps        : Number,
-  tooltips     : stringArr('\\n'),
+  id: String,
+  labels: String,
+  steps: Number,
+  tooltips: stringArr('\\n'),
   recipeIndexes: numberArr(' '),
-  depIndexes   : numberArr(' '),
+  depIndexes: numberArr(' '),
 } as const
 
 export type BaseVisible = {

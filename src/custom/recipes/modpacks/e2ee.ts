@@ -1,8 +1,8 @@
 const appropriateTools: { [toolClass: string]: string } = {
   pickaxe: 'tconstruct:pick_head',
-  axe    : 'tconstruct:axe_head',
-  shears : 'tconstruct:kama_head',
-  shovel : 'tconstruct:shovel_head',
+  axe: 'tconstruct:axe_head',
+  shears: 'tconstruct:kama_head',
+  shovel: 'tconstruct:shovel_head',
 }
 
 const materialsByLevel = [
@@ -25,7 +25,7 @@ const materialsByLevel = [
 ]
 
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   Object.entries(appropriateTools).forEach(([toolClass, toolId]) => {
     materialsByLevel.forEach((material, level) => {
@@ -39,4 +39,3 @@ export default function addRecipes(
 //     console.log(`,{"input":[{"type":"itemStack", "content":{"amount":1L, "item":"${toolId}","nbt": {"Material": "${material}"} } }], "output":[{"type":"placeholder", "content":{"amount":1L, "name":"${toolClass}:${level}" } }] }`)
 //   })
 // })
-

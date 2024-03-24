@@ -9,7 +9,8 @@ export interface OredictMap {
 }
 
 export default function genOreDictionary(csvText?: string) {
-  if (!csvText) return
+  if (!csvText)
+    return
   const dict: OredictMap = {}
 
   const entries: {
@@ -17,7 +18,7 @@ export default function genOreDictionary(csvText?: string) {
     'Registry name': string
     'Meta/dmg': string
     'Display name': string
-    NBT: string
+    'NBT': string
   }[] = csvParseSync(csvText, {
     columns: true,
   })
@@ -34,8 +35,8 @@ export default function genOreDictionary(csvText?: string) {
     arr.sort(
       (a, b) =>
         prefferedModSort(getItemSource(a), getItemSource(b))
-        || naturalSort(a, b)
-    )
+        || naturalSort(a, b),
+    ),
   )
 
   return dict

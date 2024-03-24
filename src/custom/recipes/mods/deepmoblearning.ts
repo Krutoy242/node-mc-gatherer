@@ -1,10 +1,10 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe(
     '3x deepmoblearning:glitch_fragment:0',
     'deepmoblearning:glitch_heart:0',
-    'minecraft:obsidian:0'
+    'minecraft:obsidian:0',
   )
   ;(
     [
@@ -24,7 +24,7 @@ export default function addRecipes(
           'deepmoblearning:trial_key:0',
           `${cost * (tier + 1)}x placeholder:fight`,
         ],
-        'deepmoblearning:data_model_blank:0'
+        'deepmoblearning:data_model_blank:0',
       )
     })
   })

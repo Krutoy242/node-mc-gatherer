@@ -29,11 +29,11 @@ export default class DefinitionStore
 
   async assignVisuals(nameMap?: NameMap, blockToFluidMap?: BlockToFluidMap) {
     const log = {
-      noImgsrc : createFileLogger('noImgsrc.log'),
+      noImgsrc: createFileLogger('noImgsrc.log'),
       noDisplay: createFileLogger('noDisplay.log'),
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    // eslint-disable-next-line ts/no-this-alias
     const self = this
 
     // Assign defined
@@ -44,7 +44,8 @@ export default class DefinitionStore
 
     async function assignVisual(def: Definition, firstRun = false) {
       const fine = () => def.imgsrc && def.display
-      if (fine()) return
+      if (fine())
+        return
 
       const { source, entry, meta, sNbt } = def
 
@@ -53,29 +54,36 @@ export default class DefinitionStore
         ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
         : def.id
       const jeieEntry = nameMap?.[jeieId]
-      if (jeieEntry) def.tooltips = jeieEntry.tooltips
+      if (jeieEntry)
+        def.tooltips = jeieEntry.tooltips
 
       function* attempts(): IterableIterator<BaseVisible | undefined> {
         yield {
-          imgsrc : getIcon([source, entry, Number(meta), sNbt]),
+          imgsrc: getIcon([source, entry, Number(meta), sNbt]),
           display: jeieEntry?.name,
         }
-        if (sNbt) yield * self.matchedByDef(self.lookBased(source, entry, meta))
-        if (meta === '*' || entry === 'ore') yield * self.matchedByDef(def)
-        if (meta !== undefined && meta !== '0') yield self.lookBased(source, entry)
+        if (sNbt)
+          yield * self.matchedByDef(self.lookBased(source, entry, meta))
+        if (meta === '*' || entry === 'ore')
+          yield * self.matchedByDef(def)
+        if (meta !== undefined && meta !== '0')
+          yield self.lookBased(source, entry)
         if (blockToFluidMap && meta === '0' && !sNbt) {
           const id = blockToFluidMap[def.id]
-          if (id) yield self.lookById(id)
+          if (id)
+            yield self.lookById(id)
         }
         yield customRender(source, entry, meta, sNbt, self.getById)
         yield * self.matchedByDef(def)
       }
 
       for (const defOther of attempts()) {
-        if (!defOther || defOther === def) continue
+        if (!defOther || defOther === def)
+          continue
         def.imgsrc ??= defOther.imgsrc
         def.display ??= defOther.display
-        if (firstRun || fine()) return
+        if (firstRun || fine())
+          return
       }
 
       if (!def.display) {
@@ -95,7 +103,8 @@ export default class DefinitionStore
   let hash = 0
   let i
   let chr
-  if (this.length === 0) return hash
+  if (this.length === 0)
+    return hash
   for (i = 0; i < this.length; i++) {
     chr = this.charCodeAt(i)
     hash = (hash << 5) - hash + chr
@@ -106,7 +115,8 @@ export default class DefinitionStore
 
 function unsignedHash(str: string) {
   let number = (str as any).hashCode()
-  if (number < 0) number = 0xFFFFFFFF + number + 1
+  if (number < 0)
+    number = 0xFFFFFFFF + number + 1
 
   return number.toString(16)
 }

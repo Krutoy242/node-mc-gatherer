@@ -33,12 +33,12 @@ export default async function append_JEIExporter(
   getTool: (blockId: string) => string | undefined,
   recipeStore: RecipeStore,
   mcDir: string,
-  cli: CLIHelper
+  cli: CLIHelper,
 ) {
   const adapterEntries = [...adapters.entries()]
   const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
   const tools = {
-    getFullID     : fullId,
+    getFullID: fullId,
     toolDurability: toolDurability ?? {},
     getTool,
   }
@@ -73,7 +73,8 @@ export default async function append_JEIExporter(
 
     const adapterList = adapterEntries.filter(([rgx]) => rgx.test(fileName))
     adapterList.forEach(([, adapter]) => adapter(category, tools))
-    if (!category.recipes.length) return
+    if (!category.recipes.length)
+      return
 
     const customRecipes: JEIECustomRecipe[] = category.recipes
     const defaultCatalysts = category.catalysts.length ? makeStack(category.catalysts) : []
@@ -82,17 +83,19 @@ export default async function append_JEIExporter(
     customRecipes.forEach((rec) => {
       const outputs = convertIngredients(rec.output.items)
       outputs.length
-        && recipeStore.addRecipe(
-          fileName,
-          outputs,
-          convertIngredients(rec.input.items),
-          rec.catalyst ? convertIngredients(rec.catalyst) : defaultCatalysts
-        )
-        && recipesLength--
+      && recipeStore.addRecipe(
+        fileName,
+        outputs,
+        convertIngredients(rec.input.items),
+        rec.catalyst ? convertIngredients(rec.catalyst) : defaultCatalysts,
+      )
+      && recipesLength--
     })
 
-    if (recipesLength === customRecipes.length) noRecipeCategories.push(`⭕ Recipes not added in ${fileName}`)
-    else if (recipesLength > 0) noRecipeCategories.push(`⚠️ ${recipesLength} Recipes not added in ${fileName}`)
+    if (recipesLength === customRecipes.length)
+      noRecipeCategories.push(`⭕ Recipes not added in ${fileName}`)
+    else if (recipesLength > 0)
+      noRecipeCategories.push(`⚠️ ${recipesLength} Recipes not added in ${fileName}`)
 
     cli.progressIncrement()
   }
@@ -105,7 +108,7 @@ export default async function append_JEIExporter(
 
   function getFromStacks(stacks: JEIEItem[]) {
     return recipeStore.ingredientStore.fromItems(
-      stacks.map(s => getById(fullId(s)))
+      stacks.map(s => getById(fullId(s))),
     )
   }
 }

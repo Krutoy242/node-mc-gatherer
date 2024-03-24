@@ -16,13 +16,13 @@ type AnyIngredients = AnyIngredient | AnyIngredient[] | undefined
 type RecipeParams = [
   outputs: AnyIngredients,
   inputs?: AnyIngredients,
-  catalysts?: AnyIngredients
+  catalysts?: AnyIngredients,
 ]
 
 type RecipeLists = [
   outputs: DefIngrStack[],
   inputs?: DefIngrStack[],
-  catalysts?: DefIngrStack[]
+  catalysts?: DefIngrStack[],
 ]
 
 export default class RecipeStore {
@@ -30,7 +30,7 @@ export default class RecipeStore {
 
   constructor(
     public definitionStore: DefinitionStore,
-    public ingredientStore: IngredientStore<Definition>
+    public ingredientStore: IngredientStore<Definition>,
   ) {}
 
   size() {
@@ -43,12 +43,14 @@ export default class RecipeStore {
 
   addRecipe(categoryName: string, ...params: RecipeParams): Recipe | undefined {
     const [outputs, inputs, catalysts] = params.map(p =>
-      this.parseRecipeParams(p)
+      this.parseRecipeParams(p),
     )
 
-    if (!outputs.length) return
+    if (!outputs.length)
+      return
     if (!inputs.length) {
-      if (!catalysts?.length) noReqLog(categoryName, ...outputs, '\n')
+      if (!catalysts?.length)
+        noReqLog(categoryName, ...outputs, '\n')
       else noInpLog(categoryName, ...outputs, '\n')
       return
     }
@@ -61,7 +63,8 @@ export default class RecipeStore {
   }
 
   uniformCatalysts(...args: RecipeLists): RecipeLists {
-    if (args[1]?.length === 0) return args
+    if (args[1]?.length === 0)
+      return args
 
     const outputs = args[0].slice(0)
     const inputs = args[1]?.slice(0) ?? []
@@ -71,12 +74,14 @@ export default class RecipeStore {
       const out = outputs[out_i]
       const index = inputs.findIndex(s => s.it.id === out.it.id)
 
-      if (index === -1) continue // No intersection
+      if (index === -1)
+        continue // No intersection
       const inp = inputs[index]
 
       const out_amount = out.amount ?? 1
       const inp_amount = inp.amount ?? 1
-      if (out_amount < inp_amount) continue // Non-benefit
+      if (out_amount < inp_amount)
+        continue // Non-benefit
 
       if (out_amount > inp_amount) {
         outputs[out_i] = out.withAmount(out_amount - inp_amount)
@@ -91,7 +96,8 @@ export default class RecipeStore {
       hadChanges = true
     }
 
-    if (!hadChanges || outputs.length === 0) return args
+    if (!hadChanges || outputs.length === 0)
+      return args
 
     return [outputs, inputs, catalList]
   }
@@ -103,17 +109,20 @@ export default class RecipeStore {
   }
 
   private parseRecipeParams(anyIngrs: AnyIngredients): DefIngrStack[] {
-    if (!anyIngrs) return []
+    if (!anyIngrs)
+      return []
     const map: DefIngrStack[] = []
     const add = (a: AnyIngredient): any => {
       const stack = this.anyRecipeParam(a)
       const index = map.findIndex(s => s.it.equals(stack.it))
-      if (index === -1) return map.push(stack)
+      if (index === -1)
+        return map.push(stack)
       map[index] = map[index].withAmount(
-        (map[index].amount ?? 1) + (stack.amount ?? 1)
+        (map[index].amount ?? 1) + (stack.amount ?? 1),
       )
     }
-    if (Array.isArray(anyIngrs)) anyIngrs.forEach(add)
+    if (Array.isArray(anyIngrs))
+      anyIngrs.forEach(add)
     else add(anyIngrs)
 
     return map

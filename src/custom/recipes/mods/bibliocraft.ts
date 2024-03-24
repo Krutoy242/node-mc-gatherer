@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe(
     'bibliocraft:enchantedplate:0',
@@ -8,6 +8,6 @@ export default function addRecipes(
       'minecraft:enchanted_book:*',
       'minecraft:dye:0',
     ],
-    ['bibliocraft:typesettingtable:0', 'bibliocraft:printingpress:0']
+    ['bibliocraft:typesettingtable:0', 'bibliocraft:printingpress:0'],
   )
 }

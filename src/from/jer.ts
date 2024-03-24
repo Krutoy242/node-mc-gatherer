@@ -23,10 +23,10 @@ interface DropsEntry {
 }
 
 interface Fortunes {
-  '0'?: number
-  '1'?: number
-  '2'?: number
-  '3'?: number
+  0?: number
+  1?: number
+  2?: number
+  3?: number
 }
 
 // Max world height
@@ -88,7 +88,7 @@ function jerDimToPlaceholder(jerDimText: string): string {
 export default function append_JER(
   recipesStore: RecipeStore,
   jer: JER_Entry[],
-  blockMinings?: BlockMinings
+  blockMinings?: BlockMinings,
 ) {
   const logExploration = createFileLogger('jer_exploration.log')
   const logDimensions = createFileLogger('jer_dimensions.log')
@@ -96,7 +96,7 @@ export default function append_JER(
 
   const ii_exploration = Stack.fromString(
     'placeholder:exploration',
-    recipesStore.ingredientStore.get
+    recipesStore.ingredientStore.get,
   )
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
@@ -108,7 +108,8 @@ export default function append_JER(
     const exploreIngr = ii_exploration.withAmount(exploreAmount)
     const miningPH = getMiningPlaceholder(blockMinings, jer_entry.block)
     const catalysts = [dimPlaceholder]
-    if (miningPH) catalysts.push(miningPH)
+    if (miningPH)
+      catalysts.push(miningPH)
 
     recipesStore.addRecipe('JER', block, exploreIngr, catalysts)
 
@@ -118,22 +119,24 @@ export default function append_JER(
       .filter((s): s is DefIngrStack => !!s)
 
     const isQuarkPot = drops?.some(i => i.it.id.includes('minecraft:flower_pot'))
-    if (drops?.length && !isQuarkPot) recipesStore.addRecipe('JER_Drops', drops, exploreIngr, catalysts)
+    if (drops?.length && !isQuarkPot)
+      recipesStore.addRecipe('JER_Drops', drops, exploreIngr, catalysts)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 
   function getDrops(
     blockDef: Definition,
-    drop: DropsEntry
+    drop: DropsEntry,
   ): DefIngrStack | undefined {
     const outAmount = _.mean(Object.values(drop.fortunes)) || 1
 
     // Skip adding if block drop itself
-    if (drop.itemStack === blockDef.id && outAmount === 1) return
+    if (drop.itemStack === blockDef.id && outAmount === 1)
+      return
 
     return new Stack(
       recipesStore.ingredientStore.fromItem(getById(drop.itemStack)),
-      outAmount
+      outAmount,
     )
   }
 
@@ -145,8 +148,8 @@ ${Object.entries(o)
   .sort(([, a], [, b]) => a - b)
   .map(([id, n]) => `  ${n} ${id}`)
   .join('\n')}
-  }`
-    )
+  }`,
+    ),
   )
 
   logDimensions([...registeredDims].sort().join('\n'))

@@ -8,7 +8,7 @@ export interface BlockToFluidMap {
 
 export default async function append_fluids(
   recipeStore: RecipeStore,
-  csvText: string
+  csvText: string,
 ): Promise<BlockToFluidMap> {
   const fluids: {
     Name: string

@@ -11,7 +11,7 @@ export default abstract class Setable implements Calculable {
   protected _purity = 0.0
   @Csv(10) public get purity() { return this._purity }
 
-  protected set(cal: { purity: number; cost: number; processing: number }) {
+  protected set(cal: { purity: number, cost: number, processing: number }) {
     this._purity = cal.purity
     this._cost = cal.cost
     this._processing = cal.processing

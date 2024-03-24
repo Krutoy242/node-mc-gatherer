@@ -5,7 +5,8 @@ export default class Store<T, U = string> {
 
   constructor(private unserialize: (id: U) => T) {
     this.get = (id, skipCache = false) => {
-      if ((id as unknown) === '') throw new Error('ID cannot be empty')
+      if ((id as unknown) === '')
+        throw new Error('ID cannot be empty')
       return (!skipCache && this.store.get(id)) || this.getNew(id)
     }
   }

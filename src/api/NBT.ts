@@ -14,12 +14,14 @@ interface NonEmptyArray<T> extends Array<T> {
 }
 
 export function parseSNbt(sNbt?: string): NBT | null {
-  if (!sNbt || sNbt === '{}') return null
-  if (sNbt === '*') return '*'
+  if (!sNbt || sNbt === '{}')
+    return null
+  if (sNbt === '*')
+    return '*'
   const pure = sNbt
     .replace(
       /\[[ILBbsfd];((,?-?\d+(\.\d+)?(E-?\d+)?[ILBbsfd]?)*)\]/g,
-      (_m, a) => `[${a.replace(/(-?\d+(\.\d+)?(E-?\d+)?)[ILBbsfd]/g, '$1')}]`
+      (_m, a) => `[${a.replace(/(-?\d+(\.\d+)?(E-?\d+)?)[ILBbsfd]/g, '$1')}]`,
     ) // Remove list types
     .replace(/([{,])([-\w\.]+):(?=[-"\d[{\\])/g, '$1"$2":') // Encapsulate keys
     .replace(/(":-?\d+(\.\d+)?(E-?\d+)?)[ILBbsfd](?=\W)/gi, '$1')
@@ -33,28 +35,34 @@ export function parseSNbt(sNbt?: string): NBT | null {
 }
 
 export function nbtMatch(A: NBTMap, B?: NBTMap | null): boolean {
-  if (!B) return false
+  if (!B)
+    return false
 
   for (const k in A) {
     const a = A[k]
     const b = B[k]
 
     // No key on b
-    if (a && !b) return false
+    if (a && !b)
+      return false
 
     // Values same
-    if (a === b) continue
+    if (a === b)
+      continue
 
     // Types mismatch
-    if (typeof a !== typeof b) return false
+    if (typeof a !== typeof b)
+      return false
 
     if (Array.isArray(a)) {
       // Both arrays
-      if (!compareArrays(a, b as typeof a)) return false
+      if (!compareArrays(a, b as typeof a))
+        return false
     }
     else {
       // Maps
-      if (typeof a === 'object') return nbtMatch(a, b as NBTMap)
+      if (typeof a === 'object')
+        return nbtMatch(a, b as NBTMap)
 
       // Primitive value, but not equal
       return false
@@ -65,10 +73,13 @@ export function nbtMatch(A: NBTMap, B?: NBTMap | null): boolean {
 }
 
 function compareArrays(A: NBTValue[], B: NBTValue[]): boolean {
-  if (A.length > B.length) return false
-  if (A.length === 0) return true
+  if (A.length > B.length)
+    return false
+  if (A.length === 0)
+    return true
 
-  if (typeof A[0] === 'object') return compareObjectArrays(A as any, B as any)
+  if (typeof A[0] === 'object')
+    return compareObjectArrays(A as any, B as any)
 
   const A_ = A as NBTPrimitive[]
   const B_ = B as NBTPrimitive[]
@@ -78,14 +89,15 @@ function compareArrays(A: NBTValue[], B: NBTValue[]): boolean {
 
 function compareObjectArrays(
   A: NonEmptyArray<NBTMap>,
-  B: NonEmptyArray<NBTMap>
+  B: NonEmptyArray<NBTMap>,
 ): boolean {
   const A_ = A.slice(0)
   const B_ = B.slice(0)
   do {
     const a = A_.pop()
     const i = B_.findIndex(b => nbtMatch(a, b))
-    if (i === -1) return false
+    if (i === -1)
+      return false
     delete B_[i]
   } while (A_.length)
   return true

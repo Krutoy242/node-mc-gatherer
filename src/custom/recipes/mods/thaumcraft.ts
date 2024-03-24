@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('thaumcraft:salis_mundus:0', ['thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"terra"}]}', 'thaumcraft:crystal_essence:0:{Aspects:[{key:"ignis",amount:1}]}', 'thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"perditio"}]}', 'minecraft:redstone:0'], ['minecraft:flint:0', 'minecraft:bowl:0', 'minecraft:crafting_table:0'])
 
@@ -26,7 +26,7 @@ export default function addRecipes(
   addRecipe(
     'thaumcraft:void_seed:0',
     '60000x placeholder:ticks',
-    'thaumcraft:void_siphon:0'
+    'thaumcraft:void_siphon:0',
   )
   addRecipe('1000x fluid:flux_goo', 'thaumcraft:bottle_taint:0')
 
@@ -49,8 +49,7 @@ export default function addRecipes(
     '1x thaumcraft:cluster:2',
     '1x thaumcraft:cluster:1',
     '1x thaumcraft:cluster:0',
-  ], '100x thaumcraft:stone_porous:0'
-  )
+  ], '100x thaumcraft:stone_porous:0')
 
   addRecipe('thaumcraft:stone_porous:0', ['minecraft:stone:*', '6000x placeholder:ticks'], 'thaumcraft:crucible:0')
 }

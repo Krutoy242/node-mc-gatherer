@@ -41,7 +41,8 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   naturalCost?: number
 
   @Csv(12) get cost() {
-    if (this.naturalCost) return this.naturalCost
+    if (this.naturalCost)
+      return this.naturalCost
     return (this.mainRecipe?.cost ?? Number.POSITIVE_INFINITY) / (this.mainRecipeAmount ?? 1.0)
   }
 
@@ -72,7 +73,7 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   get labels() {
     const isLabeled: Record<keyof typeof LabelSetup, () => boolean> = {
       Bottleneck: () => [...this.recipes ?? []].filter(r => r.purity > 0).length === 1,
-      Alone     : () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
+      Alone: () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
     }
 
     // Compute and apply all labels
@@ -87,7 +88,7 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   get recipeIndexes() {
     return _.sortBy(
       [...(this.recipes ?? [])].map(r => r.index),
-      i => (i === this.mainRecipe?.index ? -1 : 0) // Main recipe always first
+      i => (i === this.mainRecipe?.index ? -1 : 0), // Main recipe always first
     ).join(' ')
   }
 
@@ -117,14 +118,15 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
     public readonly source: string,
     public readonly entry: string,
     public readonly meta: string | undefined,
-    public readonly sNbt: string | undefined
+    public readonly sNbt: string | undefined,
   ) {
     this.id = id
   }
 
-  toString(options?: { complexityPad?: number; short?: boolean }) {
+  toString(options?: { complexityPad?: number, short?: boolean }) {
     const display = `"${this.display}" ${this.id}`
-    if (options?.short) return display
+    if (options?.short)
+      return display
     const full
       = `${getPurity(this.purity)
       + this.complexity_s.padStart(options?.complexityPad ?? 0)
@@ -142,9 +144,12 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
    * @returns `true` if calculable values was changed
    */
   suggest(rec: Recipe, amount: number): boolean {
-    if (this.purity > rec.purity) return false
-    if (this.purity < rec.purity) return this.setRecipe(rec, amount)
-    if (this.complexity <= rec.complexity) return false
+    if (this.purity > rec.purity)
+      return false
+    if (this.purity < rec.purity)
+      return this.setRecipe(rec, amount)
+    if (this.complexity <= rec.complexity)
+      return false
     return this.setRecipe(rec, amount)
   }
 

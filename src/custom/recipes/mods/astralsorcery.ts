@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('astralsorcery:blockcelestialcrystals:4', [
     'astralsorcery:itemrockcrystalsimple:*',
@@ -8,11 +8,11 @@ export default function addRecipes(
   ])
   addRecipe(
     'astralsorcery:itemcelestialcrystal:*',
-    'astralsorcery:blockcelestialcrystals:4'
+    'astralsorcery:blockcelestialcrystals:4',
   )
   addRecipe(
     'astralsorcery:itemcrystalsword:0:{astralsorcery:{size:1800,purity:100,collect:100,fract:0,sizeOverride:-1}}',
-    'astralsorcery:itemcrystalsword:*'
+    'astralsorcery:itemcrystalsword:*',
   )
 
   addRecipe(
@@ -26,7 +26,7 @@ export default function addRecipes(
       '80x astralsorcery:blockmarble:3',
       '4x astralsorcery:blockmarble:4',
       '4x astralsorcery:blockmarble:6',
-    ]
+    ],
   )
 
   addRecipe(
@@ -40,6 +40,6 @@ export default function addRecipes(
       '80x astralsorcery:blockmarble:3',
       '4x astralsorcery:blockmarble:4',
       '4x astralsorcery:blockmarble:6',
-    ]
+    ],
   )
 }

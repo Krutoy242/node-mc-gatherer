@@ -16,22 +16,22 @@ export default function customRender(
   entry: string,
   meta: string | undefined,
   sNbt: string | undefined,
-  get: (id: string) => Definition
+  get: (id: string) => Definition,
 ): Partial<BaseVisible> {
   const alias = (id: string) => ({
-    imgsrc : get(id)?.imgsrc,
+    imgsrc: get(id)?.imgsrc,
     display: `{${capitalize(entry)}}`,
   })
 
   const root: Pointer = {
     placeholder: {
-      ticks      : { __: () => alias('botania:cosmetic:17') },
-      rf         : { __: () => alias('thermalfoundation:meter:0') },
+      ticks: { __: () => alias('botania:cosmetic:17') },
+      rf: { __: () => alias('thermalfoundation:meter:0') },
       exploration: { __: () => alias('botania:tinyplanet:0') },
-      xp         : { __: () => alias('mysticalagriculture:experience_essence:0') },
-      fight      : { __: () => alias('endreborn:tool_sword_wolframium:0') },
-      trade      : { __: () => alias('openblocks:trophy:9:{entity_id:"minecraft:villager"}') },
-      entity     : {
+      xp: { __: () => alias('mysticalagriculture:experience_essence:0') },
+      fight: { __: () => alias('endreborn:tool_sword_wolframium:0') },
+      trade: { __: () => alias('openblocks:trophy:9:{entity_id:"minecraft:villager"}') },
+      entity: {
         __: () => {
           const id = `draconicevolution:mob_soul:0:{EntityName:"${entry}"}`
           return { imgsrc: get(id)?.imgsrc, display: `Entity - ${entry}}` }
@@ -47,14 +47,14 @@ export default function customRender(
 
     dimension: {
       __: () => ({
-        imgsrc : get('botania:tinyplanet:0')?.imgsrc,
+        imgsrc: get('botania:tinyplanet:0')?.imgsrc,
         display: `{Dimension ${entry}}`,
       }),
     },
 
     multiblock: {
       __: () => ({
-        imgsrc : get('immersivepetroleum:schematic:0')?.imgsrc,
+        imgsrc: get('immersivepetroleum:schematic:0')?.imgsrc,
         display: `Multiblock {${entry}}`,
       }),
     },

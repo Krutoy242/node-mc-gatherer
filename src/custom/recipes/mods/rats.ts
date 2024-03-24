@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('rats:contaminated_food:0', 'minecraft:apple:0', 'entity:rats:rat')
   addRecipe('8x rats:tiny_coin:0', ['rats:rat_upgrade_aristocrat:0', '1000x placeholder:ticks'])
@@ -7,12 +7,12 @@ export default function addRecipes(
   addRecipe(
     'rats:tiny_coin:0',
     '40x placeholder:ticks',
-    'rats:rat_upgrade_aristocrat:0'
+    'rats:rat_upgrade_aristocrat:0',
   )
   addRecipe(
     'rats:rat_nugget_ore:*',
     '1000000x placeholder:ticks',
-    'rats:rat_upgrade_ore_doubling:0'
+    'rats:rat_upgrade_ore_doubling:0',
   )
   addRecipe('rats:rat_nugget:0', '730x placeholder:ticks', 'rats:raw_rat:0')
   ;(

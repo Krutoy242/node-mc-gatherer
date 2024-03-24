@@ -1,5 +1,5 @@
-import { appendFileSync, mkdirSync, writeFileSync } from 'fs'
-import { join, parse } from 'path'
+import { appendFileSync, mkdirSync, writeFileSync } from 'node:fs'
+import { join, parse } from 'node:path'
 
 export interface CountableFunction {
   (...args: unknown[]): void

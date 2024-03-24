@@ -11,14 +11,14 @@ type VolumeData =
 
 interface VolumesJson {
   [source: string]:
-  | VolumeData
-  | {
-    [entry: string]:
     | VolumeData
     | {
-      [meta: string]: VolumeData
+      [entry: string]:
+        | VolumeData
+        | {
+          [meta: string]: VolumeData
+        }
     }
-  }
 }
 
 export function getVolume(based: Based): [volume: number, units?: string] {
@@ -26,14 +26,17 @@ export function getVolume(based: Based): [volume: number, units?: string] {
   const vols = volumes as unknown as VolumesJson
 
   function get(obj: undefined | VolumeData | number): [number, string?] {
-    if (obj === undefined) return [1]
-    if (typeof obj === 'number') return [obj]
-    if (obj._vol !== undefined) return [obj._vol, obj._unit]
+    if (obj === undefined)
+      return [1]
+    if (typeof obj === 'number')
+      return [obj]
+    if (obj._vol !== undefined)
+      return [obj._vol, obj._unit]
     return [1]
   }
 
   return get(
-    (vols as any)[source]?.[entry]?.[meta ?? ''] ?? (vols as any)[source]?.[entry] ?? vols[source]
+    (vols as any)[source]?.[entry]?.[meta ?? ''] ?? (vols as any)[source]?.[entry] ?? vols[source],
   )
 }
 

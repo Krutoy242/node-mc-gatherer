@@ -7,7 +7,8 @@ import type { DefinitionStack } from './DefinitionStack'
 export function futilable(_target: any, _Key: string | symbol, descriptor: PropertyDescriptor) {
   const originalMethod = descriptor.value
   descriptor.value = function (...args: any[]) {
-    if ((this as Inventory).futile) return
+    if ((this as Inventory).futile)
+      return
     return originalMethod.apply(this, args)
   }
   return descriptor
@@ -54,7 +55,8 @@ export default class Inventory {
   addCatalystsOf(microStacks: DefinitionStack[]): this {
     for (const ms of microStacks) {
       const r = ms.it.mainRecipe
-      if (!r || !r.inventory) continue
+      if (!r || !r.inventory)
+        continue
 
       for (const rec of r.inventory.stepsRecipes) this.mergeRecipe(rec)
       for (const [def, amount] of r.inventory.storage) this.mergeSingle(def, amount)
@@ -67,7 +69,8 @@ export default class Inventory {
       this.isDupe = true
       return
     }
-    if (this.stepsRecipes.has(r)) return
+    if (this.stepsRecipes.has(r))
+      return
     this.stepsRecipes.add(r)
     this.processing += 1.0
   }
@@ -76,7 +79,8 @@ export default class Inventory {
   private mergeSingle(def: Definition, amount?: number): void {
     const newAmount = amount ?? 1
     const oldAmount = this.storage.get(def)
-    if (oldAmount !== undefined && oldAmount >= newAmount) return
+    if (oldAmount !== undefined && oldAmount >= newAmount)
+      return
     this.storage.set(def, newAmount)
     const addedAmount = newAmount - (oldAmount ?? 0)
     this.processing += addedAmount * def.cost

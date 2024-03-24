@@ -12,16 +12,17 @@ export class IngredientStore<T extends Identified> extends Store<
 > {
   constructor(unserialize: (id: string) => T) {
     super((id: string) =>
-      this.fromItems(id.split(/\s*\|\s*/).map(unserialize), id, true)
+      this.fromItems(id.split(/\s*\|\s*/).map(unserialize), id, true),
     )
   }
 
   fromItems(items: T[], id?: string, skipCache = false): Ingredient<T> {
-    if (items.length === 0) throw new Error('Ingredient must content at least 1 item')
+    if (items.length === 0)
+      throw new Error('Ingredient must content at least 1 item')
 
     const _items = uniqBy(
       items.length > 2000 ? [items[0]] : items,
-      it => it.id
+      it => it.id,
     )
     const remakeID = _items.length !== items.length || !id
     const _id = remakeID ? Ingredient.itemsToID(_items) : id

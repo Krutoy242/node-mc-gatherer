@@ -48,11 +48,12 @@ const logRecipe = createFileLogger('jecRecipes.log')
 
 /**
  * Organize raw Just Enough Calculation json input
+ * @param storeHelper
  * @param jecGroupsRaw_text raw json file content
  */
 export default function append_JECgroups(
   storeHelper: RecipeStore,
-  jecGroupsRaw_text: string
+  jecGroupsRaw_text: string,
 ): number {
   const jec_groups = convertToNormalJson(jecGroupsRaw_text)
 
@@ -61,14 +62,14 @@ export default function append_JECgroups(
   jec_groups.Default.forEach((jec_recipe, recipe_index) => {
     jec_recipe.input = jec_recipe.input.filter(raw => prepareEntry(raw, true))
     jec_recipe.catalyst = jec_recipe.catalyst.filter(raw =>
-      prepareEntry(raw, true)
+      prepareEntry(raw, true),
     )
 
     let wasRemoved = false
     function replaceInList(
       craft: JEC_Recipe,
       listName: keyof JEC_Recipe,
-      phRaw: JEC_Ingredient
+      phRaw: JEC_Ingredient,
     ) {
       const pos = craft[listName]
         .map(e => e.content?.name)
@@ -99,7 +100,8 @@ export default function append_JECgroups(
       }
     }
 
-    if (wasRemoved) remIndexes.add(recipe_index)
+    if (wasRemoved)
+      remIndexes.add(recipe_index)
   })
 
   // Make indexes unique and remove
@@ -126,10 +128,13 @@ function shortandNbt(str: string) {
   let parenth = 0
   let i = 0
   while (i < str.length) {
-    if (str[i] === '{') parenth++
-    if (str[i] === '}') parenth--
+    if (str[i] === '{')
+      parenth++
+    if (str[i] === '}')
+      parenth--
     i++
-    if (parenth <= 0) break
+    if (parenth <= 0)
+      break
   }
   return (
     `"${
@@ -159,7 +164,8 @@ function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
 }
 
 function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
-  if (raw.type === 'empty') return false
+  if (raw.type === 'empty')
+    return false
 
   if (isMutate) {
     const nbt = raw.content?.nbt
@@ -167,12 +173,13 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
     // Replace bucket with liquid to actual liquid
     if (raw.content?.item === 'forge:bucketfilled') {
       const fluidName = nbt?.match(/FluidName:\s*\\?"([^"]+)\\?"/)?.[1]
-      if (!fluidName) throw new Error('Cant parse fluid name')
+      if (!fluidName)
+        throw new Error('Cant parse fluid name')
 
       raw.type = 'fluidStack'
       raw.content = {
         amount: 1000,
-        fluid : fluidName,
+        fluid: fluidName,
       }
     }
   }
@@ -181,14 +188,14 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
 
 function applyToAdditionals(
   recipeStore: RecipeStore,
-  jec_groups: JEC_RootObject
+  jec_groups: JEC_RootObject,
 ) {
   jec_groups.Default.forEach(({ input, output, catalyst }) => {
     const rec = recipeStore.addRecipe(
       'JEC',
       output.map(fromJECMap),
       input.map(fromJECMap),
-      catalyst.map(fromJECMap)
+      catalyst.map(fromJECMap),
     )
     logRecipe(`${rec?.commandString({ noSource: true })}\n`)
   })
@@ -201,8 +208,8 @@ function applyToAdditionals(
         ...(raw.content?.item?.split(':') as [string, string]),
         raw.content.fMeta ? '*' : String(raw.content.meta ?? 0),
       ],
-      fluidStack : (): Typle => ['fluid', raw.content.fluid as string],
-      oreDict    : (): Typle => ['ore', raw.content.name as string],
+      fluidStack: (): Typle => ['fluid', raw.content.fluid as string],
+      oreDict: (): Typle => ['ore', raw.content.name as string],
       placeholder: (): Typle => [
         'placeholder',
         ...raw.content.name?.toLowerCase().split(':') as [string, string?],
@@ -219,9 +226,9 @@ function applyToAdditionals(
 
     return new Stack(
       recipeStore.ingredientStore.fromItem(
-        recipeStore.definitionStore.getBased(source, entry, meta, sNbt)
+        recipeStore.definitionStore.getBased(source, entry, meta, sNbt),
       ),
-      amount_jec(raw)
+      amount_jec(raw),
     )
   }
 }

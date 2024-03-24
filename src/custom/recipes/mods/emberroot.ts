@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('entity:emberroot:creeper', '50000x placeholder:exploration')
   addRecipe('entity:emberroot:deers', '50000x placeholder:exploration')

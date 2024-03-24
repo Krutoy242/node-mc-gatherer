@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('psi:material:0', 'minecraft:redstone:0', 'psi:cad_assembly:0')
   addRecipe('psi:material:1', 'minecraft:gold_ingot:0', 'psi:cad_assembly:0')

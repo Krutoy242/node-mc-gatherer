@@ -11,7 +11,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
       'immersiveengineering:metal_device1:1',
       'immersiveengineering:metal_device1:6',
     ],
-    'immersiveengineering:tool:0'
+    'immersiveengineering:tool:0',
   )
 
   // TODO: add right amounts of ingredients
@@ -34,7 +34,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
         '8x immersiveengineering:metal_decoration0:4',
         '8x immersiveengineering:metal_decoration0:5',
       ],
-      'immersiveengineering:tool:0'
+      'immersiveengineering:tool:0',
     )
   })
 }

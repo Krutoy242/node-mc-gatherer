@@ -1,14 +1,11 @@
 {
-  "packageManager": "pnpm@8.15.5",
   "name": "mc-gatherer",
-  "version": "1.4.0",
-  "description": "Gather recipes from different Minecraft sources",
-  "main": "build/main/index.js",
-  "types": "build/main/index.d.js",
-  "bin": "build/main/cli.js",
-  "repository": "https://github.com/Krutoy242/node-mc-gatherer",
-  "license": "MIT",
   "type": "module",
+  "version": "1.4.0",
+  "packageManager": "pnpm@8.15.5",
+  "description": "Gather recipes from different Minecraft sources",
+  "license": "MIT",
+  "repository": "https://github.com/Krutoy242/node-mc-gatherer",
   "keywords": [
     "minecraft",
     "json",
@@ -16,14 +13,25 @@
     "JEI",
     "crafttree"
   ],
+  "main": "build/main/index.js",
+  "types": "build/main/index.d.js",
+  "bin": "build/main/cli.js",
+  "files": [
+    "!**/*.spec.*",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "build/main",
+    "src/assets/scripts/*"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "build": "tsc",
     "show-unused-exports": "npx ts-prune",
     "run:e2ee": "esno src/cli.ts --mc=D:/mc_client/Instances/E2E-E --output=../src/assets/data/e2ee",
     "run:herodotus": "esno src/cli.ts --mc=D:/mc_client/Instances/Herodotus --output=../src/assets/data/herodotus"
-  },
-  "engines": {
-    "node": ">=10"
   },
   "dependencies": {
     "canvas": "^2.11.1",
@@ -48,13 +56,5 @@
     "@types/yargs": "^17.0.32",
     "eslint": "^8.57.0",
     "typescript": "^5.4.3"
-  },
-  "files": [
-    "build/main",
-    "!**/*.spec.*",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md",
-    "src/assets/scripts/*"
-  ]
+  }
 }

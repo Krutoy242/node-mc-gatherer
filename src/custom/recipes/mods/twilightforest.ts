@@ -1,11 +1,11 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('dimension:7', 'minecraft:diamond:0')
   addRecipe(
     'twilightforest:lamp_of_cinders:0',
     ['130000x placeholder:fight', '1300000x placeholder:ticks'],
-    'dimension:7'
+    'dimension:7',
   )
 
   addRecipe(
@@ -13,7 +13,7 @@ export default function addRecipes(
       '1700x twilightforest:huge_stalk:0',
       '300x twilightforest:twilight_leaves_3:1',
     ],
-    ['twilightforest:magic_beans:0', 'twilightforest:uberous_soil:0']
+    ['twilightforest:magic_beans:0', 'twilightforest:uberous_soil:0'],
   )
   addRecipe(
     [
@@ -21,7 +21,7 @@ export default function addRecipes(
       '60x twilightforest:magic_leaves:1',
       '20x twilightforest:magic_log:1',
     ],
-    'twilightforest:twilight_sapling:6'
+    'twilightforest:twilight_sapling:6',
   )
 
   addRecipe('entity:twilightforest:adherent', '5000x placeholder:exploration', 'dimension:7')

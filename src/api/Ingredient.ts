@@ -14,7 +14,8 @@ export class Ingredient<T extends Identified> implements Identified {
   }
 
   matchedBy(): T[] | [] {
-    if (!this.matchedCache) throw new Error('Trying to acces ingredient matcher before cache')
+    if (!this.matchedCache)
+      throw new Error('Trying to acces ingredient matcher before cache')
     return this.matchedCache
   }
 
@@ -32,14 +33,15 @@ export class Ingredient<T extends Identified> implements Identified {
   }
 
   equals(other: Ingredient<T>): boolean {
-    if (this.items.length !== other.items.length) return false
+    if (this.items.length !== other.items.length)
+      return false
     return this.items.every(it => other.items.includes(it))
   }
 
   toString(options?: { names?: boolean }): string {
     return this.items
       .map(d =>
-        options?.names ? (d as any).toString({ short: true }) : d.id
+        options?.names ? (d as any).toString({ short: true }) : d.id,
       )
       .join(' | ')
   }

@@ -25,7 +25,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
 
   function logger(
     id: string,
-    idPath = false
+    idPath = false,
   ): Playthrough<Definition> | undefined {
     let isAscend = false
     if (id.startsWith('from ')) {
@@ -34,7 +34,8 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     }
 
     const def = store.lookById(id)
-    if (!def) return
+    if (!def)
+      return
 
     const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
     const write = createFileLogger(`tree/${fileName}.log`)
@@ -42,7 +43,8 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
 
     const playthrough = solve<Definition, [number, number]>(def, isAscend, [0, 1], (def, combined, _a, tab, complexityPad) => {
       writeLn('  '.repeat(tab) + def.toString({ complexityPad }))
-      if (!combined) return
+      if (!combined)
+        return
 
       if (!isAscend) {
         (!def.mainRecipe && def.purity < 1
@@ -60,7 +62,8 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
 
   // Output tree to creative vending
   const playthrough = logger('storagedrawers:upgrade_creative:1', true)
-  if (playthrough) createFileLogger('playthrough.csv')(PlaythroughToCSV(playthrough))
+  if (playthrough)
+    createFileLogger('playthrough.csv')(PlaythroughToCSV(playthrough))
 
   // Output tree from diamond
   logger('from minecraft:diamond:0', true)
@@ -68,7 +71,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   const mostStepsDef = [...store].sort(
     (a, b) =>
       (b.mainRecipe?.inventory?.steps ?? 0)
-        - (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity
+      - (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity,
   )[0]
 
   logger(mostStepsDef.id, true)
@@ -97,7 +100,7 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
           const [vol, unit] = getVolume(def)
           return [def, v / vol, unit] as const
         }),
-      o => -o[1]
+      o => -o[1],
     )
       .map(([def, v, unit]) =>
         [
@@ -105,7 +108,7 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
           pl.getCatalyst(def),
           escapeCsv(def.display),
           escapeCsv(def.id),
-        ].join(',')
+        ].join(','),
       )
       .join('\n')}`
   )

@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   const aspects = [
     'aer',
@@ -55,7 +55,7 @@ export default function addRecipes(
   aspects.forEach((aspect) => {
     addRecipe(
       `thaumadditions:salt_essence:0:{Aspects:[{key:"${aspect}",amount:1}]}`,
-      `2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"${aspect}"}]}`
+      `2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"${aspect}"}]}`,
     )
   })
 }

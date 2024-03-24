@@ -1,5 +1,5 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('placeholder:jackhammer:2', 'advancedrocketry:jackhammer:0')
 
@@ -9,14 +9,31 @@ export default function addRecipes(
       [
         ['advancedrocketry:stationbuilder:0', 'advancedrocketry:warpmonitor:0'],
         [
-          106, 105, 103, 101, 110, 108, 109, 102, 111, 112, 113, 114, 115, 118,
-          119, 120, 121, 122, 123,
+          106,
+          105,
+          103,
+          101,
+          110,
+          108,
+          109,
+          102,
+          111,
+          112,
+          113,
+          114,
+          115,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
         ],
       ],
     ] as [string[], number[]][]
   ).forEach(([catl, arr]) =>
     arr.forEach(dim =>
-      addRecipe(`dimension:${dim}`, '10000x fluid:astralsorcery.liquidstarlight', catl)
-    )
+      addRecipe(`dimension:${dim}`, '10000x fluid:astralsorcery.liquidstarlight', catl),
+    ),
   )
 }

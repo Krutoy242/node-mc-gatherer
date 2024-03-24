@@ -21,7 +21,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     private source: string,
     public readonly outputs: DefIngrStack[],
     public readonly inputs?: DefIngrStack[],
-    public readonly catalysts?: DefIngrStack[]
+    public readonly catalysts?: DefIngrStack[],
   ) {
     super()
     this.requirments = [...(inputs ?? []), ...(catalysts ?? [])]
@@ -31,16 +31,16 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
 
   export(): CsvRecipe {
     return {
-      index     : this.index,
-      source    : this.source,
-      labels    : this.labels !== '' ? this.labels : undefined,
+      index: this.index,
+      source: this.source,
+      labels: this.labels !== '' ? this.labels : undefined,
       complexity: this.complexity,
-      purity    : this.purity,
-      cost      : this.cost,
+      purity: this.purity,
+      cost: this.cost,
       processing: this.processing,
-      outputs   : this.outputs.map(String),
-      inputs    : this.inputs?.length ? this.inputs?.map(String) : undefined,
-      catalysts : this.catalysts?.length
+      outputs: this.outputs.map(String),
+      inputs: this.inputs?.length ? this.inputs?.map(String) : undefined,
+      catalysts: this.catalysts?.length
         ? this.catalysts.map(String)
         : undefined,
     }
@@ -52,17 +52,21 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
    */
   calculate() {
     const [catPurity, catDefs] = this.getBestDefs(this.catalysts)
-    if (catPurity <= 0) return
+    if (catPurity <= 0)
+      return
 
     const [inPurity, inDefs] = this.getBestDefs(this.inputs)
-    if (inPurity <= 0) return
+    if (inPurity <= 0)
+      return
 
     const purity = catPurity * inPurity
-    if (this.purity > purity) return
+    if (this.purity > purity)
+      return
 
     const samePurity = this.purity === purity
     const cost = inDefs.reduce((a, b) => a + (b.amount ?? 1) * b.it.cost, 1.0)
-    if (samePurity && this.complexity <= cost) return // Old recipe better
+    if (samePurity && this.complexity <= cost)
+      return // Old recipe better
 
     let catalList: Inventory | undefined
     if (catDefs.length || inDefs.some(d => d.it.mainRecipe?.inventory)) {
@@ -70,17 +74,21 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
       catalList = new Inventory(treshold, this)
         .addCatalysts(catDefs)
         .addCatalystsOf(inDefs)
-      if (catalList.futile) return
+      if (catalList.futile)
+        return
     }
     const processing = catalList?.processing ?? 0
 
     const complexity = cost + processing
-    if (this.complexity === complexity) return
-    if (samePurity && this.complexity < complexity) return
+    if (this.complexity === complexity)
+      return
+    if (samePurity && this.complexity < complexity)
+      return
 
     // Unsignificant difference, probably loop
     const diffFactor = (this.complexity - complexity) / complexity
-    if (samePurity && diffFactor < 0.0001) return
+    if (samePurity && diffFactor < 0.0001)
+      return
 
     this.set({ purity, cost, processing })
     this.inventory = catalList
@@ -88,9 +96,10 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     return true
   }
 
-  override toString(options?: { short?: boolean; detailed?: boolean }) {
+  override toString(options?: { short?: boolean, detailed?: boolean }) {
     const recID = `[${this.source}] #${this.index}`
-    if (options?.short) return ` ${recID} ${this.listToString('', 'outputs')}`
+    if (options?.short)
+      return ` ${recID} ${this.listToString('', 'outputs')}`
     const detailed = !options?.detailed ? '' : this.toStringDetailed()
     return (
       `${recID}${
@@ -105,17 +114,20 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     const arr = (['outputs', 'inputs', 'catalysts'] as const)
       .map(k => this.listToArr(k, '\'\''))
       .map(s => (!s ? undefined : s.length > 1 ? `[${s.join(', ')}]` : s))
-    if (!arr[2]) arr.splice(2, 1)
-    if (!arr[1]) arr[1] = '\'\''
+    if (!arr[2])
+      arr.splice(2, 1)
+    if (!arr[1])
+      arr[1] = '\'\''
     return `addRecipe(${
       options?.noSource ? '' : `"${this.source}", `
     }${arr.join(', ')})`
   }
 
   private getBestDefs(
-    stacks?: DefIngrStack[]
+    stacks?: DefIngrStack[],
   ): [purity: number, defs: DefinitionStack[]] {
-    if (!stacks) return [1.0, []]
+    if (!stacks)
+      return [1.0, []]
     let purity = 1.0
     const defs: DefinitionStack[] = []
     for (const stack of stacks) {
@@ -132,7 +144,8 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
           minComp = def.complexity
         }
       }
-      if (maxPur === 0) return [0, []]
+      if (maxPur === 0)
+        return [0, []]
       purity *= maxPur
       defs.push(new DefinitionStack(bestDef, stack.amount))
     }
@@ -141,14 +154,17 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
 
   private listToArr(
     listName: 'outputs' | 'inputs' | 'catalysts',
-    parenth?: string
+    parenth?: string,
   ): string[] | undefined {
-    if (!this[listName]?.length) return undefined
+    if (!this[listName]?.length)
+      return undefined
     const p = [...(parenth ?? '')].map(c => c ?? '')
     const stackToStr = (o: DefIngrStack) => {
       let s = o.toString()
-      if (p[0] === '"') s = s.replace(/"/g, '\\"')
-      if (p[0] === '\'') s = s.replace(/'/g, '\\\'')
+      if (p[0] === '"')
+        s = s.replace(/"/g, '\\"')
+      if (p[0] === '\'')
+        s = s.replace(/'/g, '\\\'')
       return (p[0] ?? '') + s + (p[1] ?? '')
     }
     return this[listName]?.map(stackToStr)
@@ -157,9 +173,10 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
   private listToString(
     prefix: string,
     listName: 'outputs' | 'inputs' | 'catalysts',
-    parenth?: string
+    parenth?: string,
   ): string {
-    if (!this[listName]?.length) return ''
+    if (!this[listName]?.length)
+      return ''
     return prefix + this.listToArr(listName, parenth)?.join(', ') ?? ''
   }
 

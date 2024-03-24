@@ -13,7 +13,7 @@ export default class Calculator {
   constructor(
     private definitionStore: DefinitionStore,
     private recipeStore: Recipe[],
-    private ingredientStore: IngredientStore<Definition>
+    private ingredientStore: IngredientStore<Definition>,
   ) {}
 
   async compute(cli: CLIHelper) {
@@ -26,7 +26,7 @@ export default class Calculator {
 
     const cliBars = {
       Recipes: this.recipeStore.length,
-      Items  : this.definitionStore.size,
+      Items: this.definitionStore.size,
     }
     cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
     await sleep()
@@ -48,13 +48,15 @@ export default class Calculator {
 
         const oldPurity = rec.purity
 
-        if (!rec.calculate()) continue
+        if (!rec.calculate())
+          continue
 
         recalculated[rec.index]++
-        if (oldPurity <= 0) totalCalculated++
+        if (oldPurity <= 0)
+          totalCalculated++
 
         rec.outputs.forEach(stack =>
-          recalcDefs += this.calcStack(stack, rec, (r: Recipe) => newDirtyRecipes.add(r), cli)
+          recalcDefs += this.calcStack(stack, rec, (r: Recipe) => newDirtyRecipes.add(r), cli),
         )
       }
       dirtyRecipes = newDirtyRecipes
@@ -81,7 +83,8 @@ export default class Calculator {
         for (const def of this.definitionStore.matchedBy(ingredient)) (def.recipes ??= new Set()).add(rec)
       })
 
-      if (i % 20 === 0 || i === this.recipeStore.length - 1) cli.bar?.update(i + 1)
+      if (i % 20 === 0 || i === this.recipeStore.length - 1)
+        cli.bar?.update(i + 1)
     })
     cli.bar?.update(this.recipeStore.length, { task: 'done' })
   }
@@ -90,14 +93,16 @@ export default class Calculator {
     stack: Stack<Ingredient<Definition>>,
     rec: Recipe,
     addDirty: (r: Recipe) => void,
-    cli: CLIHelper
+    cli: CLIHelper,
   ) {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
       def.dependencies?.forEach(addDirty)
-      if (!def.suggest(rec, stack.amount ?? 1)) continue
-      if (isFirtCalc) cli.bars?.[1].increment()
+      if (!def.suggest(rec, stack.amount ?? 1))
+        continue
+      if (isFirtCalc)
+        cli.bars?.[1].increment()
       recalcDefs++
     }
 
@@ -123,19 +128,19 @@ export default class Calculator {
         .slice(0, 200)
         .map(
           ([i, r]) =>
-            `${r}`.padEnd(6) + this.recipeStore[i].toString({ short: true })
+            `${r}`.padEnd(6) + this.recipeStore[i].toString({ short: true }),
         )
-        .join('\n')
+        .join('\n'),
     )
 
     createFileLogger('needRecipes.log')(
-      this.needRecipes([...this.ingredientStore])
+      this.needRecipes([...this.ingredientStore]),
     )
   }
 
   private needRecipes(allIngredients: Ingredient<Definition>[]): string {
     const unpureIngredients = allIngredients.filter(g =>
-      g.items.every(d => d.purity <= 0)
+      g.items.every(d => d.purity <= 0),
     )
 
     const ingrTuples = unpureIngredients.map(
@@ -144,16 +149,16 @@ export default class Calculator {
         ingr,
         ingr.items.some(it =>
           [...it.dependencies?.values() ?? []].some(r =>
-            r.outputs.some(di => di.it.items.every(d => d.purity <= 0))
-          )
+            r.outputs.some(di => di.it.items.every(d => d.purity <= 0)),
+          ),
         ),
-      ] as const
+      ] as const,
     )
       .filter(([a]) => a > 0)
       .sort(([a,,ai], [b,,bi]) => (Number(bi) - Number(ai)) || (b - a))
 
     return ingrTuples.map(([n, ingr, isImportant]) =>
-      `${isImportant ? '! ' : ''}${n} ${this.needRecSerialize(ingr)}`
+      `${isImportant ? '! ' : ''}${n} ${this.needRecSerialize(ingr)}`,
     )
       .sort((a, b) => naturalSort(b, a))
       .join('\n')
@@ -175,14 +180,17 @@ export default class Calculator {
     const deps = new Set<Recipe>()
     ingr.items.forEach((it) => {
       it.dependencies?.forEach((r) => {
-        if (recipeWanted(r)) deps.add(r)
+        if (recipeWanted(r))
+          deps.add(r)
       })
     })
 
     // Iterate over their dependencies
-    if (deps.size > 1000) return 1000
+    if (deps.size > 1000)
+      return 1000
     const checkList = [...deps]
     let r: Recipe | undefined
+    // eslint-disable-next-line no-cond-assign
     while ((r = checkList.pop())) {
       for (const out of r.outputs) {
         for (const it of out.it.items) {
@@ -191,7 +199,8 @@ export default class Calculator {
               if (!deps.has(rr) && recipeWanted(rr)) {
                 deps.add(rr)
                 checkList.push(rr)
-                if (deps.size > 1000) return 1000 // Deps too big, most likely problem with calc
+                if (deps.size > 1000)
+                  return 1000 // Deps too big, most likely problem with calc
               }
             }
           }

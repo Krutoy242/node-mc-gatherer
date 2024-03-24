@@ -12,13 +12,13 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
 
   addRecipe(
     'entity:excompressum:angry_chicken',
-    ['entity:minecraft:chicken', 'minecraft:stick:0']
+    ['entity:minecraft:chicken', 'minecraft:stick:0'],
   )
 
   addRecipe(
     ['minecraft:skull:5', 'minecraft:dragon_egg:0'],
     '2000000x placeholder:fight',
-    'dimension:1'
+    'dimension:1',
   )
 
   addRecipe('entity:minecraft:bat', '1000x placeholder:exploration')

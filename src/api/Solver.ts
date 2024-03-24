@@ -13,7 +13,8 @@ type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 type ScendTail = Tail<Required<Parameters<ReturnType<(typeof descending | typeof ascending)>>>>
 
 export function solve<
-  T extends Solvable<T>, U extends readonly any[]
+  T extends Solvable<T>,
+U extends readonly any[],
 >(
   topDef: T,
   isAscend: boolean,
@@ -23,7 +24,7 @@ export function solve<
     combined: (readonly [T, ...ScendTail])[] | undefined,
     ...args: [...ScendTail, ...U]
   ) => U | undefined,
-  playthrough = new Playthrough<T>()
+  playthrough = new Playthrough<T>(),
 ) {
   const further = (isAscend ? ascending : descending)(playthrough)
   playthrough.addCatalysts([new Stack(topDef)])
@@ -35,7 +36,7 @@ export function solve<
       const logArgs = log ? log(def, combined, ...args) : []
 
       return combined?.map(ms => [...ms, ...(logArgs ?? [])] as const)
-    }
+    },
   )(topDef, undefined, ...(logDefaultArgs ?? []))
 
   return playthrough
@@ -43,7 +44,8 @@ export function solve<
 
 function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   return (def: T, amount = 1) => {
-    if (!def.recipes?.size) return // No recipes
+    if (!def.recipes?.size)
+      return // No recipes
 
     const recipe = def.mainRecipe ?? [...def.recipes].sort(recipeSorter)[0]
 
@@ -56,18 +58,19 @@ function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
     return [
       recipe.catalystsDef,
       recipe.inputsDef?.map(ms => ({
-        it    : ms.it,
+        it: ms.it,
         amount: amount / (ms.it.mainRecipeAmount ?? 1) * (ms.amount ?? 1),
       })),
     ].flat().map(ms =>
-      [ms.it, ms.amount ?? 1] as const
+      [ms.it, ms.amount ?? 1] as const,
     )
   }
 }
 
 function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   return (def: T, behind = new Set<Stack<T>>()) => {
-    if (!def?.dependencies?.size) return undefined
+    if (!def?.dependencies?.size)
+      return undefined
     const defStack = new Stack(def)
 
     const result = [...def.dependencies].map((r) => {
@@ -76,10 +79,11 @@ function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
       // List of outputs of this recipe
       // Filter only recipes that have item as requirment in main recipe
       const ds = r.outputsDef.filter(s => toDefStacks(s.it.mainRecipe?.requirments)
-        ?.some(st => st.it === def)
+        ?.some(st => st.it === def),
       )
 
-      if (!ds.length) return []
+      if (!ds.length)
+        return []
 
       // Amount of current item as input
       const amount = r.requirments.find(s => s.it.items.includes(def))?.amount ?? 1
@@ -115,17 +119,19 @@ function reqPuritySumm<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
 }
 
 function puritySumm<T extends Solvable<T>>(arr?: Stack<Ingredient<T>>[]): number {
-  if (!arr) return 0
+  if (!arr)
+    return 0
   return arr.reduce(
     (c, d) => c + Math.max(...[...d.it.matchedBy()].map(o => o.purity)),
-    0
+    0,
   )
 }
 
 export function toDefStacks<T extends Identified & Calculable>(
-  stacks?: Stack<Ingredient<T>>[]
+  stacks?: Stack<Ingredient<T>>[],
 ): Stack<T>[] | [] {
-  if (!stacks) return []
+  if (!stacks)
+    return []
   return stacks
     .map(({ it, amount }) => [getCheapest(it), amount] as const)
     .filter((v): v is [T, number | undefined] => !!v[0])
@@ -134,7 +140,7 @@ export function toDefStacks<T extends Identified & Calculable>(
 }
 
 function getCheapest<T extends Identified & Calculable>(
-  ingredient: Ingredient<T>
+  ingredient: Ingredient<T>,
 ): T | undefined {
   return [...ingredient.matchedBy()].sort(cheapestSort)[0]
 }

@@ -1,23 +1,23 @@
 export default function addRecipes(
-  addRecipe: import('../../customs').AddRecipeFn
+  addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe(
     '2x minecraft:string:0',
-    'exnihilocreatio:block_infested_leaves:0'
+    'exnihilocreatio:block_infested_leaves:0',
   )
   addRecipe(
     'exnihilocreatio:block_infested_leaves:0',
-    'exnihilocreatio:block_infesting_leaves:0'
+    'exnihilocreatio:block_infesting_leaves:0',
   )
   addRecipe(
     'exnihilocreatio:block_infesting_leaves:0',
     'ore:treeLeaves',
-    'exnihilocreatio:item_material:2'
+    'exnihilocreatio:item_material:2',
   )
   addRecipe(
     'exnihilocreatio:crook_tconstruct:0',
     '4x tconstruct:tool_rod:0:{Material:"wood"}',
-    'tconstruct:tooltables:3'
+    'tconstruct:tooltables:3',
   )
   addRecipe('ic2:sapling:0', 'exnihilocreatio:item_seed_rubber:0')
   addRecipe('minecraft:grass:0', ['exnihilocreatio:item_material:4', 'minecraft:dirt:0'])

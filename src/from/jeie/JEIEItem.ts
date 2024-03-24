@@ -9,7 +9,8 @@ export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
   if (splitted.length > 3 && splitted[3][0] !== '{') {
     base = splitted.slice(0, 3).join(':')
     // f62 is hash of "{}" - empty nbt. Just ignore it
-    if (splitted[3] !== 'f62') sNbt = filterTag(tooltipMap[ingr.name]?.tag)
+    if (splitted[3] !== 'f62')
+      sNbt = filterTag(tooltipMap[ingr.name]?.tag)
   }
   else { base = ingr.name }
 
@@ -26,11 +27,12 @@ export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
 const displayRgx = /display:\{(,?(Name:"[^"]*"|Lore:\["[^"]*"(,"[^"]*")*\])){0,2}\}/
 
 function filterTag(tag?: string): string {
-  if (tag === undefined) return ''
+  if (tag === undefined)
+    return ''
 
   const noDisplay = tag.replace(
     new RegExp(`${displayRgx.source},?|,${displayRgx.source}`),
-    ''
+    '',
   )
 
   return noDisplay === '{}' ? '' : noDisplay
