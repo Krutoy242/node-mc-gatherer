@@ -537,7 +537,7 @@ adapters.set(/jeresources__villager/, (cat) => {
         newRecipes.push({
           input: {
             items: [a, bb.stacks[j]]
-              .filter(o => o.name !== 'minecraft:air:0')
+              .filter(o => o && o.name !== 'minecraft:air:0')
               .map(o => ({
                 x     : aa.x,
                 y     : aa.y,
