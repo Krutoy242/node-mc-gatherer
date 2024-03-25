@@ -79,8 +79,8 @@ export default class Calculator {
         for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(rec)
       })
 
-      rec.outputs.forEach(({ it: ingredient }) => {
-        for (const def of this.definitionStore.matchedBy(ingredient)) (def.recipes ??= new Set()).add(rec)
+      rec.outputs.forEach(({ it: ingredient, amount }) => {
+        for (const def of this.definitionStore.matchedBy(ingredient)) (def.recipes ??= new Map()).set(rec, amount)
       })
 
       if (i % 20 === 0 || i === this.recipeStore.length - 1)

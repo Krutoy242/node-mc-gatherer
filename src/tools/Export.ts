@@ -41,20 +41,20 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     const write = createFileLogger(`tree/${fileName}.log`)
     const writeLn = (s: string) => write(`${s}\n`)
 
-    const playthrough = solve<Definition, [number, number]>(def, isAscend, [0, 1], (def, combined, _a, tab, complexityPad) => {
+    const playthrough = solve<Definition, [number, number]>(def, isAscend, [0, 1], (def, combined, amountOrBehind, tab, complexityPad) => {
       writeLn('  '.repeat(tab) + def.toString({ complexityPad }))
       if (!combined)
         return
 
+      const amoutOfOutput = typeof amountOrBehind === 'number' ? amountOrBehind : 1
+
       if (!isAscend) {
-        (!def.mainRecipe && def.purity < 1
-          ? (def.recipes ? bestRecipe(def.recipes, 1) : undefined)
-          : def.mainRecipe
-        )?.toString().split('\n')
+        (def.recipes ? bestRecipe(def, amoutOfOutput)[0] : undefined)?.toString().split('\n')
           .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`))
       }
 
-      return [tab + 1, Math.max(...combined.map(it => it[0].complexity_s.length))]
+      const newComplexityPad = Math.max(...combined.map(it => it[0].complexity_s.length))
+      return [tab + 1, newComplexityPad]
     })
     return playthrough
   }

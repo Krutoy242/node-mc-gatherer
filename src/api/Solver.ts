@@ -6,7 +6,11 @@ import { Stack } from './Stack'
 import { solverLoop } from './SolverLoop'
 import type { Calculable, Identified, Solvable, SolvableRecipe } from '.'
 
-const { sortBy, sum } = lodash
+const { sortBy } = lodash
+
+function sum(arr: number[]) {
+  return arr.reduce((acc, curr) => acc + curr)
+}
 
 type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 
@@ -31,36 +35,40 @@ U extends readonly any[],
 
   solverLoop<T, any[]>(
     (def: T, ...args) => {
-      const combined = further(def, ...args)
+      const nextList = further(def, ...args)
       // @ts-expect-error TS cant in rest
-      const logArgs = log ? log(def, combined, ...args) : []
+      const logArgs = log ? log(def, nextList, ...args) : []
 
-      return combined?.map(ms => [...ms, ...(logArgs ?? [])] as const)
+      return nextList?.map(ms => [...ms, ...(logArgs ?? [])] as const)
     },
   )(topDef, undefined, ...(logDefaultArgs ?? []))
 
   return playthrough
 }
 
+type PseudoStack<T> = readonly [T, number]
+
 function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
-  return (def: T, amount = 1) => {
+  return (def: T, amount = 1): PseudoStack<T>[] | undefined => {
     if (!def.recipes?.size)
       return // No recipes
 
-    const recipe = bestRecipe(def.recipes, amount)
+    const [recipe, outputAmount] = bestRecipe(def, amount)
 
-    playthrough.addCatalysts(recipe.catalystsDef ??= toDefStacks(recipe.catalysts))
-    playthrough.addInputs(recipe.inputsDef ??= toDefStacks(recipe.inputs), amount)
+    const catalystsDef = toDefStacks(1, recipe.catalysts)
+    const inputsDef = toDefStacks(amount, recipe.inputs)
 
+    playthrough.addCatalysts(catalystsDef)
+    playthrough.addInputs(inputsDef, amount)
+
+    // Collection of defs should be walked next
     return [
-      recipe.catalystsDef,
-      recipe.inputsDef?.map(ms => ({
-        it: ms.it,
-        amount: amount / (ms.it.mainRecipeAmount ?? 1) * (ms.amount ?? 1),
-      })),
-    ].flat().map(ms =>
-      [ms.it, ms.amount ?? 1] as const,
-    )
+      ...catalystsDef.map(ms => [ms.it, ms.amount ?? 1] as const),
+      ...inputsDef.map(ms => [
+        ms.it,
+        amount / outputAmount * (ms.amount ?? 1),
+      ] as const),
+    ]
   }
 }
 
@@ -68,14 +76,14 @@ function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   return (def: T, behind = new Set<Stack<T>>()) => {
     if (!def?.dependencies?.size)
       return undefined
+
     const defStack = new Stack(def)
 
     const result = [...def.dependencies].map((r) => {
-      r.outputsDef ??= toDefStacks(r.outputs)
+      const outputsDef = toDefStacks(1, r.outputs)
 
       // List of outputs of this recipe
-      // Filter only recipes that have item as requirment in main recipe
-      const ds = r.outputsDef.filter(s => toDefStacks(s.it.mainRecipe?.requirments)
+      const ds = outputsDef.filter(s => toDefStacks(s.amount ?? 1, s.it.mainRecipe?.requirments)
         ?.some(st => st.it === def),
       )
 
@@ -103,21 +111,25 @@ function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   }
 }
 
+/**
+ * Find best recipe for this item for this amount
+ */
 export function bestRecipe<T extends Solvable<T>>(
-  recipes: Set<SolvableRecipe<T>>,
+  solvable: T,
   amount: number,
-): SolvableRecipe<T> {
-  const recipesArr = [...recipes].sort((a, b) => {
-    return b.purity - a.purity // Purest
-      || (a.cost * amount + a.processing) - (b.cost * amount + b.processing) // Cheapest including count
-      || reqPuritySumm(b) - reqPuritySumm(a) // Purity or requirments
-      || niceRecipe(b) - niceRecipe(a)
+) {
+  const recipesArray = [...solvable.recipes!.entries()]
+  const sortedArr = recipesArray.sort(([recA, amountA], [recB, amountB]) => {
+    return recB.purity - recA.purity
+      || (recA.cost * amountA * amount + recA.processing) - (recB.cost * amountB * amount + recB.processing)
+      || summPurityOfRequirments(recB) - summPurityOfRequirments(recA)
+      || unpureNiceScore(recB) - unpureNiceScore(recA)
   })
 
-  return recipesArr[0]
+  return sortedArr[0]
 }
 
-function reqPuritySumm<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
+function summPurityOfRequirments<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
   return puritySumm(a.inputs) + puritySumm(a.catalysts)
 }
 
@@ -130,34 +142,38 @@ function puritySumm<T extends Solvable<T>>(arr?: Stack<Ingredient<T>>[]): number
   )
 }
 
-// TODO: needed amount
 export function toDefStacks<T extends Identified & Calculable>(
+  recipeAmount: number,
   stacks?: Stack<Ingredient<T>>[],
 ): Stack<T>[] | [] {
   if (!stacks)
     return []
+
+  const sorter = expensiveSort(recipeAmount)
   return stacks
-    .map(({ it, amount }) => [getCheapest(it), amount] as const)
+    .map(({ it, amount }) => [getCheapest(recipeAmount, it), amount] as const)
     .filter((v): v is [T, number | undefined] => !!v[0])
-    .map(([it, amount]) => new Stack<T>(it, amount))
-    .sort(expensiveSort)
+    .map(([it, itAmount]) => new Stack<T>(it, itAmount))
+    .sort((a, b) => sorter(b.it, a.it))
 }
 
 function getCheapest<T extends Identified & Calculable>(
+  recipeAmount: number,
   ingredient: Ingredient<T>,
 ): T | undefined {
-  return [...ingredient.matchedBy()].sort(cheapestSort)[0]
+  return [...ingredient.matchedBy()].sort(cheapestSort(recipeAmount))[0]
 }
 
-function cheapestSort(a: Calculable, b: Calculable) {
-  return b.purity - a.purity || a.complexity - b.complexity
+function cheapestSort(recipeAmount: number) {
+  const sorter = expensiveSort(recipeAmount)
+  return (a: Calculable, b: Calculable) => b.purity - a.purity || sorter(a, b)
 }
 
-function expensiveSort(a: Stack<Calculable>, b: Stack<Calculable>) {
-  return b.it.complexity - a.it.complexity
+function expensiveSort(recipeAmount: number) {
+  return (a: Calculable, b: Calculable) => (a.cost * recipeAmount + a.processing) - (b.cost * recipeAmount + b.processing)
 }
 
-function niceRecipe<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
+function unpureNiceScore<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
   return sum([
     1 - 1 / (sum(a.requirments.map(s => s.it.items.length)) + 1),
     a.catalystsDef?.length === 1 ? 0.25 : 0,

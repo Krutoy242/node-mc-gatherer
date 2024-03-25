@@ -61,7 +61,7 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   /**
    * Recipes that has this item as output
    */
-  recipes: Set<Recipe> | undefined
+  recipes: Map<Recipe, number> | undefined
 
   mainRecipe: Recipe | undefined
 
@@ -72,7 +72,7 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   @Csv(21.5)
   get labels() {
     const isLabeled: Record<keyof typeof LabelSetup, () => boolean> = {
-      Bottleneck: () => [...this.recipes ?? []].filter(r => r.purity > 0).length === 1,
+      Bottleneck: () => [...this.recipes ?? []].filter(([r]) => r.purity > 0).length === 1,
       Alone: () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
     }
 
@@ -87,7 +87,7 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   @Csv(22)
   get recipeIndexes() {
     return _.sortBy(
-      [...(this.recipes ?? [])].map(r => r.index),
+      [...(this.recipes ?? [])].map(([r]) => r.index),
       i => (i === this.mainRecipe?.index ? -1 : 0), // Main recipe always first
     ).join(' ')
   }
