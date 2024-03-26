@@ -4,7 +4,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
   addRecipe(
     'dimension:-343800852',
     '10x placeholder:exploration',
-    'randomthings:spectrekey',
+    'randomthings:spectrekey:0',
   )
 
   addRecipe('randomthings:ingredient:2', '40000x placeholder:ticks')
@@ -56,6 +56,6 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
   addRecipe(
     'dimension:-343800852',
     '60x placeholder:ticks',
-    'randomthings:spectrekey',
+    'randomthings:spectrekey:0',
   )
 }

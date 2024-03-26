@@ -52,4 +52,6 @@ export default function addRecipes(
   ], '100x thaumcraft:stone_porous:0')
 
   addRecipe('thaumcraft:stone_porous:0', ['minecraft:stone:*', '6000x placeholder:ticks'], 'thaumcraft:crucible:0')
+
+  addRecipe('entity:thaumcraft:pech', '50000x placeholder:exploration')
 }

@@ -58,4 +58,6 @@ export default function addRecipes(
       `2x thaumcraft:crystal_essence:0:{Aspects:[{amount:1,key:"${aspect}"}]}`,
     )
   })
+
+  addRecipe('thaumadditions:salt_essence:0:{Aspects:[{amount:9,key:"auram"}]}', '9x thaumadditions:salt_essence:0:{Aspects:[{amount:1,key:"auram"}]}')
 }

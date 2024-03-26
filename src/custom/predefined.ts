@@ -15,6 +15,7 @@ const predefined: Record<string, number> = {
   // Dimensions
   'dimension:0': 1,
   'dimension:overworld': 1,
+  'dimension:Block_Drops': 1,
 
   // Predefined items
   'minecraft:crafting_table:0': 50,
