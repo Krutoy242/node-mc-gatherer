@@ -20,7 +20,7 @@ type ScendTail = Tail<Required<Parameters<ReturnType<(typeof descending | typeof
 
 export function solve<
   T extends Solvable<T>,
-U extends readonly any[],
+  U extends readonly any[],
 >(
   topDef: T,
   isAscend: boolean,
@@ -178,8 +178,8 @@ function expensiveSort(recipeAmount: number) {
 function unpureNiceScore<T extends Solvable<T>>(a: SolvableRecipe<T>): number {
   return sum([
     1 - 1 / (sum(a.requirments.map(s => s.it.items.length)) + 1),
-    a.catalystsDef?.length === 1 ? 0.25 : 0,
-    Number(a.catalystsDef?.[0]?.it.id !== 'minecraft:crafting_table:0'),
+    a.catalysts?.length === 1 ? 0.25 : 0,
+    // Number(a.catalysts?.[0]?.it.id !== 'minecraft:crafting_table:0'),
     (sum(a.outputs.map(s => s.amount ?? 0)) + 1) / 10,
     Number(a.inputs?.every(s => s.it.items.every(i => i.id.startsWith('minecraft')))),
   ])
