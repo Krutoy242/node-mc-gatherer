@@ -50,10 +50,7 @@ export default class DefinitionStore
       const { source, entry, meta, sNbt } = def
 
       // Find tooltips
-      const jeieId = sNbt
-        ? `${source}:${entry}:${meta ?? '0'}:${unsignedHash(sNbt)}`
-        : def.id
-      const jeieEntry = nameMap?.[jeieId]
+      const jeieEntry = nameMap?.[`${source}:${entry}${(meta || sNbt) ? `:${meta ?? 0}` : ''}${sNbt ? `:${unsignedHash(sNbt)}` : ''}`]
       if (jeieEntry)
         def.tooltips = jeieEntry.tooltips
 
@@ -61,6 +58,16 @@ export default class DefinitionStore
         yield {
           imgsrc: getIcon([source, entry, Number(meta), sNbt]),
           display: jeieEntry?.name,
+        }
+        if (source === 'placeholder')
+          yield { display: `«${entry[0].toLocaleUpperCase()}${entry.slice(1)}: ${meta}»` }
+        if (source === 'entity') {
+          yield {
+            imgsrc: getIcon(['draconicevolution', 'mob_soul', 0, `{EntityName:"${entry}:${meta}"}`]),
+            display: nameMap?.[
+            `draconicevolution:mob_soul:0:${unsignedHash(`{EntityName:"${entry}:${meta}"}`)}`
+            ]?.name?.replace(/ Soul$/i, ''),
+          }
         }
         if (sNbt)
           yield * self.matchedByDef(self.lookBased(source, entry, meta))

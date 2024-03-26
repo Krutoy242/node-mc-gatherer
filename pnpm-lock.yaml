@@ -21,8 +21,8 @@ dependencies:
     specifier: ^4.17.21
     version: 4.17.21
   mc-icons:
-    specifier: ^1.4.0
-    version: 1.4.0
+    specifier: ^1.6.0
+    version: 1.6.0
   numeral:
     specifier: ^2.0.6
     version: 2.0.6
@@ -2235,8 +2235,8 @@ packages:
       semver: 6.3.0
     dev: false
 
-  /mc-icons@1.4.0:
-    resolution: {integrity: sha512-TXms5GgJcDEwy/tgJu66P6JDrt50sNC2zpJykAruY4jb8dynK3X0JWogSu+jrZom0FP2xo5rY5Py3NgLVLf1Lg==}
+  /mc-icons@1.6.0:
+    resolution: {integrity: sha512-qAA8631Gwo6HS6g/ZlXpHWgQ83WeqW8+WdOph+FKVAULEmDW0lpLMkFpl3uMJA5aMwEpjbkoEfKVgGqOBpUJ6g==}
     engines: {node: '>=14.16'}
     hasBin: true
     dependencies:

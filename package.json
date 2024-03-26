@@ -39,7 +39,7 @@
     "csv-parse": "^5.5.5",
     "glob": "^10.3.10",
     "lodash": "^4.17.21",
-    "mc-icons": "^1.4.0",
+    "mc-icons": "^1.6.0",
     "numeral": "^2.0.6",
     "reflect-metadata": "^0.2.1",
     "terminal-kit": "^3.1.1",
