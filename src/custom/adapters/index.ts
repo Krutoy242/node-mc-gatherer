@@ -782,8 +782,12 @@ adapters.set(/^requious__.*/, (cat, tools) => {
       slot.stacks.forEach((stack) => {
         if (!stack.name.startsWith('draconicevolution:mob_soul:0:'))
           return
-        const entityName = tools.getFullID(stack).match(/EntityName:"([^"]+)"/)![1]
-        stack.name = `entity:${entityName}`
+        const entityName = tools.getFullID(stack).match(/EntityName:"([^"]+)"/)?.[1]
+
+        // Recipe have entity that not exist in lists - probably removed category
+        if (!entityName)
+
+          stack.name = `entity:${entityName}`
       })
     })
 

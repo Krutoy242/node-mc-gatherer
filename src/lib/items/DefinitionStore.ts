@@ -27,7 +27,7 @@ export default class DefinitionStore
     )
   }
 
-  async assignVisuals(nameMap?: NameMap, blockToFluidMap?: BlockToFluidMap) {
+  async assignVisuals(nameMap: NameMap | undefined, blockToFluidMap?: BlockToFluidMap) {
     const log = {
       noImgsrc: createFileLogger('noImgsrc.log'),
       noDisplay: createFileLogger('noDisplay.log'),

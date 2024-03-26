@@ -6,10 +6,12 @@ import { Stack } from './Stack'
 import { solverLoop } from './SolverLoop'
 import type { Calculable, Identified, Solvable, SolvableRecipe } from '.'
 
-const { sortBy } = lodash
-
 function sum(arr: number[]) {
   return arr.reduce((acc, curr) => acc + curr)
+}
+
+function sortBy<T>(array: T[], extractor: (item: T) => any): T[] {
+  return array.sort((a, b) => extractor(a) - extractor(b))
 }
 
 type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
@@ -22,12 +24,12 @@ U extends readonly any[],
 >(
   topDef: T,
   isAscend: boolean,
-  logDefaultArgs?: U,
   log?: (
     def: T,
     combined: (readonly [T, ...ScendTail])[] | undefined,
     ...args: [...ScendTail, ...U]
   ) => U | undefined,
+  logDefaultArgs?: U,
   playthrough = new Playthrough<T>(),
 ) {
   const further = (isAscend ? ascending : descending)(playthrough)
@@ -49,11 +51,11 @@ U extends readonly any[],
 type PseudoStack<T> = readonly [T, number]
 
 function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
-  return (def: T, amount = 1): PseudoStack<T>[] | undefined => {
-    if (!def.recipes?.size)
+  return (currentSolvable: T, amount = 1) => {
+    if (!currentSolvable.recipes?.size)
       return // No recipes
 
-    const [recipe, outputAmount] = bestRecipe(def, amount)
+    const [recipe, outputAmount] = bestRecipe(currentSolvable, amount)
 
     const catalystsDef = toDefStacks(1, recipe.catalysts)
     const inputsDef = toDefStacks(amount, recipe.inputs)
@@ -68,30 +70,30 @@ function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
         ms.it,
         amount / outputAmount * (ms.amount ?? 1),
       ] as const),
-    ]
+    ] as PseudoStack<T>[]
   }
 }
 
 function ascending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
-  return (def: T, behind = new Set<Stack<T>>()) => {
-    if (!def?.dependencies?.size)
+  return (currentSolvable: T, behind = new Set<Stack<T>>()) => {
+    if (!currentSolvable?.dependencies?.size)
       return undefined
 
-    const defStack = new Stack(def)
+    const defStack = new Stack(currentSolvable)
 
-    const result = [...def.dependencies].map((r) => {
+    const result = [...currentSolvable.dependencies].map((r) => {
       const outputsDef = toDefStacks(1, r.outputs)
 
       // List of outputs of this recipe
       const ds = outputsDef.filter(s => toDefStacks(s.amount ?? 1, s.it.mainRecipe?.requirments)
-        ?.some(st => st.it === def),
+        ?.some(st => st.it === currentSolvable),
       )
 
       if (!ds.length)
         return []
 
       // Amount of current item as input
-      const amount = r.requirments.find(s => s.it.items.includes(def))?.amount ?? 1
+      const amount = r.requirments.find(s => s.it.items.includes(currentSolvable))?.amount ?? 1
 
       // For each output, purchase everything behind
       const newBehind = new Set<Stack<T>>()
