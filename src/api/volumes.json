@@ -1,13 +1,13 @@
 {
   "__": "# How much volume of this entry count as one",
   "placeholder": {
-    "ticks": { "_vol": 1200, "_unit": "min" },
-    "mana": { "_vol": 1000, "_unit": "Kmana" },
-    "exploration": { "_vol": 10000, "_unit": "Explores" },
-    "grid_power": { "_vol": 100, "_unit": "GP" },
-    "rf": { "_vol": 1000000, "_unit": "Mrf" },
-    "fight": { "_vol": 1000, "_unit": "Damage" }
+    "ticks": { "_vol": 1200, "_unit": "𝑚𝑖𝑛" },
+    "mana": { "_vol": 1000, "_unit": "𝑲𝑚𝑎𝑛𝑎" },
+    "exploration": { "_vol": 10000, "_unit": "𝐸𝑥𝑝𝑙𝑜𝑟𝑒𝑠" },
+    "grid_power": { "_vol": 100, "_unit": "𝐺𝑃" },
+    "rf": { "_vol": 1000000, "_unit": "𝑴𝑟𝑓" },
+    "fight": { "_vol": 1000, "_unit": "𝐷𝑎𝑚𝑎𝑔𝑒" }
   },
-  "fluid": { "_vol": 1000, "_unit": "b" },
-  "gas": { "_vol": 1000, "_unit": "b" }
+  "fluid": { "_vol": 1000, "_unit": "𝑏" },
+  "gas": { "_vol": 1000, "_unit": "𝑏" }
 }
