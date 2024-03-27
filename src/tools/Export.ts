@@ -8,10 +8,8 @@ import { getVolume } from '../api/volume'
 import type Definition from '../lib/items/Definition'
 import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
-import { escapeCsv } from '../lib/utils'
+import { escapeCsv, sortBy } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
-
-const { sortBy } = _
 
 export interface ExportData {
   store: DefinitionStore
@@ -86,13 +84,13 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   }
 }
 
-function PlaythroughToCSV(pl: Playthrough<Definition>): string {
+function PlaythroughToCSV(playthrough: Playthrough<Definition>): string {
   const header = 'Usage,Popularity,Name,ID'
 
   return (
     `${header}\n${
     sortBy(
-      pl
+      playthrough
         .getMerged()
         .toArray()
         .map(([def, v]) => {
@@ -104,7 +102,7 @@ function PlaythroughToCSV(pl: Playthrough<Definition>): string {
       .map(([def, v, unit]) =>
         [
           `${v}${unit ?? ''}`,
-          pl.getCatalyst(def),
+          playthrough.getCatalyst(def),
           escapeCsv(def.display),
           escapeCsv(def.id),
         ].join(','),

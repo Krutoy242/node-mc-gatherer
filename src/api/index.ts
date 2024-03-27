@@ -115,6 +115,8 @@ export type Calculable = {
 ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝     ╚══════╝╚══════╝
 */
 
+export type IngrAmount = number | undefined
+
 export interface BaseRecipe extends Calculable {
   index: number
   source: string
@@ -136,9 +138,9 @@ export interface SolvableRecipe<T extends Identified> extends Calculable {
 
 export interface Solvable<T extends Identified> extends Identified, Calculable {
   /** Recipe and output amount of this item */
-  recipes: Map<SolvableRecipe<T>, number> | undefined
+  recipes: [SolvableRecipe<T>, IngrAmount][] | undefined
   mainRecipe: SolvableRecipe<T> | undefined
-  mainRecipeAmount: number | undefined
+  mainRecipeAmount: IngrAmount
 
   /**
    * Recipes that depends on this item

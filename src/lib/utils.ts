@@ -47,3 +47,11 @@ export function fluent(_target: any, _propertyKey: string | symbol, descriptor: 
 
   return descriptor
 }
+
+export function sum(arr: number[]) {
+  return arr.reduce((acc, curr) => acc + curr)
+}
+
+export function sortBy<T>(array: T[], extractor: (item: T) => any): T[] {
+  return array.sort((a, b) => extractor(a) - extractor(b))
+}

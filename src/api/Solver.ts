@@ -1,18 +1,10 @@
-import lodash from 'lodash'
+import { sortBy, sum } from '../lib/utils'
 import type { Ingredient } from './Ingredient'
 import Playthrough from './Playthrough'
 import { Stack } from './Stack'
 
 import { solverLoop } from './SolverLoop'
-import type { Calculable, Identified, Solvable, SolvableRecipe } from '.'
-
-function sum(arr: number[]) {
-  return arr.reduce((acc, curr) => acc + curr)
-}
-
-function sortBy<T>(array: T[], extractor: (item: T) => any): T[] {
-  return array.sort((a, b) => extractor(a) - extractor(b))
-}
+import type { Calculable, Identified, IngrAmount, Solvable, SolvableRecipe } from '.'
 
 type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 
@@ -52,7 +44,7 @@ type PseudoStack<T> = readonly [T, number]
 
 function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
   return (currentSolvable: T, amount = 1) => {
-    if (!currentSolvable.recipes?.size)
+    if (!currentSolvable.recipes?.length)
       return // No recipes
 
     const [recipe, outputAmount] = bestRecipe(currentSolvable, amount)
@@ -68,7 +60,7 @@ function descending<T extends Solvable<T>>(playthrough: Playthrough<T>) {
       ...catalystsDef.map(ms => [ms.it, ms.amount ?? 1] as const),
       ...inputsDef.map(ms => [
         ms.it,
-        amount / outputAmount * (ms.amount ?? 1),
+        amount / (outputAmount ?? 1) * (ms.amount ?? 1),
       ] as const),
     ] as PseudoStack<T>[]
   }
@@ -120,10 +112,9 @@ export function bestRecipe<T extends Solvable<T>>(
   solvable: T,
   amount: number,
 ) {
-  const recipesArray = [...solvable.recipes!.entries()]
-  const sortedArr = recipesArray.sort(([recA, amountA], [recB, amountB]) => {
+  const sortedArr = solvable.recipes!.sort(([recA, amountA], [recB, amountB]) => {
     return recB.purity - recA.purity
-      || (recA.cost * amountA * amount + recA.processing) - (recB.cost * amountB * amount + recB.processing)
+      || (recA.cost * (amountA ?? 1) * amount + recA.processing) - (recB.cost * (amountB ?? 1) * amount + recB.processing)
       || summPurityOfRequirments(recB) - summPurityOfRequirments(recA)
       || unpureNiceScore(recB) - unpureNiceScore(recA)
   })
@@ -154,7 +145,7 @@ export function toDefStacks<T extends Identified & Calculable>(
   const sorter = expensiveSort(recipeAmount)
   return stacks
     .map(({ it, amount }) => [getCheapest(recipeAmount, it), amount] as const)
-    .filter((v): v is [T, number | undefined] => !!v[0])
+    .filter((v): v is [T, IngrAmount] => !!v[0])
     .map(([it, itAmount]) => new Stack<T>(it, itAmount))
     .sort((a, b) => sorter(b.it, a.it))
 }

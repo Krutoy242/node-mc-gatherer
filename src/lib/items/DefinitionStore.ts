@@ -60,7 +60,7 @@ export default class DefinitionStore
           display: jeieEntry?.name,
         }
         if (source === 'placeholder')
-          yield { display: `«${entry[0].toLocaleUpperCase()}${entry.slice(1)}: ${meta}»` }
+          yield { display: `«${entry[0].toLocaleUpperCase()}${entry.slice(1)}${meta ? `: ${meta}` : ''}»` }
         if (source === 'entity') {
           yield {
             imgsrc: getIcon(['draconicevolution', 'mob_soul', 0, `{EntityName:"${entry}:${meta}"}`]),

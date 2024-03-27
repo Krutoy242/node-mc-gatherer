@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseVisible, Based, Calculable, Labeled, Solvable } from '../../api'
+import type { BaseVisible, Based, Calculable, IngrAmount, Labeled, Solvable } from '../../api'
 import { LabelSetup } from '../../api'
 
 import { Csv } from '../../tools/CsvDecorators'
@@ -61,18 +61,18 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   /**
    * Recipes that has this item as output
    */
-  recipes: Map<Recipe, number> | undefined
+  recipes: [Recipe, IngrAmount][] | undefined
 
   mainRecipe: Recipe | undefined
 
-  mainRecipeAmount: number | undefined
+  mainRecipeAmount: IngrAmount
 
   dependencies: Set<Recipe> | undefined
 
   @Csv(21.5)
   get labels() {
     const isLabeled: Record<keyof typeof LabelSetup, () => boolean> = {
-      Bottleneck: () => [...this.recipes ?? []].filter(([r]) => r.purity > 0).length === 1,
+      Bottleneck: () => (this.recipes ?? []).filter(([r]) => r.purity > 0).length === 1,
       Alone: () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
     }
 
@@ -87,7 +87,7 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   @Csv(22)
   get recipeIndexes() {
     return _.sortBy(
-      [...(this.recipes ?? [])].map(([r]) => r.index),
+      (this.recipes ?? []).map(([r]) => r.index),
       i => (i === this.mainRecipe?.index ? -1 : 0), // Main recipe always first
     ).join(' ')
   }
@@ -158,40 +158,6 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
     this.mainRecipeAmount = amount
     return true
   }
-
-  /*
-  difference(other?: Inventory) {
-    const result = { added: [] as Recipe[], removed: [] as Recipe[] }
-    if (!other) return result
-
-    this.stepsRecipes.forEach((rec) => {
-      if (!other.stepsRecipes.has(rec)) result.removed.push(rec)
-    })
-    other.stepsRecipes.forEach((rec) => {
-      if (!this.stepsRecipes.has(rec)) result.added.push(rec)
-    })
-    return result
-  }
-
-  private logRecalculation(rec: Recipe) {
-    if (this.mainRecipe) {
-      const diff = this.mainRecipe.inventory?.difference(rec?.inventory)
-      const filds = [
-        ['➖', 'removed'],
-        ['➕', 'added'],
-      ] as const
-      filds.forEach(([symbol, key]) => {
-        if (!diff?.[key].length) return
-        const list = diff?.[key].map(r =>
-          r.toString({ detailed: true }).split('\n').join('\n      ')
-        )
-        logRecalc(`${symbol}\n    ${list.join('\n    ')}\n`)
-      })
-    }
-    logRecalc(`${this.toString()}\n`)
-    logRecalc(`${rec?.toString({ detailed: true })}\n`)
-  }
-  */
 }
 
 function getPurity(n: number): string {
