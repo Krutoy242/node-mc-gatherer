@@ -82,14 +82,15 @@ export default async function append_JEIExporter(
     let recipesLength = customRecipes.length
     customRecipes.forEach((rec) => {
       const outputs = convertIngredients(rec.output.items)
-      outputs.length
-      && recipeStore.addRecipe(
-        fileName,
-        outputs,
-        convertIngredients(rec.input.items),
-        rec.catalyst ? convertIngredients(rec.catalyst) : defaultCatalysts,
-      )
-      && recipesLength--
+      const recipeAdded = outputs.length
+        && recipeStore.addRecipe(
+          fileName,
+          outputs,
+          convertIngredients(rec.input.items),
+          rec.catalyst ? convertIngredients(rec.catalyst) : defaultCatalysts,
+        )
+      if (recipeAdded)
+        recipesLength--
     })
 
     if (recipesLength === customRecipes.length)
