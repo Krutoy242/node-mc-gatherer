@@ -63,6 +63,10 @@ function getProbAcces(lvl: number, prob: number): number {
   return (difficulty_from_level(lvl) * prob ** probFactor) / maxHeightDiff / globalCostMultiplicator
 }
 
+function getFullId(anyId: string) {
+  return anyId + (anyId.match(/^[^:]+:[^:]+$/) ? ':0' : '')
+}
+
 function getJERProbability(rawStrData: string) {
   return (
     1
@@ -100,12 +104,13 @@ export default function append_JER(
 
   const exploreAmounts: { [dim: string]: { [id: string]: number } } = {}
   for (const jer_entry of jer) {
-    const blockDef = getById(jer_entry.block)
+    const blockID = getFullId(jer_entry.block)
+    const blockDef = getById(blockID)
     const block = new Stack(recipesStore.ingredientStore.fromItem(blockDef))
     const dimPlaceholder = jerDimToPlaceholder(jer_entry.dim)
     const exploreAmount = Math.max(0, Math.round(getJERProbability(jer_entry.distrib) * (dimMultiplier[dimPlaceholder] ?? 1)))
     const exploreIngr = ii_exploration.withAmount(exploreAmount)
-    const miningPH = getMiningPlaceholder(blockMinings, jer_entry.block)
+    const miningPH = getMiningPlaceholder(blockMinings, blockID)
     const catalysts = [dimPlaceholder]
     if (miningPH)
       catalysts.push(miningPH)
@@ -129,12 +134,14 @@ export default function append_JER(
   ): DefIngrStack | undefined {
     const outAmount = _.mean(Object.values(drop.fortunes)) || 1
 
+    const fullId = getFullId(drop.itemStack)
+
     // Skip adding if block drop itself
-    if (drop.itemStack === blockDef.id && outAmount === 1)
+    if (fullId === blockDef.id && outAmount === 1)
       return
 
     return new Stack(
-      recipesStore.ingredientStore.fromItem(getById(drop.itemStack)),
+      recipesStore.ingredientStore.fromItem(getById(fullId)),
       outAmount,
     )
   }
