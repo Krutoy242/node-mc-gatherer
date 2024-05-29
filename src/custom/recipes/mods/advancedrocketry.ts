@@ -37,4 +37,8 @@ export default function addRecipes(
       addRecipe(`dimension:${dim}`, '10000x fluid:astralsorcery.liquidstarlight', catl),
     ),
   )
+  addRecipe(
+    ['361x advancedrocketry:alienwood:0', '3677x advancedrocketry:alienleaves:0'],
+    'advancedrocketry:aliensapling:0',
+  )
 }

@@ -23,4 +23,5 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     'rustic:sapling_apple:0',
   )
   addRecipe('minecraft:apple:0', '2x minecraft:dye:15', 'rustic:leaves_apple:0')
+  addRecipe(['rustic:bee:0', 'rustic:honeycomb:0'], '100x placeholder:ticks', ['rustic:bee:0', 'rustic:apiary:0'])
 }

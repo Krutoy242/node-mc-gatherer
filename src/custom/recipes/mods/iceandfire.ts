@@ -68,4 +68,7 @@ export default function addRecipes(
   addRecipe('entity:iceandfire:siren', '15000x placeholder:exploration')
   addRecipe('entity:iceandfire:snowvillager', '5000x placeholder:exploration')
   addRecipe('entity:iceandfire:stymphalianbird', '5000x placeholder:exploration')
+
+  addRecipe('iceandfire:myrmex_desert_resin:0', '5x placeholder:trade', 'iceandfire:myrmex_desert_egg:0')
+  addRecipe('iceandfire:myrmex_jungle_resin:0', '5x placeholder:trade', 'iceandfire:myrmex_jungle_egg:0')
 }

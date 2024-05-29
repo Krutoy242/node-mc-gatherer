@@ -28,4 +28,5 @@ export default function addRecipes(
       )
     })
   })
+  addRecipe('deepmoblearning:soot_covered_redstone:0', 'minecraft:redstone:0', 'minecraft:coal_block:0')
 }

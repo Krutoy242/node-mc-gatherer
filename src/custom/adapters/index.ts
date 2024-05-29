@@ -407,6 +407,13 @@ adapters.set(/forestry__fabricator/, (cat) => {
   })
 })
 
+adapters.set(/forestry__farming/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    move.input.to.catalyst(rec, () => true)
+    rec.input.items.push(getSlot('placeholder:ticks', 2000))
+  })
+})
+
 adapters.set(/forestry__squeezer/, (cat) => {
   const blacklistInputs = [
     'forestry:can:1:',
@@ -456,7 +463,6 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
   const inputBlacklist = [
     'astralsorcery:itemtunedrockcrystal:0',
     'conarm:boots:0',
-    'conarm:chestplate:0',
     'conarm:chestplate:0',
     'conarm:helmet:0',
     'conarm:leggings:0',
@@ -545,44 +551,42 @@ adapters.set(/jeresources__dungeon/, (cat) => {
 
 adapters.set(/jeresources__villager/, (cat) => {
   const newRecipes: JEIECustomRecipe[] = []
+
   cat.recipes.forEach((rec) => {
     const [input, output] = (['input', 'output'] as const).map(o =>
-      _.sortBy(_.groupBy(rec[o].items, 'y'), 'y'),
+      _.groupBy(_.sortBy(rec[o].items, i => i.y), i => i.y),
     )
-    input.forEach((inp, y_i) => {
-      const out = output[y_i]?.[0]
+
+    for (const [yLine, inp] of Object.entries(input)) {
+      const out = output[yLine]
       if (!out)
         throw new Error('Villager recipe inconsistency')
-      const [aa, bb] = inp
-      aa.stacks.forEach((a, j) => {
-        const outStack = out.stacks[j] ?? out.stacks[0]
-        if (!outStack)
-          throw new Error('Villager recipe inconsistency')
-        newRecipes.push({
-          input: {
-            items: [a, bb.stacks[j]]
-              .filter(o => o && o.name !== 'minecraft:air:0')
-              .map(o => ({
-                x: aa.x,
-                y: aa.y,
-                amount: aa.amount || 1,
-                stacks: [{ type: o.type, name: o.name }],
-              })),
-          },
-          output: {
-            items: [
-              {
-                x: out.x,
-                y: out.y,
-                amount: out.amount || 1,
-                stacks: [{ type: outStack.type, name: outStack.name }],
-              },
-            ],
-          },
-          catalyst: [getIngr('placeholder:trade', 10 + y_i ** 2)],
-        })
+
+      newRecipes.push({
+        input: {
+          items: inp
+            .map(s => s.stacks)
+            .flat()
+            .filter(o => o && o.name !== 'minecraft:air:0')
+            .map((o, i) => ({
+              x: inp[0].x + i,
+              y: inp[0].y,
+              amount: inp[0].amount || 1,
+              stacks: [o],
+            })),
+        },
+        output: { items: out
+          .map(s => s.stacks)
+          .flat()
+          .map((o, i) => ({
+            x: out[0].x + i,
+            y: out[0].y,
+            amount: out[0].amount || 1,
+            stacks: [o],
+          })) },
+        catalyst: [getIngr('placeholder:trade', 10 + Number(yLine) ** 2)],
       })
-    })
+    }
   })
   cat.recipes = newRecipes
 })
@@ -733,6 +737,13 @@ adapters.set(/requious__scented_hive/, (cat) => {
   })
 })
 
+adapters.set(/requious__crafting_hints/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    if (!rec.input.items.length)
+      rec.input.items.push(getSlot('placeholder:ticks', 1000))
+  })
+})
+
 adapters.set(/requious__ic2_crops/, (cat, tools) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach((slot) => {
@@ -757,7 +768,7 @@ adapters.set(/^ic2__scrapbox$/, (cat) => {
 
 adapters.set(/requious__liquid_interaction/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    move.input.to.catalyst(rec)
+    move.input.to.catalyst(rec, slot => slot.stacks.every(i => i.type === 'fluid'))
     rec.input.items = [getSlot('placeholder:ticks', 10)]
   })
 })
@@ -796,6 +807,12 @@ adapters.set(/requious__barrel_milking/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     move.input.to.catalyst(rec)
     rec.input.items = [getSlot('placeholder:ticks', 20)]
+  })
+})
+
+adapters.set(/requious__entity_drop/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items = [{ ...rec.input.items[0], stacks: rec.input.items.map(slot => slot.stacks).flat() }]
   })
 })
 
@@ -944,7 +961,7 @@ adapters.set(/jetif/, (cat) => {
   })
 })
 
-adapters.set(/mysticalagradditions__tier_6_crop_jei/, (cat) => {
+adapters.set(/^(mysticalagradditions__tier_6_crop_jei|mysticalcreations__crux_crop_jei)/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items = rec.input.items.filter(slot => !slot.stacks.some(stack => stack.name.endsWith('_crop:0')))
   })
@@ -1046,6 +1063,41 @@ adapters.set(/^ie__workbench$/, (cat) => {
   cat.recipes.forEach(r => move.input.to.catalyst(r, s => s.stacks.some(i => i.name.startsWith('immersiveengineering:blueprint'))))
 })
 
+adapters.set(/^deepmoblearningbm__digital_agonizer$/, (cat) => {
+  cat.recipes.forEach((r) => {
+    move.input.to.output(r, s => s.stacks.some(i => i.type === 'fluid'))
+    move.input.to.catalyst(r, () => true)
+    r.input.items = [getSlot('placeholder:ticks', 10)]
+  })
+})
+
+adapters.set(/^orbital_laser_drill$/, (cat) => {
+  cat.catalysts.push({ name: 'dimension:-2', type: 'item' })
+
+  cat.recipes.forEach((r) => {
+    r.input.items = [getSlot('placeholder:rf', 1000000)]
+  })
+})
+
+adapters.set(/^void_beacon$/, (cat) => {
+  cat.recipes.forEach((r) => {
+    r.input.items = [
+      getSlot('placeholder:ticks', 10000),
+      getSlot('aspect:Vitium', 100),
+    ]
+  })
+})
+
+adapters.set(/^compactmachines3__MultiblockMiniaturization$/, (cat) => {
+  // Remove Catalyst stack if output stack is the same
+  cat.recipes.forEach((r) => {
+    const insCatals = r.input.items.filter(s => s.x === 135 && s.stacks.length)
+    const outCatals = r.output.items.filter(s => s.x === 135 && s.stacks.length)
+    if (insCatals.every(s => s.stacks.every(i => outCatals.some(t => t.stacks.some(j => j.name === i.name)))))
+      r.input.items = r.input.items.filter(s => s.x !== 135)
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, tools) => {
   const convertBucket = (ingr: JEIESlot) => bucketToFluid(ingr, tools.getFullID)
@@ -1053,13 +1105,10 @@ adapters.set(/.*/, (cat, tools) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach(convertBucket)
 
-    rec.output.items.forEach((slot) => {
-      for (const stack of slot.stacks) {
-        if (stack.name.startsWith('minecraft:air')) {
-          slot.stacks = []
-          break
-        }
-      }
+    // Remove empty outputs and inputs
+    ;[...rec.output.items, ...rec.input.items].forEach((slot) => {
+      slot.stacks = slot.stacks.filter(stack => !stack.name.startsWith('minecraft:air'))
+      slot.amount ||= 1
     })
   })
 

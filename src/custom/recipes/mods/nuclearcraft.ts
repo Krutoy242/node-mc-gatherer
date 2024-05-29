@@ -12,4 +12,5 @@ export default function addRecipes(
     '4x nuclearcraft:fusion_connector:0',
     '100x nuclearcraft:fusion_electromagnet_idle:0',
   ])
+  addRecipe('1000x fluid:corium', 'nuclearcraft:solid_fission_cell:0', 'nuclearcraft:solid_fission_controller:0')
 }

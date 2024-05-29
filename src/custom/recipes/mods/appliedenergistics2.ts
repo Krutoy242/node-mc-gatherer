@@ -15,4 +15,5 @@ export default function addRecipes(
     '256000x minecraft:cobblestone:0',
     ['appliedenergistics2:condenser:0', 'appliedenergistics2:material:38'],
   )
+  addRecipe('appliedenergistics2:material:47', '256000x minecraft:cobblestone:0', ['appliedenergistics2:condenser:0', 'appliedenergistics2:material:38'])
 }

@@ -1,6 +1,13 @@
 export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn,
 ) {
+  addRecipe('entity:rats:rat', '1000x placeholder:ticks', 'rats:garbage_pile:0')
+  addRecipe('entity:rats:ratlantean_spirit', '10x placeholder:exploration', 'dimension:-8')
+  addRecipe('entity:rats:marbled_cheese_golem', ['rats:marbled_cheese_golem_core:0', '3x rats:marbled_cheese_raw:0', 'rats:marbled_cheese_rat_head:0'])
+  addRecipe('entity:rats:illager_piper', '1000x placeholder:exploration')
+  addRecipe('entity:rats:pirat', '1000x placeholder:exploration', 'dimension:-8')
+  addRecipe('entity:rats:pirat_boat', '1000x placeholder:exploration', 'dimension:-8')
+  addRecipe('entity:rats:feral_ratlantean', '1000x placeholder:exploration', 'dimension:-8')
   addRecipe('rats:contaminated_food:0', 'minecraft:apple:0', 'entity:rats:rat')
   addRecipe('8x rats:tiny_coin:0', ['rats:rat_upgrade_aristocrat:0', '1000x placeholder:ticks'])
   addRecipe('dimension:-8', 'rats:chunky_cheese_token:0')

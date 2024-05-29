@@ -17,4 +17,5 @@ export default function addRecipes(
   addRecipe('thaumicwonders:eldritch_cluster:2', 'thaumcraft:cluster:2', eldrichMultiblock)
   addRecipe('thaumicwonders:eldritch_cluster:1', 'thaumcraft:cluster:1', eldrichMultiblock)
   addRecipe('thaumicwonders:eldritch_cluster:0', 'thaumcraft:cluster:0', eldrichMultiblock)
+  addRecipe('8x thaumicwonders:primordial_grain:0', 'thaumcraft:primordial_pearl:0', ['thaumicwonders:primordial_accelerator:0', '8x thaumicwonders:primordial_accelerator_tunnel:0', 'thaumicwonders:primordial_accelerator_terminus:0'])
 }

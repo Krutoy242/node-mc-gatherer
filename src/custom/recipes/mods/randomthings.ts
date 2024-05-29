@@ -58,4 +58,9 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
     '60x placeholder:ticks',
     'randomthings:spectrekey:0',
   )
+
+  addRecipe(
+    'entity:randomthings:goldenchicken',
+    'randomthings:ingredient:11',
+  )
 }

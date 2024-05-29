@@ -9,4 +9,12 @@ export default function addRecipes(
     ],
     'tconstruct:tooltables:3',
   )
+  addRecipe(
+    'tcomplement:chisel:0',
+    [
+      'tcomplement:chisel_head:0:{Material:"wood"}',
+      'tconstruct:tool_rod:0:{Material:"wood"}',
+    ],
+    'tconstruct:tooltables:3',
+  )
 }

@@ -54,4 +54,6 @@ export default function addRecipes(
   addRecipe('thaumcraft:stone_porous:0', ['minecraft:stone:*', '6000x placeholder:ticks'], 'thaumcraft:crucible:0')
 
   addRecipe('entity:thaumcraft:pech', '50000x placeholder:exploration')
+  addRecipe('thaumcraft:celestial_notes:*', 'minecraft:paper:0', ['thaumcraft:thaumometer:0', 'thaumcraft:scribing_tools:0'])
+  addRecipe('thaumcraft:condenser_lattice_dirty:0', 'thaumcraft:condenser_lattice:0', 'thaumcraft:condenser:0')
 }

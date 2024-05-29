@@ -51,4 +51,24 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
   addRecipe('entity:minecraft:zombie', '1000x placeholder:exploration')
   addRecipe('entity:minecraft:zombie_horse', '10000x placeholder:exploration')
   addRecipe('entity:minecraft:zombie_villager', '1000x placeholder:exploration')
+
+  addRecipe('entity:minecraft:ghast', '1000x placeholder:exploration', 'dimension:-1')
+  addRecipe('entity:minecraft:magma_cube', '1000x placeholder:exploration', 'dimension:-1')
+
+  addRecipe('entity:minecraft:chicken', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:cow', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:donkey', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:horse', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:llama', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:ocelot', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:parrot', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:pig', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:polar_bear', '10000x placeholder:exploration')
+  addRecipe('entity:minecraft:rabbit', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:sheep', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:slime', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:squid', '1000x placeholder:exploration')
+  addRecipe('entity:minecraft:wolf', '1000x placeholder:exploration')
+
+  addRecipe('entity:minecraft:mooshroom', '100000x placeholder:exploration')
 }

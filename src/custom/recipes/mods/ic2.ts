@@ -86,4 +86,8 @@ export default function addRecipes(
 
   Object.entries(seedTiers).forEach(([name, tier]) =>
     addRecipe(`ic2:crop_seed_bag:0:{owner:"ic2",scan:1b,growth:1b,id:"${name}",resistance:1b,gain:1b}`, `${(tier + 1) ** 3 * 100}x placeholder:ticks`))
+
+  addRecipe(['250x fluid:ic2creosote', 'minecraft:coal:1'], 'ore:logWood', ['23x ic2:refractory_bricks:0', 'ic2:te:100', 'ic2:te:101', 'ic2:te:102'])
+  addRecipe(['1000x fluid:ic2weed_ex', 'ic2:fluid_cell:0'], 'ic2:fluid_cell:0:{Fluid:{FluidName:"ic2weed_ex",Amount:1000}}')
+  addRecipe('ic2:nuclear:11', 'ic2:uranium_fuel_rod:0:{advDmg:0}', 'ic2:te:22')
 }

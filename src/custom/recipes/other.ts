@@ -33,5 +33,7 @@ export default function addRecipes(
   addRecipe(['8x minecraft:tallgrass:1', '2x minecraft:yellow_flower:0', '2x minecraft:red_flower:0'], 'ore:fertilizer', ['minecraft:grass:0'])
   addRecipe('minecraft:potion:0:{Potion:"minecraft:water"}', 'minecraft:glass_bottle:0', '1000x fluid:water')
 
-  addRecipe('entity:minecraft:armor_stand', 'minecraft:armor_stand')
+  addRecipe('entity:minecraft:armor_stand', 'minecraft:armor_stand:0')
+  addRecipe('minecraft:firework_charge:0', ['minecraft:gunpowder:0', 'ore:dye'])
+  addRecipe('3x minecraft:fireworks:0', ['minecraft:paper:0', 'minecraft:gunpowder:0'])
 }
