@@ -159,12 +159,11 @@ export default class Calculator {
       ] as const,
     )
       .filter(([a]) => a > 0)
-      .sort(([a,,ai], [b,,bi]) => (Number(bi) - Number(ai)) || (b - a))
 
     return ingrTuples.map(([n, ingr, isImportant]) =>
       `${isImportant ? '! ' : ''}${n} ${this.needRecSerialize(ingr)}`,
     )
-      .sort((a, b) => naturalSort(b, a))
+      .sort((a, b) => (Number(b.startsWith('!')) - Number(a.startsWith('!'))) || naturalSort(b, a))
       .join('\n')
   }
 
