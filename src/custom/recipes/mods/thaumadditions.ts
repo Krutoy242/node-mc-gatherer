@@ -61,4 +61,7 @@ export default function addRecipes(
 
   addRecipe('thaumadditions:salt_essence:0:{Aspects:[{amount:9,key:"auram"}]}', '9x thaumadditions:salt_essence:0:{Aspects:[{amount:1,key:"auram"}]}')
   addRecipe('thaumadditions:void_fruit:0', '500x placeholder:ticks', 'thaumadditions:void_seed:0')
+  
+  addRecipe('entity:thaumadditions:chester', 'thaumadditions:chester:0')
+  addRecipe('thaumadditions:chester:0', 'entity:thaumadditions:chester')
 }

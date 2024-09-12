@@ -19,4 +19,6 @@ export default function addRecipes(
   addRecipe('tconstruct:tooltables:1', 'tconstruct:tooltables:1')
   addRecipe('tconstruct:toolforge:*', 'tconstruct:toolforge:*')
   addRecipe('tconstruct:edible:0', '100x placeholder:ticks', 'ore:ingotPigiron')
+
+  addRecipe('entity:tconstruct:blueslime', '1000x placeholder:exploration', 'dimension:0')
 }

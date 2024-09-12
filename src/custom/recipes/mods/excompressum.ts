@@ -14,4 +14,5 @@ export default function addRecipes(
   addRecipe('entity:minecraft:polar_bear', 'excompressum:bait:10')
   addRecipe('entity:minecraft:llama', 'excompressum:bait:11')
   addRecipe('entity:minecraft:parrot', 'excompressum:bait:12')
+  addRecipe('botania:specialflower:0:{type:"orechid"}', 'botania:specialflower:0:{type:"excompressum.orechidEvolved"}')
 }

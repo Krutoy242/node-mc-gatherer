@@ -56,4 +56,5 @@ export default function addRecipes(
   addRecipe('entity:thaumcraft:pech', '50000x placeholder:exploration')
   addRecipe('thaumcraft:celestial_notes:*', 'minecraft:paper:0', ['thaumcraft:thaumometer:0', 'thaumcraft:scribing_tools:0'])
   addRecipe('thaumcraft:condenser_lattice_dirty:0', 'thaumcraft:condenser_lattice:0', 'thaumcraft:condenser:0')
+  addRecipe('entity:thaumcraft:wisp', '4000x placeholder:exploration', 'dimension:-1')
 }

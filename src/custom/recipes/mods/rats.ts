@@ -16,11 +16,6 @@ export default function addRecipes(
     '40x placeholder:ticks',
     'rats:rat_upgrade_aristocrat:0',
   )
-  addRecipe(
-    'rats:rat_nugget_ore:*',
-    '1000000x placeholder:ticks',
-    'rats:rat_upgrade_ore_doubling:0',
-  )
   addRecipe('rats:rat_nugget:0', '730x placeholder:ticks', 'rats:raw_rat:0')
   ;(
     [

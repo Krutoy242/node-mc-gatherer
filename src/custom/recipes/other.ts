@@ -36,4 +36,5 @@ export default function addRecipes(
   addRecipe('entity:minecraft:armor_stand', 'minecraft:armor_stand:0')
   addRecipe('minecraft:firework_charge:0', ['minecraft:gunpowder:0', 'ore:dye'])
   addRecipe('3x minecraft:fireworks:0', ['minecraft:paper:0', 'minecraft:gunpowder:0'])
+  addRecipe('minecraft:filled_map:0', 'minecraft:map:0')
 }

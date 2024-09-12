@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 import type {
   JEIECategory,
   JEIECustomRecipe,
@@ -8,6 +6,8 @@ import type {
   JEIESlot,
   List,
 } from '../../from/jeie/JEIECategory'
+
+import _ from 'lodash'
 
 const { max, min } = Math
 
@@ -28,6 +28,10 @@ function getSlot(id: string, amount = 1): JEIESlot {
   return { ...getIngr(id, amount), x: 0, y: 0 }
 }
 
+function isBucket(stack: JEIEItem) {
+  return stack.name.startsWith('forge:bucketfilled:0:')
+}
+
 function getBucketFluid(
   stack: JEIEItem,
   getFullID: (ingr: JEIEItem) => string,
@@ -43,7 +47,7 @@ function getBucketFluid(
       return 'milk'
   }
 
-  if (!stack.name.startsWith('forge:bucketfilled:0:'))
+  if (!isBucket(stack))
     return
   return getFullID(stack).match(
     /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000.*\}$/,
@@ -54,7 +58,7 @@ function stackBucketToFluid(
   stack: JEIEItem,
   getFullID: (ingr: JEIEItem) => string,
 ): boolean {
-  if (!stack.name.startsWith('forge:bucketfilled:0:'))
+  if (!isBucket(stack))
     return false
   const f = getBucketFluid(stack, getFullID)
   if (!f)
@@ -738,7 +742,9 @@ adapters.set(/requious__scented_hive/, (cat) => {
 })
 
 adapters.set(/requious__crafting_hints/, (cat) => {
+  cat.catalysts = []
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    move.input.to.catalyst(rec, slot => slot.x === 72)
     if (!rec.input.items.length)
       rec.input.items.push(getSlot('placeholder:ticks', 1000))
   })
@@ -769,7 +775,7 @@ adapters.set(/^ic2__scrapbox$/, (cat) => {
 adapters.set(/requious__liquid_interaction/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     move.input.to.catalyst(rec, slot => slot.stacks.every(i => i.type === 'fluid'))
-    rec.input.items = [getSlot('placeholder:ticks', 10)]
+    rec.input.items.push(getSlot('placeholder:ticks', 10))
   })
 })
 
@@ -951,7 +957,7 @@ adapters.set(/GENDUSTRY_/, (cat) => {
   })
 })
 
-adapters.set(/jetif/, (cat) => {
+adapters.set(/^jetif$/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     // If we have no fluid output - this recipe not consume fluid
     if (!rec.output.items.some(slot => slot.stacks.some(s => s.type === 'fluid'))) {
@@ -1098,12 +1104,26 @@ adapters.set(/^compactmachines3__MultiblockMiniaturization$/, (cat) => {
   })
 })
 
+adapters.set(/^assets__multiblock$/, (cat) => {
+  cat.recipes.forEach((rec) => {
+    move.input.to.output(rec, slot => slot.x >= 159 && slot.y >= 1)
+  })
+})
+
 // Everything
 adapters.set(/.*/, (cat, tools) => {
   const convertBucket = (ingr: JEIESlot) => bucketToFluid(ingr, tools.getFullID)
   cat.catalysts.forEach(it => stackBucketToFluid(it, tools.getFullID))
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach(convertBucket)
+
+    // Split bucket and liquid in output
+    rec.output.items.forEach((slot) => {
+      if (!slot.stacks.some(isBucket))
+        return
+      convertBucket(slot)
+      rec.output.items.push(getSlot('minecraft:bucket:0'))
+    })
 
     // Remove empty outputs and inputs
     ;[...rec.output.items, ...rec.input.items].forEach((slot) => {

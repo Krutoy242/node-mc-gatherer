@@ -38,4 +38,5 @@ export default function addRecipes(
     '3x minecraft:dye:15',
     'extrautils2:ironwood_sapling:0',
   )
+  addRecipe('extrautils2:snowglobe:1', ['extrautils2:snowglobe:0', '10000x placeholder:exploration'])
 }

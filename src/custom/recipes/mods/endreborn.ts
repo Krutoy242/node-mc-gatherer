@@ -6,4 +6,7 @@ export default function addRecipes(
     'endreborn:block_rune:0',
     '9x minecraft:purpur_block:0',
   ])
+  addRecipe('entity:endreborn:watcher', '5000x placeholder:exploration', 'dimension:1')
+  addRecipe('entity:endreborn:endguard', '5000x placeholder:exploration', 'dimension:1')
+  addRecipe('entity:endreborn:chronologist', '5000x placeholder:exploration', 'dimension:1')
 }
