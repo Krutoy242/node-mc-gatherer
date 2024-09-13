@@ -2,12 +2,13 @@ import 'reflect-metadata'
 import _ from 'lodash'
 import numeral from 'numeral'
 
-import type { BaseVisible, Based, Calculable, IngrAmount, Labeled, Solvable } from '../../api'
+import type { BaseVisible, Based, Calculable, IngrAmount, Labeled } from '../../api'
 import { LabelSetup } from '../../api'
 
 import { Csv } from '../../tools/CsvDecorators'
 import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
+import { Solvable } from '../../api/Solvable'
 
 const infin = (n: number) => n === Number.POSITIVE_INFINITY ? 'Infinity' : undefined
 const numFormat = (n: number) => infin(n) ?? numeral(n).format('0,0.00')
@@ -15,8 +16,8 @@ const siFormat = (n: number) => infin(n) ?? numeral(n).format('a').padStart(4)
 
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
-export default class Definition
-implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
+export default class Definition extends Solvable
+  implements Based, BaseVisible, Calculable, Labeled {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
   ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
@@ -25,9 +26,6 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   ██║     ██║███████╗███████╗██████╔╝███████║
   ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝
   */
-
-  @Csv(23, escapeCsv)
-  readonly id: string
 
   @Csv(21)
   imgsrc?: string
@@ -38,36 +36,14 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
   @Csv(1, (s?: string[]) => escapeCsv(s?.join('\\n')))
   tooltips?: string[]
 
-  naturalCost?: number
-
-  @Csv(12) get cost() {
-    if (this.naturalCost)
-      return this.naturalCost
-    return (this.mainRecipe?.cost ?? Number.POSITIVE_INFINITY) / (this.mainRecipeAmount ?? 1.0)
-  }
-
-  @Csv(13) get processing() {
-    return this.naturalCost ? 0.0 : this.mainRecipe?.processing ?? Number.POSITIVE_INFINITY
-  }
-
-  @Csv(10) get purity() {
-    return this.naturalCost ? 1.0 : this.mainRecipe?.purity ?? 0.0
-  }
-
-  @Csv(11) get complexity() {
-    return this.cost + this.processing
-  }
-
   /**
    * Recipes that has this item as output
    */
-  recipes: [Recipe, IngrAmount][] | undefined
+  declare recipes: [Recipe, IngrAmount][] | undefined
 
-  mainRecipe: Recipe | undefined
+  declare mainRecipe: Recipe | undefined
 
-  mainRecipeAmount: IngrAmount
-
-  dependencies: Set<Recipe> | undefined
+  declare dependencies: Set<Recipe> | undefined
 
   @Csv(21.5)
   get labels() {
@@ -120,10 +96,10 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
     public readonly meta: string | undefined,
     public readonly sNbt: string | undefined,
   ) {
-    this.id = id
+    super(id)
   }
 
-  toString(options?: { complexityPad?: number, short?: boolean }) {
+  override toString(options?: { complexityPad?: number, short?: boolean }) {
     const display = `"${this.display}" ${this.id}`
     if (options?.short)
       return display
@@ -137,26 +113,6 @@ implements Based, BaseVisible, Calculable, Labeled, Solvable<Definition> {
 
   get complexity_s(): string {
     return numFormat(this.complexity)
-  }
-
-  /**
-   * Suggest recipe to be chosen as main
-   * @returns `true` if calculable values was changed
-   */
-  suggest(rec: Recipe, amount: number): boolean {
-    if (this.purity > rec.purity)
-      return false
-    if (this.purity < rec.purity)
-      return this.setRecipe(rec, amount)
-    if (this.complexity <= rec.complexity)
-      return false
-    return this.setRecipe(rec, amount)
-  }
-
-  private setRecipe(rec: Recipe, amount: number) {
-    this.mainRecipe = rec
-    this.mainRecipeAmount = amount
-    return true
   }
 }
 

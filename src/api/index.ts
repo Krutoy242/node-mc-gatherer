@@ -135,15 +135,3 @@ export interface SolvableRecipe<T extends Identified> extends Calculable {
   inputs?: Stack<Ingredient<T>>[]
   requirments: Stack<Ingredient<T>>[]
 }
-
-export interface Solvable<T extends Identified> extends Identified, Calculable {
-  /** Recipe and output amount of this item */
-  recipes: [SolvableRecipe<T>, IngrAmount][] | undefined
-  mainRecipe: SolvableRecipe<T> | undefined
-  mainRecipeAmount: IngrAmount
-
-  /**
-   * Recipes that depends on this item
-   */
-  dependencies: Set<SolvableRecipe<T>> | undefined
-}

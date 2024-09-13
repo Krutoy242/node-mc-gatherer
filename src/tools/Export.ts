@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
 import type { CsvRecipe } from '../api'
-import { bestRecipe, solve } from '../api'
+import { solve } from '../api'
 
 import type Playthrough from '../api/Playthrough'
 import { getVolume } from '../api/volume'
@@ -47,7 +47,7 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
       const amoutOfOutput = typeof amountOrBehind === 'number' ? amountOrBehind : 1
 
       if (!isAscend) {
-        (def.recipes ? bestRecipe(def, amoutOfOutput)[0] : undefined)?.toString().split('\n')
+        (def.recipes ? def.bestRecipe(amoutOfOutput)?.[0] : undefined)?.toString().split('\n')
           .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`))
       }
 
