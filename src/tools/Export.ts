@@ -6,7 +6,7 @@ import type Definition from '../lib/items/Definition'
 import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
 import _ from 'lodash'
-import { solve } from '../api'
+import { solve } from '../api/Solver'
 import { getVolume } from '../api/volume'
 import { escapeCsv, sortBy } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
@@ -47,10 +47,11 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
       if (!requirments)
         return
 
-      const amoutOfOutput = typeof amountOrBehind === 'number' ? amountOrBehind : 1
-
       if (!isAscend) {
-        (def.recipes ? def.bestRecipe(amoutOfOutput)?.[0] : undefined)?.toString().split('\n')
+        const amoutOfOutput = typeof amountOrBehind === 'number' ? amountOrBehind : 1
+        ;(def.recipes ? def.bestRecipe(amoutOfOutput)?.[0] : undefined)
+          ?.toString()
+          .split('\n')
           .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`))
       }
 

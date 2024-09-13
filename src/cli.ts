@@ -1,16 +1,16 @@
 #! /usr/bin/env node
 
-import { join, parse } from 'node:path'
-import { mkdirSync, writeFileSync } from 'node:fs'
-import process from 'node:process'
-
-import Terminal from 'terminal-kit'
-import yargs from 'yargs'
-
 import type { ExportData } from './tools/Export'
-import CLIHelper from './tools/cli-tools'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { join, parse } from 'node:path'
 
+import process from 'node:process'
+import Terminal from 'terminal-kit'
+
+import yargs from 'yargs'
 import mcGather from '.'
+
+import CLIHelper from './tools/cli-tools'
 
 const { terminal: term } = Terminal
 
@@ -58,9 +58,11 @@ function saveObjAsJson(obj: any, filename: string) {
   saveText(JSON.stringify(obj, null, 2), filename)
 }
 
-if (!argv.mc)
+if (!argv.mc) {
   throw new Error('Arguments must include --mc')
-;(async () => {
+}
+
+(async () => {
   const cli = new CLIHelper()
   const exportData = await mcGather(argv, cli)
   saveData(exportData)
@@ -94,7 +96,7 @@ async function prompt(exportData: ExportData) {
         term.green('Succes!')('\n')
       }
       catch (error) {
-        term.red('This id doesn\'t exist')('\n')
+        term.red('This id doesn\'t exist')(`\n${error}`)
       }
     }
   } while (id)

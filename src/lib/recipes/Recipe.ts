@@ -1,11 +1,11 @@
-import numeral from 'numeral'
-
 import type { CsvRecipe, Labeled, SolvableRecipe } from '../../api'
+
 import type { DefIngrStack } from '../../types'
 import type Definition from '../items/Definition'
+import numeral from 'numeral'
+import Setable from '../calc/Setable'
 import { DefinitionStack } from '../items/DefinitionStack'
 import Inventory from '../items/Inventory'
-import Setable from '../calc/Setable'
 
 const numFormat = (n: number) => numeral(n).format('0,0.00')
 

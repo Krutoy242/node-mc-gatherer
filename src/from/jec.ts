@@ -1,7 +1,7 @@
 // import { writeFileSync } from 'fs'
 
-import { Stack } from '../api'
 import type RecipeStore from '../lib/recipes/RecipeStore'
+import { Stack } from '../api/Stack'
 import { createFileLogger } from '../log/logger'
 
 export type JEC_Types =
@@ -119,7 +119,7 @@ export default function append_JECgroups(
 
 function fixNBT(str: string): string {
   return str
-    .split(/"nbt"[\s\n]*:[\s\n]*/)
+    .split(/"nbt"\s*:\s*/)
     .map((s, i) => (i === 0 ? s : shortandNbt(s)))
     .join('"nbt": ')
 }
@@ -140,9 +140,9 @@ function shortandNbt(str: string) {
     `"${
       str
         .substring(0, i)
-        .replace(/[\s\n]*"([^"]+)"[\s\n]*:[\s\n]*/gi, '$1:')
+        .replace(/\s*"([^"]+)"\s*:\s*/g, '$1:')
         .replace(/"/g, '\\"')
-        .replace(/[\s\n]*\n+[\s\n]*/g, '')
+        .replace(/\s*\n\s*/g, '')
     }"${
       str.substring(i)}`
   )
@@ -157,7 +157,7 @@ function shortandNbt(str: string) {
 function convertToNormalJson(jecGroupsRaw_text: string): JEC_RootObject {
   const fixedText = fixNBT(jecGroupsRaw_text)
     .replace(/\[\w;/g, '[') // Remove list types
-    .replace(/("[^"]+":\s*-?\d+(?:\.\d+)?)[ILBbsfd]\b/gi, '$1')
+    .replace(/("[^"]+":\s*-?\d+(?:\.\d+)?)[ILBsfd]\b/gi, '$1')
 
   // writeFileSync('~jec.json', fixedText)
   return JSON.parse(fixedText)
@@ -172,7 +172,7 @@ function prepareEntry(raw: JEC_Ingredient, isMutate = false) {
 
     // Replace bucket with liquid to actual liquid
     if (raw.content?.item === 'forge:bucketfilled') {
-      const fluidName = nbt?.match(/FluidName:\s*\\?"([^"]+)\\?"/)?.[1]
+      const fluidName = nbt?.match(/FluidName:\s*\\?"([^"]+?)\\?"/)?.[1]
       if (!fluidName)
         throw new Error('Cant parse fluid name')
 

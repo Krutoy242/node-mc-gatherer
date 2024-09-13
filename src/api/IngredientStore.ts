@@ -1,9 +1,9 @@
-import lodash from 'lodash'
-
-import { Ingredient } from './Ingredient'
-import Store from './Store'
-
 import type { Identified } from '.'
+
+import lodash from 'lodash'
+import { Ingredient } from './Ingredient'
+
+import Store from './Store'
 
 const { uniqBy } = lodash
 

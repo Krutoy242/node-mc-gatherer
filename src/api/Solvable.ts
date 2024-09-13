@@ -1,12 +1,12 @@
-import { escapeCsv, sum } from '../lib/utils'
-import { Csv } from '../tools/CsvDecorators'
+import type { Calculable, Identified, IngrAmount, SolvableRecipe } from '.'
 import type { Ingredient } from './Ingredient'
 import type { Stack } from './Stack'
-import type { Calculable, Identified, IngrAmount, SolvableRecipe } from '.'
+import { escapeCsv, sum } from '../lib/utils'
+import { Csv } from '../tools/CsvDecorators'
 
 export type RecipeForSolvable = [SolvableRecipe<Solvable>, IngrAmount]
 
-export class Solvable implements Identified, Calculable {
+export default class Solvable implements Identified, Calculable {
   @Csv(23, escapeCsv)
   readonly id: string
 

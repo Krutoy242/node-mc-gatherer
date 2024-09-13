@@ -1,6 +1,6 @@
-import lodash from 'lodash'
 import type { BaseVisible } from '../api'
 import type Definition from '../lib/items/Definition'
+import lodash from 'lodash'
 
 const { capitalize } = lodash
 

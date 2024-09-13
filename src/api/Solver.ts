@@ -1,11 +1,11 @@
-import { sortBy } from '../lib/utils'
+import type { Calculable, Identified, IngrAmount, SolvableRecipe } from '.'
 import type { Ingredient } from './Ingredient'
-import Playthrough from './Playthrough'
-import { Stack } from './Stack'
+import type Solvable from './Solvable'
+import { sortBy } from '../lib/utils'
 
+import Playthrough from './Playthrough'
 import { solverLoop } from './SolverLoop'
-import type { Solvable } from './Solvable'
-import type { Calculable, Identified, IngrAmount } from '.'
+import { Stack } from './Stack'
 
 type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 

@@ -2,13 +2,13 @@
 =           Additionals Store
 ============================================= */
 
-import { getIcon } from 'mc-icons'
-
 import type { BaseVisible } from '../../api'
-import { Tree } from '../../api'
-import customRender from '../../custom/visual'
+
 import type { BlockToFluidMap } from '../../from/fluids'
 import type { NameMap } from '../../from/jeie/NameMap'
+import { getIcon } from 'mc-icons'
+import { Tree } from '../../api/Tree'
+import customRender from '../../custom/visual'
 import { createFileLogger } from '../../log/logger'
 
 import { getCsvLine, getHeaders } from '../../tools/CsvDecorators'
@@ -65,7 +65,7 @@ export default class DefinitionStore
           yield {
             imgsrc: getIcon(['draconicevolution', 'mob_soul', 0, `{EntityName:"${entry}:${meta}"}`]),
             display: nameMap?.[
-            `draconicevolution:mob_soul:0:${unsignedHash(`{EntityName:"${entry}:${meta}"}`)}`
+              `draconicevolution:mob_soul:0:${unsignedHash(`{EntityName:"${entry}:${meta}"}`)}`
             ]?.name?.replace(/ Soul$/i, ''),
           }
         }

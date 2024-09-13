@@ -2,7 +2,7 @@
   "name": "mc-gatherer",
   "type": "module",
   "version": "1.4.0",
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@9.10.0",
   "description": "Gather recipes from different Minecraft sources",
   "license": "MIT",
   "repository": "https://github.com/Krutoy242/node-mc-gatherer",
@@ -30,31 +30,29 @@
   "scripts": {
     "build": "tsc",
     "show-unused-exports": "npx ts-prune",
-    "run:e2ee": "esno src/cli.ts --mc=D:/mc_client/Instances/E2E-E --output=../src/assets/data/e2ee",
-    "run:herodotus": "esno src/cli.ts --mc=D:/mc_client/Instances/Herodotus --output=../src/assets/data/herodotus"
+    "run:e2ee": "tsx src/cli.ts --mc=D:/mc_client/Instances/E2E-E --output=../src/assets/data/e2ee",
+    "run:herodotus": "tsx src/cli.ts --mc=D:/mc_client/Instances/Herodotus --output=../src/assets/data/herodotus"
   },
   "dependencies": {
     "canvas": "^2.11.1",
     "cli-progress": "^3.12.0",
-    "csv-parse": "^5.5.5",
-    "glob": "^10.3.10",
+    "csv-parse": "^5.5.6",
+    "glob": "^10.4.5",
     "lodash": "^4.17.21",
     "mc-icons": "^1.6.0",
     "numeral": "^2.0.6",
-    "reflect-metadata": "^0.2.1",
+    "reflect-metadata": "^0.2.2",
     "terminal-kit": "^3.1.1",
     "typescript-memoize": "^1.1.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.9.0",
-    "@types/cli-progress": "^3.11.5",
+    "@types/cli-progress": "^3.11.6",
     "@types/glob": "^8.1.0",
-    "@types/lodash": "^4.17.0",
+    "@types/lodash": "^4.17.7",
     "@types/numeral": "^2.0.5",
     "@types/terminal-kit": "^2.5.6",
-    "@types/yargs": "^17.0.32",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.3"
+    "@types/yargs": "^17.0.33",
+    "typescript": "^5.6.2"
   }
 }

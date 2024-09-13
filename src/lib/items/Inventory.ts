@@ -1,14 +1,13 @@
 import type Recipe from '../recipes/Recipe'
-import { fluent } from '../utils'
-
 import type Definition from './Definition'
+
 import type { DefinitionStack } from './DefinitionStack'
 
 export function futilable(_target: any, _Key: string | symbol, descriptor: PropertyDescriptor) {
   const originalMethod = descriptor.value
   descriptor.value = function (...args: any[]) {
     if ((this as Inventory).futile)
-      return
+      return this
     return originalMethod.apply(this, args)
   }
   return descriptor
@@ -45,14 +44,15 @@ export default class Inventory {
     return this.isDupe || this.processing >= this.treshold
   }
 
-  @fluent @futilable // @ts-expect-error this
-  addCatalysts(microStacks: DefinitionStack[]): this {
+  @futilable
+  addCatalysts(microStacks: DefinitionStack[]) {
     microStacks.forEach(ms => this.mergeSingle(ms.it, ms.amount))
     this.addCatalystsOf(microStacks)
+    return this
   }
 
-  @fluent @futilable // @ts-expect-error this
-  addCatalystsOf(microStacks: DefinitionStack[]): this {
+  @futilable
+  addCatalystsOf(microStacks: DefinitionStack[]) {
     for (const ms of microStacks) {
       const r = ms.it.mainRecipe
       if (!r || !r.inventory)
@@ -61,6 +61,7 @@ export default class Inventory {
       for (const rec of r.inventory.stepsRecipes) this.mergeRecipe(rec)
       for (const [def, amount] of r.inventory.storage) this.mergeSingle(def, amount)
     }
+    return this
   }
 
   @futilable

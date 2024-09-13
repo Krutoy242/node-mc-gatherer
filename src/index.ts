@@ -3,16 +3,15 @@ Helper script to prepare several files for fast acces
 Lunch with NodeJS
 */
 
-/* =============================================
-=                Variables                    =
-============================================= */
+import type CLIHelper from './tools/cli-tools'
+
+import type { ExportData } from './tools/Export'
 import { join } from 'node:path'
 
 import chalk from 'chalk'
-import { globSync } from 'glob'
-
 import { parse as csvParseSync } from 'csv-parse/sync'
-import { IngredientStore } from './api'
+import { globSync } from 'glob'
+import { IngredientStore } from './api/IngredientStore'
 import applyCustoms from './custom/customs'
 import getMiningPlaceholder from './custom/mining_levels'
 import { generateBlockMinings } from './from/blockMinings'
@@ -28,9 +27,7 @@ import Definition from './lib/items/Definition'
 import DefinitionStore from './lib/items/DefinitionStore'
 import hardReplaceMap from './lib/items/HardReplace'
 import RecipeStore from './lib/recipes/RecipeStore'
-import type { ExportData } from './tools/Export'
 import exportData from './tools/Export'
-import type CLIHelper from './tools/cli-tools'
 
 /* =============================================
 =
@@ -115,7 +112,7 @@ export default async function mcGather(
     'action': () => generateBlockMinings(crafttweaker_log),
     'moreInfo': info => `Added: ${cli.num(Object.keys(info.result ?? {}).length)}`,
     '⚠️': chalk`Block mining levels is unavaliable. Inject {bold .zs} files by run `
-    + chalk`{bgGray mc-gatherer --inject --mc="path/to/modpack"}`,
+      + chalk`{bgGray mc-gatherer --inject --mc="path/to/modpack"}`,
   })
 
   runTask('Append JER recipes', {

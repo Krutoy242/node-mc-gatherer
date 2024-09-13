@@ -1,14 +1,14 @@
-import 'reflect-metadata'
+import type { Based, BaseVisible, Calculable, IngrAmount, Labeled } from '../../api'
+import type Recipe from '../recipes/Recipe'
 import _ from 'lodash'
-import numeral from 'numeral'
 
-import type { BaseVisible, Based, Calculable, IngrAmount, Labeled } from '../../api'
+import numeral from 'numeral'
 import { LabelSetup } from '../../api'
 
+import Solvable from '../../api/Solvable'
 import { Csv } from '../../tools/CsvDecorators'
-import type Recipe from '../recipes/Recipe'
 import { escapeCsv } from '../utils'
-import { Solvable } from '../../api/Solvable'
+import 'reflect-metadata'
 
 const infin = (n: number) => n === Number.POSITIVE_INFINITY ? 'Infinity' : undefined
 const numFormat = (n: number) => infin(n) ?? numeral(n).format('0,0.00')

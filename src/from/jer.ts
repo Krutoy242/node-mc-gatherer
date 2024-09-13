@@ -1,13 +1,13 @@
-import _ from 'lodash'
-
-import { Stack } from '../api'
-import getMiningPlaceholder from '../custom/mining_levels'
 import type Definition from '../lib/items/Definition'
-import type RecipeStore from '../lib/recipes/RecipeStore'
-import { createFileLogger } from '../log/logger'
-import type { DefIngrStack } from '../types'
 
+import type RecipeStore from '../lib/recipes/RecipeStore'
+import type { DefIngrStack } from '../types'
 import type { BlockMinings } from './blockMinings'
+import _ from 'lodash'
+import { Stack } from '../api/Stack'
+import getMiningPlaceholder from '../custom/mining_levels'
+
+import { createFileLogger } from '../log/logger'
 
 interface JER_Entry {
   block: string
@@ -151,9 +151,9 @@ export default function append_JER(
       ([dim, o]) => `
 "${dim}": {
 ${Object.entries(o)
-  .sort(([, a], [, b]) => a - b)
-  .map(([id, n]) => `  ${n} ${id}`)
-  .join('\n')}
+    .sort(([, a], [, b]) => a - b)
+    .map(([id, n]) => `  ${n} ${id}`)
+    .join('\n')}
   }`,
     ),
   )

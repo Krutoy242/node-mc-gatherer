@@ -1,9 +1,9 @@
-import type { IngredientStore } from '../../api'
-import { Stack } from '../../api'
-import { createFileLogger } from '../../log/logger'
+import type { IngredientStore } from '../../api/IngredientStore'
 import type { DefIngrStack } from '../../types'
 import type Definition from '../items/Definition'
 import type DefinitionStore from '../items/DefinitionStore'
+import { Stack } from '../../api/Stack'
+import { createFileLogger } from '../../log/logger'
 
 import Recipe from './Recipe'
 

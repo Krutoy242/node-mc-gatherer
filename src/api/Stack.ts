@@ -7,12 +7,12 @@ export class Stack<T> {
       throw new Error('Stack cannot be empty')
 
     const g = str.match(
-      /^((?<amount>\?|[\+\-]?\d*\.?\d+(?:[Ee][\+\-]?\d+)?)x )?(?<id>.+)$/,
+      /^((?<amount>\?|[+\-]?(?:\d+(?:\.\d+)?|\.\d+)(?:[Ee][+\-]?\d+)?)x )?(?<id>.+)$/,
     )?.groups
     if (!g)
       throw new Error(`Cant parse stack for: ${str}`)
 
-    if (!g.id || !g.id[0].match(/[a-zA-Z]/))
+    if (!g.id || !g.id[0].match(/[a-z]/i))
       throw new Error(`Wrond ID for: ${str}`)
 
     const amount
