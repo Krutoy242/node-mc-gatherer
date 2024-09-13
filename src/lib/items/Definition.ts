@@ -99,16 +99,21 @@ export default class Definition extends Solvable
     super(id)
   }
 
-  override toString(options?: { complexityPad?: number, short?: boolean }) {
-    const display = `"${this.display}" ${this.id}`
-    if (options?.short)
-      return display
-    const full
-      = `${getPurity(this.purity)
-      + this.complexity_s.padStart(options?.complexityPad ?? 0)
-      } 🧮${siFormat(this.cost)}`
-      + ` ⚙️${siFormat(this.processing)}`
-    return `${full} ${display}`
+  serialize(options?: { short?: boolean }) {
+    const display = [`"${this.display}"`, this.id]
+    return options?.short
+      ? display
+      : [
+          getPurity(this.purity),
+          this.complexity_s,
+          `🧮${siFormat(this.cost)}`,
+          `⚙️${siFormat(this.processing)}`,
+          ...display,
+        ]
+  }
+
+  override toString(options?: { short?: boolean }) {
+    return this.serialize(options).join(' ')
   }
 
   get complexity_s(): string {

@@ -1,13 +1,13 @@
-import _ from 'lodash'
-
 import type { CsvRecipe } from '../api'
-import { solve } from '../api'
 
 import type Playthrough from '../api/Playthrough'
-import { getVolume } from '../api/volume'
 import type Definition from '../lib/items/Definition'
+
 import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
+import _ from 'lodash'
+import { solve } from '../api'
+import { getVolume } from '../api/volume'
 import { escapeCsv, sortBy } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
 
@@ -39,9 +39,12 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
     const write = createFileLogger(`tree/${fileName}.log`)
     const writeLn = (s: string) => write(`${s}\n`)
 
-    const playthrough = solve<Definition, [number, number]>(def, isAscend, (def, combined, amountOrBehind, tab, complexityPad) => {
-      writeLn('  '.repeat(tab) + def.toString({ complexityPad }))
-      if (!combined)
+    const playthrough = solve<Definition, [number, number]>(def, isAscend, (def, requirments, amountOrBehind, tab, complexityPad) => {
+      // TODO: Show cost using best recipe if descending with amount
+      const serializedDef = def.serialize()
+      serializedDef[1] = serializedDef[1].padStart(complexityPad)
+      writeLn('  '.repeat(tab) + serializedDef.join(' '))
+      if (!requirments)
         return
 
       const amoutOfOutput = typeof amountOrBehind === 'number' ? amountOrBehind : 1
@@ -51,8 +54,8 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
           .forEach(line => writeLn(`${'  '.repeat(tab)}  ${line}`))
       }
 
-      const newComplexityPad = Math.max(...combined.map(it => it[0].complexity_s.length))
-      return [tab + 1, newComplexityPad]
+      const newComplexityPad = Math.max(...requirments.map(([d]) => d.complexity_s.length))
+      return [++tab, newComplexityPad]
     }, [0, 1])
     return playthrough
   }
@@ -67,8 +70,8 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
 
   const mostStepsDef = [...store].sort(
     (a, b) =>
-      (b.mainRecipe?.inventory?.steps ?? 0)
-      - (a.mainRecipe?.inventory?.steps ?? 0) || b.complexity - a.complexity,
+      (b.bestRecipe()?.[0]?.inventory?.steps ?? 0)
+      - (a.bestRecipe()?.[0]?.inventory?.steps ?? 0) || b.complexity - a.complexity,
   )[0]
 
   logger(mostStepsDef.id, true)
@@ -89,24 +92,24 @@ function PlaythroughToCSV(playthrough: Playthrough<Definition>): string {
 
   return (
     `${header}\n${
-    sortBy(
-      playthrough
-        .getMerged()
-        .toArray()
-        .map(([def, v]) => {
-          const [vol, unit] = getVolume(def)
-          return [def, v / vol, unit] as const
-        }),
-      o => -o[1],
-    )
-      .map(([def, v, unit]) =>
-        [
-          `${v}${unit ?? ''}`,
-          playthrough.getCatalyst(def),
-          escapeCsv(def.display),
-          escapeCsv(def.id),
-        ].join(','),
+      sortBy(
+        playthrough
+          .getMerged()
+          .toArray()
+          .map(([def, v]) => {
+            const [vol, unit] = getVolume(def)
+            return [def, v / vol, unit] as const
+          }),
+        o => -o[1],
       )
-      .join('\n')}`
+        .map(([def, v, unit]) =>
+          [
+            `${v}${unit ?? ''}`,
+            playthrough.getCatalyst(def),
+            escapeCsv(def.display),
+            escapeCsv(def.id),
+          ].join(','),
+        )
+        .join('\n')}`
   )
 }
