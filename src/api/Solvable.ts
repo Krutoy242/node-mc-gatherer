@@ -1,6 +1,4 @@
 import type { Calculable, Identified, IngrAmount, SolvableRecipe } from '.'
-import type { Ingredient } from './Ingredient'
-import type { Stack } from './Stack'
 import { escapeCsv, sum } from '../lib/utils'
 import { Csv } from '../tools/CsvDecorators'
 
@@ -56,7 +54,7 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
     const sortedArr = this.recipes?.sort(([recA, amountA], [recB, amountB]) => {
       return recB.purity - recA.purity
         || (recA.cost * (amountA ?? 1) * amount + recA.processing) - (recB.cost * (amountB ?? 1) * amount + recB.processing)
-        || summPurityOfRequirments(recB) - summPurityOfRequirments(recA)
+        || averagePurity(recB) - averagePurity(recA)
         || unpureNiceScore(recB) - unpureNiceScore(recA)
     })
 
@@ -84,17 +82,11 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
   }
 }
 
-function summPurityOfRequirments(a: SolvableRecipe<Solvable<any>>): number {
-  return puritySumm(a.inputs) + puritySumm(a.catalysts)
-}
-
-function puritySumm(arr?: Stack<Ingredient<Solvable<any>>>[]): number {
-  if (!arr)
-    return 0
-  return arr.reduce(
+function averagePurity(a: SolvableRecipe<Solvable<any>>): number {
+  return a.requirments.reduce(
     (c, d) => c + Math.max(...[...d.it.matchedBy()].map(o => o.purity)),
-    0,
-  )
+    0.0,
+  ) / a.requirments.length
 }
 
 function unpureNiceScore(a: SolvableRecipe<Solvable<any>>): number {
