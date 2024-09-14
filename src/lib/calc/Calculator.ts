@@ -26,24 +26,33 @@ export default class Calculator {
     this.assignPredefined((r: Recipe) => dirtyRecipes.add(r))
     this.definitionStore.locked = true
 
+    // ------------------------
+    // Progress Bars
     const cliBars = {
       Recipes: this.recipeStore.length,
       Items: this.definitionStore.size,
     }
     cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
+    function updateBarRecipes(total: number, inQueue: number) {
+      cli.bars?.[0].update(total, { task: `In queue: ${cli.num(inQueue)}` })
+    }
+    function updateBarItems(recalcDefs: number) {
+      cli.bars?.[1].update({ task: `Recalculated: ${cli.num(recalcDefs)}` })
+    }
     await sleep()
+    // ------------------------
 
     const recalculated = Array.from({ length: this.recipeStore.length }).fill(0) as number[]
     let totalCalculated = 0
 
-    let iters = 0
+    let i = 0
     let recalcDefs = 0
     while (dirtyRecipes.size) {
       const newDirtyRecipes = new Set<Recipe>()
       for (const rec of dirtyRecipes) {
-        if (++iters % 1000 === 0) {
-          cli.bars?.[0].update(totalCalculated, { task: `In queue: ${cli.num(dirtyRecipes.size)}` })
-          cli.bars?.[1].update({ task: `Recalculated: ${cli.num(recalcDefs)}` })
+        if (++i % 1000 === 0) {
+          updateBarRecipes(totalCalculated, dirtyRecipes.size)
+          updateBarItems(recalcDefs)
           recalcDefs = 0
           await sleep()
         }
@@ -58,7 +67,12 @@ export default class Calculator {
           totalCalculated++
 
         rec.outputs.forEach(stack =>
-          recalcDefs += this.calcStack(stack, rec, (r: Recipe) => newDirtyRecipes.add(r), cli),
+          recalcDefs += this.calcStack(
+            stack,
+            rec,
+            r => newDirtyRecipes.add(r),
+            () => cli.bars?.[1].increment(),
+          ),
         )
       }
       dirtyRecipes = newDirtyRecipes
@@ -99,16 +113,18 @@ export default class Calculator {
     stack: Stack<Ingredient<Definition>>,
     rec: Recipe,
     addDirty: (r: Recipe) => void,
-    cli: CLIHelper,
+    onRecalc: () => void,
   ) {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
       const isFirtCalc = def.purity <= 0
       def.dependencies?.forEach(addDirty)
+
       if (!def.suggest(rec, stack.amount ?? 1))
         continue
       if (isFirtCalc)
-        cli.bars?.[1].increment()
+        onRecalc()
+
       recalcDefs++
     }
 
