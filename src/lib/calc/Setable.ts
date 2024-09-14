@@ -2,10 +2,10 @@ import type { Calculable } from '../../api'
 import { Csv } from '../../tools/CsvDecorators'
 
 export default abstract class Setable implements Calculable {
-  protected _cost = 0.0
+  protected _cost = Number.POSITIVE_INFINITY
   @Csv(12) public get cost() { return this._cost }
 
-  protected _processing = 0.0
+  protected _processing = Number.POSITIVE_INFINITY
   @Csv(13) public get processing() { return this._processing }
 
   protected _purity = 0.0
