@@ -48,17 +48,10 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
   /**
    * Find best recipe for this item for this amount
    */
-  bestRecipe(
-    amount: number,
-  ) {
-    const sortedArr = this.recipes?.sort(([recA, amountA], [recB, amountB]) => {
-      return recB.purity - recA.purity
-        || (recA.cost * (amountA ?? 1) * amount + recA.processing) - (recB.cost * (amountB ?? 1) * amount + recB.processing)
-        || averagePurity(recB) - averagePurity(recA)
-        || unpureNiceScore(recB) - unpureNiceScore(recA)
-    })
+  bestRecipe(amount = 1): RecipeForAmount<R> | undefined {
+    const recipe = this.recipes?.sort(recipeComparator(amount))[0]
 
-    return sortedArr?.[0]
+    return recipe
   }
 
   /**
@@ -80,6 +73,13 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
     this.mainRecipeAmount = amount
     return true
   }
+}
+
+function recipeComparator(amount: number): (a: RecipeForAmount<SolvableRecipe<any>>, b: RecipeForAmount<SolvableRecipe<any>>) => number {
+  return ([recA, amountA], [recB, amountB]) => recB.purity - recA.purity
+    || (recA.cost * (amountA ?? 1) * amount + recA.processing) - (recB.cost * (amountB ?? 1) * amount + recB.processing)
+    || averagePurity(recB) - averagePurity(recA)
+    || unpureNiceScore(recB) - unpureNiceScore(recA)
 }
 
 function averagePurity(a: SolvableRecipe<Solvable<any>>): number {
