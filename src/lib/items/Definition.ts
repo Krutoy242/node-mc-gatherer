@@ -113,7 +113,5 @@ export default class Definition extends Solvable<Recipe>
 }
 
 function getPurity(n: number): string {
-  return `▕${
-    n === 0 ? ' ' : n === 1 ? '█' : '▇▆▅▄▃▂▁'[Math.min(6, -Math.log10(n) | 0)]
-  }▏`
+  return n === 0 ? ' ' : n === 1 ? '█' : '▇▆▅▄▃▂▁'[Math.min(6, -Math.log10(n) | 0)]
 }
