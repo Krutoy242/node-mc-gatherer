@@ -16,7 +16,7 @@ const siFormat = (n: number) => infin(n) ?? numeral(n).format('a').padStart(4)
 
 // const logRecalc = createFileLogger('tmp_recalcOf.log')
 
-export default class Definition extends Solvable
+export default class Definition extends Solvable<Recipe>
   implements Based, BaseVisible, Calculable, Labeled {
   /*
   ███████╗██╗███████╗██╗     ██████╗ ███████╗
@@ -35,15 +35,6 @@ export default class Definition extends Solvable
 
   @Csv(1, (s?: string[]) => escapeCsv(s?.join('\\n')))
   tooltips?: string[]
-
-  /**
-   * Recipes that has this item as output
-   */
-  declare recipes: [Recipe, IngrAmount][] | undefined
-
-  declare mainRecipe: Recipe | undefined
-
-  declare dependencies: Set<Recipe> | undefined
 
   @Csv(21.5)
   get labels() {

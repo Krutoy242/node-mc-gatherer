@@ -4,24 +4,24 @@ import type { Stack } from './Stack'
 import { escapeCsv, sum } from '../lib/utils'
 import { Csv } from '../tools/CsvDecorators'
 
-export type RecipeForSolvable = [SolvableRecipe<Solvable>, IngrAmount]
+export type RecipeForAmount<T> = readonly [T, IngrAmount]
 
-export default class Solvable implements Identified, Calculable {
+export default class Solvable<R extends SolvableRecipe<any>> implements Identified, Calculable {
   @Csv(23, escapeCsv)
   readonly id: string
 
   /** Recipe and output amount of this item */
-  recipes: RecipeForSolvable[] | undefined
+  recipes: RecipeForAmount<R>[] | undefined
 
   /** Cheapest recipe with amount == 1 */
-  mainRecipe: SolvableRecipe<Solvable> | undefined
+  mainRecipe: R | undefined
 
   mainRecipeAmount: IngrAmount
 
   /**
    * Recipes that depends on this item
    */
-  dependencies: Set<SolvableRecipe<Solvable>> | undefined
+  dependencies: Set<R> | undefined
 
   /** Predefined, hardcoded cost of the item */
   naturalCost?: number
@@ -84,11 +84,11 @@ export default class Solvable implements Identified, Calculable {
   }
 }
 
-function summPurityOfRequirments(a: SolvableRecipe<Solvable>): number {
+function summPurityOfRequirments(a: SolvableRecipe<Solvable<any>>): number {
   return puritySumm(a.inputs) + puritySumm(a.catalysts)
 }
 
-function puritySumm(arr?: Stack<Ingredient<Solvable>>[]): number {
+function puritySumm(arr?: Stack<Ingredient<Solvable<any>>>[]): number {
   if (!arr)
     return 0
   return arr.reduce(
@@ -97,7 +97,7 @@ function puritySumm(arr?: Stack<Ingredient<Solvable>>[]): number {
   )
 }
 
-function unpureNiceScore(a: SolvableRecipe<Solvable>): number {
+function unpureNiceScore(a: SolvableRecipe<Solvable<any>>): number {
   return sum([
     1 - 1 / (sum(a.requirments.map(s => s.it.items.length)) + 1),
     a.catalysts?.length === 1 ? 0.25 : 0,

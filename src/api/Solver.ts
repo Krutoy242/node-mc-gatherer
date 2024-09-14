@@ -11,8 +11,10 @@ type Tail<T extends any[]> = T extends [any, ...infer Part] ? Part : never
 
 type ScendTail = Tail<Required<Parameters<ReturnType<(typeof descending | typeof ascending)>>>>
 
+type SolvableReciped = Solvable<SolvableRecipe<any>>
+
 export function solve<
-  T extends Solvable,
+  T extends SolvableReciped,
   U extends readonly any[],
 >(
   topDef: T,
@@ -29,7 +31,6 @@ export function solve<
   playthrough.addCatalysts([new Stack(topDef)])
 
   solverLoop<T, any[]>(
-    // @ts-expect-error Too hard, cant fix type error
     (def: T, ...args) => {
       const nextList = further(def, ...args)
       // @ts-expect-error TS cant in rest
@@ -44,7 +45,7 @@ export function solve<
 
 type PseudoStack<T> = readonly [T, number]
 
-function descending<T extends Solvable>(playthrough: Playthrough<Solvable>) {
+function descending<T extends SolvableReciped>(playthrough: Playthrough<SolvableReciped>) {
   return (currentSolvable: T, amount = 1) => {
     const tuple = currentSolvable.bestRecipe(amount)
     if (!tuple)
@@ -68,7 +69,7 @@ function descending<T extends Solvable>(playthrough: Playthrough<Solvable>) {
   }
 }
 
-function ascending<T extends Solvable>(playthrough: Playthrough<T>) {
+function ascending<T extends SolvableReciped>(playthrough: Playthrough<T>) {
   return (currentSolvable: T, behind = new Set<Stack<T>>()) => {
     if (!currentSolvable?.dependencies?.size)
       return undefined
