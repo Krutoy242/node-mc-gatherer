@@ -7,6 +7,7 @@ import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
 import _ from 'lodash'
 import { solve } from '../api/Solver'
+import { Stack } from '../api/Stack'
 import { getVolume } from '../api/volume'
 import { escapeCsv, sortBy } from '../lib/utils'
 import { createFileLogger } from '../log/logger'
@@ -22,24 +23,24 @@ export default function exportData(recipesStore: RecipeStore): ExportData {
   const store = recipesStore.definitionStore
 
   function logger(
-    id: string,
+    input: string,
     idPath = false,
   ): Playthrough<Definition> | undefined {
     let isAscend = false
-    if (id.startsWith('from ')) {
-      id = id.replace(/^from /, '')
+    if (input.startsWith('from ')) {
+      input = input.replace(/^from /, '')
       isAscend = true
     }
 
-    const def = store.lookById(id)
-    if (!def)
+    const stack = Stack.fromString(input, id => store.lookById(id))
+    if (!stack.it)
       return
 
-    const fileName = idPath ? id.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
+    const fileName = idPath ? input.replace(/[/\\?%*:|"<>]/g, '_') : 'tmp'
     const write = createFileLogger(`tree/${fileName}.log`)
     const writeLn = (s: string) => write(`${s}\n`)
 
-    const playthrough = solve<Definition, [number, number]>(def, isAscend, (def, requirments, amountOrBehind, tab, complexityPad) => {
+    const playthrough = solve<Definition, [number, number]>(stack.it, isAscend, (def, requirments, amountOrBehind, tab, complexityPad) => {
       // TODO: Show cost using best recipe if descending with amount
       const serializedDef = def.serialize()
       serializedDef[1] = serializedDef[1].padStart(complexityPad)
