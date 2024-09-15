@@ -54,7 +54,7 @@ export default class Inventory {
   @futilable
   addCatalystsOf(microStacks: DefinitionStack[]) {
     for (const ms of microStacks) {
-      const r = ms.it.mainRecipe
+      const r = ms.it.bestRecipe()?.[0]
       if (!r || !r.inventory)
         continue
 

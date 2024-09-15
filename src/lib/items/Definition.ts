@@ -53,9 +53,10 @@ export default class Definition extends Solvable<Recipe>
 
   @Csv(22)
   get recipeIndexes() {
+    const bestRecipe = this.bestRecipe()?.[0]
     return _.sortBy(
       (this.recipes ?? []).map(([r]) => r.index),
-      i => (i === this.mainRecipe?.index ? -1 : 0), // Main recipe always first
+      i => (i === bestRecipe?.index ? -1 : 0), // Main recipe always first
     ).join(' ')
   }
 
@@ -67,8 +68,9 @@ export default class Definition extends Solvable<Recipe>
 
   @Csv(20)
   get steps() {
-    return this.mainRecipe?.inventory?.steps
-      ? this.mainRecipe.inventory.steps + 1
+    const bestRecipe = this.bestRecipe()?.[0]
+    return bestRecipe?.inventory?.steps
+      ? bestRecipe.inventory.steps + 1
       : ''
   }
 

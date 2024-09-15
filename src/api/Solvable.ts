@@ -11,11 +11,6 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
   /** Recipe and output amount of this item */
   recipes: RecipeForAmount<R>[] | undefined
 
-  /** Cheapest recipe with amount == 1 */
-  mainRecipe: R | undefined
-
-  mainRecipeAmount: IngrAmount
-
   /**
    * Recipes that depends on this item
    */
@@ -26,52 +21,72 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
 
   /** For 1 item */
   @Csv(12) get cost() {
-    return this.naturalCost || (this.mainRecipe?.cost ?? Number.POSITIVE_INFINITY) / (this.mainRecipeAmount ?? 1.0)
+    return this.costFor(1)
   }
 
   /** For 1 item */
   @Csv(13) get processing() {
-    return this.naturalCost ? 0.0 : this.mainRecipe?.processing ?? Number.POSITIVE_INFINITY
+    return this.processingFor(1)
   }
 
+  private maxPurity = 0.0
   @Csv(10) get purity() {
-    return this.naturalCost ? 1.0 : this.mainRecipe?.purity ?? 0.0
+    if (this.maxPurity >= 1)
+      return 1.0
+
+    const newPurity = this.naturalCost
+      ? 1.0
+      : this.recipes
+        ? Math.max(...this.recipes.map(([r]) => r.purity))
+        : 0.0
+
+    this.maxPurity = Math.max(this.maxPurity, newPurity)
+    return this.maxPurity
   }
 
   /** For 1 item */
   @Csv(11) get complexity() {
-    return this.cost + this.processing
+    return this.complexityFor(1)
+  }
+
+  costFor(amount: IngrAmount) {
+    const bestRecipe = this.bestRecipe(amount)
+    return this.naturalCost || (bestRecipe?.[0]?.cost ?? Number.POSITIVE_INFINITY) / (bestRecipe?.[1] ?? 1.0)
+  }
+
+  processingFor(amount: IngrAmount) {
+    return this.naturalCost ? 0.0 : this.bestRecipe(amount)?.[0]?.processing ?? Number.POSITIVE_INFINITY
+  }
+
+  complexityFor(amount: IngrAmount) {
+    return this.costFor(amount) + this.processingFor(amount)
   }
 
   constructor(id: string) { this.id = id }
+
+  /** Cache for fast accessing best recipes */
+  private bestRecipeCache?: Map<number, RecipeForAmount<R>>
 
   /**
    * Find best recipe for this item for this amount
    */
   bestRecipe(amount = 1): RecipeForAmount<R> | undefined {
-    const recipe = this.recipes?.sort(recipeComparator(amount))[0]
+    if (this.bestRecipeCache?.has(amount))
+      return this.bestRecipeCache.get(amount)
+
+    if (!this.recipes || !this.recipes.length)
+      return
+
+    const recipe = this.recipes.sort(recipeComparator(amount))[0]
+
+    ;(this.bestRecipeCache ??= new Map()).set(amount, recipe)
 
     return recipe
   }
 
-  /**
-   * Suggest recipe to be chosen as main
-   * @returns `true` if calculable values was changed
-   */
-  suggest(rec: R, amount: number): boolean {
-    if (this.purity > rec.purity)
-      return false
-    if (this.purity < rec.purity)
-      return this.setRecipe(rec, amount)
-    if (this.complexity <= rec.complexity)
-      return false
-    return this.setRecipe(rec, amount)
-  }
-
-  private setRecipe(rec: R, amount: number) {
-    this.mainRecipe = rec
-    this.mainRecipeAmount = amount
-    return true
+  markDirty() {
+    this.bestRecipeCache?.clear()
+    return this.maxPurity <= 0
   }
 }
 

@@ -80,7 +80,7 @@ function ascending<T extends SolvableReciped>(playthrough: Playthrough<T>) {
       const outputsDef = toDefStacks(1, r.outputs)
 
       // List of outputs of this recipe
-      const ds = outputsDef.filter(s => toDefStacks(s.amount ?? 1, s.it.mainRecipe?.requirments)
+      const ds = outputsDef.filter(s => toDefStacks(s.amount ?? 1, s.it.bestRecipe()?.[0]?.requirments)
         ?.some(st => st.it === currentSolvable),
       )
 
@@ -93,11 +93,11 @@ function ascending<T extends SolvableReciped>(playthrough: Playthrough<T>) {
       // For each output, purchase everything behind
       const newBehind = new Set<Stack<T>>()
       ds.forEach((d) => {
-        const mult = d.amount ?? 1 * amount
+        const mult = (d.amount ?? 1) * amount
         playthrough.addInputs([defStack], mult)
         behind.forEach((st) => {
           playthrough.addInputs([st], mult)
-          newBehind.add(new Stack(st.it, st.amount ?? 1 * mult))
+          newBehind.add(new Stack(st.it, (st.amount ?? 1) * mult))
         })
       })
 

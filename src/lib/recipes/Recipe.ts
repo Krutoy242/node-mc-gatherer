@@ -69,7 +69,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
       return // Old recipe better
 
     let catalList: Inventory | undefined
-    if (catDefs.length || inDefs.some(d => d.it.mainRecipe?.inventory)) {
+    if (catDefs.length || inDefs.some(d => d.it.bestRecipe()?.[0]?.inventory)) {
       const treshold = samePurity ? this.complexity - cost : Number.POSITIVE_INFINITY
       catalList = new Inventory(treshold, this)
         .addCatalysts(catDefs)
@@ -103,7 +103,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     const detailed = !options?.detailed ? '' : this.toStringDetailed()
     return (
       `${recID}${
-      detailed
+        detailed
       }${this.listToString('\n↱ ', 'outputs')
       }${this.listToString('\n░ ', 'catalysts')
       }${this.listToString('\n⮬ ', 'inputs')}`

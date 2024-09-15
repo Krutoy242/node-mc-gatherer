@@ -69,7 +69,6 @@ export default class Calculator {
         rec.outputs.forEach(stack =>
           recalcDefs += this.calcStack(
             stack,
-            rec,
             r => newDirtyRecipes.add(r),
             () => cli.bars?.[1].increment(),
           ),
@@ -111,18 +110,14 @@ export default class Calculator {
 
   private calcStack(
     stack: Stack<Ingredient<Definition>>,
-    rec: Recipe,
     addDirty: (r: Recipe) => void,
     onRecalc: () => void,
   ) {
     let recalcDefs = 0
     for (const def of stack.it.matchedBy()) {
-      const isFirtCalc = def.purity <= 0
       def.dependencies?.forEach(addDirty)
 
-      if (!def.suggest(rec, stack.amount ?? 1))
-        continue
-      if (isFirtCalc)
+      if (def.markDirty() && def.purity > 0)
         onRecalc()
 
       recalcDefs++
