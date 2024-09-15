@@ -1,6 +1,6 @@
-import volumes from './volumes.json'
-
 import type { Based } from '.'
+
+import volumes from './volumes.json'
 
 type VolumeData =
   | number

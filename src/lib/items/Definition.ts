@@ -1,4 +1,4 @@
-import type { Based, BaseVisible, Calculable, IngrAmount, Labeled } from '../../api'
+import type { Based, BaseVisible, Calculable, Labeled } from '../../api'
 import type Recipe from '../recipes/Recipe'
 import _ from 'lodash'
 

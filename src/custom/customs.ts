@@ -1,9 +1,9 @@
-import { dirname, parse, resolve } from 'node:path'
-
-import { fileURLToPath, pathToFileURL } from 'node:url'
-import { globSync } from 'glob'
-
 import type RecipeStore from '../lib/recipes/RecipeStore'
+
+import { dirname, parse, resolve } from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+
+import { globSync } from 'glob'
 
 // Convert the URL to a file path and get the directory name
 const __filename = fileURLToPath(import.meta.url)

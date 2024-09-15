@@ -23,8 +23,8 @@ export function parseSNbt(sNbt?: string): NBT | null {
       /\[[ILBbsfd];((,?-?\d+(\.\d+)?(E-?\d+)?[ILBbsfd]?)*)\]/g,
       (_m, a) => `[${a.replace(/(-?\d+(\.\d+)?(E-?\d+)?)[ILBbsfd]/g, '$1')}]`,
     ) // Remove list types
-    .replace(/([{,])([-\w\.]+):(?=[-"\d[{\\])/g, '$1"$2":') // Encapsulate keys
-    .replace(/(":-?\d+(\.\d+)?(E-?\d+)?)[ILBbsfd](?=\W)/gi, '$1')
+    .replace(/([{,])([-\w.]+):(?=[-"\d[{\\])/g, '$1"$2":') // Encapsulate keys
+    .replace(/(":-?\d+(\.\d+)?(E-?\d+)?)[ILBsfd](?=\W)/gi, '$1')
 
   try {
     return JSON.parse(pure)

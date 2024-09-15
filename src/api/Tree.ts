@@ -1,8 +1,9 @@
-import chalk from 'chalk'
+import type { Base, Based, Identified } from './'
+import type { Ingredient } from './Ingredient'
 import type { NBT } from './NBT'
-import { nbtMatch, parseSNbt } from './NBT'
 
-import type { Base, Based, Identified, Ingredient } from './'
+import chalk from 'chalk'
+import { nbtMatch, parseSNbt } from './NBT'
 /* =============================================
 ============================================= */
 
@@ -239,7 +240,7 @@ export class Tree<T extends Identified & Based> {
     if (!oreList) {
       if (this.alreadyLoggedOredicts.size === 0) {
         console.warn(chalk.gray('\nItems Tree want to acces Oredict, but can\'t find entry.\n'
-        + 'This may happen if OreDict was not loaded at all, or not all entries was listed in it.'))
+          + 'This may happen if OreDict was not loaded at all, or not all entries was listed in it.'))
       }
       if (!this.alreadyLoggedOredicts.has(entry)) {
         this.alreadyLoggedOredicts.add(entry)

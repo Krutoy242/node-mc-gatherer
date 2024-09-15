@@ -1,6 +1,6 @@
-import { iTypePrefix } from './IType'
 import type { JEIEItem } from './JEIECategory'
 import type { NameMap } from './NameMap'
+import { iTypePrefix } from './IType'
 
 export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
   const splitted = ingr.name.split(':')

@@ -1,13 +1,13 @@
-import fs from 'node:fs'
-import process from 'node:process'
-
-import chalk from 'chalk'
-import cliProgress from 'cli-progress'
-import numeral from 'numeral'
-import Terminal from 'terminal-kit'
-
 import type DefinitionStore from '../lib/items/DefinitionStore'
 import type RecipeStore from '../lib/recipes/RecipeStore'
+
+import fs from 'node:fs'
+import process from 'node:process'
+import chalk from 'chalk'
+import cliProgress from 'cli-progress'
+
+import numeral from 'numeral'
+import Terminal from 'terminal-kit'
 
 const { terminal: term } = Terminal
 
@@ -127,7 +127,10 @@ export default class CLIHelper {
 
       let text
       if (opts.textSource) {
-        try { text = loadText(opts.textSource) }
+        try {
+          text = loadText(opts.textSource)
+        }
+        // eslint-disable-next-line unused-imports/no-unused-vars
         catch (err: unknown) {}
       }
       if (opts.textSource === null || (opts.textSource && !text))

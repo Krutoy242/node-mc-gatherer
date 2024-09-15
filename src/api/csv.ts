@@ -1,5 +1,6 @@
 import type { BaseItem, BaseItemMap } from '.'
-import { Tree, baseItemSetup } from '.'
+import { baseItemSetup } from '.'
+import { Tree } from './Tree'
 
 type CSVBaseItem = {
   [key in keyof typeof baseItemSetup]-?: string

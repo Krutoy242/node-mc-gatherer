@@ -51,7 +51,7 @@ function parseTooltips(id: string, rawTooltip?: string): string[] | undefined {
   if (!rawTooltip)
     return
 
-  const lines = rawTooltip.split(/\\n|\n/gm).filter((line) => {
+  const lines = rawTooltip.split(/\\n|\n/g).filter((line) => {
     if (!line)
       return false
     const l = line.trim()
@@ -68,15 +68,19 @@ function parseTooltips(id: string, rawTooltip?: string): string[] | undefined {
       || l.startsWith('§o Burn time ')
       || l.startsWith('Fuel Details')
       || l === 'Mining control is §r§cDisabled§r'
-    ) return false
+    ) {
+      return false
+    }
 
     const noColors = l.replace(/§./g, '')
 
     if (
-      /(Hold|Press) .?(Shift|CTRL|Control)/i.test(noColors)
+      /(?:Hold|Press) .?(?:Shift|CTRL|Control)/i.test(noColors)
       || /Empty.?/i.test(noColors)
       || /~.+ mB UU/i.test(noColors)
-    ) return false
+    ) {
+      return false
+    }
 
     return true
   })

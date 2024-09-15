@@ -26,7 +26,7 @@ export default function genOreDictionary(csvText?: string) {
   for (const line of entries) {
     const id
       = `${line['Registry name']}:${line['Meta/dmg']}${
-       line.NBT ? `:${line.NBT}` : ''}`
+        line.NBT ? `:${line.NBT}` : ''}`
 
     ;(dict[line['OreDict Key']] ??= []).push(id)
   }
