@@ -91,8 +91,8 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
 }
 
 function recipeComparator(amount: number): (a: RecipeForAmount<SolvableRecipe<any>>, b: RecipeForAmount<SolvableRecipe<any>>) => number {
-  return ([recA, amountA], [recB, amountB]) => recB.purity - recA.purity
-    || (recA.cost * (amountA ?? 1) * amount + recA.processing) - (recB.cost * (amountB ?? 1) * amount + recB.processing)
+  return ([recA, amountA = 1.0], [recB, amountB = 1.0]) => recB.purity - recA.purity
+    || (recA.cost * amount / amountA + recA.processing) - (recB.cost * amount / amountB + recB.processing)
     || averagePurity(recB) - averagePurity(recA)
     || unpureNiceScore(recB) - unpureNiceScore(recA)
 }
