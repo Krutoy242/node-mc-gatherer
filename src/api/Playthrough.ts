@@ -16,7 +16,7 @@ export default class Playthrough<T> {
   }
 
   getMerged() {
-    return new Stock<T>().maxed(this.catalysts).add(this.usages)
+    return new Stock<T>().maxedAll(this.catalysts).addAll(this.usages)
   }
 
   getCatalyst(obj: T) {

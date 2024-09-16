@@ -19,12 +19,6 @@ import { naturalSort } from '../../lib/utils'
 import { createFileLogger } from '../../log/logger'
 import getFullId from './JEIEItem'
 
-export interface RecipeInfo {
-  categoryId: string
-  category: JEIECategory
-  makeStack: (id: string, amount: number) => DefIngrStack
-}
-
 const relPath = 'exports/recipes'
 
 export default async function append_JEIExporter(
@@ -45,8 +39,6 @@ export default async function append_JEIExporter(
   const lookupPath = join(mcDir, relPath, '*.json')
   const jsonList = globSync(lookupPath.replace(/\\/g, '/'))
   const getById = recipeStore.definitionStore.getById
-  const makeStack = (items: JEIEItem[]) =>
-    new Stack(recipeStore.ingredientStore.fromItems(items.map(i => getById(fullId(i)))))
 
   cli.startProgress('JEIE .json\'s', jsonList.length)
 
@@ -77,7 +69,13 @@ export default async function append_JEIExporter(
       return
 
     const customRecipes: JEIECustomRecipe[] = category.recipes
-    const defaultCatalysts = category.catalysts.length ? makeStack(category.catalysts) : []
+    const defaultCatalysts = category.catalysts.length
+      ? new Stack(
+        recipeStore.ingredientStore.fromItems(
+          category.catalysts.map(i => getById(fullId(i))),
+        ),
+      )
+      : []
 
     let recipesLength = customRecipes.length
     customRecipes.forEach((rec) => {
