@@ -39,8 +39,8 @@ export default class Definition extends Solvable<Recipe>
   @Csv(21.5)
   get labels() {
     const isLabeled: Record<keyof typeof LabelSetup, () => boolean> = {
-      Bottleneck: () => (this.recipes ?? []).filter(([r]) => r.purity > 0).length === 1,
-      Alone: () => this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1,
+      Bottleneck: () => ((this.recipes ?? []).filter(([r]) => r.purity > 0).length === 1)
+        && (this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1),
     }
 
     // Compute and apply all labels

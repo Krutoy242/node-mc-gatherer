@@ -72,11 +72,7 @@ export interface Labeled {
 export const LabelSetup = {
   Bottleneck: {
     char: '🍾',
-    desc: 'Item that have only one valid recipe',
-  },
-  Alone: {
-    char: '😶',
-    desc: 'This item used in recipes only once',
+    desc: 'Item that have only one valid recipe and used in recipes only once',
   },
 } as const
 
