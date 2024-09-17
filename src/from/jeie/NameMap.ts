@@ -36,15 +36,39 @@ export default function getNameMap(nameMapJsonTxt: string): NameMap {
     prefix = prefix ? `${prefix}:` : ''
 
     Object.entries(vis).forEach(([id, o]) => {
-      nameMap[prefix + id] = {
-        name: o.en_us,
-        tooltips: parseTooltips(id, o.en_us_tooltip),
-        tag: o.tag,
+      let tag = o.tag
+
+      // Strip display tags
+      const displayTagIndex = tag?.indexOf('display:\{')
+      if (tag && displayTagIndex && displayTagIndex !== -1) {
+        tag = pruneSNbt(tag, displayTagIndex)
+      }
+      const isTagFutile = (tag === '' || tag === '{}') && id.split(':').length === 4
+      const fullId = prefix + id
+      const prunedId = isTagFutile
+        ? fullId.replace(/:\w+$/, '')
+        : fullId
+
+      const tooltips = parseTooltips(id, o.en_us_tooltip)
+
+      if (!isTagFutile || !nameMap[prunedId]) {
+        nameMap[prunedId] = { name: o.en_us, tooltips, tag }
       }
     })
   })
 
   return nameMap
+}
+
+export function pruneSNbt(sNbt: string, displayTagIndex?: number) {
+  displayTagIndex ??= sNbt.indexOf('display:\{')
+  const newTag = sNbt.substring(0, displayTagIndex) + sNbt
+    .substring(displayTagIndex)
+    .replace(/\bLore:\["(?:[^"\\]|\\.)*"(?:,"(?:[^"\\]|\\.)*")*\],?/i, '')
+    .replace(/\bLocName:"(?:[^"\\]|\\.)*",?/i, '')
+    .replace(/\bName:"(?:[^"\\]|\\.)*",?/i, '')
+
+  return newTag.replace(/,display:\{\}|display:\{\},?/i, '')
 }
 
 function parseTooltips(id: string, rawTooltip?: string): string[] | undefined {
