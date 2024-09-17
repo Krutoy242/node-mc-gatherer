@@ -11,7 +11,7 @@ import type {
 import type { NameMap } from './NameMap'
 import { readFileSync, statSync } from 'node:fs'
 import { join, parse } from 'node:path'
-import { globSync } from 'glob'
+import fast_glob from 'fast-glob'
 import { Stack } from '../../api/Stack'
 
 import adapters from '../../custom/adapters'
@@ -37,7 +37,7 @@ export default async function append_JEIExporter(
     getTool,
   }
   const lookupPath = join(mcDir, relPath, '*.json')
-  const jsonList = globSync(lookupPath.replace(/\\/g, '/'))
+  const jsonList = fast_glob.sync(lookupPath.replace(/\\/g, '/'))
   const getById = recipeStore.definitionStore.getById
 
   cli.startProgress('JEIE .json\'s', jsonList.length)

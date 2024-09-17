@@ -28,16 +28,15 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf build && tsc",
     "show-unused-exports": "npx ts-prune",
     "run:e2ee": "tsx src/cli.ts --mc=D:/mc_client/Instances/E2E-E --output=../src/assets/data/e2ee",
     "run:herodotus": "tsx src/cli.ts --mc=D:/mc_client/Instances/Herodotus --output=../src/assets/data/herodotus"
   },
   "dependencies": {
-    "canvas": "^2.11.1",
     "cli-progress": "^3.12.0",
     "csv-parse": "^5.5.6",
-    "glob": "^10.4.5",
+    "fast-glob": "^3.3.2",
     "lodash": "^4.17.21",
     "mc-icons": "^1.6.0",
     "numeral": "^2.0.6",
@@ -48,7 +47,6 @@
   },
   "devDependencies": {
     "@types/cli-progress": "^3.11.6",
-    "@types/glob": "^8.1.0",
     "@types/lodash": "^4.17.7",
     "@types/numeral": "^2.0.5",
     "@types/terminal-kit": "^2.5.6",

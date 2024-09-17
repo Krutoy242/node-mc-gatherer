@@ -10,7 +10,7 @@ import { join } from 'node:path'
 
 import chalk from 'chalk'
 import { parse as csvParseSync } from 'csv-parse/sync'
-import { globSync } from 'glob'
+import fast_glob from 'fast-glob'
 import { IngredientStore } from './api/IngredientStore'
 import applyCustoms from './custom/customs'
 import getMiningPlaceholder from './custom/mining_levels'
@@ -52,7 +52,7 @@ export default async function mcGather(
   const recipesStore = new RecipeStore(definitionStore, ingredientStore)
   const runTask = cli.createRunTask(definitionStore, recipesStore)
   const fromMC = (f: string) => join(options.mc, f)
-  const fromTellme = (f: string) => globSync(fromMC(`config/tellme/${f}*.csv`).replace(/\\/g, '/')).pop() ?? null
+  const fromTellme = (f: string) => fast_glob.sync(fromMC(`config/tellme/${f}*.csv`).replace(/\\/g, '/')).pop() ?? null
 
   // Init Crafting Table as first item
   definitionStore.getById('minecraft:crafting_table:0')

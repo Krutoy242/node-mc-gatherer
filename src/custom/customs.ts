@@ -3,7 +3,7 @@ import type RecipeStore from '../lib/recipes/RecipeStore'
 import { dirname, parse, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
-import { globSync } from 'glob'
+import fast_glob from 'fast-glob'
 
 // Convert the URL to a file path and get the directory name
 const __filename = fileURLToPath(import.meta.url)
@@ -23,7 +23,7 @@ export default async function applyCustoms(recipesStore: RecipeStore, modList?: 
 
   async function applyList(globStr: string, useFilter: boolean) {
     const fullPath = resolve(__dirname, globStr).replace(/\\/g, '/')
-    let fileList = globSync(fullPath)
+    let fileList = fast_glob.sync(fullPath)
     if (useFilter && modList)
       fileList = fileList.filter(f => modList[parse(f).name])
     const modules = await Promise.all(
