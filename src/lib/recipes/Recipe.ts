@@ -177,7 +177,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
   ): string {
     if (!this[listName]?.length)
       return ''
-    return prefix + this.listToArr(listName, parenth)?.join(', ') ?? ''
+    return prefix + (this.listToArr(listName, parenth)?.join(', ') ?? '')
   }
 
   private toStringDetailed(): string {
