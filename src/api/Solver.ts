@@ -52,18 +52,19 @@ function descending<T extends SolvableReciped>(playthrough: Playthrough<Solvable
       return // No recipes
 
     const [recipe, outputAmount] = tuple
+    const recipeRepeatAmount = amount / (outputAmount ?? 1)
     const catalystsDef = toDefStacks(1, recipe.catalysts)
     const inputsDef = toDefStacks(amount, recipe.inputs)
 
     playthrough.addCatalysts(catalystsDef)
-    playthrough.addInputs(inputsDef, amount)
+    playthrough.addInputs(inputsDef, recipeRepeatAmount)
 
     // Collection of defs should be walked next
     return [
       ...catalystsDef.map(ms => [ms.it, ms.amount ?? 1] as const),
       ...inputsDef.map(ms => [
         ms.it,
-        amount / (outputAmount ?? 1) * (ms.amount ?? 1),
+        recipeRepeatAmount * (ms.amount ?? 1),
       ] as const),
     ] as PseudoStack<T>[]
   }
