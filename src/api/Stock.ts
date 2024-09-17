@@ -17,7 +17,7 @@ export class Stock<T = unknown> {
   }
 
   maxedAll(otherStock: Stock<T>) {
-    otherStock.store.forEach((amount, def) => this.maxed(def, amount))
+    otherStock.store.forEach((amount, def) => this.maxed(def, Math.max(1, amount)))
     return this
   }
 
