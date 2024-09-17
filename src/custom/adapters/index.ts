@@ -370,6 +370,20 @@ adapters.set(/thermalexpansion__insolator$/, (cat) => {
   cat.recipes.push(...clearRecipes)
 })
 
+adapters.set(/^thermalexpansion__.*/, (cat) => {
+  if (cat.catalysts.length <= 1)
+    return
+
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.catalyst = cat.catalysts.map(i => ({
+      amount: 1,
+      stacks: [i],
+    }))
+  })
+
+  cat.catalysts = []
+})
+
 adapters.set(/blockdrops/, (cat, tools) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     const toolId = tools.getTool(rec.input.items[0].stacks[0].name)
@@ -533,6 +547,10 @@ adapters.set(/THAUMCRAFT_ASPECT_FROM_ITEMSTACK/, (cat) => {
         catalyst: [],
       })),
   )
+})
+
+adapters.set(/^THAUMCRAFT_ASPECT_COMPOUND/, (cat) => {
+  cat.catalysts = [{ type: 'item', name: 'thaumadditions:aspect_combiner:0' }]
 })
 
 adapters.set(/THAUMCRAFT_ARCANE_WORKBENCH/, (cat) => {
