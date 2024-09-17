@@ -115,7 +115,8 @@ export default function append_JER(
     if (miningPH)
       catalysts.push(miningPH)
 
-    recipesStore.addRecipe('JER', block, exploreIngr, catalysts)
+    if (!/block.?drops/.test(jer_entry.dim.toLowerCase())) // Special case for custom E2EE category "Block Drops"
+      recipesStore.addRecipe('JER', block, exploreIngr, catalysts)
 
     // Block drops
     const drops = jer_entry.dropsList
@@ -124,7 +125,7 @@ export default function append_JER(
 
     const isQuarkPot = drops?.some(i => i.it.id.includes('minecraft:flower_pot'))
     if (drops?.length && !isQuarkPot)
-      recipesStore.addRecipe('JER_Drops', drops, exploreIngr, catalysts)
+      recipesStore.addRecipe('JER_Drops', drops, block, miningPH)
     ;(exploreAmounts[jer_entry.dim] ??= {})[blockDef.id] = exploreAmount
   }
 
