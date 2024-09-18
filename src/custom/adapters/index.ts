@@ -5,7 +5,7 @@ import type {
   JEIEItem,
   JEIESlot,
   List,
-} from '../../from/jeie/JEIECategory'
+} from 'mc-jeiexporter/build/JEIECategory'
 
 import _ from 'lodash'
 

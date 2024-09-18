@@ -1,23 +1,24 @@
-import type RecipeStore from '../../lib/recipes/RecipeStore'
-import type CLIHelper from '../../tools/cli-tools'
-import type { DefIngrStack } from '../../types'
-
+/* eslint-disable no-console */
 import type {
   JEIECategory,
   JEIECustomRecipe,
   JEIEIngredient,
   JEIEItem,
-} from './JEIECategory'
-import type { NameMap } from './NameMap'
+} from 'mc-jeiexporter/build/JEIECategory'
+import type { NameMap } from 'mc-jeiexporter/build/NameMap'
+import type RecipeStore from '../lib/recipes/RecipeStore'
+
+import type CLIHelper from '../tools/cli-tools'
+import type { DefIngrStack } from '../types'
 import { readFileSync, statSync } from 'node:fs'
 import { join, parse } from 'node:path'
 import fast_glob from 'fast-glob'
-import { Stack } from '../../api/Stack'
+import getFullId from 'mc-jeiexporter/build/JEIEItem'
 
-import adapters from '../../custom/adapters'
-import { naturalSort } from '../../lib/utils'
-import { createFileLogger } from '../../log/logger'
-import getFullId from './JEIEItem'
+import { Stack } from '../api/Stack'
+import adapters from '../custom/adapters'
+import { naturalSort } from '../lib/utils'
+import { createFileLogger } from '../log/logger'
 
 const relPath = 'exports/recipes'
 
@@ -30,7 +31,7 @@ export default async function append_JEIExporter(
   cli: CLIHelper,
 ) {
   const adapterEntries = [...adapters.entries()]
-  const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap)
+  const fullId = (ingr: JEIEItem) => getFullId(ingr, tooltipMap, console.log)
   const tools = {
     getFullID: fullId,
     toolDurability: toolDurability ?? {},

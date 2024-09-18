@@ -54,6 +54,9 @@ importers:
       '@types/yargs':
         specifier: ^17.0.33
         version: 17.0.33
+      mc-jeiexporter:
+        specifier: ^1.0.0
+        version: 1.0.0
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -236,6 +239,9 @@ packages:
     resolution: {integrity: sha512-qAA8631Gwo6HS6g/ZlXpHWgQ83WeqW8+WdOph+FKVAULEmDW0lpLMkFpl3uMJA5aMwEpjbkoEfKVgGqOBpUJ6g==}
     engines: {node: '>=14.16'}
     hasBin: true
+
+  mc-jeiexporter@1.0.0:
+    resolution: {integrity: sha512-62CygNU1kyKakm23pj3DbMc4Y083jMb5nxTVpvhjcryTzy8ow2uALUbAmsNj+rHGtLTZbpFd/3r6tM8aetb74A==}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -531,6 +537,8 @@ snapshots:
       terminal-kit: 3.1.1
       typescript-memoize: 1.1.1
       yargs: 17.7.2
+
+  mc-jeiexporter@1.0.0: {}
 
   merge2@1.4.1: {}
 

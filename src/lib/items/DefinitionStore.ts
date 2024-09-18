@@ -2,10 +2,10 @@
 =           Additionals Store
 ============================================= */
 
-import type { BaseVisible } from '../../api'
+import type { NameMap } from 'mc-jeiexporter/build/NameMap'
 
+import type { BaseVisible } from '../../api'
 import type { BlockToFluidMap } from '../../from/fluids'
-import type { NameMap } from '../../from/jeie/NameMap'
 import { getIcon } from 'mc-icons'
 import { Tree } from '../../api/Tree'
 import customRender from '../../custom/visual'
