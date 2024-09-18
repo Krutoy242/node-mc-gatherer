@@ -1,4 +1,4 @@
-import type { IType } from './IType'
+import type { IType } from "./NameMap"
 
 export interface JEIECategory {
   width: number

@@ -1,8 +1,8 @@
 import type { JEIEItem } from './JEIECategory'
 import type { NameMap } from './NameMap'
-import { iTypePrefix } from './IType'
+import { iTypePrefix } from './NameMap'
 
-export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
+export default function getFullId(ingr: JEIEItem, nameMap: NameMap): string {
   const splitted = ingr.name.split(':')
   let sNbt = ''
   let base: string
@@ -10,7 +10,7 @@ export default function getFullId(ingr: JEIEItem, tooltipMap: NameMap): string {
     base = splitted.slice(0, 3).join(':')
     // f62 is hash of "{}" - empty nbt. Just ignore it
     if (splitted[3] !== 'f62') {
-      sNbt = tooltipMap[ingr.name]?.tag ?? ''
+      sNbt = nameMap[ingr.name]?.tag ?? ''
       if (sNbt === '{}')
         sNbt = ''
     }

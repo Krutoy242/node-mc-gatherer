@@ -1,5 +1,19 @@
-import type { IType } from './IType'
-import { iTypePrefix } from './IType'
+export const iTypePrefix = {
+  'placeholder': 'placeholder',
+  'oredict': 'ore',
+  'item': '',
+  'fluid': 'fluid',
+  'thaumcraft.api.aspects.AspectList': 'aspect',
+  'requious.compat.jei.ingredient.Energy': 'rf',
+  'mekanism.api.gas.GasStack': '',
+  'mctmods.immersivetechnology.common.util.compat.jei.GenericMultiblockIngredient': 'multiblock',
+  'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid': '',
+  'crazypants.enderio.base.integration.jei.energy.EnergyIngredient': 'rf',
+  'lach_01298.qmd.particle.ParticleStack': '',
+  'com.warmthdawn.mod.gugu_utils.jei.ingedients.IngredientHotAir': 'hotair',
+} as const
+
+export type IType = keyof typeof iTypePrefix
 
 type NameMapJson = Record<IType, RawVisible>
 type RawVisible = Record<string, RawNameData>
