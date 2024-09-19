@@ -38,7 +38,7 @@
     "csv-parse": "^5.5.6",
     "fast-glob": "^3.3.2",
     "lodash": "^4.17.21",
-    "mc-icons": "^1.6.0",
+    "mc-icons": "^1.8.2",
     "numeral": "^2.0.6",
     "reflect-metadata": "^0.2.2",
     "terminal-kit": "^3.1.1",
