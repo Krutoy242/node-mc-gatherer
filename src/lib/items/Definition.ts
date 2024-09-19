@@ -2,9 +2,10 @@ import type { Based, BaseVisible, Calculable, Labeled } from '../../api'
 import type Recipe from '../recipes/Recipe'
 import _ from 'lodash'
 
+import { getPos } from 'mc-icons/build/lib/sprite'
 import numeral from 'numeral'
-import { LabelSetup } from '../../api'
 
+import { LabelSetup } from '../../api'
 import Solvable from '../../api/Solvable'
 import { Csv } from '../../tools/CsvDecorators'
 import { escapeCsv } from '../utils'
@@ -27,7 +28,7 @@ export default class Definition extends Solvable<Recipe>
   ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝
   */
 
-  @Csv(21)
+  @Csv(21, getPos)
   imgsrc?: string
 
   @Csv(0, escapeCsv)
