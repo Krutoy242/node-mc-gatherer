@@ -785,7 +785,7 @@ adapters.set(/requious__ic2_crops/, (cat, tools) => {
 
 adapters.set(/^ic2__scrapbox$/, (cat) => {
   cat.recipes = [{
-    input: { items: [{ amount: cat.recipes.length, x: 0, y: 0, stacks: [{ name: 'ic2:crafting:24', type: 'item' }] }] },
+    input: { items: [{ amount: cat.recipes.length * 1000, x: 0, y: 0, stacks: [{ name: 'ic2:crafting:24', type: 'item' }] }] },
     output: { items: cat.recipes.map(r => r.input.items[1]) },
   }]
 })
@@ -988,6 +988,7 @@ adapters.set(/^jetif$/, (cat) => {
 adapters.set(/^(mysticalagradditions__tier_6_crop_jei|mysticalcreations__crux_crop_jei)/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items = rec.input.items.filter(slot => !slot.stacks.some(stack => stack.name.endsWith('_crop:0')))
+    move.input.to.catalyst(rec)
   })
 })
 
@@ -1085,6 +1086,10 @@ adapters.set(/^appliedenergistics2__inscriber$/, (cat) => {
 
 adapters.set(/^ie__workbench$/, (cat) => {
   cat.recipes.forEach(r => move.input.to.catalyst(r, s => s.stacks.some(i => i.name.startsWith('immersiveengineering:blueprint'))))
+})
+
+adapters.set(/^ie__metalPress$/, (cat) => {
+  cat.recipes.forEach(r => move.input.to.catalyst(r, s => s.y <= 0))
 })
 
 adapters.set(/^deepmoblearningbm__digital_agonizer$/, (cat) => {
