@@ -80,6 +80,10 @@ export default class Calculator {
     cli.multBarStop?.()
     await sleep()
 
+    // Recalculate all the processing costs
+    cli.write('Recalculating Processing...')
+    this.recipeStore.forEach(rec => rec.calculate())
+
     cli.write('Writing computed in file...')
     this.logInfo(recalculated)
     const allDefs = [...this.definitionStore]
