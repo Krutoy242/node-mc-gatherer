@@ -76,6 +76,7 @@ export default class Calculator {
       }
       dirtyRecipes = newDirtyRecipes
     }
+
     cli.multBarStop?.()
     await sleep()
 

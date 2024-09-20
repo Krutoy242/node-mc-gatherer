@@ -87,7 +87,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
 
     // Unsignificant difference, probably loop
     const diffFactor = (this.complexity - complexity) / complexity
-    if (samePurity && diffFactor < 0.0001)
+    if (samePurity && diffFactor < 0.00000000001)
       return
 
     this.set({ purity, cost, processing })
@@ -135,14 +135,11 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
       let maxPur = 0.0
       let bestDef!: Definition
       for (const def of stack.it.matchedBy()) {
-        if (
-          def.purity > maxPur
-          || (def.purity === maxPur && def.complexity < minComp)
-        ) {
-          bestDef = def
-          maxPur = def.purity
-          minComp = def.complexity
-        }
+        if (def.purity < maxPur || def.complexity >= minComp)
+          continue
+        bestDef = def
+        maxPur = def.purity
+        minComp = def.complexity
       }
       if (maxPur === 0)
         return [0, []]

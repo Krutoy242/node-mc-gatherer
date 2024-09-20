@@ -3,16 +3,6 @@ import type Definition from './Definition'
 
 import type { DefinitionStack } from './DefinitionStack'
 
-export function futilable(_target: any, _Key: string | symbol, descriptor: PropertyDescriptor) {
-  const originalMethod = descriptor.value
-  descriptor.value = function (...args: any[]) {
-    if ((this as Inventory).futile)
-      return this
-    return originalMethod.apply(this, args)
-  }
-  return descriptor
-}
-
 /**
  * List of items that you must have
  * Usually means list of catalysts (machines on your base)
@@ -44,15 +34,19 @@ export default class Inventory {
     return this.isDupe || this.processing >= this.treshold
   }
 
-  @futilable
   addCatalysts(microStacks: DefinitionStack[]) {
+    if (this.futile)
+      return this
+
     microStacks.forEach(ms => this.mergeSingle(ms.it, ms.amount))
     this.addCatalystsOf(microStacks)
     return this
   }
 
-  @futilable
   addCatalystsOf(microStacks: DefinitionStack[]) {
+    if (this.futile)
+      return this
+
     for (const ms of microStacks) {
       const r = ms.it.bestRecipe()?.[0]
       if (!r || !r.inventory)
@@ -64,8 +58,10 @@ export default class Inventory {
     return this
   }
 
-  @futilable
   private mergeRecipe(r: Recipe): void {
+    if (this.futile)
+      return
+
     if (r === this.recipe) {
       this.isDupe = true
       return
@@ -76,8 +72,10 @@ export default class Inventory {
     this.processing += 1.0
   }
 
-  @futilable
   private mergeSingle(def: Definition, amount?: number): void {
+    if (this.futile)
+      return
+
     const newAmount = amount ?? 1
     const oldAmount = this.storage.get(def)
     if (oldAmount !== undefined && oldAmount >= newAmount)

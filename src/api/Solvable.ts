@@ -2,6 +2,8 @@ import type { Calculable, Identified, IngrAmount, SolvableRecipe } from '.'
 import { escapeCsv, sum } from '../lib/utils'
 import { Csv } from '../tools/CsvDecorators'
 
+const INF = Number.POSITIVE_INFINITY
+
 export type RecipeForAmount<T> = readonly [T, IngrAmount]
 
 export default class Solvable<R extends SolvableRecipe<any>> implements Identified, Calculable {
@@ -71,6 +73,9 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
    * Find best recipe for this item for this amount
    */
   bestRecipe(amount = 1): RecipeForAmount<R> | undefined {
+    if (this.recipes?.length === 1)
+      return this.recipes[0]
+
     if (this.bestRecipeCache?.has(amount))
       return this.bestRecipeCache.get(amount)
 
@@ -90,18 +95,35 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
   }
 }
 
-function recipeComparator(amount: number): (a: RecipeForAmount<SolvableRecipe<any>>, b: RecipeForAmount<SolvableRecipe<any>>) => number {
-  return ([recA, amountA = 1.0], [recB, amountB = 1.0]) => recB.purity - recA.purity
-    || (recA.cost * amount / amountA + recA.processing) - (recB.cost * amount / amountB + recB.processing)
-    || averagePurity(recB) - averagePurity(recA)
-    || unpureNiceScore(recB) - unpureNiceScore(recA)
+function recipeComparator(amount: number) {
+  function sorter([recA, amountA = 1.0]: RecipeForAmount<SolvableRecipe<any>>, [recB, amountB = 1.0]: RecipeForAmount<SolvableRecipe<any>>) {
+    const purityDiff = recB.purity - recA.purity
+    if (purityDiff)
+      return purityDiff
+
+    const a = recA.cost === INF || recA.processing === INF ? INF : recA.cost * amount / amountA + recA.processing
+    const b = recB.cost === INF || recB.processing === INF ? INF : recB.cost * amount / amountB + recB.processing
+
+    return a - b
+    // || averagePurity(recB) - averagePurity(recA)
+    // || unpureNiceScore(recB) - unpureNiceScore(recA)
+  }
+  return sorter
 }
 
+/*
 function averagePurity(a: SolvableRecipe<Solvable<any>>): number {
-  return a.requirments.reduce(
-    (c, d) => c + Math.max(...[...d.it.matchedBy()].map(o => o.purity)),
-    0.0,
-  ) / a.requirments.length
+  let sum = 0
+  for (const stack of a.requirments) {
+    let max = 0
+    for (const it of stack.it.matchedBy()) {
+      const p = it.purity
+      if (p > max)
+        max = p
+    }
+    sum += max
+  }
+  return sum / a.requirments.length
 }
 
 function unpureNiceScore(a: SolvableRecipe<Solvable<any>>): number {
@@ -113,3 +135,4 @@ function unpureNiceScore(a: SolvableRecipe<Solvable<any>>): number {
     Number(a.inputs?.every(s => s.it.items.every(i => i.id.startsWith('minecraft')))),
   ])
 }
+*/
