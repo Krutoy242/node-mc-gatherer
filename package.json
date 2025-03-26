@@ -30,8 +30,8 @@
   "scripts": {
     "build": "rm -rf build && tsc",
     "show-unused-exports": "npx ts-prune",
-    "run:e2ee": "tsx src/cli.ts --mc=D:/mc_client/Instances/E2E-E --output=../src/assets/data/e2ee",
-    "run:herodotus": "tsx src/cli.ts --mc=D:/mc_client/Instances/Herodotus --output=../src/assets/data/herodotus"
+    "run:e2ee": "tsx src/cli.ts --mc=D:/mc/E2E-E --output=../src/assets/data/e2ee",
+    "run:herodotus": "tsx src/cli.ts --mc=D:/mc/Herodotus --output=../src/assets/data/herodotus"
   },
   "dependencies": {
     "cli-progress": "^3.12.0",
