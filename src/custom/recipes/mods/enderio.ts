@@ -5,7 +5,6 @@ export default function addRecipes(
     'enderio:item_soul_vial:0',
     '10000x placeholder:ticks',
   ])
-  addRecipe('enderio:item_material:20', '100x placeholder:ticks', 'minecraft:flint_and_steel:0')
 
   ;[
     'iceandfire:icedragon',

@@ -2,6 +2,7 @@ export default function addRecipes(
   addRecipe: import('../../customs').AddRecipeFn,
 ) {
   addRecipe('actuallyadditions:item_hairy_ball:0', '47000x placeholder:ticks')
+  addRecipe('actuallyadditions:item_worm:0', '10x placeholder:ticks', ['minecraft:grass:0', 'placeholder:shovel:0'])
 
   addRecipe(
     'actuallyadditions:item_battery_double:0:*',

@@ -49,9 +49,11 @@ function getBucketFluid(
 
   if (!isBucket(stack))
     return
-  return getFullID(stack).match(
-    /^forge:bucketfilled:0:\{FluidName:"([^"]+)",Amount:1000.*\}$/,
-  )?.[1]
+
+  const [_, a, b] = getFullID(stack).match(
+    /^forge:bucketfilled:0:\{(?:FluidName:"([^"]+)",Amount:1000|Amount:1000,FluidName:"([^"]+)").*\}$/,
+  ) || []
+  return a || b
 }
 
 function stackBucketToFluid(
@@ -260,6 +262,12 @@ adapters.set(/tconstruct__smeltery/, (cat) => {
   })
 })
 
+adapters.set(/^tconstruct__dryingrack$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items.push(getSlot('placeholder:ticks', 2400))
+  })
+})
+
 adapters.set(/minecraft__brewing/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items.splice(0, 2)
@@ -306,7 +314,7 @@ adapters.set(/machine_produce_category/, (cat, tools) => {
     rec.input.items = [
       {
         ...machine,
-        amount: 20000,
+        amount: 10000,
         stacks: [{ type: 'placeholder', name: 'rf' }],
       },
     ]
@@ -1040,8 +1048,9 @@ adapters.set(/^electrolyzer$/, (cat) => {
 })
 
 adapters.set(/^infinityPowder$/, (cat) => {
+  cat.catalysts = getIngr('minecraft:bedrock:0').stacks
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
-    rec.input.items = [getSlot('placeholder:ticks', 400)]
+    rec.input.items = [getSlot('placeholder:ticks', 400), getSlot('0.015x minecraft:flint_and_steel:0')]
   })
 })
 
@@ -1071,7 +1080,7 @@ adapters.set(/^tweakedexcavation__excavator$/, (cat) => {
   cat.recipes.forEach(r => r.input.items = [getSlot('placeholder:ticks', 80), getSlot('placeholder:rf', 1280000)])
 })
 
-adapters.set(/^tweakedexcavation__excavator$/, (cat) => {
+adapters.set(/^jehc__apiary$/, (cat) => {
   cat.recipes.forEach(r => r.input.items.forEach((s) => {
     if (s.stacks.some(i => i.name === ('harvestcraft:queenbeeitem:0')))
       s.amount = 1 / 38
@@ -1117,6 +1126,24 @@ adapters.set(/^void_beacon$/, (cat) => {
   })
 })
 
+adapters.set(/^excompressum__chickenStick$/, (cat) => {
+  cat.recipes.forEach((r) => {
+    r.input.items.push(getSlot('entity:minecraft:chicken'))
+    r.input.items.push(getSlot('placeholder:fight', 400))
+  })
+})
+
+adapters.set(/^psi__trick$/, (cat) => {
+  cat.recipes.forEach((r: JEIECustomRecipe) => {
+    // Add Cad programmer for all recipes except redstone one
+    r.catalyst = [getIngr('psi:cad_assembler:0')]
+    if (r.input.items.some(s => s.stacks.some(it => it.name.startsWith('minecraft:redstone')))) {
+      r.catalyst.push(getIngr('psi:programmer:0'))
+    }
+    move.input.to.catalyst(r, s => s.stacks.some(it => it.name.startsWith('psi:cad')))
+  })
+})
+
 adapters.set(/^compactmachines3__MultiblockMiniaturization$/, (cat) => {
   // Remove Catalyst stack if output stack is the same
   cat.recipes.forEach((r) => {
@@ -1139,6 +1166,7 @@ adapters.set(/.*/, (cat, tools) => {
   cat.catalysts.forEach(it => stackBucketToFluid(it, tools.getFullID))
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach(convertBucket)
+    rec.catalyst?.forEach(ingr => bucketToFluid(ingr, tools.getFullID))
 
     // Split bucket and liquid in output
     rec.output.items.forEach((slot) => {

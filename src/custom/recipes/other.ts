@@ -11,7 +11,6 @@ export default function addRecipes(
     'minecraft:quartz_ore:0',
   )
   addRecipe('5x placeholder:xp', '10x placeholder:fight')
-  addRecipe('minecraft:leaves:0', '100x placeholder:ticks')
 
   addRecipe('minecraft:black_shulker_box:0', 'ore:shulkerBox')
   addRecipe('minecraft:blue_shulker_box:0', 'ore:shulkerBox')
@@ -30,11 +29,18 @@ export default function addRecipes(
   addRecipe('minecraft:yellow_shulker_box:0', 'ore:shulkerBox')
 
   addRecipe('minecraft:cobblestone:0', '10x placeholder:ticks', ['1000x fluid:lava', '1000x fluid:water'])
-  addRecipe(['8x minecraft:tallgrass:1', '2x minecraft:yellow_flower:0', '2x minecraft:red_flower:0'], 'ore:fertilizer', ['minecraft:grass:0'])
+  addRecipe(['2x minecraft:yellow_flower:0', '2x minecraft:red_flower:0'], 'ore:fertilizer', 'minecraft:grass:0')
+  addRecipe('8x minecraft:tallgrass:1', 'ore:fertilizer', ['minecraft:grass:0', 'placeholder:shears:0'])
   addRecipe('minecraft:potion:0:{Potion:"minecraft:water"}', 'minecraft:glass_bottle:0', '1000x fluid:water')
 
   addRecipe('entity:minecraft:armor_stand', 'minecraft:armor_stand:0')
   addRecipe('minecraft:firework_charge:0', ['minecraft:gunpowder:0', 'ore:dye'])
   addRecipe('3x minecraft:fireworks:0', ['minecraft:paper:0', 'minecraft:gunpowder:0'])
   addRecipe('minecraft:filled_map:0', 'minecraft:map:0')
+
+  // Vanilla seeds self-reproduction
+  addRecipe('2x minecraft:cactus:0', '100x placeholder:ticks', 'minecraft:cactus:0')
+  addRecipe('2x minecraft:reeds:0', '100x placeholder:ticks', 'minecraft:reeds:0')
+  addRecipe('2x minecraft:carrot:0', '100x placeholder:ticks', 'minecraft:carrot:0')
+  addRecipe('2x minecraft:potato:0', '100x placeholder:ticks', 'minecraft:potato:0')
 }

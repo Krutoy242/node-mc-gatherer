@@ -8,6 +8,12 @@ export interface BlockMinings {
   }
 }
 
+const predefinedBlockMinings: BlockMinings = {
+  'minecraft:vine:0': { hardness: 0, toolClass: 'shears', level: 0 },
+  'minecraft:tallgrass:0': { hardness: 0, toolClass: 'shears', level: 0 },
+  'minecraft:leaves:0': { hardness: 0, toolClass: 'shears', level: 0 },
+}
+
 export function generateBlockMinings(
   crafttweakerLogTxt?: string,
 ): BlockMinings | undefined {
@@ -22,7 +28,7 @@ export function generateBlockMinings(
   if (!txtBlock?.length)
     return
 
-  const result: BlockMinings = {}
+  const result: BlockMinings = { ...predefinedBlockMinings }
 
   txtBlock.forEach((l) => {
     const groups = l.match(
