@@ -34,9 +34,12 @@ export function parseSNbt(sNbt?: string): NBT | null {
   }
 }
 
-export function nbtMatch(A: NBTMap, B?: NBTMap | null): boolean {
+export function nbtMatch(A: NBTMap | undefined | null, B?: NBTMap | null): boolean {
   if (!B)
     return false
+
+  if (!A)
+    return true
 
   for (const k in A) {
     const a = A[k]
