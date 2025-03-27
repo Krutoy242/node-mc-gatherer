@@ -9,8 +9,6 @@ import predefined from '../../custom/predefined'
 import { createFileLogger } from '../../log/logger'
 import { naturalSort } from '../utils'
 
-const sleep = () => new Promise(resolve => setTimeout(resolve, 1))
-
 export default class Calculator {
   constructor(
     private definitionStore: DefinitionStore,
@@ -19,49 +17,39 @@ export default class Calculator {
   ) {}
 
   async compute(cli: CLIHelper) {
-    this.createLinks(cli)
+    // Create links between items such as dependencies or recipes
+    cli.startProgress('Linking items', this.recipeStore.length)
+    this.createLinks(v => cli.bar?.update(v))
+    cli.bar?.update(this.recipeStore.length, { task: 'done' })
 
+    // Assign hardcoded costs
     let dirtyRecipes = new Set<Recipe>()
-
     this.assignPredefined(r => dirtyRecipes.add(r))
+
+    // New entries cant be added to store from now
     this.definitionStore.locked = true
 
-    // ------------------------
-    // Progress Bars
-    const precalcAmount = 1
-    const cliBars = {
-      Precalc: precalcAmount,
-      Recipes: this.recipeStore.length,
-      Items: this.definitionStore.size,
-      Postcalc: precalcAmount,
+    // Progress
+    const barsConfig = {
+      Precalc: { max: 1 },
+      Recipes: { max: this.recipeStore.length, comment: 'In queue' },
+      Items: { max: this.definitionStore.size, comment: 'Recalculated' },
+      Postcalc: { max: 1 },
     }
-    cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
-    const updateBarPrecalc = (total: number) => {
-      cli.bars?.[0].update(total, { task: `Total: ${cli.num(this.recipeStore.length)}` })
-    }
-    function updateBarRecipes(total: number, inQueue: number) {
-      cli.bars?.[1].update(total, { task: `In queue: ${cli.num(inQueue)}` })
-    }
-    function updateBarItems(recalcDefs: number) {
-      cli.bars?.[2].update({ task: `Recalculated: ${cli.num(recalcDefs)}` })
-    }
-    const updateBarPostcalc = (total: number) => {
-      cli.bars?.[3].update(total, { task: `Total: ${cli.num(this.recipeStore.length)}` })
-    }
-    await sleep()
-    // ------------------------
+    const multibar = await cli.createMultibar(barsConfig)
 
-    const recalculated = Array.from({ length: this.recipeStore.length }).fill(0) as number[]
-    let i = 0
+    // Stats
+    const recalculated = this.recipeStore.map(() => 0)
     let recalcDefs = 0
     let totalCalculated = 0
 
+    // Recalculate single recipe
     const recalcRec = async (rec: Recipe, onDirty: (r: Recipe) => void) => {
-      if (++i % 1000 === 0) {
-        updateBarRecipes(totalCalculated, dirtyRecipes.size)
-        updateBarItems(recalcDefs)
+      if (await multibar.update({
+        Recipes: [totalCalculated, dirtyRecipes.size],
+        Items: [undefined, recalcDefs],
+      })) {
         recalcDefs = 0
-        await sleep()
       }
 
       const oldPurity = rec.purity
@@ -82,10 +70,9 @@ export default class Calculator {
       )
     }
 
-    const recalcAll = async (onBarUpdate: (total: number) => void) => {
-      for (let j = 0; j < precalcAmount; j++) {
-        onBarUpdate(j + 1)
-        await sleep()
+    const recalcAll = async (barName: keyof typeof barsConfig) => {
+      for (let j = 0; j < barsConfig[barName].max; j++) {
+        multibar.update({ [barName]: [j + 1] })
         for (const rec of this.recipeStore) {
           await recalcRec(rec, _ => 0)
         }
@@ -93,7 +80,7 @@ export default class Calculator {
     }
 
     // Preparing recalculation
-    await recalcAll(updateBarPrecalc)
+    await recalcAll('Precalc')
 
     while (dirtyRecipes.size) {
       const newDirtyRecipes = new Set<Recipe>()
@@ -104,10 +91,9 @@ export default class Calculator {
     }
 
     // Finisher recalc
-    await recalcAll(updateBarPostcalc)
+    await recalcAll('Postcalc')
 
-    cli.multBarStop?.()
-    await sleep()
+    await multibar.stop()
 
     cli.write('Writing computed in file...')
     this.logInfo(recalculated)
@@ -117,8 +103,7 @@ export default class Calculator {
     return totalWithPurity
   }
 
-  private createLinks(cli: CLIHelper) {
-    cli.startProgress('Linking items', this.recipeStore.length)
+  private createLinks(onUpdate: (v: number) => void) {
     this.recipeStore.forEach((rec, i) => {
       rec.requirments.forEach(({ it: ingredient }) => {
         for (const def of this.definitionStore.matchedBy(ingredient)) (def.dependencies ??= new Set()).add(rec)
@@ -133,9 +118,8 @@ export default class Calculator {
       })
 
       if (i % 20 === 0 || i === this.recipeStore.length - 1)
-        cli.bar?.update(i + 1)
+        onUpdate(i + 1)
     })
-    cli.bar?.update(this.recipeStore.length, { task: 'done' })
   }
 
   private calcStack(

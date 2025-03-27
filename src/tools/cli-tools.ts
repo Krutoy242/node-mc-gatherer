@@ -11,6 +11,8 @@ import Terminal from 'terminal-kit'
 
 const { terminal: term } = Terminal
 
+const sleep = () => new Promise(resolve => setTimeout(resolve, 1))
+
 /* =============================================
 =                   Helpers                   =
 ============================================= */
@@ -167,6 +169,39 @@ export default class CLIHelper {
         }
         logMore(opts.moreInfo!(info))
       }
+    }
+  }
+
+  async createMultibar(barsConfig: { [name: string]: { max: number, comment?: string } }) {
+    this.startProgress(Object.keys(barsConfig), Object.values(barsConfig).map(o => o.max))
+    await sleep()
+
+    let i = 0
+    const indexes = Object.fromEntries(Object.keys(barsConfig).map((b, i) => [b, i]))
+
+    return {
+      stop: async () => {
+        this.multBarStop?.()
+        await sleep()
+      },
+      update: async (bars: { [name: string]: [current?: number, total?: number] }) => {
+        Object.entries(bars).forEach(([barName, [current, total]]) => {
+          const payload = { task: barsConfig[barName].comment === undefined
+            ? ''
+            : `${barsConfig[barName].comment}: ${this.num(total ?? barsConfig[barName].max)}`,
+          }
+          if (current === undefined)
+            this.bars?.[indexes[barName]].update(payload)
+          else
+            this.bars?.[indexes[barName]].update(current, payload)
+        })
+
+        if (++i % 1000 !== 0)
+          return false
+
+        await sleep()
+        return true
+      },
     }
   }
 }
