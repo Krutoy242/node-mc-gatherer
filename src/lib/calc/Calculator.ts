@@ -23,7 +23,7 @@ export default class Calculator {
 
     let dirtyRecipes = new Set<Recipe>()
 
-    this.assignPredefined((r: Recipe) => dirtyRecipes.add(r))
+    this.assignPredefined(r => dirtyRecipes.add(r))
     this.definitionStore.locked = true
 
     // ------------------------
