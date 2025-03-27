@@ -907,7 +907,7 @@ adapters.set(/bdew__jeibees__mutation__rootBees/, (cat, tools) => {
         slot.stacks = [getBeeWithSpecie(slot.stacks[0].name, species[i])]
       })
       const fullId = tools.getFullID(rec.output.items[0].stacks[0])
-      const queenGenes = fullId.substring(24).replace(/,\s*Mate:.+/, '}')
+      const queenGenes = fullId.substring(24).replace(/,\s*Mate:\{.+?\}\]\}/, '')
 
       // Add Queen => Princess + Drone
       const queenItems = rec.output.items.map(slot => ({
