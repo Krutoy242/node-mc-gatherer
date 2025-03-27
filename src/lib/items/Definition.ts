@@ -94,7 +94,7 @@ export default class Definition extends Solvable<Recipe>
   }
 
   serialize(options?: { short?: boolean }) {
-    const display = [`"${this.display}"`, this.id]
+    const display = [`"${this.display?.replace(/§./g, '')}"`, this.id]
     return options?.short
       ? display
       : [
