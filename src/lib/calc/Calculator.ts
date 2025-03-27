@@ -28,61 +28,86 @@ export default class Calculator {
 
     // ------------------------
     // Progress Bars
+    const precalcAmount = 1
     const cliBars = {
+      Precalc: precalcAmount,
       Recipes: this.recipeStore.length,
       Items: this.definitionStore.size,
+      Postcalc: precalcAmount,
     }
     cli.startProgress(Object.keys(cliBars), Object.values(cliBars))
+    const updateBarPrecalc = (total: number) => {
+      cli.bars?.[0].update(total, { task: `Total: ${cli.num(this.recipeStore.length)}` })
+    }
     function updateBarRecipes(total: number, inQueue: number) {
-      cli.bars?.[0].update(total, { task: `In queue: ${cli.num(inQueue)}` })
+      cli.bars?.[1].update(total, { task: `In queue: ${cli.num(inQueue)}` })
     }
     function updateBarItems(recalcDefs: number) {
-      cli.bars?.[1].update({ task: `Recalculated: ${cli.num(recalcDefs)}` })
+      cli.bars?.[2].update({ task: `Recalculated: ${cli.num(recalcDefs)}` })
+    }
+    const updateBarPostcalc = (total: number) => {
+      cli.bars?.[3].update(total, { task: `Total: ${cli.num(this.recipeStore.length)}` })
     }
     await sleep()
     // ------------------------
 
     const recalculated = Array.from({ length: this.recipeStore.length }).fill(0) as number[]
-    let totalCalculated = 0
-
     let i = 0
     let recalcDefs = 0
+    let totalCalculated = 0
+
+    const recalcRec = async (rec: Recipe, onDirty: (r: Recipe) => void) => {
+      if (++i % 1000 === 0) {
+        updateBarRecipes(totalCalculated, dirtyRecipes.size)
+        updateBarItems(recalcDefs)
+        recalcDefs = 0
+        await sleep()
+      }
+
+      const oldPurity = rec.purity
+
+      if (!rec.calculate())
+        return
+
+      recalculated[rec.index]++
+      if (oldPurity <= 0)
+        totalCalculated++
+
+      rec.outputs.forEach(stack =>
+        recalcDefs += this.calcStack(
+          stack,
+          onDirty,
+          () => cli.bars?.[2].increment(),
+        ),
+      )
+    }
+
+    const recalcAll = async (onBarUpdate: (total: number) => void) => {
+      for (let j = 0; j < precalcAmount; j++) {
+        onBarUpdate(j + 1)
+        await sleep()
+        for (const rec of this.recipeStore) {
+          await recalcRec(rec, _ => 0)
+        }
+      }
+    }
+
+    // Preparing recalculation
+    await recalcAll(updateBarPrecalc)
+
     while (dirtyRecipes.size) {
       const newDirtyRecipes = new Set<Recipe>()
       for (const rec of dirtyRecipes) {
-        if (++i % 1000 === 0) {
-          updateBarRecipes(totalCalculated, dirtyRecipes.size)
-          updateBarItems(recalcDefs)
-          recalcDefs = 0
-          await sleep()
-        }
-
-        const oldPurity = rec.purity
-
-        if (!rec.calculate())
-          continue
-
-        recalculated[rec.index]++
-        if (oldPurity <= 0)
-          totalCalculated++
-
-        rec.outputs.forEach(stack =>
-          recalcDefs += this.calcStack(
-            stack,
-            r => newDirtyRecipes.add(r),
-            () => cli.bars?.[1].increment(),
-          ),
-        )
+        await recalcRec(rec, r => newDirtyRecipes.add(r))
       }
       dirtyRecipes = newDirtyRecipes
     }
 
+    // Finisher recalc
+    await recalcAll(updateBarPostcalc)
+
     cli.multBarStop?.()
     await sleep()
-
-    // Recalculate all the processing costs
-    cli.write('Recalculating Processing...')
-    this.recipeStore.forEach(rec => rec.calculate())
 
     cli.write('Writing computed in file...')
     this.logInfo(recalculated)
