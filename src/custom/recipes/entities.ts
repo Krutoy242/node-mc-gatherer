@@ -17,7 +17,7 @@ export default function addRecipes(addRecipe: AddRecipeFn) {
 
   addRecipe(
     ['minecraft:skull:5', 'minecraft:dragon_egg:0'],
-    '2000000x placeholder:fight',
+    '30000x placeholder:fight',
     'dimension:1',
   )
 

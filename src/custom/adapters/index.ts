@@ -664,6 +664,12 @@ adapters.set(/bonsaitrees__Growing/, (cat) => {
   })
 })
 
+adapters.set(/^bloodmagic__salchemyTable$/, (cat) => {
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    move.input.to.catalyst(rec, s => s.x === 60 && s.y === 0)
+  })
+})
+
 adapters.set(/mekanism__osmiumcompressor/, (cat) => {
   cat.recipes.forEach((rec) => {
     rec.input.items = rec.input.items.filter(
@@ -1017,6 +1023,17 @@ adapters.set(/^qmd__atmosphere_collector$/, (cat) => {
 adapters.set(/^qmd__accelerator_source$/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items.forEach(s => s.amount = 0.001)
+  })
+})
+
+adapters.set(/^qmd__target_chamber$/, (cat) => {
+  // In target chamber, output of particle equal to input
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    const isParticle = (s: JEIESlot) => s.stacks.some(it => it.name.startsWith('particle:'))
+    const inputAmount = Math.max(...rec.input.items
+      .filter(isParticle)
+      .map(s => s.amount))
+    rec.output.items.filter(isParticle).forEach(s => s.amount *= inputAmount)
   })
 })
 
