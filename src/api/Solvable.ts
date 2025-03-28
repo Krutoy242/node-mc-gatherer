@@ -53,11 +53,11 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
 
   costFor(amount: IngrAmount) {
     const bestRecipe = this.bestRecipe(amount)
-    return this.naturalCost || (bestRecipe?.[0]?.cost ?? Number.POSITIVE_INFINITY) / (bestRecipe?.[1] ?? 1.0)
+    return this.naturalCost || (bestRecipe?.[0]?.cost ?? INF) / (bestRecipe?.[1] ?? 1.0)
   }
 
   processingFor(amount: IngrAmount) {
-    return this.naturalCost ? 0.0 : this.bestRecipe(amount)?.[0]?.processing ?? Number.POSITIVE_INFINITY
+    return this.naturalCost ? 0.0 : this.bestRecipe(amount)?.[0]?.processing ?? INF
   }
 
   complexityFor(amount: IngrAmount) {

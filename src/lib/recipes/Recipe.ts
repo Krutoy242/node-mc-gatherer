@@ -51,11 +51,11 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
    * @returns `true` if new value calculated, `false` if not changed or unable to
    */
   calculate() {
-    const [catPurity, catDefs] = this.getBestDefs(this.catalysts)
+    const [catPurity, catDefs] = this.getCheapestDefs(this.catalysts)
     if (catPurity <= 0)
       return
 
-    const [inPurity, inDefs] = this.getBestDefs(this.inputs)
+    const [inPurity, inDefs] = this.getCheapestDefs(this.inputs)
     if (inPurity <= 0)
       return
 
@@ -123,7 +123,7 @@ export default class Recipe extends Setable implements SolvableRecipe<Definition
     }${arr.join(', ')})`
   }
 
-  private getBestDefs(
+  private getCheapestDefs(
     stacks?: DefIngrStack[],
   ): [purity: number, defs: DefinitionStack[]] {
     if (!stacks)
