@@ -11,5 +11,5 @@
   "fluid": { "_vol": 1000, "_unit": "𝑏" },
   "gas": { "_vol": 1000, "_unit": "𝑏" },
   "aspect": { "_vol": 10, "_unit": "𝑝ℎ𝑖" },
-  "partile": { "_vol": 1000, "_unit": "𝑲𝒩" }
+  "particle": { "_vol": 1000, "_unit": "𝑲𝒩" }
 }
