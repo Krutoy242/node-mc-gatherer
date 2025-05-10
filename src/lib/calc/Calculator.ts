@@ -43,6 +43,10 @@ export default class Calculator {
     let recalcDefs = 0
     let totalCalculated = 0
 
+    function sortBySteps(recipes: Recipe[]): Recipe[] {
+      return recipes.sort((a, b) => (a.inventory?.steps ?? 0) - (b.inventory?.steps ?? 0) || (a.cost ?? 0) - (b.cost ?? 0))
+    }
+
     // Recalculate single recipe
     const recalcRec = async (rec: Recipe, onDirty: (r: Recipe) => void) => {
       if (await multibar.update({
@@ -73,7 +77,7 @@ export default class Calculator {
     const recalcAll = async (barName: keyof typeof barsConfig) => {
       for (let j = 0; j < barsConfig[barName].max; j++) {
         multibar.update({ [barName]: [j + 1] })
-        for (const rec of this.recipeStore) {
+        for (const rec of sortBySteps(this.recipeStore)) {
           await recalcRec(rec, _ => 0)
         }
       }
@@ -84,7 +88,7 @@ export default class Calculator {
 
     while (dirtyRecipes.size) {
       const newDirtyRecipes = new Set<Recipe>()
-      for (const rec of dirtyRecipes) {
+      for (const rec of sortBySteps([...dirtyRecipes])) {
         await recalcRec(rec, r => newDirtyRecipes.add(r))
       }
       dirtyRecipes = newDirtyRecipes
