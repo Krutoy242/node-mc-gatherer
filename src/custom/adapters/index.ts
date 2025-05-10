@@ -575,7 +575,7 @@ adapters.set(/jeresources__dungeon/, (cat) => {
   }
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.catalyst = [catal]
-    rec.input = { items: [{ x: 0, y: 0, ...getIngr('placeholder:exploration', 20000) }] }
+    rec.input = { items: [{ x: 0, y: 0, ...getIngr('placeholder:exploration', 200000) }] }
   })
 })
 
@@ -640,6 +640,13 @@ adapters.set(
 adapters.set(/botania__manaPool/, (cat) => {
   cat.recipes.forEach((rec: JEIECustomRecipe) => {
     rec.input.items = rec.input.items.filter(s => !s.stacks.some(i => i.name.startsWith('botania:pool')))
+  })
+})
+
+adapters.set(/^botania__.+$/, (cat) => {
+  const catNames = cat.catalysts.map(i => i.name)
+  cat.recipes.forEach((rec: JEIECustomRecipe) => {
+    rec.input.items = rec.input.items.filter(s => !s.stacks.some(i => catNames.includes(i.name)))
   })
 })
 
@@ -1116,6 +1123,10 @@ adapters.set(/^ie__workbench$/, (cat) => {
 
 adapters.set(/^ie__metalPress$/, (cat) => {
   cat.recipes.forEach(r => move.input.to.catalyst(r, s => s.y <= 0))
+})
+
+adapters.set(/^ie__alloysmelter$/, (cat) => {
+  cat.recipes.forEach(r => move.output.to.input(r, s => s.y <= 3))
 })
 
 adapters.set(/^deepmoblearningbm__digital_agonizer$/, (cat) => {
