@@ -77,7 +77,7 @@ export default class Calculator {
     const recalcAll = async (barName: keyof typeof barsConfig) => {
       for (let j = 0; j < barsConfig[barName].max; j++) {
         multibar.update({ [barName]: [j + 1] })
-        for (const rec of sortBySteps(this.recipeStore)) {
+        for (const rec of this.recipeStore) {
           await recalcRec(rec, _ => 0)
         }
       }
