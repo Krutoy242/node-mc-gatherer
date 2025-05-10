@@ -96,7 +96,7 @@ export default class Solvable<R extends SolvableRecipe<any>> implements Identifi
 }
 
 function recipeComparator(amount: number) {
-  function sorter([recA, amountA = 1.0]: RecipeForAmount<SolvableRecipe<any>>, [recB, amountB = 1.0]: RecipeForAmount<SolvableRecipe<any>>) {
+  function sorter([recA, amountA = 1.0]: RecipeForAmount<SolvableRecipe<Solvable<any>>>, [recB, amountB = 1.0]: RecipeForAmount<SolvableRecipe<Solvable<any>>>) {
     const purityDiff = recB.purity - recA.purity
     if (purityDiff)
       return purityDiff
