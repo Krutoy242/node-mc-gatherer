@@ -42,6 +42,19 @@ export default class Definition extends Solvable<Recipe>
     const isLabeled: Record<keyof typeof LabelSetup, () => boolean> = {
       Bottleneck: () => ((this.recipes ?? []).filter(([r]) => r.purity > 0).length === 1)
         && (this.purity > 0 && [...this.dependencies ?? []].filter(r => r.purity > 0).length === 1),
+
+      Trash: () => (this.recipes ?? [])
+        .filter(([r]) => r.complexity)
+        .some(([r]) => r.inputs?.map(({ it, amount }) =>
+          Math.min(
+            ...it.matchedBy()
+              .filter(d => Number.isFinite(d.complexity) && d.complexity > 0)
+              .map(def => Math.log10(def.cost * (amount ?? 1) + def.processing)),
+          ),
+        )
+          .sort()
+          .some((v, i, arr) => i !== 0 && v / arr[i - 1] >= 10),
+        ),
     }
 
     // Compute and apply all labels

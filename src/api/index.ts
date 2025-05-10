@@ -74,6 +74,10 @@ export const LabelSetup = {
     char: '🍾',
     desc: 'Item that have only one valid recipe and used in recipes only once',
   },
+  Trash: {
+    char: '🗑️',
+    desc: 'Recipe ingredients is too different at complexity',
+  },
 } as const
 
 /*
