@@ -34,7 +34,7 @@ export default class Calculator {
       Precalc: { max: 0 },
       Recipes: { max: this.recipeStore.length, comment: 'In queue' },
       Items: { max: this.definitionStore.size, comment: 'Recalculated' },
-      Postcalc: { max: 2 },
+      Postcalc: { max: 1 },
     }
     const multibar = await cli.createMultibar(barsConfig)
 
